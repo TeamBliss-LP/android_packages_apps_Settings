@@ -17,6 +17,10 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
         android:title="@string/about_settings">
 
+        <PreferenceScreen android:key="bliss_logo"
+                          android:enabled="false"
+                          android:layout="@layout/bliss_logo_row" />
+
         <!-- Bliss Extra Info -->
         <PreferenceScreen android:key="extrainfo"
                 android:title="@string/lsextrainfo"
@@ -25,8 +29,14 @@
                     android:targetPackage="com.android.settings"
                     android:targetClass="com.android.settings.bliss.extrainfo.MainActivity" />
         </PreferenceScreen>
+	
 
-        <!-- Device status - launches activity -->
+        <!-- Bliss Share -->
+        <Preference
+            android:key="share"
+            android:title="@string/share_bliss_title"
+            android:summary="@string/share_bliss_summary" />	
+	
         <PreferenceScreen android:key="status_info"
                 android:title="@string/device_status" 
                 android:summary="@string/device_status_summary">
@@ -34,12 +44,6 @@
                     android:targetPackage="com.android.settings"
                     android:targetClass="com.android.settings.deviceinfo.Status" />
         </PreferenceScreen>
-
-        <!-- Bliss Share -->
-        <Preference
-            android:key="share"
-            android:title="@string/share_bliss_title"
-            android:summary="@string/share_bliss_summary" />
 
         <!-- Legal Information -->
         <PreferenceScreen
