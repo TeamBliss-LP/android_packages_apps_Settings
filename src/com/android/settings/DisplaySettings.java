@@ -17,6 +17,7 @@
 
 package com.android.settings;
 
+import android.preference.CheckBoxPreference;
 import com.android.internal.view.RotationPolicy;
 import com.android.settings.notification.DropDownPreference;
 import com.android.settings.notification.DropDownPreference.Callback;
@@ -45,6 +46,7 @@ import android.os.Build;
 import android.database.ContentObserver;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
+import android.os.Handler;
 import android.os.RemoteException;
 import android.os.SystemProperties;
 import android.preference.EditTextPreference;
@@ -62,6 +64,9 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.android.settings.DreamSettings;
+import com.android.settings.Utils;
+import com.android.settings.cyanogenmod.DisplayRotation;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -98,6 +103,11 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_TAP_TO_WAKE = "double_tap_wake_gesture";
     private static final String KEY_DISPLAY_DENSITY = "display_density";
     private static final String KEY_PROXIMITY_WAKE = "proximity_on_wake";
+    private static final String KEY_DISPLAY_ROTATION = "display_rotation";
+    private static final String KEY_ADVANCED_DISPLAY_SETTINGS = "advanced_display_settings";
+    private static final String CATEGORY_LIGHTS = "lights_prefs";
+    private static final String KEY_NOTIFICATION_PULSE = "notification_pulse";
+    private static final String KEY_BATTERY_LIGHT = "battery_light";
 
     private static final String CATEGORY_ADVANCED = "advanced_display_prefs";
     private static final String KEY_WAKEUP_WHEN_PLUGGED_UNPLUGGED = "wakeup_when_plugged_unplugged";
@@ -112,6 +122,9 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private SwitchPreference mWakeUpWhenPluggedOrUnplugged;
     private PreferenceCategory mWakeUpOptions;
     private FontDialogPreference mFontSizePref;
+    private PreferenceScreen mNotificationPulse;
+    private PreferenceScreen mBatteryPulse;
+    private PreferenceScreen mDisplayRotationPreference;
 
     private final Configuration mCurConfig = new Configuration();
 
@@ -131,6 +144,22 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private SwitchPreference mSunlightEnhancement;
     private SwitchPreference mColorEnhancement;
 
+    private ContentObserver mAccelerometerRotationObserver =
+            new ContentObserver(new Handler()) {
+        @Override
+        public void onChange(boolean selfChange) {
+            updateDisplayRotationPreferenceDescription();
+        }
+    };
+
+    private final RotationPolicy.RotationPolicyListener mRotationPolicyListener =
+            new RotationPolicy.RotationPolicyListener() {
+        @Override
+        public void onChange() {
+            updateDisplayRotationPreferenceDescription();
+        }
+    };
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -140,6 +169,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.display_settings);
 
         PreferenceScreen prefSet = getPreferenceScreen();
+        mDisplayRotationPreference = (PreferenceScreen) findPreference(KEY_DISPLAY_ROTATION);
 
         mScreenSaverPreference = findPreference(KEY_SCREEN_SAVER);
         if (mScreenSaverPreference != null
@@ -155,6 +185,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         mScreenTimeoutPreference.setOnPreferenceChangeListener(this);
         disableUnusableTimeouts(mScreenTimeoutPreference);
         updateTimeoutPreferenceDescription(currentTimeout);
+        updateDisplayRotationPreferenceDescription();
 
 
         mToastAnimation = (ListPreference) prefSet.findPreference(KEY_TOAST_ANIMATION);
@@ -327,6 +358,54 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         return res.getBoolean(com.android.internal.R.bool.config_automatic_brightness_available);
     }
 
+    private void updateDisplayRotationPreferenceDescription() {
+        if (mDisplayRotationPreference == null) {
+            // The preference was removed, do nothing
+            return;
+        }
+
+        // We have a preference, lets update the summary
+        boolean rotationEnabled = Settings.System.getInt(getContentResolver(),
+                Settings.System.ACCELEROMETER_ROTATION, 0) != 0;
+
+        if (!rotationEnabled) {
+            mDisplayRotationPreference.setSummary(R.string.display_rotation_disabled);
+            return;
+        }
+
+        StringBuilder summary = new StringBuilder();
+        int mode = Settings.System.getInt(getContentResolver(),
+                Settings.System.ACCELEROMETER_ROTATION_ANGLES,
+                DisplayRotation.ROTATION_0_MODE
+                | DisplayRotation.ROTATION_90_MODE
+                | DisplayRotation.ROTATION_270_MODE);
+        ArrayList<String> rotationList = new ArrayList<String>();
+        String delim = "";
+
+        if ((mode & DisplayRotation.ROTATION_0_MODE) != 0) {
+            rotationList.add("0");
+        }
+        if ((mode & DisplayRotation.ROTATION_90_MODE) != 0) {
+            rotationList.add("90");
+        }
+        if ((mode & DisplayRotation.ROTATION_180_MODE) != 0) {
+            rotationList.add("180");
+        }
+        if ((mode & DisplayRotation.ROTATION_270_MODE) != 0) {
+            rotationList.add("270");
+        }
+        for (int i = 0; i < rotationList.size(); i++) {
+            summary.append(delim).append(rotationList.get(i));
+            if ((rotationList.size() - i) > 2) {
+                delim = ", ";
+            } else {
+                delim = " & ";
+            }
+        }
+        summary.append(" " + getString(R.string.display_rotation_unit));
+        mDisplayRotationPreference.setSummary(summary);
+    }
+
     private void updateTimeoutPreferenceDescription(long currentTimeout) {
         ListPreference preference = mScreenTimeoutPreference;
         String summary;
@@ -397,7 +476,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     @Override
     public void onResume() {
         super.onResume();
-
+        updateDisplayRotationPreferenceDescription();
         if (mAdaptiveBacklight != null) {
             mAdaptiveBacklight.setChecked(AdaptiveBacklight.isEnabled());
         }
@@ -419,7 +498,32 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             mTapToWake.setChecked(TapToWake.isEnabled());
         }
 
+        RotationPolicy.registerRotationPolicyListener(getActivity(),
+                mRotationPolicyListener);
+
+        final ContentResolver resolver = getContentResolver();
+
+        // Display rotation observer
+        resolver.registerContentObserver(
+                Settings.System.getUriFor(Settings.System.ACCELEROMETER_ROTATION), true,
+                mAccelerometerRotationObserver);
+
+        if (mAdaptiveBacklight != null) {
+            mAdaptiveBacklight.setChecked(AdaptiveBacklight.isEnabled());
+        }
+
         updateState();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+
+        RotationPolicy.unregisterRotationPolicyListener(getActivity(),
+                mRotationPolicyListener);
+
+        // Display rotation observer
+        getContentResolver().unregisterContentObserver(mAccelerometerRotationObserver);
     }
 
     @Override
