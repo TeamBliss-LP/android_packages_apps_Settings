@@ -55,6 +55,7 @@
     <string name="dlg_reset_values_message">Reset values to\nAndroid- or Bliss default?</string>
     <string name="dlg_reset_android">Android</string>
     <string name="dlg_reset_bliss">Bliss</string>
+    <string name="reset_default_message">Reset default?</string>
     <string name="additional_options_title">Additional options</string>
     
     <!-- Changelog -->
@@ -182,6 +183,7 @@
     <string name="shortcut_action_help_main">To add a %1$s, select the Add icon. Once a %1$s is added, selecting the row will change the target%2$s\n\nTo remove a %1$s, swipe the row horizontally left or right. Re-order a %1$s in the list by vertically dragging the anchor on the left.\n\nTo clear or reset to defaults, select the Reset icon.</string>
     <string name="shortcut_action_help_delete_last_entry">Removing every %1$s in the list will disable the feature entirely.</string>
     <string name="shortcut_action_help_pie_second_layer_delete_last_entry">Removing every %1$s in the list will disable the second pie layer entirely.</string>
+    <string name="shortcut_action_theme_switch">Theme switcher</string>
 
 
     <string name="shortcuts_applications">Applications</string>
@@ -1195,5 +1197,14 @@
     <string name="trigger_top_summary">Adjust the vertical postion of the trigger area</string>
     <string name="trigger_bottom_title">Trigger height</string>
     <string name="trigger_bottom_summary">Adjust the height of the trigger area</string>
+
+    <!-- TRDS 5.0 -->	
+    <string name="theme_settings_title">Dark Bliss</string>
+    <string name="theme_auto_mode_title">Switch theme</string>
+    <string name="theme_auto_mode_off">Manual</string>
+    <string name="theme_auto_mode_lightsensor">On light condition change (experimental)</string>
+    <string name="theme_auto_mode_twilight">On daytime</string>
+    <string name="theme_auto_switch_mode_error">Automatic light condition change mode is enabled. Manual switching is not possible.</string>
+    <string name="theme_reset_message">Reset theme state to default?</string>
 
 </resources>
