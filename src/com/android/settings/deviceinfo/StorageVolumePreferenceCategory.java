@@ -25,6 +25,9 @@ import android.content.pm.IPackageManager;
 import android.content.pm.UserInfo;
 import android.content.res.Resources;
 import android.hardware.usb.UsbManager;
+import android.media.MediaScannerConnection;
+import android.media.MediaScannerConnection.OnScanCompletedListener;
+import android.net.Uri;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
@@ -39,21 +42,28 @@ import android.preference.Preference.OnPreferenceClickListener;
 import android.provider.MediaStore;
 import android.text.TextUtils;
 import android.text.format.Formatter;
+import android.util.Log;
 
 import com.android.settings.MediaFormat;
 import com.android.settings.R;
 import com.android.settings.Settings;
 import com.android.settings.deviceinfo.StorageMeasurement.MeasurementDetails;
 import com.android.settings.deviceinfo.StorageMeasurement.MeasurementReceiver;
+import com.android.settings.deviceinfo.UsageBarPreference.OnRequestMediaRescanListener;
 import com.google.android.collect.Lists;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class StorageVolumePreferenceCategory extends PreferenceCategory implements OnPreferenceClickListener {
+public class StorageVolumePreferenceCategory extends PreferenceCategory
+    implements OnRequestMediaRescanListener, OnPreferenceClickListener, OnScanCompletedListener {
+
+    public static final String TAG = "StorageVolumePreferenceCategory";
+
     public static final String KEY_CACHE = "cache";
 
     private static final int ORDER_USAGE_BAR = -2;
@@ -62,6 +72,9 @@ public class StorageVolumePreferenceCategory extends PreferenceCategory implemen
     /** Physical volume being measured, or {@code null} for internal. */
     private final StorageVolume mVolume;
     private final StorageMeasurement mMeasure;
+
+    private final boolean mIsInternal;
+    private final boolean mIsPrimary;
 
     private final Resources mResources;
     private final StorageManager mStorageManager;
@@ -90,6 +103,7 @@ public class StorageVolumePreferenceCategory extends PreferenceCategory implemen
 
     private static final int MSG_UI_UPDATE_APPROXIMATE = 1;
     private static final int MSG_UI_UPDATE_DETAILS = 2;
+    private static final int MSG_UI_RESCAN_COMPLETE = 3;
 
     private Handler mUpdateHandler = new Handler() {
         @Override
@@ -103,6 +117,10 @@ public class StorageVolumePreferenceCategory extends PreferenceCategory implemen
                 case MSG_UI_UPDATE_DETAILS: {
                     final MeasurementDetails details = (MeasurementDetails) msg.obj;
                     updateDetails(details);
+                    break;
+                }
+                case MSG_UI_RESCAN_COMPLETE: {
+                    mUsageBarPreference.notifyScanCompleted();
                     break;
                 }
             }
@@ -130,6 +148,8 @@ public class StorageVolumePreferenceCategory extends PreferenceCategory implemen
 
         mVolume = volume;
         mMeasure = StorageMeasurement.getInstance(context, volume);
+        mIsInternal = mVolume == null;
+        mIsPrimary = mVolume != null ? mVolume.isPrimary() : false;
 
         mResources = context.getResources();
         mStorageManager = StorageManager.from(context);
@@ -158,8 +178,17 @@ public class StorageVolumePreferenceCategory extends PreferenceCategory implemen
         final List<UserInfo> otherUsers = getUsersExcluding(currentUser);
         final boolean showUsers = mVolume == null && otherUsers.size() > 0;
 
+        boolean allowMediaScan = false;
+        if ((mIsInternal && Environment.isExternalStorageEmulated()) || mIsPrimary) {
+            allowMediaScan = true;
+        } else if (mVolume != null && !mVolume.isRemovable()) {
+            allowMediaScan = true;
+        }
+
         mUsageBarPreference = new UsageBarPreference(context);
         mUsageBarPreference.setOrder(ORDER_USAGE_BAR);
+        mUsageBarPreference.setOnRequestMediaRescanListener(this);
+        mUsageBarPreference.setAllowMediaScan(allowMediaScan);
         addPreference(mUsageBarPreference);
 
         mItemTotal = buildItem(R.string.memory_size, 0);
@@ -479,6 +508,7 @@ public class StorageVolumePreferenceCategory extends PreferenceCategory implemen
         }
 
         mUsageBarPreference.commit();
+        mUpdateHandler.obtainMessage(MSG_UI_RESCAN_COMPLETE).sendToTarget();
     }
 
     private void updatePreference(StorageItemPreference pref, long size) {
@@ -492,6 +522,7 @@ public class StorageVolumePreferenceCategory extends PreferenceCategory implemen
     }
 
     private void measure() {
+        mUsageBarPreference.onMeasure();
         mMeasure.invalidate();
         mMeasure.measure();
     }
@@ -551,7 +582,6 @@ public class StorageVolumePreferenceCategory extends PreferenceCategory implemen
         // TODO The current "delete" story is not fully handled by the respective applications.
         // When it is done, make sure the intent types below are correct.
         // If that cannot be done, remove these intents.
-        final String key = pref.getKey();
         if (pref == mFormatPreference) {
             intent = new Intent(Intent.ACTION_VIEW);
             intent.setClass(getContext(), com.android.settings.MediaFormat.class);
@@ -611,6 +641,7 @@ public class StorageVolumePreferenceCategory extends PreferenceCategory implemen
     }
 
     @Override
+<<<<<<< HEAD
     public boolean onPreferenceClick(Preference preference) {
         if (preference == mMountNotification) {
             boolean checked = ((CheckBoxPreference)preference).isChecked();
@@ -642,5 +673,27 @@ public class StorageVolumePreferenceCategory extends PreferenceCategory implemen
             return true;
         }
         return false;
+    }
+
+    public void onRequestMediaRescan() {
+        File path = null;
+        if ((mIsInternal && Environment.isExternalStorageEmulated()) || mIsPrimary) {
+            path = Environment.getExternalStorageDirectory();
+        } else {
+            path = mVolume.getPathFile();
+        }
+
+        Log.d(TAG, "Request scan of " + path.getAbsolutePath());
+        MediaScannerConnection.scanFile(
+                getContext(), new String[]{path.getAbsolutePath()}, null, this);
+    }
+
+    @Override
+    public void onScanCompleted(String path, final Uri uri) {
+        if (uri != null) {
+            measure();
+        } else {
+            mUpdateHandler.obtainMessage(MSG_UI_RESCAN_COMPLETE).sendToTarget();
+        }
     }
 }
