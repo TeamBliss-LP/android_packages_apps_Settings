@@ -54,7 +54,8 @@
     <string name="category_general_title">General options</string>
     <string name="dlg_reset_values_message">Reset values to\nAndroid- or Bliss default?</string>
     <string name="dlg_reset_android">Android</string>
-    <string name="dlg_reset_bliss">Bliss</string>   
+    <string name="dlg_reset_bliss">Bliss</string>
+    <string name="additional_options_title">Additional options</string>
     
     <!-- Changelog -->
     <string name="changelog_bliss_title">Changelog</string>
@@ -1130,6 +1131,8 @@
     <string name="icon_color_mode_all_icons">All icons</string>
     <string name="icon_color_mode_system_icons">System icons</string>
     <string name="icon_color_mode_system_custom_icons">System and custom icons</string>
+    <string name="pie_disable_ime_triggers_title">Reduce trigger size on keyboard</string>
+    <string name="pie_disable_ime_triggers_summary">Reduces left and right trigger size if keyboard is active</string>
 
     <!-- Navigation bar visibility -->
     <string name="navigation_menu_default_jb_behavior">Show on request (default)</string>
