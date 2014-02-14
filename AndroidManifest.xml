@@ -2481,6 +2481,9 @@
             </intent-filter>
         </activity>
 
+        <!-- SystemApp Remover -->
+        <activity android:name="com.android.settings.bliss.fragments.SystemappRemover" />
+
         <!-- Gesture Anywhere -->
         <activity android:name=".bliss.gestureanywhere.GestureAnywhereBuilderActivity" />
         <activity android:name=".bliss.gestureanywhere.GestureAnywhereCreateGestureActivity" />
