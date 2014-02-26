@@ -19,7 +19,39 @@
         android:title="@string/display_settings"
         settings:keywords="@string/keywords_display">
 
+<<<<<<< HEAD
         <PreferenceScreen
+=======
+        <PreferenceCategory
+            android:key="category_liquid_options"
+            android:title="@string/display_category_liquid_options_title" >
+
+            <PreferenceScreen
+                android:key="navigation_bar_dimen"
+                android:fragment="com.android.settings.liquid.NavBarDimen"
+                android:title="@string/navbar_dimen_title" />
+
+            <CheckBoxPreference
+                android:key="disable_immersive_message"
+                android:title="@string/disable_immersive_message_title"
+                android:summary="@string/disable_immersive_message_summary"
+                android:persistent="false" />
+
+            <ListPreference
+                android:key="toast_animation"
+                android:title="@string/toast_animation_title"
+                android:entries="@array/toast_animation_entries"
+                android:entryValues="@array/toast_animation_values"
+                android:persistent="false" />
+
+        </PreferenceCategory>
+
+        <PreferenceCategory
+            android:key="category_general_display_options"
+            android:title="@string/category_general_title" >
+
+            <PreferenceScreen
+>>>>>>> 9370997... Toast Animations [2/2]
                 android:key="brightness"
                 android:title="@string/brightness"
                 settings:keywords="@string/keywords_display_brightness_level">
