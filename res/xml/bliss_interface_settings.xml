@@ -54,7 +54,7 @@
         android:icon="@drawable/ic_settings_notification_drawer"
         settings:advanced="true" />
 
-    <!-- Heads Up Options -->        
+    <!-- Heads Up Options -->
     <PreferenceScreen
         android:key="heads_up_enabled"
         android:fragment="com.android.settings.bliss.HeadsUpSettings"
@@ -93,14 +93,22 @@
          android:fragment="com.android.settings.bliss.AnimationSettings"
          android:icon="@drawable/ic_settings_display_animations"
 	     settings:advanced="true" />
-	 
+
     <!-- Circle app bar -->
     <PreferenceScreen
         android:key="app_circle_bar"
         android:fragment="com.android.settings.bliss.AppCircleBar"
         android:title="@string/app_circle_bar_title"
         android:icon="@drawable/ic_appcirclebar"
-	    settings:advanced="true" />	 		        
+	    settings:advanced="true" />
+
+    <!-- App sidebar -->
+    <PreferenceScreen
+         android:key="app_sidebar"
+         android:fragment="com.android.settings.bliss.AppSidebar"
+         android:title="@string/app_sidebar_title"
+	 android:icon="@drawable/ic_settings_sidebar"
+	 settings:advanced="true"/>
  
     <!-- Bliss Downloads  -->
     <PreferenceScreen
