@@ -212,7 +212,7 @@ public final class BluetoothSettings extends DeviceListPreferenceFragment implem
         int textId = isDiscovering ? R.string.bluetooth_searching_for_devices :
             R.string.bluetooth_search_for_devices;
 
-        boolean acceptAllFilesIsEnabled = Settings.System.getInt(getContentResolver(),
+        boolean isAcceptAllFilesEnabled = Settings.System.getInt(getContentResolver(),
                 Settings.System.BLUETOOTH_ACCEPT_ALL_FILES, 0) == 1;
 
         menu.add(Menu.NONE, MENU_ID_SCAN, 0, textId)
@@ -225,7 +225,7 @@ public final class BluetoothSettings extends DeviceListPreferenceFragment implem
                 .setShowAsAction(MenuItem.SHOW_AS_ACTION_NEVER);
         menu.add(Menu.NONE, MENU_ID_ACCEPT_ALL_FILES, 0, R.string.bluetooth_accept_all_files)
                 .setCheckable(true)
-                .setChecked(acceptAllFilesIsEnabled)
+                .setChecked(isacceptAllFilesIsEnabled)
                 .setShowAsAction(MenuItem.SHOW_AS_ACTION_NEVER);
         super.onCreateOptionsMenu(menu, inflater);
     }
