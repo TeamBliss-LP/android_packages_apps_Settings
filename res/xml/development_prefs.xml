@@ -103,6 +103,11 @@
     <Preference android:key="restart_systemui"
             android:title="@string/restart_systemui" />
 
+    <SwitchPreference
+        android:key="update_recovery"
+        android:title="@string/update_recovery_title"
+        android:summary="@string/update_recovery_summary" />
+
     <PreferenceCategory android:key="debug_debugging_category"
             android:title="@string/debug_debugging_category">
 
