@@ -45,7 +45,13 @@
                 android:title="@string/toast_animation_title"
                 android:entries="@array/toast_animation_entries"
                 android:entryValues="@array/toast_animation_values"
-                android:persistent="false" />		
+                android:persistent="false" />
+		
+            <CheckBoxPreference
+                android:key="disable_immersive_message"
+                android:title="@string/disable_immersive_message_title"
+                android:summary="@string/disable_immersive_message_summary"
+                android:persistent="false" />				
 
         <PreferenceScreen
                 android:key="wallpaper"
