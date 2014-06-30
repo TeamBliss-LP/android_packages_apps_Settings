@@ -2387,6 +2387,7 @@
         <activity android:name=".applications.LockPatternActivity"
                   android:label="@string/protected_apps"
                   android:excludeFromRecents="true">
+
             <intent-filter>
                 <action android:name=".applications.LockPatternActivity" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -2477,11 +2478,18 @@
             </intent-filter>
         </receiver>
 
+
         <service android:name="com.android.settings.bliss.hfm.CheckHosts" />
 
         <activity android:name="com.android.settings.bliss.hfm.HfmWhitelist"
                   android:label="@string/hfm_whitelist_title"
                   android:taskAffinity="" />
+        
+        <service android:name=".bliss.identicons.IdenticonCreationService"
+                 android:exported="false" />
+
+        <service android:name=".bliss.identicons.IdenticonRemovalService"
+                 android:exported="false" />
 
         <provider
             android:name="android.support.v4.content.FileProvider"

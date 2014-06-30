@@ -54,6 +54,12 @@
         android:key="interface_animation_scroll"
         android:fragment="com.android.settings.bliss.ScrollAnimationInterfaceSettings"
         android:title="@string/scrolling_title"
-        android:summary="@string/scrolling_summary" />                    
+        android:summary="@string/scrolling_summary" />
+
+    <!-- Identicons -->
+    <PreferenceScreen
+        android:id="@+id/identicons"
+        android:title="@string/identicons_title"
+        android:fragment="com.android.settings.bliss.identicons.IdenticonsSettings" />
 	
 </PreferenceScreen>

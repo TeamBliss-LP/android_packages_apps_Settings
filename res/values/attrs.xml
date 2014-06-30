@@ -151,4 +151,7 @@
         <attr name="useDefaultController" format="boolean" />
     </declare-styleable>
 
+    <declare-styleable name="ImageListPreference">
+        <attr name="entryImages" format="reference" />
+    </declare-styleable>
 </resources>
