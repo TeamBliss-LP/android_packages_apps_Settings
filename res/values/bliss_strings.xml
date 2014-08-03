@@ -952,4 +952,10 @@
     <string name="volume_default_title">Volume default</string>
     <string name="volume_default_summary">Choose which volume gets changed by default</string>
 
+    <!-- User Selectable Tether Networks-->
+    <string name="tether_usb_network_summary">Press to change USB Network</string>
+    <string name="tether_usb_network_text">USB Tether Network</string>
+    <string name="tether_user_network_default">Use System Default</string>
+    <string name="tether_wifi_network_text">WiFi Tether Network</string>
+
 </resources>
