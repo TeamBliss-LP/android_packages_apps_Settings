@@ -27,10 +27,10 @@
                 android:targetClass="com.android.development.Development" />
     </PreferenceScreen>
 
-    <com.android.settings.BugreportPreference
+   <!-- <com.android.settings.BugreportPreference
             android:key="bugreport"
             android:title="@*android:string/bugreport_title"
-            android:dialogTitle="@*android:string/bugreport_title" />
+            android:dialogTitle="@*android:string/bugreport_title" /> -->
 
     <CheckBoxPreference
         android:key="advanced_reboot"
