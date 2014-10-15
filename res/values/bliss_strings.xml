@@ -756,5 +756,19 @@ sword is entered</string>
     <!-- Bluetooth additions -->
     <!-- Bluetooth accept all Filestypes -->
     <string name="bluetooth_accept_all_files">Accept all file types</string>
+    
+    <!-- Download Center -->
+    <string name="download_category">Bliss Downloads</string>
+    <string name="download_category_summary">Find all of your support needs inside</string>
+    <string name="rom_category">Rom Download</string>
+    <string name="gapps_category">GAPPS Packages</string>
+    <string name="bliss_official_title">TeamBliss Release Builds</string>
+    <string name="bliss_official_summary">Link for stable release builds of BlissPop</string>
+    <string name="bliss_nightly_title">TeamBliss Release Builds</string>
+    <string name="bliss_nightly_summary">Link for stable release builds of BlissPop</string>
+    <string name="banksgapps_title">Banks Gapps</string>
+    <string name="banksgapps_summary">Banks Gapps are generally recommended gapps for use on BlissPop</string>    
+    <string name="pagapps_title">PA Gapps</string>
+    <string name="pagapps_summary">Fully packed with the majority of GAPPS, these are commonly used by users that do not want to download/install them later</string>
 
 </resources>

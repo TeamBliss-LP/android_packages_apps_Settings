@@ -56,5 +56,13 @@
         android:fragment="com.android.settings.bliss.AppCircleBar"
         android:title="@string/app_circle_bar_title"
         android:icon="@drawable/ic_settings_sidebar"/>	 		        
+	
+    <!-- Bliss Downloads  -->
+    <PreferenceScreen    
+        android:key="download_center"
+        android:fragment="com.android.settings.bliss.Download"
+        android:title="@string/download_category"
+        android:summary="@string/download_category_summary" 
+	android:icon="@drawable/ic_tab_unselected_download" />			 		        
 
 </PreferenceScreen>
