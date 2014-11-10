@@ -81,9 +81,9 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
     private static final String PROPERTY_EQUIPMENT_ID = "ro.ril.fccid";
     private static final String KEY_DEVICE_FEEDBACK = "device_feedback";
     private static final String KEY_SAFETY_LEGAL = "safetylegal";
-    private static final String KEY_MOD_VERSION = "mod_version";
+    private static final String KEY_LIQUID_VERSION = "liquid_version";
     private static final String KEY_MOD_BUILD_DATE = "build_date";
-    private static final String KEY_BLISS_SHARE = "share";
+    private static final String KEY_LIQUID_SHARE = "share";
 
     long[] mHits = new long[3];
 
@@ -103,8 +103,7 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
         findPreference(KEY_BUILD_NUMBER).setEnabled(true);
         setStringSummary(KEY_KERNEL_VERSION, getFormattedKernelVersion());
         findPreference(KEY_KERNEL_VERSION).setEnabled(true);
-        setValueSummary(KEY_MOD_VERSION, "ro.cm.display.version");
-        findPreference(KEY_MOD_VERSION).setEnabled(true);
+        setValueSummary(KEY_LIQUID_VERSION, "ro.liquid.version");
         setValueSummary(KEY_MOD_BUILD_DATE, "ro.build.date");
 
         if (!SELinux.isSELinuxEnabled()) {
@@ -128,9 +127,8 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
                 PROPERTY_EQUIPMENT_ID);
 
         // Remove Baseband version if wifi-only device
-        if ((Utils.isWifiOnly(getActivity())
-                || (TelephonyManager.getDefault().getPhoneCount() > 1))
-                && !Utils.showSimCardTile(getActivity())) {
+        if (Utils.isWifiOnly(getActivity())
+                || (TelephonyManager.getDefault().getPhoneCount() > 1)) {
             getPreferenceScreen().removePreference(findPreference(KEY_BASEBAND_VERSION));
         }
 
@@ -199,7 +197,7 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
         } else if (prefKey.equals(KEY_KERNEL_VERSION)) {
             setStringSummary(KEY_KERNEL_VERSION, getKernelVersion());
             return true;
-        } else if (preference.getKey().equals(KEY_BLISS_SHARE)) {
+        } else if (preference.getKey().equals(KEY_LIQUID_SHARE)) {
         Intent intent = new Intent();
         intent.setAction(Intent.ACTION_SEND);
         intent.setType("text/plain");
@@ -414,7 +412,7 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
                     keys.add(KEY_EQUIPMENT_ID);
                 }
                 // Remove Baseband version if wifi-only device
-                if (Utils.isWifiOnly(context) && !Utils.showSimCardTile(context)) {
+                if (Utils.isWifiOnly(context)) {
                     keys.add((KEY_BASEBAND_VERSION));
                 }
                 // Dont show feedback option if there is no reporter.
