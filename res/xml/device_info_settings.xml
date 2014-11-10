@@ -35,6 +35,12 @@
                     android:targetClass="com.android.settings.deviceinfo.Status" />
         </PreferenceScreen>
 
+        <!-- Bliss Share -->
+        <Preference
+            android:key="share"
+            android:title="@string/share_bliss_title"
+            android:summary="@string/share_bliss_summary" />
+
         <!-- Legal Information -->
         <PreferenceScreen
                 android:key="container"
