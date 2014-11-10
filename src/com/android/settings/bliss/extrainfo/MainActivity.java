@@ -60,7 +60,7 @@ public class MainActivity extends Activity {
             int indent = ExtraInfoLib.dpToPx(context, 5);
             int pad = ExtraInfoLib.dpToPx(context, 2);
             setTextAppearance(context, android.R.style.TextAppearance_Medium);
-            setBackgroundColor(0xFF1D1D1D);
+            setBackgroundColor(0xff263238);
             setTextColor(0xFFFFFFFF);
             setGravity(Gravity.CENTER_VERTICAL);
             setPadding(indent, pad, pad, pad);
@@ -84,7 +84,7 @@ public class MainActivity extends Activity {
             super(context);
             int indent = ExtraInfoLib.dpToPx(context, 20);
             int pad = ExtraInfoLib.dpToPx(context, 2);
-            setTextColor(Color.WHITE);
+            setTextColor(0xff263238);
             setPadding(indent, pad, pad, pad);
             setText(text);
         }
