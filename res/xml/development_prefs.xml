@@ -31,6 +31,11 @@
             android:key="bugreport"
             android:title="@*android:string/bugreport_title"
             android:dialogTitle="@*android:string/bugreport_title" /> -->
+            
+    <PreferenceScreen
+        android:key="hfm_settings"
+        android:title="@string/hfm_pref_screen_title"
+        android:fragment="com.android.settings.bliss.hfm.HfmSettings" />            
 
     <CheckBoxPreference
         android:key="advanced_reboot"
