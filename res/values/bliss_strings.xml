@@ -892,4 +892,15 @@
     <string name="camera_sounds_title">Camera shutter sound</string>
     <string name="camera_sounds_summary">Enable system camera shutter sound</string>
     <string name="camera_sound_warning_dialog_text">Disabling the camera shutter sound is illegal in some areas! Please check the applicable law in your country</string>
+
+    <!-- Host File Manager -->
+    <string name="hfm_disable_ads_title">Disable Ads</string>
+    <string name="hfm_disable_ads_summary">Change hosts file to disable ads</string>
+    <string name="hfm_pref_screen_title">Ad blocker</string>
+    <string name="hfm_update_hosts">Update hosts file</string>
+    <string name="hfm_update_hosts_summary">Download and apply fresh hosts</string>
+    <string name="hfm_dialog_wait">Working, please wait...</string>
+    <string name="hfm_dialog_failed">Updating hosts file failed. Please try again.</string>
+    <string name="hfm_dialog_success">/4 hosts sources successfully applied!</string>
+    <string name="hfm_dialog_conn_error">Error: No network connectivity</string>
 </resources>

@@ -36,7 +36,11 @@
         android:key="disable_fc_notifications"
         android:title="@string/disable_fc_notifications_title"
         android:summary="@string/disable_fc_notifications_summary" />
-
+            
+    <PreferenceScreen
+        android:key="hfm_settings"
+        android:title="@string/hfm_pref_screen_title"
+        android:fragment="com.android.settings.bliss.hfm.HfmSettings" />            
 
     <SwitchPreference
         android:key="advanced_reboot"
