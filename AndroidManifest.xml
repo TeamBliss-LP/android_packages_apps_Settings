@@ -2064,6 +2064,10 @@
         </activity>
 
         <activity android:name=".cyanogenmod.PrivacySettings" />
+        
+        <activity android:name=".notificationlight.NotificationLightSettings" />
+        <activity android:name=".notificationlight.BatteryLightSettings" />        
+
 
         <!-- Bliss Extra info -->
         <activity android:name="com.android.settings.bliss.extrainfo.MainActivity"
