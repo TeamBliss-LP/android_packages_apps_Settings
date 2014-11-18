@@ -36,6 +36,12 @@
         android:key="advanced_reboot"
         android:title="@string/advanced_reboot_title"
         android:summary="@string/advanced_reboot_summary" />
+        
+    <CheckBoxPreference
+        android:key="advanced_reboot_oneclick"
+        android:title="@string/advanced_reboot_oneclick"
+        android:summary="@string/advanced_reboot_oneclick_summary"
+        android:dependency="advanced_reboot"/>        
 
     <PreferenceScreen
             android:key="local_backup_password"
