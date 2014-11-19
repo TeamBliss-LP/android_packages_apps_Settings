@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.temasek;
+package com.android.settings.bliss;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -35,7 +35,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
-import com.android.internal.util.temasek.DeviceUtils;
+import com.android.internal.util.bliss.DeviceUtils;
 
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.R;
