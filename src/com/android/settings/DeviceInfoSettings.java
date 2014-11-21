@@ -83,7 +83,7 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
     private static final String KEY_SAFETY_LEGAL = "safetylegal";
     private static final String KEY_MOD_VERSION = "mod_version";
     private static final String KEY_MOD_BUILD_DATE = "build_date";
-    private static final String KEY_LIQUID_SHARE = "share";
+    private static final String KEY_BLISS_SHARE = "share";
 
     static final int TAPS_TO_BE_A_DEVELOPER = 7;
 
@@ -254,7 +254,7 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
         } else if (prefKey.equals(KEY_KERNEL_VERSION)) {
             setStringSummary(KEY_KERNEL_VERSION, getKernelVersion());
             return true;
-        } else if (preference.getKey().equals(KEY_LIQUID_SHARE)) {
+        } else if (preference.getKey().equals(KEY_BLISS_SHARE)) {
         Intent intent = new Intent();
         intent.setAction(Intent.ACTION_SEND);
         intent.setType("text/plain");
