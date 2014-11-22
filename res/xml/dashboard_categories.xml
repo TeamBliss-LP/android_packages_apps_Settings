@@ -75,12 +75,24 @@
     <dashboard-category
             android:id="@+id/device_section"
             android:title="@string/header_category_device" >
+            
+    <!-- Equalizer -->
+    <dashboard-tile
+        android:id="@+id/equalizer_settings"
+        android:title="@string/equalizer_settings_title"
+        android:summary="@string/equalizer_summary"       
+        android:icon="@drawable/ic_bliss_equalizer" >
+        <intent
+           android:action="android.intent.action.MAIN"
+           android:targetClass="com.vipercn.viper4android_v2.activity.ViPER4Android"
+           android:targetPackage="com.vipercn.viper4android_v2" />
+     </dashboard-tile>             
 
         <dashboard-tile
                 android:id="@+id/button_settings"
                 android:title="@string/button_pref_title"
                 android:fragment="com.android.settings.ButtonSettings"
-                android:icon="@drawable/ic_settings_home"
+                android:icon="@drawable/ic_bliss_navigation"
                 />
 
         <!-- Home -->

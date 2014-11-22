@@ -36,6 +36,10 @@
     <string name="partition_info_cache">/cache</string>
     <string name="partition_info_sdcard">/sdcard (FAT)</string>
     <string name="partition_info_sdext">/sd-ext (EXT)</string>
-    <string name="partition_info_used_of">/</string>       
+    <string name="partition_info_used_of">/</string> 
+    
+    <!--Eqalizer-->
+    <string name="equalizer_settings_title">Equalizer</string>
+    <string name="equalizer_summary">ViPER4Android Access</string>          
 
 </resources>
