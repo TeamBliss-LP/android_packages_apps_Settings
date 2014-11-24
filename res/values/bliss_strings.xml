@@ -81,6 +81,15 @@
     <string name="navigation_bar_height_28">28dp</string>
     <string name="navigation_bar_height_24">24dp</string>
     <string name="navigation_bar_height_20">20dp</string>
-    <string name="navigation_bar_height_0">0dp (hide)</string>                              
+    <string name="navigation_bar_height_0">0dp (hide)</string>
+    
+    <!-- Navigation bar -->
+    <string name="navigation_bar_pref_title">Navigation bar</string>
+    <!-- Navigation bar force enable -->
+    <string name="navigation_bar_simulate_category">Simulate navigation bar</string>
+    <string name="navbar_force_enable_title">Force navigation bar</string>
+    <string name="navbar_force_enable_summary">May require a reboot</string>
+    <string name="hardware_keys_disable_title">Disable hardware keys</string>
+    <string name="hardware_keys_disable_summary">Blocks processing of hardware keys and disables them</string>                                  
 
 </resources>
