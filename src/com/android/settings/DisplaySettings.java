@@ -41,13 +41,16 @@ import android.content.SharedPreferences;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.os.Build;
+import android.database.ContentObserver;
 import android.os.Bundle;
+import android.preference.CheckBoxPreference;
 import android.os.RemoteException;
 import android.os.SystemProperties;
 import android.preference.EditTextPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceClickListener;
+import android.preference.PreferenceCategory;
 import android.preference.PreferenceManager;
 import android.preference.PreferenceScreen;
 import android.preference.SwitchPreference;
@@ -78,13 +81,13 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_DOZE = "doze";
     private static final String KEY_AUTO_BRIGHTNESS = "auto_brightness";
     private static final String KEY_AUTO_ROTATE = "auto_rotate";
+    private static final String KEY_NAVIGATION_BAR_HEIGHT = "navigation_bar_height";
+    private static final String DISABLE_IMMERSIVE_MESSAGE = "disable_immersive_message";
+    private static final String KEY_TOAST_ANIMATION = "toast_animation";
     private static final String KEY_TAP_TO_WAKE = "double_tap_wake_gesture";
     private static final String KEY_DISPLAY_DENSITY = "display_density";
 
     private static final String CATEGORY_ADVANCED = "advanced_display_prefs";
-    private static final String KEY_TOAST_ANIMATION = "toast_animation";
-    private static final String DISABLE_IMMERSIVE_MESSAGE = "disable_immersive_message";
-    private static final String KEY_NAVIGATION_BAR_HEIGHT = "navigation_bar_height";
 
     private static final int DLG_GLOBAL_CHANGE_WARNING = 1;
 
@@ -111,6 +114,8 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
         addPreferencesFromResource(R.xml.display_settings);
 
+        PreferenceScreen prefSet = getPreferenceScreen();
+
         mScreenSaverPreference = findPreference(KEY_SCREEN_SAVER);
         if (mScreenSaverPreference != null
                 && getResources().getBoolean(
@@ -126,6 +131,14 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         disableUnusableTimeouts(mScreenTimeoutPreference);
         updateTimeoutPreferenceDescription(currentTimeout);
 
+        mNavigationBarHeight = (ListPreference) findPreference(KEY_NAVIGATION_BAR_HEIGHT);
+        mNavigationBarHeight.setOnPreferenceChangeListener(this);
+        int statusNavigationBarHeight = Settings.System.getInt(getActivity().getApplicationContext()
+                .getContentResolver(),
+                Settings.System.NAVIGATION_BAR_HEIGHT, 48);
+        mNavigationBarHeight.setValue(String.valueOf(statusNavigationBarHeight));
+        mNavigationBarHeight.setSummary(mNavigationBarHeight.getEntry());
+
         mToastAnimation = (ListPreference) prefSet.findPreference(KEY_TOAST_ANIMATION);
         mToastAnimation.setSummary(mToastAnimation.getEntry());
         int CurrentToastAnimation = Settings.System.getInt(
@@ -136,14 +149,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         mDisableIM = (CheckBoxPreference) findPreference(DISABLE_IMMERSIVE_MESSAGE);
         mDisableIM.setChecked((Settings.System.getInt(resolver,
                 Settings.System.DISABLE_IMMERSIVE_MESSAGE, 0) == 1));
-				
-        mNavigationBarHeight = (ListPreference) findPreference(KEY_NAVIGATION_BAR_HEIGHT);
-        mNavigationBarHeight.setOnPreferenceChangeListener(this);
-        int statusNavigationBarHeight = Settings.System.getInt(getActivity().getApplicationContext()
-                .getContentResolver(),
-                Settings.System.NAVIGATION_BAR_HEIGHT, 48);
-        mNavigationBarHeight.setValue(String.valueOf(statusNavigationBarHeight));
-        mNavigationBarHeight.setSummary(mNavigationBarHeight.getEntry());
 
         mFontSizePref = (WarnedListPreference) findPreference(KEY_FONT_SIZE);
         mFontSizePref.setOnPreferenceChangeListener(this);
@@ -498,7 +503,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
             // we handle it, return false
             return false;
-        }
         }
         return true;
     }
