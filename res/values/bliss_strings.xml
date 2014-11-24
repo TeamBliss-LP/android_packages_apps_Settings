@@ -40,6 +40,9 @@
     
     <!--Eqalizer-->
     <string name="equalizer_settings_title">Equalizer</string>
-    <string name="equalizer_summary">ViPER4Android Access</string>          
+    <string name="equalizer_summary">ViPER4Android Access</string>
+    
+    <!-- SuperSU header name -->
+    <string name="supersu_title">SuperSU</string>               
 
 </resources>
