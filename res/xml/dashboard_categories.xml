@@ -76,18 +76,20 @@
             android:id="@+id/device_section"
             android:title="@string/header_category_device" >
             
-    <!-- Equalizer -->
-    <dashboard-tile
-        android:id="@+id/equalizer_settings"
-        android:title="@string/equalizer_settings_title"
-        android:summary="@string/equalizer_summary"       
-        android:icon="@drawable/ic_bliss_equalizer" >
-        <intent
-           android:action="android.intent.action.MAIN"
-           android:targetClass="com.vipercn.viper4android_v2.activity.ViPER4Android"
-           android:targetPackage="com.vipercn.viper4android_v2" />
-     </dashboard-tile>             
+       <!-- Equalizer -->
+       <dashboard-tile
+           android:id="@+id/equalizer_settings"
+           android:title="@string/equalizer_settings_title"
+           android:summary="@string/equalizer_summary"       
+           android:icon="@drawable/ic_bliss_equalizer" >
+           <intent
+              android:action="android.intent.action.MAIN"
+              android:targetClass="com.vipercn.viper4android_v2.activity.ViPER4Android"
+              android:targetPackage="com.vipercn.viper4android_v2" />
+        </dashboard-tile>             
 
+
+        <!-- Button Settings -->
         <dashboard-tile
                 android:id="@+id/button_settings"
                 android:title="@string/button_pref_title"
@@ -260,6 +262,17 @@
                 android:fragment="com.android.settings.print.PrintSettingsFragment"
                 android:icon="@drawable/ic_settings_print"
                 />
+		
+        <!-- SuperSU -->
+        <dashboard-tile
+            android:id="@+id/supersu_settings"
+            android:icon="@drawable/ic_settings_supersu"
+            android:title="@string/supersu_title">
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="eu.chainfire.supersu"
+                android:targetClass="eu.chainfire.supersu.MainActivity" />
+        </dashboard-tile>		
 
         <!-- Development -->
         <dashboard-tile
