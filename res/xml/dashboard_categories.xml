@@ -94,14 +94,6 @@
                 android:id="@+id/button_settings"
                 android:title="@string/button_pref_title"
                 android:fragment="com.android.settings.ButtonSettings"
-                android:icon="@drawable/ic_bliss_navigation"
-                />
-
-        <!-- Nav Bar Settings -->
-        <dashboard-tile
-                android:id="@+id/navigation_bar_settings"
-                android:title="@string/navigation_bar_pref_title"
-                android:fragment="com.android.settings.bliss.NavigationBarSettings"
                 android:icon="@drawable/ic_settings_navigation_bar"
                 />
 
