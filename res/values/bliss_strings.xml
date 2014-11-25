@@ -113,6 +113,13 @@
     <string name="display_rotation_180_title">180 degrees</string>
     <string name="display_rotation_270_title">270 degrees</string>
     
+    <!-- General strings -->
+    <string name="ok">OK</string>
+    <string name="reset">Reset</string>
+    <string name="attention">Attention</string>
+    <string name="enabled">Enabled</string>
+    <string name="default_string">Default</string>    
+    
     <!-- Sound settings -->
     <string name="advanced_sound_title">Advanced options</string>
     <string name="sound_title">Sound</string>    
