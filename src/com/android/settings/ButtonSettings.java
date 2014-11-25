@@ -66,6 +66,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
     private static final String KEY_POWER_END_CALL = "power_end_call";
     private static final String KEY_HOME_ANSWER_CALL = "home_answer_call";
     private static final String KEYS_OVERFLOW_BUTTON = "keys_overflow_button";    
+    private static final String KEY_VOLUME_KEY_CURSOR_CONTROL = "volume_key_cursor_control";
 
     private static final String CATEGORY_POWER = "power_key";
     private static final String CATEGORY_HOME = "home_key";
@@ -116,6 +117,8 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
     private SwitchPreference mPowerEndCall;
     private SwitchPreference mHomeAnswerCall;
     private ListPreference mOverflowButtonMode;    
+    private ListPreference mVolumeKeyCursorControl;
+
 
     private Handler mHandler;
 
@@ -156,10 +159,13 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
                 (PreferenceCategory) prefScreen.findPreference(CATEGORY_BACK);
         final PreferenceCategory menuCategory =
                 (PreferenceCategory) prefScreen.findPreference(CATEGORY_MENU);
+
         final PreferenceCategory assistCategory =
                 (PreferenceCategory) prefScreen.findPreference(CATEGORY_ASSIST);
         final PreferenceCategory appSwitchCategory =
                 (PreferenceCategory) prefScreen.findPreference(CATEGORY_APPSWITCH);
+        final PreferenceCategory volumeCategory =
+                (PreferenceCategory) prefScreen.findPreference(CATEGORY_VOLUME);				
 
         // Menu Overflow Config.        
         mOverflowButtonMode = (ListPreference) findPreference(KEYS_OVERFLOW_BUTTON);
@@ -333,6 +339,14 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
                 (incallHomeBehavior == Settings.Secure.RING_HOME_BUTTON_BEHAVIOR_ANSWER);
             mHomeAnswerCall.setChecked(homeButtonAnswersCall);
         }
+        if (Utils.hasVolumeRocker(getActivity())) {
+            int cursorControlAction = Settings.System.getInt(resolver,
+                    Settings.System.VOLUME_KEY_CURSOR_CONTROL, 0);
+            mVolumeKeyCursorControl = initActionList(KEY_VOLUME_KEY_CURSOR_CONTROL,
+                    cursorControlAction);
+        } else {
+            prefScreen.removePreference(volumeCategory);
+        }
     }
 
     private ListPreference initActionList(String key, int value) {
@@ -426,6 +440,10 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
         } else if (preference == mAppSwitchLongPressAction) {
             handleActionListChange(mAppSwitchLongPressAction, newValue,
                     Settings.System.KEY_APP_SWITCH_LONG_PRESS_ACTION);
+            return true;
+        } else if (preference == mVolumeKeyCursorControl) {
+            handleActionListChange(mVolumeKeyCursorControl, newValue,
+                    Settings.System.VOLUME_KEY_CURSOR_CONTROL);
             return true;
         }
         return false;
