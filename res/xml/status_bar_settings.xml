@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <!-- Copyright (C) 2014 The CyanogenMod Project
+=======
+<!-- Copyright (C) 2013 SlimRoms Project
+>>>>>>> 945ee10...  Settings: statusbar clock customization + initial interface + color
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -35,5 +39,16 @@
         android:fragment="com.android.settings.bliss.NetworkTraffic"
 	android:summary="@string/network_traffic_summary"
 	android:title="@string/network_traffic_title" />
+
+    <!-- Status bar tweaks -->
+    <PreferenceCategory
+        android:title="@string/status_bar_style_title">
+
+        <PreferenceScreen
+            android:fragment="com.android.settings.slim.StatusBarClockStyle"
+            android:key="clock_style_pref"
+            android:title="@string/status_bar_clock" />
+
+    </PreferenceCategory>
 
 </PreferenceScreen>

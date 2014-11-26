@@ -68,7 +68,6 @@
                 android:fragment="com.android.settings.WirelessSettings"
                 android:icon="@drawable/ic_settings_more"
                 />
-
     </dashboard-category>
 
     <!-- Personalization -->
@@ -84,13 +83,14 @@
                 android:icon="@drawable/ic_settings_home"
                 />
 
-        <!-- Status bar -->
+        <!-- Interface -->
         <dashboard-tile
-                android:id="@+id/status_bar_settings"
-                android:title="@string/status_bar_title"
-                android:fragment="com.android.settings.cyanogenmod.StatusBarSettings"
-                android:icon="@drawable/ic_settings_home"
+                android:id="@+id/interface_settings"
+                android:icon="@drawable/ic_settings_interface"
+                android:fragment="com.android.settings.bliss.InterfaceSettings"
+                android:title="@string/interface_settings_title"
                 />
+
 
 
     </dashboard-category>
