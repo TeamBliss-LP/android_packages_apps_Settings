@@ -292,6 +292,14 @@
                 android:targetClass="eu.chainfire.supersu.MainActivity" />
         </dashboard-tile>		
 
+        <!-- Superuser -->
+        <dashboard-tile
+                android:id="@+id/superuser_settings"
+                android:title="@string/superuser"
+                android:fragment="com.android.settings.cyanogenmod.superuser.PolicyNativeFragment"
+                android:icon="@drawable/ic_action_permission"
+                />
+
         <!-- Development -->
         <dashboard-tile
                 android:id="@+id/development_settings"
