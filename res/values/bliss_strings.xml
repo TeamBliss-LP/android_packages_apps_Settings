@@ -41,6 +41,9 @@
 
     <!-- GCC build flags info -->
     <string name="sm_flags">Build flags</string>
-    <string name="sm_flags_default">None</string> 
+    <string name="sm_flags_default">None</string>
+
+    <!-- SuperSU header name - the app hides itself from launcher based on this resource name being present in com.android.settings -->
+    <string name="supersu_title">SuperSU</string> 
 
 </resources>
