@@ -68,6 +68,7 @@
                 android:fragment="com.android.settings.WirelessSettings"
                 android:icon="@drawable/ic_settings_more"
                 />
+
     </dashboard-category>
 
     <!-- Personalization -->
@@ -90,15 +91,7 @@
                 android:fragment="com.android.settings.bliss.InterfaceSettings"
                 android:title="@string/interface_settings_title"
                 />
-
-
-
-    </dashboard-category>
-
-    <!-- DEVICE -->
-    <dashboard-category
-            android:id="@+id/device_section"
-            android:title="@string/header_category_device" >
+                
             
        <!-- Equalizer -->
        <dashboard-tile
@@ -110,18 +103,22 @@
               android:action="android.intent.action.MAIN"
               android:targetClass="com.vipercn.viper4android_v2.activity.ViPER4Android"
               android:targetPackage="com.vipercn.viper4android_v2" />
-        </dashboard-tile>             
+        </dashboard-tile>                   
 
+    </dashboard-category>
 
-        <!-- Button Settings -->
+    <!-- DEVICE -->
+    <dashboard-category
+            android:id="@+id/device_section"
+            android:title="@string/header_category_device" >
+   
+           <!-- Button Settings -->
         <dashboard-tile
                 android:id="@+id/button_settings"
                 android:title="@string/button_pref_title"
                 android:fragment="com.android.settings.ButtonSettings"
                 android:icon="@drawable/ic_settings_navigation_bar"
                 />
-
-
 
         <!-- Display -->
         <dashboard-tile

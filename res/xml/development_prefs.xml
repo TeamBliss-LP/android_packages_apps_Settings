@@ -32,7 +32,7 @@
         android:title="@string/hfm_pref_screen_title"
         android:fragment="com.android.settings.bliss.hfm.HfmSettings" />            
 
-    <CheckBoxPreference
+    <SwitchPreference
         android:key="advanced_reboot"
         android:title="@string/advanced_reboot_title"
         android:summary="@string/advanced_reboot_summary" />
@@ -76,7 +76,7 @@
             android:fragment="com.android.settings.applications.ProcessStatsUi">
     </PreferenceScreen>
 
-    <CheckBoxPreference
+    <SwitchPreference
         android:key="enable_quickboot"
         android:title="@string/enable_quickboot_title"
         android:summary="@string/enable_quickboot_summary" />
@@ -96,7 +96,7 @@
             android:title="@string/enable_adb"
             android:summary="@string/enable_adb_summary"/>
 
-        <CheckBoxPreference
+        <SwitchPreference
             android:key="adb_notify"
             android:title="@string/adb_notify"
             android:summary="@string/adb_notify_summary"
