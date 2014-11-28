@@ -42,9 +42,6 @@
     <string name="equalizer_settings_title">Equalizer</string>
     <string name="equalizer_summary">ViPER4Android Access</string>
     
-    <!-- SuperSU header name -->
-    <string name="supersu_title">SuperSU</string>
-    
     <!-- Display desity -->
     <string name="display_density">Display density</string>
     <string name="display_density_summary">Overrides the default display density (0 to disable, requires a reboot)</string> 
