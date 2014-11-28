@@ -220,6 +220,7 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
         intent.putExtra(Intent.EXTRA_TEXT, String.format(
                 getActivity().getString(R.string.share_message), Build.MODEL));
         startActivity(Intent.createChooser(intent, getActivity().getString(R.string.share_chooser_title)));
+            }
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
