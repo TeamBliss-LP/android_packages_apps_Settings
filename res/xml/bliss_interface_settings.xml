@@ -28,7 +28,7 @@
     <PreferenceScreen
         android:key="recents_panel"
         android:fragment="com.android.settings.bliss.RecentsSettings"	
-        android:title="@string/show_clear_all_recents_button_title"
+        android:title="@string/recents_options_title"
         android:icon="@drawable/ic_settings_storage" />
         
     <PreferenceScreen
