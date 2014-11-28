@@ -259,6 +259,10 @@
     <string name="status_bar_clock_style_reset_message">Reset clock color?</string>
     
     <!-- SuperSU header name - the app hides itself from launcher based on this resource name being present in com.android.settings -->
-    <string name="supersu_title">SuperSU</string>                
+    <string name="supersu_title">SuperSU</string>
+    
+    <!-- Battery text setting -->
+    <string name="status_bar_toggle_battery_text">Display battery level</string>
+    <string name="status_bar_toggle_battery_summary">Show battery level next to battery icon</string>                    
 
 </resources>
