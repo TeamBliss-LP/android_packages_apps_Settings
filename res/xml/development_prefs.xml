@@ -30,7 +30,14 @@
     <PreferenceScreen
         android:key="hfm_settings"
         android:title="@string/hfm_pref_screen_title"
-        android:fragment="com.android.settings.bliss.hfm.HfmSettings" />            
+        android:fragment="com.android.settings.bliss.hfm.HfmSettings" />
+	
+    <ListPreference
+        android:key="media_scanner_on_boot"
+        android:title="@string/media_scanner_on_boot_title"
+        android:persistent="false"
+        android:entries="@array/media_scanner_on_boot_entries"
+        android:entryValues="@array/media_scanner_on_boot_values" />	            
 
     <SwitchPreference
         android:key="advanced_reboot"
