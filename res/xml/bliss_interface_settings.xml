@@ -24,9 +24,10 @@
         android:fragment="com.android.settings.bliss.StatusBar"
         android:title="@string/status_bar_title" />
 	
-    <PreferenceCategory
+    <PreferenceScreen
         android:key="recents_panel"
-        android:title="@string/show_clear_all_recents_button_title" >
-        android:fragment="com.android.settings.bliss.RecentsSettings"
+        android:fragment="com.android.settings.bliss.RecentsSettings"	
+        android:title="@string/show_clear_all_recents_button_title" />
+
 
 </PreferenceScreen>
