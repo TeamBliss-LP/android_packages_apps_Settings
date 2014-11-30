@@ -120,7 +120,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private SwitchPreference mTapToWake;
     private EditTextPreference mDisplayDensity;
     private ListPreference mToastAnimation;
-    private CheckBoxPreference mDisableIM;
+    private SwitchPreference mDisableIM;
     private SwitchPreference mVolumeWake;
 
     private ContentObserver mAccelerometerRotationObserver =
@@ -171,7 +171,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         mToastAnimation.setValueIndex(CurrentToastAnimation);
         mToastAnimation.setOnPreferenceChangeListener(this);
 
-        mDisableIM = (CheckBoxPreference) findPreference(DISABLE_IMMERSIVE_MESSAGE);
+        mDisableIM = (SwitchPreference) findPreference(DISABLE_IMMERSIVE_MESSAGE);
         mDisableIM.setChecked((Settings.System.getInt(resolver,
                 Settings.System.DISABLE_IMMERSIVE_MESSAGE, 0) == 1));
 
@@ -507,7 +507,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         }
 
         if  (preference == mDisableIM) {
-            boolean checked = ((CheckBoxPreference)preference).isChecked();
+            boolean checked = ((SwitchPreference)preference).isChecked();
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.DISABLE_IMMERSIVE_MESSAGE, checked ? 1:0);
             return true;
