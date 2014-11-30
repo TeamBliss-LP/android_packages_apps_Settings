@@ -29,8 +29,7 @@ import android.provider.Settings;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
-public class StatusBarSettings extends SettingsPreferenceFragment implements
-        Preference.OnPreferenceChangeListener {
+public class RecentsSettings extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
 
     private static final String SHOW_CLEAR_ALL_RECENTS = "show_clear_all_recents";
     private static final String RECENTS_CLEAR_ALL_LOCATION = "recents_clear_all_location";
