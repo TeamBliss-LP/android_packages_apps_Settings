@@ -343,6 +343,14 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="show_clear_all_recents_button_summary">Show clear all button on recents panel</string>
     <string name="recents_clear_all_location_title">Clear all recents location</string>
     <string name="recents_clear_all_location_right">Top right</string>
-    <string name="recents_clear_all_location_left">Top left</string>                           
+    <string name="recents_clear_all_location_left">Top left</string> 
+    
+    <!-- QuickSettings: Quick Pulldown -->
+    <string name="qs_title">Quick settings</string>
+    <string name="title_quick_pulldown">Quick pulldown</string>
+    <string name="summary_quick_pulldown">%1$s edge of the status bar pulls down Quick Settings</string>
+    <string name="quick_pulldown_off">Off</string>
+    <string name="quick_pulldown_left">Left</string>
+    <string name="quick_pulldown_right">Right</string>                              
 
 </resources>
