@@ -278,14 +278,6 @@
                 android:icon="@drawable/ic_settings_print"
                 />
 
-        <!-- Development -->
-        <dashboard-tile
-                android:id="@+id/development_settings"
-                android:title="@string/development_settings_title"
-                android:fragment="com.android.settings.DevelopmentSettings"
-                android:icon="@drawable/ic_settings_development"
-                />
-
         <!-- SuperSU -->
         <dashboard-tile
             android:id="@+id/supersu_settings"
@@ -296,6 +288,14 @@
                 android:targetPackage="eu.chainfire.supersu"
                 android:targetClass="eu.chainfire.supersu.MainActivity" />
         </dashboard-tile>
+        
+        <!-- Development -->
+        <dashboard-tile
+                android:id="@+id/development_settings"
+                android:title="@string/development_settings_title"
+                android:fragment="com.android.settings.DevelopmentSettings"
+                android:icon="@drawable/ic_settings_development"
+                />        
 
         <!-- About Device -->
         <dashboard-tile
