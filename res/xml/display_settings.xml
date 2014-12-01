@@ -33,26 +33,6 @@
                 android:summary="@string/auto_brightness_summary"
                 android:persistent="false" />
 
-        <EditTextPreference
-                android:key="display_density"
-                android:title="@string/display_density"
-                android:summary="@string/display_density_summary"
-                android:persistent="false"
-                android:inputType="numberSigned" />
-		
-            <ListPreference
-                android:key="toast_animation"
-                android:title="@string/toast_animation_title"
-                android:entries="@array/toast_animation_entries"
-                android:entryValues="@array/toast_animation_values"
-                android:persistent="false" />
-		
-            <SwitchPreference
-                android:key="disable_immersive_message"
-                android:title="@string/disable_immersive_message_title"
-                android:summary="@string/disable_immersive_message_summary"
-                android:persistent="false" />				
-
         <PreferenceScreen
                 android:key="wallpaper"
                 android:title="@string/wallpaper_settings_title"
@@ -93,24 +73,10 @@
                 android:dialogTitle="@string/dialog_title_font_size" />
 
         <PreferenceScreen
-                android:key="display_rotation"
-                android:fragment="com.android.settings.bliss.DisplayRotation"
-                android:title="@string/display_rotation_title" />
-
-        <PreferenceScreen
                 android:key="wifi_display"
                 android:title="@string/wifi_display_settings_title"
                 settings:keywords="@string/keywords_display_cast_screen"
                 android:fragment="com.android.settings.wfd.WifiDisplaySettings" />
-
-        <ListPreference
-                android:key="navigation_bar_height"
-                android:dialogTitle="@string/navigation_bar_height"
-                android:title="@string/navigation_bar_height"
-                android:entries="@array/navigation_bar_height_entries"
-                android:entryValues="@array/navigation_bar_height_values"
-                android:defaultValue="48"
-                android:persistent="false" />
 
          <PreferenceCategory
              android:key="category_wakeup_options"
@@ -140,11 +106,45 @@
                     android:key="double_tap_wake_gesture"
                     android:title="@string/double_tap_to_wake_title" />
 
-                <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
+                <SwitchPreference
                     android:key="double_tap_sleep_gesture"
                     android:title="@string/double_tap_to_sleep_title"
                     android:summary="@string/double_tap_to_sleep_summary"
                     android:defaultValue="true" />
+                    
+               <EditTextPreference
+                   android:key="display_density"
+                   android:title="@string/display_density"
+                   android:summary="@string/display_density_summary"
+                   android:persistent="false"
+                   android:inputType="numberSigned" />
+		
+               <ListPreference
+                   android:key="toast_animation"
+                   android:title="@string/toast_animation_title"
+                   android:entries="@array/toast_animation_entries"
+                   android:entryValues="@array/toast_animation_values"
+                   android:persistent="false" />
+		
+               <SwitchPreference
+                   android:key="disable_immersive_message"
+                   android:title="@string/disable_immersive_message_title"
+                   android:summary="@string/disable_immersive_message_summary"
+                   android:persistent="false" /> 
+                   
+              <PreferenceScreen
+                   android:key="display_rotation"
+                   android:fragment="com.android.settings.bliss.DisplayRotation"
+                   android:title="@string/display_rotation_title" /> 
+                   
+              <ListPreference
+                   android:key="navigation_bar_height"
+                   android:dialogTitle="@string/navigation_bar_height"
+                   android:title="@string/navigation_bar_height"
+                   android:entries="@array/navigation_bar_height_entries"
+                   android:entryValues="@array/navigation_bar_height_values"
+                   android:defaultValue="48"
+                   android:persistent="false" />                                                        
         </PreferenceCategory>
 
 </PreferenceScreen>
