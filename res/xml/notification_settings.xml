@@ -88,27 +88,6 @@
                 android:persistent="false"
                 android:ringtoneType="notification" />
 
-         <!-- Screenshot tone -->
-         <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
-                android:key="screenshot_sound"
-                android:title="@string/screenshot_sound_title"
-                android:summary="@string/screenshot_sound_summary"
-                android:defaultValue="true" />
-
-        <!-- Other sounds -->
-        <Preference
-                android:key="other_sounds"
-                android:title="@string/other_sound_settings"
-                android:persistent="false"
-                android:fragment="com.android.settings.notification.OtherSoundSettings" />
-
-        <!-- Advanced options -->
-        <PreferenceScreen
-                android:key="advanced_sound_settings"
-                android:title="@string/advanced_sound_title"
-                android:persistent="false"
-                android:fragment="com.android.settings.bliss.SoundSettings" />
-
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -147,5 +126,31 @@
                 android:fragment="com.android.settings.notification.NotificationAccessSettings" />
 
     </PreferenceCategory>
+    
+        <PreferenceCategory
+                android:key="advanced_notification_prefs"
+                android:title="@string/advanced_settings"> 
+                
+        <!-- Advanced options -->
+        <PreferenceScreen
+                android:key="advanced_sound_settings"
+                android:title="@string/advanced_sound_title"
+                android:persistent="false"
+                android:fragment="com.android.settings.bliss.SoundSettings" />
+              
+        <!-- Other sounds -->
+        <Preference
+                android:key="other_sounds"
+                android:title="@string/other_sound_settings"
+                android:persistent="false"
+                android:fragment="com.android.settings.notification.OtherSoundSettings" />
+                
+         <!-- Screenshot tone -->
+         <SwitchPreference
+                android:key="screenshot_sound"
+                android:title="@string/screenshot_sound_title"
+                android:summary="@string/screenshot_sound_summary"
+                android:defaultValue="true" /> 
+    </PreferenceCategory>                                                                  
 
 </PreferenceScreen>
