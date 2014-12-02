@@ -351,7 +351,9 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="summary_quick_pulldown">%1$s edge of the status bar pulls down Quick Settings</string>
     <string name="quick_pulldown_off">Off</string>
     <string name="quick_pulldown_left">Left</string>
-    <string name="quick_pulldown_right">Right</string>                              
+    <string name="quick_pulldown_right">Right</string>
+    <string name="block_on_secure_keyguard_title">Disable on lockscreen</string>
+    <string name="block_on_secure_keyguard_summary">Disable quick settings on secure lockscreen.</string>                                  
 
     <!-- Camera sound switch -->
     <string name="camera_sounds_title">Camera shutter sound</string>
