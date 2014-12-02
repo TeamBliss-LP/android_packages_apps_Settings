@@ -262,7 +262,7 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
 
     private SwitchPreference mAdvancedReboot;
 
-    private CheckBoxPreference mDevelopmentShortcut;
+    private SwitchPreference mDevelopmentShortcut;
 
     private final ArrayList<Preference> mAllPrefs = new ArrayList<Preference>();
 
@@ -335,7 +335,7 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
         mPassword = (PreferenceScreen) findPreference(LOCAL_BACKUP_PASSWORD);
         mAllPrefs.add(mPassword);
         mAdvancedReboot = findAndInitSwitchPref(ADVANCED_REBOOT_KEY);
-        mDevelopmentShortcut = findAndInitCheckboxPref(DEVELOPMENT_SHORTCUT_KEY);
+        mDevelopmentShortcut = findAndInitSwitchPref(DEVELOPMENT_SHORTCUT_KEY);
 
         if (!android.os.Process.myUserHandle().equals(UserHandle.OWNER)) {
             disableForUser(mEnableAdb);
