@@ -16,7 +16,10 @@
 
 package com.android.settings.bliss;
 
+import android.app.AlertDialog;
 import android.content.ContentResolver;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.database.ContentObserver;
@@ -29,8 +32,12 @@ import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
 import android.preference.SwitchPreference;
 import android.provider.Settings;
+import android.telephony.TelephonyManager;
+import android.text.Spannable;
+import android.text.TextUtils;
 import android.provider.Settings.SettingNotFoundException;
 import android.util.Log;
+import android.widget.EditText;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
@@ -43,9 +50,15 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
 
     private static final String KEY_STATUS_BAR_CLOCK = "clock_style_pref";
     private static final String KEY_STATUS_BAR_TICKER = "status_bar_ticker_enabled";
+	private static final String STATUS_BAR_CARRIER = "status_bar_carrier";
+    private static final String CUSTOM_CARRIER_LABEL = "custom_carrier_label";
 
     private PreferenceScreen mClockStyle;
     private SwitchPreference mTicker;
+	private SwitchPreference mStatusBarCarrier;
+    private PreferenceScreen mCustomCarrierLabel;
+
+    private String mCustomCarrierLabelText;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -73,7 +86,28 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
         mTicker.setChecked(Settings.System.getInt(getContentResolver(),
                 Settings.System.STATUS_BAR_TICKER_ENABLED, tickerEnabled ? 1 : 0) == 1);
         mTicker.setOnPreferenceChangeListener(this);
+        mStatusBarCarrier = (CheckBoxPreference) prefSet.findPreference(STATUS_BAR_CARRIER);
+        mStatusBarCarrier.setChecked((Settings.System.getInt(resolver, Settings.System.STATUS_BAR_CARRIER, 0) == 1));
+        mStatusBarCarrier.setOnPreferenceChangeListener(this);
+        mCustomCarrierLabel = (PreferenceScreen) prefSet.findPreference(CUSTOM_CARRIER_LABEL);
+        if (TelephonyManager.getDefault().isMultiSimEnabled()) {
+            prefSet.removePreference(mStatusBarCarrier);
+            prefSet.removePreference(mCustomCarrierLabel);
+        } else {
+            updateCustomLabelTextSummary();
+        }
 
+    }
+
+    private void updateCustomLabelTextSummary() {
+        mCustomCarrierLabelText = Settings.System.getString(
+            getActivity().getContentResolver(), Settings.System.CUSTOM_CARRIER_LABEL);
+
+        if (TextUtils.isEmpty(mCustomCarrierLabelText)) {
+            mCustomCarrierLabel.setSummary(R.string.custom_carrier_label_notset);
+        } else {
+            mCustomCarrierLabel.setSummary(mCustomCarrierLabelText);
+        }
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -82,6 +116,10 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
                     Settings.System.STATUS_BAR_TICKER_ENABLED,
                     (Boolean) newValue ? 1 : 0);
             return true;
+        } else if (preference == mStatusBarCarrier) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(resolver, Settings.System.STATUS_BAR_CARRIER, value ? 1 : 0);
+            return true;			
          }
          return false;
     }
@@ -103,4 +141,34 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
             mClockStyle.setSummary(getString(R.string.disabled));
         }
     }
+    @Override
+    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
+            final Preference preference) {
+        final ContentResolver resolver = getActivity().getContentResolver();
+        if (preference.getKey().equals(CUSTOM_CARRIER_LABEL)) {
+            AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
+            alert.setTitle(R.string.custom_carrier_label_title);
+            alert.setMessage(R.string.custom_carrier_label_explain);
+
+            // Set an EditText view to get user input
+            final EditText input = new EditText(getActivity());
+            input.setText(TextUtils.isEmpty(mCustomCarrierLabelText) ? "" : mCustomCarrierLabelText);
+            input.setSelection(input.getText().length());
+            alert.setView(input);
+            alert.setPositiveButton(getString(android.R.string.ok),
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int whichButton) {
+                            String value = ((Spannable) input.getText()).toString().trim();
+                            Settings.System.putString(resolver, Settings.System.CUSTOM_CARRIER_LABEL, value);
+                            updateCustomLabelTextSummary();
+                            Intent i = new Intent();
+                            i.setAction(Intent.ACTION_CUSTOM_CARRIER_LABEL_CHANGED);
+                            getActivity().sendBroadcast(i);
+                }
+            });
+            alert.setNegativeButton(getString(android.R.string.cancel), null);
+            alert.show();
+        }
+        return super.onPreferenceTreeClick(preferenceScreen, preference);
+    }	
 }
