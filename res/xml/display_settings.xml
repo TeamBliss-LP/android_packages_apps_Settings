@@ -95,6 +95,22 @@
                 android:summary="@string/wakeup_when_plugged_unplugged_summary"
                 android:defaultValue="true"
                 android:persistent="false" />
+                
+             <SwitchPreference
+                 android:key="double_tap_wake_gesture"
+                 android:title="@string/double_tap_to_wake_title" />
+
+             <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
+                 android:key="proximity_on_wake"
+                 android:title="@string/proximity_wake_title"
+                 android:summary="@string/proximity_wake_summary"
+                 android:defaultValue="true" />
+
+             <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
+                 android:key="double_tap_sleep_gesture"
+                 android:title="@string/double_tap_to_sleep_title"
+                 android:summary="@string/double_tap_to_sleep_summary"
+                 android:defaultValue="true" />                
 
          </PreferenceCategory>
 
@@ -102,22 +118,6 @@
                 android:key="advanced_display_prefs"
                 android:title="@string/advanced_settings">
 
-                <SwitchPreference
-                    android:key="double_tap_wake_gesture"
-                    android:title="@string/double_tap_to_wake_title" />
-
-                <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
-                    android:key="proximity_on_wake"
-                    android:title="@string/proximity_wake_title"
-                    android:summary="@string/proximity_wake_summary"
-                    android:defaultValue="true" />
-
-                <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
-                    android:key="double_tap_sleep_gesture"
-                    android:title="@string/double_tap_to_sleep_title"
-                    android:summary="@string/double_tap_to_sleep_summary"
-                    android:defaultValue="true" />
-                    
                <EditTextPreference
                    android:key="display_density"
                    android:title="@string/display_density"
