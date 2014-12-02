@@ -242,8 +242,8 @@
     <string name="build_date_default">2014-01-01-0000</string>
 
     <!-- About phone screen, build type -->
-    <string name="build_date">Build type</string>
-    <string name="build_date_default">Unknown</string>
+    <string name="build_type">Build type</string>
+    <string name="build_type_default">Unknown</string>
 
     <!--- Advanced Settings -->
     <string name="advanced_settings">Advanced settings</string>
