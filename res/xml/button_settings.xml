@@ -202,6 +202,12 @@
             android:entries="@array/volbtn_cursor_control_entries"
             android:entryValues="@array/volbtn_cursor_control_values"
             android:persistent="false" />
+	    
+        <SwitchPreference
+            android:key="volume_key_wake_device"
+            android:title="@string/volbtn_wake_device_title"
+            android:summary="@string/volbtn_wake_device_summary"
+            android:defaultValue="false" />	    
 
     </PreferenceCategory>              
 
