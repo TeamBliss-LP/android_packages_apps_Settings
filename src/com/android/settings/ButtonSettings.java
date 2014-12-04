@@ -46,7 +46,7 @@ import com.android.settings.Utils;
 
 import org.cyanogenmod.hardware.KeyDisabler;
 
-import com.android.internal.util.crdroid.CrUtils;
+import com.android.internal.util.bliss.CrUtils;
 
 public class ButtonSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {

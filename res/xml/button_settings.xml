@@ -31,7 +31,7 @@
 
     <PreferenceScreen
         android:key="navbar_dimensions"
-        android:fragment="com.android.settings.crdroid.NavBarDimensions"
+        android:fragment="com.android.settings.bliss.NavBarDimensions"
         android:title="@string/navbar_style_dimen_title"
         android:dependency="enable_nav_bar" />
 
