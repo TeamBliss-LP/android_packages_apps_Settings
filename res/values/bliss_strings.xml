@@ -80,7 +80,9 @@
     <string name="title_animation_no_override">Prevent App Overrides</string>
     <string name="summary_animation_no_override">Prevent apps from overriding transitions.</string>
     <string name="animation_duration_default">Default</string>
-    <string name="header_summary_animation">@null</string>    
+    <string name="header_summary_animation">@null</string>
+    <string name="animation_exit_only_title">Enter only animation</string>
+    <string name="animation_reverse_exit_title">Reverse exit animation</string>	    
     
     <!-- Text for disabling immersive mode messages -->
     <string name="disable_immersive_message_title">Disable Immersive Mode Messages</string>

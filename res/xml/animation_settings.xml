@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright (C) 2014 BOSP
 
-<<<<<<< HEAD
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
      You may obtain a copy of the License at
@@ -35,7 +34,6 @@
                <PreferenceScreen
                    android:id="@+id/animations"
                    android:title="@string/title_animation_controls"
-                   android:summary="@string/header_summary_animation"
                    android:fragment="com.android.settings.bliss.fragments.AnimationControls" />
 	
 </PreferenceScreen>
