@@ -700,4 +700,8 @@ sword is entered</string>
     <string name="select_custom_activity_title">Select custom activity</string>
     <string name="profile_applist_title">Applications</string>
 
+    <!-- Animations Category -->    
+    <string name="animation_settings_category">Animations</string>
+    <string name="animation_settings_title">Animations</string>    
+
 </resources>

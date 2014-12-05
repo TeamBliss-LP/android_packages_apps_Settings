@@ -133,18 +133,6 @@
                    android:persistent="false"
                    android:inputType="numberSigned" />
 		
-               <ListPreference
-                   android:key="toast_animation"
-                   android:title="@string/toast_animation_title"
-                   android:entries="@array/toast_animation_entries"
-                   android:entryValues="@array/toast_animation_values"
-                   android:persistent="false" />
-		   
-               <PreferenceScreen
-                   android:id="@+id/listview"
-                   android:fragment="com.android.settings.bliss.Listview"
-                   android:title="@string/listview_category" />		   
-		
                <SwitchPreference
                    android:key="disable_immersive_message"
                    android:title="@string/disable_immersive_message_title"

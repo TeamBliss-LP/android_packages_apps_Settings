@@ -42,6 +42,11 @@
         android:key="gesture_anywhere"
         android:fragment="com.android.settings.bliss.gestureanywhere.GestureAnywhereSettings"
         android:title="@string/gesture_anywhere_title"
-	android:icon="@drawable/ic_settings_gesture_anywhere" />	        
+	android:icon="@drawable/ic_settings_gesture_anywhere" />
+	
+     <PreferenceScreen
+         android:id="@+id/animation_settings"
+         android:title="@string/animation_settings_title"
+         android:fragment="com.android.settings.bliss.AnimationSettings" />		        
 
 </PreferenceScreen>

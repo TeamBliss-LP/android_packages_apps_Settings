@@ -60,7 +60,6 @@ import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.Log;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -90,7 +89,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_DOZE = "doze";
     private static final String KEY_AUTO_BRIGHTNESS = "auto_brightness";
     private static final String DISABLE_IMMERSIVE_MESSAGE = "disable_immersive_message";
-    private static final String KEY_TOAST_ANIMATION = "toast_animation";
+
     private static final String KEY_ADAPTIVE_BACKLIGHT = "adaptive_backlight";
     private static final String KEY_SUNLIGHT_ENHANCEMENT = "sunlight_enhancement";
     private static final String KEY_COLOR_ENHANCEMENT = "color_enhancement";
@@ -124,7 +123,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private SwitchPreference mAutoBrightnessPreference;
     private SwitchPreference mTapToWake;
     private EditTextPreference mDisplayDensity;
-    private ListPreference mToastAnimation;
     private SwitchPreference mDisableIM;
     private SwitchPreference mVolumeWake;
 
@@ -174,13 +172,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         disableUnusableTimeouts(mScreenTimeoutPreference);
         updateTimeoutPreferenceDescription(currentTimeout);
         updateDisplayRotationPreferenceDescription();
-
-        mToastAnimation = (ListPreference) prefSet.findPreference(KEY_TOAST_ANIMATION);
-        mToastAnimation.setSummary(mToastAnimation.getEntry());
-        int CurrentToastAnimation = Settings.System.getInt(
-                getContentResolver(),Settings.System.TOAST_ANIMATION, 1);
-        mToastAnimation.setValueIndex(CurrentToastAnimation);
-        mToastAnimation.setOnPreferenceChangeListener(this);
 
         mDisableIM = (SwitchPreference) findPreference(DISABLE_IMMERSIVE_MESSAGE);
         mDisableIM.setChecked((Settings.System.getInt(resolver,
@@ -626,14 +617,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                     Settings.System.WAKEUP_WHEN_PLUGGED_UNPLUGGED,
                     (Boolean) objValue ? 1 : 0);
         }
-        if (KEY_TOAST_ANIMATION.equals(key)) {
-            int index = mToastAnimation.findIndexOfValue((String) objValue);
-            Settings.System.putString(getContentResolver(),
-                    Settings.System.TOAST_ANIMATION, (String) objValue);
-            mToastAnimation.setSummary(mToastAnimation.getEntries()[index]);
-            Toast.makeText(getActivity(), "Toast animation test!!!",
-                    Toast.LENGTH_SHORT).show();
-		}			
         if (KEY_DISPLAY_DENSITY.equals(key)) {
             final int max = getResources().getInteger(R.integer.display_density_max);
             final int min = getResources().getInteger(R.integer.display_density_min);
