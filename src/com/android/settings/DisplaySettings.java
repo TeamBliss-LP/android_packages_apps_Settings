@@ -562,10 +562,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             return SunlightEnhancement.setEnabled(mSunlightEnhancement.isChecked());
         } else if (preference == mColorEnhancement) {
             return ColorEnhancement.setEnabled(mColorEnhancement.isChecked());
-        } else if (preference == mWakeWhenPluggedOrUnplugged) {
-            Settings.Global.putInt(getContentResolver(),
-                    Settings.Global.WAKE_WHEN_PLUGGED_OR_UNPLUGGED,
-                    mWakeWhenPluggedOrUnplugged.isChecked() ? 1 : 0);
             return true;
         }
 
