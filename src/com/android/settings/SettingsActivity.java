@@ -338,7 +338,8 @@ public class SettingsActivity extends Activity
             NavBar.class.getName(),
             AppCircleBar.class.getName(),
             ButtonSettings.class.getName(),
-            GestureAnywhereSettings.class.getName()
+            GestureAnywhereSettings.class.getName(),
+            WakeLockBlocker.class.getName()
     };
 
 

@@ -42,6 +42,11 @@
         android:title="@string/hfm_pref_screen_title"
         android:fragment="com.android.settings.bliss.hfm.HfmSettings" />            
 
+    <PreferenceScreen	
+        android:id="@+id/wakelock_blocker"
+        android:title="@string/wakelock_blocker"
+	android:fragment="com.android.settings.WakeLockBlocker" />
+	
     <SwitchPreference
         android:key="advanced_reboot"
         android:title="@string/advanced_reboot_title"

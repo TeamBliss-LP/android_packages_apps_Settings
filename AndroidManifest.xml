@@ -2089,6 +2089,9 @@
                        android:resource="@id/security_settings" />
         </activity-alias>
 
+        <activity android:name=".WakeLockBlocker" />
+
+
         <!-- Pseudo-activity used to provide an intent-filter entry point to encryption settings -->
         <activity android:name="Settings$CryptKeeperSettingsActivity"
                 android:label="@string/crypt_keeper_encrypt_title">
@@ -2436,13 +2439,11 @@
             </intent-filter>
         </receiver>
 
-
         <receiver android:name=".sim.SimBootReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED"></action>
             </intent-filter>
         </receiver>
-
 
         <receiver android:name="com.android.settings.bliss.hfm.IntentReceiver" >
             <intent-filter>
@@ -2451,6 +2452,10 @@
         </receiver>
 
         <service android:name="com.android.settings.bliss.hfm.CheckHosts" />
+
+        <activity android:name="com.android.settings.bliss.hfm.HfmWhitelist"
+                  android:label="@string/hfm_whitelist_title"
+                  android:taskAffinity="" />
 
         <provider
             android:name="android.support.v4.content.FileProvider"
@@ -2461,10 +2466,6 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
         </provider>
-        
-        <activity android:name="com.android.settings.bliss.hfm.HfmWhitelist"
-                  android:label="@string/hfm_whitelist_title"
-                  android:taskAffinity="" />
 
         <activity android:name="Settings$SimSettingsActivity"
                 android:label="@string/sim_settings_title"
