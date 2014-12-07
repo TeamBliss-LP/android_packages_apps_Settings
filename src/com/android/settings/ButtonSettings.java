@@ -68,7 +68,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
     private static final String CATEGORY_CAMERA = "camera_key";
     private static final String CATEGORY_VOLUME = "volume_keys";
     private static final String CATEGORY_BACKLIGHT = "key_backlight";
-    private static final String CATEGORY_NAVBAR = "navigation_bar";
+    private static final String CATEGORY_NAVBAR = "nav_bar";
     private static final String CATEGORY_HW_KEYS = "hw_keys";
 
     // Available custom actions to perform on a key press.
@@ -101,8 +101,6 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
     private SwitchPreference mEnableHwKeys;
     private SwitchPreference mPowerEndCall;
     private SwitchPreference mHomeAnswerCall;
-
-    private PreferenceCategory mNavigationPreferencesCat;
 
     private Handler mHandler;
 
@@ -140,6 +138,9 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
 
         mHandler = new Handler();
 
+        // Navigation bar category.
+        final PreferenceCategory navBarCategory =
+                (PreferenceCategory) prefScreen.findPreference(CATEGORY_NAVBAR);
         // Enable/disable navigation bar
         boolean hasNavBarByDefault = getResources().getBoolean(
                 com.android.internal.R.bool.config_showNavigationBar);
