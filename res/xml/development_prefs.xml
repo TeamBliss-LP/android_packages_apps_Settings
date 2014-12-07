@@ -27,6 +27,11 @@
         android:title="@string/hfm_pref_screen_title"
         android:fragment="com.android.settings.bliss.hfm.HfmSettings" />
 	
+    <PreferenceScreen	
+	android:id="@+id/development_settings"
+        android:title="@string/development_settings_title"
+        android:fragment="com.android.settings.DevelopmentSettings" />
+	
     <ListPreference
         android:key="media_scanner_on_boot"
         android:title="@string/media_scanner_on_boot_title"

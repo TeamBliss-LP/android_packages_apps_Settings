@@ -309,7 +309,8 @@ public class SettingsActivity extends Activity
             ApnSettings.class.getName(),
             BlacklistSettings.class.getName(),
             com.android.settings.cyanogenmod.PrivacySettings.class.getName(),
-            NavigationBarSettings.class.getName()
+            NavigationBarSettings.class.getName(),
+            WakeLockBlocker.class.getName()
     };
 
 
