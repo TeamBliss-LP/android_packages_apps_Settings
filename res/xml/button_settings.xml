@@ -17,12 +17,6 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
         
-    <com.android.settings.cyanogenmod.ButtonBacklightBrightness
-        android:key="button_backlight"
-        android:title="@string/button_backlight_title"
-        android:dialogTitle="@string/button_backlight_title"
-        android:persistent="false" />
-
     <PreferenceCategory
         android:key="nav_bar"
         android:title="@string/nav_bar_title" >
@@ -131,6 +125,12 @@
                 android:title="@string/navigation_bar_pref_title"
                 android:fragment="com.android.settings.bliss.NavigationBarSettings"
                 />
-    </PreferenceCategory>                    
+    </PreferenceCategory>
+    
+    <com.android.settings.cyanogenmod.ButtonBacklightBrightness
+        android:key="button_backlight"
+        android:title="@string/button_backlight_title"
+        android:dialogTitle="@string/button_backlight_title"
+        android:persistent="false" />                        
 
 </PreferenceScreen>
