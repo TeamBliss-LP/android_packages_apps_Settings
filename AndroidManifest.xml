@@ -2060,6 +2060,9 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
+        
+        <!-- Device Control Activity -->
+        <activity android:name="org.namelessrom.devicecontrol.MainActivity"/>        
 
         <activity android:name=".notificationlight.NotificationLightSettings" />
         <activity android:name=".notificationlight.BatteryLightSettings" />
