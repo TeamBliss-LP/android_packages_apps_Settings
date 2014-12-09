@@ -519,8 +519,9 @@ public class ActionListViewSettings extends ListFragment implements
             case QUICKTILE:
                 return ActionHelper.getQuickTileConfigWithDescription(
                     mActivity, mActionValuesKey, mActionEntriesKey);
+            case LOCKSCREEN_SHORTCUT:
+                return ActionHelper.getLockscreenShortcutConfig(mActivity);
 /* Disabled for now till all features are back. Enable it step per step!!!!!!
-        switch (mActionMode) {
             case NAV_BAR:
                 return ActionHelper.getNavBarConfigWithDescription(
                     mActivity, mActionValuesKey, mActionEntriesKey);
@@ -532,8 +533,8 @@ public class ActionListViewSettings extends ListFragment implements
                     mActivity, mActionValuesKey, mActionEntriesKey);
             case SHAKE_EVENTS_DISABLED:
                 return ActionHelper.getDisabledShakeApps(mActivity);
-        }
 */
+        }
         return null;
     }
 
@@ -542,8 +543,10 @@ public class ActionListViewSettings extends ListFragment implements
             case QUICKTILE:
                 ActionHelper.setQuickTileConfig(mActivity, actionConfigs, reset);
                 break;
+            case LOCKSCREEN_SHORTCUT:
+                ActionHelper.setLockscreenShortcutConfig(mActivity, actionConfigs, reset);
+                break;
 /* Disabled for now till all features are back. Enable it step per step!!!!!!
-        switch (mActionMode) {
             case NAV_BAR:
                 ActionHelper.setNavBarConfig(mActivity, actionConfigs, reset);
                 break;
@@ -556,8 +559,8 @@ public class ActionListViewSettings extends ListFragment implements
             case SHAKE_EVENTS_DISABLED:
                 ActionHelper.setDisabledShakeApps(mActivity, actionConfigs, reset);
                 break;
-        }
 */
+        }
     }
 
     private class ViewHolder {
@@ -616,6 +619,9 @@ public class ActionListViewSettings extends ListFragment implements
                         iconUri), 36);
             }
 
+            if (iconUri != null && iconUri.startsWith(ActionConstants.SYSTEM_ICON_IDENTIFIER)) {
+                d.setTint(getResources().getColor(R.color.dslv_icon_dark));
+            }
             holder.iconView.setImageDrawable(d);
 
             if (!mDisableIconPicker && holder.iconView.getDrawable() != null) {
@@ -895,6 +901,7 @@ public class ActionListViewSettings extends ListFragment implements
             public IconAdapter() {
                 labels = getResources().getStringArray(R.array.shortcut_icon_picker_labels);
                 icons = getResources().obtainTypedArray(R.array.shortcut_icon_picker_icons);
+                color = getResources().getColor(R.color.dslv_icon_dark);
             }
 
             @Override
@@ -929,6 +936,7 @@ public class ActionListViewSettings extends ListFragment implements
                 TextView tt = (TextView) iView.findViewById(android.R.id.text1);
                 tt.setText(labels[position]);
                 Drawable ic = ((Drawable) getItem(position)).mutate();
+                ic.setTint(color);
                 tt.setCompoundDrawablePadding(15);
                 tt.setCompoundDrawablesWithIntrinsicBounds(ic, null, null, null);
                 return iView;
