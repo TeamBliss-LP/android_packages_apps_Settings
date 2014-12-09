@@ -28,6 +28,15 @@
     <string name="share_bliss_summary">Let others know about BlissPop</string>
     <string name="share_message">Check out what #BlissPop is all about @ http://www.blissroms.com</string>
     <string name="share_chooser_title">Share BlissPop</string>
+
+    <!-- General strings -->
+    <string name="attention">Attention</string>
+    <string name="reset">Reset</string>
+    <string name="help">Help</string>
+    <string name="default_string">Default</string>
+    <string name="enabled">Enabled</string>
+    <string name="disabled">Disabled</string>
+    <string name="reset_message">Reset all entries to default?</string>
     
     <!-- Change Log strings -->
     <string name="changelog_title">View changelog</string>
