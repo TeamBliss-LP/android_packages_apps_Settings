@@ -40,9 +40,13 @@
                 android:fragment="com.android.settings.WallpaperTypeSettings" />
 
         <PreferenceScreen
-            android:key="display_rotation"
-            android:fragment="com.android.settings.cyanogenmod.DisplayRotation"
-            android:title="@string/display_rotation_title" />
+                android:key="display_rotation"
+                android:fragment="com.android.settings.cyanogenmod.DisplayRotation"
+                android:title="@string/display_rotation_title" />
+            
+        <com.android.settings.notification.DropDownPreference
+                android:key="auto_rotate"
+                android:title="@string/display_auto_rotate_title" />    
 
         <ListPreference
                 android:key="screen_timeout"

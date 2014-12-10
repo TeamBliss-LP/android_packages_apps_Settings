@@ -17,7 +17,6 @@
 
 package com.android.settings;
 
-import android.preference.CheckBoxPreference;
 import com.android.internal.view.RotationPolicy;
 import com.android.settings.notification.DropDownPreference;
 import com.android.settings.notification.DropDownPreference.Callback;
@@ -45,7 +44,6 @@ import android.hardware.SensorManager;
 import android.os.Build;
 import android.database.ContentObserver;
 import android.os.Bundle;
-import android.preference.CheckBoxPreference;
 import android.os.Handler;
 import android.os.RemoteException;
 import android.os.SystemProperties;
@@ -167,7 +165,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         final ContentResolver resolver = activity.getContentResolver();
 
         addPreferencesFromResource(R.xml.display_settings);
-
         PreferenceScreen prefSet = getPreferenceScreen();
         mDisplayRotationPreference = (PreferenceScreen) findPreference(KEY_DISPLAY_ROTATION);
 
@@ -186,7 +183,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         disableUnusableTimeouts(mScreenTimeoutPreference);
         updateTimeoutPreferenceDescription(currentTimeout);
         updateDisplayRotationPreferenceDescription();
-
 
         mToastAnimation = (ListPreference) prefSet.findPreference(KEY_TOAST_ANIMATION);
         mToastAnimation.setSummary(mToastAnimation.getEntry());
