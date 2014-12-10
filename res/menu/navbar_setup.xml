@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2009 The Android Open Source Project
-
+<!-- Copyright (C) 2014 VanirAOSP
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
      You may obtain a copy of the License at
@@ -14,15 +13,13 @@
      limitations under the License.
 -->
 
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@android:id/text1"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:gravity="center_vertical"
-    android:minHeight="?android:attr/listPreferredItemHeight"
-    android:drawablePadding="12dip"
-    android:paddingLeft="6dip"
-    android:paddingRight="6dip"
-    android:ellipsize="marquee"
-    android:singleLine="true"
-    android:textAppearance="?android:attr/textAppearanceLarge" />
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/menu_add_button"
+        android:icon="@drawable/ic_menu_add_dark"
+        android:showAsAction="always|withText"
+        android:orderInCategory="9999"/>
+    <item android:title="@string/change_layouts_title"
+        android:id="@+id/change_navbar_number"
+        android:showAsAction="always|withText"
+        android:orderInCategory="1"/>
+</menu>

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 SlimRoms Project
+ * Copyright (C) 2012 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,10 +16,14 @@
 
 package com.android.settings.bliss.util;
 
+import java.net.URISyntaxException;
+import java.util.ArrayList;
+
 import android.app.Activity;
 import android.app.Fragment;
 import android.content.Intent;
 import android.content.Intent.ShortcutIconResource;
+import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
@@ -30,28 +34,31 @@ import android.util.Log;
 
 import com.android.settings.R;
 
-import com.android.internal.util.bliss.AppHelper;
-
-import java.util.ArrayList;
-
 public class ShortcutPickerHelper {
+
+    private Fragment mParent;
+    private OnPickListener mListener;
 
     public static final int REQUEST_PICK_SHORTCUT = 100;
     public static final int REQUEST_PICK_APPLICATION = 101;
     public static final int REQUEST_CREATE_SHORTCUT = 102;
 
-    private Activity mParent;
-    private OnPickListener mListener;
-    private PackageManager mPackageManager;
-    private int lastFragmentId;
-
     public interface OnPickListener {
-        void shortcutPicked(String uri, String friendlyName, Bitmap bmp, boolean isApplication);
+
+        /**
+         * Callback after a shortcut is picked
+         *
+         * @param uri Intent for the shortcut
+         * @param friendlyName Title
+         * @param icon Icon for the shortcut, or null
+         * @param isApplication true for standard app, false for "shortcut"
+         */
+
+        void shortcutPicked(String uri, String friendlyName, Bitmap icon, boolean isApplication);
     }
 
-    public ShortcutPickerHelper(Activity parent, OnPickListener listener) {
+    public ShortcutPickerHelper(Fragment parent, OnPickListener listener) {
         mParent = parent;
-        mPackageManager = mParent.getPackageManager();
         mListener = listener;
     }
 
@@ -71,56 +78,29 @@ public class ShortcutPickerHelper {
         }
     }
 
-    public void pickShortcut(int fragmentId) {
-        pickShortcut(fragmentId, false);
+    public void pickShortcut() {
+        Bundle bundle = new Bundle();
+
+        ArrayList<String> shortcutNames = new ArrayList<String>();
+        shortcutNames.add(mParent.getString(R.string.group_applications));
+        bundle.putStringArrayList(Intent.EXTRA_SHORTCUT_NAME, shortcutNames);
+
+        ArrayList<ShortcutIconResource> shortcutIcons = new ArrayList<ShortcutIconResource>();
+        shortcutIcons.add(ShortcutIconResource.fromContext(mParent.getActivity(),
+                R.drawable.ic_launcher));
+        bundle.putParcelableArrayList(Intent.EXTRA_SHORTCUT_ICON_RESOURCE, shortcutIcons);
+
+        Intent pickIntent = new Intent(Intent.ACTION_PICK_ACTIVITY);
+        pickIntent.putExtra(Intent.EXTRA_INTENT, new Intent(Intent.ACTION_CREATE_SHORTCUT));
+        pickIntent.putExtra(Intent.EXTRA_TITLE, mParent.getText(R.string.select_custom_app_title));
+        pickIntent.putExtras(bundle);
+
+        mParent.startActivityForResult(pickIntent, REQUEST_PICK_SHORTCUT);
     }
 
-    public void pickShortcut(int fragmentId, boolean fullAppsOnly) {
-        lastFragmentId = fragmentId;
-
-        if (fullAppsOnly) {
-            Intent mainIntent = new Intent(Intent.ACTION_MAIN, null);
-            mainIntent.addCategory(Intent.CATEGORY_LAUNCHER);
-
-            Intent pickIntent = new Intent(Intent.ACTION_PICK_ACTIVITY);
-            pickIntent.putExtra(Intent.EXTRA_INTENT, mainIntent);
-            startFragmentOrActivity(pickIntent, REQUEST_PICK_APPLICATION);
-        } else {
-            Bundle bundle = new Bundle();
-
-            ArrayList<String> shortcutNames = new ArrayList<String>();
-            shortcutNames.add(mParent.getString(R.string.shortcuts_applications));
-            bundle.putStringArrayList(Intent.EXTRA_SHORTCUT_NAME, shortcutNames);
-
-            ArrayList<ShortcutIconResource> shortcutIcons = new ArrayList<ShortcutIconResource>();
-            shortcutIcons.add(ShortcutIconResource.fromContext(mParent,
-                    android.R.drawable.sym_def_app_icon));
-            bundle.putParcelableArrayList(Intent.EXTRA_SHORTCUT_ICON_RESOURCE, shortcutIcons);
-
-            Intent pickIntent = new Intent(Intent.ACTION_PICK_ACTIVITY);
-            pickIntent.putExtra(Intent.EXTRA_INTENT, new Intent(Intent.ACTION_CREATE_SHORTCUT));
-            pickIntent.putExtra(Intent.EXTRA_TITLE, mParent.getText(
-                    R.string.shortcuts_select_custom_app_title));
-            pickIntent.putExtras(bundle);
-            startFragmentOrActivity(pickIntent, REQUEST_PICK_SHORTCUT);
-        }
-    }
-
-    private void startFragmentOrActivity(Intent pickIntent, int requestCode) {
-        if (lastFragmentId == 0) {
-            mParent.startActivityForResult(pickIntent, requestCode);
-        } else {
-            Fragment cFrag = mParent.getFragmentManager().findFragmentById(lastFragmentId);
-            if (cFrag != null) {
-                mParent.startActivityFromFragment(cFrag, pickIntent, requestCode);
-            }
-        }
-    }
-
-    private void processShortcut(Intent intent,
-        int requestCodeApplication, int requestCodeShortcut) {
+    private void processShortcut(Intent intent, int requestCodeApplication, int requestCodeShortcut) {
         // Handle case where user selected "Applications"
-        String applicationName = mParent.getResources().getString(R.string.shortcuts_applications);
+        String applicationName = mParent.getResources().getString(R.string.group_applications);
         String shortcutName = intent.getStringExtra(Intent.EXTRA_SHORTCUT_NAME);
 
         if (applicationName != null && applicationName.equals(shortcutName)) {
@@ -129,49 +109,83 @@ public class ShortcutPickerHelper {
 
             Intent pickIntent = new Intent(Intent.ACTION_PICK_ACTIVITY);
             pickIntent.putExtra(Intent.EXTRA_INTENT, mainIntent);
-            startFragmentOrActivity(pickIntent, requestCodeApplication);
+            mParent.startActivityForResult(pickIntent, requestCodeApplication);
         } else {
-            startFragmentOrActivity(intent, requestCodeShortcut);
+            mParent.startActivityForResult(intent, requestCodeShortcut);
         }
     }
 
     private void completeSetCustomApp(Intent data) {
-        mListener.shortcutPicked(data.toUri(0),
-            AppHelper.getFriendlyActivityName(mParent, mPackageManager, data, false), null, true);
+        mListener.shortcutPicked(data.toUri(0), getFriendlyActivityName(data, false), null, true);
     }
 
     private void completeSetCustomShortcut(Intent data) {
         Intent intent = data.getParcelableExtra(Intent.EXTRA_SHORTCUT_INTENT);
         /* preserve shortcut name, we want to restore it later */
-        intent.putExtra(Intent.EXTRA_SHORTCUT_NAME, data.getStringExtra(
-                Intent.EXTRA_SHORTCUT_NAME));
+        intent.putExtra(Intent.EXTRA_SHORTCUT_NAME, data.getStringExtra(Intent.EXTRA_SHORTCUT_NAME));
         String appUri = intent.toUri(0);
         appUri = appUri.replaceAll("com.android.contacts.action.QUICK_CONTACT",
                 "android.intent.action.VIEW");
-
-        // Check if icon is present
+        /* Try to get the icon (if any) */
         Bitmap bmp = null;
         Parcelable extra = data.getParcelableExtra(Intent.EXTRA_SHORTCUT_ICON);
-        if (extra != null && extra instanceof Bitmap) {
+        if (extra != null && extra instanceof Bitmap)
             bmp = (Bitmap) extra;
-        }
-        // No icon till now check if icon resource is present
         if (bmp == null) {
             extra = data.getParcelableExtra(Intent.EXTRA_SHORTCUT_ICON_RESOURCE);
             if (extra != null && extra instanceof Intent.ShortcutIconResource) {
                 try {
                     Intent.ShortcutIconResource iconResource = (ShortcutIconResource) extra;
-                    Resources resources =
-                            mPackageManager.getResourcesForApplication(iconResource.packageName);
+                    final PackageManager packageManager = mParent.getActivity().getPackageManager();
+                    Resources resources = packageManager.getResourcesForApplication(iconResource.packageName);
                     final int id = resources.getIdentifier(iconResource.resourceName, null, null);
                     bmp = BitmapFactory.decodeResource(resources, id);
                 } catch (Exception e) {
-                    e.printStackTrace();
+                    Log.w("beanstalk.ShortcutPicker", "Could not load shortcut icon: " + extra);
                 }
             }
         }
-        mListener.shortcutPicked(appUri,
-                AppHelper.getFriendlyShortcutName(mParent, mPackageManager, intent), bmp, false);
+        mListener.shortcutPicked(appUri, getFriendlyShortcutName(intent), bmp, false);
     }
 
+    private String getFriendlyActivityName(Intent intent, boolean labelOnly) {
+        PackageManager pm = mParent.getActivity().getPackageManager();
+        ActivityInfo ai = intent.resolveActivityInfo(pm, PackageManager.GET_ACTIVITIES);
+        String friendlyName = null;
+
+        if (ai != null) {
+            friendlyName = ai.loadLabel(pm).toString();
+            if (friendlyName == null && !labelOnly) {
+                friendlyName = ai.name;
+            }
+        }
+
+        return friendlyName != null || labelOnly ? friendlyName : intent.toUri(0);
+    }
+
+    private String getFriendlyShortcutName(Intent intent) {
+        String activityName = getFriendlyActivityName(intent, true);
+        String name = intent.getStringExtra(Intent.EXTRA_SHORTCUT_NAME);
+
+        if (activityName != null && name != null) {
+            return activityName + ": " + name;
+        }
+        return name != null ? name : intent.toUri(0);
+    }
+
+    public String getFriendlyNameForUri(String uri) {
+        if (uri == null) {
+            return null;
+        }
+
+        try {
+            Intent intent = Intent.parseUri(uri, 0);
+            if (Intent.ACTION_MAIN.equals(intent.getAction())) {
+                return getFriendlyActivityName(intent, false);
+            }
+            return getFriendlyShortcutName(intent);
+        } catch (URISyntaxException e) {
+        }
+        return uri;
+    }
 }
