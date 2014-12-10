@@ -140,12 +140,6 @@
                    android:title="@string/disable_immersive_message_title"
                    android:summary="@string/disable_immersive_message_summary"
                    android:persistent="false" /> 
-                   
-              <PreferenceScreen
-                   android:key="display_rotation"
-                   android:fragment="com.android.settings.bliss.DisplayRotation"
-                   android:title="@string/display_rotation_title" /> 
-                   
 
                 <SwitchPreference
                     android:key="adaptive_backlight"
