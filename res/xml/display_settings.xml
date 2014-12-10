@@ -41,12 +41,9 @@
 
         <PreferenceScreen
                 android:key="display_rotation"
-                android:fragment="com.android.settings.cyanogenmod.DisplayRotation"
-                android:title="@string/display_rotation_title" />
+		android:title="@string/display_rotation_title"
+                android:fragment="com.android.settings.cyanogenmod.DisplayRotation" />
             
-        <com.android.settings.notification.DropDownPreference
-                android:key="auto_rotate"
-                android:title="@string/display_auto_rotate_title" />    
 
         <ListPreference
                 android:key="screen_timeout"
@@ -166,13 +163,13 @@
                     android:summary="@string/adaptive_backlight_summary"
                     android:defaultValue="true" />
 
-               <SwitchPreference
+                <SwitchPreference
                     android:key="sunlight_enhancement"
                     android:title="@string/sunlight_enhancement_title"
                     android:summary="@string/sunlight_enhancement_summary"
                     android:defaultValue="true" />
 
-               <SwitchPreference
+                <SwitchPreference
                     android:key="color_enhancement"
                     android:title="@string/color_enhancement_title"
                     android:summary="@string/color_enhancement_summary"
