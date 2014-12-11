@@ -96,7 +96,12 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
      * Whether to show the development settings to the user.  Default is false.
      */
     public static final String PREF_SHOW = "show";
-
+	
+	/**
+     * Whether to show unnacounted and over-counted battery stats. Default is false.
+     */
+    public static final String SHOW_UNAC_AND_OVERCOUNTED_STATS = "show_unac_and_overcounted_stats";
+	
     private static final String MEDIA_SCANNER_ON_BOOT = "media_scanner_on_boot";
     private static final String ENABLE_ADB = "enable_adb";
     private static final String ADB_NOTIFY = "adb_notify";
@@ -201,6 +206,7 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
     private boolean mDontPokeProperties;
 
     private ListPreference mMSOB;
+    private SwitchPreference mShowUnacAndOvercounted;
     private SwitchPreference mEnableAdb;
     private SwitchPreference mAdbNotify;
     private SwitchPreference mAdbOverNetwork;
@@ -304,6 +310,8 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
         }
 
         addPreferencesFromResource(R.xml.development_prefs);
+		
+	    mShowUnacAndOvercounted = findAndInitSwitchPref(SHOW_UNAC_AND_OVERCOUNTED_STATS);
 
         final PreferenceGroup debugDebuggingCategory = (PreferenceGroup)
                 findPreference(DEBUG_DEBUGGING_CATEGORY_KEY);
@@ -743,6 +751,7 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
         updateAllOptions();
         mDontPokeProperties = false;
         pokeSystemProperties();
+	    mShowUnacAndOvercounted.setChecked(false);
     }
 
     private void updateRootAccessOptions() {

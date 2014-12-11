@@ -570,4 +570,8 @@ sword is entered</string>
     <!-- Device specific settings -->
     <string name="screen_off_gesture_settings_title">Screen off gestures</string>    
 
+    <!-- Unaccounted and overcounted battery stats -->
+    <string name="show_unac_and_overcounted_stats_title">Show unaccounted/overcounted stats</string>
+    <string name="show_unac_and_overcounted_stats_summary">Show in battery statistics unaccounted and over-counted usage.</string>
+
 </resources>
