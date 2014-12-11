@@ -67,6 +67,7 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
         addPreferencesFromResource(R.xml.status_bar_settings);
 
         PreferenceScreen prefSet = getPreferenceScreen();
+        ContentResolver resolver = getActivity().getContentResolver();
 
         PackageManager pm = getPackageManager();
         Resources systemUiResources;
@@ -86,7 +87,7 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
         mTicker.setChecked(Settings.System.getInt(getContentResolver(),
                 Settings.System.STATUS_BAR_TICKER_ENABLED, tickerEnabled ? 1 : 0) == 1);
         mTicker.setOnPreferenceChangeListener(this);
-        mStatusBarCarrier = (CheckBoxPreference) prefSet.findPreference(STATUS_BAR_CARRIER);
+        mStatusBarCarrier = (SwitchPreference) prefSet.findPreference(STATUS_BAR_CARRIER);
         mStatusBarCarrier.setChecked((Settings.System.getInt(resolver, Settings.System.STATUS_BAR_CARRIER, 0) == 1));
         mStatusBarCarrier.setOnPreferenceChangeListener(this);
         mCustomCarrierLabel = (PreferenceScreen) prefSet.findPreference(CUSTOM_CARRIER_LABEL);
@@ -111,6 +112,7 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+		ContentResolver resolver = getActivity().getContentResolver();
         if (preference == mTicker) {
             Settings.System.putInt(getContentResolver(),
                     Settings.System.STATUS_BAR_TICKER_ENABLED,
@@ -141,6 +143,7 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
             mClockStyle.setSummary(getString(R.string.disabled));
         }
     }
+    
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
             final Preference preference) {
