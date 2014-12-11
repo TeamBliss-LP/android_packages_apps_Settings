@@ -41,6 +41,7 @@ import android.widget.EditText;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 import com.android.internal.util.bliss.DeviceUtils;
 
@@ -52,11 +53,15 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
     private static final String KEY_STATUS_BAR_TICKER = "status_bar_ticker_enabled";
 	private static final String STATUS_BAR_CARRIER = "status_bar_carrier";
     private static final String CUSTOM_CARRIER_LABEL = "custom_carrier_label";
+    private static final String STATUS_BAR_CARRIER_COLOR = "status_bar_carrier_color";
+
+    static final int DEFAULT_STATUS_CARRIER_COLOR = 0xffffffff;
 
     private PreferenceScreen mClockStyle;
     private SwitchPreference mTicker;
 	private SwitchPreference mStatusBarCarrier;
     private PreferenceScreen mCustomCarrierLabel;
+    private ColorPickerPreference mCarrierColorPicker;
 
     private String mCustomCarrierLabelText;
 
@@ -68,6 +73,9 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
 
         PreferenceScreen prefSet = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();
+        
+         int intColor;
+         String hexColor;
 
         PackageManager pm = getPackageManager();
         Resources systemUiResources;
@@ -91,6 +99,15 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
         mStatusBarCarrier.setChecked((Settings.System.getInt(resolver, Settings.System.STATUS_BAR_CARRIER, 0) == 1));
         mStatusBarCarrier.setOnPreferenceChangeListener(this);
         mCustomCarrierLabel = (PreferenceScreen) prefSet.findPreference(CUSTOM_CARRIER_LABEL);
+		
+		mCarrierColorPicker = (ColorPickerPreference) findPreference(STATUS_BAR_CARRIER_COLOR);
+        mCarrierColorPicker.setOnPreferenceChangeListener(this);
+        intColor = Settings.System.getInt(getContentResolver(),
+                    Settings.System.STATUS_BAR_CARRIER_COLOR, DEFAULT_STATUS_CARRIER_COLOR);
+        hexColor = String.format("#%08x", (0xffffffff & intColor));
+        mCarrierColorPicker.setSummary(hexColor);
+        mCarrierColorPicker.setNewPreviewColor(intColor);
+		
         if (TelephonyManager.getDefault().isMultiSimEnabled()) {
             prefSet.removePreference(mStatusBarCarrier);
             prefSet.removePreference(mCustomCarrierLabel);
@@ -121,7 +138,15 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
         } else if (preference == mStatusBarCarrier) {
             boolean value = (Boolean) newValue;
             Settings.System.putInt(resolver, Settings.System.STATUS_BAR_CARRIER, value ? 1 : 0);
-            return true;			
+            return true;
+        } else if (preference == mCarrierColorPicker) {
+            String hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(newValue)));
+            preference.setSummary(hex);
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.STATUS_BAR_CARRIER_COLOR, intHex);
+            return true;      			
          }
          return false;
     }
