@@ -566,4 +566,7 @@ sword is entered</string>
     <string name="custom_carrier_label_explain">Please enter a new label. Leave blank to revert to stock label.</string>
     <string name="custom_carrier_label_notset">Custom label currently not set</string>    
     
+    <!-- Device specific settings -->
+    <string name="screen_off_gesture_settings_title">Screen off gestures</string>    
+
 </resources>
