@@ -225,9 +225,6 @@ public class AccessibilitySettings extends SettingsPreferenceFragment implements
         } else if (mToggleHighTextContrastPreference == preference) {
             handleToggleTextContrastPreferenceChange((Boolean) newValue);
             return true;
-        } else if (mToggleLockScreenRotationPreference == preference) {
-            handleLockScreenRotationPreferenceChange((Boolean) newValue);
-            return true;
         } else if (mToggleSpeakPasswordPreference == preference) {
             handleToggleSpeakPasswordPreferenceChange((Boolean) newValue);
             return true;
