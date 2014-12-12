@@ -56,6 +56,9 @@ public class BatteryStyle extends SettingsPreferenceFragment
     private static final String PREF_BATT_BAR_COLOR = "battery_bar_color";
     private static final String PREF_BATT_BAR_WIDTH = "battery_bar_thickness";
     private static final String PREF_BATT_ANIMATE = "battery_bar_animate";
+    private static final String STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
+
+    private ListPreference mStatusBarBattery;
 
 
     private static final int MENU_RESET = Menu.FIRST;
@@ -129,6 +132,15 @@ public class BatteryStyle extends SettingsPreferenceFragment
         mBatteryBarThickness.setSummary(mBatteryBarThickness.getEntry());
 
         updateBatteryBarOptions();
+        
+        mStatusBarBattery = (ListPreference) findPreference(STATUS_BAR_SHOW_BATTERY_PERCENT);
+
+        int batteryStyle = Settings.System.getInt(
+                resolver, Settings.System.STATUS_BAR_SHOW_BATTERY_PERCENT, 0);
+        mStatusBarBattery.setValue(String.valueOf(batteryStyle));
+        mStatusBarBattery.setSummary(mStatusBarBattery.getEntry());
+        mStatusBarBattery.setOnPreferenceChangeListener(this);
+    }
 
         setHasOptionsMenu(true);
         mCheckPreferences = true;
@@ -169,6 +181,13 @@ public class BatteryStyle extends SettingsPreferenceFragment
             Settings.System.putInt(resolver, Settings.System.STATUSBAR_BATTERY_BAR_THICKNESS, val);
             mBatteryBarThickness.setSummary(mBatteryBarThickness.getEntries()[index]);
             return true;
+        } else if (preference == mStatusBarBattery) {
+            int batteryStyle = Integer.valueOf((String) newValue);
+            int index = mStatusBarBattery.findIndexOfValue((String) newValue);
+            Settings.System.putInt(
+                    resolver, Settings.System.STATUS_BAR_SHOW_BATTERY_PERCENT, batteryStyle);
+            mStatusBarBattery.setSummary(mStatusBarBattery.getEntries()[index]);
+            return true;            
         }
         return false;
     }
