@@ -140,7 +140,6 @@ public class BatteryStyle extends SettingsPreferenceFragment
         mStatusBarBattery.setValue(String.valueOf(batteryStyle));
         mStatusBarBattery.setSummary(mStatusBarBattery.getEntry());
         mStatusBarBattery.setOnPreferenceChangeListener(this);
-    }
 
         setHasOptionsMenu(true);
         mCheckPreferences = true;
