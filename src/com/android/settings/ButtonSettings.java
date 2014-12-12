@@ -285,7 +285,8 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
         updateNavBarSettings();
         final ButtonBacklightBrightness backlight =
                 (ButtonBacklightBrightness) findPreference(KEY_BUTTON_BACKLIGHT);
-        if (!backlight.isButtonSupported() && !backlight.isKeyboardSupported()) {
+        if (!backlight.isButtonSupported() && !backlight.isKeyboardSupported()
+            || !getResources().getBoolean(com.android.internal.R.bool.config_hwKeysPref)) {
             prefScreen.removePreference(backlight);
         }
     }
