@@ -28,9 +28,9 @@
         android:fragment="com.android.settings.bliss.hfm.HfmSettings" />
 	
     <PreferenceScreen	
-	android:id="@+id/development_settings"
-        android:title="@string/development_settings_title"
-        android:fragment="com.android.settings.DevelopmentSettings" />
+        android:id="@+id/wakelock_blocker"
+        android:title="@string/wakelock_blocker"
+	android:fragment="com.android.settings.WakeLockBlocker" />
 	
     <ListPreference
         android:key="media_scanner_on_boot"
