@@ -2076,6 +2076,10 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".aicp.gestureanywhere.GestureAnywhereBuilderActivity" />
+        <activity android:name=".aicp.gestureanywhere.GestureAnywhereCreateGestureActivity" />
+	
         
         <!-- Device Control Activity -->
         <activity android:name="org.namelessrom.devicecontrol.MainActivity"/>        

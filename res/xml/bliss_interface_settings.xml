@@ -35,6 +35,13 @@
         android:key="quick_settings"
         android:fragment="com.android.settings.bliss.QsSettings"
         android:title="@string/qs_title"
-        android:icon="@drawable/ic_sysbar_quicksettings" />        
+        android:icon="@drawable/ic_sysbar_quicksettings" />
+	
+    <!-- Gesture anywhere -->
+    <PreferenceScreen
+        android:key="gesture_anywhere"
+        android:fragment="com.android.settings.bliss.gestureanywhere.GestureAnywhereSettings"
+        android:title="@string/gesture_anywhere_title"
+	android:icon="@drawable/ic_settings_gesture_anywhere" />	        
 
 </PreferenceScreen>
