@@ -2086,8 +2086,8 @@
             </intent-filter>
         </activity>		
 
-        <activity android:name=".aicp.gestureanywhere.GestureAnywhereBuilderActivity" />
-        <activity android:name=".aicp.gestureanywhere.GestureAnywhereCreateGestureActivity" />
+        <activity android:name=".bliss.gestureanywhere.GestureAnywhereBuilderActivity" />
+        <activity android:name=".bliss.gestureanywhere.GestureAnywhereCreateGestureActivity" />
 	
         
         <!-- Device Control Activity -->
