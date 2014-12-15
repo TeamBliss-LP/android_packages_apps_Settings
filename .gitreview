@@ -1,5 +1,5 @@
 [gerrit]
-host=buildbox.blissroms.com
+host=review.blissroms.com
 port=8081
-project=android_packages_apps_Settings.git
+project=TeamBliss-LP/android_packages_apps_Settings.git
 defaultbranch=lp5.0
