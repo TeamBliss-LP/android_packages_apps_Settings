@@ -105,6 +105,12 @@
         android:summary="@string/pref_scrollingcache_summary"
         android:entries="@array/entries_scrollingcache"
         android:entryValues="@array/values_scrollingcache" />
+        
+    <PreferenceScreen
+        android:key="interface_animation_scroll"
+        android:fragment="com.android.settings.bliss.ScrollAnimationInterfaceSettings"
+        android:title="@string/scrolling_title"
+        android:summary="@string/scrolling_summary" />        
 
     <PreferenceCategory android:key="debug_debugging_category"
             android:title="@string/debug_debugging_category">
