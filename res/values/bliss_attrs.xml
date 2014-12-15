@@ -19,4 +19,8 @@
         <attr name="unitsLeft" format="string" />
         <attr name="unitsRight" format="string" />
     </declare-styleable>
+
+    <!-- Minimum prediction score required to pass a gesture as recognized -->
+    <integer name="min_gesture_prediction_score">2</integer>
+
 </resources>
