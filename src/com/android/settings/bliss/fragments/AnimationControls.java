@@ -23,7 +23,7 @@ import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceScreen;
-import android.preference.CheckBoxPreference;
+import android.preference.SwitchPreference;
 import android.provider.Settings;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.widgets.AnimBarPreference;
@@ -59,7 +59,7 @@ public class AnimationControls extends SettingsPreferenceFragment implements OnP
     ListPreference mWallpaperIntraOpen;
     ListPreference mWallpaperIntraClose;
     AnimBarPreference mAnimationDuration;
-    CheckBoxPreference mAnimNoOverride;
+    SwitchPreference mAnimNoOverride;
 
     private int[] mAnimations;
     private String[] mAnimationsStrings;
@@ -82,7 +82,7 @@ public class AnimationControls extends SettingsPreferenceFragment implements OnP
             mAnimationsNum[i] = String.valueOf(mAnimations[i]);
         }
 
-        mAnimNoOverride = (CheckBoxPreference) findPreference(ANIMATION_NO_OVERRIDE);
+        mAnimNoOverride = (SwitchPreference) findPreference(ANIMATION_NO_OVERRIDE);
         mAnimNoOverride.setChecked(Settings.System.getBoolean(mContentRes,
                 Settings.System.ANIMATION_CONTROLS_NO_OVERRIDE, false));
 
