@@ -101,7 +101,7 @@
            android:icon="@drawable/ic_bliss_equalizer" >
            <intent
               android:action="android.intent.action.MAIN"
-              android:targetClass="org.cyanpgenmod.audiofx.ActivityMusic"
+              android:targetClass="org.cyanogenmod.audiofx.ActivityMusic"
               android:targetPackage="org.cyanogenmod.audiofx" />
         </dashboard-tile>                   
 
