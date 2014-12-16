@@ -40,7 +40,7 @@
     
     <!--Eqalizer-->
     <string name="equalizer_settings_title">Equalizer</string>
-    <string name="equalizer_summary">ViPER4Android Access</string>
+    <string name="equalizer_summary">AudioFX Access</string>
     
     <!-- Display desity -->
     <string name="display_density">Display density</string>
