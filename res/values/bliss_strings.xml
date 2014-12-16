@@ -65,7 +65,7 @@
     <string name="toast_Translucent_animation">Translucent animation</string>
     
     <!-- Animation Controls -->
-    <string name="title_animation_controls">AOKP Animations</string>
+    <string name="title_animation_controls">System Animations</string>
     <string name="activity_open_title">Activity Open Animation</string>
     <string name="activity_close_title">Activity Close Animation</string>
     <string name="task_open_title">Task Open Animation</string>
