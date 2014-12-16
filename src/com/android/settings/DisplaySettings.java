@@ -230,7 +230,8 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         }
 
         mTapToWake = (SwitchPreference) findPreference(KEY_TAP_TO_WAKE);
-        if (!isTapToWakeSupported()) {
+
+        if (!isTapToWakeSupported() || isDeviceHandlerInstalled()) {
             advancedPrefs.removePreference(mTapToWake);
             mTapToWake = null;
         }
