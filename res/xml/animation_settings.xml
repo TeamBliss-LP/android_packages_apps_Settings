@@ -19,21 +19,35 @@
     android:title="@string/animation_settings_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-               <ListPreference
-                   android:key="toast_animation"
-                   android:title="@string/toast_animation_title"
-                   android:entries="@array/toast_animation_entries"
-                   android:entryValues="@array/toast_animation_values"
-                   android:persistent="false" />
+    <ListPreference
+        android:key="toast_animation"
+        android:title="@string/toast_animation_title"
+        android:entries="@array/toast_animation_entries"
+        android:entryValues="@array/toast_animation_values"
+        android:persistent="false" />
 		   
-               <PreferenceScreen
-                   android:id="@+id/listview"
-                   android:fragment="com.android.settings.bliss.Listview"
-                   android:title="@string/listview_category" />
+    <PreferenceScreen
+        android:id="@+id/listview"
+        android:fragment="com.android.settings.bliss.Listview"
+        android:title="@string/listview_category" />
 		   		   		
-               <PreferenceScreen
-                   android:id="@+id/animations"
-                   android:title="@string/title_animation_controls"
-                   android:fragment="com.android.settings.bliss.fragments.AnimationControls" />
+    <PreferenceScreen
+        android:id="@+id/animations"
+        android:title="@string/title_animation_controls"
+        android:fragment="com.android.settings.bliss.fragments.AnimationControls" />
+                   
+    <ListPreference
+        android:key="pref_scrollingcache"
+        android:dialogTitle="@string/pref_scrollingcache_title"
+        android:title="@string/pref_scrollingcache_title"
+        android:summary="@string/pref_scrollingcache_summary"
+        android:entries="@array/entries_scrollingcache"
+        android:entryValues="@array/values_scrollingcache" />
+        
+    <PreferenceScreen
+        android:key="interface_animation_scroll"
+        android:fragment="com.android.settings.bliss.ScrollAnimationInterfaceSettings"
+        android:title="@string/scrolling_title"
+        android:summary="@string/scrolling_summary" />                    
 	
 </PreferenceScreen>
