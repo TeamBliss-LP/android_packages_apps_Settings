@@ -33,6 +33,7 @@ import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceScreen;
 import android.preference.SeekBarPreference;
+import android.os.SystemProperties;
 import android.provider.MediaStore;
 import android.provider.Settings;
 import android.view.Display;
