@@ -64,6 +64,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
 
     private static final String CATEGORY_POWER = "power_key";
     private static final String CATEGORY_HOME = "home_key";
+    private static final String CATEGORY_BACK = "back_key";
     private static final String CATEGORY_MENU = "menu_key";
     private static final String CATEGORY_ASSIST = "assist_key";
     private static final String CATEGORY_APPSWITCH = "app_switch_key";
@@ -94,6 +95,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
     public static final int KEY_MASK_ASSIST = 0x08;
     public static final int KEY_MASK_APP_SWITCH = 0x10;
     public static final int KEY_MASK_CAMERA = 0x20;
+    public static final int KEY_MASK_VOLUME = 0x40;
 
     private ListPreference mHomeLongPressAction;
     private ListPreference mHomeDoubleTapAction;
@@ -120,18 +122,29 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
 
         final int deviceKeys = getResources().getInteger(
                 com.android.internal.R.integer.config_deviceHardwareKeys);
+        final int deviceWakeKeys = getResources().getInteger(
+                com.android.internal.R.integer.config_deviceHardwareWakeKeys);
 
         final boolean hasPowerKey = KeyCharacterMap.deviceHasKey(KeyEvent.KEYCODE_POWER);
         final boolean hasHomeKey = (deviceKeys & KEY_MASK_HOME) != 0;
+        final boolean hasBackKey = (deviceKeys & KEY_MASK_BACK) != 0;
         final boolean hasMenuKey = (deviceKeys & KEY_MASK_MENU) != 0;
         final boolean hasAssistKey = (deviceKeys & KEY_MASK_ASSIST) != 0;
         final boolean hasAppSwitchKey = (deviceKeys & KEY_MASK_APP_SWITCH) != 0;
+        final boolean hasVolumeKeys = (deviceKeys & KEY_MASK_VOLUME) != 0;
+
+        final boolean showHomeWake = (deviceWakeKeys & KEY_MASK_HOME) != 0;
+        final boolean showBackWake = (deviceWakeKeys & KEY_MASK_BACK) != 0;
+        final boolean showMenuWake = (deviceWakeKeys & KEY_MASK_MENU) != 0;
+        final boolean showVolumeWake = (deviceWakeKeys & KEY_MASK_VOLUME) != 0;
 
         boolean hasAnyBindableKey = false;
         final PreferenceCategory powerCategory =
                 (PreferenceCategory) prefScreen.findPreference(CATEGORY_POWER);
         final PreferenceCategory homeCategory =
                 (PreferenceCategory) prefScreen.findPreference(CATEGORY_HOME);
+        final PreferenceCategory backCategory =
+                (PreferenceCategory) prefScreen.findPreference(CATEGORY_BACK);
         final PreferenceCategory menuCategory =
                 (PreferenceCategory) prefScreen.findPreference(CATEGORY_MENU);
         final PreferenceCategory appSwitchCategory =
@@ -174,13 +187,14 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
             if (!Utils.isVoiceCapable(getActivity())) {
                 powerCategory.removePreference(mPowerEndCall);
                 mPowerEndCall = null;
+                prefScreen.removePreference(powerCategory);
             }
         } else {
             prefScreen.removePreference(powerCategory);
         }
 
         if (hasHomeKey) {
-            if (!res.getBoolean(R.bool.config_show_homeWake)) {
+            if (!showHomeWake) {
                 homeCategory.removePreference(findPreference(Settings.System.HOME_WAKE_SCREEN));
             }
 
@@ -218,7 +232,20 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
             prefScreen.removePreference(homeCategory);
         }
 
+        if (hasBackKey) {
+            if (!showBackWake) {
+                backCategory.removePreference(findPreference(Settings.System.BACK_WAKE_SCREEN));
+                prefScreen.removePreference(backCategory);
+            }
+        } else {
+            prefScreen.removePreference(backCategory);
+        }
+
         if (hasMenuKey) {
+            if (!showMenuWake) {
+                menuCategory.removePreference(findPreference(Settings.System.MENU_WAKE_SCREEN));
+            }
+
             int pressAction = Settings.System.getInt(resolver,
                     Settings.System.KEY_MENU_ACTION, ACTION_MENU);
             mMenuPressAction = initActionList(KEY_MENU_PRESS, pressAction);
