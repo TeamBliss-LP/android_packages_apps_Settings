@@ -83,7 +83,6 @@ import com.android.settings.deviceinfo.Memory;
 import com.android.settings.deviceinfo.UsbSettings;
 import com.android.settings.fuelgauge.BatterySaverSettings;
 import com.android.settings.fuelgauge.PowerUsageSummary;
-import com.android.settings.bliss.NavigationBarSettings;
 import com.android.settings.notification.NotificationAppList;
 import com.android.settings.notification.OtherSoundSettings;
 import com.android.settings.profiles.NFCProfileTagCallback;
@@ -241,8 +240,7 @@ public class SettingsActivity extends Activity
             R.id.nfc_payment_settings,
             R.id.home_settings,
             R.id.dashboard,
-            R.id.privacy_settings_cyanogenmod,
-            R.id.navigation_bar_settings
+            R.id.privacy_settings_cyanogenmod
     };
 
     private static final String[] ENTRY_FRAGMENTS = {
@@ -309,7 +307,6 @@ public class SettingsActivity extends Activity
             ApnSettings.class.getName(),
             BlacklistSettings.class.getName(),
             com.android.settings.cyanogenmod.PrivacySettings.class.getName(),
-            NavigationBarSettings.class.getName(),
             WakeLockBlocker.class.getName()
     };
 

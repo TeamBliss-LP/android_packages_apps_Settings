@@ -114,19 +114,7 @@
             android:persistent="false" />
 
     </PreferenceCategory>
-    
-    <PreferenceCategory
-        android:key="navigation_bar_simulate"
-        android:title="@string/navigation_bar_simulate_category">
-
-        <!-- Nav Bar Settings -->
-        <PreferenceScreen
-                android:id="@+id/navigation_bar_settings"
-                android:title="@string/navigation_bar_pref_title"
-                android:fragment="com.android.settings.bliss.NavigationBarSettings"
-                />
-    </PreferenceCategory>
-    
+     
     <com.android.settings.cyanogenmod.ButtonBacklightBrightness
         android:key="button_backlight"
         android:title="@string/button_backlight_title"
