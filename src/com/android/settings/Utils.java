@@ -761,13 +761,9 @@ public final class Utils {
 
     /* returns whether the device has volume rocker or not. */
     public static boolean hasVolumeRocker(Context context) {
-<<<<<<< HEAD
         final int deviceKeys = context.getResources().getInteger(
                 com.android.internal.R.integer.config_deviceHardwareKeys);
         return (deviceKeys & ButtonSettings.KEY_MASK_VOLUME) != 0;
-=======
-        return context.getResources().getBoolean(R.bool.has_volume_rocker);
->>>>>>> fc54f98... Settings: Volume key cursor control (2/2)
     }
 
     /**
