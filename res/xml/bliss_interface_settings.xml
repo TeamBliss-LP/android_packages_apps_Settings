@@ -48,6 +48,13 @@
          android:id="@+id/animation_settings"
          android:title="@string/animation_settings_title"
          android:fragment="com.android.settings.bliss.AnimationSettings"
-         android:icon="@drawable/ic_settings_display_animations" />		        
+         android:icon="@drawable/ic_settings_display_animations" />
+	 
+    <!-- Circle app bar -->
+    <PreferenceScreen
+        android:key="app_circle_bar"
+        android:fragment="com.android.settings.bliss.AppCircleBar"
+        android:title="@string/app_circle_bar_title"
+        android:icon="@drawable/ic_settings_sidebar"/>	 		        
 
 </PreferenceScreen>
