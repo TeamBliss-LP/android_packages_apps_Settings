@@ -79,7 +79,7 @@ public class StatusBarClockStyle extends SettingsPreferenceFragment
     private ListPreference mClockDateStyle;
     private ListPreference mClockDateFormat;
     private SwitchPreference mStatusBarClock;
-    private SwtichPreference mClockUseSecond;
+    private SwitchPreference mClockUseSecond;
 
     private boolean mCheckPreferences;
 
