@@ -82,7 +82,7 @@ public class Download extends SettingsPreferenceFragment implements OnPreference
             startActivity(intent);
             return true;
         } else if (preference == mBlissNightly) {
-            Uri uri = Uri.parse("http://downloads.blissroms.com/BlissPop/Official/");
+            Uri uri = Uri.parse("http://downloads.blissroms.com/BlissPop/Nightlies/");
             Intent intent = new Intent(Intent.ACTION_VIEW, uri);
             startActivity(intent);
             return true;            
