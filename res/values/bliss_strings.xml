@@ -762,6 +762,8 @@ sword is entered</string>
     <string name="download_category_summary">Find all of your support needs inside</string>
     <string name="rom_category">Rom Download</string>
     <string name="gapps_category">GAPPS Packages</string>
+    <string name="kernels_category">Kernel Downloads</string>
+    <string name="addons_category">Misc Addons</string>        
     <string name="bliss_official_title">BlissPop Official Builds</string>
     <string name="bliss_official_summary">Link for official release builds of BlissPop</string>
     <string name="bliss_nightly_title">BlissPop Nightly Builds</string>
@@ -770,5 +772,8 @@ sword is entered</string>
     <string name="banksgapps_summary">Banks Gapps are generally recommended gapps for use on BlissPop</string>    
     <string name="pagapps_title">PA Gapps</string>
     <string name="pagapps_summary">Fully packed with the majority of GAPPS, these are commonly used by users that do not want to download/install them later</string>
-
+    <string name="kernels_title">Bliss Kernels</string>
+    <string name="kernels_summary">Various Kernels for Devices Supported by Team Bliss</string>
+    <string name="addons_title">Misc Addons</string>
+    <string name="addons_summary">Sound Mods, Splash Screens, etc.</string>          
 </resources>

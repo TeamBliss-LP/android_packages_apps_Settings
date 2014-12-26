@@ -48,5 +48,27 @@
         android:summary="@string/pagapps_summary" />
 
     </PreferenceCategory>
+    
+    <PreferenceCategory
+        android:key="kernel_zips"
+        android:title="@string/kernels_category">
+
+    <Preference
+        android:key="bliss_kernels"
+        android:title="@string/kernels_title"
+        android:summary="@string/kernels_summary" />
+
+    </PreferenceCategory>
+    
+    <PreferenceCategory
+        android:key="misc_addons"
+        android:title="@string/addons_category">
+
+    <Preference
+        android:key="various_addons"
+        android:title="@string/addons_title"
+        android:summary="@string/addons_summary" />
+
+    </PreferenceCategory>        
 
 </PreferenceScreen>

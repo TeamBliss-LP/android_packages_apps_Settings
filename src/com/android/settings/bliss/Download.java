@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2014 The Dirty Unicorns Project
+ * Copyright (C) 2014 BOSP 
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,6 +45,8 @@ public class Download extends SettingsPreferenceFragment implements OnPreference
     Preference mBlissOfficial;
     Preference mBlissNightly;
     Preference mPAGapps;
+    Preference mKernels;
+    Preference mAddons;        
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -57,6 +60,8 @@ public class Download extends SettingsPreferenceFragment implements OnPreference
         mBlissOfficial = findPreference("bliss_official");
         mBlissNightly = findPreference("bliss_nightly");        
         mPAGapps = findPreference("pa_gapps");
+        mKernels = findPreference("bliss_kernels");
+        mAddons = findPreference("various_addons");                
     }
 
     @Override
@@ -85,7 +90,17 @@ public class Download extends SettingsPreferenceFragment implements OnPreference
             Uri uri = Uri.parse("http://downloads.blissroms.com/BlissPop/Nightlies/");
             Intent intent = new Intent(Intent.ACTION_VIEW, uri);
             startActivity(intent);
-            return true;            
+            return true;
+        } else if (preference == mKernels) {
+            Uri uri = Uri.parse("http://downloads.blissroms.com/Kernels/");
+            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+            startActivity(intent);
+            return true; 
+        } else if (preference == mAddons) {
+            Uri uri = Uri.parse("http://downloads.blissroms.com/Add-ons/");
+            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+            startActivity(intent);
+            return true;                                     
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
