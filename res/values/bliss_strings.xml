@@ -38,9 +38,13 @@
     <string name="partition_info_sdext">/sd-ext (EXT)</string>
     <string name="partition_info_used_of">/</string> 
     
-    <!--Eqalizer-->
-    <string name="equalizer_settings_title">Equalizer</string>
-    <string name="equalizer_summary">AudioFX Access</string>
+    <!--Embedded AudioFX-->
+    <string name="audiofx_settings_title">Equalizer</string>
+    <string name="audiofx_summary">AudioFX Access</string>
+    
+    <!--Embedded Viper4Android-->
+    <string name="viper_settings_title">Equalizer</string>
+    <string name="viper_summary">Viper4Android Access</string>    
     
     <!-- Display desity -->
     <string name="display_density">Display density</string>

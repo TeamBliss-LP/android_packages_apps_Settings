@@ -95,15 +95,27 @@
             
        <!-- Equalizer -->
        <dashboard-tile
-           android:id="@+id/equalizer_settings"
-           android:title="@string/equalizer_settings_title"
-           android:summary="@string/equalizer_summary"       
+           android:id="@+id/audiofx_settings"
+           android:title="@string/audiofx_settings_title"
+           android:summary="@string/audiofx_summary"       
            android:icon="@drawable/ic_bliss_equalizer" >
            <intent
               android:action="android.intent.action.MAIN"
               android:targetClass="org.cyanogenmod.audiofx.ActivityMusic"
               android:targetPackage="org.cyanogenmod.audiofx" />
-        </dashboard-tile>                   
+        </dashboard-tile>
+        
+       <!-- Equalizer -->
+       <dashboard-tile
+           android:id="@+id/viper_settings"
+           android:title="@string/viper_settings_title"
+           android:summary="@string/viper_summary"       
+           android:icon="@drawable/ic_bliss_equalizer" >
+           <intent
+              android:action="android.intent.action.MAIN"
+              android:targetClass="com.vipercn.viper4android_v2.activity.ViPER4Android"
+              android:targetPackage="com.vipercn.viper4android_v2" />
+       </dashboard-tile>                                 
 
     </dashboard-category>
 
