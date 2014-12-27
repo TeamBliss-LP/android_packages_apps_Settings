@@ -57,6 +57,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
     private static final String KEY_MENU_LONG_PRESS = "hardware_keys_menu_long_press";
     private static final String KEY_ENABLE_NAVIGATION_BAR = "enable_nav_bar";
     private static final String KEY_ENABLE_HW_KEYS = "enable_hw_keys";
+    private static final String KEY_NAVIGATION_BAR_LEFT = "navigation_bar_left";
     private static final String KEY_APP_SWITCH_PRESS = "hardware_keys_app_switch_press";
     private static final String KEY_APP_SWITCH_LONG_PRESS = "hardware_keys_app_switch_long_press";
     private static final String KEY_POWER_END_CALL = "power_end_call";
@@ -103,6 +104,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
     private ListPreference mMenuLongPressAction;
     private SwitchPreference mEnableNavigationBar;
     private SwitchPreference mEnableHwKeys;
+    private SwitchPreference mNavigationBarLeftPref;
     private ListPreference mAppSwitchPressAction;
     private ListPreference mAppSwitchLongPressAction;
     private SwitchPreference mPowerEndCall;
@@ -182,6 +184,9 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
                     getPreferenceScreen().findPreference(CATEGORY_HW_KEYS);
             getPreferenceScreen().removePreference(hwKeysPref);
         }
+
+        // Navigation bar left
+        mNavigationBarLeftPref = (SwitchPreference) findPreference(KEY_NAVIGATION_BAR_LEFT);
 
         if (hasPowerKey) {
             if (!Utils.isVoiceCapable(getActivity())) {
@@ -438,6 +443,9 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
         }
         if (appSwitchCategory != null) {
             appSwitchCategory.setEnabled(enabled);
+        }
+        if (mNavigationBarLeftPref != null) {
+            mNavigationBarLeftPref.setEnabled(enabled);
         }
     }
 
