@@ -32,6 +32,8 @@
         <item>@string/toast_GrowFadeCenter_animation</item>
         <item>@string/toast_GrowFadeBottom_animation</item>
         <item>@string/toast_Translucent_animation</item>
+        <item>@string/toast_SlideLeftRight_animation</item>
+        <item>@string/toast_SlideRightLeft_animation</item>        
     </string-array>
 
     <string-array name="toast_animation_values">
@@ -49,6 +51,8 @@
         <item>11</item>
         <item>12</item>
         <item>13</item>
+        <item>14</item>
+        <item>15</item>                
     </string-array>
     
     
