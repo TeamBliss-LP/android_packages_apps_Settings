@@ -448,16 +448,13 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     public void onResume() {
         super.onResume();
         updateDisplayRotationPreferenceDescription();
-        final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(mAdaptiveBacklight.getContext());
-        final boolean enabled = prefs.getBoolean(KEY_ADAPTIVE_BACKLIGHT,
-            AdaptiveBacklight.isEnabled());
         if (mAdaptiveBacklight != null) {
-            mAdaptiveBacklight.setChecked(enabled);
+            mAdaptiveBacklight.setChecked(AdaptiveBacklight.isEnabled());
         }
 
         if (mSunlightEnhancement != null) {
             if (SunlightEnhancement.isAdaptiveBacklightRequired() &&
-                    !enabled) {
+                    !AdaptiveBacklight.isEnabled()) {
                 mSunlightEnhancement.setEnabled(false);
             } else {
                 mSunlightEnhancement.setChecked(SunlightEnhancement.isEnabled());
@@ -481,6 +478,10 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         resolver.registerContentObserver(
                 Settings.System.getUriFor(Settings.System.ACCELEROMETER_ROTATION), true,
                 mAccelerometerRotationObserver);
+
+        if (mAdaptiveBacklight != null) {
+            mAdaptiveBacklight.setChecked(AdaptiveBacklight.isEnabled());
+        }
 
         // Doze timeout
         if (mDozeTimeout != null) {
@@ -730,10 +731,8 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         if (isSunlightEnhancementSupported()) {
             final boolean enabled = prefs.getBoolean(KEY_SUNLIGHT_ENHANCEMENT,
                     SunlightEnhancement.isEnabled());
-            final boolean enabledA = prefs.getBoolean(KEY_ADAPTIVE_BACKLIGHT,
-                    AdaptiveBacklight.isEnabled());
             if (SunlightEnhancement.isAdaptiveBacklightRequired() &&
-                    !enabledA) {
+                    !AdaptiveBacklight.isEnabled()) {
                 SunlightEnhancement.setEnabled(false);
                 Log.d(TAG, "SRE requires CABC, disabled");
             } else {
