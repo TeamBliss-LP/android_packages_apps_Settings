@@ -115,7 +115,7 @@ public class ColorPickerDialog
         setColorAndClickAction(mBlack, Color.BLACK);
         setColorAndClickAction(mCyan, 0xff33b5e5);
         setColorAndClickAction(mRed, Color.RED);
-        setColorAndClickAction(mGreen, Color.GREEN);
+        setColorAndClickAction(mGreen, 0xff009688);
         setColorAndClickAction(mYellow, Color.YELLOW);
 
         if (mHex != null) {
