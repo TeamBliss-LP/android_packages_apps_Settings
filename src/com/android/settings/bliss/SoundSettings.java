@@ -88,7 +88,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         mVolBtnMusicCtrl.setOnPreferenceChangeListener(this);
      	try {
             if (Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
-                    Settings.System.VOLUME_ROCKER_WAKE) == 1) {
+                    Settings.System.VOLUME_WAKE_SCREEN) == 1) {
                 mVolBtnMusicCtrl.setEnabled(false);
 		mVolBtnMusicCtrl.setSummary(R.string.volume_button_toggle_info);
             }
