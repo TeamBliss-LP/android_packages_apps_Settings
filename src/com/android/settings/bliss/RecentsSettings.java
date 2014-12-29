@@ -59,8 +59,8 @@ public class RecentsSettings extends SettingsPreferenceFragment implements OnPre
         mRecentsClearAllLocation.setOnPreferenceChangeListener(this);
         updateRecentsLocation(location);
         
-       mClearAllRecentsNavbar = (SwitchPreference) prefs.findPreference(KEY_CLEAR_ALL_RECENTS_NAVBAR_ENABLED);
-       mClearAllRecentsNavbar.setChecked(Settings.System.getInt(resolver,
+        mClearAllRecentsNavbar = (SwitchPreference) prefSet.findPreference(KEY_CLEAR_ALL_RECENTS_NAVBAR_ENABLED);
+        mClearAllRecentsNavbar.setChecked(Settings.System.getInt(resolver,
                   Settings.System.CLEAR_ALL_RECENTS_NAVBAR_ENABLED, 1) == 1);        
     }
 
