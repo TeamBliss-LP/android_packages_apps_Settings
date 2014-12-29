@@ -182,7 +182,8 @@
     
     <!-- Volume Keys Media Control -->
     <string name="volume_keys_control_media_stream">Media control</string>
-    <string name="volume_keys_control_media_stream_summary">Volume keys control media volume rather than notifications</string>                
+    <string name="volume_keys_control_media_stream_summary">Volume keys control media volume rather than notifications</string>
+    <string name="volume_button_toggle_info">Volume rocker wake must be disabled</string>                
 
     <!-- Per app controls for LP keyguard notifications -->
     <string name="app_notification_show_on_keyguard_title">Show on lockscreen</string>

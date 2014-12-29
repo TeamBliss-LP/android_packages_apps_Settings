@@ -29,6 +29,7 @@ import android.preference.Preference;
 import android.preference.PreferenceScreen;
 import android.preference.SwitchPreference;
 import android.provider.Settings;
+import android.provider.Settings.SettingNotFoundException;
 import android.util.Log;
 
 import com.android.settings.R;
@@ -85,6 +86,14 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         mVolBtnMusicCtrl.setChecked(Settings.System.getInt(getContentResolver(),
                 Settings.System.VOLUME_MUSIC_CONTROLS, 1) != 0);
         mVolBtnMusicCtrl.setOnPreferenceChangeListener(this);
+     	try {
+            if (Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.VOLUME_ROCKER_WAKE) == 1) {
+                mVolBtnMusicCtrl.setEnabled(false);
+		mVolBtnMusicCtrl.setSummary(R.string.volume_button_toggle_info);
+            }
+        } catch (SettingNotFoundException e) {
+        }        
     }
 
     @Override
