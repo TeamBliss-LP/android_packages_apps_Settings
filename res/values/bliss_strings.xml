@@ -363,7 +363,12 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="recents_clear_all_location_top_right">Top right</string>
     <string name="recents_clear_all_location_top_left">Top left</string>
     <string name="recents_clear_all_location_bottom_right">Bottom right</string>
-    <string name="recents_clear_all_location_bottom_left">Bottom left</string>      
+    <string name="recents_clear_all_location_bottom_left">Bottom left</string>
+    
+
+    <!-- Clear all recents on navbar enabler strings -->
+    <string name="clear_all_recents_navbar_enabled_title">Clear all recents button on Navbar</string>
+    <string name="clear_all_recents_navbar_enabled_summary">Show clear all recents button in navigation bar</string>          
     
     <!-- QuickSettings: Quick Pulldown -->
     <string name="qs_title">Quick settings</string>
