@@ -43,6 +43,7 @@
             android:key="recents_show_hide_search_bar"
             android:title="@string/recents_show_searchbar"
             android:summary="@string/recents_show_searchbar_summary"
+	    settings:keywords="@string/keywords_recents_show_searchbar"
             android:defaultValue="false" />
             
         <PreferenceScreen
