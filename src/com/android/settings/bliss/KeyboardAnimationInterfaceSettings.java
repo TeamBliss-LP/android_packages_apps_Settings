@@ -71,12 +71,12 @@ public class KeyboardAnimationInterfaceSettings extends SettingsPreferenceFragme
         PreferenceScreen prefSet = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();
 
-        mAnimations = AnimationHelper.getAnimationsList();
+        mAnimations = AwesomeAnimationHelper.getAnimationsList();
         int animqty = mAnimations.length;
         mAnimationsStrings = new String[animqty];
         mAnimationsNum = new String[animqty];
         for (int i = 0; i < animqty; i++) {
-            mAnimationsStrings[i] = AnimationHelper.getProperName(getActivity().getResources(), mAnimations[i]);
+            mAnimationsStrings[i] = AwesomeAnimationHelper.getProperName(getActivity().getResources(), mAnimations[i]);
             mAnimationsNum[i] = String.valueOf(mAnimations[i]);
         }
 
@@ -225,7 +225,7 @@ public class KeyboardAnimationInterfaceSettings extends SettingsPreferenceFragme
         }
 
         String mNum = Settings.System.getString(getActivity().getContentResolver(), mString);
-        return AnimationHelper.getProperName(getActivity().getResources(), Integer.valueOf(mNum));
+        return AwesomeAnimationHelper.getProperName(getActivity().getResources(), Integer.valueOf(mNum));
     }
 
     private String getProperVal(Preference preference) {
