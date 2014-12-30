@@ -56,7 +56,7 @@
             settings:unitsRight=" * 15ms"
             android:defaultValue="0" />
 
-        <com.android.settings.fusion.TestKeyboard
+        <com.android.settings.bliss.TestKeyboard
             android:key="anim_ime_test"
             hint="@string/ime_animation_test_title" />
 
