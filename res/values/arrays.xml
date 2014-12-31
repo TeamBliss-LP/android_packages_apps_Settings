@@ -644,8 +644,6 @@
         <item>mute/unmute microphone</item>
         <item>project media</item>
         <item>activate VPN</item>
-        <item>other accounts</item>
-        <item>read phone info</item>
     </string-array>
 
     <!-- User display names for app ops codes -->
@@ -697,8 +695,6 @@
         <item>Mute/unmute microphone</item>
         <item>Project media</item>
         <item>Activate VPN</item>
-        <item>Other accounts</item>
-        <item>Read phone info</item>
     </string-array>
 
     <!-- Titles for the list of long press timeout options. -->
