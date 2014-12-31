@@ -133,6 +133,12 @@
                    android:targetPackage="com.slim.device"
                    android:targetClass="com.slim.device.settings.ScreenOffGestureSettings" />
            </Preference>
+	   
+        <!-- Screen Recorder -->
+        <PreferenceScreen
+                android:key="screen_recorder"
+                android:title="@string/screen_recorder_title"
+                android:fragment="com.android.settings.bliss.ScreenRecorderSettings" />	   
         
                <SwitchPreference
                    android:key="double_tap_wake_gesture"
