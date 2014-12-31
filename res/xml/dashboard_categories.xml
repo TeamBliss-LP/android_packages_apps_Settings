@@ -308,17 +308,6 @@
                 android:targetPackage="eu.chainfire.supersu"
                 android:targetClass="eu.chainfire.supersu.MainActivity" />
         </dashboard-tile>
-	
-       <!-- Device Control -->
-        <dashboard-tile
-            android:id="@+id/device_control"
-	    android:icon="@drawable/ic_settings_performance"
-            android:title="@string/device_control_title">
-            <intent
-                android:action="android.intent.action.MAIN"
-		android:targetPackage="org.namelessrom.devicecontrol"
-                android:targetClass="org.namelessrom.devicecontrol.MainActivity" />
-        </dashboard-tile>	
         
         <!-- Development -->
         <dashboard-tile
