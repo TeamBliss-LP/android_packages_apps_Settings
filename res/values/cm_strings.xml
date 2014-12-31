@@ -490,6 +490,8 @@
     <string name="app_ops_summaries_delete_contacts">delete contacts</string>
     <string name="app_ops_summaries_delete_call_log">delete call log</string>
     <string name="app_ops_summaries_data_change">data change</string>
+    <string name="app_ops_summaries_other_accounts">other accounts</string>
+    <string name="app_ops_summaries_read_phone_info">read phone info</string>        
     <string name="app_ops_labels_location">Location</string>
     <string name="app_ops_labels_vibrate">Vibrate</string>
     <string name="app_ops_labels_read_contacts">Read contacts</string>
@@ -540,6 +542,8 @@
     <string name="app_ops_labels_delete_contacts">Delete contacts</string>
     <string name="app_ops_labels_delete_call_log">Delete call log</string>
     <string name="app_ops_labels_data_change">Data change</string>
+    <string name="app_ops_labels_other_accounts">Other Accounts</string>
+    <string name="app_ops_labels_read_phone_info">Read Phone Info</string>        
 
     <!-- App ops categories -->
     <string name="app_ops_categories_location">Location</string>
