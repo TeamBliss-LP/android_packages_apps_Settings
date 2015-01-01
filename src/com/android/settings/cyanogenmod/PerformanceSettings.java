@@ -125,13 +125,8 @@ public class PerformanceSettings extends SettingsPreferenceFragment implements
                     prefSet.findPreference(CATEGORY_PROCESSOR));
         }
 
-        category = (PreferenceCategory) prefSet.findPreference(CATEGORY_SYSTEM);
-        if (!showAdvancedPerfSettings()) {
-            prefSet.removePreference(category);
-        }
-
         category = (PreferenceCategory) prefSet.findPreference(CATEGORY_GRAPHICS);
-        if (ActivityManager.isLowRamDeviceStatic() && showAdvancedPerfSettings()) {
+        if (ActivityManager.isLowRamDeviceStatic()) {
             mForceHighEndGfx = (SwitchPreference) prefSet.findPreference(FORCE_HIGHEND_GFX_PREF);
             String forceHighendGfx = SystemProperties.get(FORCE_HIGHEND_GFX_PERSIST_PROP, "false");
             mForceHighEndGfx.setChecked("true".equals(forceHighendGfx));
@@ -140,13 +135,6 @@ public class PerformanceSettings extends SettingsPreferenceFragment implements
         }
 
         mPerformanceProfileObserver = new PerformanceProfileObserver(new Handler());
-    }
-
-    private boolean showAdvancedPerfSettings() {
-        return !android.os.Build.TYPE.equals("user") &&
-                mDevelopmentPreferences.getBoolean(
-                DevelopmentSettings.PREF_SHOW,
-                android.os.Build.TYPE.equals("eng"));
     }
 
     @Override
@@ -162,7 +150,7 @@ public class PerformanceSettings extends SettingsPreferenceFragment implements
 
         boolean warned = mDevelopmentPreferences.getBoolean(KEY_DRAGONS_ARE_AWESOME, false);
 
-        if (showAdvancedPerfSettings() && !warned) {
+        if (!warned) {
             /* Display the warning dialog */
             mAlertDialog = new AlertDialog.Builder(getActivity()).create();
             mAlertDialog.setTitle(R.string.performance_settings_warning_title);
