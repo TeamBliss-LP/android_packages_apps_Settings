@@ -994,4 +994,8 @@ sword is entered</string>
     <string name="color_normal_title">Normal</string>
     <string name="color_fully_title">Fully connected</string>
 
+    <!-- QuickSettings haptic feedback -->
+    <string name="quick_settings_vibrate_title">Vibrate on touch</string>
+    <string name="quick_settings_vibrate_summary">Vibrate when touching tiles</string>
+
 </resources>
