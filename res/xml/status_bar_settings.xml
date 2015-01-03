@@ -31,7 +31,12 @@
         <PreferenceScreen
             android:fragment="com.android.settings.bliss.BatteryStyle"
             android:key="battery_style_pref"
-            android:title="@string/status_bar_battery_style" />            
+            android:title="@string/status_bar_battery_style" />
+	    
+        <PreferenceScreen
+            android:key="status_bar_expanded_header_settings"
+            android:fragment="com.android.settings.bliss.StatusBarExpandedHeaderSettings"
+            android:title="@string/status_bar_expanded_header_settings_title" />	                
 
         <PreferenceScreen
             android:key="network_traffic_state"

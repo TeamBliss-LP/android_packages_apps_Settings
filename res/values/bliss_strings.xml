@@ -119,10 +119,17 @@
     <string name="reset">Reset</string>
     <string name="add">Add</string>
     <string name="help">Help</string>
+    <string name="reset_android">Android</string>
+    <string name="reset_bliss">Bliss</string>
     <string name="attention">Attention</string>
     <string name="enabled">Enabled</string>
     <string name="default_string">Default</string>
-    <string name="reset_message">Reset all entries to default?</string>    
+    <string name="more_string">More</string>
+    <string name="colors_title">Colors</string>
+    <string name="icons_title">Icons</string>
+    <string name="text_title">Text</string>
+    <string name="reset_message">Reset all entries to default?</string>
+    <string name="reset_option_message">Reset values to\nAndroid- or Fusion default?</string>        
     
     <!-- Sound settings -->
     <string name="advanced_sound_title">Advanced options</string>
@@ -442,6 +449,14 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <!-- Ability to disable hardware keys via nav bar settings -->
     <string name="hw_keys_title">Hardware keys</string>
     <string name="hw_keys_summary">Enable hardware keys</string>
+
+    <!-- Status bar Header -->
+    <string name="status_bar_expanded_header_settings_title">Status bar Header</string>
+    <string name="expanded_header_show_weather_title">Show weather</string>
+    <string name="expanded_header_show_weather_summary">Enable to show the weather</string>
+    <string name="expanded_header_show_weather_location_title">Show location</string>
+    <string name="expanded_header_show_weather_location_summary">Enable to show the location</string>
+
 
     <!--Quick unlock -->
     <string name="unlock_quick_unlock_control_title">Quick unlock</string>
