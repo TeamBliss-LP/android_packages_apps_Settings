@@ -24,6 +24,7 @@ import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.os.RemoteException;
 import android.os.Handler;
+import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceCategory;
@@ -67,7 +68,6 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
     private static final String KEY_HOME_ANSWER_CALL = "home_answer_call";
     private static final String KEYS_OVERFLOW_BUTTON = "keys_overflow_button";    
     private static final String KEY_VOLUME_KEY_CURSOR_CONTROL = "volume_key_cursor_control";
-    private static final String KEY_VOLUME_WAKE = "pref_volume_wake";	
 
     private static final String CATEGORY_POWER = "power_key";
     private static final String CATEGORY_HOME = "home_key";
@@ -118,8 +118,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
     private SwitchPreference mSwapVolumeButtons;
     private SwitchPreference mPowerEndCall;
     private SwitchPreference mHomeAnswerCall;
-    private ListPreference mOverflowButtonMode;
-    private SwitchPreference mVolumeKeyWakeControl;	    
+    private ListPreference mOverflowButtonMode;    
     private ListPreference mVolumeKeyCursorControl;
 
 
@@ -164,10 +163,10 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
                 (PreferenceCategory) prefScreen.findPreference(CATEGORY_BACK);
         final PreferenceCategory menuCategory =
                 (PreferenceCategory) prefScreen.findPreference(CATEGORY_MENU);
-        final PreferenceCategory appSwitchCategory =
-                (PreferenceCategory) prefScreen.findPreference(CATEGORY_APPSWITCH);
         final PreferenceCategory assistCategory =
                 (PreferenceCategory) prefScreen.findPreference(CATEGORY_ASSIST);
+        final PreferenceCategory appSwitchCategory =
+                (PreferenceCategory) prefScreen.findPreference(CATEGORY_APPSWITCH);
         final PreferenceCategory volumeCategory =
                 (PreferenceCategory) prefScreen.findPreference(CATEGORY_VOLUME);
 
@@ -260,43 +259,6 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
             prefScreen.removePreference(homeCategory);
         }
 
-        if (hasAssistKey) {
-            if (!showAssistWake) {
-                assistCategory.removePreference(findPreference(Settings.System.ASSIST_WAKE_SCREEN));
-            }
-
-            int pressAction = Settings.System.getInt(resolver,
-                    Settings.System.KEY_ASSIST_ACTION, ACTION_SEARCH);
-            mAssistPressAction = initActionList(KEY_ASSIST_PRESS, pressAction);
-
-            int longPressAction = Settings.System.getInt(resolver,
-                    Settings.System.KEY_ASSIST_LONG_PRESS_ACTION, ACTION_VOICE_SEARCH);
-            mAssistLongPressAction = initActionList(KEY_ASSIST_LONG_PRESS, longPressAction);
-
-            hasAnyBindableKey = true;
-        } else {
-            prefScreen.removePreference(assistCategory);
-        }
-
-        if (hasAppSwitchKey) {
-            if (!showAppSwitchWake) {
-                appSwitchCategory.removePreference(findPreference(
-                        Settings.System.APP_SWITCH_WAKE_SCREEN));
-            }
-
-            int pressAction = Settings.System.getInt(resolver,
-                    Settings.System.KEY_APP_SWITCH_ACTION, ACTION_APP_SWITCH);
-            mAppSwitchPressAction = initActionList(KEY_APP_SWITCH_PRESS, pressAction);
-
-            int longPressAction = Settings.System.getInt(resolver,
-                    Settings.System.KEY_APP_SWITCH_LONG_PRESS_ACTION, ACTION_NOTHING);
-            mAppSwitchLongPressAction = initActionList(KEY_APP_SWITCH_LONG_PRESS, longPressAction);
-
-            hasAnyBindableKey = true;
-        } else {
-            prefScreen.removePreference(appSwitchCategory);
-        }
-
         if (hasBackKey) {
             if (!showBackWake) {
                 backCategory.removePreference(findPreference(Settings.System.BACK_WAKE_SCREEN));
@@ -323,6 +285,41 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
             hasAnyBindableKey = true;
         } else {
             prefScreen.removePreference(menuCategory);
+        }
+
+        if (hasAssistKey) {
+            if (!showAssistWake) {
+                assistCategory.removePreference(findPreference(Settings.System.ASSIST_WAKE_SCREEN));
+            }		
+            int pressAction = Settings.System.getInt(resolver,
+                    Settings.System.KEY_ASSIST_ACTION, ACTION_SEARCH);
+            mAssistPressAction = initActionList(KEY_ASSIST_PRESS, pressAction);
+
+            int longPressAction = Settings.System.getInt(resolver,
+                    Settings.System.KEY_ASSIST_LONG_PRESS_ACTION, ACTION_VOICE_SEARCH);
+            mAssistLongPressAction = initActionList(KEY_ASSIST_LONG_PRESS, longPressAction);
+
+            hasAnyBindableKey = true;
+        } else {
+            prefScreen.removePreference(assistCategory);
+        }
+
+        if (hasAppSwitchKey) {
+            if (!showAppSwitchWake) {
+                appSwitchCategory.removePreference(findPreference(
+                        Settings.System.APP_SWITCH_WAKE_SCREEN));
+            }		
+            int pressAction = Settings.System.getInt(resolver,
+                    Settings.System.KEY_APP_SWITCH_ACTION, ACTION_APP_SWITCH);
+            mAppSwitchPressAction = initActionList(KEY_APP_SWITCH_PRESS, pressAction);
+
+            int longPressAction = Settings.System.getInt(resolver,
+                    Settings.System.KEY_APP_SWITCH_LONG_PRESS_ACTION, ACTION_NOTHING);
+            mAppSwitchLongPressAction = initActionList(KEY_APP_SWITCH_LONG_PRESS, longPressAction);
+
+            hasAnyBindableKey = true;
+        } else {
+            prefScreen.removePreference(appSwitchCategory);
         }
 
         if (Utils.hasVolumeRocker(getActivity())) {
