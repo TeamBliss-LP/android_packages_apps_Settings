@@ -47,13 +47,11 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     private static final String KEY_VOL_MEDIA = "volume_keys_control_media_stream";
     private static final String KEY_CAMERA_SOUNDS = "camera_sounds";
     private static final String PROP_CAMERA_SOUND = "persist.sys.camera-sound";
-    private static final String KEY_VOLBTN_MUSIC_CTRL = "volbtn_music_controls";
 
     private SwitchPreference mSafeHeadsetVolume;
     private ListPreference mAnnoyingNotifications;
     private SwitchPreference mVolumeKeysControlMedia;
     private SwitchPreference mCameraSounds;
-    private SwitchPreference mVolBtnMusicCtrl;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -81,19 +79,6 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         mCameraSounds = (SwitchPreference) findPreference(KEY_CAMERA_SOUNDS);
         mCameraSounds.setChecked(SystemProperties.getBoolean(PROP_CAMERA_SOUND, true));
         mCameraSounds.setOnPreferenceChangeListener(this);
-
-        mVolBtnMusicCtrl = (SwitchPreference) findPreference(KEY_VOLBTN_MUSIC_CTRL);
-        mVolBtnMusicCtrl.setChecked(Settings.System.getInt(getContentResolver(),
-                Settings.System.VOLUME_MUSIC_CONTROLS, 1) != 0);
-        mVolBtnMusicCtrl.setOnPreferenceChangeListener(this);
-     	try {
-            if (Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
-                    Settings.System.VOLUME_WAKE_SCREEN) == 1) {
-                mVolBtnMusicCtrl.setEnabled(false);
-		mVolBtnMusicCtrl.setSummary(R.string.volume_button_toggle_info);
-            }
-        } catch (SettingNotFoundException e) {
-        }        
     }
 
     @Override
@@ -128,16 +113,11 @@ public class SoundSettings extends SettingsPreferenceFragment implements
                     (Boolean) objValue ? 1 : 0);
         }
         if (KEY_CAMERA_SOUNDS.equals(key)) {
-            if ((Boolean) objValue) {
-                SystemProperties.set(PROP_CAMERA_SOUND, "1");
-            } else {
-                showDialogInner(DLG_CAMERA_SOUND);
-            }
-        }
-        if (KEY_VOLBTN_MUSIC_CTRL.equals(key)) {
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.VOLUME_MUSIC_CONTROLS,
-                    (Boolean) objValue ? 1 : 0);
+           if ((Boolean) objValue) {
+               SystemProperties.set(PROP_CAMERA_SOUND, "1");
+           } else {
+               showDialogInner(DLG_CAMERA_SOUND);
+           }
         }
         return true;
     }
