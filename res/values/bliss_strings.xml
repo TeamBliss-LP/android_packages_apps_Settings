@@ -469,6 +469,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <!-- Status bar Header -->
     <string name="status_bar_expanded_header_settings_title">Status bar header</string>
+    <string name="status_bar_expanded_header_settings_summary">Customize the Expanded Header Layout</string>    
     <string name="expanded_header_show_weather_title">Show weather</string>
     <string name="expanded_header_show_weather_summary">Enable to show the weather</string>
     <string name="expanded_header_show_weather_location_title">Show location</string>
