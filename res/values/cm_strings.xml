@@ -377,8 +377,6 @@
     <string name="status_bar_toggle_brightness">Brightness control</string>
     <string name="status_bar_toggle_brightness_summary">Adjust brightness by sliding across the status bar</string>
     <string name="status_bar_toggle_info">Automatic brightness is enabled</string>
-    <string name="status_bar_notif_count_title">Show notification count</string>
-    <string name="status_bar_notif_count_summary">Display the number of pending notifications</string>
 
     <!--Status Bar Weather -->
     <string name="status_bar_show_weather_title">Show weather</string>

@@ -41,6 +41,12 @@ import android.widget.EditText;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
+<<<<<<< HEAD:src/com/android/settings/bliss/StatusBar.java
+=======
+
+//import com.android.internal.util.fusion.DeviceUtils;
+
+>>>>>>> 9767c19... Custom notification & system icon colors (2/2):src/com/android/settings/fusion/StatusBarSettings.java
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 import com.android.internal.util.bliss.DeviceUtils;
@@ -50,20 +56,30 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
     private static final String TAG = "StatusBarSettings";
 
     private static final String KEY_STATUS_BAR_CLOCK = "clock_style_pref";
+<<<<<<< HEAD:src/com/android/settings/bliss/StatusBar.java
     private static final String KEY_STATUS_BAR_TICKER = "status_bar_ticker_enabled";
 	private static final String STATUS_BAR_CARRIER = "status_bar_carrier";
     private static final String CUSTOM_CARRIER_LABEL = "custom_carrier_label";
+=======
+    private static final String STATUS_BAR_CARRIER = "status_bar_carrier";
+>>>>>>> 9767c19... Custom notification & system icon colors (2/2):src/com/android/settings/fusion/StatusBarSettings.java
     private static final String STATUS_BAR_CARRIER_COLOR = "status_bar_carrier_color";
 
     static final int DEFAULT_STATUS_CARRIER_COLOR = 0xffffffff;
 
     private PreferenceScreen mClockStyle;
+<<<<<<< HEAD:src/com/android/settings/bliss/StatusBar.java
     private SwitchPreference mTicker;
 	private SwitchPreference mStatusBarCarrier;
     private PreferenceScreen mCustomCarrierLabel;
     private ColorPickerPreference mCarrierColorPicker;
 
     private String mCustomCarrierLabelText;
+=======
+    SwitchPreference mStatusBarCarrier;
+    ColorPickerPreference mCarrierColorPicker;
+    private PreferenceScreen mNetworkTraffic;
+>>>>>>> 9767c19... Custom notification & system icon colors (2/2):src/com/android/settings/fusion/StatusBarSettings.java
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -86,8 +102,21 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
             return;
         }
 
+<<<<<<< HEAD:src/com/android/settings/bliss/StatusBar.java
         mClockStyle = (PreferenceScreen) prefSet.findPreference(KEY_STATUS_BAR_CLOCK);
         updateClockStyleDescription();
+=======
+        /*if (DeviceUtils.isPhone(getActivity())) {
+            PreferenceScreen notifSystemIcons =
+                    (PreferenceScreen) findPreference("status_bar_notif_system_icons_settings");
+            notifSystemIcons.setTitle(R.string.status_bar_notif_system_icons_settings_title_phone);
+        }*/
+
+        // MIUI-like carrier Label
+        mStatusBarCarrier = (SwitchPreference) findPreference(STATUS_BAR_CARRIER);
+        mStatusBarCarrier.setChecked((Settings.System.getInt(getContentResolver(),
+                Settings.System.STATUS_BAR_CARRIER, 0) == 1));
+>>>>>>> 9767c19... Custom notification & system icon colors (2/2):src/com/android/settings/fusion/StatusBarSettings.java
 
         mTicker = (SwitchPreference) prefSet.findPreference(KEY_STATUS_BAR_TICKER);
         final boolean tickerEnabled = systemUiResources.getBoolean(systemUiResources.getIdentifier(
@@ -115,11 +144,16 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
             updateCustomLabelTextSummary();
         }
 
+<<<<<<< HEAD:src/com/android/settings/bliss/StatusBar.java
     }
 
     private void updateCustomLabelTextSummary() {
         mCustomCarrierLabelText = Settings.System.getString(
             getActivity().getContentResolver(), Settings.System.CUSTOM_CARRIER_LABEL);
+=======
+        mClockStyle = (PreferenceScreen) prefSet.findPreference(KEY_STATUS_BAR_CLOCK);
+        updateClockStyleDescription();
+>>>>>>> 9767c19... Custom notification & system icon colors (2/2):src/com/android/settings/fusion/StatusBarSettings.java
 
         if (TextUtils.isEmpty(mCustomCarrierLabelText)) {
             mCustomCarrierLabel.setSummary(R.string.custom_carrier_label_notset);
@@ -170,6 +204,7 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
     }
     
     @Override
+<<<<<<< HEAD:src/com/android/settings/bliss/StatusBar.java
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
             final Preference preference) {
         final ContentResolver resolver = getActivity().getContentResolver();
@@ -196,6 +231,17 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
             });
             alert.setNegativeButton(getString(android.R.string.cancel), null);
             alert.show();
+=======
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        ContentResolver resolver = getActivity().getContentResolver();
+        if (preference == mCarrierColorPicker) {
+            String hex = ColorPickerPreference.convertToARGB(Integer.valueOf(String.valueOf(newValue)));
+            preference.setSummary(hex);
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.STATUS_BAR_CARRIER_COLOR, intHex);
+            return true;
+>>>>>>> 9767c19... Custom notification & system icon colors (2/2):src/com/android/settings/fusion/StatusBarSettings.java
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }	

@@ -126,6 +126,7 @@
     <string name="default_string">Default</string>
     <string name="more_string">More</string>
     <string name="colors_title">Colors</string>
+    <string name="category_colors_title">Customize colors</string>
     <string name="icons_title">Icons</string>
     <string name="text_title">Text</string>
     <string name="reset_message">Reset all entries to default?</string>
@@ -392,9 +393,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="smart_pulldown_persistent">No persistent</string>
     <string name="smart_pulldown_all">No dismissable or persistent</string>                                      
 
-    <string name="status_bar_ticker_title">Notification Ticker</string>
-    <string name="status_bar_ticker_summary">Notification text animation in the statusbar</string>
-
     <!-- Camera sound switch -->
     <string name="camera_sounds_title">Camera shutter sound</string>
     <string name="camera_sounds_summary">Enable system camera shutter sound</string>
@@ -450,8 +448,25 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="hw_keys_title">Hardware keys</string>
     <string name="hw_keys_summary">Enable hardware keys</string>
 
+    <!-- Status bar notifications and system icons -->
+    <string name="notif_system_icons_colorize_notif_icons_title">Colorize notification icons</string>
+    <!-- <string name="notif_system_icons_colorize_notif_icons_title_phone">Colorize notif. icons</string> -->
+    <string name="notif_system_icons_colorize_notif_icons_summary">Enable to colorize the notification icons color</string>
+    <string name="notif_system_icons_show_ticker_title">Notification ticker</string>
+    <string name="notif_system_icons_show_ticker_summary">Notification text animation in the statusbar</string>
+    <string name="notif_system_icons_show_count_title">Show notification count</string>
+    <string name="notif_system_icons_show_count_summary">Display the number of pending notifications</string>
+    <string name="notif_system_icons_icon_color_title">Icons</string>
+    <string name="notif_system_icons_notif_text_color_title">Ticker text</string>
+    <string name="notif_system_icons_count_icon_color_title">Notification count icon</string>
+    <string name="notif_system_icons_count_text_color_title">Notification count Text</string>
+
+    <string name="status_bar_notif_system_icons_settings_title">Notifications &amp; system icons</string>
+    <!-- <string name="status_bar_notif_system_icons_settings_title_phone">Notif. &amp; system icons</string> -->
+    <string name="status_bar_notif_system_icons_settings_summary">Customize the notifications &amp; system icons</string>
+
     <!-- Status bar Header -->
-    <string name="status_bar_expanded_header_settings_title">Status bar Header</string>
+    <string name="status_bar_expanded_header_settings_title">Status bar header</string>
     <string name="expanded_header_show_weather_title">Show weather</string>
     <string name="expanded_header_show_weather_summary">Enable to show the weather</string>
     <string name="expanded_header_show_weather_location_title">Show location</string>
