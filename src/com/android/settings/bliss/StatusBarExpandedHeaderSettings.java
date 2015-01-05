@@ -211,7 +211,7 @@ public class StatusBarExpandedHeaderSettings extends SettingsPreferenceFragment 
                             getOwner().refreshSettings();
                         }
                     })
-                    .setPositiveButton(R.string.reset_fusion,
+                    .setPositiveButton(R.string.reset_bliss,
                         new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
                             Settings.System.putInt(getOwner().mResolver,
