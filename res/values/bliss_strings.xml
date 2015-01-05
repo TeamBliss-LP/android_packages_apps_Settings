@@ -131,7 +131,8 @@
     <string name="icons_title">Icons</string>
     <string name="text_title">Text</string>
     <string name="reset_message">Reset all entries to default?</string>
-    <string name="reset_option_message">Reset values to\nAndroid- or Fusion default?</string>        
+    <string name="reset_option_message">Reset values to\nAndroid- or Fusion default?</string>
+    <string name="category_general_title">General options</string>            
     
     <!-- Sound settings -->
     <string name="advanced_sound_title">Advanced options</string>
