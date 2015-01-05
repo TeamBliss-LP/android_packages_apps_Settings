@@ -23,6 +23,7 @@ import com.android.settings.DevelopmentSettings;
 import com.android.settings.DeviceInfoSettings;
 import com.android.settings.DisplaySettings;
 import com.android.settings.HomeSettings;
+import com.android.settings.bliss.InterfaceSettings;
 import com.android.settings.ScreenPinningSettings;
 import com.android.settings.PrivacySettings;
 import com.android.settings.SecuritySettings;
@@ -59,7 +60,8 @@ public final class Ranking {
     public static final int RANK_DATA_USAGE = 4;
     public static final int RANK_WIRELESS = 5;
     public static final int RANK_HOME = 6;
-    public static final int RANK_DISPLAY = 7;
+    public static final int RANK_BLISS = 7;    
+    public static final int RANK_DISPLAY = 8;
     public static final int RANK_NOTIFICATIONS = 9;
     public static final int RANK_MEMORY = 10;
     public static final int RANK_POWER_USAGE = 11;
@@ -104,6 +106,9 @@ public final class Ranking {
 
         // Home
         sRankMap.put(HomeSettings.class.getName(), RANK_HOME);
+      
+        // BLISS
+        sRankMap.put(InterfaceSettings.class.getName(), RANK_BLISS);        
 
         // Display
         sRankMap.put(DisplaySettings.class.getName(), RANK_DISPLAY);
