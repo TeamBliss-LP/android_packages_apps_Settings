@@ -505,6 +505,8 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
         /* Disable hw-key options if they're disabled */
         final PreferenceCategory homeCategory =
                 (PreferenceCategory) prefScreen.findPreference(CATEGORY_HOME);
+        final PreferenceCategory backCategory =
+                (PreferenceCategory) prefScreen.findPreference(CATEGORY_BACK);
         final PreferenceCategory menuCategory =
                 (PreferenceCategory) prefScreen.findPreference(CATEGORY_MENU);
         final PreferenceCategory assistCategory =
@@ -557,6 +559,8 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
             handleToggleHomeButtonAnswersCallPreferenceClick();
             return true;
         }
+
+        return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
     private static boolean isKeyDisablerSupported() {
