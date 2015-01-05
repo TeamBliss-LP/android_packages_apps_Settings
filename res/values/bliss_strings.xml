@@ -488,6 +488,8 @@ sword is entered</string>
     <string name="lock_numpad_random_always">Always</string>
     <string name="lock_numpad_random_on_request">On request</string>
     
+    <!--Device Control-->
+    <string name="device_control_title">Device Control</string>
 
     <!-- OmniSwitch -->
     <string name="omniswitch_category">OmniSwitch</string>

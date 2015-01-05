@@ -2126,6 +2126,9 @@
         <activity android:name=".bliss.gestureanywhere.GestureAnywhereCreateGestureActivity" />
 	
         
+        <!-- Device Control Activity -->
+        <activity android:name="org.namelessrom.devicecontrol.MainActivity"/>        
+
         <activity android:name=".notificationlight.NotificationLightSettings" />
         <activity android:name=".notificationlight.BatteryLightSettings" />
 
