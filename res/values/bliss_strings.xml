@@ -125,6 +125,7 @@
     <string name="enabled">Enabled</string>
     <string name="default_string">Default</string>
     <string name="more_string">More</string>
+    <string name="color_title">Color</string>
     <string name="colors_title">Colors</string>
     <string name="category_colors_title">Customize colors</string>
     <string name="icons_title">Icons</string>
@@ -980,5 +981,16 @@ sword is entered</string>
     <!-- Superuser indicator on status bar -->
     <string name="su_indicator">Superuser indicator</string>
     <string name="su_indicator_summary">Show superuser indicator on status bar when a session is active</string>
+
+    <!-- Status bar signals icon settings  -->
+    <string name="status_bar_signal_settings_title">Mobile &amp; Wifi network icons</string>
+    <string name="status_bar_signal_settings_summary">Customize the status bar Mobile and Wifi network icons</string>
+    <string name="signal_wifi_show_activity_title">Show network activity</string>
+    <string name="signal_wifi_show_activity_summary">Enable to show the network activity</string>
+    <string name="cat_network_icons_title">Network icons</string>
+    <string name="cat_network_activity_icons_title">Activity icons</string>
+    <string name="cat_airplane_mode_icon_title">Airplane mode icon</string>
+    <string name="color_normal_title">Normal</string>
+    <string name="color_fully_title">Fully connected</string>
 
 </resources>
