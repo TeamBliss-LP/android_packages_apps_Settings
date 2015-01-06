@@ -460,10 +460,11 @@ limitations under the License.
     <string-array name="power_menu_actions_array" translatable="false">
         <item>power</item>
         <item>reboot</item>
-        <item>screenshot</item>         
+        <item>screenshot</item>
         <item>profile</item>
         <item>airplane</item>
         <item>users</item>
+        <item>bugreport</item>
         <item>settings</item>
         <item>lockdown</item>           
         <item>silent</item>
