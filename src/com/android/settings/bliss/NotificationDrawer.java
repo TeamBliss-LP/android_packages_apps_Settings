@@ -40,7 +40,7 @@ import com.android.settings.R;
 
 import java.util.Locale;
 
-public class QsSettings extends SettingsPreferenceFragment
+public class NotificatonDrawer extends SettingsPreferenceFragment
             implements OnPreferenceChangeListener  {
 
     public static final String TAG = "NotificationDrawer";

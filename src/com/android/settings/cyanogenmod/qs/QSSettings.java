@@ -32,7 +32,7 @@ public class QSSettings extends SettingsPreferenceFragment
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        addPreferencesFromResource(R.xml.qs_settings);
+        addPreferencesFromResource(R.xml.notification_drawer_settings);
     }
 
     @Override
