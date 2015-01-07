@@ -22,6 +22,7 @@ import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.UserHandle;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
@@ -31,6 +32,7 @@ import android.provider.Settings;
 import android.text.TextUtils;
 import android.view.View;
 
+import com.android.internal.util.bliss.DeviceUtils;
 import com.android.internal.widget.LockPatternUtils;
 
 import com.android.settings.SettingsPreferenceFragment;
@@ -43,12 +45,14 @@ public class QsSettings extends SettingsPreferenceFragment
 
     public static final String TAG = "QsSettings";
 
+    private static final String TOGGLE_MAIN_TILES = "qs_main_tiles";
     private static final String PREF_QUICK_PULLDOWN = "quick_pulldown";
     private static final String PREF_SMART_PULLDOWN = "smart_pulldown";
     private static final String PREF_BLOCK_ON_SECURE_KEYGUARD = "block_on_secure_keyguard";
 
+    SwitchPreference mToggleMainTiles;
     ListPreference mQuickPulldown;
-    ListPreference mSmartPulldown;
+    private ListPreference mSmartPulldown;
     SwitchPreference mBlockOnSecureKeyguard;
 
     @Override
@@ -59,22 +63,35 @@ public class QsSettings extends SettingsPreferenceFragment
 
         PreferenceScreen prefs = getPreferenceScreen();
 
+        mToggleMainTiles = (SwitchPreference) findPreference(TOGGLE_MAIN_TILES);
+        mToggleMainTiles.setOnPreferenceChangeListener(this);
+
+        boolean useMainTiles = Settings.Secure.getIntForUser(
+                getActivity().getContentResolver(), Settings.Secure.QS_USE_MAIN_TILES,
+                1, UserHandle.myUserId()) == 1;
+
+        mToggleMainTiles.setChecked(useMainTiles);
+
         mQuickPulldown = (ListPreference) findPreference(PREF_QUICK_PULLDOWN);
         mSmartPulldown = (ListPreference) findPreference(PREF_SMART_PULLDOWN);
+        if (!DeviceUtils.isPhone(getActivity())) {
+            prefs.removePreference(mQuickPulldown);
+            prefs.removePreference(mSmartPulldown);
+        } else {
+            // Quick Pulldown
+            mQuickPulldown.setOnPreferenceChangeListener(this);
+            int statusQuickPulldown = Settings.System.getInt(getContentResolver(),
+                    Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN, 1);
+            mQuickPulldown.setValue(String.valueOf(statusQuickPulldown));
+            updateQuickPulldownSummary(statusQuickPulldown);
 
-        // Quick Pulldown
-        mQuickPulldown.setOnPreferenceChangeListener(this);
-        int statusQuickPulldown = Settings.System.getInt(getContentResolver(),
-                Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN, 1);
-        mQuickPulldown.setValue(String.valueOf(statusQuickPulldown));
-        updateQuickPulldownSummary(statusQuickPulldown);
-
-        // Smart Pulldown
-        mSmartPulldown.setOnPreferenceChangeListener(this);
-        int smartPulldown = Settings.System.getInt(getContentResolver(),
-                Settings.System.QS_SMART_PULLDOWN, 0);
-        mSmartPulldown.setValue(String.valueOf(smartPulldown));
-        updateSmartPulldownSummary(smartPulldown);
+            // Smart Pulldown
+            mSmartPulldown.setOnPreferenceChangeListener(this);
+            int smartPulldown = Settings.System.getInt(getContentResolver(),
+                    Settings.System.QS_SMART_PULLDOWN, 0);
+            mSmartPulldown.setValue(String.valueOf(smartPulldown));
+            updateSmartPulldownSummary(smartPulldown);
+        }
 
         final LockPatternUtils lockPatternUtils = new LockPatternUtils(getActivity());
         mBlockOnSecureKeyguard = (SwitchPreference) findPreference(PREF_BLOCK_ON_SECURE_KEYGUARD);
@@ -95,7 +112,12 @@ public class QsSettings extends SettingsPreferenceFragment
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mQuickPulldown) {
+        if(preference == mToggleMainTiles) {
+            Settings.Secure.putIntForUser(
+                    getActivity().getContentResolver(), Settings.Secure.QS_USE_MAIN_TILES,
+                    ((Boolean) newValue) ? 1 : 0, UserHandle.myUserId());
+            return true;
+        } else if (preference == mQuickPulldown) {
             int statusQuickPulldown = Integer.valueOf((String) newValue);
             Settings.System.putInt(getContentResolver(),
                     Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN,
@@ -104,7 +126,8 @@ public class QsSettings extends SettingsPreferenceFragment
             return true;
         } else if (preference == mSmartPulldown) {
             int smartPulldown = Integer.valueOf((String) newValue);
-            Settings.System.putInt(getContentResolver(), Settings.System.QS_SMART_PULLDOWN,
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.QS_SMART_PULLDOWN,
                     smartPulldown);
             updateSmartPulldownSummary(smartPulldown);
             return true;

@@ -17,7 +17,7 @@
 package com.android.settings.cyanogenmod.qs;
 
 /**
- * This class holds the icon, the name - or the string the user sees
+ * This class holds the icon, the name - or the string the user sees,
  * and the value which will be stored
  */
 public class QSTileHolder {
