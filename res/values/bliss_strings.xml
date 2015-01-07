@@ -797,7 +797,7 @@ sword is entered</string>
     
     <!-- Download Center -->
     <string name="download_category">Bliss Downloads</string>
-    <string name="download_category_summary">Find all of your support needs inside</string>
+    <string name="download_category_summary">Help Support Team Bliss</string>
     <string name="rom_category">Rom Download</string>
     <string name="gapps_category">GAPPS Packages</string>
     <string name="kernels_category">Kernel Downloads</string>
@@ -998,5 +998,11 @@ sword is entered</string>
     <!-- QuickSettings haptic feedback -->
     <string name="quick_settings_vibrate_title">Vibrate on touch</string>
     <string name="quick_settings_vibrate_summary">Vibrate when touching tiles</string>
+    
+    <!-- Support Team Bliss -->
+    <string name="support_category">Support</string>
+    <string name="support_bliss_title">Help Support Team Bliss</string>
+    <string name="support_bliss_summary">Link to Team Bliss PayPal Donation</string>    
+      
 
 </resources>

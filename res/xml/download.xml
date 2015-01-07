@@ -16,6 +16,17 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/download_category" >
+    
+    <PreferenceCategory
+        android:key="support_category"
+        android:title="@string/support_category">
+
+    <Preference
+        android:key="support_bliss"
+        android:title="@string/support_bliss_title"
+        android:summary="@string/support_bliss_summary" />
+	
+    </PreferenceCategory>    
 
     <PreferenceCategory
         android:key="rom_category"

@@ -41,6 +41,7 @@ import com.android.settings.Utils;
 
 public class Download extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
 
+    Preference mSupport;
     Preference mBanksGapps;
     Preference mBlissOfficial;
     Preference mBlissNightly;
@@ -56,6 +57,7 @@ public class Download extends SettingsPreferenceFragment implements OnPreference
 
         final ContentResolver resolver = getActivity().getContentResolver();
 
+        mSupport = findPreference("support_bliss");
         mBanksGapps = findPreference("banks_gapps");
         mBlissOfficial = findPreference("bliss_official");
         mBlissNightly = findPreference("bliss_nightly");        
@@ -71,7 +73,12 @@ public class Download extends SettingsPreferenceFragment implements OnPreference
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-        if (preference == mBanksGapps) {
+        if (preference == mSupport) {
+            Uri uri = Uri.parse("https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=S8QQ4AG7Y9RL6");
+            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+            startActivity(intent);
+            return true;		
+        } else if (preference == mBanksGapps) {
             Uri uri = Uri.parse("http://fitsnugly.euroskank.com/?rom=banks&device=gapps");
             Intent intent = new Intent(Intent.ACTION_VIEW, uri);
             startActivity(intent);
