@@ -41,9 +41,14 @@ import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PowerMenuActions extends SettingsPreferenceFragment {
+public class PowerMenuActions extends SettingsPreferenceFragment implements
+        Preference.OnPreferenceChangeListener {
+
     final static String TAG = "PowerMenuActions";
 
+    private static final String KEY_SCREENRECORD = "power_menu_screenrecord";
+
+    private SwitchPreference mScreenrecordPref;
     private SwitchPreference mPowerPref;
     private SwitchPreference mRebootPref;
     private SwitchPreference mScreenshotPref;
@@ -66,9 +71,16 @@ public class PowerMenuActions extends SettingsPreferenceFragment {
         addPreferencesFromResource(R.xml.power_menu_settings);
         mContext = getActivity().getApplicationContext();
 
+        final ContentResolver resolver = getContentResolver();
+
         mAvailableActions = getActivity().getResources().getStringArray(
                 R.array.power_menu_actions_array);
         mAllActions = PowerMenuConstants.getAllActions();
+
+        mScreenrecordPref = (SwitchPreference) findPreference(KEY_SCREENRECORD);
+        mScreenrecordPref.setChecked(Settings.System.getInt(resolver,
+                Settings.System.POWER_MENU_SCREENRECORD_ENABLED, 0) == 1);
+        mScreenrecordPref.setOnPreferenceChangeListener(this);
 
         for (String action : mAllActions) {
         // Remove preferences not present in the overlay
@@ -150,6 +162,17 @@ public class PowerMenuActions extends SettingsPreferenceFragment {
         }
 
         updatePreferences();
+    }
+
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object o) {
+        if (preference == mScreenrecordPref) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.POWER_MENU_SCREENRECORD_ENABLED,
+                    Boolean.TRUE.equals((Boolean)o) ? 1 : 0);
+            return true;
+        }
+        return false;
     }
 
     @Override
