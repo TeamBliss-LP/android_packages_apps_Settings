@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 Slimroms
+ * Copyright (C) 2014 Slimroms && 2015 BOSP
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,7 +43,7 @@ import java.util.Locale;
 public class QsSettings extends SettingsPreferenceFragment
             implements OnPreferenceChangeListener  {
 
-    public static final String TAG = "QsSettings";
+    public static final String TAG = "NotificationDrawer";
 
     private static final String TOGGLE_MAIN_TILES = "qs_main_tiles";
     private static final String PREF_QUICK_PULLDOWN = "quick_pulldown";
@@ -59,7 +59,7 @@ public class QsSettings extends SettingsPreferenceFragment
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // Load the preferences from an XML resource
-        addPreferencesFromResource(R.xml.qs_settings);
+        addPreferencesFromResource(R.xml.notification_drawer_settings);
 
         PreferenceScreen prefs = getPreferenceScreen();
 

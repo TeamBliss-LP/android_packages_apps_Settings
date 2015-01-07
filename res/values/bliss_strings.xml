@@ -378,7 +378,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="clear_all_recents_navbar_enabled_summary">Show clear all recents button in navigation bar</string>          
     
     <!-- QuickSettings: Quick Pulldown -->
-    <string name="qs_title">Quick settings</string>
     <string name="title_quick_pulldown">Quick pulldown</string>
     <string name="summary_quick_pulldown">%1$s edge of the status bar pulls down Quick Settings</string>
     <string name="quick_pulldown_off">Off</string>
