@@ -40,10 +40,10 @@ import com.android.settings.R;
 
 import java.util.Locale;
 
-public class NotificatonDrawer extends SettingsPreferenceFragment
+public class NotificationDrawer extends SettingsPreferenceFragment
             implements OnPreferenceChangeListener  {
 
-    public static final String TAG = "NotificationDrawer";
+    private static final String TAG = "NotificationDrawer";
 
     private static final String TOGGLE_MAIN_TILES = "qs_main_tiles";
     private static final String PREF_QUICK_PULLDOWN = "quick_pulldown";
