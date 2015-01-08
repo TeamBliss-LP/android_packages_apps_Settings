@@ -65,8 +65,6 @@
     <color name="running_processes_apps_ram">#ff009587</color>
     <color name="running_processes_free_ram">#ffced7db</color>
 
-    <color name="dialog_color_picker_hex_title">#ffffffff</color>
-
     <!-- Palette colors referenced by top-level themes. -->
     <color name="theme_primary">@*android:color/material_blue_grey_900</color>
     <color name="theme_primary_dark">@*android:color/material_blue_grey_950</color>
