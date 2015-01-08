@@ -370,7 +370,9 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="recents_clear_all_location_top_center">Top center</string>    
     <string name="recents_clear_all_location_bottom_right">Bottom right</string>
     <string name="recents_clear_all_location_bottom_left">Bottom left</string>
-    <string name="recents_clear_all_location_bottom_center">Bottom center</string> 
+    <string name="recents_clear_all_location_bottom_center">Bottom center</string>
+    <string name="recents_clear_all_dismiss_all_title">Clear all tasks</string>
+    <string name="recents_clear_all_dismiss_all_summary">Choose whether to dismiss all tasks or ignore the foreground task</string> 
     
     <!-- QuickSettings: Quick Pulldown -->
     <string name="title_quick_pulldown">Quick pulldown</string>
