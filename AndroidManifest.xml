@@ -2128,6 +2128,7 @@
         <activity android:name=".bliss.gestureanywhere.GestureAnywhereBuilderActivity" />
         <activity android:name=".bliss.gestureanywhere.GestureAnywhereCreateGestureActivity" />
 	
+        <activity android:name=".bliss.navbar.NavbarTabHostFragment" />      
         
         <!-- Device Control Activity -->
         <activity android:name="org.namelessrom.devicecontrol.MainActivity"/>        
