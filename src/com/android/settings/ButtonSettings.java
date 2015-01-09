@@ -187,6 +187,28 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
         // Navigation bar left
         mNavigationBarLeftPref = (SwitchPreference) findPreference(KEY_NAVIGATION_BAR_LEFT);
 
+        // Only visible on devices that does not have a navigation bar already,
+        // and don't even try unless the existing keys can be disabled
+        boolean needsNavigationBar = false;
+        if (isKeyDisablerSupported()) {
+            try {
+                IWindowManager wm = WindowManagerGlobal.getWindowManagerService();
+                needsNavigationBar = wm.needsNavigationBar();
+            } catch (RemoteException e) {
+            }
+
+            if (needsNavigationBar) {
+                prefScreen.removePreference(mDisableNavigationKeys);
+            } else {
+                // Remove keys that can be provided by the navbar
+                updateDisableNavkeysOption();
+                mNavigationPreferencesCat.setEnabled(mDisableNavigationKeys.isChecked());
+                updateDisableNavkeysCategories(mDisableNavigationKeys.isChecked());
+            }
+        } else {
+            prefScreen.removePreference(mDisableNavigationKeys);
+        }
+
         if (hasPowerKey) {
             if (!Utils.isVoiceCapable(getActivity())) {
                 powerCategory.removePreference(mPowerEndCall);
@@ -320,6 +342,27 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
             prefScreen.removePreference(volumeCategory);
         }
 
+        try {
+            // Only show the navigation bar category on devices that have a navigation bar
+            // unless we are forcing it via development settings
+            boolean forceNavbar = android.provider.Settings.System.getInt(getContentResolver(),
+                    android.provider.Settings.System.DEV_FORCE_SHOW_NAVBAR, 0) == 1;
+            boolean hasNavBar = WindowManagerGlobal.getWindowManagerService().hasNavigationBar()
+                    || forceNavbar;
+
+            if (!Utils.isPhone(getActivity())) {
+                mNavigationPreferencesCat.removePreference(mNavigationBarLeftPref);
+            }
+
+            if ((!hasNavBar && (needsNavigationBar || !isKeyDisablerSupported())) ||
+                (mNavigationPreferencesCat.getPreferenceCount() == 0)
+            ) {
+                // Hide navigation bar category
+                prefScreen.removePreference(mNavigationPreferencesCat);
+            }
+        } catch (RemoteException e) {
+            Log.e(TAG, "Error getting navigation bar status");
+        }
 
         final ButtonBacklightBrightness backlight =
                 (ButtonBacklightBrightness) findPreference(KEY_BUTTON_BACKLIGHT);
