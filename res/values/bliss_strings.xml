@@ -402,11 +402,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="media_scanner_on_boot_ask">Ask to scan (notification)</string>
     <string name="media_scanner_on_boot_disabled">Do not scan media</string>    
 
-    <!-- Navigation bar -->
-    <string name="nav_bar_title">Navigation bar</string>
-    <string name="navbar_enable_bar_title">Navigation bar buttons</string>
-    <string name="navbar_enable_bar_summary">Enable on-screen nav bar buttons</string>
-
      <!-- QuickSettings: Smart Pulldown -->
     <string name="smart_pulldown_title">Smart pulldown</string>
     <string name="smart_pulldown_summary">Open Quick Settings when there are %1$s notifications present</string>
