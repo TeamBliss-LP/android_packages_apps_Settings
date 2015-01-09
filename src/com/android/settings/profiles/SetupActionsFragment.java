@@ -171,7 +171,7 @@ public class SetupActionsFragment extends SettingsPreferenceFragment
             final TelephonyManager tm =
                     (TelephonyManager) getActivity().getSystemService(Context.TELEPHONY_SERVICE);
             if (tm.getPhoneType() == TelephonyManager.PHONE_TYPE_GSM) {
-                items.add(generateConnectionOverrideItem(PROFILE_CONNECTION_2G3G4G));
+                mItems.add(generateConnectionOverrideItem(PROFILE_CONNECTION_2G3G4G));
             }
         }
         if (WimaxHelper.isWimaxSupported(getActivity())) {
