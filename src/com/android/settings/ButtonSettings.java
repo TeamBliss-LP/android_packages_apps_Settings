@@ -66,7 +66,6 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
     private static final String KEY_POWER_END_CALL = "power_end_call";
     private static final String KEY_HOME_ANSWER_CALL = "home_answer_call";
     private static final String KEYS_OVERFLOW_BUTTON = "keys_overflow_button";
-	private static final String KEY_ENABLE_HW_KEYS = "enable_hw_keys";    
 
     private static final String CATEGORY_POWER = "power_key";
     private static final String CATEGORY_HOME = "home_key";
@@ -78,7 +77,6 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
     private static final String CATEGORY_VOLUME = "volume_keys";
     private static final String CATEGORY_BACKLIGHT = "key_backlight";
     private static final String CATEGORY_NAVBAR = "navigation_bar";
-    private static final String CATEGORY_HW_KEYS = "hw_keys";
 
     // Available custom actions to perform on a key press.
     // Must match values for KEY_HOME_LONG_PRESS_ACTION in:
@@ -118,9 +116,8 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
     private SwitchPreference mPowerEndCall;
     private SwitchPreference mHomeAnswerCall;
     private ListPreference mOverflowButtonMode; 
-	private SwitchPreference mEnableHwKeys;   
 	
-	private PreferenceCategory mNavigationPreferencesCat;
+    private PreferenceCategory mNavigationPreferencesCat;
 
     private Handler mHandler;
 
@@ -189,20 +186,6 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
 
         // Navigation bar left
         mNavigationBarLeftPref = (SwitchPreference) findPreference(KEY_NAVIGATION_BAR_LEFT);
-
-
-        // Enable/disable hw keys
-        boolean enableHwKeys = Settings.System.getInt(getContentResolver(),
-                Settings.System.ENABLE_HW_KEYS, 1) == 1;
-        mEnableHwKeys = (SwitchPreference) findPreference(KEY_ENABLE_HW_KEYS);
-        mEnableHwKeys.setChecked(enableHwKeys);
-        mEnableHwKeys.setOnPreferenceChangeListener(this);
-        // Check if this feature is enable through device config
-        if(!getResources().getBoolean(com.android.internal.R.bool.config_hwKeysPref)) {
-            PreferenceCategory hwKeysPref = (PreferenceCategory)
-                    getPreferenceScreen().findPreference(CATEGORY_HW_KEYS);
-            getPreferenceScreen().removePreference(hwKeysPref);
-        }
 
         if (hasPowerKey) {
             if (!Utils.isVoiceCapable(getActivity())) {
@@ -343,7 +326,6 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
         if (!backlight.isButtonSupported() && !backlight.isKeyboardSupported()) {
             prefScreen.removePreference(backlight);
         }
-      updateDisableHwKeysOption();		
     }
 
     @Override
@@ -397,13 +379,6 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
             mOverflowButtonMode.setSummary(mOverflowButtonMode.getEntries()[index]);
             Toast.makeText(getActivity(), R.string.keys_overflow_toast, Toast.LENGTH_LONG).show();
             return true;
-        } else if (preference == mEnableHwKeys) {
-            boolean hWkeysValue = (Boolean) newValue;
-            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
-                    Settings.System.ENABLE_HW_KEYS, hWkeysValue ? 1 : 0);
-            writeDisableHwKeysOption(getActivity(), hWkeysValue);
-            updateDisableHwKeysOption();
-            return true;
         } else if (preference == mHomeLongPressAction) {
             handleActionListChange(mHomeLongPressAction, newValue,
                     Settings.System.KEY_HOME_LONG_PRESS_ACTION);
@@ -444,7 +419,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
         return false;
     }
 
-    private static void writeDisableHwKeysOption(Context context, boolean enabled) {
+    private static void writeDisableNavkeysOption(Context context, boolean enabled) {
         final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
         final int defaultBrightness = context.getResources().getInteger(
                 com.android.internal.R.integer.config_buttonBrightnessSettingDefault);
@@ -475,7 +450,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
         editor.commit();
     }
 
-    private void updateDisableHwKeysOption() {
+    private void updateDisableNavkeysOption() {
         boolean enabled = Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.DEV_FORCE_SHOW_NAVBAR, 0) != 0;
 
@@ -529,9 +504,8 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
             return;
         }
 
-        writeDisableHwKeysOption(context, Settings.System.getInt(context.getContentResolver(),
-                Settings.System.ENABLE_HW_KEYS, 1) == 1);
-
+        writeDisableNavkeysOption(context, Settings.System.getInt(context.getContentResolver(),
+                Settings.System.DEV_FORCE_SHOW_NAVBAR, 0) != 0);
     }
 
 
@@ -545,8 +519,8 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
         } else if (preference == mDisableNavigationKeys) {
             mDisableNavigationKeys.setEnabled(false);
             mNavigationPreferencesCat.setEnabled(false);
-            writeDisableHwKeysOption(getActivity(), mDisableNavigationKeys.isChecked());
-            updateDisableHwKeysOption();
+            writeDisableNavkeysOption(getActivity(), mDisableNavigationKeys.isChecked());
+            updateDisableNavkeysOption();
             updateDisableNavkeysCategories(true);
             mHandler.postDelayed(new Runnable() {
                 @Override
