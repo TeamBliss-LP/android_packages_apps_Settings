@@ -1041,5 +1041,13 @@ sword is entered</string>
     <string name="enable_navigation_ring_title">Navigation search assistant</string>
     <string name="enable_navigation_ring_summary">Enable long-press on home for the google now search assistant</string>
     <string name="navbar_use_gallary_warning">Info: please select Gallery to save image</string>
+    
+    <!-- Change Log strings -->
+    <string name="changelog_title">View changelog</string>
+    <string name="changelog_dialog">Changelog</string>
+    <string name="changelog_loading">Loading changelog...</string>
+    <string name="changelog_error">Unable to load changelog</string>
+    <string name="changelog_unknown">Unknown</string>
+    <string name="changelog_version">Version</string>    
 
 </resources>
