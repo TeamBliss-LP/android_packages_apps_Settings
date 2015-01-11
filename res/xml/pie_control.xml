@@ -30,7 +30,7 @@
         <extra android:name="actionMode" android:value="1" />
         <extra android:name="maxAllowedButtons" android:value="5" />
         <extra android:name="disableDeleteLastEntry" android:value="true" />
-        <extra android:name="fragment" android:value="com.android.settings.fusion.fragments.PieButtonFragment" />
+        <extra android:name="fragment" android:value="com.android.settings.bliss.fragments.PieButtonFragment" />
     </PreferenceScreen>
 
     <PreferenceScreen
