@@ -634,10 +634,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         if (preference == mDozePreference) {
             boolean value = (Boolean) objValue;
             Settings.Secure.putInt(getContentResolver(), DOZE_ENABLED, value ? 1 : 0);
-            // turn off doze timeout slider if doze is turned off
-            if (mDozeTimeout != null) {
-                mDozeTimeout.setEnabled(value);
-            }
         }
         if (KEY_WAKEUP_WHEN_PLUGGED_UNPLUGGED.equals(key)) {
             Settings.System.putInt(getContentResolver(),
