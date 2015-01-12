@@ -112,6 +112,26 @@
                  android:defaultValue="true" />                
 
          </PreferenceCategory>
+         
+    <PreferenceCategory
+            android:key="display_density_prefs"
+            android:title="@string/display_density">
+
+        <EditTextPreference
+                android:key="display_density"
+                android:title="@string/display_density"
+                android:summary="@string/display_density_summary"
+                android:persistent="false"
+                android:inputType="numberSigned" />
+
+        <EditTextPreference
+                android:key="display_density_override"
+                android:title="@string/display_density_override"
+                android:summary="@string/display_density_override_summary"
+                android:persistent="false"
+                android:inputType="numberSigned" />
+
+    </PreferenceCategory>         
 
         <PreferenceCategory
                 android:key="advanced_display_prefs"
@@ -138,13 +158,6 @@
                    android:key="double_tap_wake_gesture"
                    android:title="@string/double_tap_to_wake_title" />                        
 
-               <EditTextPreference
-                   android:key="display_density"
-                   android:title="@string/display_density"
-                   android:summary="@string/display_density_summary"
-                   android:persistent="false"
-                   android:inputType="numberSigned" />
-		
                <SwitchPreference
                    android:key="disable_immersive_message"
                    android:title="@string/disable_immersive_message_title"

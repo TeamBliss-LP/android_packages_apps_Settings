@@ -99,6 +99,9 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_COLOR_ENHANCEMENT = "color_enhancement";
     private static final String KEY_TAP_TO_WAKE = "double_tap_wake_gesture";
     private static final String KEY_DISPLAY_DENSITY = "display_density";
+    private static final String PROP_DISPLAY_DENSITY_MAX = "ro.sf.lcd_density.max";
+    private static final String PROP_DISPLAY_DENSITY_MIN = "ro.sf.lcd_density.min";
+    private static final String PROP_DISPLAY_DENSITY_OVERRIDE = "persist.sf.lcd_density.override";    
     private static final String KEY_PROXIMITY_WAKE = "proximity_on_wake";
     private static final String KEY_DISPLAY_ROTATION = "display_rotation";
 
@@ -109,6 +112,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_DISPLAY_GAMMA = "gamma_tuning";
     private static final String KEY_SCREEN_OFF_GESTURE_SETTINGS = "screen_off_gesture_settings";
     private static final String KEY_SCREEN_COLOR_SETTINGS = "screencolor_settings";
+    private static final String KEY_DISPLAY_DENSITY_OVERRIDE = "display_density_override";
 
     private static final int DLG_GLOBAL_CHANGE_WARNING = 1;
 
@@ -128,6 +132,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private SwitchPreference mAutoBrightnessPreference;
     private SwitchPreference mTapToWake;
     private EditTextPreference mDisplayDensity;
+    private EditTextPreference mDisplayDensityOverride;
     private SwitchPreference mDisableIM;
 
 
@@ -258,6 +263,10 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         mDisplayDensity = (EditTextPreference) findPreference(KEY_DISPLAY_DENSITY);
         mDisplayDensity.setText(SystemProperties.get(PROP_DISPLAY_DENSITY, "0"));
         mDisplayDensity.setOnPreferenceChangeListener(this);
+        
+        mDisplayDensityOverride = (EditTextPreference) findPreference(KEY_DISPLAY_DENSITY_OVERRIDE);
+        mDisplayDensityOverride.setText(SystemProperties.get(PROP_DISPLAY_DENSITY_OVERRIDE, "0"));
+        mDisplayDensityOverride.setOnPreferenceChangeListener(this);        
 		
         boolean proximityCheckOnWait = getResources().getBoolean(
                 com.android.internal.R.bool.config_proximityCheckOnWake);
@@ -641,12 +650,12 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                     Settings.System.DOZE_TIMEOUT, dozeTimeout);
         }
         if (KEY_DISPLAY_DENSITY.equals(key)) {
-            final int max = getResources().getInteger(R.integer.display_density_max);
-            final int min = getResources().getInteger(R.integer.display_density_min);
+            final int max = SystemProperties.getInt(PROP_DISPLAY_DENSITY_MAX, 480);
+            final int min = SystemProperties.getInt(PROP_DISPLAY_DENSITY_MIN, 240);
 
             int value = SystemProperties.getInt(PROP_DISPLAY_DENSITY, 0);
             try {
-                value = Integer.parseInt((String) objValue);
+                value = Integer.parseInt(String.valueOf(objValue));
             } catch (NumberFormatException e) {
                 Log.e(TAG, "Invalid input", e);
             }
@@ -667,6 +676,20 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             // we handle it, return false
             return false;
         }
+        if (KEY_DISPLAY_DENSITY_OVERRIDE.equals(key)) {
+            int value = SystemProperties.getInt(PROP_DISPLAY_DENSITY_OVERRIDE, 0);
+            try {
+                value = Integer.parseInt(String.valueOf(objValue));
+            } catch (NumberFormatException e) {
+                Log.e(TAG, "Invalid input", e);
+            }
+
+            SystemProperties.set(PROP_DISPLAY_DENSITY_OVERRIDE, String.valueOf(value));
+            mDisplayDensityOverride.setText(String.valueOf(value));
+
+            // we handle it, return false
+            return false;
+        }        
         return true;
     }
 
