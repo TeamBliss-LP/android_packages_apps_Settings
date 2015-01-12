@@ -22,7 +22,7 @@
 	    android:key="expanded_header_show_weather"
 	    android:title="@string/expanded_header_show_weather_title"
 	    android:summary="@string/expanded_header_show_weather_summary"
-	    android:defaultValue="false" />
+	    android:defaultValue="true" />
 
     <SwitchPreference
 	    android:key="expanded_header_show_weather_location"
