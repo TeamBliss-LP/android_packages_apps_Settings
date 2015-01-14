@@ -150,6 +150,12 @@
                 android:summary="@string/summary_font_size"
                 android:dialogTitle="@string/dialog_title_font_size" />
 
+    <!-- Display -->
+    <PreferenceScreen
+         android:key="display_settings"
+         android:fragment="com.android.settings.bliss.DisplaySettings"
+         android:title="@string/advanced_display_settings_title" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -169,5 +175,7 @@
                 android:fragment="com.android.settings.notificationlight.NotificationLightSettings" />
 
     </PreferenceCategory>
+
+
 
 </PreferenceScreen>
