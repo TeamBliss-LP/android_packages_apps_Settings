@@ -31,6 +31,16 @@
     <string name="changelog_loading">Loading changelog...</string>
     <string name="changelog_error">Unable to load changelog</string>
     <string name="changelog_unknown">Unknown</string>
-    <string name="changelog_version">Version</string>    
+    <string name="changelog_version">Version</string>
+
+    <!-- GCC version info -->
+    <string name="sm_android">Gcc android</string>
+    <string name="sm_android_default">Unknown</string>
+    <string name="sm_kernel">Gcc kernel</string>
+    <string name="sm_kernel_default">Unknown</string>
+
+    <!-- GCC build flags info -->
+    <string name="sm_flags">Build flags</string>
+    <string name="sm_flags_default">None</string> 
 
 </resources>
