@@ -43,32 +43,18 @@
         android:fragment="com.android.settings.cyanogenmod.PowerMenuActions"
         android:icon="@drawable/ic_settings_power" /> 
 	
-    <!-- Button Settings -->
     <PreferenceScreen
-        android:id="@+id/button_settings"
-        android:title="@string/button_pref_title"
-        android:fragment="com.android.settings.ButtonSettings"
-        android:icon="@drawable/ic_settings_buttons" />	
-	
-    <PreferenceScreen
-        android:key="navigation_bar"
-        android:fragment="com.android.settings.bliss.navbar.NavbarTabHostFragment"
-        android:title="@string/category_navbar"
-        android:icon="@drawable/ic_settings_navigation_bar" />		
-	
-    <!-- Pie control -->
-    <PreferenceScreen
-        android:key="pie_settings"
-        android:fragment="com.android.settings.bliss.PieControl"
-        android:title="@string/pie_control_title" 
-	android:icon="@drawable/ic_settings_pie" />	
+            android:key="navigation_bar"
+            android:fragment="com.android.settings.bliss.navbar.NavbarTabHostFragment"
+            android:title="@string/category_navbar"
+            android:icon="@drawable/ic_settings_navigation_bar" />	       
 	
     <!-- Gesture anywhere -->
     <PreferenceScreen
         android:key="gesture_anywhere"
         android:fragment="com.android.settings.bliss.gestureanywhere.GestureAnywhereSettings"
         android:title="@string/gesture_anywhere_title"
-	android:icon="@drawable/ic_settings_gestures" />
+	    android:icon="@drawable/ic_settings_gestures" />
 	
      <PreferenceScreen
          android:id="@+id/animation_settings"
@@ -86,11 +72,11 @@
        <!-- Device Control -->
     <PreferenceScreen 
             android:id="@+id/device_control"
-	    android:icon="@drawable/ic_settings_performance"
+	        android:icon="@drawable/ic_settings_performance"
             android:title="@string/device_control_title">
             <intent
                 android:action="android.intent.action.MAIN"
-		android:targetPackage="org.namelessrom.devicecontrol"
+		        android:targetPackage="org.namelessrom.devicecontrol"
                 android:targetClass="org.namelessrom.devicecontrol.MainActivity" />
     </PreferenceScreen>		
     
@@ -100,6 +86,6 @@
         android:fragment="com.android.settings.bliss.Download"
         android:title="@string/download_category"
         android:summary="@string/download_category_summary" 
-	android:icon="@drawable/ic_tab_unselected_download" />    		 		        
+	    android:icon="@drawable/ic_tab_unselected_download" />    		 		        
 
 </PreferenceScreen>
