@@ -240,7 +240,7 @@ public class DraggableGridView extends ViewGroup implements
             }
         }
 
-        if (index > getChildCount()) {
+        if (index >= getChildCount()) {
             return -1;
         }
         return index;
