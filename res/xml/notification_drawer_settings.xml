@@ -27,8 +27,7 @@
 	    
         <PreferenceScreen
             android:key="qs_order"
-            android:title="@string/qs_order"
-            android:summary="@string/qs_order_summary"
+            android:title="@string/qs_order_title"
             android:fragment="com.android.settings.cyanogenmod.qs.QSTiles" />
 	    
         <com.android.settings.cyanogenmod.SystemSettingSwitchPreference

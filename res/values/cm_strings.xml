@@ -946,13 +946,15 @@
 
     <!-- Notification drawer -->
     <string name="notification_drawer_title">Notification drawer</string>
-    <string name="qs_order">Change tiles and order</string>
-    <string name="qs_order_summary">Add new tiles or reorder them</string>
+    <string name="qs_category_title">Quick Settings</string>
+    <string name="qs_order_title">Select and order tiles</string>
     <string name="add_qs">Add new tile</string>
-    <string name="qs_already_added_all">There aren\'t any more tiles to add.</string>
     <string name="cast_screen">Cast screen</string>
     <string name="hotspot">Hotspot</string>
-    <string name="qs_main_tiles_title">Enable main quick settings</string>
+    <string name="qs_action_delete">Delete</string>
+    <string name="qs_action_add">Add</string>
+    <string name="qs_action_no_more_tiles">No more tiles available</string>
+    <string name="qs_main_tiles_title">Enlarge first row</string>
     <string name="qs_main_tiles_summary_on">Two main tiles on the first row</string>
     <string name="qs_main_tiles_summary_off">Three tiles on each row</string>
     <string name="qs_advanced_location_title">Advanced location quick settings</string>
