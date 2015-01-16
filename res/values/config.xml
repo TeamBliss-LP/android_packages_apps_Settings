@@ -81,4 +81,13 @@
 
     <!-- Volume rocker support. Some devices do not have a volume rocker. -->
     <bool name="has_volume_rocker">true</bool>
+
+    <!-- SAR Level for a device -->
+    <!-- Must be overlaid by device -->
+    <bool name="config_show_sar_enable" translatable="false">false</bool>
+    <!-- Maximum Specific Absorption Rate for head -->
+    <string name="sar_head_level" translatable="false"></string>
+    <!-- Maximum Specific Absorption Rate for body -->
+    <string name="sar_body_level" translatable="false"></string>
+
 </resources>
