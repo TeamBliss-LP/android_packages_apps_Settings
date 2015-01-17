@@ -23,7 +23,7 @@ import android.content.ContentResolver;
 import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.preference.SwitchPreference;
+import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
@@ -38,7 +38,7 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
-public class BatteryStatusSettings extends SettingsPreferenceFragment implements
+public class StatusBarBatteryStatusSettings extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener {
 
     private static final String PREF_CAT_CIRCLE_OPTIONS =
@@ -77,7 +77,7 @@ public class BatteryStatusSettings extends SettingsPreferenceFragment implements
     private ListPreference mStyle;
     private ListPreference mPercentStyle;
     private ListPreference mChargeAnimationSpeed;
-    private SwitchPreference mShowCircleDotted;
+    private CheckBoxPreference mShowCircleDotted;
     private ListPreference mCircleDotLength;
     private ListPreference mCircleDotInterval;
     private ColorPickerPreference mBatteryColor;
@@ -97,7 +97,7 @@ public class BatteryStatusSettings extends SettingsPreferenceFragment implements
             prefs.removeAll();
         }
 
-        addPreferencesFromResource(R.xml.bliss_battery_status);
+        addPreferencesFromResource(R.xml.status_bar_battery_status_settings);
         mResolver = getActivity().getContentResolver();
 
         int intColor = 0xffffffff;
@@ -123,7 +123,7 @@ public class BatteryStatusSettings extends SettingsPreferenceFragment implements
         PreferenceCategory catColors =
                 (PreferenceCategory) findPreference(PREF_CAT_COLORS);
         mShowCircleDotted =
-                (SwitchPreference) findPreference(PREF_SHOW_CIRCLE_DOTTED);
+                (CheckBoxPreference) findPreference(PREF_SHOW_CIRCLE_DOTTED);
         mCircleDotLength =
                 (ListPreference) findPreference(PREF_CIRCLE_DOT_LENGTH);
         mCircleDotInterval =
@@ -317,8 +317,8 @@ public class BatteryStatusSettings extends SettingsPreferenceFragment implements
             return frag;
         }
 
-        BatteryStatusSettings getOwner() {
-            return (BatteryStatusSettings) getTargetFragment();
+        StatusBarBatteryStatusSettings getOwner() {
+            return (StatusBarBatteryStatusSettings) getTargetFragment();
         }
 
         @Override

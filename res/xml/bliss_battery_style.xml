@@ -4,12 +4,6 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/status_bar_battery_style">
     
-    <PreferenceScreen
-        android:key="battery_status_settings"
-        android:title="@string/status_bar_battery_status_settings_title"
-        android:summary="@string/status_bar_battery_status_settings_summary"
-        android:fragment="com.android.settings.bliss.BatteryStatusSettings" />     
-
     <PreferenceCategory
         android:key="category_status_bar_battery_bar"
         android:title="@string/battery_bar_title">
