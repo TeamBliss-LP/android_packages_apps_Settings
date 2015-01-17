@@ -134,7 +134,10 @@
     <string name="text_title">Text</string>
     <string name="reset_message">Reset all entries to default?</string>
     <string name="reset_option_message">Reset values to\nAndroid- or Fusion default?</string>
-    <string name="category_general_title">General options</string>            
+    <string name="category_general_title">General options</string>
+    <string name="dlg_reset_values_message">Reset values to\nAndroid- or Bliss default?</string>
+    <string name="dlg_reset_android">Android</string>
+    <string name="dlg_reset_bliss">Bliss</string>          
     
     <!-- Sound settings -->
     <string name="advanced_sound_title">Advanced options</string>
@@ -1136,5 +1139,32 @@ sword is entered</string>
 
     <!-- Default alarm ringtone -->
     <string name="alarm_ringtone_title">Default alarm ringtone</string>
+    
+    <!-- Status bar battery status settings -->
+    <string name="status_bar_battery_status_settings_title">Battery status</string>
+    <string name="status_bar_battery_status_settings_summary">Customize the battery status</string>
+    <string name="battery_status_cat_circle_options_title">Customize the circle</string>
+    <string name="battery_status_style_title">Indicator</string>
+    <string name="battery_status_style_icon_portrait">Icon portrait</string>
+    <string name="battery_status_style_icon_landscape">Icon landscape</string>
+    <string name="battery_status_style_circle">Circle</string>
+    <string name="battery_status_style_text">Text</string>
+    <string name="battery_status_style_hidden">Hidden</string>
+    <string name="battery_status_percent_style_title">Percentage text position</string>
+    <string name="battery_status_percent_style_dialog_title">Choose a position</string>
+    <string name="battery_status_percent_style_text_inside">Inside the icon</string>
+    <string name="battery_status_percent_style_text_next">Next to the icon</string>
+    <string name="battery_status_percent_style_default">Hidden (default)</string>
+    <string name="battery_status_charge_animation_speed_title">Charging animation speed</string>
+    <string name="battery_status_charge_animation_speed_none">Disabled</string>
+    <string name="battery_status_charge_animation_speed_slow">Slow</string>
+    <string name="battery_status_charge_animation_speed_normal">Normal</string>
+    <string name="battery_status_charge_animation_speed_fast">Fast</string>
+    <string name="battery_status_show_circle_dotted_title">Circle dotted</string>
+    <string name="battery_status_show_circle_dotted_summary">Activate to show the circle dotted</string>
+    <string name="battery_status_circle_dot_length_title">Circle dot length</string>
+    <string name="battery_status_circle_dot_interval_title">Circle dot interval</string>
+    <string name="battery_status_battery_color_title">Fill</string>
+    <string name="battery_status_text_color_title">Text</string>    
 
 </resources>
