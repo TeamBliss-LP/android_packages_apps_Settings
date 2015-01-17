@@ -625,7 +625,7 @@ sword is entered</string>
     <string name="show_unac_and_overcounted_stats_summary">Show in battery statistics unaccounted and over-counted usage.</string>
     
     <!-- Battery Category -->
-    <string name="status_bar_battery_style">Battery Options</string>
+    <string name="battery_bar_settings">Battery Bar Options</string>
     
     <!-- Battery Bar -->
     <string name="status_bar_battery_cat_title">Battery</string>
