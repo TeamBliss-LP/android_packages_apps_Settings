@@ -775,5 +775,75 @@
         <item>1</item>
         <item>2</item>
     </string-array>
+    
+    <string-array name="battery_status_style_entries" translatable="false">
+        <item>@string/battery_status_style_icon_portrait</item>
+        <item>@string/battery_status_style_icon_landscape</item>
+        <item>@string/battery_status_style_circle</item>
+        <item>@string/battery_status_style_text</item>
+        <item>@string/battery_status_style_hidden</item>
+    </string-array>
+
+    <string-array name="battery_status_style_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+    <string-array name="battery_status_percent_style_entries" translatable="false">
+        <item>@string/battery_status_percent_style_text_inside</item>
+        <item>@string/battery_status_percent_style_text_next</item>
+        <item>@string/battery_status_percent_style_default</item>
+    </string-array>
+
+    <string-array name="battery_status_percent_style_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <string-array name="battery_status_circle_dot_entries">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
+
+    <string-array name="battery_status_circle_dot_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
+
+    <string-array name="battery_status_charge_animation_speed_entries" >
+        <item>@string/battery_status_charge_animation_speed_none</item>
+        <item>@string/battery_status_charge_animation_speed_slow</item>
+        <item>@string/battery_status_charge_animation_speed_normal</item>
+        <item>@string/battery_status_charge_animation_speed_fast</item>
+    </string-array>
+
+    <string-array name="battery_status_charge_animation_speed_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>3</item>
+        <item>5</item>
+    </string-array>    
 
 </resources>
