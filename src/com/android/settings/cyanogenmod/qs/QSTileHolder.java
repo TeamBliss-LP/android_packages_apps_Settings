@@ -68,6 +68,9 @@ public class QSTileHolder {
         } else if (tileType.equals("hotspot")) {
             resId = R.drawable.ic_qs_hotspot;
             stringId = R.string.hotspot;
+        } else if (tileType.equals("notifications")) {
+            resId = R.drawable.ic_qs_zen_on;
+            stringId = R.string.notifications;
         }
 
         String name = stringId != -1 ? context.getString(stringId) : null;
