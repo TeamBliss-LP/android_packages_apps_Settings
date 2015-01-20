@@ -1167,4 +1167,8 @@ sword is entered</string>
     <string name="battery_status_battery_color_title">Fill</string>
     <string name="battery_status_text_color_title">Text</string>    
 
+    <!-- Privacy guard notification -->
+    <string name="privacy_guard_notification_title">Notification</string>
+    <string name="privacy_guard_notifiation_summary">Show a notification if privacy guard is active</string>
+
 </resources>
