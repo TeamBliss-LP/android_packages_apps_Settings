@@ -93,7 +93,7 @@ limitations under the License.
 <string name="hfm_dialog_wait">Загрузка, подождите...</string>
 <string name="hfm_dialog_failed">Обновление файла hosts не удалось. Пожалуйста, попробуйте еще раз.</string>
 <string name="hfm_dialog_success">/4 источников хостов успешно применены!</string>
-<string name="hfm_dialog_conn_error">Ошибка: Интернет-соеденение отстутствует</string>
+<string name="hfm_dialog_conn_error">Ошибка: Интернет-соединение отстутствует</string>
 <!-- General strings -->
 <string name="ok">ОК</string>
 <string name="reset">Сбросить</string>
@@ -170,9 +170,9 @@ limitations under the License.
 <string name="screenshot_sound_title">Звук скриншота</string>
 <string name="screenshot_sound_summary">Проигрывать соответствующий звук после снятия скриншота</string>
 <!-- Network traffic -->
-<string name="network_traffic_title">Скорость соеденения</string>
-<string name="network_traffic_summary">Включение различных настроек отображения скорости соеденения в строке состояния</string>
-<string name="show_network_traffic_state">Скорость соеденения в статус баре</string>
+<string name="network_traffic_title">Скорость соединения</string>
+<string name="network_traffic_summary">Включение различных настроек отображения скорости соединения в строке состояния</string>
+<string name="show_network_traffic_state">Скорость соединения в статус баре</string>
 <string name="show_network_traffic_unit">Еденица измерения</string>
 <string name="show_network_traffic_frequency">Интервал обновления</string>
 <string name="show_network_traffic_disable">Отключен</string>
@@ -186,11 +186,11 @@ limitations under the License.
 <string name="show_network_traffic_1500">1500 мс</string>
 <string name="show_network_traffic_2000">2000 с</string>
 <string name="network_traffic_autohide">Автоскрытие</string>
-<string name="network_traffic_autohide_summary">Скрывать скорость соеденения когда передача данных не осуществляется</string>
+<string name="network_traffic_autohide_summary">Скрывать скорость соединения когда передача данных не осуществляется</string>
 <string name="network_traffic_autohide_threshold">Порог неактивности</string>
 <string name="network_traffic_color_style">Цвет</string>
 <string name="network_traffic_color_reset">Сбросить цвет</string>
-<string name="network_traffic_color_reset_message">Сбросить цвет скорости соеденения?</string>
+<string name="network_traffic_color_reset_message">Сбросить цвет скорости соединения?</string>
 <!-- Bliss settings screens -->
 <string name="header_category_personalization">Персонализация</string>
 <string name="interface_settings_title">Интерфейс</string>
