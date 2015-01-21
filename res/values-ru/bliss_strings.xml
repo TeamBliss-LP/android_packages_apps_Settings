@@ -34,7 +34,7 @@ limitations under the License.
 <string name="viper_settings_title">Эквалайзер</string>
 <string name="viper_summary">Доступ к V4A</string>
 <!-- Display desity -->
-<string name="display_density">Плоность экрана</string>
+<string name="display_density">Плотность экрана</string>
 <string name="display_density_summary">Изменение плотности экрана (0 для отключения, требует перезагрузки)</string>
 <!-- Toast animations -->
 <string name="toast_animation_title">Анимации всплывающих оповещений</string>
@@ -630,7 +630,7 @@ limitations under the License.
 <string name="gesture_anywhere_gestures_title">Жесты</string>
 <string name="gesture_anywhere_gestures_summary">Добавление, удаление и настройка жестов</string>
 <!-- Label, button used to add a gesture -->
-<string name="ga_button_add">Добавить жесть</string>
+<string name="ga_button_add">Добавить жесты</string>
 <!-- Label, button used to reload all gestures -->
 <string name="ga_button_reload">Обновить</string>
 <!-- Label, button used to cancel the operation of adding a gesture -->
@@ -743,7 +743,7 @@ limitations under the License.
 <!-- Security & location settings screen, change unlock gesture screen message on top of screen after drawing pattern -->
 <string name="lockgesture_pattern_entered_header">Жест записан.</string>
 <!-- Security & location settings screen, change unlock gesture screen instruction on top of screen to confirm pattern -->
-<string name="lockgesture_need_to_confirm">Нарисуте жест еще раз для подтвердждения:</string>
+<string name="lockgesture_need_to_confirm">Нарисуйте жест еще раз для подтвердждения:</string>
 <string name="lockgesture_pattern_confirmed_header">Ваш новый жест разблокировки:</string>
 <!-- Security & location settings screen, change unlock gesture screen button, on bottom of screen. After they draw a gesture and release their finger, we display the pattern so they remember. When they are ready to draw it once again to confirm it, they press this button. -->
 <string name="lockgesture_confirm_button_text">Подтвердить</string>
