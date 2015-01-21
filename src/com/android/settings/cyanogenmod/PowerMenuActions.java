@@ -16,6 +16,9 @@
 
 package com.android.settings.cyanogenmod;
 
+import android.app.ActivityManager;
+import android.app.admin.DeviceAdminReceiver;
+import android.app.admin.DevicePolicyManager;
 import android.content.Context;
 import android.content.ContentResolver;
 import android.content.Intent;
@@ -27,14 +30,19 @@ import android.os.UserHandle;
 import android.os.UserManager;
 import android.preference.SwitchPreference;
 import android.preference.Preference;
+import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
 import android.preference.ListPreference;
 import android.preference.Preference.OnPreferenceChangeListener;
+import android.preference.SeekBarPreference;
 import android.provider.Settings;
+
+import com.android.settings.Utils;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.util.cm.PowerMenuConstants;
+import com.android.settings.bliss.NumberPickerPreference;
 
 import static com.android.internal.util.cm.PowerMenuConstants.*;
 
@@ -48,6 +56,7 @@ public class PowerMenuActions extends SettingsPreferenceFragment implements
     final static String TAG = "PowerMenuActions";
 
     private static final String KEY_SCREENRECORD = "power_menu_screenrecord";
+    private static final String KEY_SCREENSHOT_DELAY = "screenshot_delay";    
 
     private SwitchPreference mScreenrecordPref;
     private SwitchPreference mPowerPref;
@@ -59,6 +68,14 @@ public class PowerMenuActions extends SettingsPreferenceFragment implements
     private SwitchPreference mSettingsPref;
     private SwitchPreference mLockdownPref;
     private SwitchPreference mSilentPref;
+    
+    private NumberPickerPreference mScreenshotDelay;
+
+    private ContentResolver mCr;
+    private PreferenceScreen mPrefSet;
+
+    private static final int MIN_DELAY_VALUE = 1;
+    private static final int MAX_DELAY_VALUE = 30;    
 
     Context mContext;
     private ArrayList<String> mLocalUserConfig = new ArrayList<String>();
@@ -71,8 +88,12 @@ public class PowerMenuActions extends SettingsPreferenceFragment implements
 
         addPreferencesFromResource(R.xml.power_menu_settings);
         mContext = getActivity().getApplicationContext();
+        
+        mPrefSet = getPreferenceScreen();
 
-        final ContentResolver resolver = getContentResolver();
+        mCr = getActivity().getContentResolver();
+
+        final ContentResolver resolver = getActivity().getContentResolver();
 
         mAvailableActions = getActivity().getResources().getStringArray(
                 R.array.power_menu_actions_array);
@@ -82,6 +103,14 @@ public class PowerMenuActions extends SettingsPreferenceFragment implements
         mScreenrecordPref.setChecked(Settings.System.getInt(resolver,
                 Settings.System.POWER_MENU_SCREENRECORD_ENABLED, 0) == 1);
         mScreenrecordPref.setOnPreferenceChangeListener(this);
+        
+        mScreenshotDelay = (NumberPickerPreference) mPrefSet.findPreference(KEY_SCREENSHOT_DELAY);
+        mScreenshotDelay.setOnPreferenceChangeListener(this);
+        mScreenshotDelay.setMinValue(MIN_DELAY_VALUE);
+        mScreenshotDelay.setMaxValue(MAX_DELAY_VALUE);
+        int ssDelay = Settings.System.getInt(mCr,
+                Settings.System.SCREENSHOT_DELAY, 1);
+        mScreenshotDelay.setCurrentValue(ssDelay);
 
         for (String action : mAllActions) {
         // Remove preferences not present in the overlay
@@ -166,11 +195,16 @@ public class PowerMenuActions extends SettingsPreferenceFragment implements
     }
 
     @Override
-    public boolean onPreferenceChange(Preference preference, Object o) {
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference == mScreenrecordPref) {
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.POWER_MENU_SCREENRECORD_ENABLED,
-                    Boolean.TRUE.equals((Boolean)o) ? 1 : 0);
+                    Boolean.TRUE.equals((Boolean)newValue) ? 1 : 0);
+            return true;
+        } else if (preference == mScreenshotDelay) {
+            int value = Integer.parseInt(newValue.toString());
+            Settings.System.putInt(mCr, Settings.System.SCREENSHOT_DELAY,
+                    value);
             return true;
         }
         return false;
