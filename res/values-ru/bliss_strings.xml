@@ -419,9 +419,6 @@ limitations under the License.
 <string name="lock_numpad_random_on_request">По запросу</string>
 <!--Device Control-->
 <string name="device_control_title">Контроль устройства</string>
-<!-- OmniSwitch -->
-<string name="omniswitch_category">OmniSwitch</string>
-<string name="omniswitch_settings_title">Настройки OmniSwitch</string>
 <!-- ListView animation -->
 <string name="listview_category">Анимация ListView</string>
 <string name="listview_animation_title">Анимация ListView</string>
@@ -883,4 +880,179 @@ limitations under the License.
 <!-- QuickSettings haptic feedback -->
 <string name="quick_settings_vibrate_title">Вибрировать при касании</string>
 <string name="quick_settings_vibrate_summary">Вибрировать при касании тайлов</string>
+</resources>
+<!-- Support Team Bliss -->
+<string name="support_category">Поддержка</string>
+<string name="support_bliss_title">Отблагодарить Team Bliss</string>
+<string name="support_bliss_summary">Ссылка на пожертвование Team Bliss на PayPal</string>
+<!-- vanir actions and utilities -->
+<string name="shortcut_label">Действия и утилиты</string>
+<string name="toggle_flushmemory">Память GC</string>
+<string name="toggle_ring_vib">Звук/Вибро</string>
+<string name="toggle_ring_silent">Звук/Бесшумный</string>
+<string name="toggle_ring_vib_silent">Звук/Вибро/Бесшумный</string>
+<string name="toggle_profile">Профили</string>
+<string name="toggle_profile_toast">Сейчас профили отключены</string>
+<string name="toggle_dream">Скрин-севйвер</string>
+<string name="toggle_dream_failed">Скрин-сейвер выключен или отключен</string>
+<!-- Shortcut picker -->
+<string name="use_custom_app_title">Использовать свое приложение</string>
+<string name="use_custom_app_summary">Использовать свое приложение вместо диалога недавних приложений</string>
+<string name="group_applications">Приложения</string>
+<string name="select_custom_app_title">Выбор своего приложения</string>
+<!-- Custom navigation bar targets -->
+<string name="choose_action_double_tap_title">Выбор действия при двойном касании экрана</string>
+<string name="choose_action_title">Выбор действия</string>
+<string name="choose_action_short_title">Выбор короткого действия</string>
+<string name="choose_action_long_title">Выбор долгого действия</string>
+<string name="action_long_save">установлен на длинное действие</string>
+<string name="action_short">Короткое действие</string>
+<string name="action_long">Длинное действие</string>
+<string name="action_double">Действие при двойном касании экрана</string>
+<string name="action_icon">Своя иконка</string>
+<string name="custom_app_icon_successfully">" иконка выбрана успешно!"</string>
+<string name="add_button">Добавить кнопку</string>
+<string name="category_navbar">Навигационная панель</string>
+<string name="navbar_tab_arrange">Редактор</string>
+<string name="navbar_tab_settings">Настройки</string>
+<string name="change_layouts_title">Расположение</string>
+<string name="change_layouts_dialog_title">Выберите разметку, которую вы хотите отредоктировать</string>
+<string name="alternate_key_layouts">Чисто включенных разметок</string>
+<string name="alternate_key_layouts_summary">Включить смену разметки кнопок и задать число включенных разметок</string>
+<string name="alternate_key_layouts_enabled_summary">разметки навигационной панели сейчас отключены</string>
+<string name="alternate_key_layouts_enabled_partial_summary">больше 5</string>
+<string name="alternate_key_layouts_all_enabled_summary">Все 5 разметок навигационной панели включены</string>
+<string name="alternate_menu_summary">Разрешить старую кнопку меню замещать установленную разметку</string>
+<string name="layouts_dialog_title">Чисто включенных разметок</string>
+<string name="enable_sidekeys">Разрешить старую кнопку меню</string>
+<string name="enable_sidekeys_summary">Добавить пространство между боковыми кнопками навигационных кнопок.</string>
+<string name="navigation_bar_height_text">Высота панели в портретной ориентации</string>
+<string name="navigation_bar_height_landscape_text">Высота панели в ландшафтной ориентации</string>
+<string name="navigation_bar_width_text">Ширина панели в портретной ориентации</string>
+<string name="enable_ime_layout">Дополнительное кнопки в IME</string>
+<string name="enable_ime_layout_summary">Включить переключатель, который изменяет макет стрелки клавиатуры и AOSP клавиатуры</string>
+<string name="enable_ime_layout_disabled">Не хватает места в разметке: включить дополнительные макеты или клавиши меню</string>
+<string name="customize_ime_layout_dialog_title">Настройте раскладка клавиатуры</string>
+<string name="ime_layout_ime">IME переключатель</string>
+<string name="ime_layout_home">Кнопка Дом</string>
+<string name="ime_layout_blank">blank space before dpad keys</string>
+<string name="editor_instructions">Переупорядочивание перетаскиванием за ручку справа. Удаление путем свайпа.</string>
+<string name="save">Сохранить</string>
+<string name="navigation_bar_longpress_timeout_text">Задержка удержания кнопкок</string>
+<string name="enable_navigation_ring_title">Поисковой ассистент при удержании</string>
+<string name="enable_navigation_ring_summary">Включить Google Now при удержании кнопки домой</string>
+<string name="navbar_use_gallary_warning">Информация: выберите Галерею чтобы сохранить изображение</string>
+<!-- Change Log strings -->
+<string name="changelog_title">Просмотр списка изменений</string>
+<string name="changelog_dialog">Список изменений</string>
+<string name="changelog_loading">Загрузка списка...</string>
+<string name="changelog_error">Невозможно загрузить список изменений</string>
+<string name="changelog_unknown">Неизвестно</string>
+<string name="changelog_version">Версия</string>
+<!-- Pie control -->
+<string name="pie_control_title">Настройки Pie</string>
+<string name="pie_control_summary">Включить Pie</string>
+<string name="pie_control_size">Размер навигации</string>
+<string name="pie_control_trigger_positions">Параметры вызова PIE</string>
+<string name="pie_control_trigger_left">Вызвать слева экрана</string>
+<string name="pie_control_trigger_bottom">Вызвать снизу экрана</string>
+<string name="pie_control_trigger_right">Вызвать справа экрана</string>
+<string name="pie_control_trigger_top">Вызвать сверху экрана</string>
+<string name="pie_control_trigger_top_summary">Вверх pie не содержит сведений о состоянии и будильник</string>
+<string name="pie_button_style">Стиль кнопки</string>
+<string name="pie_button_color_title">Цвет кнопки</string>
+<string name="pie_button_alpha_title">Прозрачность кнопки</string>
+<string name="pie_button_outline_color_title">Цвет контура</string>
+<string name="pie_button_pressed_color_title">Цвет нажатия кнопки</string>
+<string name="pie_button_long_pressed_color_title">Цвет долгого нажатия</string>
+<string name="pie_button_pressed_alpha_title">Прозрачность нажатия</string>
+<string name="pie_icon_style">Стиль значка кнопки</string>
+<string name="pie_icon_color_title">Цвет значка кнопки</string>
+<string name="pie_icon_color_mode_title">Цветовой режим иконки кнопки</string>
+<string name="pie_icon_color_mode_dialog_title">Раскрасить</string>
+<string name="pie_icon_color_mode_summary">Изменить цветовой режим иконок кнопки</string>
+<string name="pie_trigger_note_title">Примечание</string>
+<string name="pie_trigger_note_summary">Чтобы избежать конфликтов со строкой состояния или панелью навигации, ввод PIE на этих краях автоматически отключаются если один или оба доступны</string>
+<string name="pie_background_color_title">Цвет фона</string>
+<string name="pie_snap_color_title">Цвет точки прикрепления</string>
+<string name="pie_text_color_title">Цвет текста</string>
+<string name="pie_background_alpha_title">Прозрачность фона</string>
+<string name="pie_mirror_right_title">Зеркало pie справа</string>
+<string name="pie_mirror_right_summary">Зеркальное отображение pie слева/справа</string>
+<string name="pie_style">Стиль и измерение</string>
+<string name="pie_style_title">Стиль</string>
+<string name="pie_dimens_title">Измерение</string>
+<string name="pie_additional_options">Дополнительные опции</string>
+<string name="pie_show_snap_title">Показать точки прикрепления</string>
+<string name="pie_show_snap_summary">Отображать точки привязки для динамического изменения края триггера</string>
+<string name="pie_show_text_title">Показать состояние и будильник</string>
+<string name="pie_show_text_summary">Показать состояние телефона, сведения о дате и времени</string>
+<string name="pie_show_background_title">Показать фон</string>
+<string name="pie_show_background_summary">Включить фона экрана Pie</string>
+<string name="pie_button">Кнопки</string>
+<string name="pie_button_second_layer">Второй слой кнопки</string>
+<string name="pie_button_second_layer_summary">Изменения второго слоя кнопки</string>
+<string name="pie_button_style_summary">Изменить стиль кнопки Pie</string>
+<string name="pie_style_reset_message">Сброс стиля по умолчанию?</string>
+<string name="shortcut_action_help_pie_second_layer_delete_last_entry">Удаление каждого %1$s в спике отключит второй слой Pie.</string>
+<string name="icon_color_mode_all_icons">Все иконки</string>
+<string name="icon_color_mode_system_icons">Системные иконки</string>
+<string name="icon_color_mode_system_custom_icons">Системные и пользовательские иконки</string>
+<!-- Navigation bar visibility -->
+<string name="navigation_menu_default_jb_behavior">Показать по запросу (по умолчанию)</string>
+<string name="navigation_menu_never_show">Никогда не показывать</string>
+<string name="navigation_menu_always_show">Всегда показывать</string>
+<string name="title_pref_menu_display">Видимость меню</string>
+<string name="summary_pref_menu_display">Как и когда вы хотите отобразить кнопку меню?</string>
+<!-- QuickSettings brightness slider -->
+<string name="qs_brightness_slider_title">Показать ползунок «Яркость»</string>
+<string name="qs_brightness_slider_summary">Показать ползунок «Яркость» в панели Быстрых настроек</string>
+<!-- OmniSwitch -->
+<string name="omniswitch_settings_title">OmniSwitch</string>
+<string name="omniswitch_category">OmniSwitch</string>
+<string name="recents_use_omniswitch_title">Использовать вместо меню «Недавно запущенные»</string>
+<string name="recents_use_omniswitch_summary">Использовать вместо стандартного вида меню «Недавно запущенные»</string>
+<string name="omniswitch_start_settings_title">Настройки</string>
+<string name="omniswitch_start_settings_summary">Открыть настройки OmniSwitch</string>
+<string name="omniswitch_first_time_title">Информация</string>
+<string name="omniswitch_first_time_message">Убедитесь, что вы включили OmniSwitch. Вы можете сделать этого в секции \"Настройки\" снизу</string>
+<!-- LockScreen Section -->
+<string name="lockscreen_settings_title">Экран блокировки</string>
+<!-- Camera lockscreen swipe -->
+<string name="camera_widget_hide">Отключить ярлык камеры</string>
+<string name="camera_widget_hide_summary">Отключить возможность быстрого запуска камеры с экрана блокировки</string>
+<!-- Dialer lockscreen swipe -->
+<string name="dialer_widget_hide">Отключить ярлык номеронабирателя</string>
+<string name="dialer_widget_hide_summary">"Отключить возможность быстрого запуска номеронабирателя с экрана блокировки. Системный интерфейс перезагрузится"</string>
+<!-- Default alarm ringtone -->
+<string name="alarm_ringtone_title">Мелодия будильника по умолчанию</string>
+<!-- Status bar battery status settings -->
+<string name="status_bar_battery_status_settings_title">Статус батареи</string>
+<string name="status_bar_battery_status_settings_summary">Настройка статуса батареи</string>
+<string name="battery_status_cat_circle_options_title">Настройте круг</string>
+<string name="battery_status_style_title">Индикатор</string>
+<string name="battery_status_style_icon_portrait">Портретная иконка</string>
+<string name="battery_status_style_icon_landscape">Ландшафтная иконка</string>
+<string name="battery_status_style_circle">Круг</string>
+<string name="battery_status_style_text">Текст</string>
+<string name="battery_status_style_hidden">Скрыт</string>
+<string name="battery_status_percent_style_title">Позиция процентов батареи</string>
+<string name="battery_status_percent_style_dialog_title">Выберите позицию</string>
+<string name="battery_status_percent_style_text_inside">Внутри иконки</string>
+<string name="battery_status_percent_style_text_next">Рядом с иконкой</string>
+<string name="battery_status_percent_style_default">Скрыть</string>
+<string name="battery_status_charge_animation_speed_title">Анимация зарядки батареи</string>
+<string name="battery_status_charge_animation_speed_none">Отключена</string>
+<string name="battery_status_charge_animation_speed_slow">Медленная</string>
+<string name="battery_status_charge_animation_speed_normal">Нормальная</string>
+<string name="battery_status_charge_animation_speed_fast">Быстрая</string>
+<string name="battery_status_show_circle_dotted_title">Точечный круг</string>
+<string name="battery_status_show_circle_dotted_summary">Примените для отображения круга батареи в точках</string>
+<string name="battery_status_circle_dot_length_title">Длинна точек</string>
+<string name="battery_status_circle_dot_interval_title">Количество точек</string>
+<string name="battery_status_battery_color_title">Цвет заполнения</string>
+<string name="battery_status_text_color_title">Цвет текста</string>
+<!-- Privacy guard notification -->
+<string name="privacy_guard_notification_title">Уведомление</string>
+<string name="privacy_guard_notifiation_summary">Отображать уведомление, когда «Privacy guard» активен</string>
 </resources>
