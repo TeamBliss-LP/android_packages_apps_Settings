@@ -107,5 +107,6 @@ public class Settings extends SettingsActivity {
     public static class LiveDisplayActivity extends SettingsActivity { /* empty */ }
     public static class QSTilesSettingsActivity extends SettingsActivity { /* empty */ }
     public static class DisplayRotationSettingsActivity extends SettingsActivity { /* empty */ }
+    public static class ExpandedDesktopSettingsActivity extends SettingsActivity { /* empty */ }
 }
 
