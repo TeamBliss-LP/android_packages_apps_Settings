@@ -133,7 +133,7 @@ public class LockScreenSettings extends SettingsPreferenceFragment
             boolean value = (Boolean) objValue;
             Settings.System.putIntForUser(getActivity().getContentResolver(),
                     Settings.System.LOCKSCREEN_WEATHER, value ? 1 : 0, UserHandle.USER_CURRENT);
-            Helpers.restartSystem();
+            Helpers.restartSystemUI();
         }            
         return false;
     }
