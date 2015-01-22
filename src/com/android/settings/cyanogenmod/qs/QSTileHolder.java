@@ -161,6 +161,22 @@ public class QSTileHolder {
                 resourceName = "ic_qs_heads_up_on";
                 stringId = R.string.qs_tile_headsup;
                 break;                
+            case QSConstants.TILE_BATTERY_SAVER:
+                resourceName = "ic_qs_battery_saver_on";
+                stringId = R.string.qs_battery_saver_tile;
+                break;
+            case QSConstants.TILE_BRIGHTNESS:
+                resourceName = "ic_qs_brightness_auto_off";
+                stringId = R.string.qs_brightness_tile;
+                break;
+            case QSConstants.TILE_EXPANDED_DESKTOP:
+                resourceName = "ic_qs_expanded_desktop";
+                stringId = R.string.qs_expanded_desktop_tile;
+                break;
+            case QSConstants.TILE_SCREEN_OFF:
+                resourceName = "ic_qs_screen_off";
+                stringId = R.string.qs_screen_off_tile;
+                break;
             default:
                 return null;
         }

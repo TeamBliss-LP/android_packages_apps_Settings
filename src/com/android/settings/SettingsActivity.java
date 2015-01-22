@@ -319,7 +319,8 @@ public class SettingsActivity extends Activity
             QSTiles.class.getName(),
             HeadsUpSettings.class.getName(),
             DisplayRotation.class.getName(),
-            ProfilesSettings.class.getName()
+            ProfilesSettings.class.getName(),
+            ExpandedDesktopPreferenceFragment.class.getName()
     };
 
 
