@@ -94,7 +94,8 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
         updateClockStyleDescription();
 
         mStatusBarCarrier = (SwitchPreference) prefSet.findPreference(STATUS_BAR_CARRIER);
-        mStatusBarCarrier.setChecked((Settings.System.getInt(resolver, Settings.System.STATUS_BAR_CARRIER, 0) == 1));
+        mStatusBarCarrier.setChecked((Settings.System.getInt(getContentResolver(),
+                Settings.System.STATUS_BAR_CARRIER, 0) == 1));
         mStatusBarCarrier.setOnPreferenceChangeListener(this);
         mCustomCarrierLabel = (PreferenceScreen) prefSet.findPreference(CUSTOM_CARRIER_LABEL);
 		
@@ -190,6 +191,7 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
             alert.setNegativeButton(getString(android.R.string.cancel), null);
             alert.show();
         }
+        // If we didn't handle it, let preferences handle it.		
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }	
 }
