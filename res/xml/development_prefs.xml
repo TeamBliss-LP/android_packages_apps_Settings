@@ -37,7 +37,12 @@
         android:title="@string/media_scanner_on_boot_title"
         android:persistent="false"
         android:entries="@array/media_scanner_on_boot_entries"
-        android:entryValues="@array/media_scanner_on_boot_values" />	            
+        android:entryValues="@array/media_scanner_on_boot_values" />
+        
+    <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
+        android:key="disable_fc_notifications"
+        android:title="@string/disable_fc_notifications_title"
+        android:summary="@string/disable_fc_notifications_summary" />
 
     <SwitchPreference
         android:key="advanced_reboot"
