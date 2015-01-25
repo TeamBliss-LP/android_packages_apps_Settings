@@ -133,7 +133,7 @@
     <string name="icons_title">Icons</string>
     <string name="text_title">Text</string>
     <string name="reset_message">Reset all entries to default?</string>
-    <string name="reset_option_message">Reset values to\nAndroid- or Fusion default?</string>
+    <string name="reset_option_message">Reset values to\nAndroid- or Bliss default?</string>
     <string name="category_general_title">General options</string>
     <string name="dlg_reset_values_message">Reset values to\nAndroid- or Bliss default?</string>
     <string name="dlg_reset_android">Android</string>
