@@ -230,7 +230,7 @@
     
     <!-- Bliss settings screens -->
     <string name="header_category_personalization">Personalization</string>
-    <string name="interface_settings_title">Interface</string>
+    <string name="interface_settings_title">Bliss Interface</string>
 
     <!-- Color Picker -->
     <string name="dialog_color_picker">Color picker</string>
