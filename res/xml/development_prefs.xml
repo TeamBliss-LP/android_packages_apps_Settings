@@ -31,6 +31,12 @@
             android:key="bugreport"
             android:title="@*android:string/bugreport_title"
             android:dialogTitle="@*android:string/bugreport_title" />
+        
+    <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
+        android:key="disable_fc_notifications"
+        android:title="@string/disable_fc_notifications_title"
+        android:summary="@string/disable_fc_notifications_summary" />
+
 
     <SwitchPreference
         android:key="advanced_reboot"
