@@ -94,6 +94,10 @@ public class QSTileHolder {
                 resourceName = "ic_qs_network_adb_on";
                 stringId = R.string.qs_tile_adb_over_network;
                 break;
+			case QSConstants.TILE_NOTIFICATIONS:
+			    resourceName = "ic_qs_zen_on";
+			    stringId = R.string.qs_tile_notifications;
+			    break;
             case QSConstants.TILE_PROFILES:
                 resourceName = "ic_qs_system_profiles";
                 stringId = R.string.qs_tile_profiles;

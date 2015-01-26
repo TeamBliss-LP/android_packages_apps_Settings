@@ -891,6 +891,7 @@
     <string name="qs_tile_cast_screen">Cast screen</string>
     <string name="qs_tile_hotspot">Hotspot</string>
     <string name="qs_tile_adb_over_network">ADB over network</string>
+    <string name="qs_tile_notifications">Notifications</string>    
     <string name="qs_tile_profiles">System profiles</string>
     <string name="qs_tile_performance">Performance</string>
     <string name="qs_tile_nfc">NFC</string>
