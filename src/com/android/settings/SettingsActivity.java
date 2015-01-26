@@ -1258,10 +1258,6 @@ public class SettingsActivity extends Activity
                 } else if (id == R.id.performance_settings) {
                     if (!(pm.hasPowerProfiles() || (showDev && !Build.TYPE.equals("user")))) {
                         removeTile = true;
-                    }					
-                } else if (id == R.id.voice_wakeup_settings) {
-                    if (!Utils.isPackageInstalled(this, VOICE_WAKEUP_PACKAGE_NAME)) {
-                        removeTile = true;
                     }
                 }
 
