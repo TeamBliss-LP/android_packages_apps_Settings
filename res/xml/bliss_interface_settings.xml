@@ -29,7 +29,7 @@
         android:key="recents_panel"
         android:fragment="com.android.settings.bliss.RecentsSettings"	
         android:title="@string/recents_options_title"
-        android:icon="@drawable/ic_settings_storage" />
+        android:icon="@drawable/ic_settings_recents" />
         
     <PreferenceScreen
         android:key="notification_drawer"
