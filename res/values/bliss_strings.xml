@@ -1129,10 +1129,7 @@ sword is entered</string>
   
     <!-- LockScreen Section -->
     <string name="lockscreen_settings_title">Lockscreen Options</string>
-
-    <!-- Default alarm ringtone -->
-    <string name="alarm_ringtone_title">Default alarm ringtone</string>
-    
+ 
     <!-- Status bar battery status settings -->
     <string name="status_bar_battery_status_settings_title">Battery status</string>
     <string name="status_bar_battery_status_settings_summary">Customize the battery status</string>
