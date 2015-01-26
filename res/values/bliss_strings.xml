@@ -603,10 +603,10 @@ sword is entered</string>
     <string name="shortcuts_icon_picker_unlock">Unlock</string>              
 
     <!-- Lockscreen Shortcuts -->
-    <string name="lockscreen_shortcuts_title">Shortcuts</string>
-    <string name="lockscreen_shortcuts_summary">View or change custom lock screen shortcuts</string>
+    <string name="lockscreen_shortcuts_title">Middle Shortcuts</string>
+    <string name="lockscreen_shortcuts_summary">View or change custom middle lock screen shortcuts</string>
     <string name="lockscreen_shorcuts_longpress_title">Shortcuts longpress</string>
-    <string name="lockscreen_shorcuts_longpress_summary">Open custom lock screen shortcuts on longpress</string>
+    <string name="lockscreen_shorcuts_longpress_summary">Open custom lockscreen shortcuts on longpress</string>
     
     <!-- Show carrier label and custom -->
     <string name="carrier_options">Carrier Label Options</string>
