@@ -19,18 +19,6 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/lockscreen_settings_title" >
 
-        <!-- Disable camera swipe -->
-        <SwitchPreference
-            android:key="camera_widget_hide"
-            android:title="@string/camera_widget_hide"
-            android:summary="@string/camera_widget_hide_summary" />
-
-        <!-- Disable dialer swipe -->
-        <SwitchPreference
-            android:key="dialer_widget_hide"
-            android:title="@string/dialer_widget_hide"
-            android:summary="@string/dialer_widget_hide_summary" />
-            
         <!-- lockscreen weather -->
         <SwitchPreference
             android:key="lockscreen_weather"
