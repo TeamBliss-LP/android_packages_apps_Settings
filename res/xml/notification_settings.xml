@@ -56,7 +56,8 @@
         <!-- Link Volume Notification -->
         <com.android.settings.cyanogenmod.SecureSettingSwitchPreference
                 android:key="volume_link_notification"
-                android:title="@string/link_volume_option_title" />
+                android:title="@string/link_volume_option_title"
+                android:defaultValue="true" />
 
         <!-- Notification volume -->
         <com.android.settings.notification.VolumeSeekBarPreference
