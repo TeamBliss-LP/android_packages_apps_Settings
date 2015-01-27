@@ -56,12 +56,6 @@
             android:defaultValue="false" />
 	    
         <com.android.settings.cyanogenmod.SecureSettingSwitchPreference
-            android:key="qs_wifi_detail"
-            android:title="@string/qs_wifi_detail_title"
-            android:summary="@string/qs_wifi_detail_summary"
-            android:defaultValue="false" />	    
-            
-        <com.android.settings.cyanogenmod.SecureSettingSwitchPreference
             android:key="qs_show_brightness_slider"
             android:title="@string/qs_brightness_slider_title"
             android:persistent="false"

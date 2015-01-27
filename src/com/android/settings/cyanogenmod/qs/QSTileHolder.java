@@ -140,6 +140,7 @@ public class QSTileHolder {
  	        case QSConstants.TILE_SCREEN_TIMEOUT:
                 resourceName = "ic_qs_screen_timeout_on";
                 stringId = R.string.qs_screentimeout_tile;
+                break;
             case QSConstants.TILE_VISUALIZER:
                 resourceName = "ic_qs_visualizer_static";
                 stringId = R.string.qs_tile_visualizer;
