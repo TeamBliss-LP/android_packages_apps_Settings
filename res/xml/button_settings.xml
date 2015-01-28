@@ -94,6 +94,12 @@
             android:summary="@string/navigation_bar_left_summary"
             android:defaultValue="false"
 	        android:dependency="enable_nav_bar" />
+
+        <ListPreference
+            android:key="navigation_recents_long_press"
+            android:dialogTitle="@string/navigation_bar_recents_title"
+            android:title="@string/navigation_bar_recents_title"
+            android:persistent="false" />
 	        
         <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
             android:key="double_tap_sleep_navbar"
