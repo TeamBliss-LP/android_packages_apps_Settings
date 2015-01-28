@@ -50,6 +50,9 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
     private static final String TAG = "StatusBarSettings";
 
     private static final String KEY_STATUS_BAR_CLOCK = "clock_style_pref";
+    private static final String KEY_SMS_BREATH = "sms_breath";
+    private static final String KEY_MISSED_CALL_BREATH = "missed_call_breath";
+    private static final String KEY_VOICEMAIL_BREATH = "voicemail_breath";
 	private static final String STATUS_BAR_CARRIER = "status_bar_carrier";
     private static final String CUSTOM_CARRIER_LABEL = "custom_carrier_label";
     private static final String STATUS_BAR_CARRIER_COLOR = "status_bar_carrier_color";
@@ -57,6 +60,9 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
     static final int DEFAULT_STATUS_CARRIER_COLOR = 0xffffffff;
 
     private PreferenceScreen mClockStyle;
+    private SwitchPreference mSMSBreath;
+    private SwitchPreference mMissedCallBreath;
+    private SwitchPreference mVoicemailBreath;    
 	private SwitchPreference mStatusBarCarrier;
     private PreferenceScreen mCustomCarrierLabel;
     private ColorPickerPreference mCarrierColorPicker;
@@ -92,6 +98,10 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
 
         mClockStyle = (PreferenceScreen) prefSet.findPreference(KEY_STATUS_BAR_CLOCK);
         updateClockStyleDescription();
+        
+        mSMSBreath = (SwitchPreference) prefSet.findPreference(KEY_SMS_BREATH);
+        mMissedCallBreath = (SwitchPreference) prefSet.findPreference(KEY_MISSED_CALL_BREATH);
+        mVoicemailBreath = (SwitchPreference) prefSet.findPreference(KEY_VOICEMAIL_BREATH);        
 
         mStatusBarCarrier = (SwitchPreference) prefSet.findPreference(STATUS_BAR_CARRIER);
         mStatusBarCarrier.setChecked((Settings.System.getInt(getContentResolver(),
@@ -133,6 +143,18 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
             boolean value = (Boolean) newValue;
             Settings.System.putInt(resolver, Settings.System.STATUS_BAR_CARRIER, value ? 1 : 0);
             return true;
+        } else if (preference == mMissedCallBreath) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(resolver, Settings.System.KEY_MISSED_CALL_BREATH, value ? 1 : 0);
+            return true;
+        } else if (preference == mVoicemailBreath) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(resolver, Settings.System.KEY_VOICEMAIL_BREATH, value ? 1 : 0);
+            return true;
+        } else if (preference == mSMSBreath) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(resolver, Settings.System.KEY_SMS_BREATH, value ? 1 : 0);
+            return true;              
         } else if (preference == mCarrierColorPicker) {
             String hex = ColorPickerPreference.convertToARGB(
                     Integer.valueOf(String.valueOf(newValue)));
