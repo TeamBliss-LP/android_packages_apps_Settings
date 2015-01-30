@@ -18,6 +18,7 @@ package com.android.settings.search;
 
 import android.provider.SearchIndexableResource;
 
+import com.android.settings.ButtonSettings;
 import com.android.settings.DataUsageSummary;
 import com.android.settings.DateTimeSettings;
 import com.android.settings.DevelopmentSettings;
@@ -32,6 +33,9 @@ import com.android.settings.SecuritySettings;
 import com.android.settings.WirelessSettings;
 import com.android.settings.accessibility.AccessibilitySettings;
 import com.android.settings.bluetooth.BluetoothSettings;
+import com.android.settings.bliss.LockScreenSettings;
+import com.android.settings.bliss.NotificationDrawer;
+import com.android.settings.bliss.StatusBar;
 import com.android.settings.deviceinfo.Memory;
 import com.android.settings.fuelgauge.BatterySaverSettings;
 import com.android.settings.fuelgauge.PowerUsageSummary;
@@ -123,13 +127,6 @@ public final class SearchIndexableResources {
                         HomeSettings.class.getName(),
                         R.drawable.ic_settings_home));
                         
-        sResMap.put(InterfaceSettings.class.getName(),
-                new SearchIndexableResource(
-                        Ranking.getRankForClassName(InterfaceSettings.class.getName()),
-                        NO_DATA_RES_ID,
-                        InterfaceSettings.class.getName(),
-                        R.drawable.ic_settings_interface));                        
-
         sResMap.put(DisplaySettings.class.getName(),
                 new SearchIndexableResource(
                         Ranking.getRankForClassName(DisplaySettings.class.getName()),
@@ -262,6 +259,49 @@ public final class SearchIndexableResources {
                         NO_DATA_RES_ID,
                         DeviceInfoSettings.class.getName(),
                         R.drawable.ic_settings_about));
+						
+        sResMap.put(InterfaceSettings.class.getName(),
+                new SearchIndexableResource(
+                        Ranking.getRankForClassName(InterfaceSettings.class.getName()),
+                        R.xml.bliss_interface_settings,
+                        InterfaceSettings.class.getName(),
+                        R.drawable.ic_settings_interface));   						
+
+        sResMap.put(ButtonSettings.class.getName(),
+                new SearchIndexableResource(
+                        Ranking.getRankForClassName(ButtonSettings.class.getName()),
+                        R.xml.button_settings,
+                        ButtonSettings.class.getName(),
+                        R.drawable.ic_settings_buttons));
+						
+        sResMap.put(LockScreenSettings.class.getName(),
+                new SearchIndexableResource(
+                        Ranking.getRankForClassName(LockScreenSettings.class.getName()),
+                        R.xml.bliss_lockscreen_settings,
+                        LockScreenSettings.class.getName(),
+                        R.drawable.ic_settings_lockscreen));						
+
+        sResMap.put(StatusBar.class.getName(),
+                new SearchIndexableResource(
+                        Ranking.getRankForClassName(StatusBar.class.getName()),
+                        R.xml.status_bar_settings,
+                        StatusBar.class.getName(),
+                        R.drawable.ic_settings_extdesk_hidenavbar));
+
+        sResMap.put(NotificationDrawer.class.getName(),
+                new SearchIndexableResource(
+                        Ranking.getRankForClassName(NotificationDrawer.class.getName()),
+                        R.xml.notification_drawer_settings,
+                        NotificationDrawer.class.getName(),
+                        R.drawable.ic_settings_notification_drawer));
+
+        sResMap.put(com.android.settings.cyanogenmod.PrivacySettings.class.getName(),
+                new SearchIndexableResource(
+                        Ranking.getRankForClassName(
+                                com.android.settings.cyanogenmod.PrivacySettings.class.getName()),
+                        R.xml.privacy_settings_cyanogenmod,
+                        com.android.settings.cyanogenmod.PrivacySettings.class.getName(),
+                        R.drawable.ic_settings_privacy));
     }
 
     private SearchIndexableResources() {
