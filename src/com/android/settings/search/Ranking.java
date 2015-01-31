@@ -27,6 +27,7 @@ import com.android.settings.bliss.InterfaceSettings;
 import com.android.settings.ScreenPinningSettings;
 import com.android.settings.PrivacySettings;
 import com.android.settings.SecuritySettings;
+import com.android.settings.WallpaperTypeSettings;
 import com.android.settings.WirelessSettings;
 import com.android.settings.accessibility.AccessibilitySettings;
 import com.android.settings.bluetooth.BluetoothSettings;
@@ -35,8 +36,10 @@ import com.android.settings.fuelgauge.BatterySaverSettings;
 import com.android.settings.fuelgauge.PowerUsageSummary;
 import com.android.settings.inputmethod.InputMethodAndLanguageSettings;
 import com.android.settings.location.LocationSettings;
+import com.android.settings.lockscreen.LockScreenSettings;
 import com.android.settings.net.DataUsageMeteredSettings;
-import com.android.settings.notification.NotificationSettings;
+import com.android.settings.notification.NotificationManagerSettings;
+import com.android.settings.SoundSettings;
 import com.android.settings.notification.OtherSoundSettings;
 import com.android.settings.notification.ZenModeSettings;
 import com.android.settings.print.PrintSettingsFragment;
@@ -62,19 +65,20 @@ public final class Ranking {
     public static final int RANK_HOME = 6;
     public static final int RANK_BLISS = 7;    
     public static final int RANK_DISPLAY = 8;
-    public static final int RANK_NOTIFICATIONS = 9;
-    public static final int RANK_MEMORY = 10;
-    public static final int RANK_POWER_USAGE = 11;
-    public static final int RANK_USERS = 12;
-    public static final int RANK_LOCATION = 13;
-    public static final int RANK_SECURITY = 14;
-    public static final int RANK_IME = 15;
-    public static final int RANK_PRIVACY = 16;
-    public static final int RANK_DATE_TIME = 17;
-    public static final int RANK_ACCESSIBILITY = 18;
-    public static final int RANK_PRINTING = 19;
-    public static final int RANK_DEVELOPEMENT = 20;
-    public static final int RANK_DEVICE_INFO = 21;
+    public static final int RANK_WALLPAPER = 9;
+    public static final int RANK_NOTIFICATIONS = 10;
+    public static final int RANK_MEMORY = 11;
+    public static final int RANK_POWER_USAGE = 12;
+    public static final int RANK_USERS = 13;
+    public static final int RANK_LOCATION = 14;
+    public static final int RANK_SECURITY = 15;
+    public static final int RANK_IME = 16;
+    public static final int RANK_PRIVACY = 17;
+    public static final int RANK_DATE_TIME = 18;
+    public static final int RANK_ACCESSIBILITY = 19;
+    public static final int RANK_PRINTING = 20;
+    public static final int RANK_DEVELOPEMENT = 21;
+    public static final int RANK_DEVICE_INFO = 22;
 
     public static final int RANK_UNDEFINED = -1;
     public static final int RANK_OTHERS = 1024;
@@ -113,8 +117,12 @@ public final class Ranking {
         // Display
         sRankMap.put(DisplaySettings.class.getName(), RANK_DISPLAY);
 
+        // Wallpapers
+        sRankMap.put(WallpaperTypeSettings.class.getName(), RANK_WALLPAPER);
+
         // Notifications
-        sRankMap.put(NotificationSettings.class.getName(), RANK_NOTIFICATIONS);
+        sRankMap.put(SoundSettings.class.getName(), RANK_NOTIFICATIONS);
+        sRankMap.put(NotificationManagerSettings.class.getName(), RANK_NOTIFICATIONS);
         sRankMap.put(OtherSoundSettings.class.getName(), RANK_NOTIFICATIONS);
         sRankMap.put(ZenModeSettings.class.getName(), RANK_NOTIFICATIONS);
 
@@ -133,6 +141,7 @@ public final class Ranking {
 
         // Security
         sRankMap.put(SecuritySettings.class.getName(), RANK_SECURITY);
+        sRankMap.put(LockScreenSettings.class.getName(), RANK_SECURITY);
         sRankMap.put(ChooseLockGeneric.ChooseLockGenericFragment.class.getName(), RANK_SECURITY);
         sRankMap.put(ScreenPinningSettings.class.getName(), RANK_SECURITY);
 

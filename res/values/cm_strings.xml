@@ -122,7 +122,7 @@
     <string name="toggleNfc">NFC</string>
 
     <!-- Hardware keys -->
-    <string name="button_pref_title">Buttons</string>
+    <string name="button_pref_title">Buttons/NavBar Options</string>
     <string name="hardware_keys_power_key_title">Power button</string>
     <string name="hardware_keys_home_key_title">Home button</string>
     <string name="hardware_keys_back_key_title">Back button</string>
@@ -289,6 +289,7 @@
 
     <!--- Tap To Wake -->
     <string name="double_tap_to_wake_title">Double-tap to wake</string>
+    <string name="double_tap_to_wake_summary">Double-tap on the screen to turn on the display</string>
 
     <!-- Proximity wake -->
     <string name="proximity_wake_title">Prevent accidental wake-up</string>
@@ -308,7 +309,6 @@
     <string name="privacy_guard_reset_text">Reset permissions?</string>
     <string name="privacy_guard_help_text">In this screen you can choose which apps Privacy Guard should be active for by simply tapping on them. Selected apps will not be able to access your personal data such as contacts, messages or call logs. Long pressing an app\'s entry opens its app details screen.\n\nBuilt-in apps are not shown by default but can be revealed by selecting the respective menu option.</string>
     <string name="privacy_guard_manager_show_system_apps">Show built-in apps</string>
-    <string name="privacy_guard_advanced_settings_title">Advanced</string>
 
     <!-- Increasing ring tone volume -->
     <string name="increasing_ring_volume_option_title">Increasing ring volume</string>
@@ -343,7 +343,11 @@
 
     <!-- tap-to-sleep -->
     <string name="double_tap_to_sleep_title">Double-tap to sleep</string>
-    <string name="double_tap_to_sleep_summary">Double tap on the status bar to put the device to sleep</string>
+    <string name="double_tap_to_sleep_summary">Double-tap on the status bar to turn off the display</string>
+
+    <!-- Turn on display when power connected; turn off display when power disconnected -->
+    <string name="wake_when_plugged_or_unplugged_title">Wake on plug</string>
+    <string name="wake_when_plugged_or_unplugged_summary">Turn the screen on when connecting or disconnecting a power source</string>
 
     <!-- Kill app long-press back -->
     <string name="kill_app_longpress_back">Kill app back button</string>
@@ -716,14 +720,14 @@
     <string name="usb_format" product="default">Erase USB storage</string>
     <string name="usb_format_summary" product="default">Erases all data on the USB storage, such as music and photos</string>
     <string name="usb_mount" product="default">Mount USB storage</string>
-    <string name="usb_mount_summary" product="default"></string>
+    <string name="usb_mount_summary" product="default" translatable="false"></string>
     <string name="usb_insert_summary" product="default">Insert USB storage to mount</string>
     <string name="uicc_eject" product="default">Unmount UICC storage</string>
     <string name="uicc_eject_summary" product="default">Unmount the UICC storage so you can safely remove it</string>
     <string name="uicc_format" product="default">Erase UICC storage</string>
     <string name="uicc_format_summary" product="default">Erases all data on the UICC storage, such as music and photos</string>
     <string name="uicc_mount" product="default">Mount UICC storage</string>
-    <string name="uicc_mount_summary" product="default"></string>
+    <string name="uicc_mount_summary" product="default" translatable="false"></string>
     <string name="uicc_insert_summary" product="default">Insert UICC storage to mount</string>
     <!-- Title of dialog asking user to confirm before enabling UMS. [CHAR LIMIT=48] -->
     <string name="usb_settings_enable_ums_title">Enable mass storage?</string>
@@ -770,15 +774,14 @@
     <string name="sim_enabled">enabled</string>
     <string name="sim_disabled">disabled</string>
     <string name="sim_missing">missing or faulty</string>
-    <string name="sim_enabler_need_disable_sim">SIM card will be deactivated. Do you want to continue?</string>
+    <string name="sim_enabler_need_disable_sim">Deactivate SIM card?</string>
     <string name="sim_enabler_airplane_on">Unable to perform the operation while airplane mode is on.</string>
     <string name="sim_enabler_in_call">Unable to perform the operation while in call.</string>
     <string name="sim_enabler_both_inactive">Can\'t disable all SIM cards</string>
     <string name="sim_enabler_sim">SIM</string>
-    <string name="sim_enabler_enabling">Activating\u2026</string>
-    <string name="sim_enabler_disabling">Deactivating\u2026</string>
-    <string name="sub_activate_success">SIM activated.</string>
-    <string name="sub_deactivate_success">SIM deactivated.</string>
+    <string name="sim_enabler_enabling">Activating <xliff:g id="name">%s</xliff:g>\u2026</string>
+    <string name="sim_enabler_disabling">Deactivating <xliff:g id="name">%s</xliff:g>\u2026</string>
+    <string name="sim_enabler_deactivate">Deactivate</string>
 
     <string name="primary_sub_select_title">Default 3G/LTE subscription</string>
 
@@ -825,7 +828,6 @@
     <string name="select_custom_activity_title">Select custom activity</string>
 
     <!-- Performance settings -->
-    <string name="title_tile_performance_profile">Performance profile</string>
     <string name="performance_settings_title">Performance</string>
 
     <!-- Performance Settings : I/O scheduler settings title -->
@@ -836,7 +838,7 @@
     <string name="io_sched_summary" translatable="false">%S</string>
 
     <!-- Performance Settings : Performance profile settings -->
-    <string name="perf_profile_title">Profile</string>
+    <string name="perf_profile_title">Battery mode</string>
 
     <!-- Performance : Force high-end graphics -->
     <string name="pref_force_highend_gfx_title">Force high-end graphics</string>
@@ -1020,8 +1022,21 @@ restore to reset the settings to defaults.</string>
 
     <!-- Stylus gestures -->
     <string name="stylus_app_not_installed">%s is not installed</string>
-    
+
     <string name="advanced">Advanced</string>
     <string name="advanced_mode_title">Advanced mode</string>
-    <string name="advanced_mode_summary">@null</string>
+
+    <string name="category_misc">Miscellaneous</string>
+    <string name="category_vibrate">Vibrate</string>
+    <string name="category_volume">Volume</string>
+    <string name="category_sounds">Sounds</string>
+    <string name="category_interface">Interface</string>
+    <string name="category_calibration">Calibration</string>
+    <string name="display_and_lights">Display &amp; lights</string>
+    <string name="notification_manager">Notification manager</string>
+    <string name="lockscreen_settings">Lock screen</string>
+    <string name="category_lights">Lights</string>
+    <string name="power_usage_history_title">Battery usage</string>
+
+    <string name="sim_ringtone_title">SIM %d ringtone</string>
 </resources>

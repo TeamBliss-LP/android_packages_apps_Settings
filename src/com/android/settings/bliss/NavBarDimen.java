@@ -19,7 +19,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
-import com.android.internal.util.bliss.DeviceUtils;
+import com.android.internal.util.cm.ScreenType;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.R;
 
@@ -52,7 +52,7 @@ public class NavBarDimen extends SettingsPreferenceFragment implements
         mNavigationBarHeightLandscape =
             (ListPreference) findPreference(PREF_NAVIGATION_BAR_HEIGHT_LANDSCAPE);
 
-        if (DeviceUtils.isPhone(getActivity())) {
+        if (!ScreenType.isPhone(getActivity())) {
             prefSet.removePreference(mNavigationBarHeightLandscape);
             mNavigationBarHeightLandscape = null;
         } else {
@@ -62,7 +62,7 @@ public class NavBarDimen extends SettingsPreferenceFragment implements
         mNavigationBarWidth =
             (ListPreference) findPreference(PREF_NAVIGATION_BAR_WIDTH);
 
-        if (!DeviceUtils.isPhone(getActivity())) {
+        if (!ScreenType.isPhone(getActivity())) {
             prefSet.removePreference(mNavigationBarWidth);
             mNavigationBarWidth = null;
         } else {

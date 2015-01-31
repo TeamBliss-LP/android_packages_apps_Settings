@@ -654,7 +654,6 @@ public class InstalledAppDetails extends Fragment
         // Set application name.
         TextView label = (TextView) appSnippet.findViewById(R.id.app_name);
         label.setText(mAppEntry.label);
-
         // Set application package name.
         TextView packageName = (TextView) appSnippet.findViewById(R.id.app_pkgname);
         packageName.setText(mAppEntry.info.packageName);
@@ -686,6 +685,14 @@ public class InstalledAppDetails extends Fragment
     public void onPause() {
         super.onPause();
         mSession.pause();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if (mSession != null) {
+            mSession.release();
+        }
     }
 
     @Override

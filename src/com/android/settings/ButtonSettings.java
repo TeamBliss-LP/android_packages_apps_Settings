@@ -45,8 +45,6 @@ import android.view.KeyCharacterMap;
 import android.view.KeyEvent;
 import android.view.WindowManagerGlobal;
 
-import net.margaritov.preference.colorpicker.ColorPickerPreference;
-
 import com.android.internal.util.cm.ScreenType;
 import com.android.internal.util.bliss.BlissUtils;
 import com.android.settings.cyanogenmod.ButtonBacklightBrightness;
@@ -59,6 +57,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 public class ButtonSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
@@ -82,9 +82,9 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
     private static final String KEY_POWER_END_CALL = "power_end_call";
     private static final String KEY_HOME_ANSWER_CALL = "home_answer_call";
     private static final String KEYS_OVERFLOW_BUTTON = "keys_overflow_button";
-    private static final String KEY_BLUETOOTH_INPUT_SETTINGS = "bluetooth_input_settings";
     private static final String NAVIGATION_BAR_TINT = "navigation_bar_tint";
     private static final String KEY_VOLUME_ANSWER_CALL = "volume_answer_call";
+    private static final String KEY_VOLUME_MUSIC_CONTROLS = "volbtn_music_controls";
 
     private static final String CATEGORY_POWER = "power_key";
     private static final String CATEGORY_HOME = "home_key";
@@ -130,6 +130,8 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
     private ListPreference mAppSwitchPressAction;
     private ListPreference mAppSwitchLongPressAction;
     private ListPreference mVolumeKeyCursorControl;
+    private SwitchPreference mVolumeWakeScreen;
+    private SwitchPreference mVolumeMusicControls;
     private SwitchPreference mSwapVolumeButtons;
     private SwitchPreference mEnableNavigationBar;
     private SwitchPreference mEnableHwKeys;
@@ -236,16 +238,24 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
 
             int swapVolumeKeys = Settings.System.getInt(getContentResolver(),
                     Settings.System.SWAP_VOLUME_KEYS_ON_ROTATION, 0);
-            mSwapVolumeButtons = (SwitchPreference)
-                    prefScreen.findPreference(KEY_SWAP_VOLUME_BUTTONS);
-            mSwapVolumeButtons.setChecked(swapVolumeKeys > 0);
+            mSwapVolumeButtons = (SwitchPreference) findPreference(KEY_SWAP_VOLUME_BUTTONS);
+            if (mSwapVolumeButtons != null) {
+                mSwapVolumeButtons.setChecked(swapVolumeKeys > 0);
+            }
+        }
+
+        mVolumeWakeScreen = (SwitchPreference) findPreference(Settings.System.VOLUME_WAKE_SCREEN);
+        mVolumeMusicControls = (SwitchPreference) findPreference(KEY_VOLUME_MUSIC_CONTROLS);
+
+        if (mVolumeWakeScreen != null) {
+            if (mVolumeMusicControls != null) {
+                mVolumeMusicControls.setDependency(Settings.System.VOLUME_WAKE_SCREEN);
+                mVolumeWakeScreen.setDisableDependentsState(true);
+            }
         }
 
         updateDisableHwKeysOption();
         updateNavBarSettings();
-
-        Utils.updatePreferenceToSpecificActivityFromMetaDataOrRemove(getActivity(),
-                getPreferenceScreen(), KEY_BLUETOOTH_INPUT_SETTINGS);
     }
 
     private static Map<String, String> getPreferencesToRemove(ButtonSettings settings,
@@ -348,7 +358,6 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
                         Settings.System.KEY_MENU_ACTION, ACTION_MENU);
                 settings.mMenuPressAction = settings.initActionList(
                         KEY_MENU_PRESS, pressAction);
-
                 int longPressAction = Settings.System.getInt(resolver,
                         Settings.System.KEY_MENU_LONG_PRESS_ACTION,
                         hasAssistKey ? ACTION_NOTHING : ACTION_SEARCH);
@@ -370,7 +379,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
                 settings.mAssistPressAction = settings.initActionList(
                         KEY_ASSIST_PRESS, pressAction);
 
-                int longPressAction = Settings.System.getInt(resolver,
+            int longPressAction = Settings.System.getInt(resolver,
                         Settings.System.KEY_ASSIST_LONG_PRESS_ACTION, ACTION_VOICE_SEARCH);
                 settings.mAssistLongPressAction = settings.initActionList(
                         KEY_ASSIST_LONG_PRESS, longPressAction);
@@ -438,14 +447,17 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
                 (incallHomeBehavior == Settings.Secure.RING_HOME_BUTTON_BEHAVIOR_ANSWER);
             mHomeAnswerCall.setChecked(homeButtonAnswersCall);
         }
-        // Volume button answers calls.
-        mVolumeAnswerCall.setChecked((Settings.System.getInt(getContentResolver(),
-                  Settings.System.ANSWER_VOLUME_BUTTON_BEHAVIOR_ANSWER, 0) == 1));
 
+        // Volume button answers calls.
+        if (mVolumeAnswerCall != null) {
+            mVolumeAnswerCall.setChecked((Settings.System.getInt(getContentResolver(),
+                    Settings.System.ANSWER_VOLUME_BUTTON_BEHAVIOR_ANSWER, 0) == 1));
+        }
     }
 
     private ListPreference initActionList(String key, int value) {
         ListPreference list = (ListPreference) getPreferenceScreen().findPreference(key);
+        if (list == null) return null;
         list.setValue(Integer.toString(value));
         list.setSummary(list.getEntry());
         list.setOnPreferenceChangeListener(this);
@@ -526,7 +538,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
 
     private void updateNavBarSettings() {
         boolean enableNavigationBar = Settings.Secure.getInt(getContentResolver(),
-                Settings.System.NAVIGATION_BAR_SHOW,
+                Settings.Secure.NAVIGATION_BAR_SHOW,
                 BlissUtils.isNavBarDefault(getActivity()) ? 1 : 0) == 1;
         mEnableNavigationBar.setChecked(enableNavigationBar);
 
@@ -558,6 +570,11 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
             int intHex = ColorPickerPreference.convertToColorInt(hex);
             Settings.Secure.putInt(getActivity().getContentResolver(),
                     Settings.Secure.NAVIGATION_BAR_TINT, intHex);
+            return true;
+        } else if (preference == mVolumeAnswerCall) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getContentResolver(),
+                   Settings.System.ANSWER_VOLUME_BUTTON_BEHAVIOR_ANSWER, value ? 1 : 0);
             return true;
         } else if (preference == mEnableHwKeys) {
             boolean hWkeysValue = (Boolean) newValue;
@@ -602,11 +619,6 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
             handleActionListChange(mVolumeKeyCursorControl, newValue,
                     Settings.System.VOLUME_KEY_CURSOR_CONTROL);
             return true;
-        } else if (preference == mVolumeAnswerCall) {
-            boolean value = (Boolean) newValue;
-            Settings.System.putInt(getContentResolver(),
-                   Settings.System.ANSWER_VOLUME_BUTTON_BEHAVIOR_ANSWER, value ? 1 : 0);
-            return true;
         } else if (preference == mNavigationRecentsLongPressAction) {
             // RecentsLongPressAction is handled differently because it intentionally uses
             // Settings.System
@@ -623,6 +635,24 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
             return true;
         }
         return false;
+    }
+
+    @Override
+    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+        if (preference == mSwapVolumeButtons) {
+            int value = mSwapVolumeButtons.isChecked()
+                    ? (ScreenType.isTablet(getActivity()) ? 2 : 1) : 0;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.SWAP_VOLUME_KEYS_ON_ROTATION, value);
+        } else if (preference == mPowerEndCall) {
+            handleTogglePowerButtonEndsCallPreferenceClick();
+            return true;
+        } else if (preference == mHomeAnswerCall) {
+            handleToggleHomeButtonAnswersCallPreferenceClick();
+            return true;
+        }
+
+        return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
     private static void writeDisableHwKeysOption(Context context, boolean enabled) {
@@ -718,25 +748,6 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
                 Settings.Secure.ENABLE_HW_KEYS, 1) == 1);
     }
 
-
-    @Override
-    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-        if (preference == mSwapVolumeButtons) {
-            int value = mSwapVolumeButtons.isChecked()
-                    ? (ScreenType.isTablet(getActivity()) ? 2 : 1) : 0;
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.SWAP_VOLUME_KEYS_ON_ROTATION, value);
-        } else if (preference == mPowerEndCall) {
-            handleTogglePowerButtonEndsCallPreferenceClick();
-            return true;
-        } else if (preference == mHomeAnswerCall) {
-            handleToggleHomeButtonAnswersCallPreferenceClick();
-            return true;
-        }
-
-        return super.onPreferenceTreeClick(preferenceScreen, preference);
-    }
-
     private static boolean isKeyDisablerSupported() {
         try {
             return KeyDisabler.isSupported();
@@ -779,14 +790,6 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
                 public List<String> getNonIndexableKeys(Context context) {
                     ArrayList<String> result = new ArrayList<String>();
 
-                    Intent intent =
-                            new Intent("com.cyanogenmod.action.LAUNCH_BLUETOOTH_INPUT_SETTINGS");
-                    intent.setClassName("com.cyanogenmod.settings.device",
-                            "com.cyanogenmod.settings.device.BluetoothInputSettings");
-                    if (!Utils.doesIntentResolve(context, intent)) {
-                        result.add(KEY_BLUETOOTH_INPUT_SETTINGS);
-                    }
-
                     Map<String, String> items = getPreferencesToRemove(null, context);
                     for (String key : items.keySet()) {
                         result.add(key);
@@ -794,5 +797,4 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
                     return result;
                 }
             };
-
 }

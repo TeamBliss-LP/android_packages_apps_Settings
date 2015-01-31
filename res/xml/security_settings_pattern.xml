@@ -41,6 +41,12 @@
             android:entryValues="@array/lock_after_timeout_values"
             android:persistent="false"/>
 
+        <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
+            android:key="lockscreen_enable_power_menu"
+            android:title="@string/lockscreen_enable_power_menu_title"
+            android:summary="@string/lockscreen_enable_power_menu_summary"
+            android:defaultValue="true" />
+
         <SwitchPreference
             android:key="power_button_instantly_locks"
             android:title="@string/lockpattern_settings_enable_power_button_instantly_locks"/>
@@ -50,6 +56,14 @@
             android:key="owner_info_settings"
             android:title="@string/owner_info_settings_title"
             android:summary="@string/owner_info_settings_summary"/>
+
+        <Preference
+            android:key="manage_trust_agents"
+            android:title="@string/manage_trust_agents"
+            android:summary="@string/manage_trust_agents_summary"
+            android:persistent="false"
+            android:fragment="com.android.settings.TrustAgentSettings"
+            settings:advanced="true"/>
 
     </PreferenceCategory>
 

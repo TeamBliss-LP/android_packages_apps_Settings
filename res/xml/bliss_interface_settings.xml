@@ -53,39 +53,45 @@
         android:key="heads_up_enabled"
         android:fragment="com.android.settings.bliss.HeadsUpSettings"
         android:title="@string/category_heads_up"
-        android:icon="@drawable/ic_headsup" />        
+        android:icon="@drawable/ic_headsup"
+        settings:advanced="true" />        
         
     <PreferenceScreen
         android:key="lock_screen"
         android:fragment="com.android.settings.bliss.LockScreenSettings"
         android:title="@string/lockscreen_settings_title"
-        android:icon="@drawable/ic_settings_lockscreen" />        
+        android:icon="@drawable/ic_settings_lockscreen"
+	settings:advanced="true" />        
         
     <PreferenceScreen
         android:key="power_menu"
         android:title="@string/power_menu_title"
         android:fragment="com.android.settings.cyanogenmod.PowerMenuActions"
-        android:icon="@drawable/ic_settings_power" /> 
+        android:icon="@drawable/ic_settings_power"
+	settings:advanced="true" /> 
 	
     <!-- Gesture anywhere -->
     <PreferenceScreen
         android:key="gesture_anywhere"
         android:fragment="com.android.settings.bliss.gestureanywhere.GestureAnywhereSettings"
         android:title="@string/gesture_anywhere_title"
-	    android:icon="@drawable/ic_settings_gestures" />
+	android:icon="@drawable/ic_settings_gestures"
+	settings:advanced="true" />
 	
      <PreferenceScreen
          android:id="@+id/animation_settings"
          android:title="@string/animation_settings_title"
          android:fragment="com.android.settings.bliss.AnimationSettings"
-         android:icon="@drawable/ic_settings_display_animations" />
+         android:icon="@drawable/ic_settings_display_animations"
+	 settings:advanced="true" />
 	 
     <!-- Circle app bar -->
     <PreferenceScreen
         android:key="app_circle_bar"
         android:fragment="com.android.settings.bliss.AppCircleBar"
         android:title="@string/app_circle_bar_title"
-        android:icon="@drawable/ic_settings_sidebar"/>	 		        
+        android:icon="@drawable/ic_settings_sidebar"
+	settings:advanced="true" />	 		        
  
     <!-- Bliss Downloads  -->
     <PreferenceScreen    
@@ -93,6 +99,6 @@
         android:fragment="com.android.settings.bliss.Download"
         android:title="@string/download_category"
         android:summary="@string/download_category_summary" 
-	    android:icon="@drawable/ic_tab_unselected_download" />    		 		        
+	android:icon="@drawable/ic_tab_unselected_download" />    		 		        
 
 </PreferenceScreen>
