@@ -26,7 +26,7 @@
     <string name="share_chooser_title">Share BlissPop</string>
     
     <!-- Text for disabling immersive mode messages -->
-    <string name="disable_immersive_message_title">Diable Immersive Mode Messages</string>
+    <string name="disable_immersive_message_title">Disable Immersive Mode Messages</string>
     <string name="disable_immersive_message_summary">This will hide all Immersive Mode Messages</string> 
     
     <!-- Partition Info -->
@@ -1249,7 +1249,7 @@ sword is entered</string>
     <string name="lockscreen_weather_summary">SystemUI will be restarted!</string>
 
     <!-- Text for forcing expanded notifications -->
-    <string name="disable_fc_notifications_title">Diable FC Notifications</string>
+    <string name="disable_fc_notifications_title">Disable FC Notifications</string>
     <string name="disable_fc_notifications_summary">This will hide all force close notificaitons</string>
     
     <!-- QuickSettings collapse panel -->
