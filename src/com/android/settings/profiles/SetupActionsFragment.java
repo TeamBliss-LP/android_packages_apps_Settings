@@ -97,6 +97,8 @@ public class SetupActionsFragment extends SettingsPreferenceFragment
     private static final int MENU_REMOVE = Menu.FIRST;
     private static final int MENU_FILL_PROFILE = Menu.FIRST + 1;
 
+
+
     Profile mProfile;
     ItemListAdapter mAdapter;
     ProfileManager mProfileManager;
@@ -164,7 +166,6 @@ public class SetupActionsFragment extends SettingsPreferenceFragment
 
         // connection overrides
         mItems.add(new Header(getString(R.string.wireless_networks_settings_title)));
-        mItems.add(new Header(getString(R.string.profile_connectionoverrides_title)));
         if (DeviceUtils.deviceSupportsBluetooth()) {
             mItems.add(new ConnectionOverrideItem(PROFILE_CONNECTION_BLUETOOTH,
                     mProfile.getSettingsForConnection(PROFILE_CONNECTION_BLUETOOTH)));
@@ -180,7 +181,6 @@ public class SetupActionsFragment extends SettingsPreferenceFragment
                     (TelephonyManager) getActivity().getSystemService(Context.TELEPHONY_SERVICE);
             if (tm.getPhoneType() == TelephonyManager.PHONE_TYPE_GSM) {
                 mItems.add(generateConnectionOverrideItem(PROFILE_CONNECTION_2G3G4G));
-                mItems.add(generateConnectionOverrideItem(PROFILE_CONNECTION_2G3G));
             }
         }
         if (WimaxHelper.isWimaxSupported(getActivity())) {
