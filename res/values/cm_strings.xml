@@ -1028,6 +1028,8 @@
 
     <string name="qs_advanced_location_title">Advanced location settings</string>
     <string name="qs_advanced_location_summary">Enable advanced settings for location in Quick Settings</string>
+    <string name="qs_screenshot_tile">Screenshot</string>
+    <string name="qs_sync_tile">Sync</string>
 
     <!-- Gesture Settings -->
     <!-- Settings main menu entry -->
