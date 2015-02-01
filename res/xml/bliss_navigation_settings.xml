@@ -23,7 +23,12 @@
         android:key="navigation_bar"
         android:fragment="com.android.settings.bliss.navbar.NavbarTabHostFragment"
         android:title="@string/category_navbar"
-        android:icon="@drawable/ic_settings_navigation_bar" />	    
+        android:icon="@drawable/ic_settings_navigation_bar" />
+	
+    <PreferenceScreen
+	android:key="navigation_bar_ring"
+	android:fragment="com.android.settings.cyanogenmod.NavRing"
+	android:title="@string/navigation_ring_title" />
 
     <!-- Button Settings -->
     <PreferenceScreen
