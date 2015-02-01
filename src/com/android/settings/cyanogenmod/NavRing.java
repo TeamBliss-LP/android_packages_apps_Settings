@@ -44,8 +44,6 @@ public class NavRing extends Fragment implements View.OnClickListener {
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        TextView message = (TextView) view.findViewById(R.id.message);
-        message.setText(R.string.navigation_ring_message);
         mEdit = (LinearLayout) view.findViewById(R.id.navbar_edit);
         mEdit.setOnClickListener(this);
         mSave = (LinearLayout) view.findViewById(R.id.navbar_save);
