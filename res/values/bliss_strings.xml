@@ -1288,4 +1288,7 @@ sword is entered</string>
     <string name="title_voicemail_breath">Breathing Voicemail</string>
     <string name="voicemail_breath_summary">Will give your voicemail notifications a breathing effect in the statusbar</string>
 
+    <!-- QuickSettings 4 columns -->
+    <string name="qs_four_columns_title">Show four tiles per row</string>
+
 </resources>
