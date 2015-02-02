@@ -56,16 +56,6 @@ public class InterfaceSettings extends SettingsPreferenceFragment {
         addPreferencesFromResource(R.xml.bliss_interface_settings);
         PreferenceScreen prefSet = getPreferenceScreen();
 
-        try {
-            boolean hasNavBar = WindowManagerGlobal.getWindowManagerService().hasNavigationBar();
-
-            // Hide navigation bar category on devices without navigation bar
-            if (!hasNavBar) {
-                prefSet.removePreference(findPreference(CATEGORY_NAVBAR));
-            }
-        } catch (RemoteException e) {
-            Log.e(TAG, "Error getting navigation bar status");
-        }
     }
 
     @Override
