@@ -995,6 +995,8 @@
 
     <string name="qs_brightness_slider_title">Show brightness slider</string>
 
+
+    <!-- Quick Settings -->
     <string name="qs_order_title">Select and order tiles</string>
     <string name="add_qs">Add new tile</string>
 
@@ -1030,6 +1032,7 @@
     <string name="qs_advanced_location_summary">Enable advanced settings for location in Quick Settings</string>
     <string name="qs_screenshot_tile">Screenshot</string>
     <string name="qs_sync_tile">Sync</string>
+    <string name="qs_tile_powermenu">Power Menu</string>
 
     <!-- Gesture Settings -->
     <!-- Settings main menu entry -->
