@@ -98,6 +98,7 @@
     
     <!-- Navigation bar -->
     <string name="navigation_bar_pref_title">Navigation bar</string>
+    <string name="navigation_options">Navigation Options</string>
     <!-- Navigation bar force enable -->
     <string name="navigation_bar_simulate_category">Simulate navigation bar</string>
     <string name="navbar_force_enable_title">Force navigation bar</string>
