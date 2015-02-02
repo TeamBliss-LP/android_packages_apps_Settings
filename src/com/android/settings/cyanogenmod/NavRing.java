@@ -28,13 +28,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
 import com.android.settings.R;
 
 public class NavRing extends Fragment implements View.OnClickListener {
-
     private LinearLayout mRestore, mSave, mEdit;
-    private boolean mEditMode;
-    private final static Intent mIntent = new Intent("android.intent.action.NAVBAR_RING_EDIT");
+    private final static Intent TRIGGER_INTENT =
+            new Intent("android.intent.action.NAVBAR_RING_EDIT");
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -44,6 +44,8 @@ public class NavRing extends Fragment implements View.OnClickListener {
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
+        TextView message = (TextView) view.findViewById(R.id.message);
+        message.setText(R.string.navigation_ring_message);
         mEdit = (LinearLayout) view.findViewById(R.id.navbar_edit);
         mEdit.setOnClickListener(this);
         mSave = (LinearLayout) view.findViewById(R.id.navbar_save);
@@ -55,8 +57,7 @@ public class NavRing extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         if (v == mEdit) {
-            mEditMode = !mEditMode;
-            getActivity().sendBroadcast(mIntent);
+            getActivity().sendBroadcast(TRIGGER_INTENT);
         } else if (v == mRestore) {
             new AlertDialog.Builder(getActivity())
                     .setTitle(R.string.profile_reset_title)
@@ -68,11 +69,10 @@ public class NavRing extends Fragment implements View.OnClickListener {
                                 Settings.Secure.putString(getActivity().getContentResolver(),
                                         Settings.Secure.NAVIGATION_RING_TARGETS[i], null);
                             }
-                            mEditMode = false;
                         }
-                    }).setNegativeButton(R.string.cancel, null)
-                    .create().show();
+                    })
+                    .setNegativeButton(R.string.cancel, null)
+                    .show();
         }
     }
-
 }
