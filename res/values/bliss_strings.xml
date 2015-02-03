@@ -724,6 +724,7 @@
     <string name="lockscreen_shortcuts_summary">View or change custom middle lock screen shortcuts</string>
     <string name="lockscreen_shorcuts_longpress_title">Shortcuts longpress</string>
     <string name="lockscreen_shorcuts_longpress_summary">Open custom lockscreen shortcuts on longpress</string>
+    <string name="lockscreen_targets_message">Lockscreen shortcuts</string>
 
     <!-- Long press on lock screen lock icon to sleep -->
     <string name="longpress_lock_icon_to_sleep_title">Long press lock icon to sleep</string>
