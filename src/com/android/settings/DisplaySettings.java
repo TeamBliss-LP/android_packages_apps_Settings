@@ -89,6 +89,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_FONT_SIZE = "font_size";
     private static final String KEY_SCREEN_SAVER = "screensaver";
     private static final String KEY_LIFT_TO_WAKE = "lift_to_wake";
+    private static final String KEY_DOZE_CATEGORY = "category_doze_options";	
     private static final String KEY_DOZE = "doze";
     private static final String KEY_DOZE_TIMEOUT = "doze_timeout";
 	private static final String KEY_DOZE_TRIGGER_MOTION = "doze_trigger_motion";
