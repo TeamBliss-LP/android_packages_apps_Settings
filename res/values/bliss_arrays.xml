@@ -156,6 +156,18 @@
         <item>1500</item>
         <item>2000</item>
     </string-array>
+    
+    <string-array name="weather_condition_icon_entries">
+        <item>@string/weather_condition_icon_monochrome_title</item>
+        <item>@string/weather_condition_icon_colored_title</item>
+        <item>@string/weather_condition_icon_vclouds_title</item>
+    </string-array>
+
+    <string-array name="weather_condition_icon_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>    
  
     <!-- Slim Clock Styles -->   
     <string-array name="clock_style_entries" translatable="false">

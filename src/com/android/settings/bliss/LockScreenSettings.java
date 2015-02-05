@@ -96,6 +96,7 @@ public class LockScreenSettings extends SettingsPreferenceFragment
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object objValue) {
+        return false;
     }
 	
     public static final Indexable.SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
