@@ -1238,10 +1238,6 @@ sword is entered</string>
     <string name="privacy_guard_notification_title">Notification</string>
     <string name="privacy_guard_notifiation_summary">Show a notification if privacy guard is active</string>
     
-    <!-- Lockscreen weather -->
-    <string name="lockscreen_weather_title">Lockscreen weather</string>
-    <string name="lockscreen_weather_summary">SystemUI will be restarted!</string>
-
     <!-- Text for forcing expanded notifications -->
     <string name="disable_fc_notifications_title">Disable FC Notifications</string>
     <string name="disable_fc_notifications_summary">This will hide all force close notificaitons</string>
