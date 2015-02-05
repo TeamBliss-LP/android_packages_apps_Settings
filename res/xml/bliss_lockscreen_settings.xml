@@ -35,14 +35,7 @@
             android:key="cm_lockscreen_shortcuts"
             android:fragment="com.android.settings.cyanogenmod.LockscreenShortcuts"
             android:title="@string/cm_lockscreen_shortcuts_title"
-            android:summary="@string/cm_lockscreen_shortcuts_summary" />    
-
-        <!-- lockscreen weather -->
-        <SwitchPreference
-            android:key="lockscreen_weather"
-            android:title="@string/lockscreen_weather_title"
-            android:summary="@string/lockscreen_weather_summary"
-            android:defaultValue="true" />            	
+            android:summary="@string/cm_lockscreen_shortcuts_summary" />   	
             
         <PreferenceScreen
                  android:key="lock_clock"
