@@ -1020,4 +1020,8 @@ restore to reset the settings to defaults.</string>
 
     <!-- Stylus gestures -->
     <string name="stylus_app_not_installed">%s is not installed</string>
+    
+    <string name="advanced">Advanced</string>
+    <string name="advanced_mode_title">Advanced mode</string>
+    <string name="advanced_mode_summary">@null</string>
 </resources>
