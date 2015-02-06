@@ -1912,7 +1912,7 @@
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
                 android:value="com.android.settings.cyanogenmod.DisplayRotation" />
             <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
-                android:resource="@id/display_settings" />
+                android:resource="@id/display_and_lights_settings" />
         </activity>
 
         <!-- Expanded desktop settings activity. -->
@@ -1926,14 +1926,14 @@
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
                 android:value="com.android.settings.applications.ExpandedDesktopPreferenceFragment" />
             <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
-                android:resource="@id/display_settings" />
+                android:resource="@id/display_and_lights_settings" />
         </activity>
 
 	
         <!-- Navigation options -->
         <activity android:name="Settings$NavBarActivity"
                 android:uiOptions="splitActionBarWhenNarrow"
-                android:label="@string/navigation_category"
+                android:label="@string/button_pref_title"
                 android:excludeFromRecents="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -1947,7 +1947,7 @@
 
         <activity-alias android:name="com.android.settings.cyanogenmod.NavBar"
                 android:taskAffinity="com.android.settings"
-                android:label="@string/navigation_category"
+                android:label="@string/button_pref_title"
                 android:targetActivity="Settings$NavBarActivity"
                 android:configChanges="orientation|keyboardHidden|screenSize"
                 android:exported="true">
@@ -2281,7 +2281,34 @@
            <intent-filter>
                <action android:name="android.intent.action.MAIN"/>
            </intent-filter>
-        </activity>            
+        </activity>
+        
+        <!-- Heads up notifications -->
+        <activity android:name="Settings$HeadsUpSettingsActivity"
+                android:uiOptions="splitActionBarWhenNarrow"
+                android:label="@string/category_heads_up"
+                android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.bliss.HeadsUpSettings" />
+            <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
+                android:resource="@id/security_settings" />
+        </activity>
+
+        <activity-alias android:name=".bliss.HeadsUpSettings"
+                android:taskAffinity="com.android.settings"
+                android:label="@string/category_heads_up"
+                android:targetActivity="Settings$HeadsUpSettingsActivity"
+                android:configChanges="orientation|keyboardHidden|screenSize"
+                android:exported="true">
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                       android:value="com.android.settings.bliss.HeadsUpSettings" />
+            <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
+                       android:resource="@id/security_settings" />
+        </activity-alias>                    
         
         <!-- Device Control Activity -->
         <activity android:name="org.namelessrom.devicecontrol.MainActivity"/>
