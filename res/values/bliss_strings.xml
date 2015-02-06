@@ -1308,7 +1308,7 @@ sword is entered</string>
     <string name="weather_condition_icon_vclouds_title">VClouds</string>
     <string name="weather_colorize_all_icons_title">Colorize all icons</string>
     <string name="weather_colorize_all_icons_summary">Enable to colorize all icons, disable to colorize only the monochrome icons</string>
-
+    
     <!-- Heads up touch outside -->
     <string name="heads_up_touch_outside_title">Touch outside behavior</string>
     <string name="heads_up_touch_outside_summary_enabled">Hide notification on touch outside and on home button press</string>
