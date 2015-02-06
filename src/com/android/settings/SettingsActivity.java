@@ -75,6 +75,7 @@ import com.android.settings.applications.InstalledAppDetails;
 import com.android.settings.applications.ManageApplications;
 import com.android.settings.applications.ProcessStatsUi;
 import com.android.settings.blacklist.BlacklistSettings;
+import com.android.settings.bliss.HeadsUpSettings
 import com.android.settings.bluetooth.BluetoothSettings;
 import com.android.settings.dashboard.DashboardCategory;
 import com.android.settings.dashboard.DashboardSummary;
@@ -316,6 +317,7 @@ public class SettingsActivity extends Activity
             com.android.settings.cyanogenmod.PrivacySettings.class.getName(),
             WakeLockBlocker.class.getName(),
             QSTiles.class.getName(),
+            HeadsUpSettings.class.getName(),
             DisplayRotation.class.getName(),
             ProfilesSettings.class.getName()
     };
