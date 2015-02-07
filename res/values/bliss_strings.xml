@@ -1326,4 +1326,12 @@ sword is entered</string>
     <string name="volume_answer_call_title">Volume key Answer</string>
     <string name="volume_answer_call_summary">Volume up key Answer</string>
 
+    <string name="storage_options_category">Notifications</string>
+    <string name="storage_menu_options">Advanced</string>
+    <string name="storage_title_options">Storage options</string>
+    <string name="no_media_notification_title">Storage removed notification</string>
+    <string name="no_media_notification_summary">Show notification when storage media is removed</string>
+    <string name="mount_notification_title">Mount notification</string>
+    <string name="mount_notification_summary">Display ongoing notification for mounted storage</string>
+
 </resources>
