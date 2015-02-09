@@ -25,6 +25,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.res.Resources;
+import android.hardware.CmHardwareManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.wifi.WifiInfo;
@@ -60,8 +61,6 @@ import com.android.internal.util.ArrayUtils;
 import com.android.settings.R;
 import com.android.settings.SelectSubscription;
 import com.android.settings.Utils;
-
-import org.cyanogenmod.hardware.SerialNumber;
 
 import java.lang.ref.WeakReference;
 
@@ -694,15 +693,13 @@ public class Status extends PreferenceActivity {
     }
 
     private String getSerialNumber() {
-        try {
-            if (SerialNumber.isSupported()) {
-                return SerialNumber.getSerialNumber();
-            }
-        } catch (NoClassDefFoundError e) {
-            // Hardware abstraction framework not installed; fall through
+        CmHardwareManager cmHardwareManager =
+                (CmHardwareManager) getSystemService(Context.CMHW_SERVICE);
+        if (cmHardwareManager.isSupported(CmHardwareManager.FEATURE_SERIAL_NUMBER)) {
+            return cmHardwareManager.getSerialNumber();
+        } else {
+            return Build.SERIAL;
         }
-
-        return Build.SERIAL;
     }
 
     public static String getSarValues(Resources res) {
