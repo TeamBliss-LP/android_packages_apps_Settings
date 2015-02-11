@@ -28,6 +28,7 @@ import android.os.Handler;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceCategory;
+import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 import android.preference.PreferenceScreen;
 import android.preference.SwitchPreference;
@@ -40,6 +41,8 @@ import android.view.IWindowManager;
 import android.view.KeyCharacterMap;
 import android.view.KeyEvent;
 import android.view.WindowManagerGlobal;
+
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 import com.android.internal.util.cm.ScreenType;
 
@@ -75,6 +78,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
     private static final String KEY_HOME_ANSWER_CALL = "home_answer_call";
     private static final String KEYS_OVERFLOW_BUTTON = "keys_overflow_button";
     private static final String KEY_BLUETOOTH_INPUT_SETTINGS = "bluetooth_input_settings";
+    private static final String NAVIGATION_BAR_TINT = "navigation_bar_tint";
 
     private static final String CATEGORY_POWER = "power_key";
     private static final String CATEGORY_HOME = "home_key";
@@ -124,7 +128,8 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
     private SwitchPreference mNavigationBarLeftPref;
     private SwitchPreference mPowerEndCall;
     private SwitchPreference mHomeAnswerCall;
-    private ListPreference mOverflowButtonMode; 
+    private ListPreference mOverflowButtonMode;
+    private ColorPickerPreference mNavbarButtonTint; 
 	
     private PreferenceCategory mNavigationPreferencesCat;
 
@@ -137,9 +142,19 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.button_settings);
 
         final PreferenceScreen prefScreen = getPreferenceScreen();
+        
         // Menu Overflow Config.        
         mOverflowButtonMode = (ListPreference) findPreference(KEYS_OVERFLOW_BUTTON);
-        mOverflowButtonMode.setOnPreferenceChangeListener(this);                
+        mOverflowButtonMode.setOnPreferenceChangeListener(this);
+
+        // Navigation bar button color
+        mNavbarButtonTint = (ColorPickerPreference) findPreference(NAVIGATION_BAR_TINT);
+        mNavbarButtonTint.setOnPreferenceChangeListener(this);
+        int intColor = Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.NAVIGATION_BAR_TINT, 0xffffffff);
+        String hexColor = String.format("#%08x", (0xffffffff & intColor));
+        mNavbarButtonTint.setSummary(hexColor);
+        mNavbarButtonTint.setNewPreviewColor(intColor); 
 
         // Power button ends calls.
         mPowerEndCall = (SwitchPreference) findPreference(KEY_POWER_END_CALL);
@@ -461,6 +476,14 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
             mOverflowButtonMode.setSummary(mOverflowButtonMode.getEntries()[index]);
             Toast.makeText(getActivity(), R.string.keys_overflow_toast, Toast.LENGTH_LONG).show();
             return true;
+        } else if (preference == mNavbarButtonTint) {
+            String hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(newValue)));
+            preference.setSummary(hex);
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.NAVIGATION_BAR_TINT, intHex);
+            return true;            
         } else if (preference == mHomeLongPressAction) {
             handleActionListChange(mHomeLongPressAction, newValue,
                     Settings.System.KEY_HOME_LONG_PRESS_ACTION);
