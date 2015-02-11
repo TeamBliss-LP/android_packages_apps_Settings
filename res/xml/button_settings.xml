@@ -29,11 +29,6 @@
         android:dialogTitle="@string/button_backlight_title"
         android:persistent="false" />
         
-    <net.margaritov.preference.colorpicker.ColorPickerPreference
-       android:key="navigation_bar_tint"
-       android:title="@string/navbar_button_tint_title"
-       android:defaultValue="#ffffff" />          
-	
         <ListPreference
             android:key="keys_overflow_button"
             android:title="@string/keys_overflow_title"
@@ -58,6 +53,11 @@
             android:title="@string/navigation_bar_left_title"
             android:summary="@string/navigation_bar_left_summary"
             android:defaultValue="false" />
+            
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+           android:key="navigation_bar_tint"
+           android:title="@string/navbar_button_tint_title"
+           android:defaultValue="#ffffff" />                      
 
     </PreferenceCategory>
 
