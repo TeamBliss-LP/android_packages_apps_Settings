@@ -1322,5 +1322,8 @@ sword is entered</string>
     <!-- Navigation bar button color -->
     <string name="navbar_button_tint_title">Navigation button tint</string>
     
+    <!-- The volume key answer -->
+    <string name="volume_answer_call_title">Volume key Answer</string>
+    <string name="volume_answer_call_summary">Volume up key Answer</string>
 
 </resources>
