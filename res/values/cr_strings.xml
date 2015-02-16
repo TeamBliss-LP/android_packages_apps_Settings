@@ -1,0 +1,613 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- About phone screen, Temasek version -->
+    <string name="temasek_version_title">Temasek unofficial version</string>
+    <!-- Do NOT translate this -->
+   <string name="temasek_version_default">Build V0</string>
+
+    <!-- temasek spare parts -->
+    <string name="temasek_settings_title">Temasek spare parts</string>
+    <string name="recents_panel_title">Recents panel</string>
+    <string name="recents_panel_settings">Recents panel settings</string>
+    <string name="screen_and_animations_title">Screen and animations</string>
+    <string name="display_settings">Display</string>
+    <string name="display_settings_title">Display settings</string>
+
+    <!-- General strings -->
+    <string name="attention">Attention</string>
+    <string name="reset">Reset</string>
+    <string name="help">Help</string>
+    <string name="default_string">Default</string>
+    <string name="enabled">Enabled</string>
+    <string name="disabled">Disabled</string>
+    <string name="ok">Ok</string>
+    <string name="dialog_restart">Restart</string>
+    <string name="dialog_cancel">Cancel</string>
+    <string name="reset_message">Reset all entries to default?</string>
+    <string name="extras_temasek_settings">Temasek Extras</string>
+
+    <!-- Changelog -->
+    <string name="changelog_temasek_title">Changelog</string>
+    <string name="changelog_temasek_error">Unable to load changelog</string>
+    
+    <!-- Color Picker -->
+    <string name="dialog_color_picker">Color Picker</string>
+    <string name="press_color_to_apply">Press on color below to apply</string>
+    <string name="arrow_right">→</string>
+    <string name="arrow_down">↓</string>
+    <string name="hex">Hex:</string>
+    <string name="hex_hint">#ff000000</string>
+    <string name="set">Set</string>
+    <string name="color_default">Default</string>
+
+    <!-- About device screen, CPU and RAM info. -->
+    <string name="cpu_info">CPU</string>
+    <string name="mem_info">RAM</string>
+
+    <!-- Temasek Extra Info -->
+    <string name="temaextrainfo">Extra information</string>
+    <string name="temaextrainfo_summary">Display extra info for cpu, display, etc</string>
+
+    <!-- Viper4Android -->
+    <string name="viper_title">Viper4Android</string>
+
+    <!-- SuperSU -->
+    <string name="supersu_title">SuperSU</string>
+
+    <!-- OTA update -->
+    <string name="ota_title">OTA update</string>
+
+    <!-- long press back to kill configurable timeout -->
+    <string name="kill_app_longpress_timeout_title">Long press timeout</string>
+    <string name="timeout_2000">2 seconds (default)</string>
+    <string name="timeout_1500">1,5 seconds</string>
+    <string name="timeout_1000">1 second</string>
+    <string name="timeout_500">0,5 second</string>
+
+    <string name="shortcut_action_none">None</string>
+    <string name="shortcut_action_app">Custom app</string>
+    <string name="shortcut_action_home">Home</string>
+    <string name="shortcut_action_back">Back</string>
+    <string name="shortcut_action_menu">Menu</string>
+    <string name="shortcut_action_ime">Open IME Switcher</string>
+    <string name="shortcut_action_power_menu">Power menu</string>
+    <string name="shortcut_action_recent">Recents</string>
+    <string name="shortcut_action_power">Screen Off</string>
+    <string name="shortcut_action_search">Search in app</string>
+    <string name="shortcut_action_ring_vib">Ring/Vib</string>
+    <string name="shortcut_action_ring_silent">Ring/Silent</string>
+    <string name="shortcut_action_ring_vib_silent">Ring/Vib/Silent</string>
+    <string name="shortcut_action_camera">Camera</string>
+    <string name="shortcut_action_media_next">Music - next track</string>
+    <string name="shortcut_action_media_play_pause">Music - play/pause</string>
+    <string name="shortcut_action_media_previous">Music - previous track</string>
+    <string name="shortcut_action_wake_device">Wake up device</string>
+
+    <string name="shortcut_action_longpress">Longpress:</string>
+    <string name="shortcut_action_select_action_longpress">Choose longpress action:</string>
+    <string name="shortcut_action_select_action">Choose action:</string>
+    <string name="shortcut_action_select_action_newaction">Choose new action:</string>
+    <string name="shortcut_action_reset">Reset</string>
+    <string name="shortcut_action_add">Add</string>
+    <string name="shortcut_action_reset_message">Reset all entries to default?</string>
+    <string name="shortcut_action_max">Maximum entries size has been reached</string>
+    <string name="shortcut_action_warning">Warning</string>
+    <string name="shortcut_action_warning_message">It is not possible to delete last entry</string>
+    <string name="shortcut_action_disable_message">Disabled\nAdd an entry to enable this feature</string>
+    <string name="shortcut_image_not_valid">The chosen app did not return a valid icon or does not support image cropping. Use another app.</string>
+    <string name="shortcut_duplicate_entry">The chosen action cannot be added twice</string>
+    <string name="shortcut_action_help_shortcut">shortcut</string>
+    <string name="shortcut_action_help_button">button</string>
+    <string name="shortcut_action_help_app">app</string>
+    <string name="shortcut_action_help_icon">, while selecting the icon will bring up customization options</string>
+    <string name="shortcut_action_help_main">To add a %1$s, select the Add icon. Once a %1$s is added, selecting the row will change the target%2$s\n\nTo remove a %1$s, swipe the row horizontally left or right. Re-order a %1$s in the list by vertically dragging the anchor on the left.\n\nTo clear or reset to defaults, select the reset option.</string>
+    <string name="shortcut_action_help_delete_last_entry">Removing every %1$s in the list will disable the feature entirely.</string>
+    <string name="shortcut_action_help_pie_second_layer_delete_last_entry">Removing every %1$s in the list will disable the second pie layer entirely.</string>
+
+
+    <string name="shortcuts_applications">Applications</string>
+    <string name="shortcuts_select_custom_app_title">Select custom application</string>
+    <string name="shortcuts_icon_picker_type">Select icon type:</string>
+    <string name="shortcuts_icon_default">Default</string>
+    <string name="shortcuts_icon_presets">System icons</string>
+    <string name="shortcuts_icon_custom">Gallery</string>
+    <string name="shortcuts_icon_picker_choose_icon_title">Choose icon</string>
+
+    <string name="shortcuts_icon_picker_alarm">Alarm</string>
+    <string name="shortcuts_icon_picker_andy">Andy</string>
+    <string name="shortcuts_icon_picker_battery">Battery</string>
+    <string name="shortcuts_icon_picker_browser">Browser</string>
+    <string name="shortcuts_icon_picker_calendar">Calendar</string>
+    <string name="shortcuts_icon_picker_camera">Camera</string>
+    <string name="shortcuts_icon_picker_chrome">Google Chrome</string>
+    <string name="shortcuts_icon_picker_snapchat">Snapchat</string>
+    <string name="shortcuts_icon_picker_cloud">Cloud</string>
+    <string name="shortcuts_icon_picker_contact">Contact</string>
+    <string name="shortcuts_icon_picker_directdial">Direct Dial</string>
+    <string name="shortcuts_icon_picker_directmessage">Direct Message</string>
+    <string name="shortcuts_icon_picker_drive">Drive</string>
+    <string name="shortcuts_icon_picker_dropbox">Dropbox</string>
+    <string name="shortcuts_icon_picker_email">Email</string>
+    <string name="shortcuts_icon_picker_email2">Email Alternate</string>
+    <string name="shortcuts_icon_picker_evernote">Evernote</string>
+    <string name="shortcuts_icon_picker_facebook">Facebook</string>
+    <string name="shortcuts_icon_picker_favorite">Favorite</string>
+    <string name="shortcuts_icon_picker_file_browser">File Browser</string>
+    <string name="shortcuts_icon_picker_file_browser2">File Browser Alternate</string>
+    <string name="shortcuts_icon_picker_fitness">Fitness</string>
+    <string name="shortcuts_icon_picker_gallery">Gallery</string>
+    <string name="shortcuts_icon_picker_gears">Gears</string>
+    <string name="shortcuts_icon_picker_github">Github</string>
+    <string name="shortcuts_icon_picker_google_small">Google</string>
+    <string name="shortcuts_icon_picker_gplus">Google Plus</string>
+    <string name="shortcuts_icon_picker_gtalk">Hangouts</string>
+    <string name="shortcuts_icon_picker_help">Help</string>
+    <string name="shortcuts_icon_picker_joystick">Joystick</string>
+    <string name="shortcuts_icon_picker_key">Keys/Accounts</string>
+    <string name="shortcuts_icon_picker_laptop">Laptop</string>
+    <string name="shortcuts_icon_picker_notes">Notes</string>
+    <string name="shortcuts_icon_picker_office">Office Suite</string>
+    <string name="shortcuts_icon_picker_luggage">Travel</string>
+    <string name="shortcuts_icon_picker_maps">Maps</string>
+    <string name="shortcuts_icon_picker_market">Market</string>
+    <string name="shortcuts_icon_picker_messenger">Messenger</string>
+    <string name="shortcuts_icon_picker_movie">Movies</string>
+    <string name="shortcuts_icon_picker_music">Music</string>
+    <string name="shortcuts_icon_picker_nav">Navigation</string>
+    <string name="shortcuts_icon_picker_phone">Phone</string>
+    <string name="shortcuts_icon_picker_package">Package</string>
+    <string name="shortcuts_icon_picker_paypal">Paypal</string>
+    <string name="shortcuts_icon_picker_pinterest">Pinterest</string>
+    <string name="shortcuts_icon_picker_play">Play</string>
+    <string name="shortcuts_icon_picker_pocket">Pocket</string>
+    <string name="shortcuts_icon_picker_quicksettings">Quick Settings</string>
+    <string name="shortcuts_icon_picker_rss">RSS Feed</string>
+    <string name="shortcuts_icon_picker_sdcard">SDCard</string>
+    <string name="shortcuts_icon_picker_search">Search</string>
+    <string name="shortcuts_icon_picker_sms">Messaging</string>
+    <string name="shortcuts_icon_picker_tapatalk">Tapatalk</string>
+    <string name="shortcuts_icon_picker_tasks">Tasks</string>
+    <string name="shortcuts_icon_picker_terminal">Terminal</string>
+    <string name="shortcuts_icon_picker_transit">Transit</string>
+    <string name="shortcuts_icon_picker_tv">TV</string>
+    <string name="shortcuts_icon_picker_twitter">Twitter</string>
+    <string name="shortcuts_icon_picker_unlock">Unlock</string>
+    <string name="shortcuts_icon_picker_whatsapp">Whatsapp</string>
+    <string name="shortcuts_icon_picker_youtube">Youtube</string>
+
+    <!-- Navigation bar -->
+    <string name="nav_bar_title">Navigation bar</string>
+    <string name="navbar_enable_bar_title">Navigation bar buttons</string>
+    <string name="navbar_enable_bar_summary">Enable on-screen nav bar buttons</string>
+    <string name="navbar_style_dimen_title">Nav bar dimensions</string>
+    <string name="navbar_dimensions_reset_message">Reset all dimensions entries to default?</string>
+    <string name="navigation_bar_height_title">Navigation bar height</string>
+    <string name="navigation_bar_height_summary">Navigation bar height while in portrait</string>
+    <string name="navigation_bar_width_title">Navigation bar width</string>
+    <string name="navigation_bar_width_summary">Navigation bar height if the bar is along a side</string>
+    <string name="navigation_bar_size_42_dp_default">42 dp (default)</string>
+    <string name="navigation_bar_size_36_dp">36 dp</string>
+    <string name="navigation_bar_size_30_dp">30 dp</string>
+    <string name="navigation_bar_size_24_dp">24 dp</string>
+    <string name="navigation_bar_size_48_dp_default">48 dp (default)</string>
+    <string name="navigation_bar_size_44_dp">44 dp</string>
+    <string name="navigation_bar_size_40_dp">40 dp</string>
+    <string name="navigation_bar_size_42_dp">42 dp</string>
+    <string name="navigation_bar_size_0_dp">0 dp (off)</string>
+
+    <!-- Navigation bar button color -->
+    <string name="navbar_button_tint_title">Navigation button tint</string>
+
+    <!-- Ability to disable hardware keys via nav bar settings -->
+    <string name="hw_keys_title">Hardware keys</string>
+    <string name="hw_keys_summary">Enable hardware keys</string>
+
+    <!-- Keyboard and Input ASS methods  -->
+    <string name="title_keyboard_input">Advanced options</string>
+    <string name="disable_fullscreen_keyboard_title">Disable fullscreen keyboard</string>
+    <string name="disable_fullscreen_keyboard_summary">Landscape keyboard will never take up entire screen</string>
+    <string name="keyboard_rotation_toggle_title">Auto keyboard rotation</string>
+    <string name="keyboard_rotation_toggle_summary">Force auto-rotate when keyboard is shown</string>
+    <string name="keyboard_rotation_timeout_title">Auto-rotate timeout</string>
+    <string name="keyboard_rotation_timeout_summary">Disables auto-rotate sensor <xliff:g id="rotate_timeout">%1$s</xliff:g> seconds after keyboard is hidden</string>
+    <string name="keyboard_rotation_dialog">This feature forces auto-rotate to turn on temporarily while the keyboard is shown.  It has no effect when auto-rotate is already enabled.</string>
+    <string name="show_enter_key_title">Show enter key</string>
+    <string name="show_enter_key_summary">Force keyboard to show enter instead of emoticon key</string>
+
+    <!-- Screenshot sound -->
+    <string name="screenshot_sound_title">Screenshot sound</string>
+    <string name="screenshot_sound_summary">Plays sound effect when screenshot is taken</string>
+
+    <!-- Network traffic -->
+    <string name="network_traffic_title">Network traffic</string>
+    <string name="show_network_traffic_state">Status bar traffic monitor</string>
+    <string name="network_traffic_summary">Enable various network traffic options in statusbar</string>
+    <string name="show_network_traffic_unit">Display unit</string>
+    <string name="show_network_traffic_frequency">Update interval</string>
+    <string name="show_network_traffic_disable">Disabled</string>
+    <string name="show_network_traffic_up">Outgoing</string>
+    <string name="show_network_traffic_down">Incoming</string>
+    <string name="show_network_traffic_all">Outgoing and incoming</string>
+    <string name="show_network_traffic_bit">Bits per second</string>
+    <string name="show_network_traffic_byte">Bytes per second</string>
+    <string name="show_network_traffic_500">500 ms</string>
+    <string name="show_network_traffic_1000">1000 ms</string>
+    <string name="show_network_traffic_1500">1500 ms</string>
+    <string name="show_network_traffic_2000">2000 ms</string>
+    <string name="network_traffic_autohide">Auto hide</string>
+    <string name="network_traffic_autohide_summary">Hide the traffic monitor when there is no activity</string>
+    <string name="network_traffic_autohide_threshold">Inactivity threshold</string>
+    <string name="network_traffic_color_style">Color style</string>
+    <string name="network_traffic_color_reset">Reset color</string>
+    <string name="network_traffic_color_reset_message">Reset network traffic color to default?</string>
+
+    <!-- Partition Info -->
+    <string name="partition_info_title">View partition information</string>
+    <string name="partition_info_summary">Shows you the partition information for the device</string>   
+    <string name="partition_info_system">/system</string>
+    <string name="partition_info_data">/data</string>
+    <string name="partition_info_cache">/cache</string>
+    <string name="partition_info_sdcard">/sdcard (FAT)</string>
+    <string name="partition_info_sdext">/sd-ext (EXT)</string>
+    <string name="partition_info_used_of">/</string>
+
+    <!-- UI debug setting: show CPU info? [CHAR LIMIT=25] -->
+    <string name="show_cpu_info">Show CPU info</string>
+    <!-- UI debug setting: show cpu usage summary [CHAR LIMIT=50] -->
+    <string name="show_cpu_info_summary">Screen overlay showing current CPU info</string>
+
+    <!-- Sound settings -->
+    <string name="advanced_sound_title">Advanced options</string>
+    <string name="sound_title">Sound</string>
+
+    <!-- Camera sound switch -->
+    <string name="camera_sounds_title">Camera shutter sound</string>
+    <string name="camera_sounds_summary">Enable system camera shutter sound</string>
+    <string name="camera_sound_warning_dialog_text">Disabling the camera shutter sound is illegal in some areas! Please check the applicable law in your country</string>
+
+    <!-- MediaScanner behavior on boot -->
+    <string name="options_settings_title">Options</string>
+    <string name="media_scanner_on_boot_title">MediaScanner behavior on boot</string>
+    <string name="media_scanner_on_boot_enabled">Scan media</string>
+    <string name="media_scanner_on_boot_ask">Ask to scan (notification)</string>
+    <string name="media_scanner_on_boot_disabled">Do not scan media</string>
+
+    <!-- OmniSwitch -->
+    <string name="omniswitch_settings_title">OmniSwitch</string>
+    <string name="recents_use_omniswitch_title">Use for recents</string>
+    <string name="recents_use_omniswitch_summary">Use OmniSwitch instead of default recents view</string>
+    <string name="omniswitch_start_settings_title">Settings</string>
+    <string name="omniswitch_start_settings_summary">Open OmniSwitch settings</string>
+    <string name="omniswitch_first_time_title">Information</string>
+    <string name="omniswitch_first_time_message">Make sure you have enabled OmniSwitch. You can do this by using \"Settings\" below</string>
+
+    <!-- Recents panel settings -->
+    <string name="recents_panel_settings">Recents panel settings</string>
+    <string name="show_clear_all_recents_button_title">Clear all recents button</string>
+    <string name="show_clear_all_recents_button_summary">Show clear all button on recents panel</string>
+    <string name="recents_clear_all_location_title">Clear all recents location</string>
+    <string name="recents_clear_all_location_top_right">Top right</string>
+    <string name="recents_clear_all_location_top_left">Top left</string>
+    <string name="recents_clear_all_location_top_center">Top center</string>
+    <string name="recents_clear_all_location_bottom_right">Bottom right</string>
+    <string name="recents_clear_all_location_bottom_left">Bottom left</string>
+    <string name="recents_clear_all_location_bottom_center">Bottom center</string>
+    <string name="recents_clear_all_dismiss_all_title">Clear all tasks</string>
+    <string name="recents_clear_all_dismiss_all_summary">Choose whether to dismiss all tasks or ignore the foreground task</string>
+
+    <!-- [CHAR LIMIT=40] Sound & display settings screen, title of dialog for picking LCD density -->
+    <!-- temasek display settings screen, setting option name to change LCD density -->
+    <string name="lcd_density">LCD density</string>
+    <string name="dialog_title_lcd_density">LCD density</string>
+    <!-- temasek display settings screen, setting option summary to change LCD density -->
+    <string name="lcd_density_summary">xxx DPI</string>
+    <string name="custom_density_title">Change to whatever you like</string>
+    <string name="custom_density_summary">If you ever have compatibility issues with the Play Store, be sure to doublecheck if a Multi-DPI Play Store is installed</string>
+    <string name="custom_density_summary_invalid">"INVALID DENSITY!"</string>
+    <string name="custom_density">Custom</string>
+    <string name="set_custom_density_title">Set custom density</string>
+    <string name="set_custom_density_set">Set</string>
+    <string name="custom_density_dialog_title">WARNING!</string>
+    <string name="custom_density_dialog_summary">Changing your default LCD density can sometimes cause certain apps to not function properly and/or the playstore to show apps being incompatible with your device"</string>
+    <string name="dpi">DPI</string>
+    <string name="custom_density_warning">Restart the system and apply selected density?</string>
+
+    <!-- Toast animations -->
+    <string name="toast_animation_title">Toast animations</string>
+    <string name="toast_animation_summary">Select and preview system toast animation</string>
+    <string name="toast_none_animation">None</string>
+    <string name="toast_default_animation">Default</string>
+    <string name="toast_fade_animation">Fade animation</string>
+    <string name="toast_SlideRight_animation">Slide right</string>
+    <string name="toast_SlideLeft_animation">Slide left</string>
+    <string name="toast_Xylon_animation">Xylon animation</string>
+    <string name="toast_Toko_animation">Toko animation</string>
+    <string name="toast_Tn_animation">Tn animation</string>
+    <string name="toast_Honami_animation">Honami animation</string>
+    <string name="toast_FastFade_animation">Fast fade</string>
+    <string name="toast_GrowFade_animation">Grow fade</string>
+    <string name="toast_GrowFadeCenter_animation">Grow fade center</string>
+    <string name="toast_GrowFadeBottom_animation">Grow fade bottom</string>
+    <string name="toast_Translucent_animation">Translucent animation</string>
+    <string name="toast_SlideLeftRight_animation">Slide left to right</string>
+    <string name="toast_SlideRightLeft_animation">Slide right to left</string>
+
+    <!-- ListView animation -->
+    <string name="interface_settings_animation_title">Animation options</string>
+    <string name="listview_animation_title">ListView animation</string>
+    <string name="listview_off">Default</string>
+    <string name="listview_wave_left">Wave (left)</string>
+    <string name="listview_wave_right">Wave (right)</string>
+    <string name="listview_alpha">Alpha</string>
+    <string name="listview_scale">Scale</string>
+    <string name="listview_stack_top">Stack (top)</string>
+    <string name="listview_stack_bottom">Stack (bottom)</string>
+    <string name="listview_unfold">Unfold</string>
+    <string name="listview_fold">Fold</string>
+    <string name="listview_translate_left">Translate (left)</string>
+    <string name="listview_translate_right">Translate (right)</string>
+
+    <!-- ListView interpolator -->
+    <string name="listview_interpolator_title">ListView interpolator</string>
+    <string name="listview_accelerate_interpolator">Accelerate</string>
+    <string name="listview_decelerate_interpolator">Decelerate</string>
+    <string name="listview_accelerate_decelerate_interpolator">Accelerate and decelerate</string>
+    <string name="listview_anticipate_interpolator">Anticipate</string>
+    <string name="listview_overshoot_interpolator">Overshoot</string>
+    <string name="listview_anticipate_overshoot_interpolator">Anticipate and overshoot</string>
+    <string name="listview_bounce_interpolator">Bounce</string>
+
+    <!-- Screen recorder -->
+    <string name="screen_recorder_title">Screen recorder</string>
+    <string name="screen_recorder_summary">Adjust screen recorder settings</string>
+    <string name="screen_recorder_video_dimensions_title">Video size</string>
+    <string name="screen_recorder_video_bitrate_title">Bitrate</string>
+    <!-- video sizes -->
+    <string name="screen_recorder_size_240x400">240x400</string>
+    <string name="screen_recorder_size_360x640">360x640</string>
+    <string name="screen_recorder_size_480x800">480x800</string>
+    <string name="screen_recorder_size_480x854">480x854</string>
+    <string name="screen_recorder_size_540x960">540x960</string>
+    <string name="screen_recorder_size_600x1024">600x1024</string>
+    <string name="screen_recorder_size_720x1280">720x1280</string>
+    <!-- frame rates -->
+    <string name="screen_recorder_bitrate_title_100000">100 kB/s</string>
+    <string name="screen_recorder_bitrate_title_250000">250 kB/s</string>
+    <string name="screen_recorder_bitrate_title_500000">500 kB/s</string>
+    <string name="screen_recorder_bitrate_title_1000000">1 MB/s</string>
+    <string name="screen_recorder_bitrate_title_2000000">2 MB/s</string>
+    <string name="screen_recorder_bitrate_title_3000000">3 MB/s</string>
+    <string name="screen_recorder_bitrate_title_4000000">4 MB/s</string>
+    <string name="screen_recorder_bitrate_title_5000000">5 MB/s</string>
+    <string name="screen_recorder_bitrate_title_10000000">10 MB/s</string>
+    <string name="screen_recorder_bitrate_title_20000000">20 MB/s</string>
+    <string name="screen_recorder_bitrate_100000">100000</string>
+    <string name="screen_recorder_bitrate_250000">250000</string>
+    <string name="screen_recorder_bitrate_500000">500000</string>
+    <string name="screen_recorder_bitrate_1000000">1000000</string>
+    <string name="screen_recorder_bitrate_2000000">2000000</string>
+    <string name="screen_recorder_bitrate_3000000">3000000</string>
+    <string name="screen_recorder_bitrate_4000000">4000000</string>
+    <string name="screen_recorder_bitrate_5000000">5000000</string>
+    <string name="screen_recorder_bitrate_10000000">10000000</string>
+    <string name="screen_recorder_bitrate_20000000">20000000</string>
+    <string name="power_menu_screenrecord_title">Screen record</string>
+    <string name="screen_recorder_record_audio_title">External audio</string>
+    <string name="screen_recorder_record_audio_summary">Record audio from the microphone</string>
+    <string name="screen_recorder_power_menu_summary">Add a Screen Record entry in the power menu</string>
+
+    <!-- Restart SystemUI -->
+    <string name="restart_systemui">Restart SystemUI</string>
+
+    <!-- Temasek lockscreen -->
+    <string name="temasek_lockscreen_title">Lockscreen</string>
+    <string name="temasek_lockscreen_category">Lockscreen settings</string>
+    <string name="temasek_lockscreen_shortcuts_category">Shortcuts</string>
+    <!-- CM lockscreen shortcuts -->
+    <string name="cm_lockscreen_shortcuts_title">Bottom corners shortcuts</string>
+    <string name="cm_lockscreen_shortcuts_summary">View or change custom bottom corners lockscreen shortcuts</string>
+    <!-- Slim lockscreen shortcuts -->
+    <string name="lockscreen_shortcuts_title">Middle screen shortcuts</string>
+    <string name="lockscreen_shortcuts_summary">View or change custom middle screen lockscreen shortcuts</string>
+    <string name="lockscreen_shorcuts_longpress_title">Shortcuts longpress</string>
+    <string name="lockscreen_shorcuts_longpress_summary">Open custom lockscreen shortcuts on longpress</string>
+
+     <!-- QuickSettings: Smart Pulldown -->
+    <string name="smart_pulldown_title">Smart pulldown</string>
+    <string name="smart_pulldown_summary">Open Quick Settings when there are %1$s notifications present</string>
+    <string name="smart_pulldown_off">Off</string>
+    <string name="smart_pulldown_dismissable">No dismissable</string>
+    <string name="smart_pulldown_persistent">No persistent</string>
+    <string name="smart_pulldown_all">No dismissable or persistent</string>
+
+    <!-- Gesture Anywhere -->
+    <string name="gesture_anywhere_title">Gesture Anywhere</string>
+    <string name="gesture_anywhere_enabled_title">Gesture Anywhere</string>
+    <string name="gesture_anywhere_enabled_summary">Enable the Gesture Anywhere feature</string>
+    <string name="gesture_anywhere_position_title">Location</string>
+    <string name="gesture_anywhere_position_left">Left edge</string>
+    <string name="gesture_anywhere_position_right">Right edge</string>
+    <string name="gesture_anywhere_gestures_title">Gestures</string>
+    <string name="gesture_anywhere_gestures_summary">Add, remove, and edit gestures</string>
+    <!-- Label, button used to add a gesture -->
+    <string name="ga_button_add">Add gesture</string>
+    <!-- Label, button used to reload all gestures -->
+    <string name="ga_button_reload">Reload</string>
+    <!-- Label, button used to cancel the operation of adding a gesture -->
+    <string name="ga_button_discard">Discard</string>
+    <!-- Label, button used to save a gesture newly created -->
+    <string name="ga_button_done">Done</string>
+    <!-- Label, prompt asking the user to enter the name of the gesture -->
+    <string name="ga_prompt_gesture_name">Name</string>
+    <!-- Error message, informs the user he needs to enter a name before saving a gesture -->
+    <string name="ga_error_missing_name">You must enter a name</string>
+    <!-- success message, tells the user where the gesture was saved -->
+    <string name="ga_save_success">Gesture saved in %s</string>
+    <!-- Buttons in Rename gesture dialog box -->
+    <string name="ga_rename_action">OK</string>
+    <!-- Buttons in Rename gesture dialog box -->
+    <string name="ga_cancel_action">Cancel</string>
+    <!-- Message displayed when the user opens the gestures settings screen -->
+    <string name="ga_gestures_loading">Loading gestures...</string>
+    <!-- Message displayed when the user has no gestures -->
+    <string name="ga_gestures_empty">No gestures</string>
+    <!-- Title of the screen used to view/manage gestures -->
+    <string name="ga_gestures_activity">Gestures</string>
+    <!-- Noun, menu item used to edit a gesture -->
+    <string name="ga_gestures_edit">Edit</string>
+    <!-- Noun, menu item used to remove a gesture -->
+    <string name="ga_gestures_delete">Delete</string>
+    <!-- Message displayed when a gesture is successfully deleted -->
+    <string name="ga_gestures_delete_success">Gesture deleted</string>
+    <!-- Title of dialog box -->
+    <string name="ga_gestures_rename_title">Rename gesture</string>
+    <!-- Label of gesture name field in Rename gesture dialog box -->
+    <string name="ga_gestures_rename_label">Gesture name</string>
+    <!-- Message, displayed when the sdcard cannot be found, 1st parameter is the name of the file that stores the gestures.  CHAR LIMIT=80 -->
+    <string name="ga_gestures_error_loading">Could not load %s. Make sure you have storage available.</string>
+    <string name="trigger_category">Trigger region</string>
+    <string name="trigger_width_title">Trigger width</string>
+    <string name="trigger_width_summary">Adjust the width of the trigger area</string>
+    <string name="trigger_top_title">Trigger position</string>
+    <string name="trigger_top_summary">Adjust the vertical postion of the trigger area</string>
+    <string name="trigger_bottom_title">Trigger height</string>
+    <string name="trigger_bottom_summary">Adjust the height of the trigger area</string>
+    <string name="picker_activities">Activities</string>
+    <string name="select_custom_app_title">Select custom app</string>
+    <string name="select_custom_activity_title">Select custom activity</string>
+    <string name="profile_applist_title">Applications</string>
+
+    <!-- Battery saver -->
+    <string name="battery_saver_title">Warning color</string>
+
+    <!-- App Circle sidebar -->
+    <string name="category_app_circle_bar_title">App launcher</string>
+    <string name="app_circle_bar_title">App circle bar</string>
+    <string name="app_circle_bar_summary">Show circle app launcher after touching right side of screen</string>
+    <string name="app_circle_bar_included_apps_title">Included apps</string>
+    <string name="app_circle_bar_included_apps_summary">Apps will show in app circle bar</string>
+    <string name="trigger_width_title">Trigger width</string>
+    <string name="trigger_width_summary">Adjust the width of the trigger area</string>
+    <string name="trigger_top_title">Trigger position</string>
+    <string name="trigger_top_summary">Adjust the vertical postion of the trigger area</string>
+    <string name="trigger_bottom_title">Trigger height</string>
+    <string name="trigger_bottom_summary">Adjust the height of the trigger area</string>
+
+    <!-- Volume Steps -->
+    <string name="volume_steps_title">Volume Steps</string>
+    <string name="volume_steps_60">60</string>
+    <string name="volume_steps_45">45</string>
+    <string name="volume_steps_30">30</string>
+    <string name="volume_steps_15">15</string>
+    <string name="volume_steps_7">7</string>
+    <string name="volume_steps_5">5</string>
+    <string name="volume_steps_alarm_title">Alarm</string>
+    <string name="volume_steps_dtmf_title">DTMF</string>
+    <string name="volume_steps_music_title">Music</string>
+    <string name="volume_steps_notification_title">Notification</string>
+    <string name="volume_steps_ring_title">Ringer</string>
+    <string name="volume_steps_system_title">System</string>
+    <string name="volume_steps_voice_call_title">Voice Call</string>
+
+    <!-- AOKP custom system animations -->  
+    <string name="aokp_animation_title">System animations</string>
+    <string name="aokp_animation_summary">AOKP custom animation</string>
+    <string name="animation_exit_only_title">Enter only animation</string>
+    <string name="animation_reverse_exit_title">Reverse exit animation</string>
+    <string name="activity_open_title">Activity open animation</string>
+    <string name="activity_close_title">Activity close animation</string>
+    <string name="task_open_title">Task open animation</string>
+    <string name="task_close_title">Task close animation</string>
+    <string name="task_move_to_front_title">Move to front animation</string>
+    <string name="task_move_to_back_title">Move to back animation</string>
+    <string name="wallpaper_open_title">Wallpaper open animation</string>
+    <string name="wallpaper_close_title">Wallpaper close animation</string>
+    <string name="wallpaper_intra_open_title">Wallpaper intra open animation</string>
+    <string name="wallpaper_intra_close_title">Wallpaper intra close animation</string>
+    <string name="task_open_behind_title">Task open behind animation</string>
+    <string name="animation_duration_title">Animation duration</string>
+    <string name="animation_duration_default">Default</string>
+
+    <!-- Lock clock -->
+    <string name="lock_clock_title">Clock widget</string>
+    <string name="lock_clock_summary">View or change how the \'cLock\' Home  widget will display</string>
+    <string name="lock_clock_clock_section_title">Clock and alarm</string>
+    <string name="lock_clock_clock_section_summary">View or change how the clock of the \'cLock\' Home  widget will display</string>
+    <string name="lock_clock_weather_section_title">Weather panel</string>
+    <string name="lock_clock_weather_section_summary">View or change how the weather of the \'cLock\' Home  widget will display</string>
+    <string name="lock_clock_calendar_section_title">Calendar events</string>
+    <string name="lock_clock_calendar_section_summary">View or change how the calendar of the \'cLock\' Home  widget will display</string>
+
+    <!-- QuickSettings haptic feedback -->
+    <string name="quick_settings_vibrate_title">Vibrate on touch</string>
+    <string name="quick_settings_vibrate_summary">Vibrate when touching tiles</string>
+
+    <!-- Superuser indicator on status bar -->
+    <string name="su_indicator">Superuser indicator</string>
+    <string name="su_indicator_summary">Show superuser indicator on status bar when a session is active</string>
+
+    <!-- Privacy guard notification -->
+    <string name="privacy_guard_notification_title">Notification</string>
+    <string name="privacy_guard_notifiation_summary">Show a notification if privacy guard is active</string>
+
+    <!-- QuickSettings collapse panel -->
+    <string name="quick_settings_collapse_title">Auto close panel</string>
+    <string name="quick_settings_collapse_summary">Close the Quick Settings panel upon toggle</string>
+
+    <!-- QuickSettings 4 columns -->
+    <string name="qs_four_columns_title">Show four tiles per row</string>
+
+    <!-- Heads Up -->
+    <string name="category_heads_up">Heads up notifications</string>
+    <string name="summary_heads_up_enabled">Pop-up notifications are enabled</string>
+    <string name="summary_heads_up_disabled">Pop-up notifications are disabled</string>
+    <string name="add_heads_up_package">Add app</string>
+    <string name="add_heads_up_dnd_summary">Don\'t show heads up in these applications</string>
+    <string name="add_heads_up_blacklist_summary">Don\'t show heads up from these applications</string>
+    <string name="heads_up_dnd_title">Do not disturb</string>
+    <string name="heads_up_blacklist_title">Blacklist</string>
+    <string name="heads_up_disabled_notice">To allow applications to display interactive notifications in a pop-up window on your screen, enable Heads up.</string>
+    <string name="heads_up_dismiss_on_remove_title">Swipe behavior</string>
+    <string name="heads_up_dismiss_on_remove_summary_enabled">Hide notification instead of dismiss</string>
+    <string name="heads_up_dismiss_on_remove_summary_disabled">Hide and dismiss notification</string>
+
+    <!-- Heads up timeout -->
+    <string name="heads_up_time_out_title">Time out</string>
+    <string name="heads_up_time_out_summary">Notification will show for <xliff:g id="number">%d</xliff:g> seconds</string>
+    <string name="heads_up_time_out_never_summary">Notification will show until it is dismissed</string>
+    <string name="heads_up_time_out_2sec">2 seconds</string>
+    <string name="heads_up_time_out_4sec">4 seconds</string>
+    <string name="heads_up_time_out_6sec">6 seconds</string>
+    <string name="heads_up_time_out_8sec">8 seconds</string>
+    <string name="heads_up_time_out_10sec">10 seconds</string>
+    <string name="heads_up_time_out_never">Never</string>
+
+    <!-- Captive Portal -->
+    <string name="captive_portal_detection">Captive portal detection</string>
+    <string name="captive_portal_detection_summary">If disabled, a connection to google servers is not required in order to detect data connection.</string>
+
+    <!-- Navring targets (enable/disable) -->
+    <string name="navigation_ring_enable_title">Enable navigation rings</string>
+
+    <!-- Heads up touch outside -->
+    <string name="heads_up_touch_outside_title">Touch outside behavior</string>
+    <string name="heads_up_touch_outside_summary_enabled">Hide notification on touch outside and on home button press</string>
+    <string name="heads_up_touch_outside_summary_disabled">Do not hide notification after touch outside or on home button press</string>
+
+    <!-- The volume key answer -->
+    <string name="volume_answer_call_title">Volume key Answer</string>
+    <string name="volume_answer_call_summary">Volume up key Answer</string>
+
+    <!-- Volume pane timeout -->
+    <string name="category_panel_time_out">Panel timeout</string>
+    <string name="volume_panel_time_out_title">Volume panel timeout</string>
+    <string name="volume_panel_time_out_summary">Hide before <xliff:g id="number">%d</xliff:g> seconds. Auto hide on touch outside</string>
+    <string name="volume_panel_time_out_3sec">3 seconds (default)</string>
+    <string name="volume_panel_time_out_5sec">5 seconds</string>
+    <string name="volume_panel_time_out_8sec">8 seconds</string>
+    <string name="volume_panel_time_out_12sec">12 seconds</string>
+    <string name="volume_panel_time_out_15sec">15 seconds</string>
+
+</resources>
