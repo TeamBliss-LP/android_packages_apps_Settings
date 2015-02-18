@@ -33,10 +33,6 @@ public class BaseSearchIndexProvider implements Indexable.SearchIndexProvider {
     }
 
     @Override
-    public void prepare() {
-    }
-
-    @Override
     public List<SearchIndexableResource> getXmlResourcesToIndex(Context context, boolean enabled) {
         return null;
     }
