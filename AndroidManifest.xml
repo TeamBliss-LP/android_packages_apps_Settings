@@ -1929,6 +1929,34 @@
                 android:resource="@id/display_settings" />
         </activity>
 
+	
+        <!-- Navigation options -->
+        <activity android:name="Settings$NavBarActivity"
+                android:uiOptions="splitActionBarWhenNarrow"
+                android:label="@string/navigation_category"
+                android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.cyanogenmod.NavBar" />
+            <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
+                android:resource="@id/security_settings" />
+        </activity>
+
+        <activity-alias android:name="com.android.settings.cyanogenmod.NavBar"
+                android:taskAffinity="com.android.settings"
+                android:label="@string/navigation_category"
+                android:targetActivity="Settings$NavBarActivity"
+                android:configChanges="orientation|keyboardHidden|screenSize"
+                android:exported="true">
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                       android:value="com.android.settings.bliss.NavBar" />
+            <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
+                       android:resource="@id/security_settings" />
+        </activity-alias>
+
         <!-- Pseudo-activity used to provide an intent-filter entry point to encryption settings -->
         <activity android:name="Settings$CryptKeeperSettingsActivity"
                 android:label="@string/crypt_keeper_encrypt_title">
