@@ -1957,6 +1957,33 @@
                        android:resource="@id/security_settings" />
         </activity-alias>
 
+        <!-- AppCircleBar -->
+        <activity android:name="Settings$AppCircleBarActivity"
+                android:uiOptions="splitActionBarWhenNarrow"
+                android:label="@string/app_circle_bar_title"
+                android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.bliss.AppCircleBar" />
+            <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
+                android:resource="@id/security_settings" />
+        </activity>
+
+        <activity-alias android:name="com.android.settings.bliss.AppCircleBar"
+                android:taskAffinity="com.android.settings"
+                android:label="@string/app_circle_bar_title"
+                android:targetActivity="Settings$AppCircleBarActivity"
+                android:configChanges="orientation|keyboardHidden|screenSize"
+                android:exported="true">
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                       android:value="com.android.settings.bliss.AppCircleBar" />
+            <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
+                       android:resource="@id/security_settings" />
+        </activity-alias>
+
         <!-- Pseudo-activity used to provide an intent-filter entry point to encryption settings -->
         <activity android:name="Settings$CryptKeeperSettingsActivity"
                 android:label="@string/crypt_keeper_encrypt_title">

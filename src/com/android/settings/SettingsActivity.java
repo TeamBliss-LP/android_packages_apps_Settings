@@ -79,6 +79,7 @@ import com.android.settings.applications.ManageApplications;
 import com.android.settings.applications.ProcessStatsUi;
 import com.android.settings.blacklist.BlacklistSettings;
 import com.android.settings.cyanogenmod.NavBar;
+import com.android.settings.bliss.AppCircleBar;
 import com.android.settings.bluetooth.BluetoothSettings;
 import com.android.settings.dashboard.DashboardCategory;
 import com.android.settings.dashboard.DashboardSummary;
@@ -331,6 +332,7 @@ public class SettingsActivity extends Activity
             DisplayRotation.class.getName(),
             ExpandedDesktopPreferenceFragment.class.getName()
             NavBar.class.getName()
+            AppCircleBar.class.getName()
     };
 
 
