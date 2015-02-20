@@ -112,5 +112,6 @@ public class Settings extends SettingsActivity {
     public static class SoundSettingsActivity extends SettingsActivity { /* empty */ }
     public static class LockScreenSettingsActivity extends SettingsActivity { /* empty */ }
     public static class NavBarActivity extends SettingsActivity { /* empty */ }
+    public static class AppCircleBarActivity extends SettingsActivity { /* empty */ }
 }
 
