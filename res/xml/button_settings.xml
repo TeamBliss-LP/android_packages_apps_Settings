@@ -47,6 +47,34 @@
     <PreferenceCategory
         android:key="navigation_bar"
         android:title="@string/navigation_bar_category" >
+	
+        <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
+            android:key="navigation_bar_show"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:ellipsize="marquee"
+            android:fadingEdge="horizontal"
+            android:title="@string/navbar_enable_bar" />
+
+         <com.dirtyunicorns.dutweaks.preference.SystemSettingSwitchPreference
+            android:key="navigation_bar_menu_arrow_keys"
+            android:title="@string/navigation_bar_arrow_keys_title"
+            android:summary="@string/navigation_bar_arrow_keys_summary"
+            android:defaultValue="false"
+            android:dependency="navigation_bar_show" />
+
+         <PreferenceScreen
+            android:key="navigation_bar"
+            android:fragment="com.android.settings.bliss.NavBar"
+            android:title="@string/navigation_bar_title" 
+            android:layout="@layout/preference_navbar_layout"
+            android:dependency="navigation_bar_show" />
+
+         <PreferenceScreen
+            android:key="navigation_bar_dimen"
+            android:fragment="com.android.settings.bliss.NavBarDimen"
+            android:title="@string/navbar_dimen_title"
+            android:layout="@layout/preference_navbar_dimens"
+            android:dependency="navigation_bar_show" />
 
         <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
             android:key="navigation_bar_left"
