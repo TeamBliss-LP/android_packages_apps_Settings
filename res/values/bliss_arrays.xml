@@ -918,20 +918,6 @@
         <item>2</item>
     </string-array>
 
-    <string-array name="navbar_dialog_entries" translatable="false">
-	<item>@string/action_short</item>
-	<item>@string/action_long</item>
-	<item>@string/action_double</item>
-	<item>@string/action_icon</item>
-    </string-array>
-
-    <string-array name="navbar_dialog_values" translatable="false">
-    	<item>**short**</item>
-    	<item>**long**</item>
-    	<item>**double**</item>
-    	<item>**icon**</item>
-    </string-array>
-
     <!-- Pie control -->
     <string-array name="icon_color_mode_entries">
         <item>@string/icon_color_mode_all_icons</item>

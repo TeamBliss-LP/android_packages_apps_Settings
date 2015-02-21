@@ -31,9 +31,11 @@ import com.android.settings.SettingsPreferenceFragment;
 
 public class RecentsSettings extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
 
+    private static final String KEY_CLEAR_ALL_RECENTS_NAVBAR_ENABLED = "clear_all_recents_navbar_enabled";
     private static final String SHOW_CLEAR_ALL_RECENTS = "show_clear_all_recents";
     private static final String RECENTS_CLEAR_ALL_LOCATION = "recents_clear_all_location";
 
+    private SwitchPreference mClearAllRecentsNavbar;
     private SwitchPreference mRecentsClearAll;
     private ListPreference mRecentsClearAllLocation;
 
@@ -56,7 +58,10 @@ public class RecentsSettings extends SettingsPreferenceFragment implements OnPre
         mRecentsClearAllLocation.setValue(String.valueOf(location));
         mRecentsClearAllLocation.setOnPreferenceChangeListener(this);
         updateRecentsLocation(location);
-       
+        
+        mClearAllRecentsNavbar = (SwitchPreference) prefSet.findPreference(KEY_CLEAR_ALL_RECENTS_NAVBAR_ENABLED);
+        mClearAllRecentsNavbar.setChecked(Settings.System.getInt(resolver,
+                  Settings.System.CLEAR_ALL_RECENTS_NAVBAR_ENABLED, 1) == 1);        
     }
 
     public boolean onPreferenceChange(Preference preference, Object objValue) {
@@ -75,6 +80,18 @@ public class RecentsSettings extends SettingsPreferenceFragment implements OnPre
         return false;
     }
     
+   @Override
+    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+        ContentResolver resolver = getActivity().getContentResolver();
+        if (preference == mClearAllRecentsNavbar) {
+            Settings.System.putInt(resolver, Settings.System.CLEAR_ALL_RECENTS_NAVBAR_ENABLED,
+                    mClearAllRecentsNavbar.isChecked() ? 1 : 0);
+        } else {
+            return super.onPreferenceTreeClick(preferenceScreen, preference);
+        }
+        return true;
+    }    
+
     private void updateRecentsLocation(int value) {
         ContentResolver resolver = getContentResolver();
         Resources res = getResources();

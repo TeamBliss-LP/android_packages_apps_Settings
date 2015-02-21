@@ -70,9 +70,6 @@
     <uses-permission android:name="android.permission.READ_SEARCH_INDEXABLES" />
     <uses-permission android:name="android.permission.OEM_UNLOCK_STATE" />
     
-    <!-- Vanir feature permissions -->
-    <uses-permission android:name="android.permission.GET_TOP_ACTIVITY_INFO"/>    
-    
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
 
@@ -2324,93 +2321,6 @@
             <intent-filter>
                 <action android:name=".applications.LockPatternActivity" />
                 <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-
-        <activity
-            android:name="com.android.settings.bliss.CreateShortcut"
-            android:label="@string/shortcut_label"
-            android:icon="@drawable/bliss_actions">
-            <intent-filter>
-                <action android:name="android.intent.action.CREATE_SHORTCUT" />
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name="com.android.settings.bliss.activities.FlushMemory"
-            android:label="@string/toggle_flushmemory"
-            android:icon="@drawable/vanir_flush_memory"
-            android:theme="@android:style/Theme.Holo.Panel"
-            android:excludeFromRecents="true"
-            android:launchMode="singleTop" >
-            <intent-filter>
-                <action android:name="com.android.settings.bliss.INTENT_FLUSHMEMORY_TOGGLE" />
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="com.android.systemui.SHORTCUT" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name="com.android.settings.bliss.activities.ProfileActivity"
-            android:label="@string/toggle_profile"
-            android:icon="@drawable/ic_sysbar_profile"
-            android:theme="@android:style/Theme.Holo.Panel"
-            android:excludeFromRecents="true"
-            android:launchMode="singleTop" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="com.android.systemui.SHORTCUT" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name="com.android.settings.bliss.activities.StartDreamActivity"
-            android:label="@string/toggle_dream"
-            android:icon="@drawable/ic_sysbar_dream"
-            android:theme="@android:style/Theme.Holo.Panel"
-            android:excludeFromRecents="true"
-            android:launchMode="singleTop" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="com.android.systemui.SHORTCUT" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name="com.android.settings.bliss.activities.RingVibToggle"
-            android:label="@string/toggle_ring_vib"
-            android:icon="@drawable/ic_lockscreen_vib"
-            android:theme="@android:style/Theme.Holo.Panel"
-            android:excludeFromRecents="true"
-            android:launchMode="singleTop" >
-            <intent-filter>
-                <action android:name="com.android.settings.bliss.INTENT_RING_VIB_TOGGLE" />
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="com.android.systemui.SHORTCUT" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name="com.android.settings.bliss.activities.RingSilentToggle"
-            android:label="@string/toggle_ring_silent"
-            android:icon="@drawable/ic_lockscreen_silent"
-            android:theme="@android:style/Theme.Holo.Panel"
-            android:excludeFromRecents="true"
-            android:launchMode="singleTop" >
-            <intent-filter>
-                <action android:name="com.android.settings.bliss.INTENT_RING_SILENT_TOGGLE" />
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="com.android.systemui.SHORTCUT" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name="com.android.settings.bliss.activities.RingVibSilentToggle"
-            android:label="@string/toggle_ring_vib_silent"
-            android:icon="@drawable/ic_lockscreen_soundon"
-            android:theme="@android:style/Theme.Holo.Panel"
-            android:excludeFromRecents="true"
-            android:launchMode="singleTop" >
-            <intent-filter>
-                <action android:name="com.android.settings.bliss.INTENT_RING_VIB_SILENT_TOGGLE" />
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="com.android.systemui.SHORTCUT" />
             </intent-filter>
         </activity>
 
