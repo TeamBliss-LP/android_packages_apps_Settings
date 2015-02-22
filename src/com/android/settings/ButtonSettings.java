@@ -127,15 +127,14 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
     private ListPreference mAppSwitchLongPressAction;
     private ListPreference mVolumeKeyCursorControl;
     private SwitchPreference mSwapVolumeButtons;
-    private SwitchPreference mDisableNavigationKeys;
+    private SwitchPreference mEnableNavigationBar;
+    private SwitchPreference mEnableHwKeys;
     private SwitchPreference mNavigationBarLeftPref;
     private SwitchPreference mPowerEndCall;
     private SwitchPreference mHomeAnswerCall;
     private SwitchPreference mVolumeAnswerCall;
     private ListPreference mOverflowButtonMode;
     private ColorPickerPreference mNavbarButtonTint; 
-	
-    private PreferenceCategory mNavigationPreferencesCat;
 
     private Handler mHandler;
 
@@ -146,6 +145,26 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.button_settings);
 
         final PreferenceScreen prefScreen = getPreferenceScreen();
+        mHandler = new Handler();
+
+        // Power button ends calls.
+        mPowerEndCall = (SwitchPreference) findPreference(KEY_POWER_END_CALL);
+
+        // Home button answers calls.
+        mHomeAnswerCall = (SwitchPreference) findPreference(KEY_HOME_ANSWER_CALL);
+
+        // Volume button answers calls.
+        mVolumeAnswerCall = (SwitchPreference) findPreference(KEY_VOLUME_ANSWER_CALL);
+        mVolumeAnswerCall.setOnPreferenceChangeListener(this);
+
+        // Navigation bar category
+        final PreferenceCategory navBarCategory = (PreferenceCategory) findPreference(CATEGORY_NAVBAR);
+
+        // Navigation bar keys switxh
+        mEnableNavigationBar = (SwitchPreference) findPreference(KEY_ENABLE_NAVIGATION_BAR);
+
+        // Navigation bar left
+        mNavigationBarLeftPref = (SwitchPreference) findPreference(KEY_NAVIGATION_BAR_LEFT);
         
         // Menu Overflow Config.        
         mOverflowButtonMode = (ListPreference) findPreference(KEYS_OVERFLOW_BUTTON);
@@ -157,7 +176,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
         boolean enableNavigationBar = Settings.System.getInt(getContentResolver(),
                 Settings.System.NAVIGATION_BAR_SHOW, hasNavBarByDefault ? 1 : 0) == 1;
         mEnableNavigationBar.setChecked(enableNavigationBar);
-        mEnableNavigationBar.setOnPreferenceChangeListener(this);		
+        mEnableNavigationBar.setOnPreferenceChangeListener(this);
 
         // Navigation bar button color
         mNavbarButtonTint = (ColorPickerPreference) findPreference(NAVIGATION_BAR_TINT);
@@ -171,26 +190,15 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
         // Enable/disable hw keys
         boolean enableHwKeys = Settings.System.getInt(getContentResolver(),
                 Settings.System.ENABLE_HW_KEYS, 1) == 1;
-
-        // Power button ends calls.
-        mPowerEndCall = (SwitchPreference) findPreference(KEY_POWER_END_CALL);
-
-        // Home button answers calls.
-        mHomeAnswerCall = (SwitchPreference) findPreference(KEY_HOME_ANSWER_CALL);
-
-        // Volume button answers calls.
-        mVolumeAnswerCall = (SwitchPreference) findPreference(KEY_VOLUME_ANSWER_CALL);
-        mVolumeAnswerCall.setOnPreferenceChangeListener(this);
-
-        mHandler = new Handler();
-
-        // Force Navigation bar related options
-        mDisableNavigationKeys = (SwitchPreference) findPreference(DISABLE_NAV_KEYS);
-
-        mNavigationPreferencesCat = (PreferenceCategory) findPreference(CATEGORY_NAVBAR);
-
-        // Navigation bar left
-        mNavigationBarLeftPref = (SwitchPreference) findPreference(KEY_NAVIGATION_BAR_LEFT);
+        mEnableHwKeys = (SwitchPreference) findPreference(KEY_ENABLE_HW_KEYS);
+        mEnableHwKeys.setChecked(enableHwKeys);
+        mEnableHwKeys.setOnPreferenceChangeListener(this);
+        // Check if this feature is enable through device config
+        if(!getResources().getBoolean(com.android.internal.R.bool.config_hwKeysPref)) {
+            PreferenceCategory hwKeysPref = (PreferenceCategory)
+                    getPreferenceScreen().findPreference(CATEGORY_HW_KEYS);
+            getPreferenceScreen().removePreference(hwKeysPref);
+        }
 
         HashMap<String, String> prefsToRemove = (HashMap<String, String>)
                 getPreferencesToRemove(this, getActivity());
@@ -224,13 +232,8 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
             mSwapVolumeButtons.setChecked(swapVolumeKeys > 0);
         }
 
-        if (mNavigationPreferencesCat.getPreferenceCount() == 0) {
-            // Hide navigation bar category
-            prefScreen.removePreference(mNavigationPreferencesCat);
-        }
-		
         updateDisableHwKeysOption();
-        updateNavBarSettings();		
+        updateNavBarSettings();
 
         Utils.updatePreferenceToSpecificActivityFromMetaDataOrRemove(getActivity(),
                 getPreferenceScreen(), KEY_BLUETOOTH_INPUT_SETTINGS);
@@ -450,7 +453,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
     private void updateNavBarSettings() {
         boolean enableNavigationBar = Settings.System.getInt(getContentResolver(),
                 Settings.System.NAVIGATION_BAR_SHOW,
-                CrUtils.isNavBarDefault(getActivity()) ? 1 : 0) == 1;
+                BlissUtils.isNavBarDefault(getActivity()) ? 1 : 0) == 1;
         mEnableNavigationBar.setChecked(enableNavigationBar);
 
         updateNavbarPreferences(enableNavigationBar);

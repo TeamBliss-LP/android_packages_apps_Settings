@@ -18,12 +18,6 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/show_clear_all_recents_button_title">
-    
-        <SwitchPreference
-            android:key="clear_all_recents_navbar_enabled"
-            android:title="@string/clear_all_recents_navbar_enabled_title"
-            android:summary="@string/clear_all_recents_navbar_enabled_summary"
-            android:defaultValue="false" />    
 
         <SwitchPreference
             android:key="show_clear_all_recents"

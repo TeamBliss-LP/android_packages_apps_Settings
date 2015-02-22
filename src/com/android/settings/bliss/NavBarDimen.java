@@ -1,4 +1,4 @@
-package com.androd.settings.bliss;
+package com.android.settings.bliss;
 
 import android.app.Activity;
 import android.app.AlertDialog;
