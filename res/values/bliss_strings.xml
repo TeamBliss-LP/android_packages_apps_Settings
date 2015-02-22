@@ -882,6 +882,13 @@ sword is entered</string>
     <string name="addons_title">Misc Addons</string>
     <string name="addons_summary">Sound Mods, Splash Screens, etc.</string>          
 
+    <!-- Doze pulse (ambient display) notification timeout -->
+    <string name="doze_timeout_title">Ambient display timeout</string>
+    <string name="doze_timeout_summary">Time that the screen stays on for notification pulse</string>
+
+    <!-- Doze (ambient display) preference category -->
+    <string name="display_category_doze_options_title">Ambient display options</string>
+
     <!-- UI debug setting: show CPU info? [CHAR LIMIT=25] -->
     <string name="show_cpu_info">Show CPU info</string>
     <!-- UI debug setting: show cpu usage summary [CHAR LIMIT=50] -->
@@ -1222,14 +1229,6 @@ sword is entered</string>
     <!-- QuickSettings 4 columns -->
     <string name="qs_four_columns_title">Show four tiles per row</string>
   
-    <!-- Doze options -->
-    <string name="display_category_doze_options_title">Ambient display (doze) options</string>
-    <string name="doze_timeout_title">Doze pulse timeout</string>
-    <string name="doze_timeout_summary">Time that the screen stays on for notification pulse</string>
-    <string name="doze_trigger_motion_title">Doze TriggerSensors</string>
-    <string name="doze_trigger_motion_summary_on">Doze pulse will be triggered by pick up gesture/significant motion sensor and notifications</string>
-    <string name="doze_trigger_motion_summary_off">Doze pulse will only be triggered by notifications</string>
-    
    <!-- Lock screen -->
     <string name="lock_screen_weather_settings_title">Weather</string>
     <string name="lock_screen_weather_settings_summary">Customize Weather</string>
