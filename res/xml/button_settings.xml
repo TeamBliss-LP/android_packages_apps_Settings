@@ -71,7 +71,7 @@
             android:title="@string/navigation_ring_enable_title"
             android:defaultValue="true"
             android:dependency="enable_nav_bar"	        	    
-            settings:advanced="true"/>
+            settings:advanced="true"/>	    
 
         <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
             android:key="navigation_bar_left"
@@ -85,11 +85,18 @@
             android:title="@string/navigation_bar_recents_title"
             android:persistent="false" />
 	        
+        <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
+            android:key="double_tap_sleep_navbar"
+            android:title="@string/double_tap_sleep_nav_bar_title"
+            android:summary="@string/double_tap_sleep_nav_bar_summary"
+            android:defaultValue="false"
+	        android:dependency="enable_nav_bar" />	        
+            
         <net.margaritov.preference.colorpicker.ColorPickerPreference
            android:key="navigation_bar_tint"
            android:title="@string/navbar_button_tint_title"
            android:defaultValue="#ffffff"
-	   android:dependency="enable_nav_bar" />                      
+	       android:dependency="enable_nav_bar" />                      
 
     </PreferenceCategory>
 
