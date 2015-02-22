@@ -513,9 +513,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
         // Update doze if it is available.
         if (mDozePreference != null) {
-            int value = Settings.Secure.getInt(getContentResolver(), DOZE_ENABLED,
-                    getActivity().getResources().getBoolean(
-                    com.android.internal.R.bool.config_doze_enabled_by_default) ? 1 : 0);
+            int value = Settings.Secure.getInt(getContentResolver(), DOZE_ENABLED, 1);
             mDozePreference.setChecked(value != 0);
         }
     }
