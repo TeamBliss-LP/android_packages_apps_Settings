@@ -1308,4 +1308,9 @@ sword is entered</string>
     <string name="navigation_bar_size_42_dp">42 dp</string>
     <string name="navigation_bar_size_0_dp">0 dp (off)</string>    
 
+ <!-- BlissPop Anonymous Stats -->
+    <string name="rominfo_settings_list_item_title">BlissPop Statistics</string>
+    <string name="rominfo_settings_list_item_summary">Help make BlissPop better by opting into anonymous statistics reporting</string>
+
+
 </resources>
