@@ -15,8 +15,9 @@
      limitations under the License.
 -->
 <PreferenceScreen
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:title="@string/status_bar_title">
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+        android:title="@string/status_bar_title">
 
         <PreferenceScreen
             android:fragment="com.android.settings.bliss.StatusBarClockStyle"
@@ -99,7 +100,17 @@
             android:summary="@string/voicemail_breath_summary"
             android:defaultValue="false" />
 
-    </PreferenceCategory>    
+    </PreferenceCategory> 
+
+    <PreferenceCategory
+            android:title="@string/carrier_options_category_title">
+    
+    <PreferenceScreen
+            android:key="carrier_options"
+            android:fragment="com.android.settings.bliss.CarrierLabel"
+            android:title="@string/carrier_options" />
+
+    </PreferenceCategory>
 
     <PreferenceCategory
             android:title="@string/status_bar_logo_category_title">
@@ -116,7 +127,7 @@
             android:defaultValue="0xffffffff"
             android:dependency="status_bar_bliss_logo" />
 
-    </PreferenceCategory>    
+    </PreferenceCategory>
 
     <PreferenceCategory
             android:title="@string/status_bar_greeting_category_title">

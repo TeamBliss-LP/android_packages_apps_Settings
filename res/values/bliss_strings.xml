@@ -619,7 +619,7 @@
     <string name="battery_bar_animate_summary">The charging animation may result in a poor user experience. Enable at your own discretion.</string>  
 
     <!-- Statusbar Bliss logo -->
-    <string name="status_bar_logo_category_title">Statusbar logo</string>
+    <string name="status_bar_logo_category_title">Statusbar Logo</string>
     <string name="status_bar_bliss_logo_title">Bliss logo</string>
     <string name="status_bar_bliss_logo_summary">Enable to show Bliss logo on the left side of statusbar</string>
     <string name="status_bar_bliss_logo_color">Bliss logo color</string>
@@ -1056,11 +1056,22 @@
     <string name="privacy_guard_notifiation_summary">Show a notification if privacy guard is active</string>
 
     <!-- Status bar greeting -->
-    <string name="status_bar_greeting_category_title">Statusbar greeting</string>
+    <string name="status_bar_greeting_category_title">Statusbar Greeting</string>
     <string name="status_bar_greeting_title">Greeting</string>
     <string name="status_bar_greeting_summary">Display a custom greeting in the status bar after unlocking the device</string>
     <string name="status_bar_greeting_dialog">Set your greeting</string>
-    <string name="status_bar_greeting_main">Flash ON!!!</string>
+    <string name="status_bar_greeting_main">Welcome to Bliss</string>
     <string name="status_bar_greeting_timeout_title">Greeting timeout</string>
+
+    <!-- Show carrier label and custom -->
+    <string name="carrier_options_category_title">Status Bar Carrier Label</string>
+    <string name="carrier_options">Carrier Label</string>
+    <string name="show_status_bar_carrier_title">Status bar carrier</string>
+    <string name="show_status_bar_carrier_summary">Show carrier in status bar</string>
+    <string name="custom_carrier_label_title">Custom carrier label</string>
+    <string name="custom_carrier_label_explain">Please enter a new label. Leave blank to revert to stock label.</string>
+    <string name="custom_carrier_label_notset">Custom label currently not set</string>
+    <string name="status_bar_carrier_color">Carrier label color</string>
+
 
 </resources>
