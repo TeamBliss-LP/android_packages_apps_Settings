@@ -80,7 +80,13 @@
             android:title="@string/navigation_bar_arrow_keys_title"
             android:summary="@string/navigation_bar_arrow_keys_summary"
             android:defaultValue="false"
-	        android:dependency="enable_nav_bar" />	    
+	        android:dependency="enable_nav_bar" />
+	        
+        <com.android.settings.cyanogenmod.SecureSettingSwitchPreference
+            android:key="search_panel_enabled"
+            android:title="@string/navigation_ring_enable_title"
+            android:defaultValue="true"
+            android:dependency="enable_nav_bar" />	        	    
 
         <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
             android:key="navigation_bar_left"
