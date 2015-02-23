@@ -1300,6 +1300,9 @@ sword is entered</string>
     <string name="navigation_bar_size_42_dp">42 dp</string>
     <string name="navigation_bar_size_0_dp">0 dp (off)</string>
     
+    <!-- Navring targets (enable/disable) -->
+    <string name="navigation_ring_enable_title">Enable navigation rings</string>
+    
     <!-- Doze pulse (ambient display) options -->
     <string name="doze_overwrite_value_title">Overwrite value</string>
     <string name="doze_overwrite_value_summary">Allow to overwrite default value with user config</string>
