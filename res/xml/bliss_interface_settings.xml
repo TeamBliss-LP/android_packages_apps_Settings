@@ -87,6 +87,16 @@
         android:title="@string/app_circle_bar_title"
         android:icon="@drawable/ic_settings_sidebar"/>	 		        
  
+    <!-- Bliss Stats -->
+    <Preference android:key="rominfo_settings"
+        android:title="@string/rominfo_settings_list_item_title"
+        android:summary="@string/rominfo_settings_list_item_summary">
+        <intent
+		    android:action="android.intent.action.MAIN"
+            android:targetPackage="android.romstats"
+            android:targetClass="android.romstats.AnonymousStats" />
+    </Preference>
+
     <!-- Bliss Downloads  -->
     <PreferenceScreen    
         android:key="download_center"
