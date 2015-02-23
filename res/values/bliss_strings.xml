@@ -882,13 +882,6 @@ sword is entered</string>
     <string name="addons_title">Misc Addons</string>
     <string name="addons_summary">Sound Mods, Splash Screens, etc.</string>          
 
-    <!-- Doze pulse (ambient display) notification timeout -->
-    <string name="doze_timeout_title">Ambient display timeout</string>
-    <string name="doze_timeout_summary">Time that the screen stays on for notification pulse</string>
-
-    <!-- Doze (ambient display) preference category -->
-    <string name="display_category_doze_options_title">Ambient display options</string>
-
     <!-- UI debug setting: show CPU info? [CHAR LIMIT=25] -->
     <string name="show_cpu_info">Show CPU info</string>
     <!-- UI debug setting: show cpu usage summary [CHAR LIMIT=50] -->
