@@ -72,7 +72,7 @@ public class AmbientSettings extends SettingsPreferenceFragment implements
     private ListPreference mDozePulseVisible;
     private ListPreference mDozePulseOut;
     private ListPreference mDozeShakeThreshold;
-    private SystemSettingCheckBoxPreference mDozeTimeMode;
+    private SystemSettingSwitchPreference mDozeTimeMode;
     private ShakeSensorManager mShakeSensorManager;
     private AlertDialog mDialog;
     private Button mShakeFoundButton;
@@ -100,7 +100,7 @@ public class AmbientSettings extends SettingsPreferenceFragment implements
             mDozeListMode = (ListPreference) findPreference(KEY_DOZE_LIST_MODE);
             mDozeListMode.setOnPreferenceChangeListener(this);
 
-            mDozeTimeMode = (SystemSettingCheckBoxPreference) findPreference(KEY_DOZE_TIME_MODE);
+            mDozeTimeMode = (SystemSettingSwitchPreference) findPreference(KEY_DOZE_TIME_MODE);
 
             mDozeShakeThreshold = (ListPreference) findPreference(KEY_DOZE_SHAKE_THRESHOLD);
             mDozeShakeThreshold.setOnPreferenceChangeListener(this);
@@ -461,12 +461,24 @@ public class AmbientSettings extends SettingsPreferenceFragment implements
                 @Override
                 public List<String> getNonIndexableKeys(Context context) {
                     ArrayList<String> result = new ArrayList<String>();
-                    if (!isAccelerometerAvailable(context)) {
+                    if (!isDozeAvailable(context)) {
+                        result.add(KEY_DOZE);
                         result.add(KEY_DOZE_LIST_MODE);
-                        result.add(KEY_DOZE_SHAKE_THRESHOLD);
-                    }
-                    if (isAccelerometerAvailable(context)) {
+                        result.add(KEY_DOZE_TIME_MODE);
+                        result.add(KEY_DOZE_OVERWRITE_VALUE);
                         result.add(KEY_DOZE_PULSE_MODE);
+                        result.add(KEY_DOZE_PULSE_IN);
+                        result.add(KEY_DOZE_PULSE_VISIBLE);
+                        result.add(KEY_DOZE_PULSE_OUT);
+                        result.add(KEY_DOZE_SHAKE_THRESHOLD);
+                    } else {
+                       if (!isAccelerometerAvailable(context)) {
+                           result.add(KEY_DOZE_LIST_MODE);
+                           result.add(KEY_DOZE_SHAKE_THRESHOLD);
+                       }
+                       if (isAccelerometerAvailable(context)) {
+                           result.add(KEY_DOZE_PULSE_MODE);
+                       }
                     }
                     return result;
                 }
