@@ -132,14 +132,12 @@ public class DraggableGridView extends ViewGroup implements
     public void addView(View child, int index) {
         super.addView(child, index);
         mNewPositions.add(-1);
-        child.setBackgroundColor(0xff000000);
     }
 
     @Override
     public void addView(View child) {
         super.addView(child);
         mNewPositions.add(-1);
-        child.setBackgroundColor(0xff000000);
     };
 
     @Override
