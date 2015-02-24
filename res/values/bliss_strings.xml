@@ -1383,5 +1383,9 @@ sword is entered</string>
     <string name="volume_panel_time_out_8sec">8 seconds</string>
     <string name="volume_panel_time_out_12sec">12 seconds</string>
     <string name="volume_panel_time_out_15sec">15 seconds</string>
+	
+    <!-- Statusbar Bliss logo -->
+    <string name="status_bar_bliss_logo_title">Bliss logo</string>
+    <string name="status_bar_bliss_logo_summary">Enable to show Bliss logo on the left side of statusbar</string>
 
 </resources>
