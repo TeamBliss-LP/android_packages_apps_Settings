@@ -179,7 +179,6 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
         Utils.updatePreferenceToSpecificActivityOrRemove(act, parentPreference, KEY_WEBVIEW_LICENSE,
                 Utils.UPDATE_PREFERENCE_FLAG_SET_TITLE_TO_MATCHING_ACTIVITY);
 
-
         // Remove regulatory information if none present.
         final Intent intent = new Intent(Settings.ACTION_SHOW_REGULATORY_INFO);
         if (getPackageManager().queryIntentActivities(intent, 0).isEmpty()) {
@@ -188,7 +187,11 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
                 getPreferenceScreen().removePreference(pref);
             }
         }
+
         mAdvancedSettings = (SecureSettingSwitchPreference) findPreference(KEY_ADVANCED_MODE);
+        // If enabled by default, just remove the setting, because it's confusing.
+        removePreferenceIfBoolFalse(KEY_ADVANCED_MODE, !getResources().getBoolean(
+                com.android.internal.R.bool.config_advancedSettingsMode));
     }
 
     @Override
@@ -298,8 +301,8 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
         }
     }
 
-    private void removePreferenceIfBoolFalse(String preference, int resId) {
-        if (!getResources().getBoolean(resId)) {
+    private void removePreferenceIfBoolFalse(String preference, boolean bool) {
+        if (!bool) {
             Preference pref = findPreference(preference);
             if (pref != null) {
                 getPreferenceScreen().removePreference(pref);
