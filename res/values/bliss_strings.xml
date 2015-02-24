@@ -133,6 +133,8 @@
     <string name="category_colors_title">Customize colors</string>
     <string name="icons_title">Icons</string>
     <string name="text_title">Text</string>
+    <string name="background_title">Background</string>
+    <string name="icon_title">Icon</string>
     <string name="reset_message">Reset all entries to default?</string>
     <string name="reset_option_message">Reset values to\nAndroid- or Bliss default?</string>
     <string name="category_general_title">General options</string>
@@ -1368,6 +1370,8 @@ sword is entered</string>
  <!-- BlissPop Anonymous Stats -->
     <string name="rominfo_settings_list_item_title">BlissPop Statistics</string>
     <string name="rominfo_settings_list_item_summary">Help make BlissPop better by opting into anonymous statistics reporting</string>
-
+    
+    <!-- QS Custom Colors -->
+    <string name="qs_colors_title">Custom Color Options</string>
 
 </resources>
