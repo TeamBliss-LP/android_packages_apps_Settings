@@ -32,11 +32,11 @@
         android:fragment="com.android.settings.ButtonSettings"
         android:icon="@drawable/ic_settings_buttons" />	
 	
-    <!-- Pie control -->
+    <!-- Pie control
     <PreferenceScreen
         android:key="pie_settings"
         android:fragment="com.android.settings.bliss.PieControl"
         android:title="@string/pie_control_title" 
-	    android:icon="@drawable/ic_settings_pie" />	
+	    android:icon="@drawable/ic_settings_pie" />	-->
 	
 </PreferenceScreen>
