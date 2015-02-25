@@ -955,6 +955,7 @@
     <string name="qs_tile_slimaction">SlimAction</string>
     <string name="qs_ambient_display_tile">Ambient display</string>
     <string name="qs_hwkeys_tile">Hardware Keys</string>
+    <string name="qs_usb_tether_tile">USB Tethering</string>
 
 
     <string name="qs_main_tiles_title">Enlarge first row</string>
