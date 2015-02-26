@@ -86,6 +86,10 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
     private static final String KEY_SM_AND = "sm_android";
     private static final String KEY_SM_KERNEL = "sm_kernel";
     private static final String KEY_SM_FLAGS = "sm_flags";
+	
+    public static final String KEY_ADVANCED_MODE = "advanced_mode";
+
+    SecureSettingSwitchPreference mAdvancedSettings;
 
     long[] mHits = new long[3];
 
@@ -171,6 +175,7 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
                 getPreferenceScreen().removePreference(pref);
             }
         }
+        mAdvancedSettings = (SecureSettingSwitchPreference) findPreference(KEY_ADVANCED_MODE);
     }
 
     @Override

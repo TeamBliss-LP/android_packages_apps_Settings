@@ -44,7 +44,12 @@
            <intent android:action="android.intent.action.MAIN"
                   android:targetPackage="com.android.settings"
                   android:targetClass="com.android.settings.bliss.ChangeLog" />
-        </PreferenceScreen>            	
+        </PreferenceScreen>
+	
+        <!-- Advanced mode -->
+        <com.android.settings.cyanogenmod.SecureSettingSwitchPreference
+            android:key="advanced_mode"
+            android:title="@string/advanced_mode_title"/>
 	
         <PreferenceScreen android:key="status_info"
                 android:title="@string/device_status" 
