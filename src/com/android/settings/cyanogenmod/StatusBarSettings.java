@@ -103,7 +103,8 @@ public class StatusBarSettings extends SettingsPreferenceFragment
         mStatusBarGreetingTimeout.setOnPreferenceChangeListener(this);
 
         mCarrierLabel = (PreferenceScreen) prefSet.findPreference(KEY_CARRIERLABEL_PREFERENCE);
-        if (Utils.isWifiOnly(getActivity())) {
+        if (Utils.isWifiOnly(getActivity()) || 
+        TelephonyManager.getDefault().isMultiSimEnabled()) {
             prefSet.removePreference(mCarrierLabel);
         }
 
