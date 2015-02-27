@@ -35,19 +35,19 @@
                     android:persistent="false"
                     android:dependency="doze" />
 
-            <com.android.settings.cyanogenmod.SystemSettingCheckBoxPreference
+            <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
                     android:key="doze_time_mode"
                     android:title="@string/doze_time_mode_title"
                     android:summary="@string/doze_time_mode_summary"
                     android:dependency="doze" />
 
-            <com.android.settings.cyanogenmod.SystemSettingCheckBoxPreference
+            <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
                     android:key="doze_overwrite_value"
                     android:title="@string/doze_overwrite_value_title"
                     android:summary="@string/doze_overwrite_value_summary"
                     android:dependency="doze" />
 
-            <com.android.settings.cyanogenmod.SystemSettingCheckBoxPreference
+            <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
                     android:key="doze_pulse_on_notifications"
                     android:title="@string/doze_pulse_on_notifications_title"
                     android:summary="@string/doze_pulse_on_notifications_summary"
