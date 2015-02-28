@@ -1042,6 +1042,8 @@
     <string name="qs_appcirclebar_tile">App Circle Bar</string>
     <string name="qs_usb_tether_tile">USB Tethering</string>
     <string name="qs_tile_headsup">Heads Up</string>  
+    <string name="qs_tile_reboot">Reboot</string>
+    <string name="qs_tile_slimaction">SlimAction</string>
 
     <!-- Gesture Settings -->
     <!-- Settings main menu entry -->
