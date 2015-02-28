@@ -56,6 +56,7 @@ public class DraggableGridView extends ViewGroup implements
     protected OnClickListener mSecondaryOnClickListener;
     private AdapterView.OnItemClickListener mOnItemClickListener;
     private boolean mUseLargerFirstRow = false;
+    private int mDefaultColor;
 
     /**
      * Use three or four columns.
@@ -99,6 +100,7 @@ public class DraggableGridView extends ViewGroup implements
 
         setListeners();
         setChildrenDrawingOrderEnabled(true);
+        mDefaultColor = mContext.getResources().getColor(R.color.qs_tile_default_background_color);
     }
 
     public void setUseLargeFirstRow(boolean largeFirstRow) {
@@ -377,7 +379,7 @@ public class DraggableGridView extends ViewGroup implements
                     mIsDelete = mOnRearrangeListener != null
                             && mOnRearrangeListener.isDeleteTarget(getIndexFromCoordinate(x, y));
 
-                    draggedView.setColor(mIsDelete ? Color.RED : Color.TRANSPARENT);
+                    draggedView.setColor(mIsDelete ? Color.RED : mDefaultColor);
 
                     // check for new target hover
                     int target = getTargetFromCoordinate(x, y);
