@@ -497,13 +497,13 @@ sword is entered</string>
 
     <!-- ListView interpolator -->
     <string name="listview_interpolator_title">ListView Interpolator</string>
-    <string name="listview_accelerate_interpolator">accelerate_interpolator</string>
-    <string name="listview_decelerate_interpolator">decelerate_interpolator</string>
-    <string name="listview_accelerate_decelerate_interpolator">accelerate_decelerate_interpolator</string>
-    <string name="listview_anticipate_interpolator">anticipate_interpolator</string>
-    <string name="listview_overshoot_interpolator">overshoot_interpolator</string>
-    <string name="listview_anticipate_overshoot_interpolator">anticipate_overshoot_interpolator</string>
-    <string name="listview_bounce_interpolator">bounce_interpolator</string>
+    <string name="listview_accelerate_interpolator">Accelerate</string>
+    <string name="listview_decelerate_interpolator">Decelerate</string>
+    <string name="listview_accelerate_decelerate_interpolator">Accelerate-Decelerate</string>
+    <string name="listview_anticipate_interpolator">Anticipate</string>
+    <string name="listview_overshoot_interpolator">Overshoot</string>
+    <string name="listview_anticipate_overshoot_interpolator">Anticipate-Overshoot</string>
+    <string name="listview_bounce_interpolator">Bounce</string>
     
     <string name="shortcut_action_none">None</string>
     <string name="shortcut_action_app">Custom app</string>
