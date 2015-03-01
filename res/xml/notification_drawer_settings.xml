@@ -38,6 +38,7 @@
 	    <PreferenceScreen
             android:key="qs_colors"
             android:title="@string/qs_colors_title"
+	    android:summary="@string/qs_colors_summary"
             android:fragment="com.android.settings.bliss.QSColors" />
 	    
         <com.android.settings.cyanogenmod.SystemSettingSwitchPreference

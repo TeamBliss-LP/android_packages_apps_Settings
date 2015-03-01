@@ -21,7 +21,7 @@ import android.app.DialogFragment;
 import android.content.ContentResolver;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.preference.CheckBoxPreference;
+import android.preference.SwitchPreference;
 import android.preference.Preference;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
@@ -44,6 +44,8 @@ public class QSColors extends SettingsPreferenceFragment implements
             "qs_icon_color";
     private static final String PREF_QS_TEXT_COLOR =
             "qs_text_color";
+    private static final String PREF_QS_TRANSPARENT_SHADE =
+            "qs_transparent_shade";
 
     private static final int DEFAULT_BACKGROUND_COLOR = 0xff263238;
     private static final int WHITE = 0xffffffff;
@@ -55,6 +57,7 @@ public class QSColors extends SettingsPreferenceFragment implements
     private ColorPickerPreference mQSBackgroundColor;
     private ColorPickerPreference mQSIconColor;
     private ColorPickerPreference mQSTextColor;
+    private SwitchPreference mQSShadeTransparency;
 
     private ContentResolver mResolver;
 
@@ -105,6 +108,11 @@ public class QSColors extends SettingsPreferenceFragment implements
         mQSTextColor.setSummary(hexColor);
         mQSTextColor.setOnPreferenceChangeListener(this);
 
+        mQSShadeTransparency = (SwitchPreference) findPreference(PREF_QS_TRANSPARENT_SHADE);
+        mQSShadeTransparency.setChecked((Settings.System.getInt(mResolver,
+                Settings.System.QS_TRANSPARENT_SHADE, 0) == 1));
+        mQSShadeTransparency.setOnPreferenceChangeListener(this);
+
         setHasOptionsMenu(true);
     }
 
@@ -127,7 +135,6 @@ public class QSColors extends SettingsPreferenceFragment implements
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        boolean value;
         String hex;
         int intHex;
 
@@ -154,6 +161,11 @@ public class QSColors extends SettingsPreferenceFragment implements
             Settings.System.putInt(mResolver,
                 Settings.System.QS_TEXT_COLOR, intHex);
             preference.setSummary(hex);
+            return true;
+        } else if (preference == mQSShadeTransparency) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.QS_TRANSPARENT_SHADE, value ? 1 : 0);
             return true;
         }
         return false;
@@ -198,6 +210,8 @@ public class QSColors extends SettingsPreferenceFragment implements
                                     Settings.System.QS_ICON_COLOR, WHITE);
                             Settings.System.putInt(getOwner().mResolver,
                                     Settings.System.QS_TEXT_COLOR, WHITE);
+                            Settings.System.putInt(getOwner().mResolver,
+                                    Settings.System.QS_TRANSPARENT_SHADE, 0);
                             getOwner().refreshSettings();
                         }
                     })
@@ -213,6 +227,8 @@ public class QSColors extends SettingsPreferenceFragment implements
                             Settings.System.putInt(getOwner().mResolver,
                                     Settings.System.QS_TEXT_COLOR,
                                     BLISS_BLUE);
+                            Settings.System.putInt(getOwner().mResolver,
+                                    Settings.System.QS_TRANSPARENT_SHADE, 0);
                             getOwner().refreshSettings();
                         }
                     })
