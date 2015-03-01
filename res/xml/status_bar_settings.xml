@@ -111,6 +111,12 @@
             android:defaultValue="0xffffffff"
             android:dependency="status_bar_bliss_logo" />
 
+    <SwitchPreference
+            android:key="status_bar_greeting"
+            android:title="@string/status_bar_greeting_title"
+            android:summary="@string/status_bar_greeting_summary"
+            android:defaultValue="true" />
+
     </PreferenceCategory>    
 
 </PreferenceScreen>
