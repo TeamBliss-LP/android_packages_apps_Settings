@@ -110,6 +110,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_WAKEUP_WHEN_PLUGGED_UNPLUGGED = "wakeup_when_plugged_unplugged";
     private static final String KEY_NOTIFICATION_LIGHT = "notification_light";
     private static final String KEY_BATTERY_LIGHT = "battery_light";
+	private static final String KEY_WAKEUP_CATEGORY = "category_wakeup_options";
 
     private static final String KEY_DISPLAY_COLOR = "color_calibration";
     private static final String KEY_DISPLAY_GAMMA = "gamma_tuning";
@@ -121,6 +122,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
     private static final int DLG_GLOBAL_CHANGE_WARNING = 1;
 
+    private PreferenceCategory mWakeUpOptions;
     private FontDialogPreference mFontSizePref;
     private PreferenceScreen mDisplayRotationPreference;
     private PreferenceScreen mScreenColorSettings;
@@ -137,7 +139,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private SwitchPreference mDisableIM;
     private EditTextPreference mDisplayDensity;
     private EditTextPreference mDisplayDensityOverride;
-    private SwitchPreference mWakeWhenPluggedOrUnplugged;
+    private SwitchPreference mWakeUpWhenPluggedOrUnplugged;
     private SwitchPreference mAdaptiveBacklight;
     private SwitchPreference mSunlightEnhancement;
     private SwitchPreference mColorEnhancement;
@@ -168,6 +170,8 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         final ContentResolver resolver = activity.getContentResolver();
 
         addPreferencesFromResource(R.xml.display);
+		
+		PreferenceScreen prefSet = getPreferenceScreen();
 
         PreferenceCategory displayPrefs = (PreferenceCategory)
                 findPreference(KEY_CATEGORY_DISPLAY);
@@ -289,8 +293,20 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             Settings.System.putInt(getContentResolver(), Settings.System.PROXIMITY_ON_WAKE, 1);
         }
 
-        mWakeWhenPluggedOrUnplugged =
+        mWakeUpOptions = (PreferenceCategory) prefSet.findPreference(KEY_WAKEUP_CATEGORY);
+        mWakeUpWhenPluggedOrUnplugged =
             (SwitchPreference) findPreference(KEY_WAKEUP_WHEN_PLUGGED_UNPLUGGED);
+
+        // hide option if device is already set to never wake up
+        if(!getResources().getBoolean(
+                com.android.internal.R.bool.config_unplugTurnsOnScreen)) {
+                mWakeUpOptions.removePreference(mWakeUpWhenPluggedOrUnplugged);
+                prefSet.removePreference(mWakeUpOptions);
+        } else {
+            mWakeUpWhenPluggedOrUnplugged.setChecked(Settings.System.getInt(resolver,
+                        Settings.System.WAKEUP_WHEN_PLUGGED_UNPLUGGED, 1) == 1);
+            mWakeUpWhenPluggedOrUnplugged.setOnPreferenceChangeListener(this);
+        }
 
         Utils.updatePreferenceToSpecificActivityFromMetaDataOrRemove(getActivity(),
                 getPreferenceScreen(), KEY_SCREEN_OFF_GESTURE_SETTINGS);
@@ -491,16 +507,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             mAdaptiveBacklight.setChecked(AdaptiveBacklight.isEnabled());
         }
 
-        // Default value for wake-on-plug behavior from config.xml
-        boolean wakeUpWhenPluggedOrUnpluggedConfig = getResources().getBoolean(
-                com.android.internal.R.bool.config_unplugTurnsOnScreen);
-
-        if (mWakeWhenPluggedOrUnplugged != null) {
-            mWakeWhenPluggedOrUnplugged.setChecked(Settings.System.getInt(getContentResolver(),
-                    Settings.System.WAKEUP_WHEN_PLUGGED_UNPLUGGED,
-                    (wakeUpWhenPluggedOrUnpluggedConfig ? 1 : 0)) == 1);
-        }
-
         updateState();
         updateAccelerometerRotationSwitch();
     }
@@ -626,11 +632,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             return SunlightEnhancement.setEnabled(mSunlightEnhancement.isChecked());
         } else if (preference == mColorEnhancement) {
             return ColorEnhancement.setEnabled(mColorEnhancement.isChecked());
-        } else if (preference == mWakeWhenPluggedOrUnplugged) {
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.WAKEUP_WHEN_PLUGGED_UNPLUGGED,
-                    mWakeWhenPluggedOrUnplugged.isChecked() ? 1 : 0);
-            return true;
         } else if (preference == mAccelerometer) {
             RotationPolicy.setRotationLockForAccessibility(getActivity(),
                     !mAccelerometer.isChecked());
@@ -662,6 +663,11 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         if (preference == mLiftToWakePreference) {
             boolean value = (Boolean) objValue;
             Settings.Secure.putInt(getContentResolver(), WAKE_GESTURE_ENABLED, value ? 1 : 0);
+        }
+        if (KEY_WAKEUP_WHEN_PLUGGED_UNPLUGGED.equals(key)) {
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.WAKEUP_WHEN_PLUGGED_UNPLUGGED,
+                    (Boolean) objValue ? 1 : 0);
         }
         if (KEY_DISPLAY_DENSITY.equals(key)) {
             final int max = SystemProperties.getInt(PROP_DISPLAY_DENSITY_MAX, 480);

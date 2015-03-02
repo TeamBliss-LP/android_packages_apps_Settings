@@ -62,13 +62,6 @@
                 android:title="@string/double_tap_to_wake_title"
                 android:summary="@string/double_tap_to_wake_summary" />
 
-        <!-- Double tap to sleep -->
-        <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
-                android:key="double_tap_sleep_gesture"
-                android:title="@string/double_tap_to_sleep_title"
-                android:summary="@string/double_tap_to_sleep_summary"
-                android:defaultValue="true" />
-		
                <SwitchPreference
                    android:key="disable_immersive_message"
                    android:title="@string/disable_immersive_message_title"
@@ -150,6 +143,31 @@
 
     </PreferenceCategory>
     
+         <PreferenceCategory
+             android:key="category_wakeup_options"
+             android:title="@string/display_category_wakeup_options_title" >
+
+            <SwitchPreference
+                android:key="wakeup_when_plugged_unplugged"
+                android:title="@string/wakeup_when_plugged_unplugged_title"
+                android:summary="@string/wakeup_when_plugged_unplugged_summary"
+                android:defaultValue="true"
+                android:persistent="false" />
+                
+             <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
+                 android:key="proximity_on_wake"
+                 android:title="@string/proximity_wake_title"
+                 android:summary="@string/proximity_wake_summary"
+                 android:defaultValue="true" />
+
+             <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
+                 android:key="double_tap_sleep_gesture"
+                 android:title="@string/double_tap_to_sleep_title"
+                 android:summary="@string/double_tap_to_sleep_summary"
+                 android:defaultValue="true" />                
+
+         </PreferenceCategory>
+    
     <PreferenceCategory
             android:key="display_density_prefs"
             android:title="@string/display_density">
@@ -217,22 +235,6 @@
                 android:title="@string/sunlight_enhancement_title"
                 android:summary="@string/sunlight_enhancement_summary"
                 android:defaultValue="true"
-                settings:advanced="true"/>
-
-        <!-- Prevent accidental wake-up -->
-        <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
-                android:key="proximity_on_wake"
-                android:title="@string/proximity_wake_title"
-                android:summary="@string/proximity_wake_summary"
-                android:defaultValue="true"
-                settings:advanced="true"/>
-
-        <!-- Wake on plug -->
-        <SwitchPreference
-                android:key="wake_when_plugged_or_unplugged"
-                android:title="@string/wake_when_plugged_or_unplugged_title"
-                android:summary="@string/wake_when_plugged_or_unplugged_summary"
-                android:defaultValue="false"
                 settings:advanced="true"/>
 
         <!-- Color enhancement -->
