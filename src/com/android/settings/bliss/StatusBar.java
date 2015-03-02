@@ -44,6 +44,7 @@ import android.widget.EditText;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
+import com.android.settings.widget.SeekBarPreferenceCham;
 
 import com.android.settings.Utils;
 import com.android.settings.search.BaseSearchIndexProvider;
@@ -65,7 +66,7 @@ public class StatusBar extends SettingsPreferenceFragment
     private static final String CUSTOM_CARRIER_LABEL = "custom_carrier_label";
     private static final String STATUS_BAR_CARRIER_COLOR = "status_bar_carrier_color";
 	private static final String KEY_STATUS_BAR_GREETING = "status_bar_greeting";
-
+    private static final String KEY_STATUS_BAR_GREETING_TIMEOUT = "status_bar_greeting_timeout";
     static final int DEFAULT_STATUS_CARRIER_COLOR = 0xffffffff;
 
     private PreferenceScreen mClockStyle;
@@ -73,6 +74,7 @@ public class StatusBar extends SettingsPreferenceFragment
     private PreferenceScreen mCustomCarrierLabel;
     private ColorPickerPreference mCarrierColorPicker;
     private SwitchPreference mStatusBarGreeting;
+	private SeekBarPreferenceCham mStatusBarGreetingTimeout;
 
     private String mCustomCarrierLabelText;
     private String mCustomGreetingText = "";    
@@ -121,10 +123,19 @@ public class StatusBar extends SettingsPreferenceFragment
         mCarrierColorPicker.setSummary(hexColor);
         mCarrierColorPicker.setNewPreviewColor(intColor);
         
-        mStatusBarGreeting = (SwitchPreference) findPreference(KEY_STATUS_BAR_GREETING);
-        mCustomGreetingText = Settings.System.getString(resolver, Settings.System.STATUS_BAR_GREETING);
+        // Greeting
+        mStatusBarGreeting = (SwitchPreference) prefSet.findPreference(KEY_STATUS_BAR_GREETING);
+        mCustomGreetingText = Settings.System.getString(getActivity().getContentResolver(),
+                Settings.System.STATUS_BAR_GREETING);
         boolean greeting = mCustomGreetingText != null && !TextUtils.isEmpty(mCustomGreetingText);
-        mStatusBarGreeting.setChecked(greeting);        
+        mStatusBarGreeting.setChecked(greeting);
+		
+        mStatusBarGreetingTimeout =
+                (SeekBarPreferenceCham) prefSet.findPreference(KEY_STATUS_BAR_GREETING_TIMEOUT);
+        int statusBarGreetingTimeout = Settings.System.getInt(getContentResolver(),
+                Settings.System.STATUS_BAR_GREETING_TIMEOUT, 400);
+        mStatusBarGreetingTimeout.setValue(statusBarGreetingTimeout / 1);
+        mStatusBarGreetingTimeout.setOnPreferenceChangeListener(this);
 		
         if (TelephonyManager.getDefault().isMultiSimEnabled()) {
             prefSet.removePreference(mStatusBarCarrier);
@@ -159,7 +170,12 @@ public class StatusBar extends SettingsPreferenceFragment
             int intHex = ColorPickerPreference.convertToColorInt(hex);
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.STATUS_BAR_CARRIER_COLOR, intHex);
-            return true;      			
+            return true;
+        } else if (preference == mStatusBarGreetingTimeout) {
+            int timeout = (Integer) newValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.STATUS_BAR_GREETING_TIMEOUT, timeout * 1);
+            return true;
          }
          return false;
     }
@@ -219,7 +235,8 @@ public class StatusBar extends SettingsPreferenceFragment
 
                 // Set an EditText view to get user input
                 final EditText input = new EditText(getActivity());
-                input.setText(mCustomGreetingText != null ? mCustomGreetingText : "Welcome to Bliss");
+                input.setText(mCustomGreetingText != null ? mCustomGreetingText :
+                        getResources().getString(R.string.status_bar_greeting_main));
                 alert.setView(input);
                 alert.setPositiveButton(getResources().getString(R.string.ok), new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int whichButton) {

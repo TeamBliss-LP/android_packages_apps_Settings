@@ -1200,9 +1200,12 @@ sword is entered</string>
     <string name="heads_up_touch_outside_summary_disabled">Do not hide notification after touch outside or on home button press</string>
     
     <!-- Status bar greeting -->
+    <string name="status_bar_greeting_category_title">Statusbar greeting</string>
     <string name="status_bar_greeting_title">Greeting</string>
     <string name="status_bar_greeting_summary">Display a custom greeting in the status bar after unlocking the device</string>
     <string name="status_bar_greeting_dialog">Set your greeting</string>
+    <string name="status_bar_greeting_main">Welcome to Bliss</string>
+    <string name="status_bar_greeting_timeout_title">Greeting timeout</string>
     
     <!-- Navigation bar button color -->
     <string name="navbar_button_tint_title">Navigation button tint</string>
