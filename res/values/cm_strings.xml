@@ -1049,6 +1049,7 @@
     <string name="qs_tile_slimaction">SlimAction</string>
     <string name="qs_hwkeys_tile">Hardware Keys</string>
     <string name="qs_gesture_tile">Gesture Anywhere</string>
+    <string name="qs_ambient_display_tile">Ambient display</string>
 
     <!-- Gesture Settings -->
     <!-- Settings main menu entry -->

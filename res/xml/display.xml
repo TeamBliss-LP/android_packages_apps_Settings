@@ -66,7 +66,7 @@
         <PreferenceScreen
                 android:key="doze_fragment"
                 android:title="@string/doze_title"
-                android:fragment="com.android.settings.temasek.AmbientSettings" />
+                android:fragment="com.android.settings.bliss.AmbientSettings" />
 
         <!-- Lift to wake -->
         <SwitchPreference
