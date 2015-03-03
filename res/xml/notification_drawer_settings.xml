@@ -38,7 +38,7 @@
 	    <PreferenceScreen
             android:key="qs_colors"
             android:title="@string/qs_colors_title"
-	    android:summary="@string/qs_colors_summary"
+	        android:summary="@string/qs_colors_summary"
             android:fragment="com.android.settings.bliss.QSColors" />
 	    
         <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
@@ -93,7 +93,7 @@
 
         <ListPreference
             android:key="quick_pulldown"
-            android:title="@string/title_quick_pulldown"
+            android:title="@string/quick_pulldown_title"
             android:entries="@array/quick_pulldown_entries"
             android:entryValues="@array/quick_pulldown_values"
             android:persistent="false" />

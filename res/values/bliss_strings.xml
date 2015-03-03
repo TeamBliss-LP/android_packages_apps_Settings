@@ -386,12 +386,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="recents_clear_all_dismiss_all_title">Clear all tasks</string>
     <string name="recents_clear_all_dismiss_all_summary">Choose whether to dismiss all tasks or ignore the foreground task</string> 
     
-    <!-- QuickSettings: Quick Pulldown -->
-    <string name="title_quick_pulldown">Quick pulldown</string>
-    <string name="summary_quick_pulldown">%1$s edge of the status bar pulls down Quick Settings</string>
-    <string name="quick_pulldown_off">Off</string>
-    <string name="quick_pulldown_left">Left</string>
-    <string name="quick_pulldown_right">Right</string>
+    <!-- QS on Secure Lock Screen -->
     <string name="block_on_secure_keyguard_title">Disable on lockscreen</string>
     <string name="block_on_secure_keyguard_summary">Disable quick settings on secure lockscreen.</string>
     
