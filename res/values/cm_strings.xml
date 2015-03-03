@@ -1044,6 +1044,7 @@
     <string name="qs_tile_headsup">Heads Up</string>  
     <string name="qs_tile_reboot">Reboot</string>
     <string name="qs_tile_slimaction">SlimAction</string>
+    <string name="qs_hwkeys_tile">Hardware Keys</string>
 
     <!-- Gesture Settings -->
     <!-- Settings main menu entry -->

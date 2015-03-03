@@ -2008,6 +2008,60 @@
                        android:resource="@id/security_settings" />
         </activity-alias>
 
+        <!-- Heads up notifications -->
+        <activity android:name="Settings$HeadsUpSettingsActivity"
+                android:uiOptions="splitActionBarWhenNarrow"
+                android:label="@string/category_heads_up"
+                android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.bliss.HeadsUpSettings" />
+            <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
+                android:resource="@id/security_settings" />
+        </activity>
+
+        <activity-alias android:name=".bliss.HeadsUpSettings"
+                android:taskAffinity="com.android.settings"
+                android:label="@string/category_heads_up"
+                android:targetActivity="Settings$HeadsUpSettingsActivity"
+                android:configChanges="orientation|keyboardHidden|screenSize"
+                android:exported="true">
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                       android:value="com.android.settings.bliss.HeadsUpSettings" />
+            <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
+                       android:resource="@id/security_settings" />
+        </activity-alias>
+
+        <!-- Buttons options -->
+        <activity android:name="Settings$ButtonSettings"
+                android:uiOptions="splitActionBarWhenNarrow"
+                android:label="@string/button_pref_title"
+                android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.ButtonSettings" />
+            <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
+                android:resource="@id/security_settings" />
+        </activity>
+
+        <activity-alias android:name="com.android.settings.ButtonSettings"
+                android:taskAffinity="com.android.settings"
+                android:label="@string/button_pref_title"
+                android:targetActivity="Settings$ButtonSettings"
+                android:configChanges="orientation|keyboardHidden|screenSize"
+                android:exported="true">
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                       android:value="com.android.settings.ButtonSettings" />
+            <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
+                       android:resource="@id/security_settings" />
+        </activity-alias>
+
         <!-- Pseudo-activity used to provide an intent-filter entry point to encryption settings -->
         <activity android:name="Settings$CryptKeeperSettingsActivity"
                 android:label="@string/crypt_keeper_encrypt_title">
@@ -2305,34 +2359,7 @@
            <intent-filter>
                <action android:name="android.intent.action.MAIN"/>
            </intent-filter>
-        </activity>
-        
-        <!-- Heads up notifications -->
-        <activity android:name="Settings$HeadsUpSettingsActivity"
-                android:uiOptions="splitActionBarWhenNarrow"
-                android:label="@string/category_heads_up"
-                android:excludeFromRecents="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="com.android.settings.bliss.HeadsUpSettings" />
-            <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
-                android:resource="@id/security_settings" />
-        </activity>
-
-        <activity-alias android:name=".bliss.HeadsUpSettings"
-                android:taskAffinity="com.android.settings"
-                android:label="@string/category_heads_up"
-                android:targetActivity="Settings$HeadsUpSettingsActivity"
-                android:configChanges="orientation|keyboardHidden|screenSize"
-                android:exported="true">
-            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                       android:value="com.android.settings.bliss.HeadsUpSettings" />
-            <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
-                       android:resource="@id/security_settings" />
-        </activity-alias>                    
+        </activity>            
         
         <!-- Device Control Activity -->
         <activity android:name="org.namelessrom.devicecontrol.MainActivity"/>
