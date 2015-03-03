@@ -1359,5 +1359,9 @@ sword is entered</string>
     <!-- Show bluetooth icon when disconnected -->
     <string name="status_bar_bluetooth_icon">Show Bluetooth icon</string>
     <string name="status_bar_bluetooth_icon_summary">Display the bluetooth icon when it is enabled but not connected</string>
+    
+    <!-- Long press on lock screen lock icon to sleep -->
+    <string name="longpress_lock_icon_to_sleep_title">Long press lock icon to sleep</string>
+    <string name="longpress_lock_icon_to_sleep_summary">This option will not work if both smart lock and accessibility touch exploration are enabled</string>
 
 </resources>
