@@ -73,8 +73,8 @@ public class NavBarDimen extends SettingsPreferenceFragment implements
     }
 
     private void updateDimensionValues() {
-        int navigationBarHeight = Settings.System.getInt(getContentResolver(),
-                Settings.System.NAVIGATION_BAR_HEIGHT, -1);
+        int navigationBarHeight = Settings.Secure.getInt(getContentResolver(),
+                Settings.Secure.NAVIGATION_BAR_HEIGHT, -1);
         if (navigationBarHeight == -1) {
             navigationBarHeight = (int) (getResources().getDimension(
                     com.android.internal.R.dimen.navigation_bar_height)
@@ -84,8 +84,8 @@ public class NavBarDimen extends SettingsPreferenceFragment implements
         mNavigationBarHeight.setSummary(mNavigationBarHeight.getEntry());
 
         if (mNavigationBarHeightLandscape != null) {
-            int navigationBarHeightLandscape = Settings.System.getInt(getContentResolver(),
-                                Settings.System.NAVIGATION_BAR_HEIGHT_LANDSCAPE, -1);
+            int navigationBarHeightLandscape = Settings.Secure.getInt(getContentResolver(),
+                                Settings.Secure.NAVIGATION_BAR_HEIGHT_LANDSCAPE, -1);
             if (navigationBarHeightLandscape == -1) {
                 navigationBarHeightLandscape = (int) (getResources().getDimension(
                         com.android.internal.R.dimen.navigation_bar_height_landscape)
@@ -96,8 +96,8 @@ public class NavBarDimen extends SettingsPreferenceFragment implements
         }
 
         if (mNavigationBarWidth != null) {
-            int navigationBarWidth = Settings.System.getInt(getContentResolver(),
-                                Settings.System.NAVIGATION_BAR_WIDTH, -1);
+            int navigationBarWidth = Settings.Secure.getInt(getContentResolver(),
+                                Settings.Secure.NAVIGATION_BAR_WIDTH, -1);
             if (navigationBarWidth == -1) {
                 navigationBarWidth = (int) (getResources().getDimension(
                         com.android.internal.R.dimen.navigation_bar_width)
@@ -112,20 +112,20 @@ public class NavBarDimen extends SettingsPreferenceFragment implements
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference == mNavigationBarWidth) {
             int index = mNavigationBarWidth.findIndexOfValue((String) newValue);
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.NAVIGATION_BAR_WIDTH, Integer.parseInt((String) newValue));
+            Settings.Secure.putInt(getContentResolver(),
+                    Settings.Secure.NAVIGATION_BAR_WIDTH, Integer.parseInt((String) newValue));
             updateDimensionValues();
             return true;
         } else if (preference == mNavigationBarHeight) {
             int index = mNavigationBarHeight.findIndexOfValue((String) newValue);
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.NAVIGATION_BAR_HEIGHT, Integer.parseInt((String) newValue));
+            Settings.Secure.putInt(getContentResolver(),
+                    Settings.Secure.NAVIGATION_BAR_HEIGHT, Integer.parseInt((String) newValue));
             updateDimensionValues();
             return true;
         } else if (preference == mNavigationBarHeightLandscape) {
             int index = mNavigationBarHeightLandscape.findIndexOfValue((String) newValue);
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.NAVIGATION_BAR_HEIGHT_LANDSCAPE, Integer.parseInt((String) newValue));
+            Settings.Secure.putInt(getContentResolver(),
+                    Settings.Secure.NAVIGATION_BAR_HEIGHT_LANDSCAPE, Integer.parseInt((String) newValue));
             updateDimensionValues();
             return true;
         }
