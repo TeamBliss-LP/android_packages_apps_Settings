@@ -197,6 +197,10 @@ public class QSTileHolder {
                 resourceName = "ic_qs_doze";
                 stringId = R.string.qs_ambient_display_tile;
                 break;
+            case QSConstants.TILE_HWKEYS:
+                resourceName = "ic_qs_buttons_on";
+                stringId = R.string.qs_hwkeys_tile;
+                break;
             default:
                 return null;
         }
