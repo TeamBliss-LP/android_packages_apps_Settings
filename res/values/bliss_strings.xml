@@ -1326,6 +1326,8 @@ sword is entered</string>
     <string name="qs_colors_summary">Change background, icon and text colors</string>
     <string name="qs_transparent_shade_title">Shade alpha</string>
     <string name="qs_transparent_shade_summary">Ability to apply color alpha value and make notification shade transparent.</string>
+    <string name="qs_color_switch_title">Custom color switch</string>
+    <string name="qs_color_switch_summary">SystemUI will be restarted!</string>
     
     <!-- Volume pane timeout -->
     <string name="category_panel_time_out">Panel timeout</string>
