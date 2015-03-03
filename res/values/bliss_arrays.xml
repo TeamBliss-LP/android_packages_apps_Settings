@@ -1207,5 +1207,18 @@
         <item>**screenshot**</item>
         <item>**recents**</item>
     </string-array>
+    
+    <!-- Volume default -->
+    <string-array name="volume_default_entries" translatbale="false">
+        <item>@string/volume_default_none</item>
+        <item>@string/volume_default_media</item>
+        <item>@string/volume_default_ringer</item>
+    </string-array>
+
+    <string-array name="volume_default_values" translatable="false">
+        <item>-1</item>
+        <item>3</item>
+        <item>2</item>
+    </string-array>
 
 </resources>

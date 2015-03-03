@@ -294,6 +294,14 @@
             android:summary="@string/swap_volume_buttons_summary"
             settings:advanced="true"/>
 
+        <ListPreference
+            android:key="volume_default_screen"
+            android:title="@string/volume_default_title"
+            android:summary="@string/volume_default_summary"
+            android:entries="@array/volume_default_entries"
+            android:entryValues="@array/volume_default_values"
+            android:defaultValue="0" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>

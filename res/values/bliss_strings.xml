@@ -1369,4 +1369,11 @@ sword is entered</string>
     <string name="notification_force_expand_title">Force expanded notification</string>
     <string name="notification_force_expand_summary">Force expanded notifications on all apps that support it</string>
 
+    <!-- Volume button default -->
+    <string name="volume_default_none">None</string>
+    <string name="volume_default_ringer">Ringer</string>
+    <string name="volume_default_media">Media</string>
+    <string name="volume_default_title">Volume default</string>
+    <string name="volume_default_summary">Choose which volume gets changed by default</string>
+
 </resources>
