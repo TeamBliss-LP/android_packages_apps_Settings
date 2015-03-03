@@ -250,6 +250,12 @@
         android:title="@string/hardware_keys_volume_keys_title"
         settings:advanced="true">
 
+        <SwitchPreference
+            android:key="volume_answer_call"
+            android:title="@string/volume_answer_call_title"
+            android:summary="@string/volume_answer_call_summary"
+            android:defaultValue="false"/>
+
         <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
             android:key="volume_wake_screen"
             android:title="@string/button_wake_title"
@@ -279,11 +285,13 @@
             android:summary="@string/swap_volume_buttons_summary"
             settings:advanced="true"/>
 
-        <SwitchPreference
-            android:key="volume_answer_call"
-            android:title="@string/volume_answer_call_title"
-            android:summary="@string/volume_answer_call_summary"
-            android:defaultValue="false" />
+        <ListPreference
+            android:key="volume_default_screen"
+            android:title="@string/volume_default_title"
+            android:summary="@string/volume_default_summary"
+            android:entries="@array/volume_default_entries"
+            android:entryValues="@array/volume_default_values"
+            android:defaultValue="0" />
 
     </PreferenceCategory>
 

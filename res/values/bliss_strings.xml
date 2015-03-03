@@ -945,4 +945,11 @@
     <string name="volume_keys_control_media_stream_summary">Volume keys control media volume rather than notifications</string>
     <string name="volume_button_toggle_info">Volume rocker wake must be disabled</string>   
 
+    <!-- Volume button default -->
+    <string name="volume_default_none">None</string>
+    <string name="volume_default_ringer">Ringer</string>
+    <string name="volume_default_media">Media</string>
+    <string name="volume_default_title">Volume default</string>
+    <string name="volume_default_summary">Choose which volume gets changed by default</string>
+
 </resources>

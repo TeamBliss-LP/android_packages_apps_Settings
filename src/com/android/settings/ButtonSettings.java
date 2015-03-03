@@ -25,6 +25,7 @@ import android.content.pm.ResolveInfo;
 import android.content.res.Resources;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.media.AudioSystem;
 import android.hardware.CmHardwareManager;
 import android.os.Bundle;
 import android.os.RemoteException;
@@ -80,8 +81,9 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
     private static final String KEY_POWER_END_CALL = "power_end_call";
     private static final String KEY_HOME_ANSWER_CALL = "home_answer_call";
     private static final String NAVIGATION_BAR_TINT = "navigation_bar_tint";
-    private static final String KEY_VOLUME_MUSIC_CONTROLS = "volbtn_music_controls";
     private static final String KEY_VOLUME_ANSWER_CALL = "volume_answer_call";
+    private static final String KEY_VOLUME_MUSIC_CONTROLS = "volbtn_music_controls";
+    private static final String KEY_VOLUME_DEFAULT = "volume_default_screen";
 
     private static final String CATEGORY_POWER = "power_key";
     private static final String CATEGORY_HOME = "home_key";
@@ -127,6 +129,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
     private ListPreference mAppSwitchPressAction;
     private ListPreference mAppSwitchLongPressAction;
     private ListPreference mVolumeKeyCursorControl;
+    private ListPreference mVolumeDefault;
     private SwitchPreference mVolumeWakeScreen;
     private SwitchPreference mVolumeMusicControls;
     private SwitchPreference mSwapVolumeButtons;
@@ -236,6 +239,18 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
             if (mSwapVolumeButtons != null) {
                 mSwapVolumeButtons.setChecked(swapVolumeKeys > 0);
             }
+            mVolumeDefault = (ListPreference) findPreference(KEY_VOLUME_DEFAULT);
+            String currentDefault = Settings.System.getString(resolver, Settings.System.VOLUME_KEYS_DEFAULT);
+            if (!Utils.hasVolumeRocker(getActivity())) {
+                removeListEntry(mVolumeDefault, String.valueOf(AudioSystem.STREAM_RING));
+            }
+            if (currentDefault == null) {
+                currentDefault = mVolumeDefault.getEntryValues()[mVolumeDefault.getEntryValues().length - 1].toString();
+                mVolumeDefault.setSummary(getString(R.string.volume_default_summary));
+            }
+            mVolumeDefault.setValue(currentDefault);
+            mVolumeDefault.setSummary(mVolumeDefault.getEntry());
+            mVolumeDefault.setOnPreferenceChangeListener(this);
         }
 
         mVolumeWakeScreen = (SwitchPreference) findPreference(Settings.System.VOLUME_WAKE_SCREEN);
@@ -544,6 +559,31 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
     private void updateNavbarPreferences(boolean show) {
     }
 
+    private void updateVolumeDefault(Object newValue) {
+        int index = mVolumeDefault.findIndexOfValue((String) newValue);
+        int value = Integer.valueOf((String) newValue);
+        Settings.Secure.putInt(getActivity().getContentResolver(),
+                Settings.System.VOLUME_KEYS_DEFAULT, value);
+        mVolumeDefault.setSummary(mVolumeDefault.getEntries()[index]);
+    }
+
+    public void removeListEntry(ListPreference list, String valuetoRemove) {
+        ArrayList<CharSequence> entries = new ArrayList<CharSequence>();
+        ArrayList<CharSequence> values = new ArrayList<CharSequence>();
+
+        for (int i = 0; i < list.getEntryValues().length; i++) {
+            if (list.getEntryValues()[i].toString().equals(valuetoRemove)) {
+                continue;
+            } else {
+                entries.add(list.getEntries()[i]);
+                values.add(list.getEntryValues()[i]);
+            }
+        }
+
+        list.setEntries(entries.toArray(new CharSequence[entries.size()]));
+        list.setEntryValues(values.toArray(new CharSequence[values.size()]));
+    }
+
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference == mEnableNavigationBar) {
@@ -559,6 +599,11 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
             int intHex = ColorPickerPreference.convertToColorInt(hex);
             Settings.Secure.putInt(getActivity().getContentResolver(),
                     Settings.Secure.NAVIGATION_BAR_TINT, intHex);
+            return true;
+        } else if (preference == mVolumeAnswerCall) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getContentResolver(),
+                   Settings.System.ANSWER_VOLUME_BUTTON_BEHAVIOR_ANSWER, value ? 1 : 0);
             return true;
         } else if (preference == mEnableHwKeys) {
             boolean hWkeysValue = (Boolean) newValue;
@@ -617,10 +662,11 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
             Settings.Secure.putString(getContentResolver(),
                     Settings.Secure.RECENTS_LONG_PRESS_ACTIVITY, putString);
             return true;
-        } else if (preference == mVolumeAnswerCall) {
-            boolean value = (Boolean) newValue;
-            Settings.System.putInt(getContentResolver(),
-                   Settings.System.ANSWER_VOLUME_BUTTON_BEHAVIOR_ANSWER, value ? 1 : 0);
+        } else if (preference == mVolumeDefault) {
+            String value = (String) newValue;
+            Settings.System.putString(getActivity().getContentResolver(),
+                Settings.System.VOLUME_KEYS_DEFAULT, value);
+            updateVolumeDefault(newValue);
             return true;
         }
         return false;
