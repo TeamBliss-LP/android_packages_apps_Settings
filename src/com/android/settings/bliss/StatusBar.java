@@ -144,6 +144,10 @@ public class StatusBar extends SettingsPreferenceFragment
             updateCustomLabelTextSummary();
         }
 
+        if (TelephonyManager.getDefault().getPhoneCount() <= 1) {
+            removePreference(Settings.System.STATUS_BAR_MSIM_SHOW_EMPTY_ICONS);
+		}
+
     }
 
     private void updateCustomLabelTextSummary() {
