@@ -246,12 +246,18 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
                 mSwapVolumeButtons.setChecked(swapVolumeKeys > 0);
             }
             mVolumeDefault = (ListPreference) findPreference(KEY_VOLUME_DEFAULT);
-            String currentDefault = Settings.System.getString(resolver, Settings.System.VOLUME_KEYS_DEFAULT);
-            if (!Utils.hasVolumeRocker(getActivity())) {
+            String currentDefault = Settings.System.getString(resolver,
+                Settings.System.VOLUME_KEYS_DEFAULT);
+            boolean linkNotificationWithVolume = Settings.Secure.getInt(resolver,
+                Settings.Secure.VOLUME_LINK_NOTIFICATION, 1) == 1;
+            if (!Utils.isVoiceCapable(getActivity())) {
                 removeListEntry(mVolumeDefault, String.valueOf(AudioSystem.STREAM_RING));
+            } else if (linkNotificationWithVolume && Utils.isVoiceCapable(getActivity())) {
+                removeListEntry(mVolumeDefault, String.valueOf(AudioSystem.STREAM_NOTIFICATION));
             }
             if (currentDefault == null) {
-                currentDefault = mVolumeDefault.getEntryValues()[mVolumeDefault.getEntryValues().length - 1].toString();
+                currentDefault = mVolumeDefault.getEntryValues()
+                    [mVolumeDefault.getEntryValues().length - 1].toString();
                 mVolumeDefault.setSummary(getString(R.string.volume_default_summary));
             }
             mVolumeDefault.setValue(currentDefault);

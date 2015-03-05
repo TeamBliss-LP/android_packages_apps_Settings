@@ -1372,6 +1372,7 @@ sword is entered</string>
     <!-- Volume button default -->
     <string name="volume_default_none">None</string>
     <string name="volume_default_ringer">Ringer</string>
+    <string name="volume_default_notification">Notification</string>
     <string name="volume_default_media">Media</string>
     <string name="volume_default_title">Volume default</string>
     <string name="volume_default_summary">Choose which volume gets changed by default</string>
