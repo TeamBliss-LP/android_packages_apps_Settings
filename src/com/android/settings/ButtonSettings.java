@@ -25,7 +25,6 @@ import android.content.pm.ResolveInfo;
 import android.content.res.Resources;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
-import android.hardware.CmHardwareManager;
 import android.os.Bundle;
 import android.os.RemoteException;
 import android.os.Handler;
@@ -52,6 +51,7 @@ import com.android.settings.cyanogenmod.ButtonBacklightBrightness;
 
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
+import org.cyanogenmod.hardware.KeyDisabler;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -740,14 +740,21 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
     }
 
     public static void restoreKeyDisabler(Context context) {
-        CmHardwareManager cmHardwareManager =
-                (CmHardwareManager) context.getSystemService(Context.CMHW_SERVICE);
-        if (!cmHardwareManager.isSupported(CmHardwareManager.FEATURE_KEY_DISABLE)) {
+        if (!isKeyDisablerSupported()) {
             return;
         }
 
         writeDisableHwKeysOption(context, Settings.System.getInt(context.getContentResolver(),
                 Settings.Secure.ENABLE_HW_KEYS, 1) == 1);
+    }
+
+    private static boolean isKeyDisablerSupported() {
+        try {
+            return KeyDisabler.isSupported();
+        } catch (NoClassDefFoundError e) {
+            // Hardware abstraction framework not installed
+            return false;
+        }
     }
 
     private void handleTogglePowerButtonEndsCallPreferenceClick() {

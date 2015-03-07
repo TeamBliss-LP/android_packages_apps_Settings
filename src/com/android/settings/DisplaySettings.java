@@ -228,7 +228,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             displayPrefs.removePreference(findPreference(KEY_SCREEN_OFF_GESTURE_SETTINGS));
        }
         mTapToWake = (SwitchPreference) findPreference(KEY_TAP_TO_WAKE);
-        if (displayPrefs != null && !mCmHardwareManager.isSupported(FEATURE_TAP_TO_WAKE)) || isDeviceHandlerInstalled()) {
+        if (displayPrefs != null && !mCmHardwareManager.isSupported(FEATURE_TAP_TO_WAKE)) {
             displayPrefs.removePreference(mTapToWake);
             mTapToWake = null;
         }
