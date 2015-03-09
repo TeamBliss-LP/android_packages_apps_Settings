@@ -154,6 +154,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
 
         addPreferencesFromResource(R.xml.button_settings);
 
+        final ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
         mHandler = new Handler();
 
@@ -245,6 +246,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
             if (mSwapVolumeButtons != null) {
                 mSwapVolumeButtons.setChecked(swapVolumeKeys > 0);
             }
+
             mVolumeDefault = (ListPreference) findPreference(KEY_VOLUME_DEFAULT);
             String currentDefault = Settings.System.getString(resolver,
                 Settings.System.VOLUME_KEYS_DEFAULT);
@@ -265,6 +267,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
                 mVolumeDefault.setValue(currentDefault);
                 mVolumeDefault.setSummary(mVolumeDefault.getEntry());
                 mVolumeDefault.setOnPreferenceChangeListener(this);
+			}
         }
 
         mVolumeWakeScreen = (SwitchPreference) findPreference(Settings.System.VOLUME_WAKE_SCREEN);
@@ -342,12 +345,6 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
             if (defaultDoubleTapAction < ACTION_NOTHING ||
                     defaultDoubleTapAction > ACTION_LAST_APP) {
                 defaultDoubleTapAction = ACTION_NOTHING;
-=======
-            if (mVolumeDefault != null) {
-                mVolumeDefault.setValue(currentDefault);
-                mVolumeDefault.setSummary(mVolumeDefault.getEntry());
-                mVolumeDefault.setOnPreferenceChangeListener(this);
->>>>>>> 118e2e2... Button settings: fix volume default option
             }
 
             if (settings != null) {
