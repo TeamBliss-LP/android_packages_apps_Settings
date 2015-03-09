@@ -204,6 +204,7 @@ public class QSTileHolder {
             case QSConstants.TILE_USB_TETHER:
                 resourceName = "ic_qs_usb_tether_on";
                 stringId = R.string.qs_usb_tether_tile;
+                break;
             case QSConstants.TILE_LIVE_DISPLAY:
                 resourceName ="ic_livedisplay_day";
                 stringId = R.string.live_display_title;
