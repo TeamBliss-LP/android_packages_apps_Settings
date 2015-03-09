@@ -1016,6 +1016,7 @@
     </string-array>
 
     <string-array name="navigation_bar_height_entries" translatable="false">
+        <item>@string/navigation_bar_size_52_dp</item>
         <item>@string/navigation_bar_size_48_dp_default</item>
         <item>@string/navigation_bar_size_44_dp</item>
         <item>@string/navigation_bar_size_42_dp</item>
@@ -1027,6 +1028,7 @@
     </string-array>
 
     <string-array name="navigation_bar_height" translatable="false">
+        <item>52</item>
         <item>48</item>
         <item>44</item>
         <item>42</item>
