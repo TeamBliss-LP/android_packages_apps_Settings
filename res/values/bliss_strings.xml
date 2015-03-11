@@ -1386,5 +1386,8 @@ sword is entered</string>
     <string name="volume_default_media">Media</string>
     <string name="volume_default_title">Volume default</string>
     <string name="volume_default_summary">Choose which volume gets changed by default</string>
+    
+    <!-- Visualizer Category for Lock Screen -->
+    <string name="visualizer_category">Lock Screen Visualizer</string>
 
 </resources>

@@ -17,6 +17,7 @@
 package com.android.settings.bliss;
 
 import android.app.admin.DevicePolicyManager;
+import android.app.ActivityManager;
 import android.os.Bundle;
 import android.os.UserHandle;
 import android.content.Context;
@@ -33,6 +34,7 @@ import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceCategory;
+import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
 import android.preference.SwitchPreference;
 import android.provider.Settings;
@@ -55,6 +57,9 @@ public class LockScreenSettings extends SettingsPreferenceFragment
         Preference.OnPreferenceChangeListener, Indexable {
 
     private static final String TAG = "LockScreenSettings";
+	private static final String KEY_SHOW_VISUALIZER = "lockscreen_visualizer";
+
+    private static final String VISUALIZER_CATEGORY = "visualizer";
 
     private PreferenceScreen mLockScreen;
 
@@ -72,6 +77,17 @@ public class LockScreenSettings extends SettingsPreferenceFragment
         mContext = getActivity();
 
         mLockScreen = (PreferenceScreen) findPreference("lock_screen");
+        PreferenceCategory visualizerCategory = (PreferenceCategory)
+                getPreferenceScreen().findPreference(VISUALIZER_CATEGORY);
+
+        // remove lockscreen visualizer option on low end gfx devices
+        if (!ActivityManager.isHighEndGfx() && visualizerCategory != null) {
+            SwitchPreference displayVisualizer = (SwitchPreference)
+                    visualizerCategory.findPreference(KEY_SHOW_VISUALIZER);
+            if (displayVisualizer != null) {
+                visualizerCategory.removePreference(displayVisualizer);
+            }
+        }
    
     }
 
