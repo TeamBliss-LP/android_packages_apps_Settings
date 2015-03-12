@@ -493,6 +493,14 @@
     <!-- BlissRoms OTA -->
     <string name="bliss_ota">BlissRoms OTA</string>
 
+    <!-- QuickSettings haptic feedback -->
+    <string name="qs_tiles_vibrate_title">Vibrate on touch</string>
+
+    <!-- QuickSettings brightness slider -->
+    <string name="qs_brightness_slider_title">Brightness slider</string>
+    <string name="qs_brightness_slider_enabled">Enabled</string>
+    <string name="qs_brightness_slider_disabled">Disabled</string>
+
     <!-- Device specific settings -->
     <string name="screen_off_gesture_settings_title">Screen off gestures</string>
 

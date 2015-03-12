@@ -30,12 +30,12 @@
         android:entryValues="@array/quick_pulldown_values"
         android:persistent="false" />
 
-        <ListPreference
-            android:key="smart_pulldown"
-            android:title="@string/smart_pulldown_title"
-            android:entries="@array/smart_pulldown_entries"
-            android:entryValues="@array/smart_pulldown_values"
-            android:persistent="false" />
+    <ListPreference
+        android:key="smart_pulldown"
+        android:title="@string/smart_pulldown_title"
+        android:entries="@array/smart_pulldown_entries"
+        android:entryValues="@array/smart_pulldown_values"
+        android:persistent="false" />
 
 
     <PreferenceCategory
@@ -58,6 +58,11 @@
             android:title="@string/qs_four_columns_title"
             android:defaultValue="false" />
 
+        <com.android.settings.cyanogenmod.SecureSettingSwitchPreference
+            android:key="qs_tiles_vibrate"
+            android:title="@string/qs_tiles_vibrate_title"
+            android:defaultValue="true" />
+
         <PreferenceScreen
             android:key="navbar_targets_settings"
             android:fragment="com.android.settings.bliss.dslv.ActionListViewSettings"
@@ -72,10 +77,10 @@
                 <extra android:name="fragment" android:value="com.android.settings.bliss.fragments.QuickTileFragment" />
         </PreferenceScreen>
 
-	<PreferenceScreen
+        <PreferenceScreen
             android:key="qs_colors"
             android:title="@string/qs_colors_title"
-	    android:summary="@string/qs_colors_summary"
+            android:summary="@string/qs_colors_summary"
             android:fragment="com.android.settings.bliss.QSColors" />
 
         <com.android.settings.cyanogenmod.SecureSettingSwitchPreference
