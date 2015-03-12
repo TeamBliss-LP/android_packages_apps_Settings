@@ -1076,9 +1076,8 @@ sword is entered</string>
     <string name="color_fully_title">Fully connected</string>
 
     <!-- QuickSettings haptic feedback -->
-    <string name="quick_settings_vibrate_title">Vibrate on touch</string>
-    <string name="quick_settings_vibrate_summary">Vibrate when touching tiles</string>
-    
+    <string name="qs_tiles_vibrate_title">Vibrate on touch</string>
+
     <!-- Change Log strings -->
     <string name="changelog_title">View changelog</string>
     <string name="changelog_dialog">Changelog</string>
