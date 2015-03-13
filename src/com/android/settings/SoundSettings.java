@@ -496,6 +496,9 @@ public class SoundSettings extends SettingsPreferenceFragment implements Indexab
 
             if (mNotificationPreference != null) {
                 mNotificationPreference.setEnabled(!enabled);
+                if (enabled) {
+                    updateEffectsSuppressor();
+                }
             }
             if (mVolumeLinkNotificationSwitch != null){
                 mVolumeLinkNotificationSwitch.setChecked(enabled);

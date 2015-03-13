@@ -150,6 +150,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
 
         addPreferencesFromResource(R.xml.button_settings);
 
+        final ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
 
         // Power button ends calls.
