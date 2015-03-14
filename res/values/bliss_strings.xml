@@ -1128,7 +1128,7 @@ sword is entered</string>
     
     <!-- Text for forcing expanded notifications -->
     <string name="disable_fc_notifications_title">Disable FC Notifications</string>
-    <string name="disable_fc_notifications_summary">This will hide all force close notificaitons</string>
+    <string name="disable_fc_notifications_summary">This will hide all force close notifications</string>
     
     <!-- QuickSettings collapse panel -->
     <string name="quick_settings_collapse_title">Auto close panel</string>
