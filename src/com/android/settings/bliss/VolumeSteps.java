@@ -155,9 +155,8 @@ public class VolumeSteps extends SettingsPreferenceFragment implements
             streamType = mAudioManager.STREAM_SYSTEM;
         } else if (settingsKey.equals(KEY_VOLUME_STEPS_VOICE_CALL)) {
             streamType = mAudioManager.STREAM_VOICE_CALL;
-        } else {
-          return;
         }
+
         //Save the setting for next boot
         Settings.System.putInt(getContentResolver(), settingsKey, steps);
 
