@@ -2461,6 +2461,10 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
         </provider>
+        
+        <activity android:name="com.android.settings.bliss.hfm.HfmWhitelist"
+                  android:label="@string/hfm_whitelist_title"
+                  android:taskAffinity="" />
 
         <activity android:name="Settings$SimSettingsActivity"
                 android:label="@string/sim_settings_title"
