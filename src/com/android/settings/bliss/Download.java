@@ -76,7 +76,7 @@ public class Download extends SettingsPreferenceFragment implements OnPreference
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
         if (preference == mContest) {
-            Uri uri = Uri.parse("https://blissroms.com/index.php?page=giveaways");
+            Uri uri = Uri.parse("blissroms.com/index.php?page=giveaways");
             Intent intent = new Intent(Intent.ACTION_VIEW, uri);
             startActivity(intent);
             return true;
