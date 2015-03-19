@@ -300,6 +300,10 @@ public class StorageVolumePreferenceCategory extends PreferenceCategory
                 titleResId = R.string.uicc_format;
                 summaryResId = R.string.uicc_format_summary;
 
+            } else if (mIsInternal && Environment.isExternalStorageEmulated()) {
+                titleResId = R.string.internal_sd_format;
+                summaryResId = R.string.internal_sd_format_summary;
+
             } else {
                 titleResId = R.string.sd_card_format;
                 summaryResId = R.string.sd_card_format_summary;
@@ -641,7 +645,6 @@ public class StorageVolumePreferenceCategory extends PreferenceCategory
     }
 
     @Override
-<<<<<<< HEAD
     public boolean onPreferenceClick(Preference preference) {
         if (preference == mMountNotification) {
             boolean checked = ((CheckBoxPreference)preference).isChecked();
@@ -675,6 +678,7 @@ public class StorageVolumePreferenceCategory extends PreferenceCategory
         return false;
     }
 
+    @Override
     public void onRequestMediaRescan() {
         File path = null;
         if ((mIsInternal && Environment.isExternalStorageEmulated()) || mIsPrimary) {
