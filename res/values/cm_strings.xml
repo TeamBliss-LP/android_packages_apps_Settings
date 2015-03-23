@@ -1029,6 +1029,7 @@
     <string name="lockscreen_none_target">None</string>
     <string name="lockscreen_message">Tap an icon on the left or right to reassign a lock screen shortcut.</string>
     <string name="lockscreen_choose_action_title">Choose action</string>
+    <string name="lockscreen_visualizer_title">Display music visualizer</string>
 
     <!-- WhisperPush -->
     <string name="whisperpush_title">WhisperPush</string>
@@ -1109,4 +1110,8 @@ restore to reset the settings to defaults.</string>
     <string name="live_display_low_power_summary">Adjust display for lowest power consumption without degradation</string>
     <string name="live_display_enhance_color_title">Enhance colors</string>
     <string name="live_display_enhance_color_summary">Improve color vibrance of flesh tones, scenery, and other images</string>
+
+    <string name="battery_saver_threshold">Battery saver threshold</string>
+    <string name="battery_saver_summary">Reduce performance and limit background data</string>
+    <string name="battery_saver_summary_unavailable">Not available while charging</string>
 </resources>

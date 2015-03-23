@@ -62,6 +62,18 @@
                <intent android:action="android.intent.action.MAIN"
                        android:targetPackage="com.cyanogenmod.lockclock"
                        android:targetClass="com.cyanogenmod.lockclock.preference.Preferences" />
-        </PreferenceScreen>               	        
-
+        </PreferenceScreen>
+	
+    <PreferenceCategory
+        android:key="visualizer"
+        android:title="@string/visualizer_category" >
+	
+        <com.android.settings.cyanogenmod.SecureSettingSwitchPreference
+                android:key="lockscreen_visualizer"
+                android:title="@string/lockscreen_visualizer_title"
+                android:defaultValue="true"
+                settings:advanced="true"/>
+		
+    </PreferenceCategory>
+		
 </PreferenceScreen>

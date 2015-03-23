@@ -39,7 +39,6 @@ import com.android.settings.bliss.LockScreenSettings;
 import com.android.settings.bliss.NotificationDrawer;
 import com.android.settings.bliss.StatusBar;
 import com.android.settings.deviceinfo.Memory;
-import com.android.settings.fuelgauge.BatterySaverSettings;
 import com.android.settings.fuelgauge.PowerUsageSummary;
 import com.android.settings.inputmethod.InputMethodAndLanguageSettings;
 import com.android.settings.location.LocationSettings;
@@ -184,13 +183,6 @@ public final class SearchIndexableResources {
                         Ranking.getRankForClassName(PowerUsageSummary.class.getName()),
                         R.xml.power_usage_summary,
                         PowerUsageSummary.class.getName(),
-                        R.drawable.ic_settings_battery));
-
-        sResMap.put(BatterySaverSettings.class.getName(),
-                new SearchIndexableResource(
-                        Ranking.getRankForClassName(BatterySaverSettings.class.getName()),
-                        R.xml.battery_saver_settings,
-                        BatterySaverSettings.class.getName(),
                         R.drawable.ic_settings_battery));
 
         sResMap.put(UserSettings.class.getName(),
