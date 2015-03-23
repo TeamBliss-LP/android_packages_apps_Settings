@@ -30,7 +30,7 @@
         android:key="screenshot_sound"
         android:title="@string/screenshot_sound_title"
         android:summary="@string/screenshot_sound_summary"
-        android:defaultValue="true" />         
+        android:defaultValue="true" />
 
     <SwitchPreference
         android:key="safe_headset_volume"

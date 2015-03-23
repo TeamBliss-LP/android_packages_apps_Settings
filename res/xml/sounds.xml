@@ -22,13 +22,13 @@
 
     <PreferenceCategory
             android:key="volumes"
-            android:title="@string/category_volume" >
-	    
+            android:title="@string/category_volume">
+    
         <!-- Link Volume Notification -->
         <com.android.settings.cyanogenmod.SecureSettingSwitchPreference
                 android:key="volume_link_notification"
                 android:title="@string/link_volume_option_title"
-                settings:advanced="true"/>
+                settings:advanced="true" />
 
         <!-- Ring volume -->
         <com.android.settings.notification.VolumeSeekBarPreference
@@ -52,7 +52,7 @@
         <com.android.settings.notification.VolumeSeekBarPreference
                 android:key="notification_volume"
                 android:icon="@drawable/ring_notif"
-                android:title="@string/notification_volume_option_title"/>
+                android:title="@string/notification_volume_option_title" />
 
         <!-- Live volume steps -->
         <PreferenceScreen
@@ -97,13 +97,6 @@
                 android:persistent="false"
                 android:ringtoneType="notification" />
 
-         <!-- Screenshot tone -->
-         <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
-                android:key="screenshot_sound"
-                android:title="@string/screenshot_sound_title"
-                android:summary="@string/screenshot_sound_summary"
-                android:defaultValue="true" />
-
         <!-- Default alarm ringtone -->
         <com.android.settings.DefaultRingtonePreference
                 android:key="alarm_ringtone"
@@ -129,7 +122,7 @@
                 android:key="increasing_ring_volume"
                 android:icon="@drawable/ring_notif_increasing"
                 android:dependency="increasing_ring"
-                settings:advanced="true"/>
+                settings:advanced="true" />
 
         <!-- Headset -->
         <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
@@ -168,7 +161,7 @@
         <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
                 android:key="haptic_feedback_enabled"
                 android:title="@string/vibrate_on_touch_title"
-                android:defaultValue="true"/>
+                android:defaultValue="true" />
 
         <!-- CMHW vibration intensity -->
         <com.android.settings.hardware.VibratorIntensity
@@ -176,6 +169,7 @@
                 android:title="@string/vibrator_intensity_title"
                 android:dialogTitle="@string/vibrator_intensity_title"
                 android:persistent="false"
-                settings:advanced="true"/>
+                settings:advanced="true" />
     </PreferenceCategory>
+
 </PreferenceScreen>
