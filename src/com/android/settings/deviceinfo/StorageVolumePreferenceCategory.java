@@ -416,7 +416,7 @@ public class StorageVolumePreferenceCategory extends PreferenceCategory implemen
                 mFormatPreference.setSummary(R.string.uicc_format_summary);
 
             } else {
-                mFormatPreference.setSummary(R.string.sdcard_format_summary);
+                mFormatPreference.setSummary(R.string.sd_card_format_summary);
             }
         }
     }
