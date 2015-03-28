@@ -78,8 +78,9 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
     /** If there is no setting in the provider, use this. */
     private static final int FALLBACK_SCREEN_TIMEOUT_VALUE = 30000;
-	
+
     private static final String PROP_DISPLAY_DENSITY = "persist.sf.lcd_density";
+    private static final String PROP_RO_DISPLAY_DENSITY = "ro.sf.lcd_density";
 
     private static final String KEY_CATEGORY_LIGHTS = "lights";
     private static final String KEY_CATEGORY_DISPLAY = "display";
@@ -233,9 +234,13 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             displayPrefs.removePreference(mTapToWake);
             mTapToWake = null;
         }
-
+        String currDensity = "0";
         mDisplayDensity = (EditTextPreference) findPreference(KEY_DISPLAY_DENSITY);
-        mDisplayDensity.setText(SystemProperties.get(PROP_DISPLAY_DENSITY, "0"));
+        currDensity = SystemProperties.get(PROP_DISPLAY_DENSITY, "0");
+        if(currDensity == "0") {
+          currDensity = SystemProperties.get(PROP_RO_DISPLAY_DENSITY, "0");
+        }
+        mDisplayDensity.setText(currDensity);
         mDisplayDensity.setOnPreferenceChangeListener(this);
         
         mDisplayDensityOverride = (EditTextPreference) findPreference(KEY_DISPLAY_DENSITY_OVERRIDE);
@@ -588,14 +593,19 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                     (Boolean) objValue ? 1 : 0);
         }
         if (KEY_DISPLAY_DENSITY.equals(key)) {
-            final int max = SystemProperties.getInt(PROP_DISPLAY_DENSITY_MAX, 480);
+            final int max = SystemProperties.getInt(PROP_DISPLAY_DENSITY_MAX, 600);
             final int min = SystemProperties.getInt(PROP_DISPLAY_DENSITY_MIN, 240);
 
-            int value = SystemProperties.getInt(PROP_DISPLAY_DENSITY, 0);
+            int value = 0;
+            int currDensity = SystemProperties.getInt(PROP_DISPLAY_DENSITY, 0);
+            if(currDensity == 0) {
+              currDensity = SystemProperties.getInt(PROP_RO_DISPLAY_DENSITY, 0);
+            }
             try {
                 value = Integer.parseInt(String.valueOf(objValue));
             } catch (NumberFormatException e) {
                 Log.e(TAG, "Invalid input", e);
+                value = currDensity;
             }
 
             // 0 disables the custom density, so do not check for the value, else…
@@ -609,6 +619,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             }
 
             SystemProperties.set(PROP_DISPLAY_DENSITY, String.valueOf(value));
+            SystemProperties.set(PROP_RO_DISPLAY_DENSITY, String.valueOf(value));
             mDisplayDensity.setText(String.valueOf(value));
 
             // we handle it, return false
