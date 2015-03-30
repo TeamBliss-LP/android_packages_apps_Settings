@@ -105,6 +105,12 @@
             android:title="@string/status_bar_bliss_logo_title"
             android:summary="@string/status_bar_bliss_logo_summary" />
 
+    <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="status_bar_bliss_logo_color"
+            android:title="@string/status_bar_bliss_logo_color"
+            android:defaultValue="0xffffffff"
+            android:dependency="status_bar_bliss_logo" />
+
     </PreferenceCategory>    
 
 </PreferenceScreen>

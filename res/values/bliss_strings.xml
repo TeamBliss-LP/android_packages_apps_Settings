@@ -627,6 +627,7 @@
     <!-- Statusbar Bliss logo -->
     <string name="status_bar_bliss_logo_title">Bliss logo</string>
     <string name="status_bar_bliss_logo_summary">Enable to show Bliss logo on the left side of statusbar</string>
+    <string name="status_bar_bliss_logo_color">Bliss logo color</string>
 
     <!-- Status bar | Clock -->
     <string name="status_bar_clock">Clock and date</string>
