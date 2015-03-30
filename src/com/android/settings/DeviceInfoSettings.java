@@ -177,6 +177,23 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
         Utils.updatePreferenceToSpecificActivityOrRemove(act, parentPreference, KEY_WEBVIEW_LICENSE,
                 Utils.UPDATE_PREFERENCE_FLAG_SET_TITLE_TO_MATCHING_ACTIVITY);
 
+<<<<<<< HEAD
+=======
+        // These are contained by the root preference screen
+        parentPreference = getPreferenceScreen();
+        if (UserHandle.myUserId() == UserHandle.USER_OWNER) {
+            Utils.updatePreferenceToSpecificActivityOrRemove(act, parentPreference,
+                    KEY_SYSTEM_UPDATE_SETTINGS,
+                    Utils.UPDATE_PREFERENCE_FLAG_SET_TITLE_TO_MATCHING_ACTIVITY);
+        } else {
+            // Remove for secondary users
+            removePreference(KEY_SYSTEM_UPDATE_SETTINGS);
+        }
+
+        // Read platform settings for additional system update setting
+        removePreferenceIfBoolFalse(KEY_UPDATE_SETTING,
+                R.bool.config_additional_system_update_setting_enable);
+>>>>>>> parent of 8f11aab... Settings: Add FOTA updater
 
         // Remove regulatory information if none present.
         final Intent intent = new Intent(Settings.ACTION_SHOW_REGULATORY_INFO);
