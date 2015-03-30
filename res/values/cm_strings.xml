@@ -295,20 +295,14 @@
     <string name="build_date">Build date</string>
     <string name="build_date_default" translatable="false">2014-01-01-0000</string>
 
-<<<<<<< HEAD
     <string name="contributor_cloud_title">Contributors</string>
 
     <!-- About phone screen, service state -->
     <string name="phone_service_state">Voice: <xliff:g id="voice_state">%1$s</xliff:g>, data: <xliff:g id="data_state">%2$s</xliff:g></string>
-=======
+
     <!-- About phone screen, build type -->
     <string name="build_date">Build type</string>
     <string name="build_date_default">Unknown</string>
-
-    <!--- Advanced Settings -->
-    <string name="advanced_settings">Advanced settings</string>
-    <string name="advanced_settings_summary">Enable more settings options</string>
->>>>>>> fb6f70a... Display Bliss Build Type In About Phone [1/2]
 
     <!--- Tap To Wake -->
     <string name="double_tap_to_wake_title">Double-tap to wake</string>
