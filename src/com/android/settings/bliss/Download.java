@@ -26,6 +26,7 @@ import android.content.res.Resources;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.SystemProperties;
 import android.os.UserHandle;
 import android.preference.CheckBoxPreference;
 import android.preference.Preference;
@@ -42,13 +43,14 @@ import com.android.settings.Utils;
 public class Download extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
 
     /* Preference mContest; */
-    Preference mSupport;
-    Preference mBanksGapps;
-    Preference mBlissOfficial;
-    Preference mBlissNightly;
-    Preference mPAGapps;
-    Preference mKernels;
-    Preference mAddons;        
+    private Preference mSupport;
+    private Preference mBanksGapps;
+    private Preference mBlissOfficial;
+    private Preference mBlissNightly;
+    private Preference mPAGapps;
+    private Preference mKernels;
+    private Preference mAddons;
+    private String mBlissDevice = "";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -62,10 +64,14 @@ public class Download extends SettingsPreferenceFragment implements OnPreference
         mSupport = findPreference("support_bliss");
         mBanksGapps = findPreference("banks_gapps");
         mBlissOfficial = findPreference("bliss_official");
-        mBlissNightly = findPreference("bliss_nightly");        
+        mBlissNightly = findPreference("bliss_nightly");
         mPAGapps = findPreference("pa_gapps");
         mKernels = findPreference("bliss_kernels");
-        mAddons = findPreference("various_addons");                
+        mAddons = findPreference("various_addons");
+
+        try {
+            mBlissDevice = SystemProperties.get("ro.bliss.device", "");
+        } catch (RuntimeException e) { }
     }
 
     @Override
@@ -86,17 +92,17 @@ public class Download extends SettingsPreferenceFragment implements OnPreference
             startActivity(intent);
             return true;
         } else if (preference == mPAGapps) {
-            Uri uri = Uri.parse("http://forum.xda-developers.com/showpost.php?p=56820635&postcount=1");
+            Uri uri = Uri.parse("http://forum.xda-developers.com/android/software/gapps-google-apps-minimal-edition-t2943330");
             Intent intent = new Intent(Intent.ACTION_VIEW, uri);
             startActivity(intent);
             return true;
         } else if (preference == mBlissOfficial) {
-            Uri uri = Uri.parse("http://downloads.blissroms.com/BlissPop/Official/");
+            Uri uri = Uri.parse("http://downloads.blissroms.com/BlissPop/Official/"+mBlissDevice);
             Intent intent = new Intent(Intent.ACTION_VIEW, uri);
             startActivity(intent);
             return true;
         } else if (preference == mBlissNightly) {
-            Uri uri = Uri.parse("http://downloads.blissroms.com/BlissPop/Nightlies/");
+            Uri uri = Uri.parse("http://downloads.blissroms.com/BlissPop/Nightlies/"+mBlissDevice);
             Intent intent = new Intent(Intent.ACTION_VIEW, uri);
             startActivity(intent);
             return true;
@@ -104,12 +110,12 @@ public class Download extends SettingsPreferenceFragment implements OnPreference
             Uri uri = Uri.parse("http://downloads.blissroms.com/Kernels/");
             Intent intent = new Intent(Intent.ACTION_VIEW, uri);
             startActivity(intent);
-            return true; 
+            return true;
         } else if (preference == mAddons) {
             Uri uri = Uri.parse("http://downloads.blissroms.com/Add-ons/");
             Intent intent = new Intent(Intent.ACTION_VIEW, uri);
             startActivity(intent);
-            return true;                                     
+            return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
