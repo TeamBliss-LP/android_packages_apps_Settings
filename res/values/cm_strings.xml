@@ -303,6 +303,10 @@
     <!-- About phone screen, build type -->
     <string name="build_date">Build type</string>
     <string name="build_date_default">Unknown</string>
+    
+    <!-- About phone screen, build type -->
+    <string name="build_type">Build type</string>
+    <string name="build_type_default">Unknown</string>
 
     <!--- Tap To Wake -->
     <string name="double_tap_to_wake_title">Double-tap to wake</string>
