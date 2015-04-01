@@ -219,13 +219,6 @@ public class UserSettings extends SettingsPreferenceFragment
             removePreference(KEY_ADD_USER);
         } else {
             mAddUser.setOnPreferenceClickListener(this);
-            DevicePolicyManager dpm = (DevicePolicyManager) context.getSystemService(
-                    Context.DEVICE_POLICY_SERVICE);
-            // No restricted profiles for tablets with a device owner, or phones.
-            if (dpm.getDeviceOwner() != null || Utils.isVoiceCapable(context)) {
-                mCanAddRestrictedProfile = false;
-                mAddUser.setTitle(R.string.user_add_user_menu);
-            }
         }
         loadProfile();
         setHasOptionsMenu(true);
