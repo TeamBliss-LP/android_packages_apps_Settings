@@ -15,6 +15,10 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
+    <!-- Bliss settings screens -->
+    <string name="header_category_personalization">Personalization</string>
+    <string name="interface_settings_title">Bliss Interface</string>
+
     <!-- Bliss Extra Info -->
     <string name="lsextrainfo">Extra information</string>
     <string name="lsextrainfo_summary">Display extra info for cpu, display, etc</string>
@@ -49,5 +53,56 @@
     <!-- About phone screen, Bliss version -->
     <string name="mod_version">Bliss version</string>
     <string name="mod_version_default">Unknown</string>
+    
+    <!-- Download Center -->
+    <string name="download_category">Bliss Downloads</string>
+    <string name="download_category_summary">Help Support Team Bliss</string>
+    <string name="rom_category">Rom Download</string>
+    <string name="gapps_category">GAPPS Packages</string>
+    <string name="kernels_category">Kernel Downloads</string>
+    <string name="addons_category">Misc Addons</string>        
+    <string name="bliss_official_title">BlissPop Official Builds</string>
+    <string name="bliss_official_summary">Link for official release builds of BlissPop</string>
+    <string name="bliss_nightly_title">BlissPop Nightly Builds</string>
+    <string name="bliss_nightly_summary">Link for nightly release builds of BlissPop</string>
+    <string name="banksgapps_title">Banks Gapps</string>
+    <string name="banksgapps_summary">Banks Gapps are generally recommended gapps for use on BlissPop</string>    
+    <string name="pagapps_title">JAJB Gapps</string>
+    <string name="pagapps_summary">Newer GAPP packages for both Android 5.0 and 5.1</string>
+    <string name="kernels_title">Bliss Kernels</string>
+    <string name="kernels_summary">Various Kernels for Devices Supported by Team Bliss</string>
+    <string name="addons_title">Misc Addons</string>
+    <string name="addons_summary">Sound Mods, Splash Screens, etc.</string>
+
+    <!-- Support Team Bliss -->
+    <string name="support_category">Support</string>
+    <string name="support_bliss_title">Help Support Team Bliss</string>
+    <string name="support_bliss_summary">Link to Team Bliss PayPal Donation</string>
+
+    <!-- Team Bliss Contests -->
+    <string name="contest_category">Current Bliss Contests</string>
+    <string name="contest_bliss_title">Team Bliss Contests</string>
+    <string name="contest_bliss_summary">Link to Team Bliss Contest website</string>
+    
+    <!--Embedded AudioFX-->
+    <string name="audiofx_settings_title">Equalizer</string>
+    <string name="audiofx_summary">AudioFX Access</string>
+    
+    <!--Embedded Viper4Android-->
+    <string name="viper_settings_title">Equalizer</string>
+    <string name="viper_summary">Viper4Android Access</string> 
+    
+    <!-- Navigation bar -->
+    <string name="navigation_bar_pref_title">Navigation bar</string>
+    <string name="navigation_options">Navigation Options</string>
+    
+    <!-- Breathing Notifications -->
+    <string name="breathing_notifications_title">Breathing Notifications</string>
+    <string name="sms_breath">Breathing SMS</string>
+    <string name="sms_breath_summary">Will give your sms notifications a breathing effect in the statusbar</string>
+    <string name="title_missed_call_breath">Breathing Missed Call</string>
+    <string name="missed_call_breath_summary">Will give your missed call notifications a breathing effect in the statusbar</string>
+    <string name="title_voicemail_breath">Breathing Voicemail</string>
+    <string name="voicemail_breath_summary">Will give your voicemail notifications a breathing effect in the statusbar</string>
 
 </resources>

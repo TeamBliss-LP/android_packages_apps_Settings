@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2014 The Dirty Unicorns Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/download_category" >
+    
+    <PreferenceCategory
+        android:key="contest_category"
+        android:title="@string/contest_category">
+
+    <Preference
+        android:key="contest_bliss"
+        android:title="@string/contest_bliss_title"
+        android:summary="@string/contest_bliss_summary" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="support_category"
+        android:title="@string/support_category">
+
+    <Preference
+        android:key="support_bliss"
+        android:title="@string/support_bliss_title"
+        android:summary="@string/support_bliss_summary" />
+	
+    </PreferenceCategory>    
+
+    <PreferenceCategory
+        android:key="rom_category"
+        android:title="@string/rom_category">
+
+    <Preference
+        android:key="bliss_official"
+        android:title="@string/bliss_official_title"
+        android:summary="@string/bliss_official_summary" />
+	
+    <Preference
+        android:key="bliss_nightly"
+        android:title="@string/bliss_nightly_title"
+        android:summary="@string/bliss_nightly_summary" />	
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="google_apps"
+        android:title="@string/gapps_category">
+
+    <Preference
+        android:key="banks_gapps"
+        android:title="@string/banksgapps_title"
+        android:summary="@string/banksgapps_summary" />
+
+    <Preference
+        android:key="pa_gapps"
+        android:title="@string/pagapps_title"
+        android:summary="@string/pagapps_summary" />
+
+    </PreferenceCategory>
+    
+    <PreferenceCategory
+        android:key="kernel_zips"
+        android:title="@string/kernels_category">
+
+    <Preference
+        android:key="bliss_kernels"
+        android:title="@string/kernels_title"
+        android:summary="@string/kernels_summary" />
+
+    </PreferenceCategory>
+    
+    <PreferenceCategory
+        android:key="misc_addons"
+        android:title="@string/addons_category">
+
+    <Preference
+        android:key="various_addons"
+        android:title="@string/addons_title"
+        android:summary="@string/addons_summary" />
+
+    </PreferenceCategory>        
+
+</PreferenceScreen>
