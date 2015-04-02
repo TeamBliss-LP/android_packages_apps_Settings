@@ -199,6 +199,11 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
                     Log.e(LOG_TAG, "Unable to start activity " + intent.toString());
                 }
             }
+        } else if (preference.getKey().equals(KEY_BUILD_NUMBER)) {
+            getActivity().getSharedPreferences(DevelopmentSettings.PREF_FILE,
+                Context.MODE_PRIVATE).edit().putBoolean(
+                    DevelopmentSettings.PREF_SHOW, true).apply();
+        
         } else if (preference.getKey().equals(KEY_DEVICE_FEEDBACK)) {
             sendFeedback();
         } else if (preference.getKey().equals(KEY_MOD_VERSION)) {

@@ -107,10 +107,13 @@ public class PerformanceSettings extends SettingsPreferenceFragment {
     }
 
     private boolean showAdvancedPerfSettings() {
+        return true;
+        /*
         return !android.os.Build.TYPE.equals("user") &&
                 mDevelopmentPreferences.getBoolean(
                 DevelopmentSettings.PREF_SHOW,
                 android.os.Build.TYPE.equals("eng"));
+        */
     }
 
     @Override

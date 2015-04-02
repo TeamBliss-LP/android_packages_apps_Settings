@@ -1165,10 +1165,11 @@ public class SettingsActivity extends Activity
     }
 
     private void updateTilesList(List<DashboardCategory> target) {
+        /*
         final boolean showDev = mDevelopmentPreferences.getBoolean(
                 DevelopmentSettings.PREF_SHOW,
                 android.os.Build.TYPE.equals("eng") || android.os.Build.TYPE.equals("userdebug"));
-
+        */
         final UserManager um = (UserManager) getSystemService(Context.USER_SERVICE);
         final PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
 
@@ -1249,7 +1250,11 @@ public class SettingsActivity extends Activity
                         removeTile = true;
                     }
                 } else if (id == R.id.development_settings) {
+                    /*
                     if (!showDev || um.hasUserRestriction(
+                            UserManager.DISALLOW_DEBUGGING_FEATURES)) {
+                    */
+                    if (um.hasUserRestriction(
                             UserManager.DISALLOW_DEBUGGING_FEATURES)) {
                         removeTile = true;
                     }
@@ -1286,8 +1291,11 @@ public class SettingsActivity extends Activity
                 } else if (id == R.id.performance_settings) {
                     final boolean forceHide =
                             getResources().getBoolean(R.bool.config_hidePerformanceSettings);
+                    /*
                     if (forceHide ||
-                            !(pm.hasPowerProfiles() || (showDev && !Build.TYPE.equals("user")))) {
+                            !(pm.hasPowerProfiles() || (showDev && !Build.TYPE.equals("user")))) { 
+                    */
+                    if (forceHide || !pm.hasPowerProfiles()) {
                         removeTile = true;
                     }
                 }
