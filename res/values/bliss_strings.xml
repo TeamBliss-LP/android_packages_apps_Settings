@@ -46,4 +46,8 @@
     <!-- SuperSU header name - the app hides itself from launcher based on this resource name being present in com.android.settings -->
     <string name="supersu_title">SuperSU</string> 
 
+    <!-- About phone screen, Bliss version -->
+    <string name="mod_version">Bliss version</string>
+    <string name="mod_version_default">Unknown</string>
+
 </resources>
