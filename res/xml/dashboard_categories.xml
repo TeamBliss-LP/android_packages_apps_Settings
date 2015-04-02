@@ -116,6 +116,50 @@
             android:id="@+id/device_section"
             android:title="@string/header_category_device" >
 
+        <!-- Interface -->
+        <dashboard-tile
+                android:id="@+id/interface_settings"
+                android:icon="@drawable/ic_bliss_interface"
+                android:fragment="com.android.settings.bliss.InterfaceSettings"
+                android:title="@string/interface_settings_title"
+                />
+
+       <!-- AudioFX -->
+       <dashboard-tile
+           android:id="@+id/audiofx_settings"
+           android:title="@string/audiofx_settings_title"
+           android:summary="@string/audiofx_summary"
+           android:icon="@drawable/ic_bliss_equalizer" >
+           <intent
+              android:action="android.intent.action.MAIN"
+              android:targetClass="org.cyanogenmod.audiofx.ActivityMusic"
+              android:targetPackage="org.cyanogenmod.audiofx" />
+        </dashboard-tile>
+
+       <!-- Viper4Android -->
+       <dashboard-tile
+           android:id="@+id/viper_settings"
+           android:title="@string/viper_settings_title"
+           android:summary="@string/viper_summary"
+           android:icon="@drawable/ic_bliss_equalizer" >
+           <intent
+              android:action="android.intent.action.MAIN"
+              android:targetClass="com.vipercn.viper4android_v2.activity.ViPER4Android"
+              android:targetPackage="com.vipercn.viper4android_v2" />
+       </dashboard-tile>
+
+        <!-- Themes -->
+        <!-- NOTE: Intent.parseIntent looks for "categories" tag and not "category" -->
+        <dashboard-tile
+                android:id="@+id/theme_settings"
+                android:title="@string/themes_settings_title"
+                android:icon="@drawable/ic_settings_themes">
+            <intent
+                    android:action="android.intent.action.MAIN" >
+                <categories android:name="cyanogenmod.intent.category.APP_THEMES" />
+            </intent>
+        </dashboard-tile>
+
         <!-- Sound -->
         <dashboard-tile
                 android:id="@+id/sound_settings"
@@ -131,18 +175,6 @@
                 android:fragment="com.android.settings.DisplaySettings"
                 android:icon="@drawable/ic_settings_display"
                 />
-
-        <!-- Themes -->
-        <!-- NOTE: Intent.parseIntent looks for "categories" tag and not "category" -->
-        <dashboard-tile
-                android:id="@+id/theme_settings"
-                android:title="@string/themes_settings_title"
-                android:icon="@drawable/ic_settings_themes">
-            <intent
-                    android:action="android.intent.action.MAIN" >
-                <categories android:name="cyanogenmod.intent.category.APP_THEMES" />
-            </intent>
-        </dashboard-tile>
 
         <!-- Notification manager -->
         <dashboard-tile
@@ -160,13 +192,6 @@
                 android:icon="@drawable/ic_settings_security"
                 />
 
-        <!-- Buttons -->
-        <dashboard-tile
-                android:id="@+id/button_settings"
-                android:title="@string/button_pref_title"
-                android:fragment="com.android.settings.ButtonSettings"
-                android:icon="@drawable/ic_settings_buttons"
-                />
 
         <!-- O-Click -->
         <dashboard-tile
@@ -234,24 +259,6 @@
                 android:fragment="com.android.settings.profiles.ProfilesSettings"
                 android:title="@string/profiles_settings_title"
                 android:icon="@drawable/ic_settings_profiles"
-                />
-
-        <!-- Status bar -->
-        <dashboard-tile
-                android:id="@+id/status_bar_settings"
-                android:title="@string/status_bar_title"
-                android:fragment="com.android.settings.cyanogenmod.StatusBarSettings"
-                android:icon="@drawable/ic_settings_extdesk_hidenavbar"
-                settings:advanced="true"
-                />
-
-        <!-- Notification drawer -->
-        <dashboard-tile
-                android:id="@+id/notification_drawer_settings"
-                android:title="@string/notification_drawer_title"
-                android:fragment="com.android.settings.cyanogenmod.NotificationDrawerSettings"
-                android:icon="@drawable/ic_settings_notification_drawer"
-                settings:advanced="true"
                 />
 
         <!-- Application Settings -->
@@ -342,6 +349,17 @@
                 android:icon="@drawable/ic_settings_print"
                 />
 
+        <!-- SuperSU -->
+        <dashboard-tile
+            android:id="@+id/supersu_settings"
+            android:icon="@drawable/ic_settings_supersu"
+            android:title="@string/supersu_title">
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="eu.chainfire.supersu"
+                android:targetClass="eu.chainfire.supersu.MainActivity" />
+        </dashboard-tile>
+
         <!-- Performance -->
         <dashboard-tile
                 android:id="@+id/performance_settings"
@@ -358,17 +376,6 @@
                 android:fragment="com.android.settings.DevelopmentSettings"
                 android:icon="@drawable/ic_settings_development"
                 />
-
-        <!-- SuperSU -->
-        <dashboard-tile
-            android:id="@+id/supersu_settings"
-            android:icon="@drawable/ic_settings_supersu"
-            android:title="@string/supersu_title">
-            <intent
-                android:action="android.intent.action.MAIN"
-                android:targetPackage="eu.chainfire.supersu"
-                android:targetClass="eu.chainfire.supersu.MainActivity" />
-        </dashboard-tile>
 
         <!-- About Device -->
         <dashboard-tile

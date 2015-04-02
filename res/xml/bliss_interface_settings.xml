@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2014 Slimroms
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/interface_settings_title"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+
+    <PreferenceScreen
+        android:key="bliss_logo"
+        android:enabled="false"
+        android:layout="@layout/bliss_logo_row"
+        android:selectable="false" />
+
+    <!-- Status Bar Settings -->
+    <PreferenceScreen
+        android:id="@+id/status_bar_settings"
+        android:title="@string/status_bar_title"
+        android:fragment="com.android.settings.cyanogenmod.StatusBarSettings"
+        android:icon="@drawable/ic_settings_extdesk_hidenavbar" />
+
+    <!-- Navigation Options -->
+    <PreferenceScreen
+        android:key="navigation_options"
+        android:fragment="com.android.settings.bliss.NavigationSettings"
+        android:title="@string/navigation_options"
+        android:icon="@drawable/ic_settings_navigation_bar" />
+
+    <!-- Notification Drawer -->
+    <PreferenceScreen
+        android:id="@+id/notification_drawer_settings"
+        android:title="@string/notification_drawer_title"
+        android:fragment="com.android.settings.cyanogenmod.NotificationDrawerSettings"
+        android:icon="@drawable/ic_settings_notification_drawer"
+        settings:advanced="true" />
+        
+    <!-- Power Menu Options -->
+    <PreferenceScreen
+        android:key="power_menu"
+        android:title="@string/power_menu_title"
+        android:fragment="com.android.settings.cyanogenmod.PowerMenuActions"
+        android:icon="@drawable/ic_settings_power"
+	    settings:advanced="true" /> 
+
+    <!-- Bliss Downloads  -->
+    <PreferenceScreen
+        android:key="download_center"
+        android:fragment="com.android.settings.bliss.Download"
+        android:title="@string/download_category"
+        android:summary="@string/download_category_summary"
+	android:icon="@drawable/ic_tab_unselected_download" />
+
+</PreferenceScreen>

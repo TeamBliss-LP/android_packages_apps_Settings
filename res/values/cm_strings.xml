@@ -135,7 +135,7 @@
     <string name="toggleNfc">NFC</string>
 
     <!-- Hardware keys -->
-    <string name="button_pref_title">Buttons</string>
+    <string name="button_pref_title">Buttons/NavBar Options</string>
     <string name="hardware_keys_power_key_title">Power button</string>
     <string name="hardware_keys_home_key_title">Home button</string>
     <string name="hardware_keys_back_key_title">Back button</string>
@@ -184,6 +184,7 @@
 
     <!-- Power menu -->
     <string name="power_menu_title">Power menu</string>
+    <string name="power_menu_power_title">Power off</string>
     <string name="power_menu_reboot_title">Reboot menu</string>
     <string name="power_menu_screenshot_title">Screenshot</string>
     <string name="power_menu_profiles_title">Profile switcher</string>

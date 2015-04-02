@@ -2159,6 +2159,8 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
+	
+        <activity android:name=".bliss.Download" />	
 
         <activity android:name=".bliss.ChangeLog" android:label="@string/changelog_title">
            <intent-filter>
