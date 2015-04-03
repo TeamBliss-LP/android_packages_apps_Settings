@@ -56,7 +56,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.android.internal.util.temasek.temasekUtils;
+import com.android.internal.util.bliss.blissUtils;
 
 public class ButtonSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
@@ -515,7 +515,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
    private void updateNavBarSettings() {
         boolean enableNavigationBar = Settings.System.getInt(getContentResolver(),
                 Settings.System.NAVIGATION_BAR_SHOW,
-                temasekUtils.isNavBarDefault(getActivity()) ? 1 : 0) == 1;
+                blissUtils.isNavBarDefault(getActivity()) ? 1 : 0) == 1;
         mEnableNavigationBar.setChecked(enableNavigationBar);
 
         updateNavbarPreferences(enableNavigationBar);

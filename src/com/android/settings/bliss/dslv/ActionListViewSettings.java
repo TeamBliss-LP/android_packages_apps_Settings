@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.slim.dslv;
+package com.android.settings.bliss.dslv;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -53,18 +53,18 @@ import android.widget.TextView;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.android.internal.util.crdroid.ActionConfig;
-import com.android.internal.util.crdroid.ActionConstants;
-import com.android.internal.util.crdroid.ActionHelper;
-import com.android.internal.util.crdroid.ImageHelper;
-import com.android.internal.util.crdroid.DeviceUtils;
-import com.android.internal.util.crdroid.DeviceUtils.FilteredDeviceFeaturesArray;
+import com.android.internal.util.bliss.ActionConfig;
+import com.android.internal.util.bliss.ActionConstants;
+import com.android.internal.util.bliss.ActionHelper;
+import com.android.internal.util.bliss.ImageHelper;
+import com.android.internal.util.bliss.DeviceUtils;
+import com.android.internal.util.bliss.DeviceUtils.FilteredDeviceFeaturesArray;
 
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.R;
-import com.android.settings.slim.dslv.DragSortListView;
-import com.android.settings.slim.dslv.DragSortController;
-import com.android.settings.slim.util.ShortcutPickerHelper;
+import com.android.settings.bliss.dslv.DragSortListView;
+import com.android.settings.bliss.dslv.DragSortController;
+import com.android.settings.bliss.util.ShortcutPickerHelper;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -626,9 +626,6 @@ public class ActionListViewSettings extends ListFragment implements
                         iconUri), 36);
             }
 
-            if (iconUri != null && iconUri.startsWith(ActionConstants.SYSTEM_ICON_IDENTIFIER)) {
-                d.setTint(getResources().getColor(R.color.dslv_icon_dark));
-            }
             holder.iconView.setImageDrawable(d);
 
             if (!mDisableIconPicker && holder.iconView.getDrawable() != null) {
@@ -912,7 +909,7 @@ public class ActionListViewSettings extends ListFragment implements
             public IconAdapter() {
                 labels = getResources().getStringArray(R.array.shortcut_icon_picker_labels);
                 icons = getResources().obtainTypedArray(R.array.shortcut_icon_picker_icons);
-                color = getResources().getColor(R.color.dslv_icon_dark);
+
             }
 
             @Override
@@ -947,7 +944,6 @@ public class ActionListViewSettings extends ListFragment implements
                 TextView tt = (TextView) iView.findViewById(android.R.id.text1);
                 tt.setText(labels[position]);
                 Drawable ic = ((Drawable) getItem(position)).mutate();
-                ic.setTint(color);
                 tt.setCompoundDrawablePadding(15);
                 tt.setCompoundDrawablesWithIntrinsicBounds(ic, null, null, null);
                 return iView;

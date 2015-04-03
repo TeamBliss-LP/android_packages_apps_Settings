@@ -22,7 +22,13 @@
 
     <PreferenceCategory
             android:key="volumes"
-            android:title="@string/category_volume" >
+            android:title="@string/category_volume">
+    
+        <!-- Link Volume Notification -->
+        <com.android.settings.cyanogenmod.SecureSettingSwitchPreference
+                android:key="volume_link_notification"
+                android:title="@string/link_volume_option_title"
+                settings:advanced="true" />
 
         <!-- Ring volume -->
         <com.android.settings.notification.VolumeSeekBarPreference
@@ -42,18 +48,18 @@
                 android:icon="@drawable/ic_audio_alarm_24dp"
                 android:title="@string/alarm_volume_option_title" />
 
-        <!-- Link Volume Notification -->
-        <com.android.settings.cyanogenmod.SecureSettingSwitchPreference
-                android:key="volume_link_notification"
-                android:title="@string/link_volume_option_title"
-                settings:advanced="true"/>
-
         <!-- Notification volume -->
         <com.android.settings.notification.VolumeSeekBarPreference
                 android:key="notification_volume"
                 android:icon="@drawable/ring_notif"
                 android:title="@string/notification_volume_option_title"
                 settings:advanced="true"/>
+
+        <!-- Live volume steps -->
+        <PreferenceScreen
+                android:key="volume_steps_settings"
+                android:fragment="com.android.settings.bliss.VolumeSteps"
+                android:title="@string/volume_steps_title" />
 
     </PreferenceCategory>
 
@@ -76,6 +82,13 @@
                 android:dialogTitle="@string/notification_ringtone_title_cm"
                 android:persistent="false"
                 android:ringtoneType="notification" />
+
+         <!-- Screenshot tone -->
+         <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
+                android:key="screenshot_sound"
+                android:title="@string/screenshot_sound_title"
+                android:summary="@string/screenshot_sound_summary"
+                android:defaultValue="true" />
 
         <!-- Interruptions -->
         <PreferenceScreen

@@ -39,6 +39,13 @@
         android:title="@string/navigation_options"
         android:icon="@drawable/ic_settings_navigation_bar" />
 
+    <!-- Recents Options -->
+    <PreferenceScreen
+        android:key="recents_panel"
+        android:fragment="com.android.settings.bliss.RecentsSettings"	
+        android:title="@string/recents_options_title"
+        android:icon="@drawable/ic_settings_recents" />
+
     <!-- Notification Drawer -->
     <PreferenceScreen
         android:id="@+id/notification_drawer_settings"
@@ -55,6 +62,13 @@
         android:icon="@drawable/ic_settings_power"
 	    settings:advanced="true" /> 
 
+     <!-- Animation Options -->
+     <PreferenceScreen
+         android:id="@+id/animation_settings"
+         android:title="@string/animation_settings_title"
+         android:fragment="com.android.settings.bliss.AnimationSettings"
+         android:icon="@drawable/ic_settings_display_animations"
+	 settings:advanced="true" />
     <!-- Bliss Downloads  -->
     <PreferenceScreen
         android:key="download_center"
