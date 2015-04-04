@@ -476,5 +476,8 @@
     <!--Device Control-->
     <string name="device_control_title">Device Control</string>
 
+    <!-- BlissRoms OTA -->
+    <string name="bliss_ota">BlissRoms OTA</string>
+
 
 </resources>
