@@ -482,5 +482,8 @@
     <!-- Device specific settings -->
     <string name="screen_off_gesture_settings_title">Screen off gestures</string>
 
+    <!-- Navigation bar button color -->
+    <string name="navbar_button_tint_title">Navigation button tint</string>
+
 
 </resources>

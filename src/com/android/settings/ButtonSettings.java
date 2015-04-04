@@ -45,7 +45,7 @@ import android.view.KeyEvent;
 import android.view.WindowManagerGlobal;
 
 import com.android.internal.util.cm.ScreenType;
-
+import com.android.internal.util.bliss.blissUtils;
 import com.android.settings.cyanogenmod.ButtonBacklightBrightness;
 
 import com.android.settings.search.BaseSearchIndexProvider;
@@ -56,7 +56,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.android.internal.util.bliss.blissUtils;
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 public class ButtonSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
@@ -79,6 +79,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
     private static final String KEY_NAVIGATION_RECENTS_LONG_PRESS = "navigation_recents_long_press";
     private static final String KEY_POWER_END_CALL = "power_end_call";
     private static final String KEY_HOME_ANSWER_CALL = "home_answer_call";
+    private static final String NAVIGATION_BAR_TINT = "navigation_bar_tint";
     private static final String KEY_VOLUME_MUSIC_CONTROLS = "volbtn_music_controls";
 
     private static final String CATEGORY_POWER = "power_key";
@@ -134,6 +135,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
     private ListPreference mNavigationRecentsLongPressAction;
     private SwitchPreference mPowerEndCall;
     private SwitchPreference mHomeAnswerCall;
+    private ColorPickerPreference mNavbarButtonTint; 
 
     private Handler mHandler;
 
@@ -169,6 +171,15 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
                 Settings.System.NAVIGATION_BAR_SHOW, hasNavBarByDefault ? 1 : 0) == 1;
         mEnableNavigationBar.setChecked(enableNavigationBar);
         mEnableNavigationBar.setOnPreferenceChangeListener(this);
+
+        // Navigation bar button color
+        mNavbarButtonTint = (ColorPickerPreference) findPreference(NAVIGATION_BAR_TINT);
+        mNavbarButtonTint.setOnPreferenceChangeListener(this);
+        int intColor = Settings.Secure.getInt(getActivity().getContentResolver(),
+                Settings.Secure.NAVIGATION_BAR_TINT, 0xffffffff);
+        String hexColor = String.format("#%08x", (0xffffffff & intColor));
+        mNavbarButtonTint.setSummary(hexColor);
+        mNavbarButtonTint.setNewPreviewColor(intColor);
 
         // Enable/disable hw keys
         boolean enableHwKeys = Settings.System.getInt(getContentResolver(),
@@ -531,6 +542,14 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.NAVIGATION_BAR_SHOW,
                         ((Boolean) newValue) ? 1 : 0);
+            return true;
+        } else if (preference == mNavbarButtonTint) {
+            String hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(newValue)));
+            preference.setSummary(hex);
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.Secure.putInt(getActivity().getContentResolver(),
+                    Settings.Secure.NAVIGATION_BAR_TINT, intHex);
             return true;
         } else if (preference == mEnableHwKeys) {
             boolean hWkeysValue = (Boolean) newValue;
