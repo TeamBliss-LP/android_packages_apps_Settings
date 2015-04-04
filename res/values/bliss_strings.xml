@@ -479,5 +479,8 @@
     <!-- BlissRoms OTA -->
     <string name="bliss_ota">BlissRoms OTA</string>
 
+    <!-- Device specific settings -->
+    <string name="screen_off_gesture_settings_title">Screen off gestures</string>
+
 
 </resources>
