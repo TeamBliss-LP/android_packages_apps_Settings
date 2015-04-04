@@ -53,6 +53,14 @@
         android:fragment="com.android.settings.cyanogenmod.NotificationDrawerSettings"
         android:icon="@drawable/ic_settings_notification_drawer"
         settings:advanced="true" />
+
+    <!-- Heads Up Options -->        
+    <PreferenceScreen
+        android:key="heads_up_enabled"
+        android:fragment="com.android.settings.bliss.HeadsUpSettings"
+        android:title="@string/category_heads_up"
+        android:icon="@drawable/ic_headsup"
+        settings:advanced="true" /> 
         
     <!-- Power Menu Options -->
     <PreferenceScreen

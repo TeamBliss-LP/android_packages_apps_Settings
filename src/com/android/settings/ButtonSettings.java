@@ -175,8 +175,8 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
         // Navigation bar button color
         mNavbarButtonTint = (ColorPickerPreference) findPreference(NAVIGATION_BAR_TINT);
         mNavbarButtonTint.setOnPreferenceChangeListener(this);
-        int intColor = Settings.Secure.getInt(getActivity().getContentResolver(),
-                Settings.Secure.NAVIGATION_BAR_TINT, 0xffffffff);
+        int intColor = Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.NAVIGATION_BAR_TINT, 0xffffffff);
         String hexColor = String.format("#%08x", (0xffffffff & intColor));
         mNavbarButtonTint.setSummary(hexColor);
         mNavbarButtonTint.setNewPreviewColor(intColor);
@@ -548,8 +548,8 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
                     Integer.valueOf(String.valueOf(newValue)));
             preference.setSummary(hex);
             int intHex = ColorPickerPreference.convertToColorInt(hex);
-            Settings.Secure.putInt(getActivity().getContentResolver(),
-                    Settings.Secure.NAVIGATION_BAR_TINT, intHex);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.NAVIGATION_BAR_TINT, intHex);
             return true;
         } else if (preference == mEnableHwKeys) {
             boolean hWkeysValue = (Boolean) newValue;
