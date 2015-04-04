@@ -66,6 +66,13 @@
             android:defaultValue="false"
             settings:advanced="true"/>
 	        
+        <com.android.settings.cyanogenmod.SecureSettingSwitchPreference
+            android:key="search_panel_enabled"
+            android:title="@string/navigation_ring_enable_title"
+            android:defaultValue="true"
+            android:dependency="enable_nav_bar"	        	    
+            settings:advanced="true"/>
+
         <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
             android:key="navigation_bar_left"
             android:title="@string/navigation_bar_left_title"
