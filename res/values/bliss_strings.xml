@@ -473,5 +473,8 @@
     <string name="recents_show_searchbar">Show Search Bar in Recents</string>
     <string name="recents_show_searchbar_summary">Enable or disable the Google search bar in the recents menu</string>
 
+    <!--Device Control-->
+    <string name="device_control_title">Device Control</string>
+
 
 </resources>
