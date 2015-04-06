@@ -95,6 +95,12 @@
             android:summary="@string/voicemail_breath_summary"
             android:defaultValue="false" />
 
+        <!-- Status bar Bliss logo -->
+       <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
+            android:key="status_bar_bliss_logo"
+            android:title="@string/status_bar_bliss_logo_title"
+            android:summary="@string/status_bar_bliss_logo_summary" />
+
     </PreferenceCategory>    
 
 </PreferenceScreen>

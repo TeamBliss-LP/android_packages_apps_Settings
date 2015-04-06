@@ -617,4 +617,9 @@
     <string name="battery_bar_thickness_title">Battery bar thickness</string>
     <string name="battery_bar_animate_title">Charging animation</string>
     <string name="battery_bar_animate_summary">The charging animation may result in a poor user experience. Enable at your own discretion.</string>  
+
+    <!-- Statusbar Bliss logo -->
+    <string name="status_bar_bliss_logo_title">Bliss logo</string>
+    <string name="status_bar_bliss_logo_summary">Enable to show Bliss logo on the left side of statusbar</string>
+
 </resources>
