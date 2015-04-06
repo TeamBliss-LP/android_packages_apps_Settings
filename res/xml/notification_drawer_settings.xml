@@ -58,6 +58,12 @@
             android:title="@string/qs_four_columns_title"
             android:defaultValue="false" />
 
+	<PreferenceScreen
+            android:key="qs_colors"
+            android:title="@string/qs_colors_title"
+	    android:summary="@string/qs_colors_summary"
+            android:fragment="com.android.settings.bliss.QSColors" />
+
         <com.android.settings.cyanogenmod.SecureSettingSwitchPreference
             android:key="qs_show_brightness_slider"
             android:title="@string/qs_brightness_slider_title"
@@ -70,7 +76,7 @@
             android:defaultValue="false" />
 
         <com.android.settings.cyanogenmod.SecureSettingSwitchPreference
-            android:key="qs_tiles_vibrate"
+            android:key="quick_settings_vibrate"
             android:title="@string/qs_tiles_vibrate_title"
             android:defaultValue="true" />
 
