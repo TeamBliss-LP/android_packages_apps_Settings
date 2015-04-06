@@ -55,5 +55,10 @@
             android:title="@string/notif_system_icons_count_icon_color_title"
             android:defaultValue="0xffE5350D" />
 
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="notif_system_icons_count_text_color"
+            android:title="@string/notif_system_icons_count_text_color_title"
+            android:defaultValue="0xffffffff" />
+
     </PreferenceCategory>
 </PreferenceScreen>
