@@ -44,6 +44,7 @@ public class StatusBarNotifSystemIconsSettings extends SettingsPreferenceFragmen
     private static final String KEY_COLORIZE_NOTIF_ICONS = "notif_system_icons_colorize_notif_icons";
     private static final String KEY_SHOW_COUNT = "notif_system_icons_show_count";
     private static final String KEY_ICON_COLOR = "notif_system_icons_icon_color";
+    private static final String KEY_NOTIF_TEXT_COLOR = "notif_system_icons_notif_text_color";
     private static final String KEY_COUNT_ICON_COLOR = "notif_system_icons_count_icon_color";
     private static final String KEY_COUNT_TEXT_COLOR = "notif_system_icons_count_text_color";
 
@@ -56,6 +57,7 @@ public class StatusBarNotifSystemIconsSettings extends SettingsPreferenceFragmen
     private SwitchPreference mColorizeNotifIcons;
     private SwitchPreference mShowCount;
     private ColorPickerPreference mIconColor;
+    private ColorPickerPreference mNotifTextColor;
     private ColorPickerPreference mCountIconColor;
     private ColorPickerPreference mCountTextColor;
 
@@ -104,6 +106,7 @@ public class StatusBarNotifSystemIconsSettings extends SettingsPreferenceFragmen
         mIconColor.setOnPreferenceChangeListener(this);
 
         PreferenceCategory catColors = (PreferenceCategory) findPreference(KEY_CATEGORY_COLORS);
+        mNotifTextColor = (ColorPickerPreference) findPreference(KEY_NOTIF_TEXT_COLOR);
 
         mCountIconColor = (ColorPickerPreference) findPreference(KEY_COUNT_ICON_COLOR);
         mCountTextColor = (ColorPickerPreference) findPreference(KEY_COUNT_TEXT_COLOR);
@@ -175,6 +178,14 @@ public class StatusBarNotifSystemIconsSettings extends SettingsPreferenceFragmen
                     Settings.System.STATUS_BAR_NOTIF_SYSTEM_ICON_COLOR, intHex);
             preference.setSummary(hex);
             return true;
+        } else if (preference == mNotifTextColor) {
+            hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(newValue)));
+            intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(mResolver,
+                    Settings.System.STATUS_BAR_NOTIF_TEXT_COLOR, intHex);
+            preference.setSummary(hex);
+            return true;
         } else if (preference == mCountIconColor) {
             hex = ColorPickerPreference.convertToARGB(
                     Integer.valueOf(String.valueOf(newValue)));
@@ -236,6 +247,9 @@ public class StatusBarNotifSystemIconsSettings extends SettingsPreferenceFragmen
                                     Settings.System.STATUS_BAR_NOTIF_SYSTEM_ICON_COLOR,
                                     DEFAULT_COLOR);
                             Settings.System.putInt(getOwner().mResolver,
+                                    Settings.System.STATUS_BAR_NOTIF_TEXT_COLOR,
+                                    DEFAULT_COLOR);
+                            Settings.System.putInt(getOwner().mResolver,
                                     Settings.System.STATUS_BAR_NOTIF_COUNT_ICON_COLOR,
                                     DEFAULT_COUNT_ICON_COLOR);
                             Settings.System.putInt(getOwner().mResolver,
@@ -254,6 +268,9 @@ public class StatusBarNotifSystemIconsSettings extends SettingsPreferenceFragmen
                             Settings.System.putInt(getOwner().mResolver,
                                     Settings.System.STATUS_BAR_NOTIF_SYSTEM_ICON_COLOR,
                                     0xff33b5e5);
+                            Settings.System.putInt(getOwner().mResolver,
+                                    Settings.System.STATUS_BAR_NOTIF_TEXT_COLOR,
+                                    0xffff0000);
                             Settings.System.putInt(getOwner().mResolver,
                                     Settings.System.STATUS_BAR_NOTIF_COUNT_ICON_COLOR,
                                     0xff33b5e5);
