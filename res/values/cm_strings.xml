@@ -1069,8 +1069,9 @@
     <string name="expanded_desktop_style_description">Choose a default expanded desktop style</string>
     <string name="expanded_desktop_title">Expanded desktop options</string>
 
-    <string name="lockscreen_settings_title">Lock screen</string>
-    <string name="lockscreen_targets_message">Lock screen shortcuts</string>
+    <string name="cm_lockscreen_shortcuts_title">Bottom Corner Targets</string>
+    <string name="cm_lockscreen_shortcuts_summary">View or change custom bottom corners lockscreen shortcuts</string>
+    <string name="cm_lockscreen_targets_message">Lockscreen shortcuts</string>
     <string name="lockscreen_default_target">Default</string>
     <string name="lockscreen_none_target">None</string>
     <string name="lockscreen_message">Tap an icon on the left or right to reassign a lock screen shortcut.</string>

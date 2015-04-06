@@ -60,7 +60,15 @@
         android:fragment="com.android.settings.bliss.HeadsUpSettings"
         android:title="@string/category_heads_up"
         android:icon="@drawable/ic_headsup"
-        settings:advanced="true" /> 
+        settings:advanced="true" />
+
+    <!-- Lock Screen Options -->
+    <PreferenceScreen
+        android:key="lock_screen"
+        android:fragment="com.android.settings.bliss.LockScreenSettings"
+        android:title="@string/lockscreen_settings_title"
+        android:icon="@drawable/ic_settings_lockscreen"
+	settings:advanced="true" />  
         
     <!-- Power Menu Options -->
     <PreferenceScreen
