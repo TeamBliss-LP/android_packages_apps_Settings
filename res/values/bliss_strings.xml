@@ -30,13 +30,29 @@
     <string name="share_chooser_title">Share BlissPop</string>
 
     <!-- General strings -->
-    <string name="attention">Attention</string>
+    <string name="ok">OK</string>
     <string name="reset">Reset</string>
+    <string name="add">Add</string>
     <string name="help">Help</string>
-    <string name="default_string">Default</string>
+    <string name="reset_android">Android</string>
+    <string name="reset_bliss">Bliss</string>
+    <string name="attention">Attention</string>
     <string name="enabled">Enabled</string>
-    <string name="disabled">Disabled</string>
+    <string name="default_string">Default</string>
+    <string name="more_string">More</string>
+    <string name="color_title">Color</string>
+    <string name="colors_title">Colors</string>
+    <string name="category_colors_title">Customize colors</string>
+    <string name="icons_title">Icons</string>
+    <string name="text_title">Text</string>
+    <string name="background_title">Background</string>
+    <string name="icon_title">Icon</string>
     <string name="reset_message">Reset all entries to default?</string>
+    <string name="reset_option_message">Reset values to\nAndroid- or Bliss default?</string>
+    <string name="category_general_title">General options</string>
+    <string name="dlg_reset_values_message">Reset values to\nAndroid- or Bliss default?</string>
+    <string name="dlg_reset_android">Android</string>
+    <string name="dlg_reset_bliss">Bliss</string>   
     
     <!-- Change Log strings -->
     <string name="changelog_title">View changelog</string>
@@ -522,6 +538,67 @@
 
     <!-- Battery saver -->
     <string name="battery_saver_title">Warning color (stock value 0xf4511e)</string>
+
+    <!-- Status bar notifications and system icons -->
+    <string name="notif_system_icons_colorize_notif_icons_title">Colorize notification icons</string>
+    <!-- <string name="notif_system_icons_colorize_notif_icons_title_phone">Colorize notif. icons</string> -->
+    <string name="notif_system_icons_colorize_notif_icons_summary">Enable to colorize the notification icons color</string>
+    <string name="notif_system_icons_show_count_title">Show notification count</string>
+    <string name="notif_system_icons_show_count_summary">Display the number of pending notifications</string>
+    <string name="notif_system_icons_icon_color_title">Icons</string>
+    <string name="notif_system_icons_notif_text_color_title">Ticker text</string>
+    <string name="notif_system_icons_count_icon_color_title">Notification count icon</string>
+    <string name="notif_system_icons_count_text_color_title">Notification count Text</string>
+
+    <string name="status_bar_notif_system_icons_settings_title">Notifications &amp; system icons</string>
+    <!-- <string name="status_bar_notif_system_icons_settings_title_phone">Notif. &amp; system icons</string> -->
+    <string name="status_bar_notif_system_icons_settings_summary">Customize the notifications &amp; system icons</string>
+
+    <!-- Status bar Header -->
+    <string name="status_bar_expanded_header_settings_title">Status bar header</string>
+    <string name="status_bar_expanded_header_settings_summary">Customize the Expanded Header Layout</string>    
+    <string name="expanded_header_show_weather_title">Show weather</string>
+    <string name="expanded_header_show_weather_summary">Enable to show the weather</string>
+    <string name="expanded_header_show_weather_location_title">Show location</string>
+    <string name="expanded_header_show_weather_location_summary">Enable to show the location</string>
+
+    <!-- Status bar battery status settings -->
+    <string name="status_bar_battery_status_settings_title">Battery status</string>
+    <string name="status_bar_battery_status_settings_summary">Customize the battery status</string>
+    <string name="battery_status_cat_circle_options_title">Customize the circle</string>
+    <string name="battery_status_style_title">Indicator</string>
+    <string name="battery_status_style_icon_portrait">Icon portrait</string>
+    <string name="battery_status_style_icon_landscape">Icon landscape</string>
+    <string name="battery_status_style_circle">Circle</string>
+    <string name="battery_status_style_text">Text</string>
+    <string name="battery_status_style_hidden">Hidden</string>
+    <string name="battery_status_percent_style_title">Percentage text position</string>
+    <string name="battery_status_percent_style_dialog_title">Choose a position</string>
+    <string name="battery_status_percent_style_text_inside">Inside the icon</string>
+    <string name="battery_status_percent_style_text_next">Next to the icon</string>
+    <string name="battery_status_percent_style_default">Hidden (default)</string>
+    <string name="battery_status_charge_animation_speed_title">Charging animation speed</string>
+    <string name="battery_status_charge_animation_speed_none">Disabled</string>
+    <string name="battery_status_charge_animation_speed_slow">Slow</string>
+    <string name="battery_status_charge_animation_speed_normal">Normal</string>
+    <string name="battery_status_charge_animation_speed_fast">Fast</string>
+    <string name="battery_status_show_circle_dotted_title">Circle dotted</string>
+    <string name="battery_status_show_circle_dotted_summary">Activate to show the circle dotted</string>
+    <string name="battery_status_circle_dot_length_title">Circle dot length</string>
+    <string name="battery_status_circle_dot_interval_title">Circle dot interval</string>
+    <string name="battery_status_battery_color_title">Fill</string>
+    <string name="battery_status_text_color_title">Text</string>
+
+    <!-- Status bar signals icon settings  -->
+    <string name="status_bar_signal_settings_title">Mobile &amp; Wifi network icons</string>
+    <string name="status_bar_signal_settings_summary">Customize the status bar Mobile and Wifi network icons</string>
+    <string name="signal_wifi_show_activity_title">Show network activity</string>
+    <string name="signal_wifi_show_activity_summary">Enable to show the network activity</string>
+    <string name="cat_network_icons_title">Network icons</string>
+    <string name="cat_network_activity_icons_title">Activity icons</string>
+    <string name="cat_airplane_mode_icon_title">Airplane mode icon</string>
+    <string name="color_normal_title">Normal</string>
+    <string name="color_fully_title">Fully connected</string>
 
 
 </resources>
