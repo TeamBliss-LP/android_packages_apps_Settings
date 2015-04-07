@@ -129,13 +129,6 @@
     <string name="missed_call_breath_summary">Will give your missed call notifications a breathing effect in the statusbar</string>
     <string name="title_voicemail_breath">Breathing Voicemail</string>
     <string name="voicemail_breath_summary">Will give your voicemail notifications a breathing effect in the statusbar</string>
-    
-    <!-- Display settings screen, setting options for LCD density -->
-    <string name="lcd_density">LCD density</string>
-    <string name="lcd_density_summary">%d DPI</string>
-    <string name="lcd_density_default">Device default</string>
-    <string name="lcd_density_unsupported">Unsupported</string>
-    <string name="restarting_ui">Restarting</string>
 
     <!-- long press back to kill configurable timeout -->
     <string name="kill_app_longpress_timeout_title">Long press timeout</string>
