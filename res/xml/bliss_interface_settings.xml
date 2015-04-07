@@ -76,7 +76,15 @@
         android:title="@string/power_menu_title"
         android:fragment="com.android.settings.cyanogenmod.PowerMenuActions"
         android:icon="@drawable/ic_settings_power"
-	    settings:advanced="true" /> 
+	    settings:advanced="true" />
+
+    <!-- Gesture anywhere -->
+    <PreferenceScreen
+        android:key="gesture_anywhere"
+        android:fragment="com.android.settings.bliss.gestureanywhere.GestureAnywhereSettings"
+        android:title="@string/gesture_anywhere_title"
+	android:icon="@drawable/ic_settings_gestures"
+	settings:advanced="true" />
 
      <!-- Animation Options -->
      <PreferenceScreen
