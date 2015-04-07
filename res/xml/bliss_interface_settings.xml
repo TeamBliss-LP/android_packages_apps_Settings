@@ -93,6 +93,15 @@
          android:fragment="com.android.settings.bliss.AnimationSettings"
          android:icon="@drawable/ic_settings_display_animations"
 	 settings:advanced="true" />
+	 
+    <!-- Circle app bar -->
+    <PreferenceScreen
+        android:key="app_circle_bar"
+        android:fragment="com.android.settings.bliss.AppCircleBar"
+        android:title="@string/app_circle_bar_title"
+        android:icon="@drawable/ic_settings_sidebar"
+	settings:advanced="true" />	 		        
+ 
     <!-- Bliss Downloads  -->
     <PreferenceScreen
         android:key="download_center"
