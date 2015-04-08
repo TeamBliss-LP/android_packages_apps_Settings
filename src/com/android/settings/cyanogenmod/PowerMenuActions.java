@@ -16,7 +16,11 @@
 
 package com.android.settings.cyanogenmod;
 
+import android.app.ActivityManager;
+import android.app.admin.DeviceAdminReceiver;
+import android.app.admin.DevicePolicyManager;
 import android.content.Context;
+import android.content.ContentResolver;
 import android.content.Intent;
 import android.content.pm.UserInfo;
 import android.content.res.Resources;
@@ -26,14 +30,19 @@ import android.os.UserHandle;
 import android.os.UserManager;
 import android.preference.SwitchPreference;
 import android.preference.Preference;
+import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
 import android.preference.ListPreference;
 import android.preference.Preference.OnPreferenceChangeListener;
+import android.preference.SeekBarPreference;
 import android.provider.Settings;
+
+import com.android.settings.Utils;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.util.cm.PowerMenuConstants;
+import com.android.settings.bliss.NumberPickerPreference;
 
 import static com.android.internal.util.cm.PowerMenuConstants.*;
 
@@ -41,9 +50,11 @@ import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PowerMenuActions extends SettingsPreferenceFragment {
+public class PowerMenuActions extends SettingsPreferenceFragment
+        implements OnPreferenceChangeListener {
     final static String TAG = "PowerMenuActions";
 
+    private static final String KEY_SCREENSHOT_DELAY = "screenshot_delay";    
     private SwitchPreference mPowerPref;
     private SwitchPreference mRebootPref;
     private SwitchPreference mScreenshotPref;
@@ -55,12 +66,19 @@ public class PowerMenuActions extends SettingsPreferenceFragment {
     private SwitchPreference mLockdownPref;
 	private SwitchPreference mBugReportPref;
     private SwitchPreference mSilentPref;
-
-
+    
     Context mContext;
     private ArrayList<String> mLocalUserConfig = new ArrayList<String>();
     private String[] mAvailableActions;
     private String[] mAllActions;
+
+    private NumberPickerPreference mScreenshotDelay;
+
+    private ContentResolver mCr;
+    private PreferenceScreen mPrefSet;
+
+    private static final int MIN_DELAY_VALUE = 1;
+    private static final int MAX_DELAY_VALUE = 30;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -68,6 +86,10 @@ public class PowerMenuActions extends SettingsPreferenceFragment {
 
         addPreferencesFromResource(R.xml.power_menu_settings);
         mContext = getActivity().getApplicationContext();
+        
+        mPrefSet = getPreferenceScreen();
+
+        mCr = getActivity().getContentResolver();
 
         mAvailableActions = getActivity().getResources().getStringArray(
                 R.array.power_menu_actions_array);
@@ -104,6 +126,15 @@ public class PowerMenuActions extends SettingsPreferenceFragment {
                 mSilentPref = (SwitchPreference) findPreference(GLOBAL_ACTION_KEY_SILENT);
             }
         }
+
+        mScreenshotDelay = (NumberPickerPreference) mPrefSet.findPreference(
+                SCREENSHOT_DELAY);
+        mScreenshotDelay.setOnPreferenceChangeListener(this);
+        mScreenshotDelay.setMinValue(MIN_DELAY_VALUE);
+        mScreenshotDelay.setMaxValue(MAX_DELAY_VALUE);
+        int ssDelay = Settings.System.getInt(mCr,
+                Settings.System.SCREENSHOT_DELAY, 1);
+        mScreenshotDelay.setCurrentValue(ssDelay);
 
         getUserConfig();
     }
@@ -225,6 +256,17 @@ public class PowerMenuActions extends SettingsPreferenceFragment {
             return super.onPreferenceTreeClick(preferenceScreen, preference);
         }
         return true;
+    }
+
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        if (preference == mScreenshotDelay) {
+            int value = Integer.parseInt(newValue.toString());
+            Settings.System.putInt(mCr, Settings.System.SCREENSHOT_DELAY,
+                    value);
+            return true;
+        }
+        return false;
     }
 
     private boolean settingsArrayContains(String preference) {
