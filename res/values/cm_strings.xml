@@ -1062,6 +1062,8 @@
     <string name="qs_gesture_tile">Gesture Anywhere</string>
     <string name="qs_ambient_display_tile">Ambient display</string>
 
+    <string name="sim_no_number_set">No number assigned</string>
+
     <!-- Gesture Settings -->
     <!-- Settings main menu entry -->
     <string name="gesture_settings_title">Gestures</string>
