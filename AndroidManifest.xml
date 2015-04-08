@@ -2008,6 +2008,33 @@
                        android:resource="@id/security_settings" />
         </activity-alias>
 
+        <!-- Gesture Anywhere -->
+        <activity android:name="Settings$GestureActivity"
+                android:uiOptions="splitActionBarWhenNarrow"
+                android:label="@string/gesture_anywhere_title"
+                android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.bliss.gestureanywhere.GestureAnywhereSettings" />
+            <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
+                android:resource="@id/security_settings" />
+        </activity>
+
+        <activity-alias android:name="com.android.settings.bliss.gestureanywhere.GestureAnywhereSettings"
+                android:taskAffinity="com.android.settings"
+                android:label="@string/gesture_anywhere_title"
+                android:targetActivity="Settings$GestureActivity"
+                android:configChanges="orientation|keyboardHidden|screenSize"
+                android:exported="true">
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                       android:value="com.android.settings.bliss.gestureanywhere.GestureAnywhereSettings" />
+            <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
+                       android:resource="@id/security_settings" />
+        </activity-alias>
+
         <!-- Heads up notifications -->
         <activity android:name="Settings$HeadsUpSettingsActivity"
                 android:uiOptions="splitActionBarWhenNarrow"

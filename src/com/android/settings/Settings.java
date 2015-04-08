@@ -111,5 +111,6 @@ public class Settings extends SettingsActivity {
     public static class NavBarActivity extends SettingsActivity { /* empty */ }
     public static class AppCircleBarActivity extends SettingsActivity { /* empty */ }
     public static class HeadsUpSettingsActivity extends SettingsActivity { /* empty */ }
+    public static class GestureActivity extends SettingsActivity { /* empty */ }
 }
 

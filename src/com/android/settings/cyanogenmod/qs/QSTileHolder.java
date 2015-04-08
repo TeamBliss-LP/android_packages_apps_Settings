@@ -209,6 +209,10 @@ public class QSTileHolder {
                 resourceName = "ic_qs_buttons_on";
                 stringId = R.string.qs_hwkeys_tile;
                 break;
+            case QSConstants.TILE_GESTURE:
+                resourceName = "ic_qs_gestures_on";
+                stringId = R.string.qs_gesture_tile;
+                break;
             default:
                 return null;
         }
