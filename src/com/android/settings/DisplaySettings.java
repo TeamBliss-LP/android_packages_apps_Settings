@@ -593,7 +593,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                     (Boolean) objValue ? 1 : 0);
         }
         if (KEY_DISPLAY_DENSITY.equals(key)) {
-            final int max = SystemProperties.getInt(PROP_DISPLAY_DENSITY_MAX, 600);
+            final int max = SystemProperties.getInt(PROP_DISPLAY_DENSITY_MAX, 700);
             final int min = SystemProperties.getInt(PROP_DISPLAY_DENSITY_MIN, 240);
 
             int value = 0;
