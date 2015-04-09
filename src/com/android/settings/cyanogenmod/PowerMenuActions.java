@@ -128,7 +128,7 @@ public class PowerMenuActions extends SettingsPreferenceFragment
         }
 
         mScreenshotDelay = (NumberPickerPreference) mPrefSet.findPreference(
-                SCREENSHOT_DELAY);
+               KEY_SCREENSHOT_DELAY);
         mScreenshotDelay.setOnPreferenceChangeListener(this);
         mScreenshotDelay.setMinValue(MIN_DELAY_VALUE);
         mScreenshotDelay.setMaxValue(MAX_DELAY_VALUE);
