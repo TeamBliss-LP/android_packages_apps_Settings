@@ -64,7 +64,8 @@
             android:title="@string/navigation_bar_arrow_keys_title"
             android:summary="@string/navigation_bar_arrow_keys_summary"
             android:defaultValue="false"
-            settings:advanced="true"/>
+	    android:dependency="enable_nav_bar"
+	    settings:advanced="true" />
 	        
         <com.android.settings.cyanogenmod.SecureSettingSwitchPreference
             android:key="search_panel_enabled"
@@ -77,13 +78,15 @@
             android:key="navigation_bar_left"
             android:title="@string/navigation_bar_left_title"
             android:summary="@string/navigation_bar_left_summary"
-            android:defaultValue="false" />
+            android:defaultValue="false"
+	    android:dependency="enable_nav_bar" />
 
         <ListPreference
             android:key="navigation_recents_long_press"
             android:dialogTitle="@string/navigation_bar_recents_title"
             android:title="@string/navigation_bar_recents_title"
-            android:persistent="false" />
+            android:persistent="false"
+	    android:dependency="enable_nav_bar" />
 	        
         <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
             android:key="double_tap_sleep_navbar"
@@ -251,13 +254,15 @@
             android:key="volume_wake_screen"
             android:title="@string/button_wake_title"
             android:summary="@string/button_wake_summary"
-            android:defaultValue="false" />
+            android:defaultValue="false"
+            settings:advanced="true"/>
 
         <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
             android:key="volbtn_music_controls"
             android:title="@string/volbtn_music_controls_title"
             android:summary="@string/volbtn_music_controls_summary"
-            android:defaultValue="true" />
+            android:defaultValue="true"
+            settings:advanced="true"/>
 
         <ListPreference
             android:key="volume_key_cursor_control"
@@ -265,12 +270,14 @@
             android:title="@string/volbtn_cursor_control_title"
             android:entries="@array/volbtn_cursor_control_entries"
             android:entryValues="@array/volbtn_cursor_control_values"
-            android:persistent="false" />
+            android:persistent="false"
+            settings:advanced="true"/>
 
         <SwitchPreference
             android:key="swap_volume_buttons"
             android:title="@string/swap_volume_buttons_title"
-            android:summary="@string/swap_volume_buttons_summary" />
+            android:summary="@string/swap_volume_buttons_summary"
+            settings:advanced="true"/>
 
         <SwitchPreference
             android:key="volume_answer_call"
