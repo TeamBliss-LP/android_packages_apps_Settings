@@ -173,23 +173,23 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
         // Internal bool to check if the device have a navbar by default or not!
         boolean hasNavBarByDefault = getResources().getBoolean(
                 com.android.internal.R.bool.config_showNavigationBar);
-        boolean enableNavigationBar = Settings.System.getInt(getContentResolver(),
-                Settings.System.NAVIGATION_BAR_SHOW, hasNavBarByDefault ? 1 : 0) == 1;
+        boolean enableNavigationBar = Settings.Secure.getInt(getContentResolver(),
+                Settings.Secure.NAVIGATION_BAR_SHOW, hasNavBarByDefault ? 1 : 0) == 1;
         mEnableNavigationBar.setChecked(enableNavigationBar);
         mEnableNavigationBar.setOnPreferenceChangeListener(this);
 
         // Navigation bar button color
         mNavbarButtonTint = (ColorPickerPreference) findPreference(NAVIGATION_BAR_TINT);
         mNavbarButtonTint.setOnPreferenceChangeListener(this);
-        int intColor = Settings.System.getInt(getActivity().getContentResolver(),
-                Settings.System.NAVIGATION_BAR_TINT, 0xffffffff);
+        int intColor = Settings.Secure.getInt(getActivity().getContentResolver(),
+                Settings.Secure.NAVIGATION_BAR_TINT, 0xffffffff);
         String hexColor = String.format("#%08x", (0xffffffff & intColor));
         mNavbarButtonTint.setSummary(hexColor);
         mNavbarButtonTint.setNewPreviewColor(intColor);
 
         // Enable/disable hw keys
-        boolean enableHwKeys = Settings.System.getInt(getContentResolver(),
-                Settings.System.ENABLE_HW_KEYS, 1) == 1;
+        boolean enableHwKeys = Settings.Secure.getInt(getContentResolver(),
+                Settings.Secure.ENABLE_HW_KEYS, 1) == 1;
         mEnableHwKeys = (SwitchPreference) findPreference(KEY_ENABLE_HW_KEYS);
         mEnableHwKeys.setChecked(enableHwKeys);
         mEnableHwKeys.setOnPreferenceChangeListener(this);
@@ -532,9 +532,9 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
         Settings.System.putInt(getContentResolver(), setting, Integer.valueOf(value));
     }
 
-   private void updateNavBarSettings() {
-        boolean enableNavigationBar = Settings.System.getInt(getContentResolver(),
-                Settings.System.NAVIGATION_BAR_SHOW,
+    private void updateNavBarSettings() {
+        boolean enableNavigationBar = Settings.Secure.getInt(getContentResolver(),
+                Settings.Secure.NAVIGATION_BAR_SHOW,
                 blissUtils.isNavBarDefault(getActivity()) ? 1 : 0) == 1;
         mEnableNavigationBar.setChecked(enableNavigationBar);
 
@@ -548,8 +548,8 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference == mEnableNavigationBar) {
             mEnableNavigationBar.setEnabled(true);
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.NAVIGATION_BAR_SHOW,
+            Settings.Secure.putInt(getActivity().getContentResolver(),
+                    Settings.Secure.NAVIGATION_BAR_SHOW,
                         ((Boolean) newValue) ? 1 : 0);
             return true;
         } else if (preference == mNavbarButtonTint) {
@@ -557,13 +557,13 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
                     Integer.valueOf(String.valueOf(newValue)));
             preference.setSummary(hex);
             int intHex = ColorPickerPreference.convertToColorInt(hex);
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.NAVIGATION_BAR_TINT, intHex);
+            Settings.Secure.putInt(getActivity().getContentResolver(),
+                    Settings.Secure.NAVIGATION_BAR_TINT, intHex);
             return true;
         } else if (preference == mEnableHwKeys) {
             boolean hWkeysValue = (Boolean) newValue;
-            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
-                    Settings.System.ENABLE_HW_KEYS, hWkeysValue ? 1 : 0);
+            Settings.Secure.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.Secure.ENABLE_HW_KEYS, hWkeysValue ? 1 : 0);
             writeDisableHwKeysOption(getActivity(), hWkeysValue);
             updateDisableHwKeysOption();
             return true;
@@ -650,7 +650,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
                 com.android.internal.R.integer.config_buttonBrightnessSettingDefault);
 
         Settings.System.putInt(context.getContentResolver(),
-                Settings.System.ENABLE_HW_KEYS, enabled ? 1 : 0);
+                Settings.Secure.ENABLE_HW_KEYS, enabled ? 1 : 0);
 
         CmHardwareManager cmHardwareManager =
                 (CmHardwareManager) context.getSystemService(Context.CMHW_SERVICE);
@@ -661,7 +661,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
 
         if (!enabled) {
             int currentBrightness = Settings.Secure.getInt(context.getContentResolver(),
-                    Settings.System.BUTTON_BRIGHTNESS, defaultBrightness);
+                    Settings.Secure.BUTTON_BRIGHTNESS, defaultBrightness);
             if (!prefs.contains("pre_navbar_button_backlight")) {
                 editor.putInt("pre_navbar_button_backlight", currentBrightness);
             }
@@ -679,8 +679,8 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
     }
 
     private void updateDisableHwKeysOption() {
-        boolean enabled = Settings.System.getInt(getActivity().getContentResolver(),
-                Settings.System.ENABLE_HW_KEYS, 1) == 1;
+        boolean enabled = Settings.Secure.getInt(getActivity().getContentResolver(),
+                Settings.Secure.ENABLE_HW_KEYS, 1) == 1;
 
         mEnableHwKeys.setChecked(enabled);
 
@@ -731,7 +731,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
         }
 
         writeDisableHwKeysOption(context, Settings.System.getInt(context.getContentResolver(),
-                Settings.System.ENABLE_HW_KEYS, 1) == 1);
+                Settings.Secure.ENABLE_HW_KEYS, 1) == 1);
     }
 
     private void handleTogglePowerButtonEndsCallPreferenceClick() {
