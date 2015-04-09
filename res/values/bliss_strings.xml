@@ -56,13 +56,9 @@
     <string name="dlg_reset_android">Android</string>
     <string name="dlg_reset_bliss">Bliss</string>   
     
-    <!-- Change Log strings -->
-    <string name="changelog_title">View changelog</string>
-    <string name="changelog_dialog">Changelog</string>
-    <string name="changelog_loading">Loading changelog...</string>
-    <string name="changelog_error">Unable to load changelog</string>
-    <string name="changelog_unknown">Unknown</string>
-    <string name="changelog_version">Version</string>
+    <!-- Changelog -->
+    <string name="changelog_bliss_title">Changelog</string>
+    <string name="changelog_bliss_error">Unable to load changelog</string>
 
     <!-- GCC version info -->
     <string name="sm_android">Gcc android</string>
