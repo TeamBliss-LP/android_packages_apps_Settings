@@ -56,7 +56,7 @@ public class NfcEnabler implements Preference.OnPreferenceChangeListener {
     };
 
     public NfcEnabler(Context context, SwitchPreference switchPreference,
-            PreferenceScreen androidBeam, PreferenceScreen nfcPayment) {
+            PreferenceScreen androidBeam, PreferenceScreen nfcPayment, ListPreference nfcPollingMode) {
         mContext = context;
         mSwitch = switchPreference;
         mAndroidBeam = androidBeam;
