@@ -27,9 +27,17 @@
         android:persistent="false" />
 
     <SwitchPreference
-            android:key="usb_tether_settings"
-            android:title="@string/usb_tethering_button_text"
-            android:persistent="false" />
+        android:key="usb_tether_settings"
+        android:title="@string/usb_tethering_button_text"
+        android:persistent="false" />
+
+    <ListPreference
+        android:key="tether_usb_network"
+        android:title="@string/tether_usb_network_text"
+        android:defaultValue="@string/tether_user_network_default"
+        android:entries="@array/tether_user_networks_entries"
+        android:entryValues="@array/tether_user_networks_entries"
+        android:summary="@string/tether_usb_network_summary" />
 
     <SwitchPreference
         android:key="enable_bluetooth_tethering"
