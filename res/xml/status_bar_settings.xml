@@ -32,6 +32,7 @@
         <PreferenceScreen
             android:fragment="com.android.settings.bliss.BatteryStyle"
             android:key="battery_style_pref"
+            android:defaultValue="0"
             android:title="@string/battery_bar_settings" />
 
         <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
