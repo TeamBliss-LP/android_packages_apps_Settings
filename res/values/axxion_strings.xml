@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2014 The Fusion Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- General strings -->
+    <string name="ok">OK</string>
+    <string name="reset">Reset</string>
+    <string name="reset_android">Android</string>
+    <string name="attention">Attention</string>
+    <string name="enabled">Enabled</string>
+    <string name="disabled">Disabled</string>
+    <string name="default_string">Default</string>
+    <string name="more_string">More</string>
+    <string name="help">Help</string>
+    <string name="color_title">Color</string>
+    <string name="colors_title">Colors</string>
+    <string name="category_colors_title">Customize colors</string>
+    <string name="icons_title">Icons</string>
+    <string name="text_title">Text</string>
+    <string name="reset_message">Reset all entries to default?</string>
+    <string name="reset_option_message">Reset values to\nAndroid- or Fusion default?</string>
+
+    <!-- Color Picker -->
+    <string name="dialog_color_picker">Color Picker</string>
+    <string name="press_color_to_apply">Press on color below to apply</string>
+    <string name="arrow_right">→</string>
+    <string name="arrow_down">↓</string>
+    <string name="hex">Hex:</string>
+    <string name="hex_hint">#ff000000</string>
+    <string name="set">Set</string>
+    <string name="color_default">Default</string>
+
+    <!-- Axxion actions and utilities -->
+    <string name="shortcut_label">Actions &amp; Utilities</string>
+    <string name="toggle_flushmemory">GC memory</string>
+    <string name="toggle_ring_vib">Ring/Vib</string>
+    <string name="toggle_ring_silent">Ring/Silent</string>
+    <string name="toggle_ring_vib_silent">Ring/Vib/Silent</string>
+    <string name="toggle_profile">Profiles</string>
+    <string name="toggle_profile_toast">Profiles are currently disabled</string>
+    <string name="toggle_dream">Screensaver</string>
+    <string name="toggle_dream_failed">Dreams are off or disabled</string>
+
+    <!-- Navigation bar -->
+    <string name="navigation_bar_category">Navigation bar</string>
+    <string name="navbar_force_enable_title">Enable navigation bar</string>
+    <string name="navbar_force_enable_summary">ATTENTION: For devices with on-screen navigation bar, this enables navbar customizations. For devices with hardware navigation keys, it may require a reboot</string>
+    <string name="buttons_and_options_title">Customize buttons and behavior</string>
+
+    <!-- Custom navigation bar targets -->
+    <string name="choose_action_double_tap_title">Choose double tap action</string>
+    <string name="choose_action_title">Choose action</string>
+    <string name="choose_action_short_title">Choose short action</string>
+    <string name="choose_action_long_title">Choose long action</string>
+    <string name="action_long_save">set as long action</string>
+    <string name="action_short">Short action</string>
+    <string name="action_long">Long action</string>
+    <string name="action_double">Double tap action</string>
+    <string name="action_icon">Custom icon</string>
+    <string name="custom_app_icon_successfully">"'s icon set successfully!"</string>
+    <string name="add_button">Add button</string>
+    <string name="category_navbar">Navigation bar</string>
+    <string name="navbar_tab_arrange">Editor</string>
+    <string name="navbar_tab_settings">Settings</string>
+    <string name="change_layouts_title"> Layout </string>
+    <string name="change_layouts_dialog_title">Select a layout to edit</string>
+    <string name="alternate_key_layouts">Number of enabled layouts</string>
+    <string name="alternate_key_layouts_summary">Enable the layout changer keys and set the number of enabled layouts</string>
+    <string name="alternate_key_layouts_enabled_summary">navigation bar layouts are currently enabled</string>
+    <string name="alternate_key_layouts_enabled_partial_summary">out of 5</string>
+    <string name="alternate_key_layouts_all_enabled_summary">All 5 navigation bar layouts are currently enabled</string>
+    <string name="alternate_menu_summary">Allow legacy menu key to replace layout switch when requested</string>
+    <string name="layouts_dialog_title">Number of enabled layouts</string>
+    <string name="enable_sidekeys">Allow legacy menu keys</string>
+    <string name="enable_sidekeys_summary">Add a space to allow the side menu keys in the navigation bar.</string>
+    <string name="navigation_bar_height_text">Bar height in portrait</string>
+    <string name="navigation_bar_height_landscape_text">Bar height in landscape</string>
+    <string name="navigation_bar_width_text">Bar width in landscape</string>
+    <string name="enable_ime_layout">Extra IME buttons</string>
+    <string name="enable_ime_layout_summary">Include a switch that changes the layout to keyboard arrows and the AOSP keyboard switcher</string>
+    <string name="enable_ime_layout_disabled">Not enough room in the layout: enable additional layouts or legacy menu keys</string>
+    <string name="customize_ime_layout_dialog_title">Customize IME key layout</string>
+    <string name="ime_layout_ime">IME switcher</string>
+    <string name="ime_layout_home">home button</string>
+    <string name="ime_layout_blank">blank space before dpad keys</string>
+    <string name="editor_instructions">Rearrange by dragging by the handle on the right. Remove by swiping.</string>
+    <string name="save">Save</string>
+    <string name="navigation_bar_longpress_timeout_text">Button longpress delay</string>
+    <string name="enable_navigation_ring_title">Navigation search assistant</string>
+    <string name="enable_navigation_ring_summary">Enable long-press on home for the google now search assistant</string>
+    <string name="navbar_use_gallary_warning">Info: please select Gallery to save image</string>
+
+    <!-- Navigation Bar left-handed mode -->
+    <string name="navigation_bar_left_title">Left-handed mode</string>
+    <string name="navigation_bar_left_summary">Place the navigation bar on the left side of the screen in landscape mode</string>
+
+    <!-- Shortcut picker -->
+    <string name="use_custom_app_title">Use custom application</string>
+    <string name="use_custom_app_summary">Use custom application instead of the recent applications dialog</string>  
+    <string name="group_applications">Applications</string>
+    <string name="select_custom_app_title">Select custom application</string>
+</resources>

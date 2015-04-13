@@ -26,6 +26,14 @@
         android:fragment="com.android.settings.ButtonSettings"
         android:icon="@drawable/ic_settings_buttons" />
 
+    <!-- Custom Navbar -->
+	<PreferenceScreen
+        android:key="navbar"
+        android:title="@string/bliss_navbar_title"
+        android:fragment="com.android.settings.bliss.NavBarSettings"
+	android:icon="@drawable/ic_navbar_layout"
+        settings:advanced="true"/>
+
     <!-- App circle bar -->
     <PreferenceScreen
         android:key="app_circle_bar"

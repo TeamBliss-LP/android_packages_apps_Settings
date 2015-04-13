@@ -79,11 +79,11 @@ import com.android.settings.applications.InstalledAppDetails;
 import com.android.settings.applications.ManageApplications;
 import com.android.settings.applications.ProcessStatsUi;
 import com.android.settings.blacklist.BlacklistSettings;
-import com.android.settings.cyanogenmod.NavBar;
 import com.android.settings.bliss.AppCircleBar;
 import com.android.settings.bliss.AppSidebar;
 import com.android.settings.bliss.gestureanywhere.GestureAnywhereSettings;
 import com.android.settings.bliss.HeadsUpSettings;
+import com.android.settings.bliss.NavBarSettings;
 import com.android.settings.ButtonSettings;
 import com.android.settings.bluetooth.BluetoothSettings;
 import com.android.settings.dashboard.DashboardCategory;
@@ -132,6 +132,8 @@ import com.android.settings.wifi.AdvancedWifiSettings;
 import com.android.settings.wifi.SavedAccessPointsWifiSettings;
 import com.android.settings.wifi.WifiSettings;
 import com.android.settings.wifi.p2p.WifiP2pSettings;
+
+import com.android.settings.bliss.NavBarSettings;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -338,13 +340,13 @@ public class SettingsActivity extends Activity
             HeadsUpSettings.class.getName(),
             DisplayRotation.class.getName(),
             ExpandedDesktopPreferenceFragment.class.getName(),
-            NavBar.class.getName(),
             AppCircleBar.class.getName(),
             ButtonSettings.class.getName(),
             GestureAnywhereSettings.class.getName(),
             WakeLockBlocker.class.getName(),
             AmbientSettings.class.getName(),
-            AppSidebar.class.getName()
+            AppSidebar.class.getName(),
+			NavBarSettings.class.getName()
     };
 
 
