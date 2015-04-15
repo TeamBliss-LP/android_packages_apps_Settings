@@ -4,7 +4,7 @@
     android:id="@android:id/widget_frame"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:paddingLeft="14dp"
+    android:paddingLeft="15dp"
     android:paddingTop="5dp"
     android:paddingRight="12dp"
     android:paddingBottom="5dp"
