@@ -27,6 +27,12 @@
         android:key="display"
         android:title="@string/display_label">
 
+        <!-- Auto rotate screen -->
+        <SwitchPreference
+                android:key="accelerometer"
+                android:title="@string/accelerometer_title"
+                settings:advanced="false" />
+
         <!-- Brightness slider -->
         <PreferenceScreen
                 android:key="brightness"
@@ -50,23 +56,20 @@
                 android:summary="@string/live_display_summary"
                 android:fragment="com.android.settings.livedisplay.LiveDisplay" />
 
-        <!-- Rotation modes -->
-        <PreferenceScreen
-                android:key="display_rotation"
-                android:title="@string/display_rotation_title"
-                android:fragment="com.android.settings.cyanogenmod.DisplayRotation"
-                settings:advanced="true"/>
-
-        <!-- Auto rotate screen -->
-        <SwitchPreference
-                android:key="accelerometer"
-                android:title="@string/accelerometer_title"
-                settings:advanced="false"/>
-
+        <!-- Doze // Ambient display advanced -->
         <PreferenceScreen
                 android:key="doze_fragment"
                 android:title="@string/doze_title"
-                android:fragment="com.android.settings.bliss.AmbientSettings" />
+                android:fragment="com.android.settings.bliss.AmbientSettings"
+                settings:advanced="true" />
+
+        <!-- Doze // Ambient display -->
+        <SwitchPreference
+                android:key="doze"
+                android:title="@string/doze_title"
+                android:summary="@string/doze_summary"
+                android:persistent="false"
+                settings:advanced="false" />
 
         <!-- Lift to wake -->
         <SwitchPreference
@@ -95,15 +98,15 @@
                 android:defaultValue="true"
                 settings:advanced="true"/>
 
-           <!-- DeviceHandler device specific screen off gesture settings -->
-           <Preference
+        <!-- DeviceHandler device specific screen off gesture settings -->
+        <Preference
                 android:key="screen_off_gesture_settings"
                 android:title="@string/screen_off_gesture_settings_title">
                 <intent
-                   android:action="com.slim.action.LAUNCH_SCREEN_OFF_GESTURE_SETTINGS"
-                   android:targetPackage="com.slim.device"
-                   android:targetClass="com.slim.device.settings.ScreenOffGestureSettings" />
-           </Preference>
+                    android:action="com.slim.action.LAUNCH_SCREEN_OFF_GESTURE_SETTINGS"
+                    android:targetPackage="com.slim.device"
+                    android:targetClass="com.slim.device.settings.ScreenOffGestureSettings" />
+        </Preference>
 
         <!-- Seconds before sleep -->
         <ListPreference
@@ -120,7 +123,7 @@
                 android:title="@string/wake_when_plugged_or_unplugged_title"
                 android:summary="@string/wake_when_plugged_or_unplugged_summary"
                 android:defaultValue="false"
-                settings:advanced="true"/>
+                settings:advanced="true" />
 
         <!-- Cast screen -->
         <PreferenceScreen
@@ -128,17 +131,19 @@
                 android:title="@string/wifi_display_settings_title"
                 settings:keywords="@string/keywords_display_cast_screen"
                 android:fragment="com.android.settings.wfd.WifiDisplaySettings" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
             android:key="interface"
             android:title="@string/category_interface">
-        <!-- expanded desktop -->
+
+        <!-- Expanded desktop -->
         <PreferenceScreen
                 android:key="expanded_desktop"
                 android:title="@string/power_menu_expanded_desktop"
                 android:fragment="com.android.settings.applications.ExpandedDesktopPreferenceFragment"
-                settings:advanced="true"/>
+                settings:advanced="true" />
 
         <!-- Day dream -->
         <PreferenceScreen
@@ -154,11 +159,11 @@
                 android:summary="@string/summary_font_size"
                 android:dialogTitle="@string/dialog_title_font_size" />
 
-    <!-- Display -->
-    <PreferenceScreen
-         android:key="display_settings"
-         android:fragment="com.android.settings.bliss.DisplaySettings"
-         android:title="@string/advanced_display_settings_title" />
+        <!-- Display -->
+        <PreferenceScreen
+                android:key="display_settings"
+                android:fragment="com.android.settings.bliss.DisplaySettings"
+                android:title="@string/advanced_display_settings_title" />
 
     </PreferenceCategory>
 
@@ -179,7 +184,5 @@
                 android:fragment="com.android.settings.notificationlight.NotificationLightSettings" />
 
     </PreferenceCategory>
-
-
 
 </PreferenceScreen>
