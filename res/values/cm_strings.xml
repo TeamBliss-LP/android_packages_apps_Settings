@@ -300,7 +300,7 @@
     <string name="phone_service_state">Voice: <xliff:g id="voice_state">%1$s</xliff:g>, data: <xliff:g id="data_state">%2$s</xliff:g></string>
 
     <!-- About phone screen, build type -->
-    <string name="build_date">Build type</string>
+    <string name="build_date">Build date</string>
     <string name="build_date_default">Unknown</string>
     
     <!-- About phone screen, build type -->
