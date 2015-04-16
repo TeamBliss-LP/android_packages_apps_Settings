@@ -299,21 +299,21 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private void updateTimeoutPreferenceDescription(long currentTimeout) {
         ListPreference preference = mScreenTimeoutPreference;
         String summary;
-        if (currentTimeout < 0) {
-            // Unsupported value
-            summary = "";
-        } else {
+        summary = "";
+        if (currentTimeout >= 0) {
             final CharSequence[] entries = preference.getEntries();
             final CharSequence[] values = preference.getEntryValues();
-            if (entries == null || entries.length == 0) {
-                summary = "";
-            } else {
+            if (entries != null && entries.length > 0) {
+                int maxEntries = Math.min(entries.length, values.length);
                 int best = 0;
-                for (int i = 0; i < values.length; i++) {
+                for (int i = 0; i < maxEntries; i++) {
                     long timeout = Long.parseLong(values[i].toString());
                     if (currentTimeout >= timeout) {
                         best = i;
                     }
+                }
+                if (best >= entries.length) {
+                  best = entries.length - 1;
                 }
                 summary = preference.getContext().getString(R.string.screen_timeout_summary,
                         entries[best]);
