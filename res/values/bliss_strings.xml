@@ -493,14 +493,6 @@
     <!-- BlissRoms OTA -->
     <string name="bliss_ota">BlissRoms OTA</string>
 
-    <!-- QuickSettings haptic feedback -->
-    <string name="qs_tiles_vibrate_title">Vibrate on touch</string>
-
-    <!-- QuickSettings brightness slider -->
-    <string name="qs_brightness_slider_title">Brightness slider</string>
-    <string name="qs_brightness_slider_enabled">Enabled</string>
-    <string name="qs_brightness_slider_disabled">Disabled</string>
-
     <!-- Device specific settings -->
     <string name="screen_off_gesture_settings_title">Screen off gestures</string>
 
@@ -704,6 +696,11 @@
     <string name="qs_transparent_shade_title">Shade alpha</string>
     <string name="qs_transparent_shade_summary">Ability to apply color alpha value and make notification shade transparent.</string>
     <string name="qs_color_switch_title">Custom color switch</string>
+
+    <!-- QuickSettings brightness slider -->
+    <string name="qs_brightness_slider_title">Brightness slider</string>
+    <string name="qs_brightness_slider_enabled">Enabled</string>
+    <string name="qs_brightness_slider_disabled">Disabled</string>
 
     <!-- LockScreen Section -->
     <string name="lockscreen_settings_title">Lockscreen Options</string>
