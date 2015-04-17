@@ -485,6 +485,13 @@
   <string name="profile_appgroup_name_title">Name</string>
   <string name="duplicate_appgroup_name">Doppelter App-Gruppenname!</string>
   <string name="profile_app_delete_confirm">Diese App entfernen?</string>
+  <string name="sound_mode">Benachrichtigungsmodus</string>
+  <string name="ringer_mode">Klingelmodus</string>
+  <string name="lights_mode">LED-Modus</string>
+  <string name="vibrate_mode">Vibrationsmodus</string>
+  <string name="choose_soundtone">Benachrichtigungston wählen</string>
+  <string name="choose_ringtone">Klingelton wählen</string>
+  <string name="soundtone_title">Benachrichtigungston</string>
   <string name="no_bluetooth_triggers">Keine Bluetooth-Geräte gekoppelt.\nTippen Sie, um Bluetooth-Geräte vor dem Konfigurieren von Auslösern zu koppeln.</string>
   <string name="no_wifi_triggers">Keine WLAN-Zugangspunkte konfiguriert.\nTippen Sie, um sich vor dem Konfigurieren von Auslösern per WLAN  zu verbinden.</string>
   <string name="no_triggers_configured">Keine Auslöser konfiguriert. Tippen Sie, um weitere hinzuzufügen.</string>
@@ -735,6 +742,7 @@
   <string name="lockscreen_none_target">Keine</string>
   <string name="lockscreen_message">Das linke oder rechte Symbol berühren, um eine Sperrbilschirm-Verknüpfung zuzuweisen.</string>
   <string name="lockscreen_choose_action_title">Aktion auswählen</string>
+  <string name="lockscreen_visualizer_title">Musikvisualisierung anzeigen</string>
   <string name="whisperpush_title">WhisperPush</string>
   <string name="whisperpush_summary">Einstellungen für sichere SMS</string>
   <string name="navigation_ring_title">Navigationsring-Verknüpfungen</string>
@@ -777,6 +785,10 @@
   <string name="recents_show_searchbar">Suchleiste im Anwendungsverlauf anzeigen</string>
   <string name="keywords_recents_show_searchbar">Anwendungsverlauf aktivieren deaktivieren anzeigen Suchleiste Suche ausblenden</string>
   <string name="sim_ringtone_title">SIM %d Klingelton</string>
+  <string name="interruptions_ignore_while_media_title">Hervorheben verhindern</string>
+  <string name="interruptions_ignore_while_media_summary">Medienlautstärke beim Eintreffen einer Benachrichtigung nicht reduzieren</string>
+  <string name="live_display_summary">Optimiert Ihren Bildschirm basierend auf der Tageszeit und den Umgebungsbedingungen, um die Lesbarkeit zu verbessern und die Ermüdung der Augen zu mildern</string>
+  <string name="live_display_mode">Bildschirmmodus</string>
   <string name="live_display_color_temperature_title">Farbtemperatur</string>
   <string name="live_display_color_temperature_summary">Tag: <xliff:g id="day_temperature">%1$d</xliff:g> K Nacht: <xliff:g id="night_temperature">%2$d</xliff:g> K</string>
   <string name="live_display_color_temperature_label"><xliff:g id="degrees">%1$d</xliff:g> K</string>
