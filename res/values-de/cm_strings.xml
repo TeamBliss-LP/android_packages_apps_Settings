@@ -270,6 +270,7 @@
   <string name="navigation_bar_reset_message">Alle Einstellungen löschen und das Standardlayout wiederherstellen?</string>
   <string name="navigation_bar_arrow_keys_title">Pfeiltasten beim Tippen anzeigen</string>
   <string name="navigation_bar_arrow_keys_summary">Zeige beim Tippen links und rechts Cursor-Tasten. Deaktiviert die Eingabemethoden-Auswahl.</string>
+  <string name="navigation_bar_recents_title">Langes Drücken auf Anwendungsverlauf</string>
   <string name="header_category_personalization">Personalisierung</string>
   <string name="status_bar_title">Statusleiste</string>
   <string name="status_bar_toggle_brightness">Helligkeitssteuerung</string>
@@ -296,6 +297,9 @@
   <string name="status_bar_battery_percentage_default">Ausgeblendet</string>
   <string name="status_bar_battery_percentage_text_inside">Innerhalb des Symbols</string>
   <string name="status_bar_battery_percentage_text_next">Neben dem Symbol</string>
+  <string name="status_bar_show_unused_sims_title">Zeige leere SIM-Symbole</string>
+  <string name="status_bar_show_unused_sims_title_summary_off">Symbole ungenutzter SIM-Slots ausblenden</string>
+  <string name="status_bar_show_unused_sims_title_summary_on">Unbenutzte SIM-Slots zeigen</string>
   <string name="edit_light_settings">Farbeinstellungen ändern</string>
   <string name="pulse_speed_title">Pulsdauer und Geschwindigkeit</string>
   <string name="default_time">Normal</string>
@@ -329,6 +333,7 @@
   <string name="notification_light_voicemail_title">Sprachnachricht</string>
   <string name="notification_ringtone_title_cm">Benachrichtigungston</string>
   <string name="headset_connect_player_title">Musik-App starten</string>
+  <string name="headset_connect_player_summary">Beim Verbinden eines Kopfhörers die Standard-Musik-App starten</string>
   <string name="ime_switcher_notify">Auswahlsymbol</string>
   <string name="ime_switcher_notify_summary">Zeige Symbol für Eingabemethodenauswahl</string>
   <string name="app_notification_show_on_keyguard_title">Auf dem Sperrbildschirm anzeigen</string>
@@ -337,6 +342,8 @@
   <string name="app_notification_no_ongoing_on_keyguard_summary">Keine dauerhaften Benachrichtigungen dieser App auf dem Sperrbildschirm anzeigen</string>
   <string name="high_touch_sensitivity_title">Hohe Touch-Empfindlichkeit</string>
   <string name="high_touch_sensitivity_summary">Touch-Empfindlichkeit erhöhen, um den Touchscreen auch mit Handschuhen bedienen zu können</string>
+  <string name="touchscreen_hovering_title">Touchscreen als Maus verwenden</string>
+  <string name="touchscreen_hovering_summary">Erlaubt es den über dem Touchscreen schwebenden Finger im Browser, Remote Desktop usw. als Mauszeiger zu verwenden</string>
   <string name="app_ops_summaries_coarse_location">Ungefährer Standort</string>
   <string name="app_ops_summaries_fine_location">Genauer Standort</string>
   <string name="app_ops_summaries_gps">GPS</string>
@@ -727,6 +734,8 @@
   <string name="wifi_mhz">MHz</string>
   <string name="maximum_head_level">Kopf: %1$s W/kg</string>
   <string name="maximum_body_level">Körper: %1$s W/kg</string>
+  <string name="ic_code_model">Modell: %1$s</string>
+  <string name="ic_code_full">IC: %1$s</string>
   <string name="power_menu_expanded_desktop">Erweiterter Desktop</string>
   <string name="expanded_hide_nothing">Nichts ausblenden</string>
   <string name="expanded_hide_status">Statusleiste ausblenden</string>
@@ -778,7 +787,7 @@
   <string name="category_interface">Oberfläche</string>
   <string name="category_calibration">Kalibrierung</string>
   <string name="display_and_lights">Display &amp; LED</string>
-  <string name="notification_manager">Benachrichtigungs-Verwaltung</string>
+  <string name="notification_manager">Benachrichtigungen</string>
   <string name="lockscreen_settings">Bildschirmsperre</string>
   <string name="category_lights">LED</string>
   <string name="power_usage_history_title">Akkuverbrauch</string>

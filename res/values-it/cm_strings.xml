@@ -294,9 +294,12 @@
   <string name="status_bar_battery_style_text">Testo</string>
   <string name="status_bar_battery_style_hidden">Nascosto</string>
   <string name="status_bar_battery_percentage_title">Percentuale della batteria</string>
-  <string name="status_bar_battery_percentage_default">Nascosto</string>
+  <string name="status_bar_battery_percentage_default">Nascosta</string>
   <string name="status_bar_battery_percentage_text_inside">All\'interno dell\'icona</string>
   <string name="status_bar_battery_percentage_text_next">Accanto all\'icona</string>
+  <string name="status_bar_show_unused_sims_title">Visualizza icone SIM vuote</string>
+  <string name="status_bar_show_unused_sims_title_summary_off">Nascondi icone di slot SIM inutilizzati</string>
+  <string name="status_bar_show_unused_sims_title_summary_on">Indica slot SIM inutilizzati</string>
   <string name="edit_light_settings">Modifica impostazioni luce</string>
   <string name="pulse_speed_title">Durata e velocità del lampeggio</string>
   <string name="default_time">Normale</string>
@@ -329,6 +332,8 @@
   <string name="notification_light_missed_call_title">Chiamata persa</string>
   <string name="notification_light_voicemail_title">Messaggio vocale</string>
   <string name="notification_ringtone_title_cm">Suoneria notifiche</string>
+  <string name="headset_connect_player_title">Avvia lettore musicale</string>
+  <string name="headset_connect_player_summary">Lancia il lettore musicale predefinito quando vengono connesse le cuffie</string>
   <string name="ime_switcher_notify">Icona selettore</string>
   <string name="ime_switcher_notify_summary">Mostra icona selettore tastiera</string>
   <string name="app_notification_show_on_keyguard_title">Mostra nella schermata di sblocco</string>
@@ -393,7 +398,7 @@
   <string name="app_ops_summaries_read_mms">lettura MMS</string>
   <string name="app_ops_summaries_write_mms">scrittura MMS</string>
   <string name="app_ops_summaries_auto_start">avvio automatico</string>
-  <string name="app_ops_summaries_nfc_change">Cambia NFC</string>
+  <string name="app_ops_summaries_nfc_change">cambia NFC</string>
   <string name="app_ops_summaries_delete_sms">elimina SMS</string>
   <string name="app_ops_summaries_delete_mms">elimina MMS</string>
   <string name="app_ops_summaries_delete_contacts">elimina contatti</string>
@@ -478,6 +483,22 @@
   <string name="profile_setup_setup_triggers_title_config">Modifica inneschi: <xliff:g id="profile_name">%1$s</xliff:g></string>
   <string name="profile_setup_actions_title">Step 2: configura le azioni</string>
   <string name="profile_setup_actions_title_config">Riconfigura le azioni</string>
+  <string name="profile_appgroups_manage">Gruppi app</string>
+  <string name="profile_appgroup_manage">Gestisci gruppo app</string>
+  <string name="profile_appgroups_title">Gruppi app</string>
+  <string name="profile_new_appgroup">Nuovo gruppo app</string>
+  <string name="profile_delete_appgroup">Eliminare questo gruppo di app?</string>
+  <string name="profile_appgroup_name_prompt">Inserisci un nome per il nuovo gruppo di app</string>
+  <string name="profile_appgroup_name_title">Nome</string>
+  <string name="duplicate_appgroup_name">Nome gruppo app già esistente!</string>
+  <string name="profile_app_delete_confirm">Rimuovere questa app?</string>
+  <string name="sound_mode">Modalità notifica</string>
+  <string name="ringer_mode">Modalità suoneria</string>
+  <string name="lights_mode">Modalità luci di notifica</string>
+  <string name="vibrate_mode">Modalità vibrazione</string>
+  <string name="choose_soundtone">Scegli tono notifiche</string>
+  <string name="choose_ringtone">Scegli suoneria</string>
+  <string name="soundtone_title">Tono notifiche</string>
   <string name="no_bluetooth_triggers">Nessun dispositivo Bluetooth accoppiato. \nTocca il dispositivo Bluetooth per accoppiarlo prima di configurare gli inneschi.</string>
   <string name="no_wifi_triggers">Nessun punto d\'accesso Wi\u2011Fi configurato.\nTocca per connetterti al Wi\u2011Fi prima di configurare gli inneschi.</string>
   <string name="no_triggers_configured">Nessun innesco configurato. Tocca per aggiungerne altri.</string>
@@ -695,7 +716,7 @@
   <string name="qs_tile_performance">Modalità batteria</string>
   <string name="qs_tile_nfc">NFC</string>
   <string name="qs_tile_compass">Bussola</string>
-  <string name="qs_tile_lockscreen">Blocco schermo</string>
+  <string name="qs_tile_lockscreen">Schermata di sblocco</string>
   <string name="qs_tile_lte">LTE</string>
   <string name="qs_tile_screen_timeout">Sospensione schermo</string>
   <string name="qs_main_tiles_title">Ingrandisci prima riga</string>
@@ -713,6 +734,8 @@
   <string name="wifi_mhz">MHz</string>
   <string name="maximum_head_level">Testa: %1$s W/kg</string>
   <string name="maximum_body_level">Corpo: %1$s W/kg</string>
+  <string name="ic_code_model">Modello: %1$s</string>
+  <string name="ic_code_full">IC: %1$s</string>
   <string name="power_menu_expanded_desktop">Desktop esteso</string>
   <string name="expanded_hide_nothing">Non nascondere nulla</string>
   <string name="expanded_hide_status">Nascondi la barra di stato</string>
