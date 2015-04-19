@@ -74,7 +74,7 @@
     <string name="supersu_title">SuperSU</string> 
 
     <!-- About phone screen, Bliss version -->
-    <string name="mod_version">Bliss version</string>
+    <string name="bliss_mod_version">Bliss version</string>
     <string name="mod_build_version">Bliss build</string>
     <string name="mod_version_default">Unknown</string>
     
@@ -483,13 +483,12 @@
     <string name="scroll_disclaimer_summary">Note: Most apps need to be restarted for custom values to take effect</string>
     <string name="animation_settings_reset_message">Reset all animation settings to default?</string>
 
-
     <!-- Search Bar Switcher -->
     <string name="recents_show_searchbar">Show Search Bar in Recents</string>
     <string name="recents_show_searchbar_summary">Enable or disable the Google search bar in the recents menu</string>
 
-    <!--Device Control-->
-    <string name="device_control_title">Device Control</string>
+    <!-- Kernel Adiutor -->
+    <string name="kernel_adiutor_title">Kernel Adiutor</string>
 
     <!-- BlissRoms OTA -->
     <string name="bliss_ota">BlissRoms OTA</string>

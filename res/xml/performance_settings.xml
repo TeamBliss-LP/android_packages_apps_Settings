@@ -55,14 +55,14 @@
             android:summary="@string/pref_force_highend_gfx_summary" />
     </PreferenceCategory>
 
-    <!-- Device Control -->
+    <!-- Kernel Adiutor -->
     <PreferenceScreen 
-        android:id="@+id/device_control"
-        android:title="@string/device_control_title">
+        android:id="@+id/kernel_adiutor"
+        android:title="@string/kernel_adiutor_title">
             <intent
                 android:action="android.intent.action.MAIN"
-		        android:targetPackage="org.namelessrom.devicecontrol"
-                android:targetClass="org.namelessrom.devicecontrol.MainActivity" />
+		        android:targetPackage="com.grarak.kerneladiutor"
+                android:targetClass="com.grarak.kerneladiutor.MainActivity" />
     </PreferenceScreen>	    
 
 </PreferenceScreen>

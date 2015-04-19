@@ -2397,16 +2397,17 @@
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="com.android.settings.SHORTCUT"/>
             </intent-filter>
-        </activity>		
+        </activity>
 
+        <!-- Gesture Anywhere -->
         <activity android:name=".bliss.gestureanywhere.GestureAnywhereBuilderActivity" />
         <activity android:name=".bliss.gestureanywhere.GestureAnywhereCreateGestureActivity" />
         
-        <!-- Device Control Activity -->
-        <activity android:name="org.namelessrom.devicecontrol.MainActivity"/>
+        <!-- Kernel Adiutor -->
+        <activity android:name="com.grarak.kerneladiutor.MainActivity"/>
 
-    	<!-- Bliss Roms OTA Update -->
-		<activity android:name="com.chummy.blissroms.updates.activities.MainActivity" />
+        <!-- Bliss Roms OTA Update -->
+        <activity android:name="com.chummy.blissroms.updates.activities.MainActivity" />
 
         <receiver android:name=".widget.SettingsAppWidgetProvider"
                 android:label="@string/gadget_title"
