@@ -547,6 +547,8 @@
     <string name="notif_system_icons_notif_text_color_title">Ticker text</string>
     <string name="notif_system_icons_count_icon_color_title">Notification count icon</string>
     <string name="notif_system_icons_count_text_color_title">Notification count Text</string>
+    <string name="notif_system_icons_show_ticker_title">Notification ticker</string>
+    <string name="notif_system_icons_show_ticker_summary">Notification text animation in the statusbar</string>
 
     <string name="status_bar_notif_system_icons_settings_title">Notifications &amp; system icons</string>
     <!-- <string name="status_bar_notif_system_icons_settings_title_phone">Notif. &amp; system icons</string> -->

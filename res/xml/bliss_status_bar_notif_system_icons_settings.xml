@@ -29,6 +29,12 @@
             android:defaultValue="false" />
 
         <SwitchPreference
+            android:key="notif_system_icons_show_ticker"
+            android:title="@string/notif_system_icons_show_ticker_title"
+            android:summary="@string/notif_system_icons_show_ticker_summary"
+            android:defaultValue="false" />
+
+        <SwitchPreference
             android:key="notif_system_icons_show_count"
             android:title="@string/notif_system_icons_show_count_title"
             android:summary="@string/notif_system_icons_show_count_summary"
@@ -43,6 +49,11 @@
         <net.margaritov.preference.colorpicker.ColorPickerPreference
             android:key="notif_system_icons_icon_color"
             android:title="@string/notif_system_icons_icon_color_title"
+            android:defaultValue="0xffffffff" />
+
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="notif_system_icons_notif_text_color"
+            android:title="@string/notif_system_icons_notif_text_color_title"
             android:defaultValue="0xffffffff" />
 
         <net.margaritov.preference.colorpicker.ColorPickerPreference
