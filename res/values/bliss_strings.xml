@@ -491,7 +491,7 @@
     <string name="kernel_adiutor_title">Kernel Adiutor</string>
 
     <!-- BlissRoms OTA -->
-    <string name="bliss_ota">BlissRoms OTA</string>
+    <string name="bliss_ota">Updates</string>
 
     <!-- Device specific settings -->
     <string name="screen_off_gesture_settings_title">Screen off gestures</string>
