@@ -343,13 +343,19 @@
     <string name="omniswitch_first_time_message">Make sure you have enabled OmniSwitch. You can do this by using \"Settings\" below</string>
 
     <!-- Color Picker -->
-    <string name="dialog_color_picker">Color picker</string>
-    <string name="press_color_to_apply">Press on color at right to apply</string>
+    <string name="dialog_color_picker_title">Color Picker</string>
+    <string name="press_color_to_apply">Press on color below to apply</string>
+    <string name="palette_bliss_title">Bliss</string>
+    <string name="palette_material_title">Material</string>
+    <string name="palette_rgb_title">RGB</string>
+    <string name="reset_android_title">Android default</string>
+    <string name="reset_bliss_title">Bliss default</string>
     <string name="arrow_right">→</string>
+    <string name="arrow_down">↓</string>
     <string name="hex">Hex:</string>
     <string name="hex_hint">#ff000000</string>
     <string name="set">Set</string>
-    <string name="color_default">Default</string>
+
 
     <!-- Animations Category -->    
     <string name="animation_settings_category">Display and Animations</string>
