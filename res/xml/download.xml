@@ -15,19 +15,19 @@
 -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
-    android:title="@string/download_category" >
-    
+    android:title="@string/download_category">
+<!--    
     <PreferenceCategory
         android:key="contest_category"
         android:title="@string/contest_category">
 
-    <Preference
-        android:key="contest_bliss"
-        android:title="@string/contest_bliss_title"
-        android:summary="@string/contest_bliss_summary" />
+        <Preference
+            android:key="contest_bliss"
+            android:title="@string/contest_bliss_title"
+            android:summary="@string/contest_bliss_summary" />
 
     </PreferenceCategory>
-
+-->
     <PreferenceCategory
         android:key="support_category"
         android:title="@string/support_category">
@@ -36,7 +36,7 @@
         android:key="support_bliss"
         android:title="@string/support_bliss_title"
         android:summary="@string/support_bliss_summary" />
-	
+
     </PreferenceCategory>    
 
     <PreferenceCategory
@@ -47,7 +47,7 @@
         android:key="bliss_official"
         android:title="@string/bliss_official_title"
         android:summary="@string/bliss_official_summary" />
-	
+
     <Preference
         android:key="bliss_nightly"
         android:title="@string/bliss_nightly_title"

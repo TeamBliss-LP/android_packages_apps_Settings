@@ -82,21 +82,21 @@
     <string name="download_category">Bliss Downloads</string>
     <string name="download_category_summary">Help Support Team Bliss</string>
     <string name="rom_category">Rom Download</string>
-    <string name="gapps_category">GAPPS Packages</string>
+    <string name="gapps_category">Gapps Packages</string>
     <string name="kernels_category">Kernel Downloads</string>
     <string name="addons_category">Misc Addons</string>        
     <string name="bliss_official_title">BlissPop Official Builds</string>
     <string name="bliss_official_summary">Link for official release builds of BlissPop</string>
     <string name="bliss_nightly_title">BlissPop Nightly Builds</string>
     <string name="bliss_nightly_summary">Link for nightly release builds of BlissPop</string>
-    <string name="banksgapps_title">Banks Gapps</string>
-    <string name="banksgapps_summary">Banks Gapps are generally recommended gapps for use on BlissPop</string>    
-    <string name="pagapps_title">JAJB Gapps</string>
-    <string name="pagapps_summary">Newer GAPP packages for both Android 5.0 and 5.1</string>
+    <string name="banksgapps_title">BaNkS Goggle Apps</string>
+    <string name="banksgapps_summary">Recommended Google Apps package for use on BlissPop</string>    
+    <string name="pagapps_title">JAJB Minimal Google Apps</string>
+    <string name="pagapps_summary">Alternative Google Apps, available for 5.0.x and 5.1 builds</string>
     <string name="kernels_title">Bliss Kernels</string>
-    <string name="kernels_summary">Various Kernels for Devices Supported by Team Bliss</string>
+    <string name="kernels_summary">Various Kernels for devices supported by Team Bliss</string>
     <string name="addons_title">Misc Addons</string>
-    <string name="addons_summary">Sound Mods, Splash Screens, etc.</string>
+    <string name="addons_summary">Sound Mods, Splash Screens etc.</string>
 
     <!-- Support Team Bliss -->
     <string name="support_category">Support</string>
