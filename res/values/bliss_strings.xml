@@ -82,11 +82,11 @@
 
     <!-- Download Center -->
     <string name="download_category">Bliss Downloads</string>
-    <string name="download_category_summary">Help Support Team Bliss</string>
+    <string name="download_category_summary">Help to support Team Bliss</string>
     <string name="rom_category">Rom Download</string>
     <string name="gapps_category">Gapps Packages</string>
     <string name="kernels_category">Kernel Downloads</string>
-    <string name="addons_category">Misc Addons</string>        
+    <string name="addons_category">Misc Addons</string>
     <string name="bliss_official_title">BlissPop Official Builds</string>
     <string name="bliss_official_summary">Link for official release builds of BlissPop</string>
     <string name="bliss_nightly_title">BlissPop Nightly Builds</string>
@@ -102,8 +102,8 @@
 
     <!-- Support Team Bliss -->
     <string name="support_category">Support</string>
-    <string name="support_bliss_title">Help Support Team Bliss</string>
-    <string name="support_bliss_summary">Link to Team Bliss PayPal Donation</string>
+    <string name="support_bliss_title">Help to support Team Bliss</string>
+    <string name="support_bliss_summary">Link to Team Bliss PayPal donation</string>
 
     <!-- Team Bliss Contests -->
     <string name="contest_category">Current Bliss Contests</string>

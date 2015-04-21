@@ -208,14 +208,8 @@
   <string name="block_notifications_title">Filter notifications</string>
   <string name="block_notifications_summary">Manage ignored notifications and filters</string>
   <string name="no_filters_title">No filters set</string>
-  <string name="cmupdate_settings_title">CyanogenMod updates</string>
-  <string name="update_recovery_title">Update Cyanogen recovery</string>
-  <string name="update_recovery_summary">Update recovery with system updates</string>
-  <string name="update_recovery_on_warning">NOTICE: When this feature is enabled, your installed recovery will be replaced by one included with the current version of the running OS.\n\nYour recovery will be updated along with upgrades to your system, helping to ensure compatibility with future versions.\n\nWould you like to enable this feature?</string>
-  <string name="update_recovery_off_warning">WARNING: When this feature is disabled, your installed recovery will not be updated with OS upgrades.\n\nFuture OS updates may not install with outdated or custom recovery versions.\n\nDo you really want to disable this feature?</string>
-  <string name="mod_version">CyanogenMod version</string>
   <string name="mod_version_default">Unknown</string>
-  <string name="model_name">Model name</string>
+  <string name="device_model">Model name</string>
   <string name="build_date">Build date</string>
   <string name="contributor_cloud_title">Contributors</string>
   <string name="phone_service_state">Voice: <xliff:g id="voice_state">%1$s</xliff:g>, data: <xliff:g id="data_state">%2$s</xliff:g></string>
@@ -223,7 +217,6 @@
   <string name="double_tap_to_wake_summary">Double-tap on the screen to turn on the display</string>
   <string name="proximity_wake_title">Prevent accidental wake-up</string>
   <string name="proximity_wake_summary">Check the proximity sensor prior to waking up screen</string>
-  <string name="privacy_settings_cyanogenmod_title">Privacy</string>
   <string name="privacy_guard_default_title">Enabled by default</string>
   <string name="privacy_guard_default_summary">Enable by default for newly-installed apps</string>
   <string name="privacy_guard_manager_title">Privacy Guard</string>
@@ -662,7 +655,6 @@
   <string name="graphics_title">Graphics and rendering</string>
   <string name="edge_gesture_service_title">Block gesture touch events</string>
   <string name="edge_gesture_service_summary">Don\'t send touch events for navigation and status bar gestures to apps</string>
-  <string name="cmlicense_title">CyanogenMod legal</string>
   <string name="settings_cmlicense_activity_title">CyanogenMod legal</string>
   <string name="settings_cmlicense_activity_unreachable">You don\'t have a data connection. To view this information now, go to %s from any computer connected to the Internet.</string>
   <string name="unlock_quick_unlock_control_title">Quick unlock</string>
