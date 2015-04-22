@@ -26,12 +26,12 @@
                 android:targetPackage="com.android.development"
                 android:targetClass="com.android.development.Development" />
     </PreferenceScreen>
-
+<!--
     <com.android.settings.BugreportPreference
             android:key="bugreport"
             android:title="@*android:string/bugreport_title"
             android:dialogTitle="@*android:string/bugreport_title" />
-        
+-->        
     <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
         android:key="disable_fc_notifications"
         android:title="@string/disable_fc_notifications_title"
@@ -102,12 +102,12 @@
         android:persistent="false"
         android:entries="@array/root_access_entries"
         android:entryValues="@array/root_access_values" />
-
+<!--
     <SwitchPreference
         android:key="update_recovery"
         android:title="@string/update_recovery_title"
         android:summary="@string/update_recovery_summary" />
-
+-->
     <PreferenceCategory android:key="debug_debugging_category"
             android:title="@string/debug_debugging_category">
 
@@ -146,12 +146,12 @@
             android:key="enable_terminal"
             android:title="@string/enable_terminal_title"
             android:summary="@string/enable_terminal_summary" />
-
+<!--
         <SwitchPreference
             android:key="bugreport_in_power"
             android:title="@string/bugreport_in_power"
             android:summary="@string/bugreport_in_power_summary"/>
-
+-->
         <SwitchPreference
             android:key="allow_mock_location"
             android:title="@string/allow_mock_location"

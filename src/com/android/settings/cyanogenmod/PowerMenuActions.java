@@ -64,7 +64,6 @@ public class PowerMenuActions extends SettingsPreferenceFragment
     private SwitchPreference mUsersPref;
     private SwitchPreference mSettingsPref;
     private SwitchPreference mLockdownPref;
-	private SwitchPreference mBugReportPref;
     private SwitchPreference mSilentPref;
     
     Context mContext;
@@ -120,8 +119,6 @@ public class PowerMenuActions extends SettingsPreferenceFragment
                 mSettingsPref = (SwitchPreference) findPreference(GLOBAL_ACTION_KEY_SETTINGS);
             } else if (action.equals(GLOBAL_ACTION_KEY_LOCKDOWN)) {
                 mLockdownPref = (SwitchPreference) findPreference(GLOBAL_ACTION_KEY_LOCKDOWN);
-            } else if (action.equals(GLOBAL_ACTION_KEY_BUGREPORT)) {
-                mBugReportPref = (SwitchPreference) findPreference(GLOBAL_ACTION_KEY_BUGREPORT);
             } else if (action.equals(GLOBAL_ACTION_KEY_SILENT)) {
                 mSilentPref = (SwitchPreference) findPreference(GLOBAL_ACTION_KEY_SILENT);
             }
@@ -187,10 +184,6 @@ public class PowerMenuActions extends SettingsPreferenceFragment
             mLockdownPref.setChecked(settingsArrayContains(GLOBAL_ACTION_KEY_LOCKDOWN));
         }
 
-        if (mBugReportPref != null) {
-            mBugReportPref.setChecked(settingsArrayContains(GLOBAL_ACTION_KEY_BUGREPORT));
-        }
-
         if (mSilentPref != null) {
             mSilentPref.setChecked(settingsArrayContains(GLOBAL_ACTION_KEY_SILENT));
         }
@@ -244,10 +237,6 @@ public class PowerMenuActions extends SettingsPreferenceFragment
             value = mLockdownPref.isChecked();
             updateUserConfig(value, GLOBAL_ACTION_KEY_LOCKDOWN);
 
-        } else if (preference == mBugReportPref) {
-            value = mBugReportPref.isChecked();
-            updateUserConfig(value, GLOBAL_ACTION_KEY_BUGREPORT);
-
         } else if (preference == mSilentPref) {
             value = mSilentPref.isChecked();
             updateUserConfig(value, GLOBAL_ACTION_KEY_SILENT);
@@ -294,8 +283,6 @@ public class PowerMenuActions extends SettingsPreferenceFragment
     }
 
     private void updatePreferences() {
-        boolean bugreport = Settings.Secure.getInt(getContentResolver(),
-                Settings.Secure.BUGREPORT_IN_POWER_MENU, 0) != 0;
         boolean profiles = Settings.System.getInt(getContentResolver(),
                 Settings.System.SYSTEM_PROFILES_ENABLED, 1) != 0;
 
@@ -305,15 +292,6 @@ public class PowerMenuActions extends SettingsPreferenceFragment
                 mProfilePref.setSummary(null);
             } else {
                 mProfilePref.setSummary(R.string.power_menu_profiles_disabled);
-            }
-        }
-
-        if (mBugReportPref != null) {
-            mBugReportPref.setEnabled(bugreport);
-            if (bugreport) {
-                mBugReportPref.setSummary(null);
-            } else {
-                mBugReportPref.setSummary(R.string.power_menu_bug_report_disabled);
             }
         }
     }
