@@ -49,6 +49,7 @@ public class StatusBarSignalSettings extends SettingsPreferenceFragment implemen
     private static final String KEY_ACTIVITY_NORMAL_COLOR = "signal_wifi_network_activity_icons_normal_color";
     private static final String KEY_ACTIVITY_FULLY_COLOR = "signal_wifi_network_activity_icons_fully_color";
     private static final String KEY_AIRPLANE_COLOR = "signal_wifi_airplane_mode_icon_color";
+	private static final String PREF_VPN_COLOR = "signal_wifi_vpn_icon_color";
 
     private static final int DEFAULT_COLOR = 0xffffffff;
     private static final int DEFAULT_ACTIVITY_COLOR = 0xff000000;
@@ -62,6 +63,7 @@ public class StatusBarSignalSettings extends SettingsPreferenceFragment implemen
     private ColorPickerPreference mActivityNormalColor;
     private ColorPickerPreference mActivityFullyColor;
     private ColorPickerPreference mAirplaneColor;
+    private ColorPickerPreference mVpnColor;
 
     private ContentResolver mResolver;
 
@@ -153,6 +155,17 @@ public class StatusBarSignalSettings extends SettingsPreferenceFragment implemen
         mAirplaneColor.setOnPreferenceChangeListener(this);
         mAirplaneColor.setAlphaSliderEnabled(true);
 
+        mVpnColor = (ColorPickerPreference) findPreference(
+                PREF_VPN_COLOR);
+        intColor = Settings.System.getInt(mResolver,
+                Settings.System.STATUS_BAR_VPN_ICON_COLOR,
+                DEFAULT_COLOR); 
+        mVpnColor.setNewPreviewColor(intColor);
+        hexColor = String.format("#%08x", (0xffffffff & intColor));
+        mVpnColor.setSummary(hexColor);
+        mVpnColor.setAlphaSliderEnabled(true);
+        mVpnColor.setOnPreferenceChangeListener(this);
+
         setHasOptionsMenu(true);
     }
 
@@ -225,6 +238,14 @@ public class StatusBarSignalSettings extends SettingsPreferenceFragment implemen
                 Settings.System.STATUS_BAR_AIRPLANE_MODE_ICON_COLOR, intHex);
             preference.setSummary(hex);
             return true;
+        } else if (preference == mVpnColor) {
+            hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(newValue)));
+            intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(mResolver,
+                Settings.System.STATUS_BAR_VPN_ICON_COLOR, intHex);
+            preference.setSummary(hex);
+            return true;
         }
         return false;
 
@@ -285,6 +306,9 @@ public class StatusBarSignalSettings extends SettingsPreferenceFragment implemen
                             Settings.System.putInt(getOwner().mResolver,
                                 Settings.System.STATUS_BAR_AIRPLANE_MODE_ICON_COLOR,
                                 DEFAULT_COLOR);
+                            Settings.System.putInt(getOwner().mResolver,
+                                Settings.System.STATUS_BAR_VPN_ICON_COLOR,
+                                DEFAULT_COLOR);
                             getOwner().refreshSettings();
                         }
                     })
@@ -308,6 +332,9 @@ public class StatusBarSignalSettings extends SettingsPreferenceFragment implemen
                             Settings.System.putInt(getOwner().mResolver,
                                 Settings.System.STATUS_BAR_AIRPLANE_MODE_ICON_COLOR,
                                 DEFAULT_COLOR);
+                            Settings.System.putInt(getOwner().mResolver,
+                                Settings.System.STATUS_BAR_VPN_ICON_COLOR,
+                                0xff33b5e5);
                             getOwner().refreshSettings();
                         }
                     })
