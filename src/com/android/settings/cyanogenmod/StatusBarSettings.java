@@ -98,13 +98,12 @@ public class StatusBarSettings extends SettingsPreferenceFragment
         mStatusBarGreetingTimeout =
                 (SeekBarPreferenceCham) prefSet.findPreference(KEY_STATUS_BAR_GREETING_TIMEOUT);
         int statusBarGreetingTimeout = Settings.System.getInt(getContentResolver(),
-                Settings.System.STATUS_BAR_GREETING_TIMEOUT, 400);
+                Settings.System.STATUS_BAR_GREETING_TIMEOUT, 1000);
         mStatusBarGreetingTimeout.setValue(statusBarGreetingTimeout / 1);
         mStatusBarGreetingTimeout.setOnPreferenceChangeListener(this);
 
         mCarrierLabel = (PreferenceScreen) prefSet.findPreference(KEY_CARRIERLABEL_PREFERENCE);
-        if (Utils.isWifiOnly(getActivity()) || 
-        TelephonyManager.getDefault().isMultiSimEnabled()) {
+        if (Utils.isWifiOnly(getActivity()) || TelephonyManager.getDefault().isMultiSimEnabled()) {
             prefSet.removePreference(mCarrierLabel);
         }
 
@@ -128,6 +127,9 @@ public class StatusBarSettings extends SettingsPreferenceFragment
             return true;
         } else if (preference == mStatusBarGreetingTimeout) {
             int timeout = (Integer) newValue;
+            if (timeout < 100) {
+              timeout = 100;
+            }
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUS_BAR_GREETING_TIMEOUT, timeout * 1);
             return true;
