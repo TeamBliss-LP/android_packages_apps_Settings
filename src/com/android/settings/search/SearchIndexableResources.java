@@ -166,7 +166,7 @@ public final class SearchIndexableResources {
         sResMap.put(ZenModeSettings.class.getName(),
                 new SearchIndexableResource(
                         Ranking.getRankForClassName(ZenModeSettings.class.getName()),
-                        NO_DATA_RES_ID,
+                        R.xml.zen_mode_settings,
                         ZenModeSettings.class.getName(),
                         R.drawable.ic_settings_notifications));
 
