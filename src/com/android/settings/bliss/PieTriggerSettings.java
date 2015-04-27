@@ -28,6 +28,7 @@ import android.util.Log;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.widget.SeekBarPreferenceCham;
 
 public class PieTriggerSettings extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
@@ -36,6 +37,7 @@ public class PieTriggerSettings extends SettingsPreferenceFragment
     private static final int DEFAULT_POSITION = 1 << 0;
 
     private static final String PREF_PIE_DISABLE_IME_TRIGGERS = "pie_disable_ime_triggers";
+    private static final String PIE_TRIGGER_SENSITIVITY = "pie_trigger_sensitivity";
 
     private static final String[] TRIGGER = {
         "pie_control_trigger_left",
@@ -46,6 +48,7 @@ public class PieTriggerSettings extends SettingsPreferenceFragment
 
     private SwitchPreference[] mTrigger = new SwitchPreference[4];
     private SwitchPreference mDisableImeTriggers;
+    private SeekBarPreferenceCham mSensitivity;
 
     private ContentObserver mPieTriggerObserver = new ContentObserver(new Handler()) {
         @Override
@@ -69,6 +72,11 @@ public class PieTriggerSettings extends SettingsPreferenceFragment
 
         mDisableImeTriggers = (SwitchPreference) findPreference(PREF_PIE_DISABLE_IME_TRIGGERS);
         mDisableImeTriggers.setOnPreferenceChangeListener(this);
+        
+        mSensitivity = (SeekBarPreferenceCham) findPreference(PIE_TRIGGER_SENSITIVITY);
+        mSensitivity.setValue(Settings.System.getInt(getContentResolver(),
+                Settings.System.PIE_TRIGGER_SENSITIVITY, 5));
+        mSensitivity.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -78,16 +86,21 @@ public class PieTriggerSettings extends SettingsPreferenceFragment
             Settings.System.putInt(getContentResolver(),
                     Settings.System.PIE_IME_CONTROL,
                     (Boolean) newValue ? 1 : 0);
+        } else if (preference == mSensitivity) {
+            int sensitivity = ((Integer)newValue).intValue();
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.PIE_TRIGGER_SENSITIVITY, sensitivity);
         } else {
             for (int i = 0; i < mTrigger.length; i++) {
                 boolean checked = preference == mTrigger[i]
                         ? (Boolean) newValue : mTrigger[i].isChecked();
                 if (checked) {
                     triggerSlots |= 1 << i;
+                }
             }
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.PIE_GRAVITY, triggerSlots);
         }
-        Settings.System.putInt(getContentResolver(),
-                Settings.System.PIE_GRAVITY, triggerSlots);
         updatePieTriggers();
         return true;
     }
