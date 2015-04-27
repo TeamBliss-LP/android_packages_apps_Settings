@@ -673,24 +673,6 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
         return false;
     }
 
-    @Override
-    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-        if (preference == mSwapVolumeButtons) {
-            int value = mSwapVolumeButtons.isChecked()
-                    ? (ScreenType.isTablet(getActivity()) ? 2 : 1) : 0;
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.SWAP_VOLUME_KEYS_ON_ROTATION, value);
-        } else if (preference == mPowerEndCall) {
-            handleTogglePowerButtonEndsCallPreferenceClick();
-            return true;
-        } else if (preference == mHomeAnswerCall) {
-            handleToggleHomeButtonAnswersCallPreferenceClick();
-            return true;
-        }
-
-        return super.onPreferenceTreeClick(preferenceScreen, preference);
-    }
-
     private static void writeDisableHwKeysOption(Context context, boolean enabled) {
         final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
         final int defaultBrightness = context.getResources().getInteger(
@@ -704,25 +686,14 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
         cmHardwareManager.set(CmHardwareManager.FEATURE_KEY_DISABLE, !enabled);
 
         /* Save/restore button timeouts to disable them in softkey mode */
-        Editor editor = prefs.edit();
-
-        if (!enabled) {
-            int currentBrightness = Settings.Secure.getInt(context.getContentResolver(),
-                    Settings.Secure.BUTTON_BRIGHTNESS, defaultBrightness);
-            if (!prefs.contains("pre_navbar_button_backlight")) {
-                editor.putInt("pre_navbar_button_backlight", currentBrightness);
-            }
+        if (enabled) {
             Settings.Secure.putInt(context.getContentResolver(),
                     Settings.Secure.BUTTON_BRIGHTNESS, 0);
         } else {
-            int oldBright = prefs.getInt("pre_navbar_button_backlight", -1);
-            if (oldBright != -1) {
-                Settings.Secure.putInt(context.getContentResolver(),
-                        Settings.Secure.BUTTON_BRIGHTNESS, oldBright);
-                editor.remove("pre_navbar_button_backlight");
-            }
+            int oldBright = prefs.getInt("pre_navbar_button_backlight", defaultBrightness);
+            Settings.Secure.putInt(context.getContentResolver(),
+                    Settings.Secure.BUTTON_BRIGHTNESS, oldBright);
         }
-        editor.commit();
     }
 
     private void updateDisableHwKeysOption() {
@@ -779,6 +750,25 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
 
         writeDisableHwKeysOption(context, Settings.Secure.getInt(context.getContentResolver(),
                 Settings.Secure.ENABLE_HW_KEYS, 1) == 1);
+    }
+
+
+    @Override
+    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+        if (preference == mSwapVolumeButtons) {
+            int value = mSwapVolumeButtons.isChecked()
+                    ? (ScreenType.isTablet(getActivity()) ? 2 : 1) : 0;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.SWAP_VOLUME_KEYS_ON_ROTATION, value);
+        } else if (preference == mPowerEndCall) {
+            handleTogglePowerButtonEndsCallPreferenceClick();
+            return true;
+        } else if (preference == mHomeAnswerCall) {
+            handleToggleHomeButtonAnswersCallPreferenceClick();
+            return true;
+        }
+
+        return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
     private void handleTogglePowerButtonEndsCallPreferenceClick() {
