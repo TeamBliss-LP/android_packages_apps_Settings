@@ -705,8 +705,8 @@
     <string name="qs_brightness_slider_enabled">Enabled</string>
     <string name="qs_brightness_slider_disabled">Disabled</string>
 
-    <!-- LockScreen Section -->
-    <string name="lockscreen_settings_title">Lockscreen Options</string>
+    <!-- Lock screen Section -->
+    <string name="lockscreen_settings_title">Lock Screen Options</string>
 
    <!-- Lock screen -->
     <string name="lock_screen_weather_settings_title">Weather</string>
@@ -729,12 +729,12 @@
     <string name="weather_colorize_all_icons_summary">Enable to colorize all icons, disable to colorize only the monochrome icons</string>
 
     <!-- Lockscreen Shortcuts -->
-    <string name="lockscreen_shortcuts_title">Middle Shortcuts</string>
+    <string name="lockscreen_shortcuts_title">Middle shortcuts</string>
     <string name="lockscreen_shortcuts_summary">View or change custom middle lock screen shortcuts</string>
     <string name="lockscreen_shorcuts_longpress_title">Shortcuts longpress</string>
-    <string name="lockscreen_shorcuts_longpress_summary">Open custom lockscreen shortcuts on longpress</string>
-    <string name="lockscreen_targets_message">Lockscreen shortcuts</string>
-    <string name="lockscreen_enable_power_menu_title">Show power menu lock screen</string>
+    <string name="lockscreen_shorcuts_longpress_summary">Open custom lock screen shortcuts on longpress</string>
+    <string name="lockscreen_targets_message">Lock screen shortcuts</string>
+    <string name="lockscreen_enable_power_menu_title">Show power menu on secure lock screen</string>
     <string name="lockscreen_enable_power_menu_summary">This option will only disable the power menu on secure lock screens</string>
 
     <!-- Long press on lock screen lock icon to sleep -->
@@ -892,8 +892,8 @@
     <string name="quick_pulldown_off">Off</string>
     <string name="quick_pulldown_left">Left</string>
     <string name="quick_pulldown_right">Right</string>
-    <string name="block_on_secure_keyguard_title">Disable on lockscreen</string>
-    <string name="block_on_secure_keyguard_summary">Disable quick settings on secure lockscreen.</string>                                  
+    <string name="block_on_secure_keyguard_title">Disable QS on lock screen</string>
+    <string name="block_on_secure_keyguard_summary">Disable quick settings on secure lock screen.</string>
 
     <!-- MediaScanner behavior on boot -->
     <string name="options_settings_title">Options</string>
