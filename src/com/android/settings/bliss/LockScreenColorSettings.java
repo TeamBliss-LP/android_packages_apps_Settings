@@ -81,6 +81,7 @@ public class LockScreenColorSettings extends SettingsPreferenceFragment implemen
         hexColor = String.format("#%08x", (0xffffffff & intColor));
         mTextColor.setSummary(hexColor);
         mTextColor.setOnPreferenceChangeListener(this);
+        mTextColor.setAlphaSliderEnabled(true);
 
         mIconColor =
                 (ColorPickerPreference) findPreference(PREF_ICON_COLOR);
@@ -91,6 +92,7 @@ public class LockScreenColorSettings extends SettingsPreferenceFragment implemen
         hexColor = String.format("#%08x", (0xffffffff & intColor));
         mIconColor.setSummary(hexColor);
         mIconColor.setOnPreferenceChangeListener(this);
+        mIconColor.setAlphaSliderEnabled(true);
 
         setHasOptionsMenu(true);
     }

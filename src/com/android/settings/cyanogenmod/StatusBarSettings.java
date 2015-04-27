@@ -87,6 +87,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment
         String hexColor = String.format("#%08x", (0xffffffff & intColor));
             mBlissLogoColor.setSummary(hexColor);
             mBlissLogoColor.setNewPreviewColor(intColor);
+			mBlissLogoColor.setAlphaSliderEnabled(true);
 
         // Greeting
         mStatusBarGreeting = (SwitchPreference) prefSet.findPreference(KEY_STATUS_BAR_GREETING);
