@@ -678,7 +678,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
         final int defaultBrightness = context.getResources().getInteger(
                 com.android.internal.R.integer.config_buttonBrightnessSettingDefault);
 
-        Settings.Secure.putInt(context.getContentResolver(),
+        Settings.System.putInt(context.getContentResolver(),
                 Settings.Secure.ENABLE_HW_KEYS, enabled ? 1 : 0);
 
         CmHardwareManager cmHardwareManager =
@@ -748,7 +748,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
             return;
         }
 
-        writeDisableHwKeysOption(context, Settings.Secure.getInt(context.getContentResolver(),
+        writeDisableHwKeysOption(context, Settings.System.getInt(context.getContentResolver(),
                 Settings.Secure.ENABLE_HW_KEYS, 1) == 1);
     }
 

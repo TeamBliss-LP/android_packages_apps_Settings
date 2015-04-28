@@ -21,7 +21,7 @@
         android:key="block_on_secure_keyguard"
         android:title="@string/block_on_secure_keyguard_title"
         android:summary="@string/block_on_secure_keyguard_summary"
-        android:defaultValue="true" />
+        android:persistent="false" />
 
     <PreferenceScreen
         android:key="status_bar_expanded_header_settings"
