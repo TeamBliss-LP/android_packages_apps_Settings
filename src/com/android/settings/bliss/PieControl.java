@@ -20,6 +20,7 @@ import android.content.ContentResolver;
 import android.database.ContentObserver;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.UserHandle;
 import android.preference.SwitchPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
@@ -37,6 +38,26 @@ public class PieControl extends SettingsPreferenceFragment
 
     private SwitchPreference mPieControl;
     private ListPreference mPieMenuDisplay;
+
+    private SettingsObserver mSettingsObserver = new SettingsObserver(new Handler());
+    private final class SettingsObserver extends ContentObserver {
+        SettingsObserver(Handler handler) {
+            super(handler);
+        }
+
+        void observe() {
+            ContentResolver resolver = getActivity().getContentResolver();
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.PIE_CONTROLS), false, this,
+                    UserHandle.USER_ALL);
+        }
+
+        @Override
+        public void onChange(boolean selfChange) {
+            super.onChange(selfChange);
+            updateSettings();
+        }
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -65,14 +86,24 @@ public class PieControl extends SettingsPreferenceFragment
         return true;
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-
+    private void updateSettings() {
         mPieMenuDisplay.setValue(Settings.System.getInt(getContentResolver(),
                 Settings.System.PIE_MENU,
                 2) + "");
         mPieControl.setChecked(Settings.System.getInt(getContentResolver(),
                 Settings.System.PIE_CONTROLS, 0) == 1);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        updateSettings();
+        mSettingsObserver.observe();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        getActivity().getContentResolver().unregisterContentObserver(mSettingsObserver);
     }
 }
