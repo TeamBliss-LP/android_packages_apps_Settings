@@ -241,17 +241,19 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
                 mSwapVolumeButtons.setChecked(swapVolumeKeys > 0);
             }
             mVolumeDefault = (ListPreference) findPreference(KEY_VOLUME_DEFAULT);
-            String currentDefault = Settings.System.getString(resolver, Settings.System.VOLUME_KEYS_DEFAULT);
-            if (!Utils.hasVolumeRocker(getActivity())) {
-                removeListEntry(mVolumeDefault, String.valueOf(AudioSystem.STREAM_RING));
+            if (mVolumeDefault != null) {
+                String currentDefault = Settings.System.getString(resolver, Settings.System.VOLUME_KEYS_DEFAULT);
+                if (!Utils.hasVolumeRocker(getActivity())) {
+                    removeListEntry(mVolumeDefault, String.valueOf(AudioSystem.STREAM_RING));
+                }
+                if (currentDefault == null) {
+                    currentDefault = mVolumeDefault.getEntryValues()[mVolumeDefault.getEntryValues().length - 1].toString();
+                    mVolumeDefault.setSummary(getString(R.string.volume_default_summary));
+                }
+                mVolumeDefault.setValue(currentDefault);
+                mVolumeDefault.setSummary(mVolumeDefault.getEntry());
+                mVolumeDefault.setOnPreferenceChangeListener(this);
             }
-            if (currentDefault == null) {
-                currentDefault = mVolumeDefault.getEntryValues()[mVolumeDefault.getEntryValues().length - 1].toString();
-                mVolumeDefault.setSummary(getString(R.string.volume_default_summary));
-            }
-            mVolumeDefault.setValue(currentDefault);
-            mVolumeDefault.setSummary(mVolumeDefault.getEntry());
-            mVolumeDefault.setOnPreferenceChangeListener(this);
         }
 
         mVolumeWakeScreen = (SwitchPreference) findPreference(Settings.System.VOLUME_WAKE_SCREEN);
@@ -461,10 +463,12 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
                 (incallHomeBehavior == Settings.Secure.RING_HOME_BUTTON_BEHAVIOR_ANSWER);
             mHomeAnswerCall.setChecked(homeButtonAnswersCall);
         }
-        // Volume button answers calls.
-        mVolumeAnswerCall.setChecked((Settings.System.getInt(getContentResolver(),
-                  Settings.System.ANSWER_VOLUME_BUTTON_BEHAVIOR_ANSWER, 0) == 1));
 
+        // Volume button answers calls.
+        if (mVolumeAnswerCall != null) {
+            mVolumeAnswerCall.setChecked((Settings.System.getInt(getContentResolver(),
+                Settings.System.ANSWER_VOLUME_BUTTON_BEHAVIOR_ANSWER, 0) == 1));
+        }
     }
 
     private ListPreference initActionList(String key, int value) {
@@ -673,6 +677,24 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
         return false;
     }
 
+    @Override
+    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+        if (preference == mSwapVolumeButtons) {
+            int value = mSwapVolumeButtons.isChecked()
+                    ? (ScreenType.isTablet(getActivity()) ? 2 : 1) : 0;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.SWAP_VOLUME_KEYS_ON_ROTATION, value);
+        } else if (preference == mPowerEndCall) {
+            handleTogglePowerButtonEndsCallPreferenceClick();
+            return true;
+        } else if (preference == mHomeAnswerCall) {
+            handleToggleHomeButtonAnswersCallPreferenceClick();
+            return true;
+        }
+
+        return super.onPreferenceTreeClick(preferenceScreen, preference);
+    }
+
     private static void writeDisableHwKeysOption(Context context, boolean enabled) {
         final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
         final int defaultBrightness = context.getResources().getInteger(
@@ -686,7 +708,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
         cmHardwareManager.set(CmHardwareManager.FEATURE_KEY_DISABLE, !enabled);
 
         /* Save/restore button timeouts to disable them in softkey mode */
-        if (enabled) {
+        if (!enabled) {
             Settings.Secure.putInt(context.getContentResolver(),
                     Settings.Secure.BUTTON_BRIGHTNESS, 0);
         } else {
@@ -739,7 +761,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
             appSwitchCategory.setEnabled(enabled);
         }
         if (mNavigationBarLeftPref != null) {
-            mNavigationBarLeftPref.setEnabled(enabled);
+            mNavigationBarLeftPref.setEnabled(!enabled);
         }
     }
 
@@ -752,25 +774,6 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
 
         writeDisableHwKeysOption(context, Settings.System.getInt(context.getContentResolver(),
                 Settings.Secure.ENABLE_HW_KEYS, 1) == 1);
-    }
-
-
-    @Override
-    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-        if (preference == mSwapVolumeButtons) {
-            int value = mSwapVolumeButtons.isChecked()
-                    ? (ScreenType.isTablet(getActivity()) ? 2 : 1) : 0;
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.SWAP_VOLUME_KEYS_ON_ROTATION, value);
-        } else if (preference == mPowerEndCall) {
-            handleTogglePowerButtonEndsCallPreferenceClick();
-            return true;
-        } else if (preference == mHomeAnswerCall) {
-            handleToggleHomeButtonAnswersCallPreferenceClick();
-            return true;
-        }
-
-        return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
     private void handleTogglePowerButtonEndsCallPreferenceClick() {
