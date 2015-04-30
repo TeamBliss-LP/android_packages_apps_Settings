@@ -25,6 +25,7 @@ import com.android.settings.search.Indexable;
 
 import static android.hardware.CmHardwareManager.FEATURE_TAP_TO_WAKE;
 import static android.provider.Settings.Secure.WAKE_GESTURE_ENABLED;
+import static android.provider.Settings.Secure.DOZE_ENABLED;
 import static android.provider.Settings.System.SCREEN_BRIGHTNESS_MODE;
 import static android.provider.Settings.System.SCREEN_BRIGHTNESS_MODE_AUTOMATIC;
 import static android.provider.Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL;
@@ -117,7 +118,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private SwitchPreference mAutoBrightnessPreference;
     private SwitchPreference mTapToWake;
     private SwitchPreference mWakeWhenPluggedOrUnplugged;
-    private PreferenceScreen mDozeFragement;
 
     private CmHardwareManager mCmHardwareManager;
 

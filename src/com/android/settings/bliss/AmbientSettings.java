@@ -44,6 +44,7 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.cyanogenmod.SystemSettingSwitchPreference;
 import com.android.settings.bliss.sensor.ShakeSensorManager;
+import com.android.settings.bliss.SeekBarPreference;
 
 import java.util.ArrayList;
 import java.util.List;
