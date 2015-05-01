@@ -178,7 +178,6 @@
     <string-array name="shortcut_action_entries">
         <item>@string/shortcut_action_kill</item>
         <item>@string/shortcut_action_lastapp</item>
-        <item>@string/shortcut_action_navbar</item>
         <item>@string/shortcut_action_back</item>-
         <item>@string/shortcut_action_app</item>-
         <item>@string/shortcut_action_home</item>-
@@ -196,9 +195,8 @@
     </string-array>
 
     <string-array name="shortcut_action_values" translatable="false">
-		<item>**kill**</item>
+        <item>**kill**</item>
         <item>**lastapp**</item>
-        <item>**nav_bar**</item>
         <item>**back**</item>
         <item>**app**</item>
         <item>**home**</item>
@@ -736,7 +734,7 @@
     <string-array name="shortcut_action_launcher_entries">
         <item>@string/shortcut_action_kill</item>
         <item>@string/shortcut_action_lastapp</item>
-        <item>@string/shortcut_action_navbar</item>
+        <!--<item>@string/shortcut_action_navbar</item>-->
         <!--<item>@string/shortcut_action_notifications</item>-->
         <item>@string/shortcut_action_ime</item>
         <item>@string/shortcut_action_pie</item>
@@ -756,7 +754,7 @@
     <string-array name="shortcut_action_launcher_values" translatable="false">
         <item>**kill**</item>
         <item>**lastapp**</item>
-        <item>**nav_bar**</item>
+        <!--<item>**nav_bar**</item>-->
         <!--<item>**notifications**</item>-->
         <item>**ime**</item>
         <item>**pie**</item>
