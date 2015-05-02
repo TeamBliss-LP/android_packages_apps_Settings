@@ -81,6 +81,7 @@ import com.android.settings.applications.ProcessStatsUi;
 import com.android.settings.blacklist.BlacklistSettings;
 import com.android.settings.cyanogenmod.NavBar;
 import com.android.settings.bliss.AppCircleBar;
+import com.android.settings.bliss.AppSidebar;
 import com.android.settings.bliss.gestureanywhere.GestureAnywhereSettings;
 import com.android.settings.bliss.HeadsUpSettings;
 import com.android.settings.ButtonSettings;
@@ -342,7 +343,8 @@ public class SettingsActivity extends Activity
             ButtonSettings.class.getName(),
             GestureAnywhereSettings.class.getName(),
             WakeLockBlocker.class.getName(),
-            AmbientSettings.class.getName()
+            AmbientSettings.class.getName(),
+            AppSidebar.class.getName()
     };
 
 
