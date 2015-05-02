@@ -20,7 +20,9 @@ package com.android.settings.bliss;
 
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.R;
+import com.android.internal.util.cm.QSUtils;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.ContentResolver;
 import android.content.Context;
@@ -52,6 +54,8 @@ public class ScrollAnimationInterfaceSettings extends SettingsPreferenceFragment
     private static final String ANIMATION_OVERFLING_DISTANCE = "animation_overfling_distance";
     private static final float MULTIPLIER_SCROLL_FRICTION = 10000f;
     private static final String ANIMATION_NO_SCROLL = "animation_no_scroll";
+    private static final String DISABLE_TORCH_ON_SCREEN_OFF = "disable_torch_on_screen_off";
+    private static final String DISABLE_TORCH_ON_SCREEN_OFF_DELAY = "disable_torch_on_screen_off_delay";
 
     private static final int MENU_RESET = Menu.FIRST;
 
@@ -60,14 +64,17 @@ public class ScrollAnimationInterfaceSettings extends SettingsPreferenceFragment
     private SeekBarPreference mAnimationOverScroll;
     private SeekBarPreference mAnimationOverFling;
     private SwitchPreference mAnimNoScroll;
+    private SwitchPreference mTorchOff;
+    private ListPreference mTorchOffDelay;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.scroll_animation_interface_settings);
 
+        Activity activity = getActivity();
+        ContentResolver resolver = activity.getContentResolver();
         PreferenceScreen prefSet = getPreferenceScreen();
-        ContentResolver resolver = getActivity().getContentResolver();
 
         mAnimNoScroll = (SwitchPreference) prefSet.findPreference(ANIMATION_NO_SCROLL);
         mAnimNoScroll.setChecked(Settings.System.getInt(resolver,
@@ -97,6 +104,22 @@ public class ScrollAnimationInterfaceSettings extends SettingsPreferenceFragment
         mAnimationOverFling = (SeekBarPreference) prefSet.findPreference(ANIMATION_OVERFLING_DISTANCE);
         mAnimationOverFling.setValue(defaultOverFling);
         mAnimationOverFling.setOnPreferenceChangeListener(this);
+
+        mTorchOff = (SwitchPreference) prefSet.findPreference(DISABLE_TORCH_ON_SCREEN_OFF);
+        mTorchOffDelay = (ListPreference) prefSet.findPreference(DISABLE_TORCH_ON_SCREEN_OFF_DELAY);
+        int torchOffDelay = Settings.System.getInt(resolver,
+                Settings.System.DISABLE_TORCH_ON_SCREEN_OFF_DELAY, 10);
+        if (torchOffDelay < 1) {
+          torchOffDelay = 10;
+        }
+        mTorchOffDelay.setValue(String.valueOf(torchOffDelay));
+        mTorchOffDelay.setSummary(mTorchOffDelay.getEntry());
+        mTorchOffDelay.setOnPreferenceChangeListener(this);
+
+        if (!QSUtils.deviceSupportsFlashLight(activity)) {
+            prefSet.removePreference(mTorchOff);
+            prefSet.removePreference(mTorchOffDelay);
+        }
 
         setHasOptionsMenu(true);
 
@@ -182,6 +205,13 @@ public class ScrollAnimationInterfaceSettings extends SettingsPreferenceFragment
             Settings.System.putInt(resolver,
                     Settings.System.CUSTOM_OVERFLING_DISTANCE,
                     val);
+        } else if (preference == mTorchOffDelay) {
+            int torchOffDelay = Integer.valueOf((String) objValue);
+            int index = mTorchOffDelay.findIndexOfValue((String) objValue);
+            if (index == -1) index = 1;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.DISABLE_TORCH_ON_SCREEN_OFF_DELAY, torchOffDelay);
+            mTorchOffDelay.setSummary(mTorchOffDelay.getEntries()[index]);
         } else {
             return false;
         }

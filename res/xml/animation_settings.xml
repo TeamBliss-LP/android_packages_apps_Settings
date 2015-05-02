@@ -18,7 +18,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/animation_settings_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
-    
+
     <PreferenceScreen
         android:key="interface_animation_scroll"
         android:fragment="com.android.settings.bliss.KeyboardAnimationInterfaceSettings"
@@ -26,10 +26,10 @@
         android:summary="@string/ime_animation_summary" />
 
     <PreferenceScreen
-	android:key="overscroll_effects"
-	android:title="@string/ui_overscroll_title"
-	android:summary="@string/overscroll_weight_summary"
-	android:fragment="com.android.settings.bliss.OverscrollEffects" />    
+        android:key="overscroll_effects"
+        android:title="@string/ui_overscroll_title"
+        android:summary="@string/overscroll_weight_summary"
+        android:fragment="com.android.settings.bliss.OverscrollEffects" />
 
     <ListPreference
         android:key="toast_animation"
@@ -37,17 +37,17 @@
         android:entries="@array/toast_animation_entries"
         android:entryValues="@array/toast_animation_values"
         android:persistent="false" />
-		   
+
     <PreferenceScreen
         android:id="@+id/listview"
         android:fragment="com.android.settings.bliss.Listview"
         android:title="@string/listview_category" />
-		   		   		
+
     <PreferenceScreen
         android:id="@+id/animations"
         android:title="@string/title_animation_controls"
         android:fragment="com.android.settings.bliss.fragments.AnimationControls" />
-                   
+
     <ListPreference
         android:key="pref_scrollingcache"
         android:dialogTitle="@string/pref_scrollingcache_title"
@@ -55,17 +55,30 @@
         android:summary="@string/pref_scrollingcache_summary"
         android:entries="@array/entries_scrollingcache"
         android:entryValues="@array/values_scrollingcache" />
-        
+
     <PreferenceScreen
         android:key="interface_animation_scroll"
         android:fragment="com.android.settings.bliss.ScrollAnimationInterfaceSettings"
         android:title="@string/scrolling_title"
         android:summary="@string/scrolling_summary" />
 
+    <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
+        android:key="disable_torch_on_screen_off"
+        android:title="@string/disable_torch_screen_off_title"
+        android:defaultValue="false" />
+
+    <ListPreference
+        android:key="disable_torch_on_screen_off_delay"
+        android:title="@string/disable_torch_screen_off_delay_title"
+        android:dialogTitle="@string/disable_torch_screen_off_delay_title"
+        android:entries="@array/torch_screen_off_delay_entries"
+        android:entryValues="@array/torch_screen_off_delay_values"
+        android:dependency="disable_torch_on_screen_off" />
+
     <!-- Identicons -->
     <PreferenceScreen
         android:id="@+id/identicons"
         android:title="@string/identicons_title"
         android:fragment="com.android.settings.bliss.identicons.IdenticonsSettings" />
-	
+
 </PreferenceScreen>
