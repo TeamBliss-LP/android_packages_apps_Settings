@@ -63,4 +63,14 @@
         android:title="@string/color_title"
         android:defaultValue="@android:color/white" />
     </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="signal_wifi_cat_vpn_icon"
+        android:title="@string/cat_vpn_icon_title">
+
+     <net.margaritov.preference.colorpicker.ColorPickerPreference
+        android:key="signal_wifi_vpn_icon_color"
+        android:title="@string/color_title"
+        android:defaultValue="@android:color/white" />
+    </PreferenceCategory>
 </PreferenceScreen>
