@@ -35,6 +35,11 @@
         android:title="@string/colors_title">
 
          <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="expanded_header_background_color"
+            android:title="@string/background_title"
+            android:defaultValue="0xff384248" />
+
+         <net.margaritov.preference.colorpicker.ColorPickerPreference
             android:key="expanded_header_text_color"
             android:title="@string/text_title"
             android:defaultValue="0xffffffff" />

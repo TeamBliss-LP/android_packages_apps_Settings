@@ -40,16 +40,19 @@ public class StatusBarExpandedHeaderSettings extends SettingsPreferenceFragment 
 
     private static final String PREF_SHOW_WEATHER = "expanded_header_show_weather";
     private static final String PREF_SHOW_LOCATION = "expanded_header_show_weather_location";
+    private static final String PREF_BG_COLOR = "expanded_header_background_color";
     private static final String PREF_TEXT_COLOR = "expanded_header_text_color";
     private static final String PREF_ICON_COLOR = "expanded_header_icon_color";
 
     private static final int DEFAULT_COLOR = 0xffffffff;
+    private static final int DEFAULT_BG_COLOR = 0xff384248;
 
     private static final int MENU_RESET = Menu.FIRST;
     private static final int DLG_RESET = 0;
 
     private SwitchPreference mShowWeather;
     private SwitchPreference mShowLocation;
+    private ColorPickerPreference mBackgroundColor;
     private ColorPickerPreference mTextColor;
     private ColorPickerPreference mIconColor;
 
@@ -88,6 +91,18 @@ public class StatusBarExpandedHeaderSettings extends SettingsPreferenceFragment 
         } else {
             removePreference(PREF_SHOW_LOCATION);
         }
+        
+        mBackgroundColor =
+                (ColorPickerPreference) findPreference(PREF_BG_COLOR);
+        intColor = Settings.System.getInt(mResolver,
+                Settings.System.STATUS_BAR_EXPANDED_HEADER_BG_COLOR,
+                DEFAULT_BG_COLOR); 
+        mBackgroundColor.setNewPreviewColor(intColor);
+        hexColor = String.format("#%08x", (0xffffffff & intColor));
+        mBackgroundColor.setSummary(hexColor);
+        mBackgroundColor.setDefaultColors(DEFAULT_BG_COLOR, DEFAULT_BG_COLOR);
+        mBackgroundColor.setOnPreferenceChangeListener(this);
+		mBackgroundColor.setAlphaSliderEnabled(true);
 
         mTextColor = (ColorPickerPreference) findPreference(PREF_TEXT_COLOR);
         intColor = Settings.System.getInt(mResolver,
@@ -148,6 +163,14 @@ public class StatusBarExpandedHeaderSettings extends SettingsPreferenceFragment 
                 Settings.System.STATUS_BAR_EXPANDED_HEADER_SHOW_WEATHER_LOCATION,
                 value ? 1 : 0);
             return true;
+        } else if (preference == mBackgroundColor) {
+            hex = ColorPickerPreference.convertToARGB(
+                Integer.valueOf(String.valueOf(newValue)));
+            intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(mResolver,
+                Settings.System.STATUS_BAR_EXPANDED_HEADER_BG_COLOR, intHex);
+            preference.setSummary(hex);
+            return true;
         } else if (preference == mTextColor) {
             hex = ColorPickerPreference.convertToARGB(
                 Integer.valueOf(String.valueOf(newValue)));
@@ -204,6 +227,9 @@ public class StatusBarExpandedHeaderSettings extends SettingsPreferenceFragment 
                                     Settings.System.STATUS_BAR_EXPANDED_HEADER_SHOW_WEATHER, 0);
                             Settings.System.putInt(getOwner().mResolver,
                                     Settings.System.STATUS_BAR_EXPANDED_HEADER_SHOW_WEATHER_LOCATION, 1);
+                             Settings.System.putInt(getOwner().mResolver,
+                                    Settings.System.STATUS_BAR_EXPANDED_HEADER_BG_COLOR,
+                                    DEFAULT_BG_COLOR);
                             Settings.System.putInt(getOwner().mResolver,
                                     Settings.System.STATUS_BAR_EXPANDED_HEADER_TEXT_COLOR,
                                     DEFAULT_COLOR);
@@ -220,6 +246,9 @@ public class StatusBarExpandedHeaderSettings extends SettingsPreferenceFragment 
                                     Settings.System.STATUS_BAR_EXPANDED_HEADER_SHOW_WEATHER, 1);
                             Settings.System.putInt(getOwner().mResolver,
                                     Settings.System.STATUS_BAR_EXPANDED_HEADER_SHOW_WEATHER_LOCATION, 1);
+                            Settings.System.putInt(getOwner().mResolver,
+                                    Settings.System.STATUS_BAR_EXPANDED_HEADER_BG_COLOR,
+                                    0xff000000);
                             Settings.System.putInt(getOwner().mResolver,
                                     Settings.System.STATUS_BAR_EXPANDED_HEADER_TEXT_COLOR,
                                     0xffff0000);
