@@ -50,7 +50,7 @@ public class MainActivity extends Activity {
     private static class SeparatorTextView extends TextView {
         public SeparatorTextView(Context context) {
             super(context);
-            setBackgroundColor(0xFFFFFFFF);
+            setBackgroundColor(getResources().getColor(R.color.extrainfo_separator));
         }
     }
 
@@ -60,8 +60,8 @@ public class MainActivity extends Activity {
             int indent = ExtraInfoLib.dpToPx(context, 5);
             int pad = ExtraInfoLib.dpToPx(context, 2);
             setTextAppearance(context, android.R.style.TextAppearance_Medium);
-            setBackgroundColor(0xFF1D1D1D);
-            setTextColor(0xFFFFFFFF);
+            setBackgroundColor(getResources().getColor(R.color.extrainfo_cat_background));
+            setTextColor(getResources().getColor(R.color.extrainfo_cat_text));
             setGravity(Gravity.CENTER_VERTICAL);
             setPadding(indent, pad, pad, pad);
             setText(text);
@@ -84,7 +84,7 @@ public class MainActivity extends Activity {
             super(context);
             int indent = ExtraInfoLib.dpToPx(context, 20);
             int pad = ExtraInfoLib.dpToPx(context, 2);
-            setTextColor(Color.GREEN);
+            setTextColor(getResources().getColor(R.color.extrainfo_value_text));
             setPadding(indent, pad, pad, pad);
             setText(text);
         }

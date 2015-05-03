@@ -85,4 +85,10 @@
     <color name="dslv_icon_dark">#ff009688</color>
     <color name="dslv_float_cackground_color">#ffe1e1e0</color>
 
+    <!-- Bliss Extra info -->
+    <color name="extrainfo_separator">#ffffffff</color>
+    <color name="extrainfo_cat_background">#ff000000</color>
+    <color name="extrainfo_cat_text">#ffffffff</color>
+    <color name="extrainfo_value_text">#ff00ff00</color>
+
 </resources>
