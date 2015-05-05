@@ -42,9 +42,11 @@
     <string name="enabled">Enabled</string>
     <string name="default_string">Default</string>
     <string name="more_string">More</string>
+    <string name="options_title">Options</string>
     <string name="color_title">Color</string>
     <string name="colors_title">Colors</string>
     <string name="category_colors_title">Customize colors</string>
+    <string name="icon_title">Icon</string>
     <string name="icons_title">Icons</string>
     <string name="text_title">Text</string>
     <string name="background_title">Background</string>
@@ -293,29 +295,30 @@
     <string name="partition_info_sdext">/sd-ext (EXT)</string>
     <string name="partition_info_used_of">/</string>
 
-    <!-- Network traffic -->
-    <string name="network_traffic_title">Network traffic</string>
-    <string name="network_traffic_summary">Enable various network traffic options in statusbar</string>
-    <string name="show_network_traffic_state">Status bar traffic monitor</string>
-    <string name="show_network_traffic_unit">Display unit</string>
-    <string name="show_network_traffic_frequency">Update interval</string>
-    <string name="show_network_traffic_disable">Disabled</string>
-    <string name="show_network_traffic_up">Outgoing</string>
-    <string name="show_network_traffic_down">Incoming</string>
-    <string name="show_network_traffic_all">Outgoing and incoming</string>
-    <string name="show_network_traffic_bit">Bits per second</string>
-    <string name="show_network_traffic_byte">Bytes per second</string>
-    <string name="show_network_traffic_500">500 ms</string>
-    <string name="show_network_traffic_1000">1000 ms</string>
-    <string name="show_network_traffic_1500">1500 ms</string>
-    <string name="show_network_traffic_2000">2000 ms</string>
-    <string name="network_traffic_autohide">Auto hide</string>
-    <string name="network_traffic_autohide_summary">Hide the traffic monitor when there is no activity</string>
-    <string name="network_traffic_autohide_threshold">Inactivity threshold</string>
-    <string name="network_traffic_color_style">Color style</string>
-    <string name="network_traffic_color_reset">Reset color</string>
-    <string name="network_traffic_color_reset_message">Reset network traffic color to default?</string>
-    
+    <!-- Status bar Network speed -->
+    <string name="network_speed_indicator_title">Indicator</string>
+    <string name="network_speed_indicator_down_up">Download &amp; Upload</string>
+    <string name="network_speed_indicator_down">Download</string>
+    <string name="network_speed_indicator_up">Upload</string>
+    <string name="network_speed_indicator_disabled">Disabled</string>
+    <string name="network_speed_show_icon_title">Icon</string>
+    <string name="network_speed_show_icon_summary">Enable, to show an indicator icon</string>
+    <string name="network_speed_summary_title">Show summary of traffic</string>
+    <string name="network_speed_traffic_timeout_dlg_title">Timeout</string>
+    <string name="network_speed_traffic_timeout_0s">Don\'t show</string>
+    <string name="network_speed_traffic_timeout_1s">1 second</string>
+    <string name="network_speed_traffic_timeout_2s">2 seconds</string>
+    <string name="network_speed_traffic_timeout_3s">3 seconds</string>
+    <string name="network_speed_traffic_timeout_5s">5 seconds</string>
+    <string name="network_speed_traffic_timeout_8s">8 seconds</string>
+    <string name="network_speed_traffic_timeout_10s">10 seconds</string>
+    <string name="network_speed_traffic_timeout_15s">15 seconds</string>
+    <string name="network_speed_traffic_timeout_25s">25 seconds</string>
+    <string name="network_speed_bit_byte_title">Show bit values</string>
+    <string name="network_speed_bit_byte_summary">Enable to show the values in bit instead of byte</string>
+    <string name="network_speed_hide_indicator_title">Hide the indicator</string>
+    <string name="network_speed_hide_indicator_summary">Enable to hide the indicator if there is no traffic</string>
+
     <!-- Recents panel settings -->
     <string name="recents_options_title">Recents Options</string>
     <string name="recents_panel_settings">Recents panel settings</string>
@@ -610,6 +613,8 @@
     <string name="cat_vpn_icon_title">Vpn icon</string>
     <string name="color_normal_title">Normal</string>
     <string name="color_fully_title">Fully connected</string>
+    <string name="status_bar_network_speed_settings_title">Network speed indicator</string>
+    <string name="status_bar_network_speed_settings_summary">Customize the network speed indicator</string>
 
     <!-- Text for forcing expanded notifications -->
     <string name="disable_fc_notifications_title">Disable FC Notifications</string>

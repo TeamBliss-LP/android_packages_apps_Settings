@@ -62,10 +62,10 @@
             android:defaultValue="false" />
 
         <PreferenceScreen
-            android:key="network_traffic_state"
-            android:fragment="com.android.settings.bliss.NetworkTraffic"
-            android:summary="@string/network_traffic_summary"
-            android:title="@string/network_traffic_title" />
+            android:key="status_bar_network_speed_settings"
+            android:title="@string/status_bar_network_speed_settings_title"
+            android:summary="@string/status_bar_network_speed_settings_summary"
+            android:fragment="com.android.settings.bliss.StatusBarNetworkSpeedSettings" />
 
         <PreferenceScreen
             android:key="status_bar_signal_settings"
