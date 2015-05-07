@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Battery bar -->
+    <string-array name="battery_bar_entries">
+        <item>Versteckt</item>
+        <item>Statusleiste</item>
+        <item>Oberere Kante Nav.leiste</item>
+        <item>Untere Kante Nav.leiste</item>
+    </string-array>
+
+    <string-array name="battery_bar_style_entries">
+        <item>Regulär</item>
+        <item>Zentriert-gespiegelt</item>
+    </string-array>
+
+    <string-array name="tab_position_entries">
+        <item>Oben</item>
+        <item>Mitte</item>
+        <item>Unten</item>
+    </string-array>
+
+    <string-array name="tab_size_entries">
+        <item>Klein</item>
+        <item>Medium</item>
+        <item>Groß</item>
+    </string-array>
+
+</resources>

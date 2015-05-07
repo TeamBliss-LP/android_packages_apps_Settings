@@ -140,7 +140,10 @@
   <string name="backlight_summary_enabled">Aktiviert</string>
   <string name="power_menu_title">Ein-/Aus-Taste</string>
   <string name="power_menu_reboot_title">Neustart-Menü</string>
+  <string name="power_menu_power_title">Ausschalten</string>
   <string name="power_menu_screenshot_title">Bildschirmfoto</string>
+  <string name="powermenu_screenshot_delay_title">Bildschirmfoto Verzögerung setzen</string>
+  <string name="power_menu_screenrecord_title">Bildschirmaufzeichnung</string>
   <string name="power_menu_profiles_title">Profilwechsel</string>
   <string name="power_menu_airplane_title">Flugmodus</string>
   <string name="power_menu_users_title">Benutzer wechseln</string>
@@ -674,13 +677,13 @@
   <string name="unlock_quick_unlock_control_summary">Entsperren durch korrekte PIN- oder Passworteingabe</string>
   <string name="unlock_scramble_pin_layout_title">Zufällige Anordnung</string>
   <string name="unlock_scramble_pin_layout_summary">Bei jedem Entsperrversuch die Ziffernanordnung zufällig neu wählen</string>
-  <string name="link_volume_option_title">Gleiche Lautstärke für Klingelton &amp; Benachrichtigungen</string>
+  <string name="link_volume_option_title">Gleich für Klingeln &amp; Benachrichtigungen</string>
   <string name="notification_volume_option_title">Benachrichtigungslautstärke</string>
   <string name="notification_drawer_title">Benachrichtigungsanzeige</string>
   <string name="quick_pulldown_title">Schnelles Öffnen</string>
   <string name="quick_pulldown_summary">Herunterziehen der Benachrichtigungsleiste am %1$s Rand öffnet die Schnelleinstellungen</string>
-  <string name="quick_pulldown_summary_left">Links</string>
-  <string name="quick_pulldown_summary_right">Rechts</string>
+  <string name="quick_pulldown_summary_left">linken</string>
+  <string name="quick_pulldown_summary_right">rechten</string>
   <string name="quick_pulldown_off">Aus</string>
   <string name="quick_pulldown_left">Links</string>
   <string name="quick_pulldown_right">Rechts</string>
@@ -781,6 +784,9 @@
   <string name="display_and_lights">Display &amp; LED</string>
   <string name="notification_manager">Benachrichtigungen</string>
   <string name="lockscreen_settings">Bildschirmsperre</string>
+  <string name="cm_lockscreen_shortcuts_title">Ziele in unteren Ecken</string>
+  <string name="cm_lockscreen_shortcuts_summary">Ansehen oder ändern der Anwendungsziele in den unteren Ecken des Sperrbilschirms</string>
+  <string name="cm_lockscreen_targets_message">Lockscreen shortcuts</string>
   <string name="category_lights">LED</string>
   <string name="power_usage_history_title">Akkuverbrauch</string>
   <string name="recents_show_searchbar">Suchleiste im Anwendungsverlauf</string>

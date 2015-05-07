@@ -708,7 +708,7 @@
     <string name="qs_colors_title">Custom Color Options</string>
     <string name="qs_colors_summary">Change background, icon and text colors</string>
     <string name="qs_transparent_shade_title">Shade alpha</string>
-    <string name="qs_transparent_shade_summary">Ability to apply color alpha value and make notification shade transparent.</string>
+    <string name="qs_transparent_shade_summary">Ability to apply color alpha value and make notification shade transparent</string>
     <string name="qs_color_switch_title">Custom color switch</string>
     <string name="notification_drawer_clear_all_icon_color_title">Clear all icon</string>
 
@@ -720,12 +720,12 @@
     <!-- Lock screen Section -->
     <string name="lockscreen_settings_title">Lock Screen Options</string>
 
-   <!-- Lock screen -->
+    <!-- Lock screen -->
     <string name="lock_screen_weather_settings_title">Weather</string>
     <string name="lock_screen_weather_settings_summary">Customize Weather</string>
     <string name="lock_screen_color_settings_summary">Customize colors</string>
 
-   <!-- Weather settings -->
+    <!-- Weather settings -->
     <string name="weather_show_weather_title">Show weather</string>
     <string name="weather_show_weather_summary">Enable to show weather informations</string>
     <string name="weather_show_location_title">Show location</string>
@@ -806,7 +806,7 @@
     <string name="set_custom_density_title">Set custom density</string>
     <string name="set_custom_density_set">Set</string>
     <string name="custom_density_dialog_title">WARNING!</string>
-    <string name="custom_density_dialog_summary">Changing your default LCD density can sometimes cause certain apps to not function properly and/or the playstore to show apps being incompatible with your device"</string>
+    <string name="custom_density_dialog_summary">Changing your default LCD density can sometimes cause certain apps to not function properly and/or the playstore to show apps being incompatible with your device!</string>
     <string name="dpi">DPI</string>
     <string name="custom_density_warning">Restart the system and apply selected density?</string>
 
@@ -818,7 +818,7 @@
     <string name="gesture_anywhere_title">Gesture Anywhere</string>
     <string name="gesture_anywhere_enabled_title">Gesture Anywhere</string>
     <string name="gesture_anywhere_enabled_summary">Enable the Gesture Anywhere feature</string>
-    <string name="gesture_anywhere_position_title">Loction</string>
+    <string name="gesture_anywhere_position_title">Location</string>
     <string name="gesture_anywhere_position_left">Left edge</string>
     <string name="gesture_anywhere_position_right">Right edge</string>
     <string name="gesture_anywhere_gestures_title">Gestures</string>
@@ -1068,10 +1068,6 @@
     <string name="shake_pulse_mode">Shake and pulse</string>
     <string name="pulse_only_mode">Pulse (default)</string>
 
-    <!-- Instant reboot -->
-    <string name="advanced_reboot_oneclick">One click reboot</string>
-    <string name="advanced_reboot_oneclick_summary">Instantly trigger reboot action</string>
-
     <!-- Chamber of Secrets -->
     <string name="chamber_title">Chamber of secrets</string>
     <string name="chamber_toast">The chamber of secrets has opened</string>
@@ -1287,14 +1283,6 @@
 
     <!-- Summary for "Configure lockscreen" when security gesture is enabled [CHAR LIMIT=45] -->
     <string name="unlock_set_unlock_mode_gesture">Gesture</string>
-
-     <!-- QuickSettings: Smart Pulldown -->
-    <string name="smart_pulldown_title">Smart pulldown</string>
-    <string name="smart_pulldown_summary">Open Quick Settings when there are %1$s notifications present</string>
-    <string name="smart_pulldown_off">Off</string>
-    <string name="smart_pulldown_dismissable">No dismissable</string>
-    <string name="smart_pulldown_persistent">No persistent</string>
-    <string name="smart_pulldown_all">No dismissable or persistent</string>
 
     <!-- Restart SystemUI -->
     <string name="restart_systemui">Restart SystemUI</string>
