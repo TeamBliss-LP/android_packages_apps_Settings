@@ -17,11 +17,6 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/notification_drawer_title">
 
-    <SwitchPreference
-        android:key="block_on_secure_keyguard"
-        android:title="@string/block_on_secure_keyguard_title"
-        android:summary="@string/block_on_secure_keyguard_summary" />
-
     <PreferenceScreen
         android:key="status_bar_expanded_header_settings"
         android:title="@string/status_bar_expanded_header_settings_title"
