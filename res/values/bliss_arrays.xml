@@ -262,10 +262,10 @@
     <string-array name="recents_clear_all_location_entries">
         <item>@string/recents_clear_all_location_top_right</item>
         <item>@string/recents_clear_all_location_top_left</item>
-        <item>@string/recents_clear_all_location_top_center</item>        
+        <item>@string/recents_clear_all_location_top_center</item>
         <item>@string/recents_clear_all_location_bottom_right</item>
         <item>@string/recents_clear_all_location_bottom_left</item>
-        <item>@string/recents_clear_all_location_bottom_center</item>                  
+        <item>@string/recents_clear_all_location_bottom_center</item>
     </string-array>
 
     <string-array name="recents_clear_all_location_values" translatable="false">
@@ -273,8 +273,8 @@
         <item>1</item>
         <item>2</item>
         <item>3</item>
-        <item>4</item>  
-        <item>5</item>                                  
+        <item>4</item>
+        <item>5</item>
     </string-array>
 
     <!-- Listview animation -->
@@ -346,7 +346,7 @@
         <item>@string/toast_GrowFadeBottom_animation</item>
         <item>@string/toast_Translucent_animation</item>
         <item>@string/toast_SlideLeftRight_animation</item>
-        <item>@string/toast_SlideRightLeft_animation</item>        
+        <item>@string/toast_SlideRightLeft_animation</item>
     </string-array>
 
     <string-array name="toast_animation_values">
@@ -365,7 +365,7 @@
         <item>12</item>
         <item>13</item>
         <item>14</item>
-        <item>15</item>                
+        <item>15</item>
     </string-array>
 
     <!-- IME animations -->
@@ -443,7 +443,7 @@
         <item>1500</item>
         <item>2000</item>
     </string-array>
-    
+
     <!-- Volume step options. -->
     <string-array name="volume_steps_entries" translatable="false">
         <item>@string/volume_steps_60</item>
@@ -668,7 +668,7 @@
         <item>EEEE MM/dd</item>
         <item>@string/clock_date_format_custom</item>
     </string-array>
-    
+
     <!-- Clock font style -->
     <string-array name="clock_font_style_entries">
         <item>@string/clock_font_bold</item>
@@ -729,7 +729,7 @@
         <item>12000</item>
         <item>15000</item>
     </string-array>
-    
+
     <!-- Slim Actions For Shortcuts -->
     <string-array name="shortcut_action_launcher_entries">
         <item>@string/shortcut_action_kill</item>
@@ -770,7 +770,7 @@
         <item>**torch**</item>
         <item>**screenshot**</item>
     </string-array>
-    
+
     <string-array name="shortcut_action_tile_entries">
         <item>@string/shortcut_action_power</item>
         <item>@string/shortcut_action_power_menu</item>
@@ -784,7 +784,7 @@
         <item>**screenshot**</item>
         <item>**recents**</item>
     </string-array>
-    
+
     <!-- Volume default -->
     <string-array name="volume_default_entries" translatbale="false">
         <item>@string/volume_default_none</item>
@@ -998,8 +998,8 @@
         <item>1</item>
         <item>2</item>
     </string-array>
-	
-	<!-- Identicons -->
+
+    <!-- Identicons -->
     <string-array name="identicons_style_entries" translatable="false">
         <item>@string/identicons_style_retro</item>
         <item>@string/identicons_style_contemporary</item>
@@ -1054,18 +1054,31 @@
         <item>1.5</item>
         <item>2.0</item>
     </string-array>
-	
-	<!-- Themes -->
+
+    <!-- Themes -->
     <string-array name="theme_auto_mode_entries">
-	<item>@string/theme_auto_mode_off</item>
-	<item>@string/theme_auto_mode_lightsensor</item>
-	<item>@string/theme_auto_mode_twilight</item>
+        <item>@string/theme_auto_mode_off</item>
+        <item>@string/theme_auto_mode_lightsensor</item>
+        <item>@string/theme_auto_mode_twilight</item>
     </string-array>
 
     <string-array name="theme_auto_mode_values" translatable="false">
-	<item>0</item>
-	<item>1</item>
-	<item>2</item>
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <!-- NFC settings. -->
+    <string-array name="nfc_polling_mode_entries">
+        <item>@string/nfc_polling_mode_screen_off</item>
+        <item>@string/nfc_polling_mode_screen_locked</item>
+        <item>@string/nfc_polling_mode_screen_unlocked</item>
+    </string-array>
+
+    <string-array name="nfc_polling_mode_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
     </string-array>
 
 </resources>
