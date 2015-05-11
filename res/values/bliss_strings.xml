@@ -858,13 +858,6 @@
     <string name="ga_gestures_rename_label">Gesture name</string>
     <!-- Message, displayed when the sdcard cannot be found, 1st parameter is the name of the file that stores the gestures.  CHAR LIMIT=80 -->
     <string name="ga_gestures_error_loading">Could not load %s. Make sure you have storage available.</string>
-    <string name="trigger_category">Trigger region</string>
-    <string name="trigger_width_title">Trigger width</string>
-    <string name="trigger_width_summary">Adjust the width of the trigger area</string>
-    <string name="trigger_top_title">Trigger position</string>
-    <string name="trigger_top_summary">Adjust the vertical postion of the trigger area</string>
-    <string name="trigger_bottom_title">Trigger height</string>
-    <string name="trigger_bottom_summary">Adjust the height of the trigger area</string>
     <string name="picker_activities">Activities</string>
     <string name="select_custom_app_title">Select custom app</string>
     <string name="select_custom_activity_title">Select custom activity</string>
@@ -877,11 +870,12 @@
     <string name="app_circle_bar_included_apps_title">Included apps</string>
     <string name="app_circle_bar_included_apps_summary">Apps will show in app circle bar</string>
     <string name="trigger_width_title">Trigger width</string>
-    <string name="trigger_width_summary">Adjust the width of the trigger area</string>
     <string name="trigger_top_title">Trigger position</string>
     <string name="trigger_top_summary">Adjust the vertical postion of the trigger area</string>
     <string name="trigger_bottom_title">Trigger height</string>
     <string name="trigger_bottom_summary">Adjust the height of the trigger area</string>
+    <string name="trigger_width_summary">Adjust the width of the trigger area</string>
+    <string name="trigger_category">Trigger region</string>
 
     <!-- Show bluetooth icon when disconnected -->
     <string name="status_bar_bluetooth_icon">Show Bluetooth icon</string>
@@ -993,12 +987,6 @@
     <string name="volume_default_media">Media</string>
     <string name="volume_default_title">Volume default</string>
     <string name="volume_default_summary">Choose which volume gets changed by default</string>
-
-    <!-- Nfc settings -->
-    <string name="nfc_polling_mode_title">NFC polling mode</string>
-    <string name="nfc_polling_mode_screen_off">Screen off</string>
-    <string name="nfc_polling_mode_screen_locked">Screen on, locked</string>
-    <string name="nfc_polling_mode_screen_unlocked">Screen on, unlocked (default)</string>
 
     <!-- Doze pulse (ambient display) options -->
     <string name="doze_overwrite_value_title">Overwrite value</string>
@@ -1199,13 +1187,6 @@
     <string name="tab_position_summary">Display the tab on the top, middle, or bottom on the side of the screen.</string>
     <string name="tab_size_title">Tab size</string>
     <string name="tab_size_summary">Change the size of the visible tab.</string>
-    <string name="trigger_category">Trigger region</string>
-    <string name="trigger_width_title">Trigger width</string>
-    <string name="trigger_width_summary">Adjust the width of the trigger area</string>
-    <string name="trigger_top_title">Trigger position</string>
-    <string name="trigger_top_summary">Adjust the vertical postion of the trigger area</string>
-    <string name="trigger_bottom_title">Trigger height</string>
-    <string name="trigger_bottom_summary">Adjust the height of the trigger area</string>
 
     <!-- TRDS 5.0 -->	
     <string name="theme_settings_title">Dark Bliss</string>
