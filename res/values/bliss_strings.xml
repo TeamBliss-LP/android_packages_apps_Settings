@@ -539,6 +539,11 @@
     <string name="heads_up_touch_outside_summary_enabled">Hide notification on touch outside and on home button press</string>
     <string name="heads_up_touch_outside_summary_disabled">Do not hide notification after touch outside or on home button press</string>
 
+    <!-- Heads up Swipe -->
+    <string name="heads_up_dismiss_on_remove_title">Swipe behavior</string>
+    <string name="heads_up_dismiss_on_remove_summary_enabled">Hide notification instead of dismiss</string>
+    <string name="heads_up_dismiss_on_remove_summary_disabled">Hide and dismiss notification</string>
+
     <!-- Double Tap Navbar to Sleep -->
     <string name="double_tap_sleep_nav_bar_title">Double-tap to sleep</string>
     <string name="double_tap_sleep_nav_bar_summary">Double tap navigation bar to put the device to sleep</string>    
