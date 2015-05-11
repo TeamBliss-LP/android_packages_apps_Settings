@@ -170,6 +170,7 @@
   <string name="blacklist_regex_summary">Utiliser un point comme caractère générique et une astérisque pour la répétition. Exemple, 123.* si le numéro de téléphone commence par 123 et .*123.* si le numéro de téléphone contient 123</string>
   <string name="blacklist_policy_block_calls">Bloquer les appels entrants</string>
   <string name="blacklist_policy_block_messages">Bloquer les messages entrants</string>
+  <string name="blacklist_bad_number_add">Impossible d\'ajouter un numéro incorrect à la liste noire</string>
   <string name="remove_blacklist_number_title">Supprimer le numéro</string>
   <string name="select_contact">Sélectionner un contact</string>
   <string name="lockpattern_reset_button">Réinitialiser le schéma</string>
