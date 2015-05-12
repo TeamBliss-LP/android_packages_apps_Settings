@@ -213,10 +213,6 @@ public class QSTileHolder {
                 resourceName = "ic_qs_gestures_on";
                 stringId = R.string.qs_gesture_tile;
                 break;
-            case QSConstants.TILE_AMBIENT_DISPLAY:
-                resourceName = "ic_qs_doze";
-                stringId = R.string.qs_ambient_display_tile;
-                break;
             case QSConstants.TILE_MUSIC:
                 resourceName = "ic_qs_media_play";
                 stringId = R.string.qs_tile_music_play;
@@ -228,6 +224,9 @@ public class QSTileHolder {
             case QSConstants.TILE_APPSIDEBAR:
                 resourceName = "ic_qs_sidebar_off";
                 stringId = R.string.qs_tile_appsidebar;
+            case QSConstants.TILE_AMBIENT_DISPLAY:
+                resourceName = "ic_qs_doze";
+                stringId = R.string.qs_tile_ambient_display;
                 break;
             default:
                 return null;

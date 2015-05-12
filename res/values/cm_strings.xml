@@ -1027,6 +1027,9 @@
     <string name="qs_tile_screen_timeout">Screen timeout</string>
     <string name="qs_tile_trds">TRDS</string>
     <string name="qs_tile_appsidebar">App SideBar</string>
+    <string name="qs_tile_usb_tether">USB tethering</string>
+    <string name="qs_tile_heads_up">Heads up</string>
+    <string name="qs_tile_ambient_display">Ambient display</string>
 
     <string name="qs_main_tiles_title">Enlarge first row</string>
     <string name="qs_main_tiles_summary_on">Two main tiles on the first row</string>
@@ -1051,7 +1054,6 @@
     <string name="qs_tile_slimaction">SlimAction</string>
     <string name="qs_hwkeys_tile">Hardware Keys</string>
     <string name="qs_gesture_tile">Gesture Anywhere</string>
-    <string name="qs_ambient_display_tile">Ambient display</string>
 
     <string name="sim_no_number_set">No number assigned</string>
 
@@ -1167,7 +1169,7 @@
 
     <string name="interruptions_ignore_while_media_title">Prevent audio ducking</string>
     <string name="interruptions_ignore_while_media_summary">Do not reduce media playback volume when a notification arrives</string>
-    <string name="none_is_silent_title">None is Silent mode</string>
+    <string name="none_is_silent_title">Never mute alarms</string>
     <string name="none_is_silent_summary">Silent mode always sounds alarms</string>
     <string name="allow_lights_title">Allow notification lights</string>
 
