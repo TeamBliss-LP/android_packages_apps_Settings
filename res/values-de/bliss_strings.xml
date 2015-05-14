@@ -964,8 +964,8 @@
 
     <!-- Less Notification sounds -->
     <string name="notifications_category_title">Benachrichtigungen</string>
-    <string name="less_notification_sounds_title">Weniger oft wiederholte Benachrichtigungsklänge</string>
-    <string name="less_notification_sounds_summary">Begrenzt Benachrichtigungsklänge jeder Anwendung auf nur einmal pro eingestellten Zeitraum</string>
+    <string name="less_notification_sounds_title">Benachrichtigungstöne weniger häufig</string>
+    <string name="less_notification_sounds_summary">Begrenzt Benachrichtigungstöne jeder Anwendung auf nur einmal pro eingestellten Zeitraum</string>
     <string name="less_notification_sounds_default">Standardverhalten</string>
     <string name="less_notification_sounds_3s">3 Sekunden</string>
     <string name="less_notification_sounds_5s">5 Sekunden</string>
@@ -979,7 +979,7 @@
 
     <!-- Volume Keys Media Control -->
     <string name="volume_keys_control_media_stream">Medien Steuerung</string>
-    <string name="volume_keys_control_media_stream_summary">Lautstärketasten steuern Medienlautstärke statt Benachrichtigungsklänge</string>
+    <string name="volume_keys_control_media_stream_summary">Lautstärketasten steuern Medienlautstärke statt Benachrichtigungstöne</string>
     <string name="volume_button_toggle_info">Lautstärketasten Aufweckoption muss deaktiviert sein</string>   
 
     <!-- Volume button default -->

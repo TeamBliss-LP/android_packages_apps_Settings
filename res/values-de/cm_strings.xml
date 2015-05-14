@@ -810,4 +810,7 @@
   <string name="battery_saver_threshold">Schwellwert für Energiesparmodus</string>
   <string name="battery_saver_summary">Leistung und Hintergrunddaten verringern</string>
   <string name="battery_saver_summary_unavailable">Während des Ladevorgangs nicht verfügbar</string>
+  <string name="none_is_silent_title">Alarm niemals stumm</string>
+  <string name="none_is_silent_summary">Bei Ruhemodus erklingen Alarme immer</string>
+  <string name="allow_lights_title">Erlaube Benachrichtigungslicht</string>
 </resources>
