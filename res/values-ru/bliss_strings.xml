@@ -707,7 +707,7 @@
     <string name="qs_tile_reboot">Перезагрузка</string>
     <string name="qs_usb_tether_tile">USB-модем</string>
     <string name="qs_navbar_tile">Панель навигации</string>
-    <string name="qs_ambient_display_tile">Запрет спящего режима</string>
+    <string name="qs_tile_ambient_display">Запрет спящего режима</string>
     <string name="qs_tile_headsup">Всплывающие уведомления</string>
 
     <!-- Smart cover -->
