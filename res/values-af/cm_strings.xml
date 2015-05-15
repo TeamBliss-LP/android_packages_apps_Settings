@@ -651,7 +651,8 @@
   <string name="edge_gesture_service_summary">Moenie raak gebeure vir navigasie en status balk gebare stuur na programme</string>
   <string name="cmlicense_title">CyanogenMod Regs</string>
   <string name="settings_cmlicense_activity_title">CyanogenMod Regs</string>
-  <string name="settings_cmlicense_activity_unreachable">Jy het nie \'n data verbinding. Om hierdie inligting nou te sien, gaan na %s van enige rekenaar wat verbind is tot die Internet.</string>
+  <string name="lockpattern_settings_enable_error_path_title">Wys patroon fout</string>
+  <string name="lockpattern_settings_enable_dots_title">Wys patroon kolle</string>
   <string name="unlock_quick_unlock_control_title">Vinnige oopsluit</string>
   <string name="unlock_quick_unlock_control_summary">Ontsluit outomaties wanneer die korrekte PIN/wagwoord ingesleutel is</string>
   <string name="unlock_scramble_pin_layout_title">Skommel uitleg</string>
