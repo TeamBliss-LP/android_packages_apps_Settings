@@ -533,6 +533,10 @@
     <string name="heads_up_time_out_8sec">8 Sekunden</string>
     <string name="heads_up_time_out_10sec">10 Sekunden</string>
     <string name="heads_up_time_out_never">Nie</string>
+    <string name="heads_up_bg_color_title">Hintergrundfarbe</string>
+    <string name="heads_up_text_color_title">Textfarbe</string>
+    <string name="heads_up_colors_title">Farben ändern</string>
+    <string name="heads_up_colors_summary">Ändern der Text- und Hintergrundfarben für das Heads Up Popup</string>
 
     <!-- Heads up touch outside -->
     <string name="heads_up_touch_outside_title">Verhalten bei Berührung außerhalb</string>
