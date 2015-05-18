@@ -104,7 +104,6 @@ public class NetworkTraffic extends SettingsPreferenceFragment
         String hexColor = String.format("#%08x", (0xffffffff & intColor));
             mNetTrafficColor.setSummary(hexColor);
             mNetTrafficColor.setNewPreviewColor(intColor);
-			mNetTrafficColor.setAlphaSliderEnabled(true);
 
         if (TrafficStats.getTotalTxBytes() != TrafficStats.UNSUPPORTED &&
                 TrafficStats.getTotalRxBytes() != TrafficStats.UNSUPPORTED) {

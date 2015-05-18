@@ -186,7 +186,6 @@ public class StatusBarBatteryStatusSettings extends SettingsPreferenceFragment i
             hexColor = String.format("#%08x", (0xffffffff & intColor));
             mBatteryColor.setSummary(hexColor);
             mBatteryColor.setOnPreferenceChangeListener(this);
-            mBatteryColor.setAlphaSliderEnabled(true);
         } else {
             catColors.removePreference(mBatteryColor);
         }
@@ -199,7 +198,6 @@ public class StatusBarBatteryStatusSettings extends SettingsPreferenceFragment i
             hexColor = String.format("#%08x", (0xffffffff & intColor));
             mTextColor.setSummary(hexColor);
             mTextColor.setOnPreferenceChangeListener(this);
-            mTextColor.setAlphaSliderEnabled(true);
         } else {
             catColors.removePreference(mTextColor);
         }

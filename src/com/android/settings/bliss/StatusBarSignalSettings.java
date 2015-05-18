@@ -102,7 +102,6 @@ public class StatusBarSignalSettings extends SettingsPreferenceFragment implemen
         hexColor = String.format("#%08x", (0xffffffff & intColor));
         mNetworkNormalColor.setSummary(hexColor);
         mNetworkNormalColor.setOnPreferenceChangeListener(this);
-        mNetworkNormalColor.setAlphaSliderEnabled(true);
 
         mNetworkFullyColor = (ColorPickerPreference) findPreference(
                 KEY_NETWORK_FULLY_COLOR);
@@ -113,7 +112,6 @@ public class StatusBarSignalSettings extends SettingsPreferenceFragment implemen
         hexColor = String.format("#%08x", (0xffffffff & intColor));
         mNetworkFullyColor.setSummary(hexColor);
         mNetworkFullyColor.setOnPreferenceChangeListener(this);
-        mNetworkFullyColor.setAlphaSliderEnabled(true);
 
         PreferenceCategory activityCat = (PreferenceCategory) findPreference(KEY_CATEGORY_ACTIVITY);
         mActivityNormalColor = (ColorPickerPreference) findPreference(
@@ -128,7 +126,6 @@ public class StatusBarSignalSettings extends SettingsPreferenceFragment implemen
             hexColor = String.format("#%08x", (0xffffffff & intColor));
             mActivityNormalColor.setSummary(hexColor);
             mActivityNormalColor.setOnPreferenceChangeListener(this);
-            mActivityNormalColor.setAlphaSliderEnabled(true);
 
             intColor = Settings.System.getInt(mResolver,
                     Settings.System.STATUS_BAR_NETWORK_ACTIVITY_ICONS_FULLY_COLOR,
@@ -137,7 +134,6 @@ public class StatusBarSignalSettings extends SettingsPreferenceFragment implemen
             hexColor = String.format("#%08x", (0xffffffff & intColor));
             mActivityFullyColor.setSummary(hexColor);
             mActivityFullyColor.setOnPreferenceChangeListener(this);
-            mActivityFullyColor.setAlphaSliderEnabled(true);
         } else {
             activityCat.removePreference(mActivityNormalColor);
             activityCat.removePreference(mActivityFullyColor);
@@ -153,7 +149,6 @@ public class StatusBarSignalSettings extends SettingsPreferenceFragment implemen
         hexColor = String.format("#%08x", (0xffffffff & intColor));
         mAirplaneColor.setSummary(hexColor);
         mAirplaneColor.setOnPreferenceChangeListener(this);
-        mAirplaneColor.setAlphaSliderEnabled(true);
 
         mVpnColor = (ColorPickerPreference) findPreference(
                 PREF_VPN_COLOR);

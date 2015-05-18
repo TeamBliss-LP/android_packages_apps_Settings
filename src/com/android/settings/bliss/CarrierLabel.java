@@ -83,7 +83,6 @@ public class CarrierLabel extends SettingsPreferenceFragment implements OnPrefer
         hexColor = String.format("#%08x", (0xffffffff & intColor));
         mCarrierColorPicker.setSummary(hexColor);
         mCarrierColorPicker.setNewPreviewColor(intColor);
-        mCarrierColorPicker.setAlphaSliderEnabled(true);
 
         updateCustomLabelTextSummary();
 
