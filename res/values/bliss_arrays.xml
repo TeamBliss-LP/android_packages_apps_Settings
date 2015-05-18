@@ -893,7 +893,7 @@
        <item>2</item>
        <item>3</item>
     </string-array>
-    
+
     <!-- Doze pulse (ambient display) options -->
     <string-array name="doze_pulse_duration_in_entries" translatable="false">
         <item>@string/twohundred_ms</item>
@@ -1036,7 +1036,7 @@
         <item>Middle</item>
         <item>Bottom</item>
     </string-array>
-    
+
     <string-array name="tab_position_entryValues">
         <item>0</item>
         <item>1</item>
@@ -1048,7 +1048,7 @@
         <item>Medium</item>
         <item>Large</item>
     </string-array>
-    
+
     <string-array name="tab_size_entryValues">
         <item>1.0</item>
         <item>1.5</item>

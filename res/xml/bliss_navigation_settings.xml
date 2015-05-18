@@ -18,12 +18,6 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/interface_settings_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
-    
-    <PreferenceScreen
-        android:key="navigation_bar_ring"
-	android:fragment="com.android.settings.cyanogenmod.NavRing"
-	android:title="@string/navigation_ring_title"
-	android:icon="@drawable/ic_nav_ring" />
 
     <!-- Button Settings -->
     <PreferenceScreen
@@ -32,11 +26,42 @@
         android:fragment="com.android.settings.ButtonSettings"
         android:icon="@drawable/ic_settings_buttons" />
 
-     <!-- Pie control -->
-     <PreferenceScreen
-         android:key="pie_settings"
-         android:fragment="com.android.settings.bliss.PieControl"
-         android:title="@string/pie_control_title"
-         android:icon="@drawable/ic_settings_pie" />
-	
+    <!-- App circle bar -->
+    <PreferenceScreen
+        android:key="app_circle_bar"
+        android:fragment="com.android.settings.bliss.AppCircleBar"
+        android:title="@string/app_circle_bar_title"
+        android:icon="@drawable/ic_appcirclebar"
+        settings:advanced="true" />
+
+    <!-- App sidebar -->
+    <PreferenceScreen
+        android:key="app_sidebar"
+        android:fragment="com.android.settings.bliss.AppSidebar"
+        android:title="@string/app_sidebar_title"
+        android:icon="@drawable/ic_settings_sidebar"
+        settings:advanced="true" />
+
+    <!-- Gesture anywhere -->
+    <PreferenceScreen
+        android:key="gesture_anywhere"
+        android:fragment="com.android.settings.bliss.gestureanywhere.GestureAnywhereSettings"
+        android:title="@string/gesture_anywhere_title"
+        android:icon="@drawable/ic_settings_gestures"
+        settings:advanced="true" />
+
+    <!-- Navigation Ring -->
+    <PreferenceScreen
+        android:key="navigation_bar_ring"
+        android:fragment="com.android.settings.cyanogenmod.NavRing"
+        android:title="@string/navigation_ring_title"
+        android:icon="@drawable/ic_nav_ring" />
+
+    <!-- Pie control -->
+    <PreferenceScreen
+        android:key="pie_settings"
+        android:fragment="com.android.settings.bliss.PieControl"
+        android:title="@string/pie_control_title"
+        android:icon="@drawable/ic_settings_pie" />
+
 </PreferenceScreen>
