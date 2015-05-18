@@ -65,4 +65,10 @@
         android:title="@string/navigation_ring_title"
         android:icon="@drawable/ic_nav_ring" />
 
+    <PreferenceScreen
+        android:key="pie_settings"
+        android:fragment="com.android.settings.bliss.PieControl"
+        android:title="@string/pie_control_title"
+	android:icon="@drawable/ic_settings_pie" />
+
 </PreferenceScreen>

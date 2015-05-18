@@ -86,11 +86,13 @@ public class ActionListViewSettings extends ListFragment implements
     private static final int MENU_RESET = MENU_ADD + 1;
 
     private static final int NAV_BAR               = 0;
-    private static final int NAV_RING              = 1;
-    private static final int LOCKSCREEN_SHORTCUT   = 2;
-    private static final int POWER_MENU_SHORTCUT   = 3;
-    private static final int SHAKE_EVENTS_DISABLED = 4;
-    private static final int QUICKTILE             = 5;
+    private static final int PIE                   = 1;
+    private static final int PIE_SECOND            = 2;
+    private static final int NAV_RING              = 3;
+    private static final int LOCKSCREEN_SHORTCUT   = 4;
+    private static final int POWER_MENU_SHORTCUT   = 5;
+    private static final int SHAKE_EVENTS_DISABLED = 6;
+    private static final int QUICKTILE             = 7;
 
     private static final int DEFAULT_MAX_ACTION_NUMBER = 5;
 
@@ -527,13 +529,19 @@ public class ActionListViewSettings extends ListFragment implements
                     mActivity, mActionValuesKey, mActionEntriesKey);
             case NAV_RING:
                 return ActionHelper.getNavRingConfigWithDescription(
+                    mActivity, mActionValuesKey, mActionEntriesKey);*/
+            case PIE:
+                return ActionHelper.getPieConfigWithDescription(
                     mActivity, mActionValuesKey, mActionEntriesKey);
-            case POWER_MENU_SHORTCUT:
+            case PIE_SECOND:
+                return ActionHelper.getPieSecondLayerConfigWithDescription(
+                    mActivity, mActionValuesKey, mActionEntriesKey);
+/*            case POWER_MENU_SHORTCUT:
                 return PolicyHelper.getPowerMenuConfigWithDescription(
                     mActivity, mActionValuesKey, mActionEntriesKey);
             case SHAKE_EVENTS_DISABLED:
-                return ActionHelper.getDisabledShakeApps(mActivity);
-*/
+                return ActionHelper.getDisabledShakeApps(mActivity);*/
+
         }
         return null;
     }
@@ -552,14 +560,19 @@ public class ActionListViewSettings extends ListFragment implements
                 break;
             case NAV_RING:
                 ActionHelper.setNavRingConfig(mActivity, actionConfigs, reset);
+                break;*/
+            case PIE:
+                ActionHelper.setPieConfig(mActivity, actionConfigs, reset);
                 break;
-            case POWER_MENU_SHORTCUT:
+            case PIE_SECOND:
+                ActionHelper.setPieSecondLayerConfig(mActivity, actionConfigs, reset);
+                break;
+/*            case POWER_MENU_SHORTCUT:
                 PolicyHelper.setPowerMenuConfig(mActivity, actionConfigs, reset);
                 break;
             case SHAKE_EVENTS_DISABLED:
                 ActionHelper.setDisabledShakeApps(mActivity, actionConfigs, reset);
-                break;
-*/
+                break;*/
         }
     }
 
@@ -723,6 +736,8 @@ public class ActionListViewSettings extends ListFragment implements
                             break;
                         case NAV_BAR:
                         case NAV_RING:
+                        case PIE:
+                        case PIE_SECOND:
                         default:
                             actionMode = res.getString(R.string.shortcut_action_help_button);
                             break;
@@ -734,7 +749,9 @@ public class ActionListViewSettings extends ListFragment implements
                         R.string.shortcut_action_help_main, actionMode, icon);
                     if (!getOwner().mDisableDeleteLastEntry) {
                         finalHelpMessage += " " + res.getString(
-                            R.string.shortcut_action_help_delete_last_entry, actionMode);
+                                getOwner().mActionMode == PIE_SECOND
+                                ? R.string.shortcut_action_help_pie_second_layer_delete_last_entry
+                                : R.string.shortcut_action_help_delete_last_entry, actionMode);
                     }
                     return new AlertDialog.Builder(getActivity())
                     .setTitle(R.string.help_label)
