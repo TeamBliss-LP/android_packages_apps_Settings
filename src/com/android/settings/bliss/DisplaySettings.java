@@ -72,12 +72,16 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         }
         densityEntries[8] = getString(R.string.custom_density);
         int currentDensity = DisplayMetrics.DENSITY_CURRENT;
+        if (currentDensity != 0 && currentDensity < 200) {
+            currentDensity = 200;
+        } else if (currentDensity > 1000) {
+            currentDensity = 1000;
+        }
         mLcdDensityPreference.setEntries(densityEntries);
         mLcdDensityPreference.setEntryValues(densityEntries);
         mLcdDensityPreference.setValue(String.valueOf(currentDensity));
         mLcdDensityPreference.setOnPreferenceChangeListener(this);
         updateLcdDensityPreferenceDescription(currentDensity);
-
     }
 
     @Override
@@ -93,6 +97,11 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                 showDialog(DIALOG_DENSITY);
             } else {
                 int value = Integer.parseInt((String) objValue);
+                if (value != 0 && value < 200) {
+                    value = 200;
+                } else if (value > 1000) {
+                    value = 1000;
+                }
                 writeLcdDensityPreference(value);
                 updateLcdDensityPreferenceDescription(value);
             }
@@ -103,8 +112,8 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private void updateLcdDensityPreferenceDescription(int currentDensity) {
         ListPreference preference = mLcdDensityPreference;
         String summary;
-        if (currentDensity < 10 || currentDensity >= 1000) {
-            // Unsupported value 
+        if (currentDensity < 200 || currentDensity >= 1000) {
+            // Unsupported value
             summary = "";
         }
         else {
@@ -124,7 +133,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         // Show a dialog before restart
         // and let the user know of it
         showDialogInner(DIALOG_DENSITY_WARNING);
-
     }
 
     // Restart the system to apply changes
@@ -150,7 +158,8 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                 .setTitle(R.string.custom_density_dialog_title)
                 .setMessage(getResources().getString(R.string.custom_density_dialog_summary))
                 .setView(textEntryView)
-                .setPositiveButton(getResources().getString(R.string.set_custom_density_set), new DialogInterface.OnClickListener() {
+                .setPositiveButton(getResources().getString(R.string.set_custom_density_set),
+                    new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int whichButton) {
                         EditText dpi = (EditText) textEntryView.findViewById(R.id.dpi_edit);
                         Editable text = dpi.getText();
@@ -158,24 +167,28 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                         String editText = dpi.getText().toString();
                         // Set the value of the text box
                         try {
-                            SystemProperties.set("persist.sys.lcd_density", editText);
+                            int mDPI = Integer.parseInt(editText);
+                            if (mDPI != 0 && mDPI < 200) {
+                                mDPI = 200;
+                            } else if (mDPI > 1000) {
+                                mDPI = 1000;
+                            }
+                            SystemProperties.set("persist.sys.lcd_density", Integer.toString(mDPI));
+                            // Show a dialog before restart
+                            // and let the user know of it
+                            showDialogInner(DIALOG_DENSITY_WARNING);
                         }
                         catch (Exception e) {
                             Log.w(TAG, "Unable to save LCD density");
                         }
-                        // Show a dialog before restart
-                        // and let the user know of it
-                        showDialogInner(DIALOG_DENSITY_WARNING);
-
-                    }
-
-                })
-                .setNegativeButton(getResources().getString(R.string.cancel), new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int whichButton) {
-                        dialog.dismiss();
                     }
                 })
-                .create();
+                .setNegativeButton(getResources().getString(R.string.cancel),
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int whichButton) {
+                            dialog.dismiss();
+                        }
+                    }).create();
         }
         return null;
     }
@@ -207,9 +220,9 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                     .setNegativeButton(R.string.dialog_cancel,
                         new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
-                            // If canceled, set the density value to null avoiding
+                            // If cancelled, set the density value to null avoiding
                             // the storage of the clicked value and forward change
-                            // to it in a next restart of the system 
+                            // to it in a next restart of the system
                             try {
                                 SystemProperties.set("persist.sys.lcd_density", null);
                             } catch (Exception e) {
