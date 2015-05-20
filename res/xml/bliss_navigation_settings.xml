@@ -27,12 +27,12 @@
         android:icon="@drawable/ic_settings_buttons" />
 
     <!-- Custom Navbar -->
-	<PreferenceScreen
+    <PreferenceScreen
         android:key="navbar"
         android:title="@string/bliss_navbar_title"
         android:fragment="com.android.settings.bliss.NavBarSettings"
-	android:icon="@drawable/ic_navbar_layout"
-        settings:advanced="true"/>
+        android:icon="@drawable/ic_navbar_layout"
+        settings:advanced="true" />
 
     <!-- App circle bar -->
     <PreferenceScreen
@@ -64,12 +64,5 @@
         android:fragment="com.android.settings.cyanogenmod.NavRing"
         android:title="@string/navigation_ring_title"
         android:icon="@drawable/ic_nav_ring" />
-
-    <!-- Pie control -->
-    <PreferenceScreen
-        android:key="pie_settings"
-        android:fragment="com.android.settings.bliss.PieControl"
-        android:title="@string/pie_control_title"
-        android:icon="@drawable/ic_settings_pie" />
 
 </PreferenceScreen>
