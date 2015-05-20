@@ -23,7 +23,7 @@
     <PreferenceCategory
             android:key="volumes"
             android:title="@string/category_volume">
-    
+
         <!-- Link Volume Notification -->
         <com.android.settings.cyanogenmod.SecureSettingSwitchPreference
                 android:key="volume_link_notification"
@@ -97,6 +97,13 @@
                 android:dialogTitle="@string/notification_ringtone_title_cm"
                 android:persistent="false"
                 android:ringtoneType="notification" />
+
+        <!-- Screenshot tone -->
+        <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
+                android:key="screenshot_sound"
+                android:title="@string/screenshot_sound_title"
+                android:summary="@string/screenshot_sound_summary"
+                android:defaultValue="true" />
 
         <!-- Interruptions -->
         <PreferenceScreen

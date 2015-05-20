@@ -971,30 +971,10 @@
     <string name="lid_controls_wake_title">Control wake</string>
     <string name="lid_controls_wake_summary">Turn screen on when lid opens</string>
 
-    <!-- Safe headset volume restore checkbox -->
-    <string name="safe_headset_volume_title">Safe headset volume</string>
-    <string name="safe_headset_volume_summary">Prevent loud volume levels when headset is first plugged in</string>
-    <string name="safe_headset_volume_warning_dialog_text">Listening at high volume for long periods may damage your hearing. Disable it with caution.</string>
-
-    <!-- Less Notification sounds -->
-    <string name="notifications_category_title">Notifications</string>
-    <string name="less_notification_sounds_title">Less frequent notification sounds</string>
-    <string name="less_notification_sounds_summary">Limit the notification sounds of each app to only play once per set time period</string>
-    <string name="less_notification_sounds_default">Default Behaviour</string>
-    <string name="less_notification_sounds_3s">3 seconds</string>
-    <string name="less_notification_sounds_5s">5 seconds</string>
-    <string name="less_notification_sounds_10s">10 seconds</string>
-    <string name="less_notification_sounds_15s">15 seconds</string>
-    <string name="less_notification_sounds_30s">30 seconds</string>
-    <string name="less_notification_sounds_45s">45 seconds</string>
-    <string name="less_notification_sounds_1m">1 minute</string>
-    <string name="less_notification_sounds_2m">2 minutes</string>
-    <string name="less_notification_sounds_5m">5 minutes</string>
-
     <!-- Volume Keys Media Control -->
     <string name="volume_keys_control_media_stream">Media control</string>
     <string name="volume_keys_control_media_stream_summary">Volume keys control media volume rather than notifications</string>
-    <string name="volume_button_toggle_info">Volume rocker wake must be disabled</string>   
+    <string name="volume_button_toggle_info">Volume rocker wake must be disabled</string>
 
     <!-- Volume button default -->
     <string name="volume_default_none">None</string>
@@ -1282,12 +1262,12 @@
     <!-- Instant reboot -->
     <string name="advanced_reboot_oneclick">One click reboot</string>
     <string name="advanced_reboot_oneclick_summary">Instantly trigger reboot action</string>
-    
+
     <!-- Status bar power menu -->
     <string name="status_bar_power_menu_title">Power menu in expanded status bar</string>
     <string name="status_bar_power_menu_dialog_title">Set tap and long-press actions</string>
     <string name="status_bar_power_menu_off">Disabled</string>
     <string name="status_bar_power_menu_action_screen_off">Screen off - Power menu</string>
-    <string name="status_bar_power_menu_action_dialog">Power menu - Screen off</string> 
+    <string name="status_bar_power_menu_action_dialog">Power menu - Screen off</string>
 
 </resources>
