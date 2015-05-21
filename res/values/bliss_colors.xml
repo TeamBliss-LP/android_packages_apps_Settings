@@ -21,7 +21,4 @@
     <color name="divider">#1fffffff</color>
     <color name="ripple_material_dark">#4dffffff</color>
 
-    <color name="setting_separator">#ff484848</color>
-    <color name="extension_list_item_color">#ff999999</color>
-
 </resources>
