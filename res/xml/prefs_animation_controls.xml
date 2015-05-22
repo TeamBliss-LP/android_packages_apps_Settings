@@ -2,6 +2,17 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
 		
+        <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
+            android:defaultValue="true"
+            android:key="animation_controls_exit_only"
+            android:summary="@string/animation_exit_only_title"
+            android:title="@string/animation_exit_only_title" />
+
+        <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
+            android:defaultValue="false"
+            android:key="animation_controls_reverse_exit"
+            android:summary="@string/animation_reverse_exit_title"
+            android:title="@string/animation_reverse_exit_title" />			
 
         <ListPreference
             android:key="activity_open"

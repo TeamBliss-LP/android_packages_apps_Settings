@@ -313,6 +313,8 @@
     <string name="animation_duration_title">Animation duration</string>
     <string name="animation_duration_default">Default</string>
     <string name="header_summary_animation">@null</string>
+    <string name="animation_exit_only_title">Enter only animation</string>
+    <string name="animation_reverse_exit_title">Reverse exit animation</string>
     <!-- Screenshot sound -->
     <string name="screenshot_sound_title">Screenshot sound</string>
     <string name="screenshot_sound_summary">Plays sound effect when screenshot is taken</string>
