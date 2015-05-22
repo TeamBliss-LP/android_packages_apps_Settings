@@ -27,4 +27,8 @@
         android:entryValues="@array/toast_animation_values"
         android:persistent="false" />
 		   
+    <PreferenceScreen
+        android:id="@+id/animations"
+        android:title="@string/title_animation_controls"
+        android:fragment="com.android.settings.bliss.fragments.AnimationControls" />
 </PreferenceScreen>
