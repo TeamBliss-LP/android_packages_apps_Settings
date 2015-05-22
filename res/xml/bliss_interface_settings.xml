@@ -25,14 +25,6 @@
         android:layout="@layout/bliss_logo_row"
         android:selectable="false" />
 
-    <!-- Display and animation options -->
-    <PreferenceScreen
-        android:id="@+id/animation_settings"
-        android:title="@string/animation_settings_title"
-        android:fragment="com.android.settings.bliss.AnimationSettings"
-        android:icon="@drawable/ic_settings_display_animations"
-        settings:advanced="true" />
-
     <!-- Heads Up Options -->
     <PreferenceScreen
         android:key="heads_up_enabled"
