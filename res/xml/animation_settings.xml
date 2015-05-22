@@ -19,6 +19,11 @@
     android:title="@string/animation_settings_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
     
+    <PreferenceScreen
+        android:key="interface_animation_scroll"
+        android:fragment="com.android.settings.bliss.KeyboardAnimationInterfaceSettings"
+        android:title="@string/ime_animation_title"
+        android:summary="@string/ime_animation_summary" />    
 
     <ListPreference
         android:key="toast_animation"
