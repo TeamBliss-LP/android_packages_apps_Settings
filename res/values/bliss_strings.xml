@@ -1113,4 +1113,8 @@
         <item>@string/volume_steps_7</item>
         <item>@string/volume_steps_5</item>
 
+    <!-- Animations Category -->    
+    <string name="animation_settings_category">Animations</string>
+    <string name="animation_settings_title">Animations</string> 
+
 </resources>
