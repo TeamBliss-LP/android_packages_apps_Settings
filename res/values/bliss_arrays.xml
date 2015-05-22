@@ -357,6 +357,31 @@
         <item>12</item>
         <item>13</item>
     </string-array>
+    <!-- Volume step options. -->
+    <string-array name="volume_steps_entries" translatable="false">
+        <item>@string/volume_steps_60</item>
+        <item>@string/volume_steps_45</item>
+        <item>@string/volume_steps_30</item>
+        <item>@string/volume_steps_15</item>
+        <item>@string/volume_steps_7</item>
+        <item>@string/volume_steps_5</item>
+    </string-array>
+
+    <!-- Option to enable/disable scrolling cache -->
+    <string-array name="entries_scrollingcache" translatable="false">
+        <item>@string/pref_scrollingcache_force_enable</item>
+        <item>@string/pref_scrollingcache_default_enable</item>
+        <item>@string/pref_scrollingcache_default_disable</item>
+        <item>@string/pref_scrollingcache_force_disable</item>
+    </string-array>
+
+    <string-array name="values_scrollingcache" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
     <!-- Heads up timeout -->
     <string-array name="heads_up_time_out_entries">
         <item>@string/heads_up_time_out_never</item>
@@ -951,21 +976,5 @@
         <item>**double**</item>
         <item>**icon**</item>
     </string-array>
-
-    <!-- Volume Steps -->
-    <string name="volume_steps_title">Volume steps</string>
-    <string name="volume_steps_alarm_title">Volume steps: Alarm</string>
-    <string name="volume_steps_dtmf_title">Volume steps: DTMF</string>
-    <string name="volume_steps_music_title">Volume steps: Music</string>
-    <string name="volume_steps_notification_title">Volume steps: Notification</string>
-    <string name="volume_steps_ring_title">Volume steps: Ringer</string>
-    <string name="volume_steps_system_title">Volume steps: System</string>
-    <string name="volume_steps_voice_call_title">Volume steps: Voice Call</string>
-    <string name="volume_steps_60">60</string>
-    <string name="volume_steps_45">45</string>
-    <string name="volume_steps_30">30</string>
-    <string name="volume_steps_15">15</string>
-    <string name="volume_steps_7">7</string>
-    <string name="volume_steps_5">5</string>
 
 </resources>
