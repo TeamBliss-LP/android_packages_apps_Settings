@@ -100,21 +100,21 @@ public class VolumeSteps extends SettingsPreferenceFragment implements
             mVolumeStepsMusic.setOnPreferenceChangeListener(this);
 
             updateVolumeSteps(mVolumeStepsNotification.getKey(),mAudioManager.getStreamMaxVolume(mAudioManager.STREAM_NOTIFICATION));
-            mVolumeStepsNotification .setOnPreferenceChangeListener(this);
+            mVolumeStepsNotification.setOnPreferenceChangeListener(this);
 
             if (isPhone) {
                 updateVolumeSteps(mVolumeStepsRing.getKey(),mAudioManager.getStreamMaxVolume(mAudioManager.STREAM_RING));
-                mVolumeStepsRing .setOnPreferenceChangeListener(this);
+                mVolumeStepsRing.setOnPreferenceChangeListener(this);
             } else {
                 audioCat.removePreference(mVolumeStepsRing);
             }
 
             updateVolumeSteps(mVolumeStepsSystem.getKey(),mAudioManager.getStreamMaxVolume(mAudioManager.STREAM_SYSTEM));
-            mVolumeStepsSystem .setOnPreferenceChangeListener(this);
+            mVolumeStepsSystem.setOnPreferenceChangeListener(this);
 
             if (isPhone) {
                 updateVolumeSteps(mVolumeStepsVoiceCall.getKey(),mAudioManager.getStreamMaxVolume(mAudioManager.STREAM_VOICE_CALL));
-                mVolumeStepsVoiceCall .setOnPreferenceChangeListener(this);
+                mVolumeStepsVoiceCall.setOnPreferenceChangeListener(this);
             } else {
                 audioCat.removePreference(mVolumeStepsVoiceCall);
             }
@@ -123,30 +123,15 @@ public class VolumeSteps extends SettingsPreferenceFragment implements
     }
 
     public boolean onPreferenceChange(Preference preference, Object objValue) {
-        if (preference == mVolumeStepsAlarm) {
+        if ((preference == mVolumeStepsAlarm) || (preference == mVolumeStepsDTMF) ||
+            (preference == mVolumeStepsMusic) || (preference == mVolumeStepsNotification) ||
+            (preference == mVolumeStepsRing)  || (preference == mVolumeStepsSystem) ||
+            (preference == mVolumeStepsVoiceCall)) {
             updateVolumeSteps(preference.getKey(),Integer.parseInt(objValue.toString()));
             return true;
-        } else if (preference == mVolumeStepsDTMF) {
-            updateVolumeSteps(preference.getKey(),Integer.parseInt(objValue.toString()));
-            return true;
-        } else if (preference == mVolumeStepsMusic) {
-            updateVolumeSteps(preference.getKey(),Integer.parseInt(objValue.toString()));
-            return true;
-        } else if (preference == mVolumeStepsNotification) {
-            updateVolumeSteps(preference.getKey(),Integer.parseInt(objValue.toString()));
-            return true;
-        } else if (preference == mVolumeStepsRing) {
-            updateVolumeSteps(preference.getKey(),Integer.parseInt(objValue.toString()));
-            return true;
-        } else if (preference == mVolumeStepsSystem) {
-            updateVolumeSteps(preference.getKey(),Integer.parseInt(objValue.toString()));
-            return true;
-        } else if (preference == mVolumeStepsVoiceCall) {
-            updateVolumeSteps(preference.getKey(),Integer.parseInt(objValue.toString()));
-            return true;
-        }
-
+        } 
         return false;
+
     }
     
     private void updateVolumeSteps(int streamType, int steps) {
@@ -170,8 +155,9 @@ public class VolumeSteps extends SettingsPreferenceFragment implements
             streamType = mAudioManager.STREAM_SYSTEM;
         } else if (settingsKey.equals(KEY_VOLUME_STEPS_VOICE_CALL)) {
             streamType = mAudioManager.STREAM_VOICE_CALL;
+        } else {
+          return;
         }
-
         //Save the setting for next boot
         Settings.System.putInt(getContentResolver(), settingsKey, steps);
 
@@ -179,7 +165,7 @@ public class VolumeSteps extends SettingsPreferenceFragment implements
 
         updateVolumeSteps(streamType, steps);
 
-        Log.i(TAG, "Volume steps:" + settingsKey + "" +String.valueOf(steps));
+        Log.i(TAG, "Volume steps done: " + settingsKey + " " +String.valueOf(steps));
     }
 
 }
