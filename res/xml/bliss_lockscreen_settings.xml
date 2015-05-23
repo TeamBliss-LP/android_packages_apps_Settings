@@ -25,6 +25,10 @@
             android:summary="@string/lockscreen_enable_power_menu_summary"
             android:defaultValue="true" />
 
+        <com.android.settings.cyanogenmod.SecureSettingSwitchPreference
+            android:key="long_press_lock_icon_to_sleep"
+            android:title="@string/longpress_lock_icon_to_sleep_title"
+            android:summary="@string/longpress_lock_icon_to_sleep_summary" />
     
         <PreferenceScreen
                  android:key="lockscreen_shortcuts"
