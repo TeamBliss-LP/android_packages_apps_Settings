@@ -72,6 +72,13 @@
         android:icon="@drawable/ic_settings_power"
         settings:advanced="true" />
 
+    <!-- Recents Options -->
+    <PreferenceScreen
+        android:key="recents_panel"
+        android:fragment="com.android.settings.bliss.RecentsSettings"	
+        android:title="@string/recents_options_title"
+        android:icon="@drawable/ic_settings_recents" />
+
     <!-- Status Bar Settings -->
     <PreferenceScreen
         android:id="@+id/status_bar_settings"
