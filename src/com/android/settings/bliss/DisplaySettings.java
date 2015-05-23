@@ -31,6 +31,7 @@ import android.os.SystemProperties;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
+import android.provider.SearchIndexableResource;
 import android.text.Editable;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -39,10 +40,15 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.android.settings.R;
+import com.android.settings.search.BaseSearchIndexProvider;
+import com.android.settings.search.Indexable;
 import com.android.settings.SettingsPreferenceFragment;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DisplaySettings extends SettingsPreferenceFragment implements
-        Preference.OnPreferenceChangeListener {
+        Preference.OnPreferenceChangeListener, Indexable {
 
     private static final String TAG = "DisplaySettings";
 
@@ -244,4 +250,22 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             throw new IllegalArgumentException("unknown id " + id);
         }
     }
+
+    public static final Indexable.SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
+            new BaseSearchIndexProvider() {
+
+                @Override
+                public List<SearchIndexableResource> getXmlResourcesToIndex(Context context,
+                        boolean enabled) {
+                    ArrayList<SearchIndexableResource> result =
+                            new ArrayList<SearchIndexableResource>();
+
+                    SearchIndexableResource sir = new SearchIndexableResource(context);
+                    sir.xmlResId = R.xml.bliss_display_settings;
+                    result.add(sir);
+
+                    return result;
+                }
+            };
+
 }

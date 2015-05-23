@@ -62,7 +62,6 @@ public class StatusBarSettings extends SettingsPreferenceFragment
     private ColorPickerPreference mBlissLogoColor;
     private SwitchPreference mStatusBarGreeting;
     private SeekBarPreferenceCham mStatusBarGreetingTimeout;
-    private PreferenceScreen mCarrierLabel;
 
     private String mCustomGreetingText = "";
 
@@ -82,28 +81,35 @@ public class StatusBarSettings extends SettingsPreferenceFragment
         mBlissLogoColor =
             (ColorPickerPreference) prefSet.findPreference(KEY_BLISS_LOGO_COLOR);
         mBlissLogoColor.setOnPreferenceChangeListener(this);
-        int intColor = Settings.System.getInt(getContentResolver(),
-                Settings.System.STATUS_BAR_BLISS_LOGO_COLOR, 0xffffffff);
+        int intColor = Settings.System.getInt(resolver,
+            Settings.System.STATUS_BAR_BLISS_LOGO_COLOR, 0xffffffff);
         String hexColor = String.format("#%08x", (0xffffffff & intColor));
-            mBlissLogoColor.setSummary(hexColor);
-            mBlissLogoColor.setNewPreviewColor(intColor);
+        mBlissLogoColor.setSummary(hexColor);
+        mBlissLogoColor.setNewPreviewColor(intColor);
 
         // Greeting
-        mStatusBarGreeting = (SwitchPreference) prefSet.findPreference(KEY_STATUS_BAR_GREETING);
-        mCustomGreetingText = Settings.System.getString(getActivity().getContentResolver(),
-                Settings.System.STATUS_BAR_GREETING);
-        boolean greeting = mCustomGreetingText != null && !TextUtils.isEmpty(mCustomGreetingText);
+        mStatusBarGreeting =
+            (SwitchPreference) prefSet.findPreference(KEY_STATUS_BAR_GREETING);
+        mCustomGreetingText = Settings.System.getString(resolver,
+            Settings.System.STATUS_BAR_GREETING);
+        boolean greeting = mCustomGreetingText != null
+            && !TextUtils.isEmpty(mCustomGreetingText);
         mStatusBarGreeting.setChecked(greeting);
 
         mStatusBarGreetingTimeout =
-                (SeekBarPreferenceCham) prefSet.findPreference(KEY_STATUS_BAR_GREETING_TIMEOUT);
-        int statusBarGreetingTimeout = Settings.System.getInt(getContentResolver(),
-                Settings.System.STATUS_BAR_GREETING_TIMEOUT, 1000);
+            (SeekBarPreferenceCham) prefSet.findPreference(KEY_STATUS_BAR_GREETING_TIMEOUT);
+        int statusBarGreetingTimeout = Settings.System.getInt(resolver,
+            Settings.System.STATUS_BAR_GREETING_TIMEOUT, 1000);
+        if (statusBarGreetingTimeout < 100) {
+            statusBarGreetingTimeout = 100;
+        }
         mStatusBarGreetingTimeout.setValue(statusBarGreetingTimeout / 1);
         mStatusBarGreetingTimeout.setOnPreferenceChangeListener(this);
 
-        mCarrierLabel = (PreferenceScreen) prefSet.findPreference(KEY_CARRIERLABEL_PREFERENCE);
-        if (Utils.isWifiOnly(getActivity()) || TelephonyManager.getDefault().isMultiSimEnabled()) {
+        PreferenceScreen mCarrierLabel =
+            (PreferenceScreen) prefSet.findPreference(KEY_CARRIERLABEL_PREFERENCE);
+        if (mCarrierLabel != null && Utils.isWifiOnly(getActivity())
+            || TelephonyManager.getDefault().isMultiSimEnabled()) {
             prefSet.removePreference(mCarrierLabel);
         }
 
@@ -117,31 +123,33 @@ public class StatusBarSettings extends SettingsPreferenceFragment
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
-         if (preference == mBlissLogoColor) {
+        if (preference == mBlissLogoColor) {
             String hex = ColorPickerPreference.convertToARGB(
-                    Integer.valueOf(String.valueOf(newValue)));
+                Integer.valueOf(String.valueOf(newValue)));
             preference.setSummary(hex);
             int intHex = ColorPickerPreference.convertToColorInt(hex);
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.STATUS_BAR_BLISS_LOGO_COLOR, intHex);
+            Settings.System.putInt(resolver,
+                Settings.System.STATUS_BAR_BLISS_LOGO_COLOR,
+                intHex);
             return true;
         } else if (preference == mStatusBarGreetingTimeout) {
             int timeout = (Integer) newValue;
             if (timeout < 100) {
               timeout = 100;
             }
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.STATUS_BAR_GREETING_TIMEOUT, timeout * 1);
+            Settings.System.putInt(resolver,
+                Settings.System.STATUS_BAR_GREETING_TIMEOUT,
+                timeout * 1);
             return true;
-        }  
+        }
         return false;
     }
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-       if (preference == mStatusBarGreeting) {
-           boolean enabled = mStatusBarGreeting.isChecked();
-           if (enabled) {
+        if (preference == mStatusBarGreeting) {
+            boolean enabled = mStatusBarGreeting.isChecked();
+            if (enabled) {
                 AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
 
                 alert.setTitle(R.string.status_bar_greeting_title);
@@ -152,18 +160,20 @@ public class StatusBarSettings extends SettingsPreferenceFragment
                 input.setText(mCustomGreetingText != null ? mCustomGreetingText :
                         getResources().getString(R.string.status_bar_greeting_main));
                 alert.setView(input);
-                alert.setPositiveButton(getResources().getString(R.string.ok), new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int whichButton) {
-                        String value = ((Spannable) input.getText()).toString();
-                        Settings.System.putString(getActivity().getContentResolver(),
+                alert.setPositiveButton(getResources().getString(R.string.ok),
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int whichButton) {
+                            String value = ((Spannable) input.getText()).toString();
+                            Settings.System.putString(getActivity().getContentResolver(),
                                 Settings.System.STATUS_BAR_GREETING, value);
-                        updateCheckState(value);
-                    }
+                            updateCheckState(value);
+                        }
                 });
-                alert.setNegativeButton(getResources().getString(R.string.cancel), new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int whichButton) {
-                        // Canceled.
-                    }
+                alert.setNegativeButton(getResources().getString(R.string.cancel),
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int whichButton) {
+                            // Canceled.
+                        }
                 });
 
                 alert.show();
@@ -176,28 +186,30 @@ public class StatusBarSettings extends SettingsPreferenceFragment
     }
 
     private void updateCheckState(String value) {
-        if (value == null || TextUtils.isEmpty(value)) mStatusBarGreeting.setChecked(false);
+        if (value == null || TextUtils.isEmpty(value)) {
+            mStatusBarGreeting.setChecked(false);
+        }
     }
 
     public static final Indexable.SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-            new BaseSearchIndexProvider() {
-                @Override
-                public List<SearchIndexableResource> getXmlResourcesToIndex(Context context,
-                                                                            boolean enabled) {
-                    ArrayList<SearchIndexableResource> result =
-                            new ArrayList<SearchIndexableResource>();
+        new BaseSearchIndexProvider() {
+        @Override
+        public List<SearchIndexableResource> getXmlResourcesToIndex(Context context,
+                                                                    boolean enabled) {
+            ArrayList<SearchIndexableResource> result =
+                new ArrayList<SearchIndexableResource>();
 
-                    SearchIndexableResource sir = new SearchIndexableResource(context);
-                    sir.xmlResId = R.xml.status_bar_settings;
-                    result.add(sir);
+            SearchIndexableResource sir = new SearchIndexableResource(context);
+            sir.xmlResId = R.xml.status_bar_settings;
+            result.add(sir);
 
-                    return result;
-                }
+            return result;
+        }
 
-                @Override
-                public List<String> getNonIndexableKeys(Context context) {
-                    ArrayList<String> result = new ArrayList<String>();
-                    return result;
-                }
-            };
+        @Override
+        public List<String> getNonIndexableKeys(Context context) {
+            ArrayList<String> result = new ArrayList<String>();
+            return result;
+        }
+    };
 }

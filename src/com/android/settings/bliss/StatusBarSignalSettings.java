@@ -49,7 +49,7 @@ public class StatusBarSignalSettings extends SettingsPreferenceFragment implemen
     private static final String KEY_ACTIVITY_NORMAL_COLOR = "signal_wifi_network_activity_icons_normal_color";
     private static final String KEY_ACTIVITY_FULLY_COLOR = "signal_wifi_network_activity_icons_fully_color";
     private static final String KEY_AIRPLANE_COLOR = "signal_wifi_airplane_mode_icon_color";
-	private static final String PREF_VPN_COLOR = "signal_wifi_vpn_icon_color";
+    private static final String PREF_VPN_COLOR = "signal_wifi_vpn_icon_color";
 
     private static final int DEFAULT_COLOR = 0xffffffff;
     private static final int DEFAULT_ACTIVITY_COLOR = 0xff000000;
@@ -121,7 +121,7 @@ public class StatusBarSignalSettings extends SettingsPreferenceFragment implemen
         if (isNetworkActivityEnabled) {
             intColor = Settings.System.getInt(mResolver,
                     Settings.System.STATUS_BAR_NETWORK_ACTIVITY_ICONS_NORMAL_COLOR,
-                    DEFAULT_ACTIVITY_COLOR); 
+                    DEFAULT_ACTIVITY_COLOR);
             mActivityNormalColor.setNewPreviewColor(intColor);
             hexColor = String.format("#%08x", (0xffffffff & intColor));
             mActivityNormalColor.setSummary(hexColor);
@@ -129,7 +129,7 @@ public class StatusBarSignalSettings extends SettingsPreferenceFragment implemen
 
             intColor = Settings.System.getInt(mResolver,
                     Settings.System.STATUS_BAR_NETWORK_ACTIVITY_ICONS_FULLY_COLOR,
-                    DEFAULT_ACTIVITY_COLOR); 
+                    DEFAULT_ACTIVITY_COLOR);
             mActivityFullyColor.setNewPreviewColor(intColor);
             hexColor = String.format("#%08x", (0xffffffff & intColor));
             mActivityFullyColor.setSummary(hexColor);
@@ -144,7 +144,7 @@ public class StatusBarSignalSettings extends SettingsPreferenceFragment implemen
                 KEY_AIRPLANE_COLOR);
         intColor = Settings.System.getInt(mResolver,
                 Settings.System.STATUS_BAR_AIRPLANE_MODE_ICON_COLOR,
-                DEFAULT_COLOR); 
+                DEFAULT_COLOR);
         mAirplaneColor.setNewPreviewColor(intColor);
         hexColor = String.format("#%08x", (0xffffffff & intColor));
         mAirplaneColor.setSummary(hexColor);
