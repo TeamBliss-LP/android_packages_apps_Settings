@@ -12,7 +12,8 @@
             android:key="battery_bar_list"
             android:title="@string/battery_bar"
             android:entries="@array/battery_bar_entries"
-            android:entryValues="@array/battery_bar_values" />
+            android:entryValues="@array/battery_bar_values"
+            android:defaultValue="0" />
 
         <net.margaritov.preference.colorpicker.ColorPickerPreference
             android:key="battery_bar_color"
