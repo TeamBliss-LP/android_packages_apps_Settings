@@ -30,17 +30,6 @@
             android:title="@string/longpress_lock_icon_to_sleep_title"
             android:summary="@string/longpress_lock_icon_to_sleep_summary" />
     
-        <PreferenceScreen
-                 android:key="lockscreen_shortcuts"
-                 android:fragment="com.android.settings.bliss.dslv.ActionListViewSettings"
-                 android:summary="@string/lockscreen_shortcuts_summary"
-                 android:title="@string/lockscreen_shortcuts_title">
-             <extra android:name="actionMode" android:value="4" />
-             <extra android:name="maxAllowedActions" android:value="10" />
-             <extra android:name="disableLongpress" android:value="true" />
-             <extra android:name="useAppPickerOnly" android:value="true" />
-             <extra android:name="fragment" android:value="com.android.settings.bliss.fragments.LockscreenShortcutFragment" />
-        </PreferenceScreen>
 
         <PreferenceScreen
             android:key="cm_lockscreen_shortcuts"

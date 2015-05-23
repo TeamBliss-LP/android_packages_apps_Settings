@@ -753,8 +753,6 @@
     <string name="weather_colorize_all_icons_summary">Enable to colorize all icons, disable to colorize only the monochrome icons</string>
 
     <!-- Lockscreen Shortcuts -->
-    <string name="lockscreen_shortcuts_title">Middle shortcuts</string>
-    <string name="lockscreen_shortcuts_summary">View or change custom middle lock screen shortcuts</string>
     <string name="lockscreen_shorcuts_longpress_title">Shortcuts longpress</string>
     <string name="lockscreen_shorcuts_longpress_summary">Open custom lock screen shortcuts on longpress</string>
     <string name="lockscreen_targets_message">Lock screen shortcuts</string>
