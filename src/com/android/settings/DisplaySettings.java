@@ -39,6 +39,8 @@ import android.app.ProgressDialog;
 import android.app.admin.DevicePolicyManager;
 import android.content.ContentResolver;
 import android.content.Context;
+import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.content.SharedPreferences;
@@ -98,6 +100,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_NOTIFICATION_LIGHT = "notification_light";
     private static final String KEY_BATTERY_LIGHT = "battery_light";
 
+    private static final String KEY_SCREEN_OFF_GESTURE_SETTINGS = "screen_off_gesture_settings";
     private static final int DLG_GLOBAL_CHANGE_WARNING = 1;
 
     private ListPreference mLcdDensityPreference;
@@ -251,6 +254,9 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             displayPrefs.removePreference(mDozeFragement);
         }
 
+        if (!isDeviceHandlerInstalled()) {
+            displayPrefs.removePreference(findPreference(KEY_SCREEN_OFF_GESTURE_SETTINGS));
+        }
 
         Preference proximityWake = findPreference(KEY_PROXIMITY_WAKE);
         boolean proximityCheckOnWake = getResources().getBoolean(
@@ -670,6 +676,16 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         }
     }
 
+    private boolean isDeviceHandlerInstalled() {
+        boolean ret = true;
+        final PackageManager pm = getPackageManager();
+        try {
+            pm.getPackageInfo("com.slim.device", PackageManager.GET_META_DATA);
+        } catch (NameNotFoundException e) {
+            ret = false;
+        }
+        return ret;
+    }
 
     public static final Indexable.SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
             new BaseSearchIndexProvider() {
