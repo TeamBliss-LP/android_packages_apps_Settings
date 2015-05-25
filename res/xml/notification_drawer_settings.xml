@@ -49,7 +49,7 @@
         android:entries="@array/status_bar_power_menu_entries"
         android:entryValues="@array/status_bar_power_menu_values"
         android:defaultValue="0"
-  		android:persistent="false" />
+        android:persistent="false" />
 
 
     <PreferenceCategory
@@ -125,6 +125,11 @@
             android:title="@string/notification_force_expand_title"
             android:summary="@string/notification_force_expand_summary"
             android:defaultValue="false" />
+
+        <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
+            android:key="enable_task_manager"
+            android:title="@string/enable_task_manager_title"
+            android:summary="@string/enable_task_manager_summary" />
 
     </PreferenceCategory>
 
