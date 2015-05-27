@@ -22,6 +22,7 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.R;
 
 import android.app.AlertDialog;
+import android.content.ActivityNotFoundException;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
@@ -81,7 +82,11 @@ public class OmniSwitch extends SettingsPreferenceFragment implements
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
         if (preference == mOmniSwitchSettings){
-            startActivity(INTENT_OMNISWITCH_SETTINGS);
+            try {
+                startActivity(INTENT_OMNISWITCH_SETTINGS);
+            } catch(ActivityNotFoundException e){
+                // if OmniSwitch was uninstalled/frozen
+            }
             return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
