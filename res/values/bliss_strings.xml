@@ -162,7 +162,9 @@
     <string name="shortcut_action_media_play_pause">Music - play/pause</string>
     <string name="shortcut_action_media_previous">Music - previous track</string>
     <string name="shortcut_action_wake_device">Wake up device</string>
-
+    <string name="shortcut_action_menu_big">Menu Big</string>
+    <string name="shortcut_action_notifications">Notifications</string>
+    <string name="shortcut_action_qs">Quicksettings panel</string>
     <string name="shortcut_action_longpress">Longpress:</string>
     <string name="shortcut_action_select_action_longpress">Choose longpress action:</string>
     <string name="shortcut_action_select_action">Choose action:</string>
@@ -543,6 +545,10 @@
     <string name="heads_up_text_color_title">Text color</string>
     <string name="heads_up_colors_title">Custom Colors</string>
     <string name="heads_up_colors_summary">Customize heads up text and background color</string>
+
+    <!-- Heads Up Status Bar button -->
+    <string name="show_headsup_button_title">Show quick access button</string>
+    <string name="show_headsup_button_summary">Show a quick access button in the status bar</string>
 
     <!-- Heads up touch outside -->
     <string name="heads_up_touch_outside_title">Touch outside behavior</string>

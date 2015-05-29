@@ -29,7 +29,7 @@
     <!-- Changelog -->
     <string name="changelog_bliss_title">Список изменений</string>
     <string name="changelog_bliss_error">Не удаётся загрузить список изменений</string>
-    
+
     <!-- About device screen, CPU and RAM info. -->
 
     <!-- SuperSU -->
@@ -102,7 +102,6 @@
     <string name="shortcut_action_help_main">Чтобы добавить %1$s, нажмите значок \"Добавить\".  Когда %1$s добавлено, выбором ряда можно изменить цель%2$s\n\nЧтобы удалить %1$s, сдвиньте ряд по горизонтали. Изменить порядок %1$s в списке можно вертикальным перетаскиванием якоря слева.\n\nЧтобы сбросить все к значениям по умолчанию, нажмите значок \"Сбросить\".</string>
     <string name="shortcut_action_help_delete_last_entry">Удаление последнего(-ей) %1$s в списке отключит эту функцию.</string>
     <string name="shortcut_action_help_pie_second_layer_delete_last_entry">Удаление последнего %1$s отключит весь второй уровень pie.</string>
-    <string name="shortcut_action_theme_switch">Переключатель тем</string>
 
     <string name="shortcuts_applications">Приложения</string>
     <string name="shortcuts_select_custom_app_title">Выбрать собственное приложение</string>

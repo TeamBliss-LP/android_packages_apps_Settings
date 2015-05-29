@@ -165,7 +165,6 @@
     <string name="shortcut_action_help_main">要添加一個 %1$s，選擇\"添加\"按鈕。一旦%1$s 被添加，選中那一行將改變目標%2$s。\n\n要移除一個%1$s，向左或右滑動那一行。垂直拖動目標可改變一個%1$s 在列表中的順序。\n\n要清除或重置為默認值，請選擇重置按鈕。</string>
     <string name="shortcut_action_help_delete_last_entry">移除列表中全部的%1$s 將禁用此功能項。</string>
     <string name="shortcut_action_help_pie_second_layer_delete_last_entry">移除列表中全部的%1$s 將禁用pie的第二層項。</string>
-    <string name="shortcut_action_theme_switch">主題切換器</string>
     <string name="shortcuts_applications">應用</string>
     <string name="shortcuts_select_custom_app_title">選擇自定義應用</string>
     <string name="shortcuts_icon_picker_type">選擇圖標類型：</string>

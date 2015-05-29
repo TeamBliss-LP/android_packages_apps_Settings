@@ -13,11 +13,17 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!-- Heads Up Colors -->
-	<PreferenceScreen
+    <PreferenceScreen
         android:key="heads_up_colors"
         android:fragment="com.android.settings.bliss.HeadsUpColors"
         android:title="@string/heads_up_colors_title"
         android:summary="@string/heads_up_colors_summary" />
+
+    <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
+        android:key="heads_up_show_status_button"
+        android:title="@string/show_headsup_button_title"
+        android:summary="@string/show_headsup_button_summary"
+        android:defaultValue="false" />
 
     <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
         android:key="heads_up_dismiss_on_remove"
