@@ -184,7 +184,6 @@
     <string name="shortcut_action_help_main">Um eine %1$s hinzuzufügen, das Hinzufügen Symbol anwählen. Sobald eine %1$s hinzugefügt ist, kann durch Auswahl der Zeile das Ziel%2$s geändert werden.\n\nUm eine %1$s zu entfernen, die Zeile nach links oder rechts wischen. Neu anordnen von %1$s in der Liste durch vertikales Ziehen des Ankers auf der linken Seite.\n\nUm alles zurück zu setzen, das Symbol für Zurücksetzen anwählen.</string>
     <string name="shortcut_action_help_delete_last_entry">Entfernen von allen Einträgen in der Liste (%1$s) deaktiviert dieses Feature komplett.</string>
     <string name="shortcut_action_help_pie_second_layer_delete_last_entry">Entfernen von allen Einträgen (%1$s) von der Liste deaktiviert die zweite Pie Lage komplett.</string>
-    <string name="shortcut_action_theme_switch">Design Umschalter</string>
 
     <string name="shortcuts_applications">Anwendungen</string>
     <string name="shortcuts_select_custom_app_title">Wähle eigene Anwendung</string>
