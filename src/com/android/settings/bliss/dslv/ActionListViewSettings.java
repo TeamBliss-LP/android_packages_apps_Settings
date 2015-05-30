@@ -796,7 +796,11 @@ public class ActionListViewSettings extends ListFragment implements
                         List<String> finalValuesList = new ArrayList<String>();
 
                         for (int i = 0; i < getOwner().mActionDialogValues.length; i++) {
-                            if (!getOwner().mActionDialogValues[i]
+                            if (getOwner().mActionDialogEntries[i] != null &&
+                                getOwner().mActionDialogValues[i] != null &&
+                                !getOwner().mActionDialogEntries[i].equals("") &&
+                                !getOwner().mActionDialogValues[i].equals("") &&
+                                !getOwner().mActionDialogValues[i]
                                     .equals(ActionConstants.ACTION_NULL)) {
                                 finalEntriesList.add(getOwner().mActionDialogEntries[i]);
                                 finalValuesList.add(getOwner().mActionDialogValues[i]);
