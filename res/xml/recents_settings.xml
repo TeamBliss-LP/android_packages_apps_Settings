@@ -31,13 +31,13 @@
             android:title="@string/show_clear_all_recents_button_title"
             android:summary="@string/show_clear_all_recents_button_summary"
             android:defaultValue="true" />
-            
+
         <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
             android:key="recents_clear_all_dismiss_all"
             android:title="@string/recents_clear_all_dismiss_all_title"
             android:summary="@string/recents_clear_all_dismiss_all_summary"
             android:defaultValue="true"
-            android:dependency="show_clear_all_recents" />            
+            android:dependency="show_clear_all_recents" />
 
         <ListPreference
             android:key="recents_clear_all_location"
@@ -46,7 +46,7 @@
             android:entryValues="@array/recents_clear_all_location_values"
             android:defaultValue="3"
             android:dependency="show_clear_all_recents" />
-            
+
         <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
             android:key="recents_show_search_bar"
             android:title="@string/recents_show_searchbar"
@@ -54,6 +54,7 @@
             android:defaultValue="false" />
 
         <PreferenceScreen
+            android:key="omniswitch"
             android:id="@+id/omniswitch"
             android:icon="@drawable/ic_dt_omniswitch"
             android:title="@string/omniswitch_settings_title"
