@@ -83,6 +83,7 @@
   <string name="profile_choose_app">Elegir aplicación</string>
   <string name="profile_system_settings_title">Sistema</string>
   <string name="profile_lockmode_title">Bloqueo de pantalla</string>
+  <string name="profile_lockmode_policy_disabled_summary">Este opción ha sido deshabilitada por una política del administrador del dispositivo</string>
   <string name="profile_lockmode_insecure_summary">No pedir PIN o contraseña</string>
   <string name="profile_lockmode_disabled_summary">Desactivar el bloqueo de pantalla</string>
   <string name="profile_airplanemode_title">Modo avión</string>
@@ -205,6 +206,8 @@
   <string name="app_security_title">Seguridad en aplicaciones</string>
   <string name="sms_security_check_limit_title">Límite de mensajes SMS</string>
   <string name="sms_security_check_limit_summary">Las aplicaciones pueden enviar hasta %d mensajes SMS en 30 minutos antes de requerir confirmación</string>
+  <string name="sms_security_check_limit_summary_none">Las aplicaciones no están autorizadas a enviar mensajes SMS sin confirmación</string>
+  <string name="sms_security_check_limit_none">Ninguno</string>
   <string name="spam_added_title">Añadido %1$s</string>
   <string name="spam_last_blocked_title">Último bloqueado %1$s</string>
   <string name="block_notifications_title">Filtrar notificaciones</string>
@@ -567,7 +570,6 @@
   <string name="sim_pin_attempts">\nIntentos restantes:</string>
   <string name="sim_pin_enabled">PIN1 activado</string>
   <string name="sim_pin_disabled">PIN1 desactivado</string>
-  <string name="subs_settings">Estado de tarjeta SIM</string>
   <string name="storage_usb">Almacenamiento USB</string>
   <string name="storage_uicc">Almacenamiento UICC</string>
   <string name="sdcard_eject" product="default">Desmontar tarjeta SD</string>
@@ -639,6 +641,7 @@
   <string name="usb_charging_summary">Deshabilitar todas las transferencias de datos con el ordenador y cargar el dispositivo mediante el puerto USB</string>
   <string name="usb_sdcard_title">Almacenamiento masivo (UMS)</string>
   <string name="usb_sdcard_summary">Permite transferir archivos entre la tarjeta SD y el ordenador montando la tarjeta como un dispositivo extraíble</string>
+  <string name="usb_not_connected">El USB está desconectado ahora</string>
   <string name="external_storage_turn_on">El almacenamiento externo ha sido habilitado</string>
   <string name="external_storage_turn_off">El almacenamiento externo ha sido deshabilitado</string>
   <string name="menu_hidden_apps_delete">Restablecer</string>
@@ -725,6 +728,10 @@
   <string name="qs_tile_lockscreen">Bloquear pantalla</string>
   <string name="qs_tile_lte">LTE</string>
   <string name="qs_tile_screen_timeout">Tiempo de espera de pantalla</string>
+  <string name="qs_tile_usb_tether">Anclaje USB</string>
+  <string name="qs_tile_heads_up">Notificaciones emergentes</string>
+  <string name="qs_tile_ambient_display">Pantalla ambiente</string>
+  <string name="qs_tile_sync">Sincronizar</string>
   <string name="qs_main_tiles_title">Ampliar la primera fila</string>
   <string name="qs_main_tiles_summary_on">Dos controles principales en la primera fila</string>
   <string name="qs_main_tiles_summary_off">Tres controles en cada fila</string>
@@ -818,4 +825,31 @@
   <string name="battery_saver_threshold">Ahorro de batería</string>
   <string name="battery_saver_summary">Reducir el rendimiento y limitar los datos en segundo plano</string>
   <string name="battery_saver_summary_unavailable">No disponible durante la carga</string>
+  <string name="anonymous_statistics_title">Estadísticas CyanogenMod</string>
+  <string name="anonymous_statistics_summary">Ayuda a mejorar CyanogenMod mediante el envío anónimo de estadísticas</string>
+  <string name="anonymous_statistics_warning_title">Acerca de</string>
+  <string name="anonymous_statistics_warning">Permitiendo la recopilación y envío de estadísticas de CyanogenMod, autorizas el envío de información de carácter no personal a los desarrolladores de CyanogenMod para hacer un seguimiento de las instalaciones que realices en los dispositivos. La información enviada incluye un identificador único que no compromete tu privacidad ni tu información personal. Esta información es enviada durante el arranque.\n\nPara ver un ejemplo de la información enviada, pulsa en \u00ABPrevisualizar datos\u00BB.</string>
+  <string name="enable_reporting_title">Activar envío de estadísticas</string>
+  <string name="preview_data_title">Previsualizar datos</string>
+  <string name="view_stats_title">Ver estadísticas</string>
+  <string name="anonymous_learn_more">Saber más</string>
+  <string name="preview_id_title">Identificador único</string>
+  <string name="preview_device_title">Dispositivo</string>
+  <string name="preview_version_title">Versión</string>
+  <string name="preview_country_title">País</string>
+  <string name="preview_carrier_title">Operadora móvil</string>
+  <string name="heads_up_notifications">Notificaciones emergentes</string>
+  <string name="summary_heads_up_enabled">Las notificaciones emergentes están habilitadas</string>
+  <string name="summary_heads_up_disabled">Las notificaciones emergentes están deshabilitadas</string>
+  <string name="master_clear_desc_cm" product="tablet">Esto borrará todos los datos del <b>almacenamiento interno</b> del tablet, incluyendo:\n\n<li>Tus cuentas de dispositivo</li>\n<li>Ajustes del sistema y datos de las aplicaciones</li>\n<li>Aplicaciones descargadas</li></string>
+  <string name="master_clear_desc_cm" product="default">Esto borrará todos los datos del <b>almacenamiento interno</b> del teléfono, incluyendo:\n\n<li>Tus cuentas de dispositivo</li>\n<li>Ajustes del sistema y datos de las aplicaciones</li>\n<li>Aplicaciones descargadas</li></string>
+  <string name="lock_to_cyanogen_title">Protección del dispositivo</string>
+  <string name="lock_to_cyanogen_summary">Requerir la contraseña de la cuenta de Cyanogen OS incluso después de un restablecimiento de fábrica</string>
+  <string name="lock_to_cyanogen_create_account_msg">El dispositivo usa una contraseña de cuenta de Cyanogen OS para protegerse incluso después de un restablecimiento de fábrica. Necesitarás crear una cuenta de Cyanogen OS.</string>
+  <string name="lock_to_cyanogen_disable_msg">Deshabilitar esta característica permitirá que usuarios no autorizados puedan restablecer a fábrica el dispositivo si éste es sustraído. Tus datos personales podrán quedar desprotegidos. ¿Quieres deshabilitar esta característica?</string>
+  <string name="lock_to_cyanogen_master_clear_warning">La protección del dispositivo está habilitada. Por favor, deshabilita la protección para continuar con el restablecimiento del dispositivo.</string>
+  <string name="bluetooth_pan_profile_summary_use_for_error">Error de conexión. ¿Está activado el Bluetooth en este dispositivo?</string>
+  <string name="sim_card_status_title">Estado de SIM %d</string>
+  <string name="sim_card_lock_settings_title">Ajustes de bloqueo de SIM %d</string>
+  <string name="sim_card_summary_empty">Tarjeta SIM no insertada</string>
 </resources>

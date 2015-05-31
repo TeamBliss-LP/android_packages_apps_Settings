@@ -75,7 +75,12 @@
   <string name="profile_applist_title">Aplikazioak</string>
   <string name="profile_choose_app">Aplikazioa hautatu</string>
   <string name="profile_system_settings_title">Sistema</string>
-  <string name="profile_lockmode_title">Blokeo pantaila</string>
+  <string name="profile_lockmode_title">Blokeo-pantaila modua</string>
+  <string name="profile_lockmode_policy_disabled_summary">Profil aukera hau gailuaren administrazio politika betek ezgaitu du</string>
+  <string name="profile_lockmode_insecure_summary">Ez eskatu PINa edo pasahitza</string>
+  <string name="profile_lockmode_disabled_summary">Ezgaitu blokeo-pantaila</string>
+  <string name="profile_airplanemode_title">Hegaldi modua</string>
+  <string name="profile_brightness_title">Pantailaren distira</string>
   <string name="profile_brightness_override_summary">Ezarri %1$d%%</string>
   <string name="profile_brightness_override_checkbox_label">Gainidatzi distira</string>
   <string name="toggleWifi">Wi\u2011Fi</string>
@@ -91,9 +96,9 @@
   <string name="hardware_keys_short_press_title">Sakatze laburraren ekintza</string>
   <string name="hardware_keys_long_press_title">Sakatze luzearen ekintza</string>
   <string name="hardware_keys_double_tap_title">Birritan sakatzearen ekintza</string>
-  <string name="hardware_keys_action_nothing">Ekintzarik gabe</string>
-  <string name="hardware_keys_action_menu">Menua ireki/itxi</string>
-  <string name="hardware_keys_action_app_switch">Aplikazio berrikien artean aldatu</string>
+  <string name="hardware_keys_action_nothing">Ekintzarik ez</string>
+  <string name="hardware_keys_action_menu">Ireki/itxi menua</string>
+  <string name="hardware_keys_action_app_switch">Azken aplikazioen kommutadorea</string>
   <string name="hardware_keys_action_search">Bilaketa laguntzailea</string>
   <string name="hardware_keys_action_voice_search">Ahotsezko bilaketa</string>
   <string name="hardware_keys_action_in_app_search">Aplikazio barneko bilaketa</string>
@@ -178,7 +183,9 @@
   <string name="display_rotation_270_title">270 gradu</string>
   <string name="app_security_title">Aplikazioetako segurtasuna</string>
   <string name="sms_security_check_limit_title">SMS mezu muga</string>
-  <string name="sms_security_check_limit_summary">Aplikazioek %d SMS mezu bidali ditzakete 30 minututan berrespena eskatu arte</string>
+  <string name="sms_security_check_limit_summary">Aplikazioek %d mezu bidali ditzakete 30 minututan berrespena eskatu aurretik</string>
+  <string name="sms_security_check_limit_summary_none">Aplikazioek ezin dute SMS mezurik bidali berrespenik gabe</string>
+  <string name="sms_security_check_limit_none">Bat ere ez</string>
   <string name="spam_added_title">%1$s gehitu da</string>
   <string name="block_notifications_title">Iragazi jakinarazpenak</string>
   <string name="cmupdate_settings_title">CyanogenMod eguneraketak</string>
@@ -384,11 +391,31 @@
   <string name="gamma_tuning_control_set_header"><xliff:g id="index">%d</xliff:g> taldea</string>
   <string name="bluetooth_enter_pin_msg_hs"><xliff:g id="bold">&lt;br&gt;&lt;b&gt;</xliff:g><xliff:g id="device_name">%1$s</xliff:g><xliff:g id="end_bold">&lt;/b&gt;&lt;br&gt;&lt;br&gt;</xliff:g>(r)ekin lotzeko, gailuko PINa idatzi (16 digitu edo gehiago):</string>
   <string name="bluetooth_accept_all_files">Edozein fitxategi mota onartu</string>
+  <string name="sim_lock_settings_cm">SIM/RUIM txartelaren blokeo ezarpenak</string>
+  <string name="sim_lock_settings_category_cm">Ezarri SIM/RUIM txartelaren blokeoa</string>
+  <string name="sim_lock_settings_title_cm">SIM/RUIM txartelaren blokeoa</string>
+  <string name="sim_pin_disable_failed">Ezin da PINa ezgaitu.</string>
+  <string name="sim_pin_enable_failed">Ezin da PINa gaitu.</string>
+  <string name="sim_pin_change_failed_enable_sim_lock">SIM/RUIM PINa aldatzeko, gaitu SIM/RUIM blokeoa lehenago.</string>
+  <string name="sim_enable_disable_lock_not_supported">Txartelak ez du SIM/RUIM blokeoa onartzen.</string>
+  <string name="sim_pin_attempts">\nGainerako saiakerak:</string>
+  <string name="sim_pin_enabled">1. PINa gaituta</string>
+  <string name="sim_pin_disabled">1. PINa ezgaituta</string>
+  <string name="storage_usb">USB biltegiratzea</string>
+  <string name="storage_uicc">UICC biltegiratzea</string>
+  <string name="sdcard_eject" product="default">Desmuntatu SD txartela</string>
   <string name="sdcard_eject_summary" product="default">Desmuntatu SD txartela lasai atera ahal izateko</string>
   <string name="usb_eject_summary" product="default">Desmuntatu USB biltegiratzea lasai atera ahal izateko</string>
   <string name="uicc_eject_summary" product="default">Desmuntatu UICC biltegiratzea lasai atera ahal izateko</string>
   <string name="dlg_confirm_sdcard_unmount_text" product="default">SD txartela desmuntatzen baduzu, erabiltzen ari zaren aplikazio batzuk geldituko dira eta ez dira eskuragarri egongo SD txartela berriz muntatu arte.</string>
   <string name="usb_charging_summary">Ordenagailuarekin datu transferentziak eteten ditu eta gailua USB bidez kargatzen du</string>
+  <string name="usb_sdcard_title">Biltegiratze masiboa (UMS)</string>
+  <string name="usb_sdcard_summary">Ordenagailuaren eta SD txartelaren artean fitxategiak transferitzea ahalbidetzen du, hau flash gailu gisa muntatuta</string>
+  <string name="usb_not_connected">USBa deskonektatuta dago</string>
+  <string name="external_storage_turn_on">Kanpo biltegiratzea piztu da</string>
+  <string name="external_storage_turn_off">Kanpo biltegiratzea itzali da</string>
+  <string name="stats_collection_title">Estatistikak biltzea</string>
+  <string name="stats_collection_summary">Gaitzean, datuak biltzea baimentzen du</string>
   <string name="power_notifications_category_title">Kargadorea</string>
   <string name="power_notifications_enable_title">Soinua</string>
   <string name="power_notifications_enable_summary">Kargadorea konektatu edo deskonektatzean soinu bat egin</string>
@@ -430,6 +457,25 @@
   <string name="qs_tile_wifi">Wi\u2011Fi</string>
   <string name="qs_tile_cast_screen">Igorri pantaila</string>
   <string name="qs_tile_hotspot">Wi-Fi gunea</string>
+  <string name="qs_tile_adb_over_network">Sare gaineko ADB</string>
+  <string name="qs_tile_profiles">Sistema profilak</string>
+  <string name="qs_tile_performance">Bateria modua</string>
+  <string name="qs_tile_nfc">NFC</string>
+  <string name="qs_tile_compass">Iparorratza</string>
+  <string name="qs_tile_lockscreen">Blokeo-pantaila</string>
+  <string name="qs_tile_lte">LTE</string>
+  <string name="qs_tile_screen_timeout">Pantailaren denbora-muga</string>
+  <string name="qs_tile_usb_tether">USB tethering</string>
+  <string name="qs_tile_heads_up">Jakinarazpen flotatzaileak</string>
+  <string name="qs_tile_ambient_display">Ambient display</string>
+  <string name="qs_tile_sync">Sinkronizazioa</string>
+  <string name="qs_main_tiles_title">Handitu lehen lerroa</string>
+  <string name="qs_main_tiles_summary_on">Bi lauza nagusiak lehen lerroan</string>
+  <string name="qs_main_tiles_summary_off">Hiru lauza lerroko</string>
+  <string name="qs_advanced_location_title">Kokaleku ezarpen aurreratuak</string>
+  <string name="qs_advanced_location_summary">Gaitu kokalekuaren ezarpen aurreratuak ezarpen azkarretan</string>
+  <string name="sim_no_number_set">Ez da zenbakirik esleitu</string>
+  <string name="gesture_settings_title">Keinuak</string>
   <string name="themes_settings_title">Gaiak</string>
   <string name="wifi_mode">Modua</string>
   <string name="wifi_mode_ibss">Ad-Hoc sarea (IBSS)</string>
@@ -447,4 +493,62 @@
   <string name="gestures_action_search">Hasi bilaketa</string>
   <string name="category_sounds">Soinuak</string>
   <string name="battery_saver_summary_unavailable">Ez dago erabilgarri kargatzen ari den bitartean</string>
+  <string name="category_interface">Interfazea</string>
+  <string name="category_calibration">Kalibrazioa</string>
+  <string name="display_and_lights">Pantaila eta argiak</string>
+  <string name="notification_manager">Jakinarazpenak</string>
+  <string name="lockscreen_settings">Blokeo-pantaila</string>
+  <string name="category_lights">Argiak</string>
+  <string name="power_usage_history_title">Bateriaren erabilera</string>
+  <string name="recents_show_searchbar">Erakutsi bilaketa barra azkenak menuan</string>
+  <string name="keywords_recents_show_searchbar">oraintsukoa oraintsukoak ezgaitu gaitu erakutsi ezkutatu bilatu barra bilaketa-barra</string>
+  <string name="sim_ringtone_title">%d. SIM txartelaren dei doinua</string>
+  <string name="interruptions_ignore_while_media_title">Ekidin beherakadak audioan</string>
+  <string name="interruptions_ignore_while_media_summary">Ez gutxiagotu multimedia erreprodukzioaren bolumena jakinarazpen bat jasotzean</string>
+  <string name="none_is_silent_title">Ez mututu alarmak inoiz</string>
+  <string name="none_is_silent_summary">Modu isilean alarmek beti jotzen dute</string>
+  <string name="allow_lights_title">Baimendu jakinarazpen argiak</string>
+  <string name="live_display_summary">Optimizatu zure pantaila eguneko orduaren eta inguruneko baldintzen arabera irakurgarritasuna hobetzeko eta begien nekea gutxiagotzeko</string>
+  <string name="live_display_mode">Pantaila modua</string>
+  <string name="live_display_color_temperature_title">Kolore tenperatura</string>
+  <string name="live_display_color_temperature_summary">Egunez: <xliff:g id="day_temperature">%1$d</xliff:g>K  Gauez: <xliff:g id="night_temperature">%2$d</xliff:g>K</string>
+  <string name="live_display_color_temperature_label"><xliff:g id="degrees">%1$d</xliff:g>K</string>
+  <string name="live_display_day">Eguna</string>
+  <string name="live_display_night">Gaua</string>
+  <string name="live_display_outdoor_mode_title">Kale modu automatikoa</string>
+  <string name="live_display_outdoor_mode_summary">Automatikoki areagotu distira eta saturazioa eguzkipean</string>
+  <string name="live_display_low_power_title">Gutxiagotu energia kontsumoa</string>
+  <string name="live_display_low_power_summary">Doitu pantaila bateria kontsumoa gutxiagotzeko kalitate galerarik gabe</string>
+  <string name="live_display_enhance_color_title">Hobetu koloreak</string>
+  <string name="live_display_enhance_color_summary">Hobetu kolore bizitasuna azal tonuetan, paisaietan eta bestelako irudietan</string>
+  <string name="battery_saver_threshold">Bateria aurrezlearen atalasea</string>
+  <string name="battery_saver_summary">Murriztu errendimendua eta mugatu bigarren planoko datuak</string>
+  <string name="battery_saver_summary_unavailable">Ez dago erabilgarri kargatzen ari den bitartean</string>
+  <string name="anonymous_statistics_title">CyanogenMod estatistikak</string>
+  <string name="anonymous_statistics_summary">CyanogenMod hobetzera lagundu estatistika anonimoak bidaliz</string>
+  <string name="anonymous_statistics_warning_title">Honi buruz</string>
+  <string name="anonymous_statistics_warning">CyanogenMod estatistikak baimenduz, CyanogenMod garatzaileei pertsonala ez den informazioa bidaltzea baimentzen duzu, gailu desberdinetako instalazioei segimendua egitea baimentzen diena. Igorritako datuen artean identifikatzaile esklusibo bat dago, honek ez du zure pribatutasuna edo datu pertsonalak arriskuan jartzen. Datuak abiarazte bakoitzean bidaltzen dira.\n\nIgorriko liratekeen datuen adibide bat ikusteko sakatu Aurreikusi Datuak.</string>
+  <string name="enable_reporting_title">Gaitu txosten bidalketa</string>
+  <string name="preview_data_title">Aurreikusi datuak</string>
+  <string name="view_stats_title">Ikusi estatistikak</string>
+  <string name="anonymous_learn_more">Ikasi gehiago</string>
+  <string name="preview_id_title">ID esklusiboa</string>
+  <string name="preview_device_title">Gailua</string>
+  <string name="preview_version_title">Bertsioa</string>
+  <string name="preview_country_title">Herrialdea</string>
+  <string name="preview_carrier_title">Operadorea</string>
+  <string name="heads_up_notifications">Jakinarazpen flotatzaileak</string>
+  <string name="summary_heads_up_enabled">Laster-leiho jakinarazpenak gaituta daude</string>
+  <string name="summary_heads_up_disabled">Laster-leiho jakinarazpenak ezgaituta daude</string>
+  <string name="master_clear_desc_cm" product="tablet">Honek zure tabletaren <b>barne biltegiko</b> datu guztiak ezabatuko ditu, honakoak barne:\n\n"<li>Zure gailuko kontuak</li>\n<li>Sistema eta aplikazioen datu eta ezarpenak</li>\n<li>Deskargatutako aplikazioak</li></string>
+  <string name="master_clear_desc_cm" product="default">Honek zure telefonoaren <b>barne biltegiko</b> datu guztiak ezabatuko ditu, honakoak barne:\n\n"<li>Zure gailuko kontuak</li>\n<li>Sistema eta aplikazioen datu eta ezarpenak</li>\n<li>Deskargatutako aplikazioak</li></string>
+  <string name="lock_to_cyanogen_title">Gailu babesa</string>
+  <string name="lock_to_cyanogen_summary">Eskatu Cyanogen OS kontuaren pasahitza bai eta lantegiko egoerara leheneratu ostean ere</string>
+  <string name="lock_to_cyanogen_create_account_msg">Zure gailuak Cyanogen OS kontuko pasahitza erabiltzen du gailua babesteko, lantegiko egoerara leheneratuta ere. Cyanogen OS kontu bat sortu beharko duzu.</string>
+  <string name="lock_to_cyanogen_disable_msg">Ezaugarri hau ezgaitzeak, lapurreta baten ostean baimenik gabeko erabiltzaileek zure telefonoa lantegiko egoerara leheneratzea ahalbidetuko du. Zure datu pertsonalak babesik gabe gera liteke. Ezaugarri hau ezgaitu?</string>
+  <string name="lock_to_cyanogen_master_clear_warning">Gailu babesa gaituta dago. Ezgaitu ezazu gailua leheneratzen jarraitzeko.</string>
+  <string name="bluetooth_pan_profile_summary_use_for_error">Konexio errorea; Bluetoth Tethering gaituta dago gailu honetan?</string>
+  <string name="sim_card_status_title">%d. SIM txartelaren egoera</string>
+  <string name="sim_card_lock_settings_title">%d. SIM txartelaren blokeo ezarpenak</string>
+  <string name="sim_card_summary_empty">Ez da SIM txartelik sartu</string>
 </resources>
