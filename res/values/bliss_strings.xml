@@ -1407,4 +1407,8 @@
     <string name="enable_task_manager_title">Task manager</string>
     <string name="enable_task_manager_summary">Enable/disable action for the task manager button in the expanded statusbar area.</string>
 
+    <!-- Double tap gesture anywhere on the lock screen put device to sleep -->
+    <string name="double_tap_sleep_anywhere_title">Double-tap to sleep anywhere</string>
+    <string name="double_tap_sleep_anywhere_summary">Double tap anywhere on the lockscreen to put the device to sleep</string>
+
 </resources>

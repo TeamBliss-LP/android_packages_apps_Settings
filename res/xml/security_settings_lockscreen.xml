@@ -35,6 +35,12 @@
         android:key="general_category"
         android:title="@string/title_general">
 
+        <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
+            android:key="double_tap_sleep_anywhere"
+            android:title="@string/double_tap_sleep_anywhere_title"
+            android:summary="@string/double_tap_sleep_anywhere_summary"
+            settings:advanced="true"/>
+
         <PreferenceScreen
             android:key="owner_info_settings"
             android:fragment="com.android.settings.OwnerInfoSettings"
