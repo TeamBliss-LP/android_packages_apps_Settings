@@ -77,7 +77,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             densityEntries[idx] = Integer.toString(defaultDensity * pct / 100);
         }
         densityEntries[8] = getString(R.string.custom_density);
-        int currentDensity = DisplayMetrics.DENSITY_CURRENT;
+        int currentDensity = DisplayMetrics.DENSITY_PREFERRED;
         if (currentDensity != 0 && currentDensity < 200) {
             currentDensity = 200;
         } else if (currentDensity > 1000) {

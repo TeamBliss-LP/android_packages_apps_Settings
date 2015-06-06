@@ -183,9 +183,9 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
         mLcdDensityPreference = (ListPreference) findPreference(KEY_LCD_DENSITY);
         if (mLcdDensityPreference != null) {
-            int defaultDensity = DisplayMetrics.DENSITY_DEVICE;
-            int currentDensity = DisplayMetrics.DENSITY_CURRENT;
-            if (currentDensity < 10 || currentDensity >= 1000) {
+            int defaultDensity = DisplayMetrics.DENSITY_DEVICE_DEFAULT;
+            int currentDensity = DisplayMetrics.DENSITY_PREFERRED;
+            if (currentDensity < 200 || currentDensity >= 1000) {
                 // Unsupported value, force default
                 currentDensity = defaultDensity;
             }
