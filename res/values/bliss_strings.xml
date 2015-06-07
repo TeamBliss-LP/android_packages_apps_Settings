@@ -1120,7 +1120,7 @@
     <string name="status_bar_greeting_timeout_title">Greeting timeout</string>
 
     <!-- Show carrier label and custom -->
-    <string name="carrier_options_category_title">Status Bar Carrier Label</string>
+    <string name="carrier_options_category_title">Status bar carrier label</string>
     <string name="carrier_options">Carrier Label</string>
     <string name="show_status_bar_carrier_title">Status bar carrier</string>
     <string name="show_status_bar_carrier_summary">Show carrier in status bar</string>
@@ -1380,9 +1380,9 @@
     <string name="save">Save</string>
     <string name="navigation_bar_longpress_timeout_text">Button longpress delay</string>
     <string name="enable_navigation_ring_title">Navigation search assistant</string>
-    <string name="enable_navigation_ring_summary">Enable long-press on home for the google now search assistant</string>
+    <string name="enable_navigation_ring_summary">Enable long-press on home for the Google Now search assistant</string>
     <string name="navbar_use_gallary_warning">Info: please select Gallery to save image</string>
-    <string name="bliss_navbar_title">Navigation Bar</string>
+    <string name="bliss_navbar_title">Navigation bar</string>
     <string name="navbar_settings_summary">Customize navbar and select custom shortcuts and actions</string>
 
     <!-- Navigation Bar left-handed mode -->
