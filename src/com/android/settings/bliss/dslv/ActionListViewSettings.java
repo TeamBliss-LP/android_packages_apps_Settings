@@ -33,6 +33,7 @@ import android.content.res.TypedArray;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
+import android.graphics.drawable.VectorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -632,10 +633,15 @@ public class ActionListViewSettings extends ListFragment implements
                         mActivity, ActionHelper.getActionIconImage(mActivity,
                         getItem(position).getClickAction(),
                         iconUri), 48);
-            }
 
-            if (iconUri != null && iconUri.startsWith(ActionConstants.SYSTEM_ICON_IDENTIFIER)) {
-                d.setTint(getResources().getColor(R.color.dslv_icon_dark));
+                if ((iconUri.equals(ActionConstants.ICON_EMPTY) &&
+                        getItem(position).getClickAction().startsWith("**")) || (iconUri != null
+                        && iconUri.startsWith(ActionConstants.SYSTEM_ICON_IDENTIFIER))) {
+                    if (d != null) {
+                        d = ImageHelper.getColoredDrawable(d,
+                                getResources().getColor(R.color.dslv_icon_dark));
+                    }
+                }
             }
             holder.iconView.setImageDrawable(d);
 
