@@ -14,6 +14,7 @@
     <string name="help">Справка</string>
     <string name="dialog_cancel">Отмена</string>
     <string name="enabled">Включено</string>
+    <string name="disabled">Отключено</string>
     <string name="attention">Внимание</string>
     <string name="default_string">По умолчанию</string>
     <string name="icons_title">Иконки</string>
@@ -65,6 +66,10 @@
     <string name="shortcut_action_kill">Закрыть приложение</string>
     <string name="shortcut_action_app">Пользовательское приложение</string>
     <string name="shortcut_action_lastapp">Последнее приложение</string>
+    <string name="shortcut_action_menu_big">Меню (большое)</string>
+    <string name="shortcut_action_notifications">Уведомления</string>
+    <string name="shortcut_action_qs">Быстрые настройки</string>
+    <string name="shortcut_action_torch">Фонарик</string>
     <string name="shortcut_action_screenshot">Скриншот</string>
 
     <string name="shortcut_action_menu">Меню</string>
@@ -268,7 +273,6 @@
     <string name="hex_hint">#ff000000</string>
     <string name="set">Применить</string>
 
-
     <!-- Animations Category -->
     <string name="animation_settings_title">Экран и анимация</string>
 
@@ -372,26 +376,6 @@
 
     <!-- Navring targets (enable/disable) -->
     <string name="navigation_ring_enable_title">Включить ярлыки кольца панели навигации</string>
-
-    <!-- Heads Up -->
-    <string name="category_heads_up">Всплывающие уведомления</string>
-    <string name="summary_heads_up_enabled">\"Всплывающие уведомления\" включены</string>
-    <string name="summary_heads_up_disabled">\"Всплывающие уведомления\" выключены</string>
-    <string name="add_heads_up_package">Добавить приложение</string>
-    <string name="add_heads_up_dnd_summary">Не показывать всплывающие уведомления при работе с этими приложениями</string>
-    <string name="add_heads_up_blacklist_summary">Не показывать всплывающие уведомления от этих приложений</string>
-    <string name="heads_up_dnd_title">Не беспокоить</string>
-    <string name="heads_up_blacklist_title">Чёрный список</string>
-    <string name="heads_up_disabled_notice">\"Всплывающие уведомления\" позволяют отображать интерактивные уведомления от приложений во всплывающем окне.</string>
-    <string name="heads_up_time_out_title">Длительность</string>
-    <string name="heads_up_time_out_summary">\"Всплывающее уведомление\" будет показываться в течение <xliff:g id="number">%d</xliff:g> секунд.</string>
-    <string name="heads_up_time_out_never_summary">\"Всплывающее уведомление\" будет показываться опр. время, пока не будет закрыто.</string>
-    <string name="heads_up_time_out_2sec">2 секунды</string>
-    <string name="heads_up_time_out_4sec">4 секунды</string>
-    <string name="heads_up_time_out_6sec">6 секунд</string>
-    <string name="heads_up_time_out_8sec">8 секунд</string>
-    <string name="heads_up_time_out_10sec">10 секунд</string>
-    <string name="heads_up_time_out_never">Никогда</string>
 
     <!-- Heads up touch outside -->
     <string name="heads_up_touch_outside_title">Поведение при внешнем нажатии</string>
@@ -525,16 +509,6 @@
     <string name="no_media_notification_summary">Показывать уведомление при извлечении накопителя</string>
     <string name="mount_notification_title">Уведомление о подключении</string>
     <string name="mount_notification_summary">Показывать уведомление при подключении накопителя</string>
-
-    <!-- Volume panel timeout -->
-    <string name="category_panel_time_out">Таймаут панели</string>
-    <string name="volume_panel_time_out_title">Длительность показа панели громкости</string>
-    <string name="volume_panel_time_out_summary">Скрыть после <xliff:g id="number">%d</xliff:g> сек. Автоматически скрывать при внешнем нажатии</string>
-    <string name="volume_panel_time_out_3sec">3 секунды (по умолчанию)</string>
-    <string name="volume_panel_time_out_5sec">5 секунд</string>
-    <string name="volume_panel_time_out_8sec">8 секунд</string>
-    <string name="volume_panel_time_out_12sec">12 секунд</string>
-    <string name="volume_panel_time_out_15sec">15 секунд</string>
 
     <!-- Slim Shortcuts -->
     <string name="slim_shortcut_picker">Действия Slim</string>
@@ -679,9 +653,57 @@
     <string name="colors_title">Цвета</string>
     <string name="text_title">Текст</string>
 
+    <!-- Heads Up -->
+    <string name="category_heads_up">Всплывающие уведомления</string>
+    <string name="summary_heads_up_enabled">\"Всплывающие уведомления\" включены</string>
+    <string name="summary_heads_up_disabled">\"Всплывающие уведомления\" выключены</string>
+    <string name="add_heads_up_package">Добавить приложение</string>
+    <string name="add_heads_up_dnd_summary">Не показывать всплывающие уведомления при работе с этими приложениями</string>
+    <string name="add_heads_up_blacklist_summary">Не показывать всплывающие уведомления от этих приложений</string>
+    <string name="heads_up_dnd_title">Не беспокоить</string>
+    <string name="heads_up_blacklist_title">Чёрный список</string>
+    <string name="heads_up_disabled_notice">\"Всплывающие уведомления\" позволяют отображать интерактивные уведомления от приложений во всплывающем окне.</string>
+    <string name="heads_up_dismiss_on_remove_title">Поведение при свайпе</string>
+    <string name="heads_up_dismiss_on_remove_summary_enabled">Скрывать уведомление вместо удаления</string>
+    <string name="heads_up_dismiss_on_remove_summary_disabled">Скрывать и удалять уведомление</string>
+    <string name="show_headsup_button_title">Показывать кнопку быстрого доступа</string>
+    <string name="show_headsup_button_summary">Показывать кнопку быстрого доступа в заголовке строки состояния</string>
+
+    <!-- Heads up timeout -->
+    <string name="heads_up_time_out_title">Длительность</string>
+    <string name="heads_up_time_out_summary">\"Всплывающее уведомление\" будет показываться в течение <xliff:g id="number">%d</xliff:g> секунд.</string>
+    <string name="heads_up_time_out_never_summary">\"Всплывающее уведомление\" будет показываться опр. время, пока не будет закрыто.</string>
+    <string name="heads_up_time_out_2sec">2 секунды</string>
+    <string name="heads_up_time_out_4sec">4 секунды</string>
+    <string name="heads_up_time_out_6sec">6 секунд</string>
+    <string name="heads_up_time_out_8sec">8 секунд</string>
+    <string name="heads_up_time_out_10sec">10 секунд</string>
+    <string name="heads_up_time_out_never">Никогда</string>
+
+    <!-- Heads up snooze -->
+    <string name="heads_up_snooze_title">Длительность \"отложить\"</string>
+    <string name="heads_up_snooze_summary">При нажатии кнопки \"Отложить\" \"Всплывающие уведомления\" будут приостановлены на <xliff:g id="number">%d</xliff:g> минут.</string>
+    <string name="heads_up_snooze_disabled_summary">Функция \"Отложить\" отключена.</string>
+    <string name="heads_up_snooze_1min">1 минута</string>
+    <string name="heads_up_snooze_3min">3 минуты</string>
+    <string name="heads_up_snooze_5min">5 минут</string>
+    <string name="heads_up_snooze_10min">10 минут</string>
+    <string name="heads_up_snooze_15min">15 минут</string>
+    <string name="heads_up_snooze_20min">20 минут</string>
+
+    <!-- Volume panel timeout -->
+    <string name="category_panel_time_out">Таймаут панели</string>
+    <string name="volume_panel_time_out_title">Длительность показа панели громкости</string>
+    <string name="volume_panel_time_out_summary">Скрыть после <xliff:g id="number">%d</xliff:g> сек. Автоматически скрывать при внешнем нажатии</string>
+    <string name="volume_panel_time_out_1sec">1 секунда</string>
+    <string name="volume_panel_time_out_3sec">3 секунды (по умолчанию)</string>
+    <string name="volume_panel_time_out_5sec">5 секунд</string>
+    <string name="volume_panel_time_out_8sec">8 секунд</string>
+    <string name="volume_panel_time_out_12sec">12 секунд</string>
+    <string name="volume_panel_time_out_15sec">15 секунд</string>
+
     <!-- Data activity icons -->
     <string name="status_bar_show_network_activity_title">Индикаторы сетевой активности</string>
-
 
     <!-- User Selectable Tether Networks-->
     <string name="tether_usb_network_summary">Нажмите, чтобы изменить USB-сеть</string>
@@ -692,6 +714,10 @@
     <!-- Long press on lock screen lock icon to sleep -->
     <string name="longpress_lock_icon_to_sleep_title">Долгое нажатие на иконку блокировки для сна</string>
     <string name="longpress_lock_icon_to_sleep_summary">эта опция не будет работать, если включен защищенный режим</string>
+
+    <!-- Double tap gesture anywhere on the lock screen put device to sleep -->
+    <string name="double_tap_sleep_anywhere_title">Двойное нажатие для сна везде</string>
+    <string name="double_tap_sleep_anywhere_summary">Двойное нажатие для сна в любом месте экрана блокировки</string>
 
     <!-- Quick Settings -->
     <string name="qs_screenshot_tile">Скриншот</string>
@@ -775,8 +801,6 @@
     <string name="four_second">4 с</string>
     <string name="fourhalf_second">4.5 с</string>
     <string name="five_second">5 с</string>
-
-
 
     <!-- Chamber of Secrets -->
 
@@ -888,15 +912,6 @@
     <string name="trigger_bottom_title">Высота триггера</string>
     <string name="trigger_bottom_summary">Регулировка высоты области триггера</string>
 
-    <!-- TRDS 5.0 -->	
-    <string name="theme_settings_title">TRDS</string>
-    <string name="theme_auto_mode_title">Переключить тему</string>
-    <string name="theme_auto_mode_off">Вручную</string>
-    <string name="theme_auto_mode_lightsensor">При изменении освещенности</string>
-    <string name="theme_auto_mode_twilight">В дневное время</string>
-    <string name="theme_auto_switch_mode_error">Включен режим автоматической смены тем оформления при изменении освещенности. Ручное переключение невозможно</string>
-    <string name="theme_reset_message">Сбросить состояние темы по умолчанию?</string>
-
     <!-- Lock Gesture settings -->
     <!-- Security & location settings screen, setting option name -->
     <string name="lockgesture_change_lock_pattern_label">Изменить жест разблокировки</string>
@@ -972,5 +987,75 @@
     <string name="nfc_polling_mode_screen_off">Включенный экран</string>
     <string name="nfc_polling_mode_screen_locked">Включенный заблокированный экран</string>
     <string name="nfc_polling_mode_screen_unlocked">Включенный разблокированный экран (по умолчанию)</string>
+
+    <!-- Notification drawer clear all icon -->
+    <string name="notification_drawer_clear_all_icon_color_title">Цвет кнопки \"Очистить всё\"</string>
+
+    <!-- Status bar expanded header: Custom background color -->
+    <string name="background_header_title">Цвет фона заголовка</string>
+
+    <!-- Task Manager -->
+    <string name="enable_task_manager_title">Диспетчер задач</string>
+    <string name="enable_task_manager_summary">Кнопка диспетчера задач в расширенной области панели уведомлений.</string>
+
+    <!-- Status bar power menu -->
+    <string name="status_bar_power_menu_title">Кнопка питания в расширенной строке состояния</string>
+    <string name="status_bar_power_menu_dialog_title">Задать действия при обычном и долгом нажатиях</string>
+    <string name="status_bar_power_menu_off">Отключено</string>
+    <string name="status_bar_power_menu_action_screen_off">Выкл. экрана - Меню кнопки питания</string>
+    <string name="status_bar_power_menu_action_dialog">Меню кнопки питания - Выкл. экрана</string>
+
+    <!-- Disable torch when screen goes off -->
+    <string name="disable_torch_screen_off_title">Отключения фонарика при выключенном экране</string>
+    <string name="disable_torch_screen_off_delay_title">Задержка</string>
+    <string name="torch_screen_off_one_second">1 секунда</string>
+    <string name="torch_screen_off_ten_second">10 секунд (по умолчанию)</string>
+    <string name="torch_screen_off_thirty_second">30 секунд</string>
+    <string name="torch_screen_off_one_minute">1 минута</string>
+    <string name="torch_screen_off_five_minutes">5 минут</string>
+    <string name="torch_screen_off_ten_minutes">10 минут</string>
+
+    <!-- Custom Over scroll Settings -->
+    <string name="ui_overscroll_title">Настройка эффекта в конце прокрутки</string>
+    <string name="overscroll_glow_title">Цвет эффекта</string>
+    <string name="edge_effect_title">Эффект свечения края</string>
+    <string name="bounce_effect_title">Отскакивать</string>
+    <string name="none_effect_title">Ничего</string>
+    <string name="extra_heavy_title">Очень сильно</string>
+    <string name="heavy_title">Сильно</string>
+    <string name="medium_title">Средне</string>
+    <string name="light_title">Слабо</string>
+    <string name="extra_light_title">Очень слабо</string>
+    <string name="overscroll_title">Эффекта в конце прокрутки</string>
+    <string name="overscroll_summary">Выберите эффет при достижения курсором конца списка</string>
+    <string name="overscroll_weight_title">Сила эффекта</string>
+    <string name="overscroll_weight_summary">Установите силу данного эффека</string>
+
+    <!-- Recent panel -->
+    <string name="recent_panel_category">\"Недавние приложения\" от Slim</string>
+    <string name="recent_panel_scale_title">Размер</string>
+    <string name="recent_panel_scale_summary">Размер панели недавних приложений в процентах.</string>
+    <string name="recent_panel_100">100% (по умолчанию)</string>
+    <string name="recent_panel_85">85%</string>
+    <string name="recent_panel_70">70%</string>
+    <string name="recent_panel_expanded_mode_title">Расширенный режим</string>
+    <string name="recent_panel_expanded_mode_summary">Расширенный режим просмотра недавних приложений</string>
+    <string name="recent_panel_expanded_mode_auto">Авто (по умолчанию)</string>
+    <string name="recent_panel_expanded_mode_always">Всегда</string>
+    <string name="recent_panel_expanded_mode_never">Никогда</string>
+    <string name="recent_panel_show_topmost_title">Показывать последнее приложение</string>
+    <string name="recent_panel_show_topmost_summary">Показывать последнее приложение в списке недавних</string>
+    <string name="trds_default_color">TRDS по умолчанию</string>
+    <string name="recent_panel_bg_color_title">Цвет фона панели</string>
+    <string name="recent_card_bg_color_title">Цвет фона карточки</string>
+    <string name="recent_card_text_color_title">Цвет текста карточки</string>
+
+    <!-- Custom Recents Toggle -->
+    <string name="custom_recent_title">Включить \"Недавние приложения\" от Slim</string>
+    <string name="custom_recent_summary">Переключение версии \"Недавних приложений\" на Slim или на Stock</string>
+
+    <!-- ATTENTION: RTL languages need to replace left with right -->
+    <string name="recent_panel_lefty_mode_title">Показывать у левого края</string>
+    <string name="recent_panel_lefty_mode_summary">Показывать панель недавних приложений у левого края</string>
 
 </resources>
