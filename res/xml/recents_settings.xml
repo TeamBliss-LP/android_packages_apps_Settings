@@ -53,11 +53,12 @@
             android:summary="@string/recents_show_searchbar_summary"
             android:defaultValue="false" />
 
-    <!-- Slim recents -->
-    <PreferenceScreen
-        android:key="recent_panel"
-        android:fragment="com.android.settings.bliss.RecentPanel"
-        android:title="@string/recent_panel_category" />
+       <!-- Slim recents -->
+       <PreferenceScreen
+           android:key="recent_panel"
+           android:fragment="com.android.settings.bliss.RecentPanel"
+           android:title="@string/recent_panel_category"
+           android:defaultValue="false" />
 
         <PreferenceScreen
             android:key="omniswitch"
