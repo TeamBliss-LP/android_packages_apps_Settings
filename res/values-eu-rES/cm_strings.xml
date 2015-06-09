@@ -183,7 +183,7 @@
   <string name="display_rotation_270_title">270 gradu</string>
   <string name="app_security_title">Aplikazioetako segurtasuna</string>
   <string name="sms_security_check_limit_title">SMS mezu muga</string>
-  <string name="sms_security_check_limit_summary">Aplikazioek %d mezu bidali ditzakete 30 minututan berrespena eskatu aurretik</string>
+  <string name="sms_security_check_limit_summary">Aplikazioek %d mezu bidali ditzakete minutu batean berrespena eskatu aurretik</string>
   <string name="sms_security_check_limit_summary_none">Aplikazioek ezin dute SMS mezurik bidali berrespenik gabe</string>
   <string name="sms_security_check_limit_none">Bat ere ez</string>
   <string name="spam_added_title">%1$s gehitu da</string>
@@ -232,7 +232,22 @@
   <string name="status_bar_notif_count_title">Jakinarazpen zenbatzailea erakutsi</string>
   <string name="status_bar_notif_count_summary">Itxaroten dauden jakinarazpen kantitatea egoera barran erakutsi</string>
   <string name="status_bar_clock_style_center">Erdialdean</string>
-  <string name="status_bar_clock_style_hidden">Izkutatua</string>
+  <string name="status_bar_clock_style_hidden">Ezkutua</string>
+  <string name="status_bar_am_pm_title">AM/PM estiloa</string>
+  <string name="status_bar_am_pm_info">24 ordutako erlojua gaitu da</string>
+  <string name="status_bar_am_pm_normal">Arrunta</string>
+  <string name="status_bar_am_pm_small">Txikia</string>
+  <string name="status_bar_am_pm_hidden">Ezkutua</string>
+  <string name="status_bar_battery_style_title">Bateria egoeraren estiloa</string>
+  <string name="status_bar_battery_style_icon_portrait">Ikono bertikala</string>
+  <string name="status_bar_battery_style_icon_landscape">Ikono horizontala</string>
+  <string name="status_bar_battery_style_circle">Zirkularra</string>
+  <string name="status_bar_battery_style_text">Testua</string>
+  <string name="status_bar_battery_style_hidden">Ezkutua</string>
+  <string name="status_bar_battery_percentage_title">Bateriaren ehunekoa</string>
+  <string name="status_bar_battery_percentage_default">Ezkutua</string>
+  <string name="status_bar_battery_percentage_text_inside">Ikonoaren barruan</string>
+  <string name="status_bar_battery_percentage_text_next">Ikonoaren ondoan</string>
   <string name="edit_light_settings">Jakinarazpena editatu</string>
   <string name="pulse_speed_title">Iraupena eta abiadura</string>
   <string name="default_time">Normala</string>
@@ -321,7 +336,7 @@
   <string name="app_ops_labels_modify_call_log">Dei erregistroa editatu</string>
   <string name="app_ops_labels_read_calendar">Egutegia irakurri</string>
   <string name="app_ops_labels_modify_calendar">Egutegia aldatu</string>
-  <string name="app_ops_labels_notification_toast">jakinarazpena/Mezua</string>
+  <string name="app_ops_labels_notification_toast">Jakinarazpena/Laster-leihoa</string>
   <string name="app_ops_labels_call_phone">Deitu</string>
   <string name="app_ops_labels_read_sms_db">SMS-ak irakurri</string>
   <string name="app_ops_labels_write_sms_db">SMS-ak idatzi</string>
@@ -551,4 +566,6 @@
   <string name="sim_card_status_title">%d. SIM txartelaren egoera</string>
   <string name="sim_card_lock_settings_title">%d. SIM txartelaren blokeo ezarpenak</string>
   <string name="sim_card_summary_empty">Ez da SIM txartelik sartu</string>
+  <string name="sim_mobile_network_settings_category_title">Sare mugikorraren ezarpenak</string>
+  <string name="sim_mobile_network_settings_title">%d. SIM txartelaren ezarpenak</string>
 </resources>
