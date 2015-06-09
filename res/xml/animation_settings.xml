@@ -20,7 +20,7 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <PreferenceScreen
-        android:key="interface_animation_scroll"
+        android:key="interface_animation_keyboard"
         android:fragment="com.android.settings.bliss.KeyboardAnimationInterfaceSettings"
         android:title="@string/ime_animation_title"
         android:summary="@string/ime_animation_summary" />
@@ -61,19 +61,6 @@
         android:fragment="com.android.settings.bliss.ScrollAnimationInterfaceSettings"
         android:title="@string/scrolling_title"
         android:summary="@string/scrolling_summary" />
-
-    <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
-        android:key="disable_torch_on_screen_off"
-        android:title="@string/disable_torch_screen_off_title"
-        android:defaultValue="false" />
-
-    <ListPreference
-        android:key="disable_torch_on_screen_off_delay"
-        android:title="@string/disable_torch_screen_off_delay_title"
-        android:dialogTitle="@string/disable_torch_screen_off_delay_title"
-        android:entries="@array/torch_screen_off_delay_entries"
-        android:entryValues="@array/torch_screen_off_delay_values"
-        android:dependency="disable_torch_on_screen_off" />
 
     <!-- Identicons -->
     <PreferenceScreen

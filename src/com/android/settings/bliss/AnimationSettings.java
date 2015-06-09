@@ -51,16 +51,14 @@ public class AnimationSettings extends SettingsPreferenceFragment implements
 
     private static final String TAG = "AnimationSettings";
 
-    
     private static final String KEY_TOAST_ANIMATION = "toast_animation";
     private static final String SCROLLINGCACHE_PREF = "pref_scrollingcache";
     private static final String SCROLLINGCACHE_PERSIST_PROP = "persist.sys.scrollingcache";
     private static final String SCROLLINGCACHE_DEFAULT = "1";
-    
-    private ListPreference mToastAnimation;
-    private ListPreference mScrollingCachePref;    
 
- 
+    private ListPreference mToastAnimation;
+    private ListPreference mScrollingCachePref;
+
     private final Configuration mCurConfig = new Configuration();
     private Context mContext;
 
@@ -72,21 +70,21 @@ public class AnimationSettings extends SettingsPreferenceFragment implements
         PreferenceScreen prefSet = getPreferenceScreen();
         ContentResolver resolver = getContentResolver();
 
-       mContext = getActivity();
-       
-                 
-	// Toast animation
+        mContext = getActivity();
+
+        // Toast animation
         mToastAnimation = (ListPreference)findPreference(KEY_TOAST_ANIMATION);
         mToastAnimation.setSummary(mToastAnimation.getEntry());
-        int CurrentToastAnimation = Settings.System.getInt(getContentResolver(), Settings.System.TOAST_ANIMATION, 1);
+        int CurrentToastAnimation = Settings.System.getInt(getContentResolver(),
+                Settings.System.TOAST_ANIMATION, 1);
         mToastAnimation.setValueIndex(CurrentToastAnimation);
         mToastAnimation.setSummary(mToastAnimation.getEntries()[CurrentToastAnimation]);
         mToastAnimation.setOnPreferenceChangeListener(this);
-        
+
         mScrollingCachePref = (ListPreference) findPreference(SCROLLINGCACHE_PREF);
         mScrollingCachePref.setValue(SystemProperties.get(SCROLLINGCACHE_PERSIST_PROP,
                 SystemProperties.get(SCROLLINGCACHE_PERSIST_PROP, SCROLLINGCACHE_DEFAULT)));
-        mScrollingCachePref.setOnPreferenceChangeListener(this);        
+        mScrollingCachePref.setOnPreferenceChangeListener(this);
 
     }
 
@@ -109,8 +107,8 @@ public class AnimationSettings extends SettingsPreferenceFragment implements
             if (newValue != null) {
                 SystemProperties.set(SCROLLINGCACHE_PERSIST_PROP, (String) newValue);
             }
-            return true;            
-    }
+            return true;
+        }
         return false;
     }
 
