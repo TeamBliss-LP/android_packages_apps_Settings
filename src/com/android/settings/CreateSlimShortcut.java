@@ -19,13 +19,13 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
 import com.android.internal.util.bliss.ActionHelper;
 import com.android.internal.util.bliss.DeviceUtils;
 import com.android.internal.util.bliss.DeviceUtils.FilteredDeviceFeaturesArray;
+import com.android.internal.util.bliss.ImageHelper;
 import com.android.settings.bliss.SlimActionShortcut;
 
 import com.android.settings.R;
@@ -67,11 +67,8 @@ public class CreateSlimShortcut extends Activity {
 
                 Drawable icon = ActionHelper.getActionIconImage(
                         CreateSlimShortcut.this, dialogValues[item], null);
-                BitmapDrawable bitmap = (BitmapDrawable) icon;
                 Intent intent = new Intent();
-                if (bitmap != null) {
-                    intent.putExtra(Intent.EXTRA_SHORTCUT_ICON, bitmap.getBitmap());
-                }
+                intent.putExtra(Intent.EXTRA_SHORTCUT_ICON, ImageHelper.drawableToBitmap(icon));
                 intent.putExtra(Intent.EXTRA_SHORTCUT_NAME, dialogEntries[item]);
                 intent.putExtra(Intent.EXTRA_SHORTCUT_INTENT, shortcutIntent);
                 setResult(RESULT_OK, intent);
