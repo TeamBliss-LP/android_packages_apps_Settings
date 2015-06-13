@@ -193,7 +193,7 @@ public class StatusBarBatteryStatusSettings extends SettingsPreferenceFragment i
         if (batteryStatusVisible) {
             intColor = Settings.System.getInt(mResolver,
                     Settings.System.STATUS_BAR_BATTERY_STATUS_TEXT_COLOR,
-                    DEFAULT_TEXT_COLOR); 
+                    DEFAULT_BATTERY_COLOR);
             mTextColor.setNewPreviewColor(intColor);
             hexColor = String.format("#%08x", (0xffffffff & intColor));
             mTextColor.setSummary(hexColor);
@@ -350,7 +350,7 @@ public class StatusBarBatteryStatusSettings extends SettingsPreferenceFragment i
                                     DEFAULT_BATTERY_COLOR);
                             Settings.System.putInt(getOwner().mResolver,
                                     Settings.System.STATUS_BAR_BATTERY_STATUS_TEXT_COLOR,
-                                    DEFAULT_TEXT_COLOR);
+                                    DEFAULT_BATTERY_COLOR);
                             getOwner().refreshSettings();
                         }
                     })
