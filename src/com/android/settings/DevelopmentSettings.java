@@ -430,10 +430,8 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
 
         // Back long press timeout
         mKillAppLongpressTimeout = addListPreference(KILL_APP_LONGPRESS_TIMEOUT);
-        int killAppLongpressTimeout = Settings.Secure.getIntForUser(
-                getActivity().getContentResolver(),
-                Settings.Secure.KILL_APP_LONGPRESS_TIMEOUT,
-                1000, UserHandle.USER_CURRENT);
+        int killAppLongpressTimeout = Settings.Secure.getIntForUser(getActivity().getContentResolver(),
+                Settings.Secure.KILL_APP_LONGPRESS_TIMEOUT, 2000, UserHandle.USER_CURRENT);
         mKillAppLongpressTimeout.setOnPreferenceChangeListener(this);
 
         Preference hdcpChecking = findPreference(HDCP_CHECKING_KEY);
@@ -621,9 +619,9 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
         final ContentResolver cr = context.getContentResolver();
         mHaveDebugSettings = false;
         updateSwitchPreference(mEnableAdb, Settings.Global.getInt(cr,
-                Settings.Global.ADB_ENABLED, 1) != 0);
+                Settings.Global.ADB_ENABLED, 0) != 0);
         mAdbNotify.setChecked(Settings.Secure.getInt(cr,
-                Settings.Secure.ADB_NOTIFY, 0) != 0);
+                Settings.Secure.ADB_NOTIFY, 1) != 0);
         updateAdbOverNetwork();
         if (mEnableTerminal != null) {
             updateSwitchPreference(mEnableTerminal,
@@ -838,8 +836,7 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
 
     private void updateKillAppLongpressBackOptions() {
         mKillAppLongpressBack.setChecked(Settings.Secure.getInt(
-            getActivity().getContentResolver(), 
-            Settings.Secure.KILL_APP_LONGPRESS_BACK, 1) != 0);
+            getActivity().getContentResolver(), Settings.Secure.KILL_APP_LONGPRESS_BACK, 0) != 0);
     }
 
     private void writeKillAppLongpressTimeoutOptions(Object newValue) {
