@@ -18,60 +18,66 @@
         android:title="@string/development_settings_title">
 
     <PreferenceScreen
-            android:key="development_tools"
-            android:title="@string/development_tools_title"
-            android:persistent="false" >
+        android:key="development_tools"
+        android:title="@string/development_tools_title"
+        android:persistent="false" >
         <intent
-                android:action="android.settings.development.LAUNCH_TOOLS"
-                android:targetPackage="com.android.development"
-                android:targetClass="com.android.development.Development" />
+            android:action="android.settings.development.LAUNCH_TOOLS"
+            android:targetPackage="com.android.development"
+            android:targetClass="com.android.development.Development" />
     </PreferenceScreen>
 <!--
     <com.android.settings.BugreportPreference
             android:key="bugreport"
             android:title="@*android:string/bugreport_title"
             android:dialogTitle="@*android:string/bugreport_title" />
--->        
+-->
     <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
         android:key="disable_fc_notifications"
         android:title="@string/disable_fc_notifications_title"
-        android:summary="@string/disable_fc_notifications_summary" />
-            
+        android:summary="@string/disable_fc_notifications_summary"
+        android:defaultValue="1" />
+
     <PreferenceScreen
         android:key="hfm_settings"
         android:title="@string/hfm_pref_screen_title"
-        android:fragment="com.android.settings.bliss.hfm.HfmSettings" />            
+        android:fragment="com.android.settings.bliss.hfm.HfmSettings"
+        android:persistent="false" />
 
-    <PreferenceScreen	
+    <PreferenceScreen
         android:id="@+id/wakelock_blocker"
         android:title="@string/wakelock_blocker"
-	android:fragment="com.android.settings.WakeLockBlocker" />
-	
+        android:fragment="com.android.settings.WakeLockBlocker"
+        android:persistent="false" />
+
     <SwitchPreference
         android:key="advanced_reboot"
         android:title="@string/advanced_reboot_title"
-        android:summary="@string/advanced_reboot_summary" />
+        android:summary="@string/advanced_reboot_summary"
+        android:defaultValue="1" />
 
     <SwitchPreference
         android:key="enable_quickboot"
         android:title="@string/enable_quickboot_title"
-        android:summary="@string/enable_quickboot_summary" />
+        android:summary="@string/enable_quickboot_summary"
+        android:defaultValue="0" />
 
     <PreferenceScreen
-            android:key="local_backup_password"
-            android:title="@string/local_backup_password_title"
-            android:summary="@string/local_backup_password_summary_none"
-            android:persistent="false" >
+        android:key="local_backup_password"
+        android:title="@string/local_backup_password_title"
+        android:summary="@string/local_backup_password_summary_none"
+        android:persistent="false">
         <intent
-                android:action="android.settings.privacy.SET_FULL_BACKUP_PASSWORD"
-                android:targetPackage="com.android.settings"
-                android:targetClass="com.android.settings.SetFullBackupPassword" />
+            android:action="android.settings.privacy.SET_FULL_BACKUP_PASSWORD"
+            android:targetPackage="com.android.settings"
+            android:targetClass="com.android.settings.SetFullBackupPassword" />
     </PreferenceScreen>
 
     <SwitchPreference
         android:key="keep_screen_on"
         android:title="@string/keep_screen_on"
-        android:summary="@string/keep_screen_on_summary"/>
+        android:summary="@string/keep_screen_on_summary"
+        android:defaultValue="0" />
 
     <ListPreference
         android:key="hdcp_checking"
@@ -133,7 +139,7 @@
             android:dependency="enable_adb"/>
 
         <Preference android:key="clear_adb_keys"
-                android:title="@string/clear_adb_keys" />
+            android:title="@string/clear_adb_keys" />
 
         <com.android.settings.HostnamePreference
             android:key="device_hostname"
@@ -410,14 +416,15 @@
         <SwitchPreference
             android:key="kill_app_longpress_back"
             android:title="@string/kill_app_longpress_back"
-            android:summary="@string/kill_app_longpress_back_summary"/>
+            android:summary="@string/kill_app_longpress_back_summary"
+            defaultValue="1" />
 
        <ListPreference
             android:key="kill_app_longpress_timeout"
             android:title="@string/kill_app_longpress_timeout_title"
             android:entries="@array/kill_app_longpress_timeout_entries"
             android:entryValues="@array/kill_app_longpress_timeout_values"
-            android:defaultValue="2000"
+            android:defaultValue="1000"
             android:dependency="kill_app_longpress_back" />
 
      </PreferenceCategory>

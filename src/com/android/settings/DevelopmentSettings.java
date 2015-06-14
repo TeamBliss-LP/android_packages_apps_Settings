@@ -431,7 +431,7 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
         // Back long press timeout
         mKillAppLongpressTimeout = addListPreference(KILL_APP_LONGPRESS_TIMEOUT);
         int killAppLongpressTimeout = Settings.Secure.getIntForUser(getActivity().getContentResolver(),
-                Settings.Secure.KILL_APP_LONGPRESS_TIMEOUT, 2000, UserHandle.USER_CURRENT);
+                Settings.Secure.KILL_APP_LONGPRESS_TIMEOUT, 1000, UserHandle.USER_CURRENT);
         mKillAppLongpressTimeout.setOnPreferenceChangeListener(this);
 
         Preference hdcpChecking = findPreference(HDCP_CHECKING_KEY);
@@ -621,7 +621,7 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
         updateSwitchPreference(mEnableAdb, Settings.Global.getInt(cr,
                 Settings.Global.ADB_ENABLED, 0) != 0);
         mAdbNotify.setChecked(Settings.Secure.getInt(cr,
-                Settings.Secure.ADB_NOTIFY, 1) != 0);
+                Settings.Secure.ADB_NOTIFY, 0) != 0);
         updateAdbOverNetwork();
         if (mEnableTerminal != null) {
             updateSwitchPreference(mEnableTerminal,
@@ -685,7 +685,8 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
     }
 
     private void updateAdvancedRebootOptions() {
-        mAdvancedReboot.setChecked(Settings.Secure.getInt(getActivity().getContentResolver(),
+        mAdvancedReboot.setChecked(Settings.Secure.getInt(
+                getActivity().getContentResolver(),
                 Settings.Secure.ADVANCED_REBOOT, 1) != 0);
     }
 
@@ -702,7 +703,7 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
 
     private void updateDevelopmentShortcutOptions() {
         mDevelopmentShortcut.setChecked(Settings.Secure.getInt(getActivity().getContentResolver(),
-                Settings.Secure.DEVELOPMENT_SHORTCUT, 0) != 0);
+                Settings.Secure.DEVELOPMENT_SHORTCUT, 1) != 0);
     }
 
     private void updateAdbOverNetwork() {
@@ -806,7 +807,7 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
 
     private void resetAdbNotifyOptions() {
         Settings.Secure.putInt(getActivity().getContentResolver(),
-                Settings.Secure.ADB_NOTIFY, 1);
+                Settings.Secure.ADB_NOTIFY, 0);
     }
 
     private void updateHdcpValues() {
@@ -836,7 +837,8 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
 
     private void updateKillAppLongpressBackOptions() {
         mKillAppLongpressBack.setChecked(Settings.Secure.getInt(
-            getActivity().getContentResolver(), Settings.Secure.KILL_APP_LONGPRESS_BACK, 0) != 0);
+            getActivity().getContentResolver(),
+            Settings.Secure.KILL_APP_LONGPRESS_BACK, 1) != 0);
     }
 
     private void writeKillAppLongpressTimeoutOptions(Object newValue) {
@@ -851,7 +853,7 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
         String value = Settings.Secure.getString(getActivity().getContentResolver(),
                 Settings.Secure.KILL_APP_LONGPRESS_TIMEOUT);
         if (value == null) {
-            value = "";
+            value = "1000";
         }
 
         CharSequence[] values = mKillAppLongpressTimeout.getEntryValues();
