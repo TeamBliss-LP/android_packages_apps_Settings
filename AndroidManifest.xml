@@ -2486,7 +2486,7 @@
         <activity android:name="com.android.settings.bliss.hfm.HfmWhitelist"
                   android:label="@string/hfm_whitelist_title"
                   android:taskAffinity="" />
-        
+
         <service android:name=".bliss.identicons.IdenticonCreationService"
                  android:exported="false" />
 
