@@ -17,9 +17,14 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
     <PreferenceScreen
-        android:fragment="com.android.settings.slim.NavBarButtonStyle"
+        android:fragment="com.android.settings.bliss.NavBarButtonStyle"
         android:key="nav_bar_button_style"
         android:title="@string/nav_bar_button_style"
         android:summary="@string/nav_bar_button_style_summary" />
 
+    <PreferenceScreen
+        android:fragment="com.android.settings.bliss.LegacyMenuSettings"
+        android:key="legacy_menu_settings"
+        android:title="@string/legacy_menu_settings"
+        android:summary="@string/legacy_menu_settings_summary" />
 </PreferenceScreen>

@@ -29,12 +29,12 @@
 
             <PreferenceScreen
                     android:key="navbar_button_settings"
-                    android:fragment="com.android.settings.slim.dslv.ActionListViewSettings"
+                    android:fragment="com.android.settings.bliss.dslv.ActionListViewSettings"
                     android:title="@string/navbar_button_title">
                 <extra android:name="actionMode" android:value="0" />
                 <extra android:name="maxAllowedActions" android:value="9" />
                 <extra android:name="disableDeleteLastEntry" android:value="true" />
-                <extra android:name="fragment" android:value="com.android.settings.slim.fragments.NavbarButtonFragment" />
+                <extra android:name="fragment" android:value="com.android.settings.bliss.fragments.NavbarButtonFragment" />
             </PreferenceScreen>
 
         <com.android.settings.bliss.NavbarSizePreference

@@ -1255,4 +1255,108 @@
         <item>2</item>
     </string-array>
 
+	<string-array name="legacy_menu_action_entries" >
+        <item>@string/shortcut_action_menu</item>
+        <item>@string/shortcut_action_home</item>	
+        <item>@string/shortcut_action_back</item>	
+        <item>@string/shortcut_action_recent</item>	
+        <item>@string/shortcut_action_voice_search</item>	
+        <item>@string/shortcut_action_search</item>	
+        <item>@string/shortcut_action_power</item>	
+        <item>@string/shortcut_action_notifications</item>	
+        <item>@string/shortcut_action_qs</item>	
+        <item>@string/shortcut_action_screenshot</item>	
+        <item>@string/shortcut_action_screenrecord</item>	
+        <item>@string/shortcut_action_ime</item>	
+        <item>@string/shortcut_action_lastapp</item>	
+        <item>@string/shortcut_action_kill</item>	
+        <item>@string/shortcut_action_assist</item>	
+        <item>@string/shortcut_action_ring_vib</item>	
+        <item>@string/shortcut_action_ring_vib_silent</item>	
+        <item>@string/shortcut_action_ring_silent</item>	
+        <item>@string/shortcut_action_power_menu</item>	
+        <item>@string/shortcut_action_torch</item>	
+        <item>@string/shortcut_action_app</item>	
+	</string-array>
+
+    <string-array name="legacy_menu_action_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>        
+        <item>15</item>        
+        <item>16</item>        
+        <item>17</item>        
+        <item>18</item>        
+        <item>19</item>        
+        <item>20</item>        
+    </string-array> 
+    
+  	<string-array name="legacy_menu_long_action_entries" >
+        <item>@string/shortcut_action_menu</item>
+        <item>@string/shortcut_action_home</item>	
+        <item>@string/shortcut_action_back</item>	
+        <item>@string/shortcut_action_recent</item>	
+        <item>@string/shortcut_action_voice_search</item>	
+        <item>@string/shortcut_action_search</item>	
+        <item>@string/shortcut_action_power</item>	
+        <item>@string/shortcut_action_notifications</item>	
+        <item>@string/shortcut_action_qs</item>	
+        <item>@string/shortcut_action_screenshot</item>	
+        <item>@string/shortcut_action_screenrecord</item>	
+        <item>@string/shortcut_action_ime</item>	
+        <item>@string/shortcut_action_lastapp</item>	
+        <item>@string/shortcut_action_kill</item>	
+        <item>@string/shortcut_action_assist</item>	
+        <item>@string/shortcut_action_ring_vib</item>	
+        <item>@string/shortcut_action_ring_vib_silent</item>	
+        <item>@string/shortcut_action_ring_silent</item>	
+        <item>@string/shortcut_action_power_menu</item>	
+        <item>@string/shortcut_action_torch</item>	
+        <item>@string/shortcut_action_media_previous</item>	
+        <item>@string/shortcut_action_media_next</item>	
+        <item>@string/shortcut_action_media_play_pause</item>	
+        <item>@string/shortcut_action_app</item>	        
+        <item>@string/shortcut_action_none</item>	
+	</string-array>
+
+    <string-array name="legacy_menu_long_action_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>        
+        <item>15</item>        
+        <item>16</item>        
+        <item>17</item>        
+        <item>18</item>        
+        <item>19</item>  
+        <item>20</item>  
+        <item>21</item>  
+        <item>22</item>  
+        <item>23</item>  
+        <item>24</item>  
+    </string-array>  
+
 </resources>
