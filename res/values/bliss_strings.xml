@@ -57,6 +57,7 @@
     <string name="dlg_reset_bliss">Bliss</string>
     <string name="reset_default_message">Reset default?</string>
     <string name="additional_options_title">Additional options</string>
+    <string name="positive_done">Done</string>
 
     <!-- Changelog -->
     <string name="changelog_bliss_title">Changelog</string>
@@ -177,6 +178,7 @@
     <string name="shortcut_action_warning">Warning</string>
     <string name="shortcut_action_warning_message">It is not possible to delete last entry</string>
     <string name="shortcut_action_disable_message">Disabled\nAdd an entry to enable this feature</string>
+    <string name="shortcut_action_required_warning_message">It is not possible to delete required buttons</string>
     <string name="shortcut_image_not_valid">The chosen app did not return a valid icon or does not support image cropping. Use another app.</string>
     <string name="shortcut_duplicate_entry">The chosen action cannot be added twice</string>
     <string name="shortcut_action_help_shortcut">shortcut</string>
@@ -1383,15 +1385,7 @@
     <string name="gesture_anywhere_floating_summary">Launch shortcuts in float mode</string>
 
     <!-- Navigation bar -->
-    <string name="navigation_bar_size_42_dp_default">42 dp (default)</string>
-    <string name="navigation_bar_size_36_dp">36 dp</string>
-    <string name="navigation_bar_size_30_dp">30 dp</string>
-    <string name="navigation_bar_size_24_dp">24 dp</string>
-    <string name="navigation_bar_size_48_dp_default">48 dp (default)</string>
-    <string name="navigation_bar_size_44_dp">44 dp</string>
-    <string name="navigation_bar_size_40_dp">40 dp</string>
-    <string name="navigation_bar_size_42_dp">42 dp</string>
-    <string name="navigation_bar_size_0_dp">0 dp (off)</string>
+	<string name="navigation_bar_category">Navigation bar</string> 
     <string name="navigation_menu_right">Right</string>
     <string name="navigation_menu_left">Left</string>
     <string name="navigation_menu_both">Both</string>
@@ -1407,15 +1401,12 @@
     <string name="navbar_enable_bar">Enable navigation bar</string>
     <string name="navbar_enable_bar_summary">Enable the navigation bar</string>
     <string name="navigation_bar_height_title">Navigation bar height</string>
-    <string name="navigation_bar_height_summary">Navigation bar height while in portrait.</string>
     <string name="navigation_bar_height_landscape_title">Navigation bar height landscape</string>
-    <string name="navigation_bar_height_landscape_summary">Navigation bar height while in landscape.</string>
     <string name="navigation_bar_width_title">Navigation bar width</string>
-    <string name="navigation_bar_width_summary">Navigation bar height if the bar is along a side.</string>
     <string name="navbar_can_move">Show landscape</string>
     <string name="navbar_can_move_summary">Shows navigation bar in landscape on the bottom</string>
-    <string name="navbar_style_dimen_title">Dimensions</string>
-    <string name="navbar_button_title">Buttons</string>
+    <string name="navbar_style_dimen_title">Change dimensions</string>
+    <string name="navbar_button_title">Customize buttons</string>
     <string name="navbar_cat">Navigation bar</string>
     <string name="navbar_dimensions_reset_message">Reset all dimensions entries to default?</string>
     <string name="navbar_button_style_reset_message">Reset all style entries to default?</string>

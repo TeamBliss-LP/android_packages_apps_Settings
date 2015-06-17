@@ -38,7 +38,6 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
     private static final String PREF_NAVBAR_MENU_DISPLAY = "pref_navbar_menu_display";
     private static final String ENABLE_NAVIGATION_BAR = "enable_nav_bar";
     private static final String PREF_BUTTON = "navbar_button_settings";
-    private static final String PREF_STYLE_DIMEN = "navbar_style_dimen_settings";
     private static final String PREF_NAVIGATION_BAR_CAN_MOVE = "navbar_can_move";
 
     private int mNavBarMenuDisplayValue;
@@ -48,7 +47,6 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
     SwitchPreference mEnableNavigationBar;
     SwitchPreference mNavigationBarCanMove;
     PreferenceScreen mButtonPreference;
-    PreferenceScreen mStyleDimenPreference;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -73,7 +71,6 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
         mNavBarMenuDisplay.setOnPreferenceChangeListener(this);
 
         mButtonPreference = (PreferenceScreen) findPreference(PREF_BUTTON);
-        mStyleDimenPreference = (PreferenceScreen) findPreference(PREF_STYLE_DIMEN);
 
         boolean hasNavBarByDefault = getResources().getBoolean(
                 com.android.internal.R.bool.config_showNavigationBar);
@@ -98,7 +95,6 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
     private void updateNavbarPreferences(boolean show) {
         mNavBarMenuDisplay.setEnabled(show);
         mButtonPreference.setEnabled(show);
-        mStyleDimenPreference.setEnabled(show);
         mNavigationBarCanMove.setEnabled(show);
         mMenuDisplayLocation.setEnabled(show
             && mNavBarMenuDisplayValue != 1);
