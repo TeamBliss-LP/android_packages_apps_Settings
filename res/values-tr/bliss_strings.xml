@@ -572,6 +572,10 @@
     <string name="heads_up_text_color_title">Yazı rengi</string>
     <string name="heads_up_colors_title">Özelleştirilmiş renkler</string>
     <string name="heads_up_colors_summary">Heads up yazı ve arkaplan renklerini özelleştirin</string>
+    
+    <!-- Heads Up Status Bar button -->
+    <string name="show_headsup_button_title">Show quick access button</string>
+    <string name="show_headsup_button_summary">Show a quick access button in the status bar</string>
 
     <!-- Heads up touch outside -->
     <string name="heads_up_touch_outside_title">Boşluğa dokunma davranışı</string>
@@ -1409,28 +1413,7 @@
     <string name="double_tap_sleep_anywhere_title">Uyutmak için her hangi bir yere iki tez dokunun</string>
     <string name="double_tap_sleep_anywhere_summary">Kilit ekranında herhangi bir yere iki kez dokunarak cihazı uyku moduna alabilirsiniz</string>
 
-    <!-- Recent panel -->
-    <string name="recent_panel_category">Slim son kullanılan uygulamalar ekranı</string>
-    <string name="use_slim_recents_title">Slim son kullanılanlar</string>
-    <string name="show_running_tasks_title">Sadece çalışan uygulamaları göster</string>
-    <string name="recents_max_apps_title">İzin verilen maksimum uygulamalar</string>
-    <string name="recent_panel_scale_title">Boyut</string>
-    <string name="recent_panel_scale_summary">Son kullanılan uygulamaların yüzde bazında boyutu</string>
-    <string name="recent_panel_100">100% (default)</string>
-    <string name="recent_panel_85">85%</string>
-    <string name="recent_panel_70">70%</string>
-    <string name="recent_panel_expanded_mode_title">Genişletilmiş mod</string>
-    <string name="recent_panel_expanded_mode_summary">Son görevler genişletilmiş önizleme modu</string>
-    <string name="recent_panel_expanded_mode_auto">Otomatik (varsayılan)</string>
-    <string name="recent_panel_expanded_mode_always">Her zaman</string>
-    <string name="recent_panel_expanded_mode_never">Asla</string>
-    <string name="recent_panel_show_topmost_title">Üstteki görevi göster</string>
-    <string name="recent_panel_show_topmost_summary">Son kullanılanlar ekranında son kullanılan uygulamayı dahil et</string>
-    <string name="recent_panel_bg_color_title">Panel arkaplan rengi</string>
-    <string name="recent_card_bg_color_title">Kart arka plan rengi</string>
-    <string name="recent_card_text_color_title">Kart yazı rengi</string>
-
-    <!-- ATTENTION: RTL languages need to replace left with right -->
+        <!-- ATTENTION: RTL languages need to replace left with right -->
     <string name="recent_panel_lefty_mode_title">Sol kenarda göster</string>
     <string name="recent_panel_lefty_mode_summary">Sol kenarda son uygulamalar panelini göster</string>
 
