@@ -23,6 +23,9 @@ import android.content.Context;
 import android.content.ContentResolver;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Point;
@@ -52,6 +55,7 @@ import android.widget.Toast;
 import com.android.internal.util.bliss.NavbarConstants;
 import com.android.internal.util.bliss.NavbarConstants.NavbarConstant;
 import com.android.internal.util.bliss.NavbarUtils;
+
 
 import com.android.settings.R;
 import com.android.settings.bliss.navbar.SettingsButtonInfo;
@@ -405,18 +409,31 @@ public class ArrangeNavbarFragment extends Fragment implements OnPickListener {
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            convertView = getActivity().getLayoutInflater().inflate(R.layout.list_item_toggle, parent, false);
+            Context ctx = getContext();
+            convertView = getActivity().getLayoutInflater().inflate(
+                    R.layout.list_item_toggle, parent, false);
 
             SettingsButtonInfo button = getItem(position);
             DragGripView dragGripView = (DragGripView) convertView.findViewById(R.id.drag_handle);
 
             TextView titleView = (TextView) convertView.findViewById(android.R.id.text1);
-            String text = NavbarUtils.getProperSummary(getContext(), button.singleAction);
+            String text = NavbarUtils.getProperSummary(ctx, button.singleAction);
             titleView.setText(text);
-
             ImageView image = (ImageView) convertView.findViewById(R.id.image);
-            image.setImageDrawable(NavbarUtils.getIconImage(getContext(),
-                    button.iconUri.isEmpty() ? button.singleAction : button.iconUri));
+
+            if (button.iconUri != null && button.iconUri.length() > 0) {
+                File f = new File(Uri.parse(button.iconUri).getPath());
+                if (f.exists()) {
+                    Resources res = NavbarConstants.getNavbarResources(ctx);
+                    image.setImageDrawable(new BitmapDrawable(res, f.getAbsolutePath()));
+                }
+            } else if (button.singleAction != null) {
+                NavbarConstants.useSystemUI = true;
+                image.setImageDrawable(NavbarUtils.getIconImage(ctx, button.singleAction));
+                NavbarConstants.useSystemUI = false;
+            } else {
+                image.setImageResource(R.drawable.ic_sysbar_null);
+            }
 
             return convertView;
         }
