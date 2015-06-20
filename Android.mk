@@ -38,9 +38,6 @@ LOCAL_AAPT_INCLUDE_ALL_RESOURCES := true
 LOCAL_ASSET_DIR := $(LOCAL_PATH)/assets
 
 include frameworks/opt/setupwizard/navigationbar/common.mk
-
-LOCAL_JAVA_LIBRARIES += org.cyanogenmod.hardware
-
 include $(BUILD_PACKAGE)
 
 # Use the following include to make our test apk.

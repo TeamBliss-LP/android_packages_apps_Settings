@@ -267,25 +267,25 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
         mSweepToWake = (SwitchPreference) findPreference(KEY_SWEEP_TO_WAKE);
         if (!isSweepToWakeSupported()) {
-            displayPrefs.removePreference(mSweepToWake);
-            displayPrefs.removePreference(mWakeGestures);
+            advancedPrefs.removePreference(mSweepToWake);
+            advancedPrefs.removePreference(mWakeGestures);
             mSweepToWake = null;
         } else if (isSweepToWakeSupported() && !areWakeGesturesAvailable(getResources())) {
-            displayPrefs.removePreference(mWakeGestures);
+            advancedPrefs.removePreference(mWakeGestures);
         } else if (isSweepToWakeSupported() && areWakeGesturesAvailable(getResources())) {
-            displayPrefs.removePreference(mSweepToWake);
+            advancedPrefs.removePreference(mSweepToWake);
             mSweepToWake = null;
         }
 
         mSweepToSleep = (SwitchPreference) findPreference(KEY_SWEEP_TO_SLEEP);
         if (!isSweepToSleepSupported()) {
-            displayPrefs.removePreference(mSweepToSleep);
-            displayPrefs.removePreference(mWakeGestures);
+            advancedPrefs.removePreference(mSweepToSleep);
+            advancedPrefs.removePreference(mWakeGestures);
             mSweepToSleep = null;
         } else if (isSweepToSleepSupported() && !areWakeGesturesAvailable(getResources())) {
-            displayPrefs.removePreference(mWakeGestures);
+            advancedPrefs.removePreference(mWakeGestures);
         } else if (isSweepToSleepSupported() && areWakeGesturesAvailable(getResources())) {
-            displayPrefs.removePreference(mSweepToSleep);
+            advancedPrefs.removePreference(mSweepToSleep);
             mSweepToSleep = null;
         }
 
