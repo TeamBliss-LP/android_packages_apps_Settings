@@ -101,7 +101,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_DISPLAY_ROTATION = "display_rotation";
     private static final String KEY_WAKE_WHEN_PLUGGED_OR_UNPLUGGED = "wake_when_plugged_or_unplugged";
     private static final String KEY_DOZE = "doze";
-    private static final String KEY_WAKE_GESTURES = "wake_gestures";
     private static final String KEY_DOZE_FRAGMENT = "doze_fragment";
     private static final String KEY_NOTIFICATION_LIGHT = "notification_light";
     private static final String KEY_BATTERY_LIGHT = "battery_light";
@@ -126,7 +125,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private SwitchPreference mSweepToWake;
     private SwitchPreference mTapToWake;
     private SwitchPreference mWakeWhenPluggedOrUnplugged;
-    private PreferenceScreen mWakeGestures;
 
     private CmHardwareManager mCmHardwareManager;
 
@@ -263,28 +261,14 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             displayPrefs.removePreference(mDozeFragement);
         }
 
-        mWakeGestures = (PreferenceScreen) findPreference(KEY_WAKE_GESTURES);
-
         mSweepToWake = (SwitchPreference) findPreference(KEY_SWEEP_TO_WAKE);
         if (!isSweepToWakeSupported()) {
-            advancedPrefs.removePreference(mSweepToWake);
-            advancedPrefs.removePreference(mWakeGestures);
-            mSweepToWake = null;
-        } else if (isSweepToWakeSupported() && !areWakeGesturesAvailable(getResources())) {
-            advancedPrefs.removePreference(mWakeGestures);
-        } else if (isSweepToWakeSupported() && areWakeGesturesAvailable(getResources())) {
             advancedPrefs.removePreference(mSweepToWake);
             mSweepToWake = null;
         }
 
         mSweepToSleep = (SwitchPreference) findPreference(KEY_SWEEP_TO_SLEEP);
         if (!isSweepToSleepSupported()) {
-            advancedPrefs.removePreference(mSweepToSleep);
-            advancedPrefs.removePreference(mWakeGestures);
-            mSweepToSleep = null;
-        } else if (isSweepToSleepSupported() && !areWakeGesturesAvailable(getResources())) {
-            advancedPrefs.removePreference(mWakeGestures);
-        } else if (isSweepToSleepSupported() && areWakeGesturesAvailable(getResources())) {
             advancedPrefs.removePreference(mSweepToSleep);
             mSweepToSleep = null;
         }
@@ -618,10 +602,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             // Hardware abstraction framework not installed
             return false;
         }
-    }
-
-    private static boolean areWakeGesturesAvailable(Resources res) {
-        return res.getBoolean(R.bool.config_wake_gestures_available);
     }
 
     /**
