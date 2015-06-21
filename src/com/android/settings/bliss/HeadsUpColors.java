@@ -28,8 +28,8 @@ public class HeadsUpColors extends SettingsPreferenceFragment implements
     private static final String HEADS_UP_BG_COLOR = "heads_up_bg_color";
     private static final String HEADS_UP_TEXT_COLOR = "heads_up_text_color";
 
-    private static final int DEFAULT_BG_COLOR = 0x00ffffff;
-    private static final int DEFAULT_TEXT_COLOR = 0x00000000;
+    private static final int DEFAULT_BG_COLOR = 0xffffffff;
+    private static final int DEFAULT_TEXT_COLOR = 0xff000000;
 
     private static final int MENU_RESET = Menu.FIRST;
     private static final int DLG_RESET = 0;
