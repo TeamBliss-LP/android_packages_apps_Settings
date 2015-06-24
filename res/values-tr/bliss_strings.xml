@@ -152,6 +152,7 @@
     <string name="shortcut_action_ime">Klavye seçiciyi aç</string>
     <string name="shortcut_action_power_menu">Güç menüsü</string>
     <string name="shortcut_action_recent">Son kullanılanlar</string>
+    <string name="shortcut_action_restartui">Yeniden Başlat</string>
     <string name="shortcut_action_power">Ekranı Kapat</string>
     <string name="shortcut_action_search">Uygulamada ara</string>
     <string name="shortcut_action_ring_vib">Zil/Titreşim</string>
