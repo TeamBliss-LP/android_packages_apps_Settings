@@ -163,7 +163,7 @@
     <string name="shortcut_action_media_play_pause">Müzik - başlat/durdur</string>
     <string name="shortcut_action_media_previous">Müzik - önceki parça</string>
     <string name="shortcut_action_wake_device">Cihazı uyandır</string>
-	<string name="shortcut_action_menu_big">Büyük Menü</string>
+    <string name="shortcut_action_menu_big">Büyük Menü</string>
     <string name="shortcut_action_notifications">Bildirimler</string>
     <string name="shortcut_action_qs">Hızlı Ayarlar</string>
     <string name="shortcut_action_longpress">Uzun Basma:</string>
@@ -489,7 +489,7 @@
     <string name="pref_scrollingcache_default_disable">Varsayılan olarak devre dışı</string>
     <string name="pref_scrollingcache_force_disable">Kapatmaya zorla</string>
 
-	<!-- Custom Over scroll Settings -->
+    <!-- Custom Over scroll Settings -->
     <string name="ui_overscroll_title">Kaydırma efektleri</string>
     <string name="overscroll_glow_title">Kaydırma rengi</string>
     <string name="edge_effect_title">Parlak kenar efekti</string>
@@ -504,7 +504,7 @@
     <string name="overscroll_summary">Nesnelerin kaydırılırken nasıl göründüğünü seçin</string>
     <string name="overscroll_weight_title">Kaydırma ağırlığı</string>
     <string name="overscroll_weight_summary">Kaydırılabilir nesnelerin ağırlığını seçin</string>
-	
+    
     <!-- Scrolling Animation Controls -->
     <string name="scrolling_title">Kaydırma düzenleyiciler</string>
     <string name="scrolling_summary">Görüntüleme veya değiştirme için kaydırma animasyonları</string>
@@ -551,7 +551,7 @@
     <string name="profile_choose_app">Uygulama seçin</string>
     <string name="dialog_delete_title">Sil</string>
     <string name="dialog_delete_message">Seçilen öğe kaldırılsın mı?</string>
-	<string name="heads_up_snooze_title">Erteleme zamanlayıcısı</string>
+    <string name="heads_up_snooze_title">Erteleme zamanlayıcısı</string>
     <string name="heads_up_snooze_summary">Heads up bildirimini yukarı doğru kaydırmak bildirimleri <xliff:g id="number">%d</xliff:g> dakika erteleyecek</string>
     <string name="heads_up_snooze_disabled_summary">Erteleme zamanlayıcı devre dışı</string>
     <string name="heads_up_snooze_1min">1 dakika</string>
