@@ -316,7 +316,7 @@
     <string name="show_network_traffic_1000">1000 ms</string>
     <string name="show_network_traffic_1500">1500 ms</string>
     <string name="show_network_traffic_2000">2000 ms</string>
-	<string name="network_traffic_hide_arrow">Okları gizle</string>
+    <string name="network_traffic_hide_arrow">Okları gizle</string>
     <string name="network_traffic_hide_arrow_summary">Trafik ok göstergelerini gizle</string>
     <string name="network_traffic_autohide">Otomatik gizle</string>
     <string name="network_traffic_autohide_summary">Hiçbir etkinlik olmadığında trafik monitörünü gizle</string>
