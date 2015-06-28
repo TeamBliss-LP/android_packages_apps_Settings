@@ -1115,7 +1115,7 @@
     <string name="status_bar_greeting_title">Greeting</string>
     <string name="status_bar_greeting_summary">Display a custom greeting in the status bar after unlocking the device</string>
     <string name="status_bar_greeting_dialog">Set your greeting</string>
-    <string name="status_bar_greeting_main">Welcome to Bliss</string>
+    <string name="status_bar_greeting_main">Flash ON!!!</string>
     <string name="status_bar_greeting_timeout_title">Greeting timeout</string>
 
     <!-- Identicons -->
