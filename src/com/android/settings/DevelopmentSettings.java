@@ -621,7 +621,7 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
         updateSwitchPreference(mEnableAdb, Settings.Global.getInt(cr,
                 Settings.Global.ADB_ENABLED, 0) != 0);
         mAdbNotify.setChecked(Settings.Secure.getInt(cr,
-                Settings.Secure.ADB_NOTIFY, 0) != 0);
+                Settings.Secure.ADB_NOTIFY, 1) != 0);
         updateAdbOverNetwork();
         if (mEnableTerminal != null) {
             updateSwitchPreference(mEnableTerminal,
@@ -870,7 +870,7 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
 
     private void updatePasswordSummary() {
         try {
-            if (mBackupManager.hasBackupPassword()) {
+            if (mBackupManager != null && mBackupManager.hasBackupPassword()) {
                 mPassword.setSummary(R.string.local_backup_password_summary_change);
             } else {
                 mPassword.setSummary(R.string.local_backup_password_summary_none);
