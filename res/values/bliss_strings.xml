@@ -574,6 +574,10 @@
     <string name="heads_up_colors_title">Custom Colors</string>
     <string name="heads_up_colors_summary">Customize heads up text and background color</string>
 
+    <!-- Heads Up Floating Mode -->
+    <string name="heads_up_floating_window_title">Float mode</string>
+    <string name="heads_up_floating_window_summary">Longpress and release to open in float mode when not on home screen</string>   
+
     <!-- Heads Up Status Bar button -->
     <string name="show_headsup_button_title">Show quick access button</string>
     <string name="show_headsup_button_summary">Show a quick access button in the status bar</string>
