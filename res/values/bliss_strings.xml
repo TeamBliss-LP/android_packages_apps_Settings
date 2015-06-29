@@ -715,6 +715,7 @@
     <string name="heads_up_snooze_title">Snooze timer</string>
     <string name="heads_up_snooze_summary">If snooze button is pressed, disable heads up for: </string>
     <string name="heads_up_snooze_disabled_summary">Snooze timer is disabled</string>
+    <string name="heads_up_time_out_title">Time out</string>
 
     <!-- Heads Up Status Bar button -->
     <string name="show_headsup_button_title">Show quick access button</string>
