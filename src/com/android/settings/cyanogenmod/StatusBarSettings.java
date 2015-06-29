@@ -29,7 +29,6 @@ import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.SwitchPreference;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
-import android.telephony.TelephonyManager;
 import android.text.format.DateFormat;
 import android.text.Spannable;
 import android.text.TextUtils;
@@ -73,10 +72,6 @@ public class StatusBarSettings extends SettingsPreferenceFragment
 
         ContentResolver resolver = getActivity().getContentResolver();
 
-        if (TelephonyManager.getDefault().getPhoneCount() <= 1) {
-            removePreference(Settings.System.STATUS_BAR_MSIM_SHOW_EMPTY_ICONS);
-        }
-
         // Bliss logo color
         mBlissLogoColor =
             (ColorPickerPreference) prefSet.findPreference(KEY_BLISS_LOGO_COLOR);
@@ -112,7 +107,6 @@ public class StatusBarSettings extends SettingsPreferenceFragment
             || TelephonyManager.getDefault().isMultiSimEnabled()) {
             prefSet.removePreference(mCarrierLabel);
         }
-
     }
 
     @Override
