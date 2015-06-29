@@ -51,12 +51,6 @@
             android:summary="@string/wifi_poor_network_detection_summary"
             android:persistent="false" />
 
-    <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
-            android:key="wifi_status_bar_ssid"
-            android:title="@string/status_bar_show_wifi_ssid"
-            android:summary="@string/status_bar_show_wifi_ssid_summary"
-            android:defaultValue="0" />
-
     <ListPreference
             android:key="frequency_band"
             android:title="@string/wifi_setting_frequency_band_title"

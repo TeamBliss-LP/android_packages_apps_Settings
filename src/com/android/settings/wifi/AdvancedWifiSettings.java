@@ -67,7 +67,6 @@ public class AdvancedWifiSettings extends SettingsPreferenceFragment
     private static final String KEY_WIFI_DIRECT = "wifi_direct";
     private static final String KEY_WPS_PUSH = "wps_push_button";
     private static final String KEY_WPS_PIN = "wps_pin_entry";
-    private static final String KEY_STATUS_BAR_SSID = "wifi_status_bar_ssid";
 
     private WifiManager mWifiManager;
     private NetworkScoreManager mNetworkScoreManager;
@@ -292,10 +291,6 @@ public class AdvancedWifiSettings extends SettingsPreferenceFragment
         } else if (KEY_SCAN_ALWAYS_AVAILABLE.equals(key)) {
             Global.putInt(getContentResolver(),
                     Global.WIFI_SCAN_ALWAYS_AVAILABLE,
-                    ((SwitchPreference) preference).isChecked() ? 1 : 0);
-        } else if (KEY_STATUS_BAR_SSID.equals(key)) {
-            Global.putInt(getContentResolver(),
-                    Global.WIFI_STATUS_BAR_SSID,
                     ((SwitchPreference) preference).isChecked() ? 1 : 0);
         } else {
             return super.onPreferenceTreeClick(screen, preference);
