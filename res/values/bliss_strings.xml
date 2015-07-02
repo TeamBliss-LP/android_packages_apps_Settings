@@ -324,6 +324,8 @@
     <string name="network_traffic_color_style">Color style</string>
     <string name="network_traffic_color_reset">Reset color</string>
     <string name="network_traffic_color_reset_message">Reset network traffic color to default?</string>
+    <string name="status_bar_show_wifi_ssid">Show Wi-Fi SSID</string>
+    <string name="status_bar_show_wifi_ssid_summary">Show the Wi-Fi SSID of a connected network in the status bar</string>
 
     <!-- Recents panel settings -->
     <string name="recents_options_title">Recents options</string>
