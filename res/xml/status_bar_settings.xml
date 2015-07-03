@@ -96,6 +96,16 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+            android:title="@string/carrier_options_category_title">
+
+        <PreferenceScreen
+            android:key="carrier_options"
+            android:fragment="com.android.settings.bliss.CarrierLabel"
+            android:title="@string/carrier_options" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
             android:title="@string/status_bar_logo_category_title">
 
         <!-- Status bar Bliss logo -->

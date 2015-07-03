@@ -333,7 +333,7 @@
     <string name="recents_clear_all_location_title">Clear all recents location</string>
     <string name="recents_clear_all_location_top_right">Top right</string>
     <string name="recents_clear_all_location_top_left">Top left</string>
-    <string name="recents_clear_all_location_top_center">Top center</string>    
+    <string name="recents_clear_all_location_top_center">Top center</string>
     <string name="recents_clear_all_location_bottom_right">Bottom right</string>
     <string name="recents_clear_all_location_bottom_left">Bottom left</string>
     <string name="recents_clear_all_location_bottom_center">Bottom center</string>
@@ -1115,8 +1115,18 @@
     <string name="status_bar_greeting_title">Greeting</string>
     <string name="status_bar_greeting_summary">Display a custom greeting in the status bar after unlocking the device</string>
     <string name="status_bar_greeting_dialog">Set your greeting</string>
-    <string name="status_bar_greeting_main">Flash ON!!!</string>
+    <string name="status_bar_greeting_main">Welcome to Bliss</string>
     <string name="status_bar_greeting_timeout_title">Greeting timeout</string>
+
+    <!-- Show carrier label and custom -->
+    <string name="carrier_options_category_title">Status bar carrier label</string>
+    <string name="carrier_options">Carrier Label</string>
+    <string name="show_status_bar_carrier_title">Status bar carrier</string>
+    <string name="show_status_bar_carrier_summary">Show carrier in status bar</string>
+    <string name="custom_carrier_label_title">Custom carrier label</string>
+    <string name="custom_carrier_label_explain">Please enter a new label. Leave blank to revert to stock label.</string>
+    <string name="custom_carrier_label_notset">Custom label currently not set</string>
+    <string name="status_bar_carrier_color">Carrier label color</string>
 
     <!-- Identicons -->
     <string name="identicons_title">Identicons</string>
