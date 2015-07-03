@@ -163,7 +163,7 @@
     <string name="shortcut_action_media_play_pause">Müzik - başlat/durdur</string>
     <string name="shortcut_action_media_previous">Müzik - önceki parça</string>
     <string name="shortcut_action_wake_device">Cihazı uyandır</string>
-	<string name="shortcut_action_menu_big">Büyük Menü</string>
+    <string name="shortcut_action_menu_big">Büyük Menü</string>
     <string name="shortcut_action_notifications">Bildirimler</string>
     <string name="shortcut_action_qs">Hızlı Ayarlar</string>
     <string name="shortcut_action_longpress">Uzun Basma:</string>
@@ -316,7 +316,7 @@
     <string name="show_network_traffic_1000">1000 ms</string>
     <string name="show_network_traffic_1500">1500 ms</string>
     <string name="show_network_traffic_2000">2000 ms</string>
-	<string name="network_traffic_hide_arrow">Okları gizle</string>
+    <string name="network_traffic_hide_arrow">Okları gizle</string>
     <string name="network_traffic_hide_arrow_summary">Trafik ok göstergelerini gizle</string>
     <string name="network_traffic_autohide">Otomatik gizle</string>
     <string name="network_traffic_autohide_summary">Hiçbir etkinlik olmadığında trafik monitörünü gizle</string>
@@ -324,9 +324,7 @@
     <string name="network_traffic_color_style">Renk tarzı</string>
     <string name="network_traffic_color_reset">Rengi sıfırla</string>
     <string name="network_traffic_color_reset_message">Ağ trafiği rengini varsayılana sıfırla?</string>
-    <string name="status_bar_show_wifi_ssid">Wi-Fi Ağ Adını Göster</string>
-    <string name="status_bar_show_wifi_ssid_summary">Durum çubuğunda bağlı olan Wi-Fi ağının ağ adını göster</string>
-
+    
     <!-- Recents panel settings -->
     <string name="recents_options_title">Son kullanılanlar seçenekleri</string>
     <string name="recents_panel_settings">Son kullanılanlar paneli ayarları</string>
@@ -726,7 +724,7 @@
     <string name="clock_use_second">Saatte saniye kullanın</string>
     <string name="clock_use_second_summary">Saatde saniyeyi gösterir</string>
 
-     <!-- QuickSettings: Smart Pulldown -->
+    <!-- QuickSettings: Smart Pulldown -->
     <string name="smart_pulldown_title">Akıllı aşağı çekme</string>
     <string name="smart_pulldown_summary">Mevcut %1$s bildirimler olduğunda hızlı ayarları açar</string>
     <string name="smart_pulldown_off">Kapalı</string>
@@ -738,7 +736,7 @@
     <string name="quick_settings_vibrate_title">Dokununca titre</string>
 
     <!-- QuickSettings collapse panel -->
-   <string name="quick_settings_collapse_title">Paneli otomatik kapat</string>
+    <string name="quick_settings_collapse_title">Paneli otomatik kapat</string>
     <string name="quick_settings_collapse_summary">Geçiş sırasında hızlı ayarlar panelini kapatır</string>
 
     <!-- QuickSettings 4 columns -->
@@ -1116,8 +1114,8 @@
     <string name="status_bar_greeting_category_title">Durum Çubuğu Karşılama Mesajı</string>
     <string name="status_bar_greeting_title">Karşılama Mesajı</string>
     <string name="status_bar_greeting_summary">Cihazı açıldıktan sonra durum çubuğunda özel bir karşılma ekranı görüntülenir</string>
-    <string name="status_bar_greeting_dialog">Karşılamayı ayarlaryın</string>
-    <string name="status_bar_greeting_main">Bliss\' e Hoşgeldiniz</string>
+    <string name="status_bar_greeting_dialog">Karşılamayı ayarlayın</string>
+    <string name="status_bar_greeting_main">Bliss'e Hoşgeldiniz</string>
     <string name="status_bar_greeting_timeout_title">Karşılama zaman aşımı</string>
 
     <!-- Show carrier label and custom -->
