@@ -1111,7 +1111,7 @@ public class DataUsageSummary extends HighlightingFragment implements Indexable 
             long cycleEnd = computeNextCycleBoundary(historyEnd, policy);
 
             // walk backwards, generating all valid cycle ranges
-            while (cycleEnd > historyStart) {
+            while (mCycleAdapter.getCount() < 24 && cycleEnd > historyStart) {
                 final long cycleStart = computeLastCycleBoundary(cycleEnd, policy);
                 Log.d(TAG, "generating cs=" + cycleStart + " to ce=" + cycleEnd + " waiting for hs="
                         + historyStart);
