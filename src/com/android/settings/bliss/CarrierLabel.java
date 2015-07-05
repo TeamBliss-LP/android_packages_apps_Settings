@@ -121,6 +121,10 @@ public class CarrierLabel extends SettingsPreferenceFragment implements OnPrefer
             Settings.System.putIntForUser(resolver,
                     Settings.System.STATUS_BAR_CARRIER,
                     value ? 1 : 0, UserHandle.USER_CURRENT);
+            //send intent to have network controller update network name
+            Intent i = new Intent();
+            i.setAction(Intent.ACTION_CUSTOM_CARRIER_LABEL_CHANGED);
+            getActivity().sendBroadcast(i);
             return true;
          }
          return false;
