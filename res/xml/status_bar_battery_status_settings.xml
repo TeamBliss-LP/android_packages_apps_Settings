@@ -43,7 +43,7 @@
         android:key="battery_status_cat_circle_options"
         android:title="@string/battery_status_cat_circle_options_title">
 
-         <CheckBoxPreference
+         <SwitchPreference
 	        android:key="battery_status_show_circle_dotted"
 	        android:title="@string/battery_status_show_circle_dotted_title"
 	        android:summary="@string/battery_status_show_circle_dotted_summary" />
