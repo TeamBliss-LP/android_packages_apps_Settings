@@ -1439,7 +1439,7 @@
 	<string name="category_floating_window">Floating window</string>	
 	<string name="slim_action_floating_window_title">Launch slim actions in floating window</string>	
 	<string name="slim_action_floating_window_summary">Makes features like lockscreen shortcuts and navigation bar execute apps in floating window mode</string>
-    <string name="heads_up_floating_window_title">Float mode</string>
+    <string name="heads_up_floating_window_title">Heads Up</string>
     <string name="heads_up_floating_window_summary">Longpress and release to open in float mode when not on home screen</string>   
 
 </resources>

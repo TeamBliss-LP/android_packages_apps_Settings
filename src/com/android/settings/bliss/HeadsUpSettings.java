@@ -19,7 +19,6 @@ package com.android.settings.bliss;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.content.ContentResolver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.pm.PackageInfo;
@@ -39,7 +38,6 @@ import android.preference.PreferenceActivity;
 import android.preference.PreferenceGroup;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceScreen;
-import android.preference.SwitchPreference;
 import android.provider.Settings;
 import android.text.TextUtils;
 import android.view.Gravity;
@@ -73,12 +71,10 @@ public class HeadsUpSettings extends SettingsPreferenceFragment
     private static final int DIALOG_DND_APPS = 0;
     private static final int DIALOG_BLACKLIST_APPS = 1;
 
-    private static final String PREF_HEADS_UP_FLOATING = "heads_up_floating";
     private static final String PREF_HEADS_UP_TIME_OUT = "heads_up_time_out";
     private static final String PREF_HEADS_UP_SNOOZE_TIME = "heads_up_snooze_time";
 
 
-    private SwitchPreference mHeadsUpFloatingWindow;
     private ListPreference mHeadsUpTimeOut;
     private ListPreference mHeadsUpSnoozeTime;
 
@@ -116,11 +112,6 @@ public class HeadsUpSettings extends SettingsPreferenceFragment
             return;
         }
 
-        mHeadsUpFloatingWindow = (SwitchPreference) findPreference(PREF_HEADS_UP_FLOATING);
-        mHeadsUpFloatingWindow.setChecked(Settings.System.getIntForUser(getContentResolver(),
-                Settings.System.HEADS_UP_FLOATING, 0, UserHandle.USER_CURRENT) == 1);
-        mHeadsUpFloatingWindow.setOnPreferenceChangeListener(this);
-
         int defaultTimeOut = systemUiResources.getInteger(systemUiResources.getIdentifier(
                     "com.android.systemui:integer/heads_up_notification_decay", null, null));
         mHeadsUpTimeOut = (ListPreference) findPreference(PREF_HEADS_UP_TIME_OUT);
@@ -129,7 +120,7 @@ public class HeadsUpSettings extends SettingsPreferenceFragment
                 Settings.System.HEADS_UP_NOTIFCATION_DECAY, defaultTimeOut);
         mHeadsUpTimeOut.setValue(String.valueOf(headsUpTimeOut));
         updateHeadsUpTimeOutSummary(headsUpTimeOut);
-
+        
         int defaultSnooze = systemUiResources.getInteger(systemUiResources.getIdentifier(
                     "com.android.systemui:integer/heads_up_default_snooze_length_ms", null, null));
         mHeadsUpSnoozeTime = (ListPreference) findPreference(PREF_HEADS_UP_SNOOZE_TIME);
@@ -335,12 +326,7 @@ public class HeadsUpSettings extends SettingsPreferenceFragment
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mHeadsUpFloatingWindow) {
-            Settings.System.putIntForUser(getContentResolver(),
-                    Settings.System.HEADS_UP_FLOATING,
-            (Boolean) newValue ? 1 : 0, UserHandle.USER_CURRENT);
-            return true;
-        } else if (preference == mHeadsUpTimeOut) {
+        if (preference == mHeadsUpTimeOut) {
             int headsUpTimeOut = Integer.valueOf((String) newValue);
             Settings.System.putInt(getContentResolver(),
                     Settings.System.HEADS_UP_NOTIFCATION_DECAY,
@@ -357,7 +343,7 @@ public class HeadsUpSettings extends SettingsPreferenceFragment
         }
         return false;
     }
-
+    
     private void updateHeadsUpSnoozeTimeSummary(int value) {
         String summary = value != 0
                 ? getResources().getString(R.string.heads_up_snooze_summary, value / 60 / 1000)

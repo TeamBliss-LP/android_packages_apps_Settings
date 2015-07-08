@@ -16,11 +16,21 @@
  <PreferenceScreen
      xmlns:android="http://schemas.android.com/apk/res/android"
      android:title="@string/omniswitch_settings_title">
+     
+    <!-- HeadsUp floating mode switch -->
+    <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
+        android:key="heads_up_floating"
+        android:title="@string/heads_up_floating_window_title"
+        android:summary="@string/heads_up_floating_window_summary"
+        android:persistent="false"
+        android:defaultValue="false" />
 
+    <!-- Sliim Action floating mode switch -->
     <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
         android:key="slim_action_floats"
         android:title="@string/slim_action_floating_window_title"
         android:summary="@string/slim_action_floating_window_summary"
+        android:persistent="false"
         android:defaultValue="false" />
 
  </PreferenceScreen>
