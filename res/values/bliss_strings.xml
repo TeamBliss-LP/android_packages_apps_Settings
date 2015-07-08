@@ -1436,12 +1436,14 @@
     <string name="recent_panel_lefty_mode_summary">Show recent apps panel on the left edge</string>
 
     <!-- Floating Window Options -->
-	<string name="category_floating_window">Floating window</string>	
-	<string name="slim_action_floating_window_title">Launch slim actions in floating window</string>	
+    <string name="category_floating_window">Floating window</string>
+    <string name="slim_action_floating_window_title">Launch slim actions in floating window</string>
 	<string name="slim_action_floating_window_summary">Makes features like lockscreen shortcuts and navigation bar execute apps in floating window mode</string>
     <string name="heads_up_floating_window_title">Heads Up</string>
     <string name="heads_up_floating_window_summary">Longpress and release to open in float mode when not on home screen</string>
     <string name="appsidebar_floating_window_title">AppSideBar</string>
     <string name="appsidebar_floating_window_summary">Launch apps that are located in AppSideBar in float mode</string>
+    <string name="gesture_anywhere_floating">Gesture Anywhere</string>
+    <string name="gesture_anywhere_floating_summary">Launch shortcuts in float mode</string>
 
 </resources>

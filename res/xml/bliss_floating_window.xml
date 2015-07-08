@@ -25,6 +25,13 @@
         android:persistent="false"
         android:defaultValue="false" />
 
+    <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
+        android:key="gesture_anywhere_floating"
+        android:title="@string/gesture_anywhere_floating"
+        android:summary="@string/gesture_anywhere_floating_summary"
+        android:persistent="false"
+        android:defaultValue="false" />
+
     <!-- HeadsUp floating mode switch -->
     <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
         android:key="heads_up_floating"
