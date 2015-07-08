@@ -33,6 +33,14 @@
         android:icon="@drawable/ic_settings_display_animations"
         settings:advanced="true" />
 
+    <!-- Floating Window Options -->
+    <PreferenceScreen
+        android:key="floating_windows"
+        android:fragment="com.android.settings.bliss.FloatingWindow"
+        android:title="@string/category_floating_window"
+        android:icon="@drawable/ic_floating"
+        settings:advanced="true" />
+
     <!-- Heads Up Options -->
     <PreferenceScreen
         android:key="heads_up_enabled"

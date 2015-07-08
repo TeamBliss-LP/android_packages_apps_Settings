@@ -574,10 +574,6 @@
     <string name="heads_up_colors_title">Custom Colors</string>
     <string name="heads_up_colors_summary">Customize heads up text and background color</string>
 
-    <!-- Heads Up Floating Mode -->
-    <string name="heads_up_floating_window_title">Float mode</string>
-    <string name="heads_up_floating_window_summary">Longpress and release to open in float mode when not on home screen</string>   
-
     <!-- Heads Up Status Bar button -->
     <string name="show_headsup_button_title">Show quick access button</string>
     <string name="show_headsup_button_summary">Show a quick access button in the status bar</string>
@@ -1439,8 +1435,11 @@
     <string name="recent_panel_lefty_mode_title">Show on the left edge</string>
     <string name="recent_panel_lefty_mode_summary">Show recent apps panel on the left edge</string>
 
-    <!-- Slim Action Floating Window -->
+    <!-- Floating Window Options -->
+	<string name="category_floating_window">Floating window</string>	
 	<string name="slim_action_floating_window_title">Launch slim actions in floating window</string>	
 	<string name="slim_action_floating_window_summary">Makes features like lockscreen shortcuts and navigation bar execute apps in floating window mode</string>
+    <string name="heads_up_floating_window_title">Float mode</string>
+    <string name="heads_up_floating_window_summary">Longpress and release to open in float mode when not on home screen</string>   
 
 </resources>

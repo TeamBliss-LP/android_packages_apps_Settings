@@ -71,10 +71,4 @@
         android:title="@string/pie_control_title"
         android:icon="@drawable/ic_settings_pie" />
 
-    <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
-        android:key="slim_action_floats"
-        android:title="@string/slim_action_floating_window_title"
-        android:summary="@string/slim_action_floating_window_summary"
-        android:defaultValue="false" />
-
 </PreferenceScreen>
