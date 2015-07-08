@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright (C) 2015 BOSP
 
      Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,24 +13,30 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<?xml version="1.0" encoding="utf-8"?>
- <PreferenceScreen
-     xmlns:android="http://schemas.android.com/apk/res/android"
-     android:title="@string/omniswitch_settings_title">
-     
+
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/category_floating_window"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+
+    <!-- Appcirclebar floating mode switch -->
+    <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
+        android:key="appcirclebar_floating"
+        android:title="@string/appcirclebar_floating_window_title"
+        android:summary="@string/appcirclebar_floating_window_summary"
+        android:defaultValue="false" />
+
     <!-- Appsidebar floating mode switch -->
     <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
         android:key="appsidebar_floating"
         android:title="@string/appsidebar_floating_window_title"
         android:summary="@string/appsidebar_floating_window_summary"
-        android:persistent="false"
         android:defaultValue="false" />
 
     <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
         android:key="gesture_anywhere_floating"
         android:title="@string/gesture_anywhere_floating"
         android:summary="@string/gesture_anywhere_floating_summary"
-        android:persistent="false"
         android:defaultValue="false" />
 
     <!-- HeadsUp floating mode switch -->
@@ -37,7 +44,6 @@
         android:key="heads_up_floating"
         android:title="@string/heads_up_floating_window_title"
         android:summary="@string/heads_up_floating_window_summary"
-        android:persistent="false"
         android:defaultValue="false" />
 
     <!-- Sliim Action floating mode switch -->
@@ -45,7 +51,6 @@
         android:key="slim_action_floats"
         android:title="@string/slim_action_floating_window_title"
         android:summary="@string/slim_action_floating_window_summary"
-        android:persistent="false"
         android:defaultValue="false" />
 
  </PreferenceScreen>

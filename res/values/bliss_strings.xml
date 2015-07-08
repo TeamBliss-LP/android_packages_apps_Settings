@@ -1441,6 +1441,8 @@
 	<string name="slim_action_floating_window_summary">Makes features like lockscreen shortcuts and navigation bar execute apps in floating window mode</string>
     <string name="heads_up_floating_window_title">Heads Up</string>
     <string name="heads_up_floating_window_summary">Longpress and release to open in float mode when not on home screen</string>
+    <string name="appcirclebar_floating_window_title">AppCircleBar</string>
+    <string name="appcirclebar_floating_window_summary">Launch apps that are located in AppCircleBar in float mode</string>
     <string name="appsidebar_floating_window_title">AppSideBar</string>
     <string name="appsidebar_floating_window_summary">Launch apps that are located in AppSideBar in float mode</string>
     <string name="gesture_anywhere_floating">Gesture Anywhere</string>
