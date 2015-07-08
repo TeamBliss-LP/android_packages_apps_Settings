@@ -17,6 +17,14 @@
      xmlns:android="http://schemas.android.com/apk/res/android"
      android:title="@string/omniswitch_settings_title">
      
+    <!-- Appsidebar floating mode switch -->
+    <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
+        android:key="appsidebar_floating"
+        android:title="@string/appsidebar_floating_window_title"
+        android:summary="@string/appsidebar_floating_window_summary"
+        android:persistent="false"
+        android:defaultValue="false" />
+
     <!-- HeadsUp floating mode switch -->
     <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
         android:key="heads_up_floating"
