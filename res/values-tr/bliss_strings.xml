@@ -1115,7 +1115,7 @@
     <string name="status_bar_greeting_title">Karşılama Mesajı</string>
     <string name="status_bar_greeting_summary">Cihazı açıldıktan sonra durum çubuğunda özel bir karşılma ekranı görüntülenir</string>
     <string name="status_bar_greeting_dialog">Karşılamayı ayarlayın</string>
-    <string name="status_bar_greeting_main">Bliss'e Hoşgeldiniz</string>
+    <string name="status_bar_greeting_main">Bliss\'e Hoşgeldiniz</string>
     <string name="status_bar_greeting_timeout_title">Karşılama zaman aşımı</string>
 
     <!-- Show carrier label and custom -->
