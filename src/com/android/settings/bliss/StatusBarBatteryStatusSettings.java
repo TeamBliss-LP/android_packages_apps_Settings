@@ -106,7 +106,7 @@ public class StatusBarBatteryStatusSettings extends SettingsPreferenceFragment i
         mStyle =
                 (ListPreference) findPreference(PREF_STYLE);
         int style = Settings.System.getInt(mResolver,
-               Settings.System.STATUS_BAR_BATTERY_STATUS_STYLE, 0);
+               Settings.System.STATUS_BAR_BATTERY_STYLE, 0);
         mStyle.setValue(String.valueOf(style));
         mStyle.setSummary(mStyle.getEntry());
         mStyle.setOnPreferenceChangeListener(this);
@@ -137,7 +137,7 @@ public class StatusBarBatteryStatusSettings extends SettingsPreferenceFragment i
             mPercentStyle =
                     (ListPreference) findPreference(PREF_PERCENT_STYLE);
             int percentStyle = Settings.System.getInt(mResolver,
-                   Settings.System.STATUS_BAR_BATTERY_STATUS_PERCENT_STYLE, 2);
+                   Settings.System.STATUS_BAR_SHOW_BATTERY_PERCENT, 2);
             mPercentStyle.setValue(String.valueOf(percentStyle));
             mPercentStyle.setSummary(mPercentStyle.getEntry());
             mPercentStyle.setOnPreferenceChangeListener(this);
@@ -240,7 +240,7 @@ public class StatusBarBatteryStatusSettings extends SettingsPreferenceFragment i
             intValue = Integer.valueOf((String) newValue);
             index = mStyle.findIndexOfValue((String) newValue);
             Settings.System.putInt(mResolver,
-                Settings.System.STATUS_BAR_BATTERY_STATUS_STYLE, intValue);
+                Settings.System.STATUS_BAR_BATTERY_STYLE, intValue);
             mStyle.setSummary(mStyle.getEntries()[index]);
             refreshSettings();
             return true;
@@ -248,7 +248,7 @@ public class StatusBarBatteryStatusSettings extends SettingsPreferenceFragment i
             intValue = Integer.valueOf((String) newValue);
             index = mPercentStyle.findIndexOfValue((String) newValue);
             Settings.System.putInt(mResolver,
-                Settings.System.STATUS_BAR_BATTERY_STATUS_PERCENT_STYLE, intValue);
+                Settings.System.STATUS_BAR_SHOW_BATTERY_PERCENT, intValue);
             mPercentStyle.setSummary(mPercentStyle.getEntries()[index]);
             refreshSettings();
             return true;
@@ -334,9 +334,9 @@ public class StatusBarBatteryStatusSettings extends SettingsPreferenceFragment i
                         new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
                             Settings.System.putInt(getOwner().mResolver,
-                                    Settings.System.STATUS_BAR_BATTERY_STATUS_STYLE, 0);
+                                    Settings.System.STATUS_BAR_BATTERY_STYLE, 0);
                             Settings.System.putInt(getOwner().mResolver,
-                                    Settings.System.STATUS_BAR_BATTERY_STATUS_PERCENT_STYLE, 2);
+                                    Settings.System.STATUS_BAR_SHOW_BATTERY_PERCENT, 2);
                             Settings.System.putInt(getOwner().mResolver,
                                     Settings.System.STATUS_BAR_BATTERY_STATUS_CHARGING_ANIMATION_SPEED, 0);
                             Settings.System.putInt(getOwner().mResolver,
@@ -358,9 +358,9 @@ public class StatusBarBatteryStatusSettings extends SettingsPreferenceFragment i
                         new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
                              Settings.System.putInt(getOwner().mResolver,
-                                    Settings.System.STATUS_BAR_BATTERY_STATUS_STYLE, 2);
+                                    Settings.System.STATUS_BAR_BATTERY_STYLE, 2);
                             Settings.System.putInt(getOwner().mResolver,
-                                    Settings.System.STATUS_BAR_BATTERY_STATUS_PERCENT_STYLE, 0);
+                                    Settings.System.STATUS_BAR_SHOW_BATTERY_PERCENT, 0);
                             Settings.System.putInt(getOwner().mResolver,
                                     Settings.System.STATUS_BAR_BATTERY_STATUS_CHARGING_ANIMATION_SPEED, 3);
                             Settings.System.putInt(getOwner().mResolver,
