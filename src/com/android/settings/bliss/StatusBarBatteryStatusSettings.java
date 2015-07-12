@@ -51,8 +51,6 @@ public class StatusBarBatteryStatusSettings extends SettingsPreferenceFragment i
             "battery_status_percent_style";
     private static final String PREF_CHARGE_ANIMATION_SPEED =
             "battery_status_charge_animation_speed";
-    private static final String PREF_SHOW_CIRCLE_DOTTED =
-            "battery_status_show_circle_dotted";
     private static final String PREF_CIRCLE_DOT_LENGTH =
             "battery_status_circle_dot_length";
     private static final String PREF_CIRCLE_DOT_INTERVAL =
@@ -68,16 +66,16 @@ public class StatusBarBatteryStatusSettings extends SettingsPreferenceFragment i
     private static final int MENU_RESET = Menu.FIRST;
     private static final int DLG_RESET = 0;
 
+    private static final int BATTERY_STATUS_PORTRAIT = 0;
+    private static final int BATTERY_STATUS_LANDSCAPE = 5;
     private static final int BATTERY_STATUS_CIRCLE = 2;
-    private static final int BATTERY_STATUS_TEXT = 3;
+    private static final int BATTERY_STATUS_CIRCLE_DOTTED = 3;
+    private static final int BATTERY_STATUS_TEXT = 6;
     private static final int BATTERY_STATUS_HIDDEN = 4;
-
-    private static final int CIRCLE_DOTTED = 1;
 
     private ListPreference mStyle;
     private ListPreference mPercentStyle;
     private ListPreference mChargeAnimationSpeed;
-    private SwitchPreference mShowCircleDotted;
     private ListPreference mCircleDotLength;
     private ListPreference mCircleDotInterval;
     private ColorPickerPreference mBatteryColor;
@@ -103,8 +101,7 @@ public class StatusBarBatteryStatusSettings extends SettingsPreferenceFragment i
         int intColor = 0xffffffff;
         String hexColor = String.format("#%08x", (0xffffffff & 0xffffffff));
 
-        mStyle =
-                (ListPreference) findPreference(PREF_STYLE);
+        mStyle = (ListPreference) findPreference(PREF_STYLE);
         int style = Settings.System.getInt(mResolver,
                Settings.System.STATUS_BAR_BATTERY_STYLE, 0);
         mStyle.setValue(String.valueOf(style));
@@ -113,23 +110,19 @@ public class StatusBarBatteryStatusSettings extends SettingsPreferenceFragment i
 
         boolean batteryStatusVisible = style != BATTERY_STATUS_HIDDEN;
         boolean isCircle = style == BATTERY_STATUS_CIRCLE;
+        boolean isCircleDotted = style == BATTERY_STATUS_CIRCLE_DOTTED;
         boolean isTextOnly = style == BATTERY_STATUS_TEXT;
-        boolean isCircleDotted = Settings.System.getInt(mResolver,
-                Settings.System.STATUS_BAR_BATTERY_STATUS_SHOW_CIRCLE_DOTTED,
-                0) == CIRCLE_DOTTED;
 
         PreferenceCategory catCircleOptions =
                 (PreferenceCategory) findPreference(PREF_CAT_CIRCLE_OPTIONS);
         PreferenceCategory catColors =
                 (PreferenceCategory) findPreference(PREF_CAT_COLORS);
-        mShowCircleDotted =
-                (SwitchPreference) findPreference(PREF_SHOW_CIRCLE_DOTTED);
         mCircleDotLength =
                 (ListPreference) findPreference(PREF_CIRCLE_DOT_LENGTH);
         mCircleDotInterval =
                 (ListPreference) findPreference(PREF_CIRCLE_DOT_INTERVAL);
         mBatteryColor =
-            (ColorPickerPreference) findPreference(PREF_BATTERY_COLOR);
+                (ColorPickerPreference) findPreference(PREF_BATTERY_COLOR);
         mTextColor =
                 (ColorPickerPreference) findPreference(PREF_TEXT_COLOR);
 
@@ -154,14 +147,7 @@ public class StatusBarBatteryStatusSettings extends SettingsPreferenceFragment i
             removePreference(PREF_CHARGE_ANIMATION_SPEED);
         }
 
-        if (batteryStatusVisible && isCircle) {
-            mShowCircleDotted.setChecked(isCircleDotted);
-            mShowCircleDotted.setOnPreferenceChangeListener(this);
-        } else {
-            catCircleOptions.removePreference(mShowCircleDotted);
-        }
-
-        if (batteryStatusVisible && isCircle && isCircleDotted) {
+        if (batteryStatusVisible && isCircleDotted) {
             int circleDotLength = Settings.System.getInt(mResolver,
                    Settings.System.STATUS_BAR_BATTERY_STATUS_CIRCLE_DOT_LENGTH, 3);
             mCircleDotLength.setValue(String.valueOf(circleDotLength));
@@ -231,9 +217,7 @@ public class StatusBarBatteryStatusSettings extends SettingsPreferenceFragment i
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        int intValue;
-        int index;
-        int intHex;
+        int intValue, index, intHex;
         String hex;
 
         if (preference == mStyle) {
@@ -258,13 +242,6 @@ public class StatusBarBatteryStatusSettings extends SettingsPreferenceFragment i
             Settings.System.putInt(mResolver,
                 Settings.System.STATUS_BAR_BATTERY_STATUS_CHARGING_ANIMATION_SPEED, intValue);
             mChargeAnimationSpeed.setSummary(mChargeAnimationSpeed.getEntries()[index]);
-            return true;
-        } else if (preference == mShowCircleDotted) {
-            boolean value = (Boolean) newValue;
-            Settings.System.putInt(mResolver,
-                    Settings.System.STATUS_BAR_BATTERY_STATUS_SHOW_CIRCLE_DOTTED,
-                    value ? 1 : 0);
-            refreshSettings();
             return true;
         } else if (preference == mCircleDotLength) {
             intValue = Integer.valueOf((String) newValue);
@@ -340,8 +317,6 @@ public class StatusBarBatteryStatusSettings extends SettingsPreferenceFragment i
                             Settings.System.putInt(getOwner().mResolver,
                                     Settings.System.STATUS_BAR_BATTERY_STATUS_CHARGING_ANIMATION_SPEED, 0);
                             Settings.System.putInt(getOwner().mResolver,
-                                    Settings.System.STATUS_BAR_BATTERY_STATUS_SHOW_CIRCLE_DOTTED, 0);
-                            Settings.System.putInt(getOwner().mResolver,
                                     Settings.System.STATUS_BAR_BATTERY_STATUS_CIRCLE_DOT_LENGTH, 3);
                             Settings.System.putInt(getOwner().mResolver,
                                     Settings.System.STATUS_BAR_BATTERY_STATUS_CIRCLE_DOT_INTERVAL, 2);
@@ -363,8 +338,6 @@ public class StatusBarBatteryStatusSettings extends SettingsPreferenceFragment i
                                     Settings.System.STATUS_BAR_SHOW_BATTERY_PERCENT, 0);
                             Settings.System.putInt(getOwner().mResolver,
                                     Settings.System.STATUS_BAR_BATTERY_STATUS_CHARGING_ANIMATION_SPEED, 3);
-                            Settings.System.putInt(getOwner().mResolver,
-                                    Settings.System.STATUS_BAR_BATTERY_STATUS_SHOW_CIRCLE_DOTTED, 1);
                             Settings.System.putInt(getOwner().mResolver,
                                     Settings.System.STATUS_BAR_BATTERY_STATUS_CIRCLE_DOT_LENGTH, 3);
                             Settings.System.putInt(getOwner().mResolver,

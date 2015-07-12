@@ -43,11 +43,6 @@
         android:key="battery_status_cat_circle_options"
         android:title="@string/battery_status_cat_circle_options_title">
 
-         <SwitchPreference
-	        android:key="battery_status_show_circle_dotted"
-	        android:title="@string/battery_status_show_circle_dotted_title"
-	        android:summary="@string/battery_status_show_circle_dotted_summary" />
-
         <ListPreference
             android:key="battery_status_circle_dot_length"
             android:title="@string/battery_status_circle_dot_length_title"
