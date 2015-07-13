@@ -147,6 +147,7 @@
     <string name="shortcut_action_kill">Kill app</string>
     <string name="shortcut_action_lastapp">Last app</string>
     <string name="shortcut_action_assist">Search</string>
+    <string name="shortcut_action_screenrecord">Screenrecord</string> 
     <string name="shortcut_action_screenshot">Screenshot</string>
     <string name="shortcut_action_torch">Torch</string>
     <string name="shortcut_action_menu">Menu</string>
@@ -187,6 +188,7 @@
     <string name="shortcut_action_help_icon">, while selecting the icon will bring up customization options</string>
     <string name="shortcut_action_help_main">To add a %1$s, select the Add icon. Once a %1$s is added, selecting the row will change the target%2$s\n\nTo remove a %1$s, swipe the row horizontally left or right. Re-order a %1$s in the list by vertically dragging the anchor on the left.\n\nTo clear or reset to defaults, select the Reset icon.</string>
     <string name="shortcut_action_help_delete_last_entry">Removing every %1$s in the list will disable the feature entirely</string>
+    <string name="shortcut_action_voice_search">Voice search</string>
 
     <string name="shortcuts_applications">Applications</string>
     <string name="shortcuts_select_custom_app_title">Select custom application</string>
@@ -1339,6 +1341,7 @@
     <string name="status_bar_power_menu_action_screen_off">Screen off - Power menu</string>
     <string name="status_bar_power_menu_action_dialog">Power menu - Screen off</string>
 
+    <string name="bliss_navbar_title">Navigation bar</string>
     <!-- Navigation Bar left-handed mode -->
     <string name="navigation_bar_left_title">Left-handed mode</string>
     <string name="navigation_bar_left_summary">Place the navigation bar on the left side of the screen in landscape mode</string>
@@ -1410,6 +1413,8 @@
     <string name="navbar_cat">Navigation bar</string>
     <string name="navbar_dimensions_reset_message">Reset all dimensions entries to default?</string>
     <string name="navbar_button_style_reset_message">Reset all style entries to default?</string>
+    <string name="show_ime_arrows_title">Show arrow keys while typing</string>
+    <string name="show_ime_arrows_summary">Display left and right cursor buttons in navigation bar while typing. Longpress to navigate up/down. Overrides IME switcher and menu buttons.</string>
 
     <!-- Navigation bar button style -->
     <string name="nav_bar_button_style">Button style</string>
@@ -1421,13 +1426,13 @@
     <string name="nav_button_color_mode_summary">Change the navigation bar button color mode</string>
     <string name="navigation_bar_glow_tint_title">Button glow color</string>
 
-	<!-- Custom legacy menu actions -->
-	<string name="legacy_menu_settings">Legacy Menu Buttons</string>	
-	<string name="legacy_menu_settings_summary">Customize legacy menu keys</string>	
-	<string name="legacy_menu_layout_disable_title">Disable legacy menu layout</string>	
-	<string name="legacy_menu_layout_disable_summary">Disabling this removes the space in the edges of the navigation bar, which is used for legacy menu keys</string>	
-	<string name="legacy_menu_left_action_title">Legacy left menu button action</string>	
-	<string name="legacy_menu_left_long_action_title">Legacy left menu button long-press action</string>	
-	<string name="legacy_menu_right_action_title">Legacy right menu button action</string>	
-	<string name="legacy_menu_right_long_action_title">Legacy right menu button long-press action</string>	
+    <!-- Custom legacy menu actions -->
+    <string name="legacy_menu_settings">Legacy Menu Buttons</string>	
+    <string name="legacy_menu_settings_summary">Customize legacy menu keys</string>	
+    <string name="legacy_menu_layout_disable_title">Disable legacy menu layout</string>	
+    <string name="legacy_menu_layout_disable_summary">Disabling this removes the space in the edges of the navigation bar, which is used for legacy menu keys</string>	
+    <string name="legacy_menu_left_action_title">Legacy left menu button action</string>	
+    <string name="legacy_menu_left_long_action_title">Legacy left menu button long-press action</string>	
+    <string name="legacy_menu_right_action_title">Legacy right menu button action</string>	
+    <string name="legacy_menu_right_long_action_title">Legacy right menu button long-press action</string>	
 </resources>

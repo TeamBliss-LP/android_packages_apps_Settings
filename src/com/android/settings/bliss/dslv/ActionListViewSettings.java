@@ -656,15 +656,13 @@ public class ActionListViewSettings extends ListFragment implements
                 d = ImageHelper.resize(
                         mActivity, ActionHelper.getActionIconImage(mActivity,
                         getItem(position).getClickAction(),
-                        iconUri), 48);
+                        iconUri), 36);
+            }
 
             if ((iconUri.equals(ActionConstants.ICON_EMPTY) &&
                     getItem(position).getClickAction().startsWith("**")) || (iconUri != null
                     && iconUri.startsWith(ActionConstants.SYSTEM_ICON_IDENTIFIER))) {
                 if (d != null) d.setTint(getResources().getColor(R.color.dslv_icon_dark));
-
-                    }
-                }
             }
             holder.iconView.setImageDrawable(d);
 

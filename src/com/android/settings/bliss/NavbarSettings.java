@@ -77,12 +77,9 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
         boolean enableNavigationBar = Settings.System.getInt(getContentResolver(),
                 Settings.System.NAVIGATION_BAR_SHOW, hasNavBarByDefault ? 1 : 0) == 1;
         mEnableNavigationBar = (SwitchPreference) findPreference(ENABLE_NAVIGATION_BAR);
-        if (hasNavBarByDefault) {
-            getPreferenceScreen().removePreference(mEnableNavigationBar);
-        } else {
-            mEnableNavigationBar.setChecked(enableNavigationBar);
-            mEnableNavigationBar.setOnPreferenceChangeListener(this);
-        }
+        mEnableNavigationBar.setChecked(enableNavigationBar);
+        mEnableNavigationBar.setOnPreferenceChangeListener(this);
+
         mNavigationBarCanMove = (SwitchPreference) findPreference(PREF_NAVIGATION_BAR_CAN_MOVE);
         mNavigationBarCanMove.setChecked(Settings.System.getInt(getContentResolver(),
                 Settings.System.NAVIGATION_BAR_CAN_MOVE,

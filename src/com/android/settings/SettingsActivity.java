@@ -84,7 +84,6 @@ import com.android.settings.bliss.AppCircleBar;
 import com.android.settings.bliss.AppSidebar;
 import com.android.settings.bliss.gestureanywhere.GestureAnywhereSettings;
 import com.android.settings.bliss.HeadsUpSettings;
-import com.android.settings.bliss.NavBarSettings;
 import com.android.settings.ButtonSettings;
 import com.android.settings.bluetooth.BluetoothSettings;
 import com.android.settings.dashboard.DashboardCategory;
@@ -134,7 +133,6 @@ import com.android.settings.wifi.SavedAccessPointsWifiSettings;
 import com.android.settings.wifi.WifiSettings;
 import com.android.settings.wifi.p2p.WifiP2pSettings;
 
-import com.android.settings.bliss.NavBarSettings;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -346,8 +344,7 @@ public class SettingsActivity extends Activity
             GestureAnywhereSettings.class.getName(),
             WakeLockBlocker.class.getName(),
             AmbientSettings.class.getName(),
-            AppSidebar.class.getName(),
-			NavBarSettings.class.getName()
+            AppSidebar.class.getName()
     };
 
 

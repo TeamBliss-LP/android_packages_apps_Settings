@@ -156,7 +156,7 @@ public class LegacyMenuSettings extends SettingsPreferenceFragment implements
             return;
 		}
         // send uri
-        Settings.System.putString(getContentResolver(), mSettingsUri, uri);
+        Settings.System.putString(getActivity().getContentResolver(), mSettingsUri, uri);
 		// send value
 		Settings.System.putInt(getActivity().getContentResolver(),
                    mSettingsKey, app_id);
