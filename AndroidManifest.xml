@@ -1262,6 +1262,8 @@
             android:excludeFromRecents="true"
         />
 
+        <activity android:name="ChooseLockGesture" android:exported="false"/>
+
         <activity android:name="SetupChooseLockPattern"
             android:exported="false"
             android:screenOrientation="portrait"
