@@ -130,10 +130,12 @@ public class ApplicationLightPreference extends DialogPreference {
         // We use it for storing the package name for the longClickListener
         TextView tView = (TextView) view.findViewById(android.R.id.summary);
         tView.setVisibility(View.GONE);
-
+        /*
         if (mMultiColor) {
             mLightColorView.setVisibility(View.GONE);
         }
+        */
+        mLightColorView.setVisibility(View.VISIBLE);
 
         updatePreferenceViews();
     }
