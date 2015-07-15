@@ -1425,6 +1425,7 @@
     <string name="nav_button_color_mode_dialog_title">Colorize</string>
     <string name="nav_button_color_mode_summary">Change the navigation bar button color mode</string>
     <string name="navigation_bar_glow_tint_title">Button glow color</string>
+    <string name="navigation_bar_warning_no_navigation_present">No other navigation is currently enabled. Turning off the navigation bar can result in an unusable device. Do you want to enable pie controls instead?</string>
 
     <!-- Custom legacy menu actions -->
     <string name="legacy_menu_settings">Legacy Menu Buttons</string>	

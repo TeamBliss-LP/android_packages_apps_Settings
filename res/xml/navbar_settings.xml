@@ -48,12 +48,11 @@
                 android:key="advanced_cat"
                 android:title="@string/advanced_settings">
 
-        <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
+            <SwitchPreference
                     android:key="status_bar_ime_arrows"
                     android:title="@string/show_ime_arrows_title"
                     android:summary="@string/show_ime_arrows_summary"
-                    android:defaultValue="false" 
-      		    android:dependency="enable_nav_bar" />
+                    android:persistent="false" />
 
             <ListPreference
                     android:key="pref_navbar_menu_display"
@@ -79,8 +78,7 @@
             <SwitchPreference
                     android:key="navbar_can_move"
                     android:title="@string/navbar_can_move"
-                    android:summary="@string/navbar_can_move_summary"
-		    android:dependency="enable_nav_bar"  />
+                    android:summary="@string/navbar_can_move_summary" />
 
         </PreferenceCategory>
 
