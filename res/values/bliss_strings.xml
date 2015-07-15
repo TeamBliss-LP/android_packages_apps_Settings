@@ -57,6 +57,7 @@
     <string name="dlg_reset_bliss">Bliss</string>
     <string name="reset_default_message">Reset default?</string>
     <string name="additional_options_title">Additional options</string>
+    <string name="positive_done">Done</string>
 
     <!-- Changelog -->
     <string name="changelog_bliss_title">Changelog</string>
@@ -146,6 +147,7 @@
     <string name="shortcut_action_kill">Kill app</string>
     <string name="shortcut_action_lastapp">Last app</string>
     <string name="shortcut_action_assist">Search</string>
+    <string name="shortcut_action_screenrecord">Screenrecord</string> 
     <string name="shortcut_action_screenshot">Screenshot</string>
     <string name="shortcut_action_torch">Torch</string>
     <string name="shortcut_action_menu">Menu</string>
@@ -177,6 +179,7 @@
     <string name="shortcut_action_warning">Warning</string>
     <string name="shortcut_action_warning_message">It is not possible to delete last entry</string>
     <string name="shortcut_action_disable_message">Disabled\nAdd an entry to enable this feature</string>
+    <string name="shortcut_action_required_warning_message">It is not possible to delete required buttons</string>
     <string name="shortcut_image_not_valid">The chosen app did not return a valid icon or does not support image cropping. Use another app.</string>
     <string name="shortcut_duplicate_entry">The chosen action cannot be added twice</string>
     <string name="shortcut_action_help_shortcut">shortcut</string>
@@ -185,6 +188,7 @@
     <string name="shortcut_action_help_icon">, while selecting the icon will bring up customization options</string>
     <string name="shortcut_action_help_main">To add a %1$s, select the Add icon. Once a %1$s is added, selecting the row will change the target%2$s\n\nTo remove a %1$s, swipe the row horizontally left or right. Re-order a %1$s in the list by vertically dragging the anchor on the left.\n\nTo clear or reset to defaults, select the Reset icon.</string>
     <string name="shortcut_action_help_delete_last_entry">Removing every %1$s in the list will disable the feature entirely</string>
+    <string name="shortcut_action_voice_search">Voice search</string>
 
     <string name="shortcuts_applications">Applications</string>
     <string name="shortcuts_select_custom_app_title">Select custom application</string>
@@ -1337,6 +1341,7 @@
     <string name="status_bar_power_menu_action_screen_off">Screen off - Power menu</string>
     <string name="status_bar_power_menu_action_dialog">Power menu - Screen off</string>
 
+    <string name="bliss_navbar_title">Navigation bar</string>
     <!-- Navigation Bar left-handed mode -->
     <string name="navigation_bar_left_title">Left-handed mode</string>
     <string name="navigation_bar_left_summary">Place the navigation bar on the left side of the screen in landscape mode</string>
@@ -1382,4 +1387,52 @@
     <string name="gesture_anywhere_floating">Gesture Anywhere</string>
     <string name="gesture_anywhere_floating_summary">Launch shortcuts in float mode</string>
 
+    <!-- Navigation bar -->
+	<string name="navigation_bar_category">Navigation bar</string> 
+    <string name="navigation_menu_right">Right</string>
+    <string name="navigation_menu_left">Left</string>
+    <string name="navigation_menu_both">Both</string>
+    <string name="navigation_menu_default_jb_behavior">Show on request (default)</string>
+    <string name="navigation_menu_never_show">Never show</string>
+    <string name="navigation_menu_always_show">Always show</string>
+    <string name="navigation_bar">Navigation bar</string>
+    <string name="navbar_button_cat">Navigation bar buttons</string>
+    <string name="title_pref_menu_location">Menu location</string>
+    <string name="summary_pref_menu_location">Where do you want the menu buttons to appear?</string>
+    <string name="title_pref_menu_display">Menu visibility</string>
+    <string name="summary_pref_menu_display">How and when do you want the menu buttons to appear?</string>
+    <string name="navbar_enable_bar">Enable navigation bar</string>
+    <string name="navbar_enable_bar_summary">Enable the navigation bar</string>
+    <string name="navigation_bar_height_title">Navigation bar height</string>
+    <string name="navigation_bar_height_landscape_title">Navigation bar height landscape</string>
+    <string name="navigation_bar_width_title">Navigation bar width</string>
+    <string name="navbar_can_move">Show landscape</string>
+    <string name="navbar_can_move_summary">Shows navigation bar in landscape on the bottom</string>
+    <string name="navbar_style_dimen_title">Change dimensions</string>
+    <string name="navbar_button_title">Customize buttons</string>
+    <string name="navbar_cat">Navigation bar</string>
+    <string name="navbar_dimensions_reset_message">Reset all dimensions entries to default?</string>
+    <string name="navbar_button_style_reset_message">Reset all style entries to default?</string>
+    <string name="show_ime_arrows_title">Show arrow keys while typing</string>
+    <string name="show_ime_arrows_summary">Display left and right cursor buttons in navigation bar while typing. Longpress to navigate up/down. Overrides IME switcher and menu buttons.</string>
+
+    <!-- Navigation bar button style -->
+    <string name="nav_bar_button_style">Button style</string>
+    <string name="nav_bar_button_style_summary">Change navigation bar button style</string>
+    <string name="button_transparency_title">Button transparency</string>
+    <string name="navigation_bar_icon_tint_title">Button color</string>
+    <string name="nav_button_color_mode_title">Color mode</string>
+    <string name="nav_button_color_mode_dialog_title">Colorize</string>
+    <string name="nav_button_color_mode_summary">Change the navigation bar button color mode</string>
+    <string name="navigation_bar_glow_tint_title">Button glow color</string>
+
+    <!-- Custom legacy menu actions -->
+    <string name="legacy_menu_settings">Legacy Menu Buttons</string>	
+    <string name="legacy_menu_settings_summary">Customize legacy menu keys</string>	
+    <string name="legacy_menu_layout_disable_title">Disable legacy menu layout</string>	
+    <string name="legacy_menu_layout_disable_summary">Disabling this removes the space in the edges of the navigation bar, which is used for legacy menu keys</string>	
+    <string name="legacy_menu_left_action_title">Legacy left menu button action</string>	
+    <string name="legacy_menu_left_long_action_title">Legacy left menu button long-press action</string>	
+    <string name="legacy_menu_right_action_title">Legacy right menu button action</string>	
+    <string name="legacy_menu_right_long_action_title">Legacy right menu button long-press action</string>	
 </resources>

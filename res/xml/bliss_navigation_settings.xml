@@ -30,7 +30,7 @@
     <PreferenceScreen
         android:key="navbar"
         android:title="@string/bliss_navbar_title"
-        android:fragment="com.android.settings.bliss.NavBarSettings"
+        android:fragment="com.android.settings.bliss.NavbarSettings"
         android:icon="@drawable/ic_navbar_layout"
         settings:advanced="true" />
 
@@ -57,13 +57,6 @@
         android:title="@string/gesture_anywhere_title"
         android:icon="@drawable/ic_settings_gestures"
         settings:advanced="true" />
-
-    <!-- Navigation Ring -->
-    <PreferenceScreen
-        android:key="navigation_bar_ring"
-        android:fragment="com.android.settings.cyanogenmod.NavRing"
-        android:title="@string/navigation_ring_title"
-        android:icon="@drawable/ic_nav_ring" />
 
     <PreferenceScreen
         android:key="pie_settings"
