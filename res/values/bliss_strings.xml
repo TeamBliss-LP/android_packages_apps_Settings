@@ -1377,7 +1377,7 @@
     <!-- Floating Window Options -->
     <string name="category_floating_window">Floating window</string>
     <string name="slim_action_floating_window_title">Launch slim actions in floating window</string>
-	<string name="slim_action_floating_window_summary">Makes features like lockscreen shortcuts and navigation bar execute apps in floating window mode</string>
+    <string name="slim_action_floating_window_summary">Makes features like lockscreen shortcuts and navigation bar execute apps in floating window mode</string>
     <string name="heads_up_floating_window_title">Heads Up</string>
     <string name="heads_up_floating_window_summary">Longpress and release to open in float mode when not on home screen</string>
     <string name="appcirclebar_floating_window_title">AppCircleBar</string>
@@ -1388,7 +1388,7 @@
     <string name="gesture_anywhere_floating_summary">Launch shortcuts in float mode</string>
 
     <!-- Navigation bar -->
-	<string name="navigation_bar_category">Navigation bar</string> 
+    <string name="navigation_bar_category">Navigation bar</string>
     <string name="navigation_menu_right">Right</string>
     <string name="navigation_menu_left">Left</string>
     <string name="navigation_menu_both">Both</string>
@@ -1428,12 +1428,16 @@
     <string name="navigation_bar_warning_no_navigation_present">No other navigation is currently enabled. Turning off the navigation bar can result in an unusable device. Do you want to enable pie controls instead?</string>
 
     <!-- Custom legacy menu actions -->
-    <string name="legacy_menu_settings">Legacy Menu Buttons</string>	
-    <string name="legacy_menu_settings_summary">Customize legacy menu keys</string>	
-    <string name="legacy_menu_layout_disable_title">Disable legacy menu layout</string>	
-    <string name="legacy_menu_layout_disable_summary">Disabling this removes the space in the edges of the navigation bar, which is used for legacy menu keys</string>	
-    <string name="legacy_menu_left_action_title">Legacy left menu button action</string>	
-    <string name="legacy_menu_left_long_action_title">Legacy left menu button long-press action</string>	
-    <string name="legacy_menu_right_action_title">Legacy right menu button action</string>	
-    <string name="legacy_menu_right_long_action_title">Legacy right menu button long-press action</string>	
+    <string name="legacy_menu_settings">Legacy Menu Buttons</string>
+    <string name="legacy_menu_settings_summary">Customize legacy menu keys</string>
+    <string name="legacy_menu_layout_disable_title">Disable legacy menu layout</string>
+    <string name="legacy_menu_layout_disable_summary">Disabling this removes the space in the edges of the navigation bar, which is used for legacy menu keys</string>
+    <string name="legacy_menu_left_action_title">Legacy left menu button action</string>
+    <string name="legacy_menu_left_long_action_title">Legacy left menu button long-press action</string>
+    <string name="legacy_menu_right_action_title">Legacy right menu button action</string>
+    <string name="legacy_menu_right_long_action_title">Legacy right menu button long-press action</string>
+
+    <!-- Hide lock screen carrier -->
+    <string name="lock_screen_hide_carrier_title">Hide carrier on lock screen</string>
+    <string name="lock_screen_hide_carrier_summary">SystemUI will be restarted on switch toggle.</string>
 </resources>

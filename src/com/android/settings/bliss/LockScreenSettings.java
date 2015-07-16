@@ -42,6 +42,8 @@ import android.provider.Settings;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
+import com.android.settings.R;
+import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.util.Helpers;
 import com.android.settings.Utils;
 
@@ -57,11 +59,14 @@ public class LockScreenSettings extends SettingsPreferenceFragment
         Preference.OnPreferenceChangeListener, Indexable {
 
     private static final String TAG = "LockScreenSettings";
-	private static final String KEY_SHOW_VISUALIZER = "lockscreen_visualizer";
+    private static final String KEY_SHOW_VISUALIZER = "lockscreen_visualizer";
 
     private static final String VISUALIZER_CATEGORY = "visualizer";
 
+    private static final String CARRIERLABEL_ON_LOCKSCREEN="lock_screen_hide_carrier";
+
     private PreferenceScreen mLockScreen;
+    private SwitchPreference mCarrierLabelOnLockScreen;
 
     private Context mContext;
 
@@ -88,7 +93,19 @@ public class LockScreenSettings extends SettingsPreferenceFragment
                 visualizerCategory.removePreference(displayVisualizer);
             }
         }
-   
+
+        //CarrierLabel on LockScreen
+        mCarrierLabelOnLockScreen = (SwitchPreference) findPreference(CARRIERLABEL_ON_LOCKSCREEN);
+        if (!Utils.isWifiOnly(getActivity())) {
+            mCarrierLabelOnLockScreen.setOnPreferenceChangeListener(this);
+
+            boolean hideCarrierLabelOnLS = Settings.System.getInt(
+                    getActivity().getContentResolver(),
+                    Settings.System.LOCK_SCREEN_HIDE_CARRIER, 0) == 1;
+            mCarrierLabelOnLockScreen.setChecked(hideCarrierLabelOnLS);
+        } else {
+            prefSet.removePreference(mCarrierLabelOnLockScreen);
+        }
     }
 
     @Override
@@ -112,9 +129,18 @@ public class LockScreenSettings extends SettingsPreferenceFragment
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object objValue) {
+        ContentResolver resolver = getActivity().getContentResolver();
+        final String key = preference.getKey();
+        if (preference == mCarrierLabelOnLockScreen) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.LOCK_SCREEN_HIDE_CARRIER,
+                    (Boolean) objValue ? 1 : 0);
+            Helpers.restartSystemUI();
+            return true;
+        }
         return false;
     }
-	
+
     public static final Indexable.SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
             new BaseSearchIndexProvider() {
                 @Override
