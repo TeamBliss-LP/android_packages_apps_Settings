@@ -1005,6 +1005,7 @@
     <string name="hfm_dialog_failed">Updating hosts file failed. Please try again.</string>
     <string name="hfm_dialog_success">/4 hosts sources successfully applied!</string>
     <string name="hfm_dialog_conn_error">Error: No network connectivity</string>
+    <string name="hfm_dialog_title">Hosts update progress</string>
     <string name="hfm_whitelist_title">Whitelist</string>
     <string name="hfm_whitelist_summary">List of strings (part of URL\'s) that should be allowed by the ad blocker</string>
     <string name="hfm_whitelist_pref_text">Type string to add to whitelist</string>
