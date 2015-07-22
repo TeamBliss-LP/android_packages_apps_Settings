@@ -162,6 +162,7 @@ public class StatusBarBatteryStatusSettings extends SettingsPreferenceFragment i
         } else {
             catCircleOptions.removePreference(mCircleDotLength);
             catCircleOptions.removePreference(mCircleDotInterval);
+            removePreference(PREF_CAT_CIRCLE_OPTIONS);
         }
 
         if (batteryStatusVisible && !isTextOnly) {
@@ -188,9 +189,6 @@ public class StatusBarBatteryStatusSettings extends SettingsPreferenceFragment i
             catColors.removePreference(mTextColor);
         }
 
-        if (!batteryStatusVisible || !isCircle) {
-            removePreference(PREF_CAT_CIRCLE_OPTIONS);
-        }
         if (!batteryStatusVisible) {
             removePreference(PREF_CAT_COLORS);
         }
