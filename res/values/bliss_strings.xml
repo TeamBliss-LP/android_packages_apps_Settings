@@ -1461,4 +1461,11 @@
     <!-- Lockscreen wallpaper -->
     <string name="lockscreen_wallpaper_title">Wallpaper</string>
     <string name="lockscreen_wallpaper_summary">Set lockscreen wallpaper</string>
+
+    <!-- Status bar temperature -->
+    <string name="status_bar_temperature_title">Temperature style</string>
+    <string name="status_bar_temperature_hidden">Hidden</string>
+    <string name="status_bar_temperature_show_scale">Scale showing</string>
+    <string name="status_bar_temperature_hide_scale">Scale hidden</string>
+
 </resources>
