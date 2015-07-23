@@ -81,7 +81,8 @@ public class NavBarButtonStyle extends SettingsPreferenceFragment implements
         if (intColor == -2) {
             intColor = getResources().getColor(
                     com.android.internal.R.color.white);
-            mNavigationBarButtonColor.setSummary(getResources().getString(R.string.default_string));
+            mNavigationBarButtonColor.setSummary(getResources()
+                    .getString(R.string.default_string));
         } else {
             String hexColor = String.format("#%08x", (0xffffffff & intColor));
             mNavigationBarButtonColor.setSummary(hexColor);
@@ -105,7 +106,7 @@ public class NavBarButtonStyle extends SettingsPreferenceFragment implements
         mNavigationBarButtonColorMode =
             (ListPreference) prefs.findPreference(PREF_NAV_BUTTON_COLOR_MODE);
         int navigationBarButtonColorMode = Settings.System.getInt(getContentResolver(),
-                Settings.System.NAVIGATION_BAR_BUTTON_TINT_MODE, 0);
+                Settings.System.NAVIGATION_BAR_BUTTON_TINT_MODE, 3);
         mNavigationBarButtonColorMode.setValue(String.valueOf(navigationBarButtonColorMode));
         mNavigationBarButtonColorMode.setSummary(mNavigationBarButtonColorMode.getEntry());
         mNavigationBarButtonColorMode.setOnPreferenceChangeListener(this);
@@ -145,7 +146,7 @@ public class NavBarButtonStyle extends SettingsPreferenceFragment implements
                 Settings.System.putInt(getActivity().getContentResolver(),
                         Settings.System.NAVIGATION_BAR_BUTTON_TINT, -2);
                 Settings.System.putInt(getActivity().getContentResolver(),
-                       Settings.System.NAVIGATION_BAR_BUTTON_TINT_MODE, 0);
+                       Settings.System.NAVIGATION_BAR_BUTTON_TINT_MODE, 3);
                 Settings.System.putInt(getActivity().getContentResolver(),
                         Settings.System.NAVIGATION_BAR_GLOW_TINT, -2);
                 refreshSettings();
@@ -197,7 +198,7 @@ public class NavBarButtonStyle extends SettingsPreferenceFragment implements
 
     private void updateColorPreference() {
         int navigationBarButtonColorMode = Settings.System.getInt(getContentResolver(),
-                Settings.System.NAVIGATION_BAR_BUTTON_TINT_MODE, 0);
+                Settings.System.NAVIGATION_BAR_BUTTON_TINT_MODE, 3);
         mNavigationBarButtonColor.setEnabled(navigationBarButtonColorMode != 3);
     }
 }
