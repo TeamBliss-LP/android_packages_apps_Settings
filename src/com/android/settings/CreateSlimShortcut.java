@@ -65,8 +65,10 @@ public class CreateSlimShortcut extends Activity {
                         CreateSlimShortcut.this, SlimActionShortcut.class);
                 shortcutIntent.putExtra("value", dialogValues[item]);
 
+                ActionHelper.useSystemUI = true;
                 Drawable icon = ActionHelper.getActionIconImage(
                         CreateSlimShortcut.this, dialogValues[item], null);
+                ActionHelper.useSystemUI = false;
                 Intent intent = new Intent();
                 intent.putExtra(Intent.EXTRA_SHORTCUT_ICON, ImageHelper.drawableToBitmap(icon));
                 intent.putExtra(Intent.EXTRA_SHORTCUT_NAME, dialogEntries[item]);
