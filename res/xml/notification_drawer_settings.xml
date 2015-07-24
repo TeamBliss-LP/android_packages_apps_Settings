@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
      Copyright (C) 2015 The CyanogenMod Project
+     Copyright (C) 2015 The TeamEos Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -67,10 +68,12 @@
             android:summaryOff="@string/qs_main_tiles_summary_off"
             android:defaultValue="true" />
 
-        <com.android.settings.cyanogenmod.SecureSettingSwitchPreference
-            android:key="qs_use_four_columns"
-            android:title="@string/qs_four_columns_title"
-            android:defaultValue="false" />
+        <ListPreference
+            android:key="sysui_qs_num_columns"
+            android:title="@string/qs_num_columns_title"
+            android:entries="@array/qs_num_columns_entries"
+            android:entryValues="@array/qs_num_columns_values"
+            android:persistent="false" />
 
         <com.android.settings.cyanogenmod.SecureSettingSwitchPreference
             android:key="qs_tiles_vibrate"
