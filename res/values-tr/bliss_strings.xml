@@ -57,6 +57,7 @@
     <string name="dlg_reset_bliss">Bliss</string>
     <string name="reset_default_message">Varsayılana sıfırlansın mı?</string>
     <string name="additional_options_title">Ek seçenekler</string>
+    <string name="positive_done">Tamam</string>
 
     <!-- Changelog -->
     <string name="changelog_bliss_title">Değişiklikler</string>
@@ -146,6 +147,7 @@
     <string name="shortcut_action_kill">Uygulamaları öldür</string>
     <string name="shortcut_action_lastapp">Son uygulamalar</string>
     <string name="shortcut_action_assist">Ara</string>
+    <string name="shortcut_action_screenrecord">Ekran Kaydedici</string>
     <string name="shortcut_action_screenshot">Ekran görüntüsü</string>
     <string name="shortcut_action_torch">El Feneri</string>
     <string name="shortcut_action_menu">Menü</string>
@@ -177,6 +179,7 @@
     <string name="shortcut_action_warning">Uyarı</string>
     <string name="shortcut_action_warning_message">Bu son girdiyi silmek mümkün değildir</string>
     <string name="shortcut_action_disable_message">Etin değil\nBu özelliği etkinleştirmek için bir girdi ekleyin</string>
+    <string name="shortcut_action_required_warning_message">Gerekli olan düğmeleri silmek mümkün değildir</string>
     <string name="shortcut_image_not_valid">Seçilen uygulamanın geçerli simgesi geri dönmedi veya görüntü kırpma desteklemiyor. Başka bir uygulama kullanın.</string>
     <string name="shortcut_duplicate_entry">Seçilen eylem iki kez eklenemez</string>
     <string name="shortcut_action_help_shortcut">kısayollar</string>
@@ -185,7 +188,8 @@
     <string name="shortcut_action_help_icon">, simgesini seçerek özelleştirme seçenekleri bir süre getirilecektir</string>
     <string name="shortcut_action_help_main">Bir %1$s eklemek için, Ekle simgesini seçin. Bir %1$s eklendikten sonra, %2$ssatır seçerek hedef değişecek\n\n, %2$ssatırı seçerek hedef değişecek\n\n%1$s kaldırmak için, satırı yatay sola veya sağa kaydırın. %1$s yeniden eklemek için dikey soldaki çapayı sürükleyerek listeye ekleyin.\n\nTemizleyin ya da varsayılana sıfırlamak için Sıfırla simgesini seçin.</string>
     <string name="shortcut_action_help_delete_last_entry">Listedeki her %1$s çıkarılması tamamen özelliği devre dışı bırakır</string>
-
+    <string name="shortcut_action_voice_search">Sesli arama</string>
+    
     <string name="shortcuts_applications">Uygulamalar</string>
     <string name="shortcuts_select_custom_app_title">Özel uygulama seçin</string>
     <string name="shortcuts_icon_picker_type">Simge türünü seçin:</string>
@@ -254,7 +258,7 @@
     <string name="shortcuts_icon_picker_unlock">Kilidi Aç</string>
     <string name="shortcuts_icon_picker_whatsapp">Whatsapp</string>
     <string name="shortcuts_icon_picker_youtube">Youtube</string>
-
+    
     <!-- Navigation bar -->
     <string name="nav_bar_title">Gezinti çubuğu</string>
     <string name="navbar_enable_bar_title">Gezinti çubuğu tuşları</string>
@@ -274,6 +278,22 @@
     <string name="navigation_bar_size_40_dp">40 dp</string>
     <string name="navigation_bar_size_42_dp">42 dp</string>
     <string name="navigation_bar_size_0_dp">0 dp (kapalı)</string>
+    
+    <!-- SlimDim -->
+    <string name="dim_nav_buttons_category">SlimDim</string>
+    <string name="dim_nav_buttons_title">Hareketsizlik sonrası Dim düğmeleri</string>
+    <string name="dim_nav_buttons_summary">Dim navigation bar buttons after not interacting with navigation bar for a specified time</string>
+    <string name="dim_nav_buttons_timeout_title">Karartmadan önce zaman aşımı</string>
+    <string name="dim_nav_buttons_timeout_summary">Zaman (milisaniye cinsinden) düğmelerini karartmadan önce bekleyecek</string>
+    <string name="dim_nav_buttons_alpha_title">Dim alfa</string>
+    <string name="dim_nav_buttons_alpha_summary">Alpha value to dim buttons to</string>
+    <string name="dim_nav_buttons_animate_title">Dim animasyon</string>
+    <string name="dim_nav_buttons_animate_summary">Alfa soldurma animasyou</string>
+    <string name="dim_nav_buttons_animate_duration_title">Animasyon süresi</string>
+    <string name="dim_nav_buttons_animate_duration_summary">Alfa animasyon (milisaniye cinsinden) süresi</string>
+    <string name="dim_nav_buttons_touch_anywhere_title">Tüm ekranda dokunuşları dinleyin</string>
+    <string name="dim_nav_buttons_touch_anywhere_summary_on">Ekranda herhangi bir yere dokunulması dim düğmelerine neden olur</string>
+    <string name="dim_nav_buttons_touch_anywhere_summary_off">Only touches on the navbar will cause buttons to un-dim</string>
 
     <!-- Ability to disable hardware keys via nav bar settings -->
     <string name="hw_keys_title">Donanım tuşları</string>
@@ -324,6 +344,8 @@
     <string name="network_traffic_color_style">Renk tarzı</string>
     <string name="network_traffic_color_reset">Rengi sıfırla</string>
     <string name="network_traffic_color_reset_message">Ağ trafiği rengini varsayılana sıfırla?</string>
+    <string name="status_bar_show_wifi_ssid">Wi-Fi SSID Göster</string>
+    <string name="status_bar_show_wifi_ssid_summary">Durum çubuğunda bağlı olan ağ Wi-Fi SSID göster</string>
     
     <!-- Recents panel settings -->
     <string name="recents_options_title">Son kullanılanlar seçenekleri</string>
@@ -567,10 +589,6 @@
     <string name="heads_up_time_out_8sec">8 saniye</string>
     <string name="heads_up_time_out_10sec">10 saniye</string>
     <string name="heads_up_time_out_never">Asla</string>
-    <string name="heads_up_bg_color_title">Arkaplan rengi</string>
-    <string name="heads_up_text_color_title">Yazı rengi</string>
-    <string name="heads_up_colors_title">Özelleştirilmiş renkler</string>
-    <string name="heads_up_colors_summary">Heads up yazı ve arkaplan renklerini özelleştirin</string>
     
     <!-- Heads Up Status Bar button -->
     <string name="show_headsup_button_title">Show quick access button</string>
@@ -772,6 +790,7 @@
     <string name="lock_screen_color_settings_summary">Renkleri Özelleştir</string>
 
     <!-- Weather settings -->
+    <string name="weather_cat_notifications_title">Notifications</string>
     <string name="weather_show_weather_title">Hava Durumunu göster</string>
     <string name="weather_show_weather_summary">Hava durumunu göstermek için etkinleştirin</string>
     <string name="weather_show_location_title">Konumu göster</string>
@@ -785,6 +804,22 @@
     <string name="weather_condition_icon_vclouds_title">VClouds</string>
     <string name="weather_colorize_all_icons_title">Tüm simgeleri renklendir</string>
     <string name="weather_colorize_all_icons_summary">Tüm simgeleri renklendirmek için etkinleştirin, sadece tek renkli simgeleri renklendirmek için devre dışı bırakın</string>
+    <string name="weather_hide_panel_title">Hava Durumu panelini gizle</string>
+    <string name="weather_hide_panel_dlg_title">Hava Durumu panelinin gizlenmesini gerektiren zamanı seçin</string>
+    <string name="weather_hide_panel_auto_title">Otomatik</string>
+    <string name="weather_hide_panel_custom_title">Özel</string>
+    <string name="weather_hide_panel_never_title">Asla</string>
+    <string name="weather_hide_panel_auto_summary">Hava Durumu paneli, görünür bildirimlerin kilit ekranında izin verilen maksimum bildirim sayısına ulaştığı zaman gizlenecek</string>
+    <string name="weather_hide_panel_custom_summary">Hava Durumu paneli görünür bildirimlerin seçilen sayısına ulaşağı zaman gizlenir (% s)</string>
+    <string name="weather_hide_panel_never_summary">Hava Durumu paneli gizli olmayacak</string>
+    <string name="weather_number_of_notifications_title">Bildirimlerin sayısı</string>
+    <string name="weather_number_of_notifications_dlg_title">Hava Durumu panelini gizlemek için bildirimlerin sayısını seçin</string>
+    <string name="weather_number_of_notifications_always_title">Her zaman</string>
+    <string name="weather_number_of_notifications_two_title">2</string>
+    <string name="weather_number_of_notifications_three_title">3</string>
+    <string name="weather_number_of_notifications_four_title">4</string>
+    <string name="weather_number_of_notifications_five_title">5</string>
+    <string name="weather_number_of_notifications_six_title">6</string>
 
     <!-- Lockscreen Shortcuts -->
     <string name="lockscreen_shortcuts_title">Uygulama Kısayolları</string>
@@ -973,6 +1008,7 @@
     <string name="hfm_dialog_failed">Hosts dosyasını güncellenmesi başarısız oldu. Lütfen tekrar deneyin.</string>
     <string name="hfm_dialog_success">/4 hosts kaynağı başarıyla uygulandı!</string>
     <string name="hfm_dialog_conn_error">Hata: Ağ bağlantısı</string>
+    <string name="hfm_dialog_title">Hosts güncelleme ilerlemesi</string>
     <string name="hfm_whitelist_title">Beyaz Liste</string>
     <string name="hfm_whitelist_summary">Reklam engelleyici tarafından izin verilenler(URL bağlantıları) listesi</string>
     <string name="hfm_whitelist_pref_text">Beyaz listeye eklemek için geerekli dizleri girin</string>
@@ -1055,21 +1091,21 @@
     <string name="doze_pulse_on_notifications_title">Bildirim ışığı açık</string>
     <string name="doze_pulse_on_notifications_summary">Sadece bekleyen bildirimleri tetiklemeyi etkinleştirir</string>
 
-    <string name="doze_shake_title">Sallama ayarları</string>
-    <string name="doze_shake_mode_title">Sallama modu</string>
-    <string name="doze_shake_mode_summary">Etkinleştirmeyi tetiklemek için sallama sensörü değerini kullanın</string>
-    <string name="doze_shake_mode_test_summary">Sallama sensörünü test etmeyi istiyor musunuz?</string>
+    <string name="doze_shake_title">Sarsıntı ayarları</string>
+    <string name="doze_shake_mode_title">Sarsıntı modu</string>
+    <string name="doze_shake_mode_summary">Etkinleştirmeyi tetiklemek için sarsıntı sensörü değerini kullanın</string>
+    <string name="doze_shake_mode_test_summary">Sarsıntı sensörünü test etmeyi istiyor musunuz?</string>
     <string name="doze_shake_mode_test_result">Geçerli değer uygulansın mı?</string>
     <string name="doze_shake_test">Şimdi cihazınızı sallayın</string>
-    <string name="doze_shake_it">Sallama algılandı!</string>
+    <string name="doze_shake_it">Sarsıntı algılandı!</string>
 
     <string name="doze_brightness_category_title">Parlaklık</string>
     <string name="doze_brightness_title">Parlaklık seviyesi</string>
     <string name="doze_auto_brightness_title">Otomatik parlaklık</string>
     <string name="doze_auto_brightness_summary">Ekranın parlaklığını çevresindeki ortam ışığını dikkate alarak ayarlar</string>
 
-    <string name="doze_shake_acc_threshold_title">Sallama değeri</string>
-    <string name="doze_shake_acc_threshold_summary">Etkinleştirmeyi tetiklemek için gerekli sallama gücünü yapılandırın</string>
+    <string name="doze_shake_acc_threshold_title">Sarsıntı değeri</string>
+    <string name="doze_shake_acc_threshold_summary">Etkinleştirmeyi tetiklemek için gerekli sarsıntı gücünü yapılandırın</string>
 
     <string name="doze_time_mode_title">Saat ve tarihi göster</string>
     <string name="doze_time_mode_summary">Hiçbir bildirim olmadığında zamanı göstermeyi zorlar</string>
@@ -1077,12 +1113,12 @@
     <string name="twohundred_ms">200 ms</string>
     <string name="fivehundred_ms">500 ms</string>
     <string name="one_second">1 s</string>
-    <string name="one_second_default">1 s (default)</string>
+    <string name="one_second_default">1 s (varsayılan)</string>
     <string name="onehalf_second">1.5 s</string>
     <string name="two_second">2 s</string>
     <string name="twohalf_second">2.5 s</string>
     <string name="three_second">3 s</string>
-    <string name="three_second_default">3 s (default)</string>
+    <string name="three_second_default">3 s (varsayılan)</string>
     <string name="threehalf_second">3.5 s</string>
     <string name="four_second">4 s</string>
     <string name="fourhalf_second">4.5 s</string>
@@ -1096,10 +1132,10 @@
     <string name="strong_shake">En güçlü</string>
 
     <string name="fully_mode">Tam mod</string>
-    <string name="pocket_shake_mode">Cep ve sallama</string>
+    <string name="pocket_shake_mode">Cep ve sarsıntı</string>
     <string name="pocket_pulse_mode">Cep ve yanma</string>
     <string name="pocket_only_mode">Cep</string>
-    <string name="shake_pulse_mode">Sallama ve yanma</string>
+    <string name="shake_pulse_mode">Sarsıntı ve yanma</string>
     <string name="pulse_only_mode">Yanma (varsayılan)</string>
 
     <!-- Chamber of Secrets -->
@@ -1206,11 +1242,11 @@
     <string name="pie_trigger_sensitivity_summary">Pasta tetikleme hassasiyetini ayarlayın</string>
 
     <!-- Navigation bar visibility -->
-    <string name="navigation_menu_default_jb_behavior">Show on request (default)</string>
-    <string name="navigation_menu_never_show">Never show</string>
-    <string name="navigation_menu_always_show">Always show</string>
-    <string name="title_pref_menu_display">Menu visibility</string>
-    <string name="summary_pref_menu_display">How and when do you want the menu buttons to appear?</string>
+    <string name="navigation_menu_default_jb_behavior">İstek üzerine göster (varsayılan)</string>
+    <string name="navigation_menu_never_show">Asla gösterme</string>
+    <string name="navigation_menu_always_show">Her zaman göster</string>
+    <string name="title_pref_menu_display">Menü görünürlüğü</string>
+    <string name="summary_pref_menu_display">Menü düğmelerinin nasıl ve ne zaman görünmesini istiyorsun?</string>
 
     <!-- App sidebar -->
     <string name="app_sidebar_title">Uygulama çubuğu</string>
@@ -1321,79 +1357,18 @@
     <string name="status_bar_power_menu_off">Devre dışı</string>
     <string name="status_bar_power_menu_action_screen_off">Kapalı Ekran - Güç menüsü</string>
     <string name="status_bar_power_menu_action_dialog">Güç menüsü - Kapalı ekran</string>
-
-    <!-- Bliss actions and utilities -->
-    <string name="shortcut_label">Eylemler &amp; Araçlar</string>
-    <string name="toggle_flushmemory">GC bellek</string>
-    <string name="toggle_ring_vib">Zil/Titreşim</string>
-    <string name="toggle_ring_silent">Zil/Sessiz</string>
-    <string name="toggle_ring_vib_silent">Zil/Titreşim/Sessiz</string>
-    <string name="toggle_profile">Profiller</string>
-    <string name="toggle_profile_toast">Profiller şu anda devre dışı bırakıldı</string>
-    <string name="toggle_dream">Ekran Koruyucu</string>
-    <string name="toggle_dream_failed">Düşler kapalı veya devre dışı</string>
-
-    <!-- Navigation bar -->
-    <string name="navigation_bar_category">Gezinti çubuğu</string>
-    <string name="navbar_force_enable_title">Gezinti çubuğunu etkinleştir</string>
-    <string name="navbar_force_enable_summary">DİKKAT: Cihazlar için ekranda gezinti çubuğu ve bu gezinti çubuğunu özelleştirmeyi sağlar. Donanım gezinti tuşları olan cihazlarda, Yeniden başlatma gerektirebilir</string>
-    <string name="buttons_and_options_title">Tuşlar ve davranışlarını özelleştirme</string>
-
-    <!-- Custom navigation bar targets -->
-    <string name="choose_action_double_tap_title">Çift dokunma eylemi seçin</string>
-    <string name="choose_action_title">Eylem seçin</string>
-    <string name="choose_action_short_title">Kısa eylemi seçin</string>
-    <string name="choose_action_long_title">Uzun eylemi seçin</string>
-    <string name="action_long_save">uzun eylem ayarlayın</string>
-    <string name="action_short">Kısa eylem</string>
-    <string name="action_long">Uzun eylem</string>
-    <string name="action_double">Çift dokunma eylemi</string>
-    <string name="action_icon">Özel simge</string>
-    <string name="custom_app_icon_successfully">"\'simge başarıyla ayarlandı!"</string>
-    <string name="add_button">Tuş ekle</string>
-    <string name="category_navbar">Gezinti çubuğu</string>
-    <string name="navbar_tab_arrange">Editör</string>
-    <string name="navbar_tab_settings">Ayarlar</string>
-    <string name="change_layouts_title"> Düzen </string>
-    <string name="change_layouts_dialog_title">Düzenlemek için bir düzen seçin</string>
-    <string name="alternate_key_layouts">Etkin olan düzenlerin sayısı</string>
-    <string name="alternate_key_layouts_summary">Düzen değiştirici tuşları etkinleştirin ve etkin düzenlerin sayısını ayarlayın</string>
-    <string name="alternate_key_layouts_enabled_summary">gezinti çubuğu düzenleri şu anda etkin</string>
-    <string name="alternate_key_layouts_enabled_partial_summary">5 üzerinden</string>
-    <string name="alternate_key_layouts_all_enabled_summary">Tüm gezinti çubuğu düzenlerinin 5 şu anda etkin olan</string>
-    <string name="alternate_menu_summary">İstendiğinde düzen anahtarını değiştirmek için eski menü tuşuna izin verin</string>
-    <string name="layouts_dialog_title">Etkin düzenlerin sayısı</string>
-    <string name="enable_sidekeys">Eski menü tuşlarına izin ver</string>
-    <string name="enable_sidekeys_summary">Gezinme çubuğunda yan menü tuşlarına izin vermek için bir boşluk ekle.</string>
-    <string name="navigation_bar_height_text">Dikey çubuk yüksekliği</string>
-    <string name="navigation_bar_height_landscape_text">Yatay çubuk yüksekliği</string>
-    <string name="navigation_bar_width_text">Yatay çubuk genişliği</string>
-    <string name="enable_ime_layout">Ektra klavye tuşu</string>
-    <string name="enable_ime_layout_summary">Klavye okları ve AOSP klavye değiştirici düzenini değiştiren bir anahtar ekleyin</string>
-    <string name="enable_ime_layout_disabled">Düzen için yeterli yer yok: Ek düzenleri veya eski menü tuşlarını etkinleştirin</string>
-    <string name="customize_ime_layout_dialog_title">Klavye tuşu düzenini özelleştirin</string>
-    <string name="ime_layout_ime">Klavye değiştrici</string>
-    <string name="ime_layout_home">Ana ekran tuşu</string>
-    <string name="ime_layout_blank">Dpad tuşlarından önce boşluk</string>
-    <string name="editor_instructions">Sağdaki koldan sürükleyerek yeniden düzenleyin. Kaydırarak çıkarın.</string>
-    <string name="save">Kaydet</string>
-    <string name="navigation_bar_longpress_timeout_text">Tuşa uzun basma geciktirme</string>
-    <string name="enable_navigation_ring_title">Gezinti arama asistanı</string>
-    <string name="enable_navigation_ring_summary">Ana sayfa tuşuna basarak google arama asistanını açma</string>
-    <string name="navbar_use_gallary_warning">Bilgi: Görüntüyü kaydetmek için Galeriyi seçiniz</string>
-    <string name="bliss_navbar_title">Gezinti Çubuğu</string>
-    <string name="navbar_settings_summary">Gezinti çubuğunu özelleştirme ile özel kısayolları ve eylemleri seçin</string>
-
+    
+    <string name="bliss_navbar_title">Navigation bar</string>
     <!-- Navigation Bar left-handed mode -->
     <string name="navigation_bar_left_title">Solak modu</string>
     <string name="navigation_bar_left_summary">Yatay modda gezinti çubuğunu sola yerleştirir</string>
-
+    
     <!-- Shortcut picker -->
     <string name="use_custom_app_title">Özel uygulama kullanın</string>
     <string name="use_custom_app_summary">Son uygulamalar iletişim paneli yerine özel bir uygulama kullanın</string>  
     <string name="group_applications">Uygulamalar</string>
     <string name="select_custom_app_title">Özel uygulama seçin</string>
-
+    
     <!-- Disable torch when screen goes off -->
     <string name="disable_torch_screen_off_title">Ekran kapandığında el fenerini devre dışı bırak</string>
     <string name="disable_torch_screen_off_delay_title">Geciktirme süresi</string>
@@ -1412,8 +1387,78 @@
     <string name="double_tap_sleep_anywhere_title">Uyutmak için her hangi bir yere iki tez dokunun</string>
     <string name="double_tap_sleep_anywhere_summary">Kilit ekranında herhangi bir yere iki kez dokunarak cihazı uyku moduna alabilirsiniz</string>
 
-        <!-- ATTENTION: RTL languages need to replace left with right -->
+    <!-- ATTENTION: RTL languages need to replace left with right -->
     <string name="recent_panel_lefty_mode_title">Sol kenarda göster</string>
     <string name="recent_panel_lefty_mode_summary">Sol kenarda son uygulamalar panelini göster</string>
+    
+    <!-- Floating Window Options -->
+    <string name="category_floating_window">Yüzen pencere</string>
+    <string name="slim_action_floating_window_title">Yüzen pencerede Slim eylemleri başlatın</string>
+    <string name="slim_action_floating_window_summary">Kilit ekranı kısayolları ve gezinti çubuğu gibi özelliklerin yüzen pencere modunda uygulamaları çalıştırır</string>
+    <string name="heads_up_floating_window_title">Heads Up</string>
+    <string name="heads_up_floating_window_summary">Yüzen modu açmak için ana ekranda değilken uzun basın ve serbest bırakın</string>
+    <string name="appcirclebar_floating_window_title">Uygulama Daire Çubuğu</string>
+    <string name="appcirclebar_floating_window_summary">Yüzen modunda Uygulama Daire Çubuğun da bulunan uygulamaları başlat</string>
+    <string name="appsidebar_floating_window_title">Uygulama Yan Çubuğu</string>
+    <string name="appsidebar_floating_window_summary">Açıldığında, yüzen pencere modunu başlatma için uzun basın</string>
+    <string name="gesture_anywhere_floating">Her Yerde Hareket</string>
+    <string name="gesture_anywhere_floating_summary">Yüzen pencere modunda uygulamaları başlat</string>
 
+    <!-- Navigation bar -->
+    <string name="navigation_bar_category">Gezinti Çubuğu</string>
+    <string name="navigation_menu_right">Sağ</string>
+    <string name="navigation_menu_left">Sol</string>
+    <string name="navigation_menu_both">İkisi de</string>
+    <string name="navigation_menu_default_jb_behavior">İstek üzerine göster (varsayılan)</string>
+    <string name="navigation_menu_never_show">Asla göster</string>
+    <string name="navigation_menu_always_show">Her zaman göster</string>
+    <string name="navigation_bar">Gezinti çubuğu</string>
+    <string name="navbar_button_cat">Gezinti çubuğu tuşları</string>
+    <string name="title_pref_menu_location">Menü konumu</string>
+    <string name="summary_pref_menu_location">Menü düğmelerinin nerede görünmesini istiyorsun?</string>
+    <string name="title_pref_menu_display">Menü görünürlüğü</string>
+    <string name="summary_pref_menu_display">Menü düğmelerinin nasıl ve ne zaman görünmesini istiyorsun?</string>
+    <string name="navbar_enable_bar">Gezinti çubuğunu etkinleştir</string>
+    <string name="navbar_enable_bar_summary">Gezinti çubuğu etkinleştirme</string>
+    <string name="navigation_bar_height_title">Gezinti çubuğu yüksekliği</string>
+    <string name="navigation_bar_height_landscape_title">Gezinti çubuğu yüksekliği yatay</string>
+    <string name="navigation_bar_width_title">Gezinti çubuğu genişliği</string>
+    <string name="navbar_can_move">Yatay göster</string>
+    <string name="navbar_can_move_summary">Yatay modda alt kısımda gezinti çubuğunu gösterir</string>
+    <string name="navbar_style_dimen_title">Boyutlarını değiştirin</string>
+    <string name="navbar_button_title">Tuşları özelleştirin</string>
+    <string name="navbar_cat">Gezinti çubuğu</string>
+    <string name="navbar_dimensions_reset_message">Varsayılan tüm boyutlarıyla girişler sıfırlasın mı?</string>
+    <string name="navbar_button_style_reset_message">Varsayılan tüm stil girişleri sıfırlayın?</string>
+    <string name="show_ime_arrows_title">Yazarken ok tuşlarını göster</string>
+    <string name="show_ime_arrows_summary">Ekran ve sol gezinme çubuğunda yazarken sağ imleç düğmeleri. Gezinmek için aşağı/yukarı uzun basın. Gezinti üzerinde klavye değiştirici ve menü düğmeleri.</string>
+
+    <!-- Navigation bar button style -->
+    <string name="nav_bar_button_style">Tuş tarzı</string>
+    <string name="nav_bar_button_style_summary">Gezinti çubuğu düğme stilini değiştir</string>
+    <string name="button_transparency_title">Tuş şeffaflığı</string>
+    <string name="navigation_bar_icon_tint_title">Tuş rengi</string>
+    <string name="nav_button_color_mode_title">Renk modu</string>
+    <string name="nav_button_color_mode_dialog_title">Renklendir</string>
+    <string name="nav_button_color_mode_summary">Gezinti çubuğu düğmesi renk modunu değiştirme</string>
+    <string name="navigation_bar_glow_tint_title">Tuş parlalığı rengi</string>
+    <string name="navigation_bar_warning_no_navigation_present">Başka hiçbir gezinti tuşu şu anda etkin değildir. Gezinti çubuğunun kapatılması kullanılamaz bir cihaza neden olabilir. Yerine pasta kontrollerini etkinleştirmek istiyor musunuz?</string>
+
+    <!-- Custom legacy menu actions -->
+    <string name="legacy_menu_settings">Eski Menü Düğmeleri</string>
+    <string name="legacy_menu_settings_summary">Eski menü tuşlarını özelleştirme</string>
+    <string name="legacy_menu_layout_disable_title">Eski menü düzeni devre dışı bırak</string>
+    <string name="legacy_menu_layout_disable_summary">Gezinme çubuğu kenarlarında boşlukların kaldırılmasını devre dışı bırakma, hangi eski menü tuşları kullanılır</string>
+    <string name="legacy_menu_left_action_title">Eski sol menü düğmesi eylemi</string>
+    <string name="legacy_menu_left_long_action_title">Eski sol menü düğmesi uzun basma eylemi</string>
+    <string name="legacy_menu_right_action_title">Eski sağ menü düğmesi eylemi</string>
+    <string name="legacy_menu_right_long_action_title">Eski sağ menü düğmesi uzun basma eylemiv</string>
+
+    <!-- Hide lock screen carrier -->
+    <string name="lock_screen_hide_carrier_title">Kilit ekranında ağ ismini gizle</string>
+    <string name="lock_screen_hide_carrier_summary">SystemUI anahtarı geçiş üzerinde yeniden başlatılacak.</string>
+
+    <!-- Lockscreen wallpaper -->
+    <string name="lockscreen_wallpaper_title">Duvar Kağıdı</string>
+    <string name="lockscreen_wallpaper_summary">Kilit ekranı duvar kağıdını ayarla</string>
 </resources>
