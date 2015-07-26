@@ -1468,4 +1468,8 @@
     <string name="status_bar_temperature_show_scale">Scale showing</string>
     <string name="status_bar_temperature_hide_scale">Scale hidden</string>
 
+    <!-- Headphones icon switch -->
+    <string name="show_headset_icon_title">Headset icon</string>
+    <string name="show_headset_icon_summary">Shows icon when headsets are connected.</string>
+
 </resources>
