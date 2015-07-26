@@ -36,6 +36,11 @@
             android:defaultValue="0"
             android:title="@string/battery_bar_settings" />
 
+    <PreferenceScreen
+            android:key="status_bar_temperature_style"
+            android:title="@string/status_bar_temperature_title"
+            android:fragment="com.android.settings.bliss.StatusBarWeather" />
+
     <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
             android:key="show_su_indicator"
             android:title="@string/su_indicator"
@@ -78,11 +83,6 @@
             android:title="@string/status_bar_notif_system_icons_settings_title"
             android:summary="@string/status_bar_notif_system_icons_settings_summary"
             android:fragment="com.android.settings.bliss.StatusBarNotifSystemIconsSettings" />
-
-    <PreferenceScreen
-            android:key="status_bar_temperature_style"
-            android:title="@string/status_bar_temperature_title"
-            android:fragment="com.android.settings.bliss.StatusBarWeather" />
 
     <PreferenceCategory
         android:title="@string/breathing_notifications_title">
