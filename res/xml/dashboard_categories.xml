@@ -108,6 +108,14 @@
                 android:title="@string/interface_settings_title"
                 />
 
+        <!-- TRDS -->
+        <dashboard-tile
+                android:id="@+id/theme_settings"
+                android:icon="@drawable/ic_settings_theme"
+                android:fragment="com.android.settings.bliss.themes.ThemeSettings"
+                android:title="@string/theme_settings_title"
+                />
+
        <!-- AudioFX -->
        <dashboard-tile
            android:id="@+id/audiofx_settings"
