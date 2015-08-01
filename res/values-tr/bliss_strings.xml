@@ -1461,4 +1461,25 @@
     <!-- Lockscreen wallpaper -->
     <string name="lockscreen_wallpaper_title">Duvar Kağıdı</string>
     <string name="lockscreen_wallpaper_summary">Kilit ekranı duvar kağıdını ayarla</string>
+     
+    <!-- Status bar temperature -->
+    <string name="status_bar_temperature_title">Sıcaklık</string>
+    <string name="status_bar_temperature_hidden">Gizli</string>
+    <string name="status_bar_temperature_show_scale">Ölçek ile gösterilen</string>
+    <string name="status_bar_temperature_hide_scale">Ölçek olmadan gösterilen</string>
+    <string name="status_bar_temperature_location_title">Sıralama</string>
+    <string name="status_bar_temperature_location_summary">Hava sıcaklığı durum çubuğunda nerede gösterileceğini seçin</string>
+    <string name="status_bar_temperature_location_right">Sağda göster</string>
+    <string name="status_bar_temperature_location_left">Solda göster</string>
+    <string name="status_bar_weather_color_title">Sıcaklık rengi</string>
+    <string name="status_bar_weather_size_title">Yazı Boyutu</string>
+
+    <!-- Headphones icon switch -->
+    <string name="show_headset_icon_title">Kulaklık simgesi</string>
+    <string name="show_headset_icon_summary">Kulaklıklar bağlandığında simge gösterir.</string>
+
+    <!-- Volume icon switch -->
+    <string name="show_volume_icon_title">Ses Modu Simgesi</string>
+    <string name="show_volume_icon_summary">Ses modu simgesini göster, varsayılan olarak etkin</string>
+
 </resources>
