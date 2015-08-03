@@ -44,6 +44,7 @@
     <string name="more_string">More</string>
     <string name="color_title">Color</string>
     <string name="colors_title">Colors</string>
+    <string name="cat_colors_title">Customize notification colors</string>
     <string name="category_colors_title">Customize colors</string>
     <string name="icons_title">Icons</string>
     <string name="text_title">Text</string>
@@ -770,8 +771,8 @@
     <string name="notification_force_expand_summary">Force expanded notifications on all apps that support it</string>
 
     <!-- QS Custom Colors -->
-    <string name="qs_colors_title">Custom Color Options</string>
-    <string name="qs_colors_summary">Change background, icon and text colors</string>
+    <string name="qs_colors_title">Quick Settings Color Options</string>
+    <string name="qs_colors_summary">Change background, icon and text colors for the tiles</string>
     <string name="qs_transparent_shade_title">Shade alpha</string>
     <string name="qs_transparent_shade_summary">Ability to apply color alpha value and make notification shade transparent</string>
     <string name="qs_color_switch_title">Custom color switch</string>
@@ -1491,5 +1492,17 @@
     <!-- Volume icon switch -->
     <string name="show_volume_icon_title">Volume Mode Icon</string>
     <string name="show_volume_icon_summary">Show volume mode icon, enabled by default</string>
+
+    <!-- Notification color settings -->
+    <string name="notification_color_settings_title">Notification colors</string>
+    <string name="notification_media_bg_mode_title">Colorize the media background</string>
+    <string name="notification_app_icon_bg_mode_title">Colorize the app icon background</string>
+    <string name="notification_app_icon_color_mode_title">Colorize app icon</string>
+    <string name="notification_bg_guts_color_title">Background on longpress</string>
+    <string name="notification_app_icon_bg_color_title">App icon background</string>
+    <string name="notification_color_mode_never_title">Never</string>
+    <string name="notification_icon_color_mode_greyscale_title">If the icon is an greyscale icon</string>
+    <string name="notification_bg_color_mode_no_color_title">If the notification doesn\`t include an own color</string>
+    <string name="notification_color_mode_always_title">Always</string>
 
 </resources>

@@ -97,6 +97,12 @@
             android:summary="@string/qs_colors_summary"
             android:fragment="com.android.settings.bliss.QSColors" />
 
+        <!-- Notification colors -->
+        <PreferenceScreen
+                android:id="@+id/notification_colors"
+                android:title="@string/cat_colors_title"
+                android:fragment="com.android.settings.bliss.NotificationColorSettings" />
+
         <com.android.settings.cyanogenmod.SecureSettingSwitchPreference
             android:key="qs_show_brightness_slider"
             android:title="@string/qs_brightness_slider_title"
