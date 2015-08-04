@@ -47,6 +47,18 @@
             android:defaultValue="3"
             android:dependency="show_clear_all_recents" />
 
+         <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="android_recents_clear_all_bg_color"
+            android:title="@string/background_title"
+            android:defaultValue="0xffDC4C3C"
+            android:dependency="show_clear_all_recents" />
+
+         <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="android_recents_clear_all_icon_color"
+            android:title="@string/icon_title"
+            android:defaultValue="0xffffffff"
+            android:dependency="show_clear_all_recents" />
+
         <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
             android:key="recents_show_search_bar"
             android:title="@string/recents_show_searchbar"

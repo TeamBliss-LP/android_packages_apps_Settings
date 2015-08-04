@@ -243,7 +243,6 @@ public class QSColors extends SettingsPreferenceFragment implements
                                     BLISS_BLUE);
                             Settings.System.putInt(getOwner().mResolver,
                                     Settings.System.QS_TRANSPARENT_SHADE, 0);
-                                    BLISS_BLUE);
                             getOwner().refreshSettings();
                         }
                     })
