@@ -240,6 +240,10 @@ public class QSTileHolder {
                 resourceName = "ic_qs_kernel_adiutor";
                 stringId = R.string.qs_tile_kernel_adiutor;
                 break;
+            case QSConstants.TILE_BLISS:
+                resourceName = "ic_qs_bliss_on";
+                stringId = R.string.qs_tile_bliss;
+                break;
 
             // Dynamic tiles
             case QSConstants.DYNAMIC_TILE_NEXT_ALARM:

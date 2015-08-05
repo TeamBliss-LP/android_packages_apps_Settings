@@ -1996,6 +1996,35 @@
                 android:resource="@id/display_and_lights_settings" />
         </activity>
 
+        <!-- Bliss Main Settings -->
+        <activity android:name="Settings$BlissInterfaceSettingsActivity"
+            android:label="@string/interface_settings_title"
+            android:taskAffinity="">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.bliss.InterfaceSettings" />
+        </activity>
+
+        <activity
+             android:name=".bliss.InterfaceSettings" />
+
+        <activity android:name="Settings$BlissDownloadActivity"
+            android:label="@string/download_category"
+            android:taskAffinity="">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.bliss.Download" />
+        </activity>
+
+        <activity
+             android:name=".bliss.Download" />
+
 	
         <!-- Navigation options -->
         <activity android:name="Settings$NavBarActivity"
