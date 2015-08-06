@@ -56,6 +56,8 @@
     <string name="dlg_reset_values_message">Reset values to\nAndroid or Bliss default?</string>
     <string name="dlg_reset_android">Android</string>
     <string name="dlg_reset_bliss">Bliss</string>
+    <string name="dlg_reset_dark">Dark</string>
+    <string name="dlg_reset_light">Light</string>
     <string name="reset_default_message">Reset default?</string>
     <string name="additional_options_title">Additional options</string>
     <string name="positive_done">Done</string>
@@ -1495,6 +1497,7 @@
 
     <!-- Notification color settings -->
     <string name="notification_color_settings_title">Notification colors</string>
+    <string name="notification_color_settings_summary">Color change for Normal, Heads Up and lockscreen notifications</string>
     <string name="notification_media_bg_mode_title">Colorize the media background</string>
     <string name="notification_app_icon_bg_mode_title">Colorize the app icon background</string>
     <string name="notification_app_icon_color_mode_title">Colorize app icon</string>
