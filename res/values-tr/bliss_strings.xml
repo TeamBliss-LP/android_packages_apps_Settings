@@ -44,6 +44,7 @@
     <string name="more_string">Daha Fazla</string>
     <string name="color_title">Renk</string>
     <string name="colors_title">Renkler</string>
+    <string name="cat_colors_title">Bildirim renklerini özelleştir</string>
     <string name="category_colors_title">Renkleri özelleştir</string>
     <string name="icons_title">Simgeler</string>
     <string name="text_title">Yazı</string>
@@ -55,6 +56,8 @@
     <string name="dlg_reset_values_message">Android Varsayılan için değerleri sıfırla\nAndroid- ya da Bliss?</string>
     <string name="dlg_reset_android">Android</string>
     <string name="dlg_reset_bliss">Bliss</string>
+    <string name="dlg_reset_dark">Koyu</string>
+    <string name="dlg_reset_light">Açık</string>
     <string name="reset_default_message">Varsayılana sıfırlansın mı?</string>
     <string name="additional_options_title">Ek seçenekler</string>
     <string name="positive_done">Tamam</string>
@@ -189,6 +192,7 @@
     <string name="shortcut_action_help_main">Bir %1$s eklemek için, Ekle simgesini seçin. Bir %1$s eklendikten sonra, %2$ssatır seçerek hedef değişecek\n\n, %2$ssatırı seçerek hedef değişecek\n\n%1$s kaldırmak için, satırı yatay sola veya sağa kaydırın. %1$s yeniden eklemek için dikey soldaki çapayı sürükleyerek listeye ekleyin.\n\nTemizleyin ya da varsayılana sıfırlamak için Sıfırla simgesini seçin.</string>
     <string name="shortcut_action_help_delete_last_entry">Listedeki her %1$s çıkarılması tamamen özelliği devre dışı bırakır</string>
     <string name="shortcut_action_voice_search">Sesli arama</string>
+    <string name="shortcut_action_theme_switch">Tema değiştirici</string>
     
     <string name="shortcuts_applications">Uygulamalar</string>
     <string name="shortcuts_select_custom_app_title">Özel uygulama seçin</string>
@@ -571,7 +575,7 @@
     <string name="profile_choose_app">Uygulama seçin</string>
     <string name="dialog_delete_title">Sil</string>
     <string name="dialog_delete_message">Seçilen öğe kaldırılsın mı?</string>
-	<string name="heads_up_snooze_title">Erteleme zamanlayıcısı</string>
+    <string name="heads_up_snooze_title">Erteleme zamanlayıcısı</string>
     <string name="heads_up_snooze_summary">Heads up bildirimini yukarı doğru kaydırmak bildirimleri <xliff:g id="number">%d</xliff:g> dakika erteleyecek</string>
     <string name="heads_up_snooze_disabled_summary">Erteleme zamanlayıcı devre dışı</string>
     <string name="heads_up_snooze_1min">1 dakika</string>
@@ -1271,6 +1275,15 @@
     <string name="tab_size_title">Sekme boyutu</string>
     <string name="tab_size_summary">Görünür sekmenin boyutunu değiştirme</string>
 
+    <!-- TRDS 5.0 -->
+    <string name="theme_settings_title">Bliss Koyu</string>
+    <string name="theme_auto_mode_title">Tema Seçici</string>
+    <string name="theme_auto_mode_off">El ile</string>
+    <string name="theme_auto_mode_lightsensor">Açık durum değişikliği (deneysel)</string>
+    <string name="theme_auto_mode_twilight">Gündüz</string>
+    <string name="theme_auto_switch_mode_error">Otomatik Açık durum değişikliği modu etkindir. El ile seçme mümkün değildir.</string>
+    <string name="theme_reset_message">Tema durumu varsayılan sıfırlansın mı?</string>
+    
     <!-- Lock Gesture settings -->
     <!-- Security & location settings screen, setting option name -->
     <string name="lockgesture_change_lock_pattern_label">Kilit açma şeklini değiştir</string>
@@ -1481,5 +1494,18 @@
     <!-- Volume icon switch -->
     <string name="show_volume_icon_title">Ses Modu Simgesi</string>
     <string name="show_volume_icon_summary">Ses modu simgesini göster, varsayılan olarak etkin</string>
+
+    <!-- Notification color settings -->
+    <string name="notification_color_settings_title">Bildirim renkleri</string>
+    <string name="notification_color_settings_summary">Normal Renk değişimi, Heads up ve kilit ekranı bildirimleri</string>
+    <string name="notification_media_bg_mode_title">Medya arka planını renklendirin</string>
+    <string name="notification_app_icon_bg_mode_title">Uygulama simgesi arka planını renklendirin</string>
+    <string name="notification_app_icon_color_mode_title">Uygulama simgesini renklendirin</string>
+    <string name="notification_bg_guts_color_title">Uzun basma arka planı</string>
+    <string name="notification_app_icon_bg_color_title">Uygulama simgesi arka plan</string>
+    <string name="notification_color_mode_never_title">Asla</string>
+    <string name="notification_icon_color_mode_greyscale_title">Simgesi gri tonlama ikonu ise</string>
+    <string name="notification_bg_color_mode_no_color_title">Bildirim kendi bir renk içermiyorsa</string>
+    <string name="notification_color_mode_always_title">Her zaman</string>
 
 </resources>
