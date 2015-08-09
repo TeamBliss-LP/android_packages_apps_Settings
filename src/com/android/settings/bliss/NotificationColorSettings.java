@@ -316,7 +316,7 @@ public class NotificationColorSettings extends SettingsPreferenceFragment implem
                 case DLG_RESET:
                     return new AlertDialog.Builder(getActivity())
                     .setTitle(R.string.reset)
-                    .setMessage(R.string.dlg_reset_values_message)
+                    .setMessage(R.string.dlg_reset_notification_colors_message)
                     .setNegativeButton(R.string.cancel, null)
                     .setNeutralButton(R.string.dlg_reset_light,
                         new DialogInterface.OnClickListener() {

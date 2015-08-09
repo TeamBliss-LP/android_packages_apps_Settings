@@ -54,6 +54,7 @@
     <string name="reset_option_message">Reset values to\nAndroid or Bliss default?</string>
     <string name="category_general_title">General options</string>
     <string name="dlg_reset_values_message">Reset values to\nAndroid or Bliss default?</string>
+    <string name="dlg_reset_notification_colors_message">Reset values to\nLight or Dark default?</string>
     <string name="dlg_reset_android">Android</string>
     <string name="dlg_reset_bliss">Bliss</string>
     <string name="dlg_reset_dark">Dark</string>
