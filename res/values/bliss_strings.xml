@@ -16,6 +16,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <!-- Bliss settings screens -->
+    <string name="header_category_bliss">Bliss options</string>
     <string name="header_category_personalization">Personalization</string>
     <string name="interface_settings_title">Bliss interface</string>
 

@@ -95,10 +95,10 @@
 
     </dashboard-category>
 
-    <!-- DEVICE -->
+    <!-- Customize -->
     <dashboard-category
             android:id="@+id/device_section"
-            android:title="@string/header_category_device" >
+            android:title="@string/header_category_bliss" >
 
         <!-- Interface -->
         <dashboard-tile
@@ -151,6 +151,13 @@
                 <categories android:name="cyanogenmod.intent.category.APP_THEMES" />
             </intent>
         </dashboard-tile>
+
+    </dashboard-category>
+
+    <!-- DEVICE -->
+    <dashboard-category
+            android:id="@+id/device_section"
+            android:title="@string/header_category_device" >
 
         <!-- Sound -->
         <dashboard-tile
