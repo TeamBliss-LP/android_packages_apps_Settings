@@ -18,7 +18,7 @@
         android:color="@color/theme_accent">
     <item android:top="0dip" android:bottom="0dip">
         <shape>
-            <solid android:color="@color/dashboard_category_background_color" />
+            <solid android:color="@color/dashboard_category_background_exposed" />
             <stroke android:width="@dimen/dashboard_border_width" android:color="@color/dashboard_border_color" />
             <corners android:bottomLeftRadius="@dimen/dashboard_radius_bottom_left"
                      android:bottomRightRadius="@dimen/dashboard_radius_bottom_right"

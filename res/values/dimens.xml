@@ -60,10 +60,10 @@
     <dimen name="setup_wizard_margin_sides">40dp</dimen>
     <dimen name="setup_wizard_title_area_elevation">3dp</dimen>
 
-    <dimen name="divider_height">3dip</dimen>
-    <dimen name="divider_margin_top">6dip</dimen>
-    <dimen name="divider_margin_bottom">7dip</dimen>
-    <dimen name="vert_divider_width">1dip</dimen>
+    <dimen name="divider_height">0.0dip</dimen>
+    <dimen name="divider_margin_top">0.0dip</dimen>
+    <dimen name="divider_margin_bottom">0.0dip</dimen>
+    <dimen name="vert_divider_width">1.0dip</dimen>
 
     <!--  Size of icons in the top-level of settings  -->
     <dimen name="header_icon_width">28dp</dimen>
@@ -98,7 +98,7 @@
     <dimen name="caption_preview_text_size">48dp</dimen>
 
     <!-- ActionBar height -->
-    <dimen name="actionbar_size">56dip</dimen>
+    <dimen name="actionbar_size">56.0dip</dimen>
 
     <!-- ActionBar contentInsetStart -->
     <dimen name="actionbar_contentInsetStart">16dp</dimen>
@@ -109,20 +109,20 @@
     <dimen name="dashboard_cell_gap_y">0dp</dimen>
 
     <!-- Dashboard padding in its container -->
-    <dimen name="dashboard_padding_start">0dp</dimen>
-    <dimen name="dashboard_padding_end">0dp</dimen>
-    <dimen name="dashboard_padding_top">0dp</dimen>
-    <dimen name="dashboard_padding_bottom">0dp</dimen>
+    <dimen name="dashboard_padding_start">7.0dp</dimen>
+    <dimen name="dashboard_padding_end">7.0dp</dimen>
+    <dimen name="dashboard_padding_top">5dp</dimen>
+    <dimen name="dashboard_padding_bottom">15.0dp</dimen>
 
     <!-- Dashboard category padding start / end -->
-    <dimen name="dashboard_category_padding_start">0dp</dimen>
-    <dimen name="dashboard_category_padding_end">0dp</dimen>
+    <dimen name="dashboard_category_padding_start">6.0dp</dimen>
+    <dimen name="dashboard_category_padding_end">6.0dp</dimen>
 
     <!-- Dashboard category panel elevation -->
-    <dimen name="dashboard_category_elevation">4dp</dimen>
+    <dimen name="dashboard_category_elevation">2.0dp</dimen>
 
     <!-- Dashboard category title layout height -->
-    <dimen name="dashboard_category_title_height">48dp</dimen>
+    <dimen name="dashboard_category_title_height">38.0dp</dimen>
 
     <!-- Dashboard category title margin start -->
     <dimen name="dashboard_category_title_margin_start">16dp</dimen>

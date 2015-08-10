@@ -17,13 +17,13 @@
 <resources>
 
     <!-- Category border width -->
-    <dimen name="dashboard_border_width">0dip</dimen>
+    <dimen name="dashboard_border_width">1dip</dimen>
 
     <!-- Individual corner control -->
-    <dimen name="dashboard_radius_bottom_left">0dip</dimen>
-    <dimen name="dashboard_radius_bottom_right">0dip</dimen>
-    <dimen name="dashboard_radius_top_left">0dip</dimen>
-    <dimen name="dashboard_radius_top_right">0dip</dimen>
+    <dimen name="dashboard_radius_bottom_left">10.0dip</dimen>
+    <dimen name="dashboard_radius_bottom_right">10.0dip</dimen>
+    <dimen name="dashboard_radius_top_left">10.0dip</dimen>
+    <dimen name="dashboard_radius_top_right">10.0dip</dimen>
 
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
