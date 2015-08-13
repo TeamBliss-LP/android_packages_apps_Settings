@@ -16,12 +16,13 @@
 
 package com.android.settings.bliss;
 
-
+import android.app.Activity;
 import android.app.ActivityManagerNative;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.app.IActivityManager;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -31,7 +32,10 @@ import android.os.SystemProperties;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
+import android.preference.PreferenceScreen;
+import android.preference.SwitchPreference;
 import android.provider.SearchIndexableResource;
+import android.provider.Settings;
 import android.text.Editable;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -39,6 +43,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 
+import com.android.internal.util.cm.QSUtils;
 import com.android.settings.R;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
@@ -56,8 +61,12 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final int DIALOG_DENSITY_WARNING = 1;
 
     private static final String KEY_LCD_DENSITY = "lcd_density";
+    private static final String DISABLE_TORCH_ON_SCREEN_OFF = "disable_torch_on_screen_off";
+    private static final String DISABLE_TORCH_ON_SCREEN_OFF_DELAY = "disable_torch_on_screen_off_delay";
 
     private ListPreference mLcdDensityPreference;
+    private SwitchPreference mTorchOff;
+    private ListPreference mTorchOffDelay;
 
     protected Context mContext;
 
@@ -68,6 +77,10 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
         mContext = getActivity().getApplicationContext();
         int newDensityValue;
+
+        ContentResolver resolver = getActivity().getContentResolver();
+        Activity activity = getActivity();
+        PreferenceScreen prefSet = getPreferenceScreen();
 
         mLcdDensityPreference = (ListPreference) findPreference(KEY_LCD_DENSITY);
         int defaultDensity = DisplayMetrics.DENSITY_DEVICE;
@@ -88,6 +101,19 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         mLcdDensityPreference.setValue(String.valueOf(currentDensity));
         mLcdDensityPreference.setOnPreferenceChangeListener(this);
         updateLcdDensityPreferenceDescription(currentDensity);
+
+        mTorchOff = (SwitchPreference) prefSet.findPreference(DISABLE_TORCH_ON_SCREEN_OFF);
+        mTorchOffDelay = (ListPreference) prefSet.findPreference(DISABLE_TORCH_ON_SCREEN_OFF_DELAY);
+        int torchOffDelay = Settings.System.getInt(resolver,
+                Settings.System.DISABLE_TORCH_ON_SCREEN_OFF_DELAY, 10);
+        mTorchOffDelay.setValue(String.valueOf(torchOffDelay));
+        mTorchOffDelay.setSummary(mTorchOffDelay.getEntry());
+        mTorchOffDelay.setOnPreferenceChangeListener(this);
+
+        if (!QSUtils.deviceSupportsFlashLight(activity)) {
+            prefSet.removePreference(mTorchOff);
+            prefSet.removePreference(mTorchOffDelay);
+        }
     }
 
     @Override
@@ -111,6 +137,14 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                 writeLcdDensityPreference(value);
                 updateLcdDensityPreferenceDescription(value);
             }
+		}
+        if (preference == mTorchOffDelay) {
+            int torchOffDelay = Integer.valueOf((String) objValue);
+            int index = mTorchOffDelay.findIndexOfValue((String) objValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.DISABLE_TORCH_ON_SCREEN_OFF_DELAY, torchOffDelay);
+            mTorchOffDelay.setSummary(mTorchOffDelay.getEntries()[index]);
+            return true;
         }
         return false;
     }
