@@ -1534,4 +1534,8 @@
     <!-- QS Tiles Columns -->
     <string name="qs_num_columns_title">Number of tiles per row</string>
     <string name="qs_num_columns_showing">%1$s tiles per row showing</string>
+
+    <!-- Three-fingers-swipe to screenshot -->
+    <string name="three_finger_gesture">Three finger gesture</string>
+    <string name="three_finger_gesture_summary">Swipe three finger to screenshot</string>
 </resources>
