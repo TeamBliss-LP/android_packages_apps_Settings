@@ -34,7 +34,17 @@ import com.android.settings.deviceinfo.UsbSettings;
 import com.android.settings.fuelgauge.PowerUsageSummary;
 import com.android.settings.inputmethod.InputMethodAndLanguageSettings;
 import com.android.settings.location.LocationSettings;
-import com.android.settings.lockscreen.LockScreenSettings;
+import com.android.settings.bliss.AnimationSettings;
+import com.android.settings.bliss.BatteryStyle;
+import com.android.settings.bliss.BlissDisplaySettings;
+import com.android.settings.bliss.InterfaceSettings;
+import com.android.settings.bliss.LockScreenSettings;
+import com.android.settings.bliss.NavbarSettings;
+import com.android.settings.bliss.NavigationSettings;
+import com.android.settings.bliss.BlissSoundSettings;
+import com.android.settings.bliss.StatusBarClockStyle;
+import com.android.settings.bliss.StatusBarBatteryStatusSettings;
+import com.android.settings.bliss.RecentsSettings;
 import com.android.settings.net.DataUsageMeteredSettings;
 import com.android.settings.notification.NotificationManagerSettings;
 import com.android.settings.SoundSettings;
@@ -60,21 +70,32 @@ public final class Ranking {
     public static final int RANK_SIM = 3;
     public static final int RANK_DATA_USAGE = 4;
     public static final int RANK_WIRELESS = 5;
-    public static final int RANK_HOME = 6;
-    public static final int RANK_DISPLAY = 7;
-    public static final int RANK_NOTIFICATIONS = 9;
-    public static final int RANK_STORAGE = 10;
-    public static final int RANK_POWER_USAGE = 11;
-    public static final int RANK_USERS = 12;
-    public static final int RANK_LOCATION = 13;
-    public static final int RANK_SECURITY = 14;
-    public static final int RANK_IME = 15;
-    public static final int RANK_PRIVACY = 16;
-    public static final int RANK_DATE_TIME = 17;
-    public static final int RANK_ACCESSIBILITY = 18;
-    public static final int RANK_PRINTING = 19;
-    public static final int RANK_DEVELOPEMENT = 20;
-    public static final int RANK_DEVICE_INFO = 21;
+    public static final int RANK_ANIMATION = 6;
+    public static final int RANK_INTERFACE = 7;
+    public static final int RANK_BATTERYSTYLE = 8;
+    public static final int RANK_DISPLAYSETTINGS = 9;
+    public static final int RANK_LOCKSCREEN = 10;
+    public static final int RANK_NAVBAR = 11;
+    public static final int RANK_NAVIGATION = 12;
+    public static final int RANK_SOUNDSETTINGS = 13;
+    public static final int RANK_CLOCKSTYLE = 14;
+    public static final int RANK_BATTERYSTATUS = 15;
+    public static final int RANK_RECENTS = 16;
+    public static final int RANK_HOME = 17;
+    public static final int RANK_DISPLAY = 18;
+    public static final int RANK_NOTIFICATIONS = 19;
+    public static final int RANK_STORAGE = 20;
+    public static final int RANK_POWER_USAGE = 21;
+    public static final int RANK_USERS = 22;
+    public static final int RANK_LOCATION = 23;
+    public static final int RANK_SECURITY = 24;
+    public static final int RANK_IME = 25;
+    public static final int RANK_PRIVACY = 26;
+    public static final int RANK_DATE_TIME = 27;
+    public static final int RANK_ACCESSIBILITY = 28;
+    public static final int RANK_PRINTING = 29;
+    public static final int RANK_DEVELOPEMENT = 30;
+    public static final int RANK_DEVICE_INFO = 31;
 
     public static final int RANK_UNDEFINED = -1;
     public static final int RANK_OTHERS = 1024;
@@ -103,6 +124,39 @@ public final class Ranking {
 
         // Other wireless settinfs
         sRankMap.put(WirelessSettings.class.getName(), RANK_WIRELESS);
+
+        // Bliss Interface
+        sRankMap.put(AnimationSettings.class.getName(), RANK_ANIMATION);
+
+        // Bliss Interface
+        sRankMap.put(InterfaceSettings.class.getName(), RANK_INTERFACE);
+
+        // Bliss Battery Bar
+        sRankMap.put(BatteryStyle.class.getName(), RANK_BATTERYSTYLE);
+
+        // Bliss Advanced Dispaly Options
+        sRankMap.put(BlissDisplaySettings.class.getName(), RANK_DISPLAYSETTINGS);
+
+        // Bliss Lockscreen Options
+        sRankMap.put(LockScreenSettings.class.getName(), RANK_LOCKSCREEN);
+
+        // Bliss Navigation Bar 
+        sRankMap.put(NavbarSettings.class.getName(), RANK_NAVBAR);
+
+        // Bliss Navigation Options
+        sRankMap.put(NavigationSettings.class.getName(), RANK_NAVIGATION);
+
+        // Bliss Advanced Sound Settings
+        sRankMap.put(BlissSoundSettings.class.getName(), RANK_SOUNDSETTINGS);
+
+        // Bliss Clock Style Options
+        sRankMap.put(StatusBarClockStyle.class.getName(), RANK_CLOCKSTYLE);
+
+        // Bliss Battery Icon Options
+        sRankMap.put(StatusBarBatteryStatusSettings.class.getName(), RANK_BATTERYSTATUS);
+
+        // Bliss Recents Options
+        sRankMap.put(RecentsSettings.class.getName(), RANK_RECENTS);
 
         // Home
         sRankMap.put(HomeSettings.class.getName(), RANK_HOME);

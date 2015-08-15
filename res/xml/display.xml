@@ -169,7 +169,7 @@
         <!-- Display -->
         <PreferenceScreen
                 android:key="display_settings"
-                android:fragment="com.android.settings.bliss.DisplaySettings"
+                android:fragment="com.android.settings.bliss.BlissDisplaySettings"
                 android:title="@string/advanced_display_settings_title" />
 
     </PreferenceCategory>

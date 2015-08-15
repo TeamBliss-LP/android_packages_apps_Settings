@@ -32,6 +32,17 @@ import com.android.settings.SecuritySettings;
 import com.android.settings.WirelessSettings;
 import com.android.settings.accessibility.AccessibilitySettings;
 import com.android.settings.bluetooth.BluetoothSettings;
+import com.android.settings.bliss.AnimationSettings;
+import com.android.settings.bliss.BatteryStyle;
+import com.android.settings.bliss.BlissDisplaySettings;
+import com.android.settings.bliss.InterfaceSettings;
+import com.android.settings.bliss.LockScreenSettings;
+import com.android.settings.bliss.NavbarSettings;
+import com.android.settings.bliss.NavigationSettings;
+import com.android.settings.bliss.BlissSoundSettings;
+import com.android.settings.bliss.StatusBarClockStyle;
+import com.android.settings.bliss.StatusBarBatteryStatusSettings;
+import com.android.settings.bliss.RecentsSettings;
 import com.android.settings.cyanogenmod.NotificationDrawerSettings;
 import com.android.settings.cyanogenmod.StatusBarSettings;
 import com.android.settings.deviceinfo.Memory;
@@ -39,7 +50,6 @@ import com.android.settings.deviceinfo.UsbSettings;
 import com.android.settings.fuelgauge.PowerUsageSummary;
 import com.android.settings.inputmethod.InputMethodAndLanguageSettings;
 import com.android.settings.location.LocationSettings;
-import com.android.settings.lockscreen.LockScreenSettings;
 import com.android.settings.net.DataUsageMeteredSettings;
 import com.android.settings.notification.NotificationManagerSettings;
 import com.android.settings.SoundSettings;
@@ -124,9 +134,9 @@ public final class SearchIndexableResources {
         sResMap.put(LockScreenSettings.class.getName(),
                 new SearchIndexableResource(
                         Ranking.getRankForClassName(LockScreenSettings.class.getName()),
-                        NO_DATA_RES_ID,
+                        R.xml.bliss_lockscreen_settings,
                         LockScreenSettings.class.getName(),
-                        R.drawable.ic_settings_security));
+                        R.drawable.ic_bliss_interface));
 
         sResMap.put(HomeSettings.class.getName(),
                 new SearchIndexableResource(
@@ -310,6 +320,76 @@ public final class SearchIndexableResources {
                         NO_DATA_RES_ID,
                         AmbientSettings.class.getName(),
                         R.drawable.ic_settings_display));
+
+        sResMap.put(RecentsSettings.class.getName(),
+                new SearchIndexableResource(
+                        Ranking.getRankForClassName(RecentsSettings.class.getName()),
+                        R.xml.recents_settings,
+                        RecentsSettings.class.getName(),
+                        R.drawable.ic_bliss_interface));
+
+        sResMap.put(NavbarSettings.class.getName(),
+                new SearchIndexableResource(
+                        Ranking.getRankForClassName(NavbarSettings.class.getName()),
+                        R.xml.navbar_settings,
+                        NavbarSettings.class.getName(),
+                        R.drawable.ic_bliss_interface));
+
+        sResMap.put(StatusBarClockStyle.class.getName(),
+                new SearchIndexableResource(
+                        Ranking.getRankForClassName(StatusBarClockStyle.class.getName()),
+                        R.xml.status_bar_clock_style,
+                        StatusBarClockStyle.class.getName(),
+                        R.drawable.ic_bliss_interface));
+
+        sResMap.put(StatusBarBatteryStatusSettings.class.getName(),
+                new SearchIndexableResource(
+                        Ranking.getRankForClassName(StatusBarBatteryStatusSettings.class.getName()),
+                        R.xml.status_bar_battery_status_settings,
+                        StatusBarBatteryStatusSettings.class.getName(),
+                        R.drawable.ic_bliss_interface));
+
+        sResMap.put(BlissDisplaySettings.class.getName(),
+                new SearchIndexableResource(
+                        Ranking.getRankForClassName(BlissDisplaySettings.class.getName()),
+                        R.xml.bliss_display_settings,
+                        BlissDisplaySettings.class.getName(),
+                        R.drawable.ic_bliss_interface));
+
+        sResMap.put(BatteryStyle.class.getName(),
+                new SearchIndexableResource(
+                        Ranking.getRankForClassName(BatteryStyle.class.getName()),
+                        R.xml.bliss_battery_style,
+                        BatteryStyle.class.getName(),
+                        R.drawable.ic_bliss_interface));
+
+        sResMap.put(BlissSoundSettings.class.getName(),
+                new SearchIndexableResource(
+                        Ranking.getRankForClassName(BlissSoundSettings.class.getName()),
+                        R.xml.bliss_sound_settings,
+                        BlissSoundSettings.class.getName(),
+                        R.drawable.ic_bliss_interface));
+
+        sResMap.put(NavigationSettings.class.getName(),
+                new SearchIndexableResource(
+                        Ranking.getRankForClassName(NavigationSettings.class.getName()),
+                        R.xml.bliss_navigation_settings,
+                        NavigationSettings.class.getName(),
+                        R.drawable.ic_bliss_interface));
+
+        sResMap.put(InterfaceSettings.class.getName(),
+                new SearchIndexableResource(
+                        Ranking.getRankForClassName(InterfaceSettings.class.getName()),
+                        R.xml.bliss_interface_settings,
+                        InterfaceSettings.class.getName(),
+                        R.drawable.ic_bliss_interface));
+
+        sResMap.put(AnimationSettings.class.getName(),
+                new SearchIndexableResource(
+                        Ranking.getRankForClassName(AnimationSettings.class.getName()),
+                        R.xml.animation_settings,
+                        AnimationSettings.class.getName(),
+                        R.drawable.ic_bliss_interface));
     }
 
     private SearchIndexableResources() {

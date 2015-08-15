@@ -52,7 +52,7 @@ import com.android.settings.SettingsPreferenceFragment;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DisplaySettings extends SettingsPreferenceFragment implements
+public class BlissDisplaySettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
     private static final String TAG = "DisplaySettings";

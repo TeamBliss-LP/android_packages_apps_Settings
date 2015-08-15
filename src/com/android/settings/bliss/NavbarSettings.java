@@ -19,6 +19,7 @@ package com.android.settings.bliss;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
+import android.content.Context;
 import android.content.ContentResolver;
 import android.content.DialogInterface;
 import android.database.ContentObserver;
@@ -33,6 +34,9 @@ import android.preference.PreferenceScreen;
 import android.preference.SwitchPreference;
 import android.preference.SlimSeekBarPreference;
 import android.provider.Settings;
+import android.provider.SearchIndexableResource;
+import com.android.settings.search.BaseSearchIndexProvider;
+import com.android.settings.search.Indexable;
 
 import com.android.internal.util.bliss.DeviceUtils;
 import com.android.internal.util.bliss.Action;
@@ -40,8 +44,12 @@ import com.android.internal.util.bliss.Action;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.R;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
 public class NavbarSettings extends SettingsPreferenceFragment implements
-        OnPreferenceChangeListener {
+        OnPreferenceChangeListener, Indexable {
 
     private static final String TAG = "NavBar";
     private static final String PREF_MENU_LOCATION = "pref_navbar_menu_location";
@@ -374,4 +382,25 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
         }
     }
 
+    public static final Indexable.SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
+        new BaseSearchIndexProvider() {
+        @Override
+        public List<SearchIndexableResource> getXmlResourcesToIndex(Context context,
+                                                                    boolean enabled) {
+            ArrayList<SearchIndexableResource> result =
+                new ArrayList<SearchIndexableResource>();
+
+            SearchIndexableResource sir = new SearchIndexableResource(context);
+            sir.xmlResId = R.xml.navbar_settings;
+            result.add(sir);
+
+            return result;
+        }
+
+        @Override
+        public List<String> getNonIndexableKeys(Context context) {
+            ArrayList<String> result = new ArrayList<String>();
+            return result;
+        }
+    };
 }
