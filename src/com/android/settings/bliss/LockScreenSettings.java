@@ -24,7 +24,6 @@ import android.content.Context;
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Resources;
 import android.provider.SearchIndexableResource;
 import android.content.SharedPreferences;
@@ -62,7 +61,6 @@ public class LockScreenSettings extends SettingsPreferenceFragment
     private static final String VISUALIZER_CATEGORY = "visualizer";
 
     private static final String CARRIERLABEL_ON_LOCKSCREEN="lock_screen_hide_carrier";
-    private static final String KEY_LOCKSCREEN_WALLPAPER = "lockscreen_wallpaper";
 
     private PreferenceScreen mLockScreen;
     private SwitchPreference mCarrierLabelOnLockScreen;
@@ -105,9 +103,6 @@ public class LockScreenSettings extends SettingsPreferenceFragment
         } else {
             prefSet.removePreference(mCarrierLabelOnLockScreen);
         }
-        if (!isWallpaperPickerInstalled()) {
-            prefSet.removePreference(findPreference(KEY_LOCKSCREEN_WALLPAPER));
-        }
     }
 
     @Override
@@ -141,17 +136,6 @@ public class LockScreenSettings extends SettingsPreferenceFragment
             return true;
         }
         return false;
-    }
-
-    private boolean isWallpaperPickerInstalled() {
-        boolean ret = true;
-        final PackageManager pm = getPackageManager();
-        try {
-            pm.getPackageInfo("com.slim.wallpaperpicker", PackageManager.GET_META_DATA);
-        } catch (NameNotFoundException e) {
-            ret = false;
-        }
-        return ret;
     }
 
     public static final Indexable.SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =

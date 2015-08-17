@@ -1496,10 +1496,6 @@
     <string name="lock_screen_hide_carrier_title">Hide carrier on lock screen</string>
     <string name="lock_screen_hide_carrier_summary">SystemUI will be restarted on switch toggle.</string>
 
-    <!-- Lockscreen wallpaper -->
-    <string name="lockscreen_wallpaper_title">Wallpaper</string>
-    <string name="lockscreen_wallpaper_summary">Set lockscreen wallpaper</string>
-
     <!-- Status bar temperature -->
     <string name="status_bar_temperature_title">Temperature</string>
     <string name="status_bar_temperature_hidden">Hidden</string>
