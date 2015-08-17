@@ -87,4 +87,12 @@
 
     </PreferenceCategory>
 
+        <PreferenceScreen
+            android:key="lockscreen_wallpaper"
+            android:title="@string/lockscreen_wallpaper_title"
+            android:summary="@string/lockscreen_wallpaper_summary"
+            android:persistent="false"
+            android:fragment="com.android.settings.bliss.LockscreenWallpaper">
+        </PreferenceScreen>
+
 </PreferenceScreen>

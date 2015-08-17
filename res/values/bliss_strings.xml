@@ -1542,4 +1542,11 @@
     <string name="reset_user_preferences_title">Reset preferences</string>
     <string name="reset_user_preferences_summary">Restores user interface preferences to default values</string>
     <string name="reset_user_preferences_dialog">Are you sure you want to reset your preferences?</string>
+
+    <!-- Lockscreen wallpaper -->
+    <string name="lockscreen_wallpaper_title">Wallpaper</string>
+    <string name="lockscreen_wallpaper_summary">Set lockscreen wallpaper</string>
+    <string name="lockscreen_wallpaper_set_title">Set lock screen wallpaper</string>
+    <string name="lockscreen_wallpaper_clear_title">Clear lock screen wallpaper</string>
+    <string name="reset_lockscreen_wallpaper">Set to default</string>
 </resources>
