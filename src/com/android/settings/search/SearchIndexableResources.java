@@ -40,6 +40,7 @@ import com.android.settings.bliss.LockScreenSettings;
 import com.android.settings.bliss.NavbarSettings;
 import com.android.settings.bliss.NavigationSettings;
 import com.android.settings.bliss.BlissSoundSettings;
+import com.android.settings.bliss.SmartControl;
 import com.android.settings.bliss.StatusBarClockStyle;
 import com.android.settings.bliss.StatusBarBatteryStatusSettings;
 import com.android.settings.bliss.RecentsSettings;
@@ -390,6 +391,13 @@ public final class SearchIndexableResources {
                         R.xml.animation_settings,
                         AnimationSettings.class.getName(),
                         R.drawable.ic_bliss_interface));
+
+        sResMap.put(SmartControl.class.getName(),
+                new SearchIndexableResource(
+                        Ranking.getRankForClassName(SmartControl.class.getName()),
+                        R.xml.bliss_smartcontrol,
+                        SmartControl.class.getName(),
+                        R.drawable.ic_settings_smartcontrol));
     }
 
     private SearchIndexableResources() {

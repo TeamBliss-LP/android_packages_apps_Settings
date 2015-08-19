@@ -42,6 +42,7 @@ import com.android.settings.bliss.LockScreenSettings;
 import com.android.settings.bliss.NavbarSettings;
 import com.android.settings.bliss.NavigationSettings;
 import com.android.settings.bliss.BlissSoundSettings;
+import com.android.settings.bliss.SmartControl;
 import com.android.settings.bliss.StatusBarClockStyle;
 import com.android.settings.bliss.StatusBarBatteryStatusSettings;
 import com.android.settings.bliss.RecentsSettings;
@@ -84,18 +85,19 @@ public final class Ranking {
     public static final int RANK_HOME = 17;
     public static final int RANK_DISPLAY = 18;
     public static final int RANK_NOTIFICATIONS = 19;
-    public static final int RANK_STORAGE = 20;
-    public static final int RANK_POWER_USAGE = 21;
-    public static final int RANK_USERS = 22;
-    public static final int RANK_LOCATION = 23;
-    public static final int RANK_SECURITY = 24;
-    public static final int RANK_IME = 25;
-    public static final int RANK_PRIVACY = 26;
-    public static final int RANK_DATE_TIME = 27;
-    public static final int RANK_ACCESSIBILITY = 28;
-    public static final int RANK_PRINTING = 29;
-    public static final int RANK_DEVELOPEMENT = 30;
-    public static final int RANK_DEVICE_INFO = 31;
+    public static final int RANK_SMART = 20;
+    public static final int RANK_STORAGE = 21;
+    public static final int RANK_POWER_USAGE = 22;
+    public static final int RANK_USERS = 23;
+    public static final int RANK_LOCATION = 24;
+    public static final int RANK_SECURITY = 25;
+    public static final int RANK_IME = 26;
+    public static final int RANK_PRIVACY = 27;
+    public static final int RANK_DATE_TIME = 28;
+    public static final int RANK_ACCESSIBILITY = 29;
+    public static final int RANK_PRINTING = 30;
+    public static final int RANK_DEVELOPEMENT = 31;
+    public static final int RANK_DEVICE_INFO = 32;
 
     public static final int RANK_UNDEFINED = -1;
     public static final int RANK_OTHERS = 1024;
@@ -169,6 +171,9 @@ public final class Ranking {
         sRankMap.put(NotificationManagerSettings.class.getName(), RANK_NOTIFICATIONS);
         sRankMap.put(OtherSoundSettings.class.getName(), RANK_NOTIFICATIONS);
         sRankMap.put(ZenModeSettings.class.getName(), RANK_NOTIFICATIONS);
+
+        // Bliss SmartControl
+        sRankMap.put(SmartControl.class.getName(), RANK_SMART);
 
         // Storage
         sRankMap.put(Memory.class.getName(), RANK_STORAGE);

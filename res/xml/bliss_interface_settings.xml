@@ -87,6 +87,13 @@
         android:title="@string/recents_options_title"
         android:icon="@drawable/ic_settings_recents" />
 
+    <!-- Smartcontrol Options -->
+    <PreferenceScreen
+        android:key="smartcontrol"
+        android:fragment="com.android.settings.bliss.SmartControl"	
+        android:title="@string/smartcontrol_title"
+        android:icon="@drawable/ic_settings_smartcontrol" />
+
     <!-- Status Bar Settings -->
     <PreferenceScreen
         android:id="@+id/status_bar_settings"
