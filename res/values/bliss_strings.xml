@@ -1552,4 +1552,8 @@
 
     <!--SmartControl Settings -->
     <string name="smartcontrol_title">Smart Control</string>
+    <string name="shake_clean_recent">Clean recents</string>
+    <string name="shake_clean_recent_summary">Clean recent task by shake</string>
+    <string name="shake_clean_notification">Clean notifications</string>
+    <string name="shake_clean_notification_summary">Clean notification by shake</string>
 </resources>
