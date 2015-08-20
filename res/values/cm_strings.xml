@@ -1369,4 +1369,6 @@
     <string name="keep_screen_on_debugging">While USB debugging</string>
     <string name="keep_screen_on_charging">While charging</string>
 
+    <!-- Quick Settings Reset -->
+    <string name="quick_settings_reset_message">Reset quick settings tiles?</string>
 </resources>
