@@ -16,6 +16,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <!-- Bliss settings screens -->
+    <string name="header_category_bliss">Bliss seçenekleri</string>
     <string name="header_category_personalization">Kişiselleştirme</string>
     <string name="interface_settings_title">Bliss Kullanıcı Arayüzü</string>
 
@@ -54,6 +55,7 @@
     <string name="reset_option_message">Android Varsayılan için değerleri sıfırla\nAndroid- ya da Bliss?</string>
     <string name="category_general_title">Genel seçenekler</string>
     <string name="dlg_reset_values_message">Android Varsayılan için değerleri sıfırla\nAndroid- ya da Bliss?</string>
+    <string name="dlg_reset_notification_colors_message">Değerleri sıfırla\nAçık veya Koyu varsayılan?</string>
     <string name="dlg_reset_android">Android</string>
     <string name="dlg_reset_bliss">Bliss</string>
     <string name="dlg_reset_dark">Koyu</string>
@@ -1276,9 +1278,11 @@
     <string name="tab_size_summary">Görünür sekmenin boyutunu değiştirme</string>
 
     <!-- TRDS 5.0 -->
-    <string name="theme_settings_title">Bliss Koyu</string>
+    <string name="theme_settings_title">Bliss Koyu Tema</string>
     <string name="theme_auto_mode_title">Tema Seçici</string>
     <string name="theme_auto_mode_off">El ile</string>
+    <string name="theme_override_custom_colors_title">Özel renkler geçersiz kıl</string>
+    <string name="theme_override_custom_colors_summary">Özel bildirim ve hızlı ayarlar renklerini geçersiz kıl</string>
     <string name="theme_auto_mode_lightsensor">Açık durum değişikliği (deneysel)</string>
     <string name="theme_auto_mode_twilight">Gündüz</string>
     <string name="theme_auto_switch_mode_error">Otomatik Açık durum değişikliği modu etkindir. El ile seçme mümkün değildir.</string>
@@ -1399,6 +1403,27 @@
     <!-- Double tap gesture anywhere on the lock screen put device to sleep -->
     <string name="double_tap_sleep_anywhere_title">Uyutmak için her hangi bir yere iki tez dokunun</string>
     <string name="double_tap_sleep_anywhere_summary">Kilit ekranında herhangi bir yere iki kez dokunarak cihazı uyku moduna alabilirsiniz</string>
+    
+    <!-- Recent panel -->
+    <string name="recent_panel_category">Slim son kullanılanlar paneli</string>
+    <string name="use_slim_recents_title">Slim son kullanılanlar</string>
+    <string name="show_running_tasks_title">Sadece çalışan uygulamaları göster</string>
+    <string name="recents_max_apps_title">İzin verilen maksimum uygulama sayısı</string>
+    <string name="recent_panel_scale_title">Boyut</string>
+    <string name="recent_panel_scale_summary">>Son kullanı. uygulamalar panel boyutu yüzdesi</string>
+    <string name="recent_panel_100">100% (varsayılan)</string>
+    <string name="recent_panel_85">85%</string>
+    <string name="recent_panel_70">70%</string>
+    <string name="recent_panel_expanded_mode_title">Genişletilmiş mod</string>
+    <string name="recent_panel_expanded_mode_summary">Son görevlerin genişletilmiş önizleme modu</string>
+    <string name="recent_panel_expanded_mode_auto">Otomatik (varsayılan)</string>
+    <string name="recent_panel_expanded_mode_always">Herzaman</string>
+    <string name="recent_panel_expanded_mode_never">Asla</string>
+    <string name="recent_panel_show_topmost_title">Üstteki görevi göster</string>
+    <string name="recent_panel_show_topmost_summary">Son kullanılanlar ekranında son kullanılan uygulamayı dahil et</string>
+    <string name="recent_panel_bg_color_title">Panel arkaplan rengi</string>
+    <string name="recent_card_bg_color_title">Kart arkaplan rengi</string>
+    <string name="recent_card_text_color_title">Kart metin rengi</string>
 
     <!-- ATTENTION: RTL languages need to replace left with right -->
     <string name="recent_panel_lefty_mode_title">Sol kenarda göster</string>
@@ -1471,10 +1496,6 @@
     <string name="lock_screen_hide_carrier_title">Kilit ekranında ağ ismini gizle</string>
     <string name="lock_screen_hide_carrier_summary">SystemUI anahtarı geçiş üzerinde yeniden başlatılacak.</string>
 
-    <!-- Lockscreen wallpaper -->
-    <string name="lockscreen_wallpaper_title">Duvar Kağıdı</string>
-    <string name="lockscreen_wallpaper_summary">Kilit ekranı duvar kağıdını ayarla</string>
-     
     <!-- Status bar temperature -->
     <string name="status_bar_temperature_title">Sıcaklık</string>
     <string name="status_bar_temperature_hidden">Gizli</string>
@@ -1507,5 +1528,32 @@
     <string name="notification_icon_color_mode_greyscale_title">Simgesi gri tonlama ikonu ise</string>
     <string name="notification_bg_color_mode_no_color_title">Bildirim kendi bir renk içermiyorsa</string>
     <string name="notification_color_mode_always_title">Her zaman</string>
+    
+    <!-- QS Tiles Columns -->
+    <string name="qs_num_columns_title">Satır başına karo sayısı</string>
+    <string name="qs_num_columns_showing">Satır başına %1$s karo gösterilir</string>
 
+    <!-- Three-fingers-swipe to screenshot -->
+    <string name="three_finger_gesture">Üç parmak hareketi</string>
+    <string name="three_finger_gesture_summary">Ekran görüntüsü almak için üç parmağınızı kaydırın</string>
+
+    <!--User preferences settings-->
+    <string name="personalization">Kişiselleştirme</string>
+    <string name="reset_user_preferences_title">Tercihleri sıfırla</string>
+    <string name="reset_user_preferences_summary">Kullanıcı arabirimi tercihlerini varsayılan değerlere geri yükler</string>
+    <string name="reset_user_preferences_dialog">Tercihlerinizi sıfırlamak istediğinizden emin misiniz?</string>
+
+    <!-- Lockscreen wallpaper -->
+    <string name="lockscreen_wallpaper_title">Duvar ağıdı</string>
+    <string name="lockscreen_wallpaper_summary">Kilit ekranı duvar kağıdını ayarla</string>
+    <string name="lockscreen_wallpaper_set_title">Kilit ekranı duvar kağıdını ayarla</string>
+    <string name="lockscreen_wallpaper_clear_title">Kilit ekranı duvar kağıdını temizle</string>
+    <string name="reset_lockscreen_wallpaper">Varsayılana ayarla</string>
+
+    <!--SmartControl Settings -->
+    <string name="smartcontrol_title">Akıllı Kontrol</string>
+    <string name="shake_clean_recent">Son kullanılanları temizle</string>
+    <string name="shake_clean_recent_summary">Sallayınca son kullanılanları temizler</string>
+    <string name="shake_clean_notification">Bildirimleri temizle</string>
+    <string name="shake_clean_notification_summary">Sallayınca bildirimleri temizler</string>
 </resources>
