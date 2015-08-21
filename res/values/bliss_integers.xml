@@ -5,6 +5,4 @@
     <integer name="maskDown">0x00000002</integer>
     <integer name="maskUnit">0x00000004</integer>
     <integer name="maskPeriod">0xFFFF0000</integer>
-
-    <integer name="dashboard_num_columns">2</integer>
 </resources>
