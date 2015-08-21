@@ -102,7 +102,7 @@ public class ThemeSettings extends SettingsPreferenceFragment
 
         mOverrideCustomColor = (SwitchPreference) prefSet.findPreference(OVERRIDE_CUSTOM_COLORS);
         mOverrideCustomColor.setChecked((Settings.System.getInt(getContentResolver(),
-                Settings.System.OVERRIDE_CUSTOM_COLORS, 1) == 1));
+                Settings.System.OVERRIDE_CUSTOM_COLORS, 0) == 1));
         mOverrideCustomColor.setOnPreferenceChangeListener(this);
 
         final Activity activity = getActivity();
