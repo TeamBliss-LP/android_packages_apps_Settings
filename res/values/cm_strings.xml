@@ -973,6 +973,8 @@
     <string name="lock_directly_show_pattern">Directly show pattern view</string>
     <!-- Whether the keyguard will directly pass to PIN entry -->
     <string name="lock_directly_show_pin">Directly show PIN entry</string>
+    <!-- Whether the keyguard will directly pass to gesture entry -->
+    <string name="lock_directly_show_gesture">Directly show gesture </string>
 
     <!-- Screen security -->
     <string name="unlock_quick_unlock_control_title">Quick unlock</string>
