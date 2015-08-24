@@ -1556,4 +1556,8 @@
     <string name="shake_clean_recent_summary">Clean recent task by shake</string>
     <string name="shake_clean_notification">Clean notifications</string>
     <string name="shake_clean_notification_summary">Clean notification by shake</string>
+
+   <string name="contextual_title">Contextual headers</string>
+   <string name="status_bar_custom_header_title">Custom header image</string>
+   <string name="status_bar_custom_header_summary">Enable notification panel header image</string>
 </resources>
