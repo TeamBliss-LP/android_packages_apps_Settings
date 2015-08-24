@@ -52,6 +52,16 @@
         android:defaultValue="0"
         android:persistent="false" />
 
+    <PreferenceCategory
+        android:title="@string/contextual_title" >
+
+        <com.android.settings.cyanogenmod.SecureSettingSwitchPreference
+            android:key="status_bar_custom_header"
+            android:title="@string/status_bar_custom_header_title"
+            android:summary="@string/status_bar_custom_header_summary"
+            android:defaultValue="false"/>
+    </PreferenceCategory>
+
 
     <PreferenceCategory
         android:title="@string/qs_category_title">
