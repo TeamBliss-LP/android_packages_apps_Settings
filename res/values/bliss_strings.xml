@@ -775,12 +775,15 @@
     <string name="notification_force_expand_summary">Force expanded notifications on all apps that support it</string>
 
     <!-- QS Custom Colors -->
-    <string name="qs_colors_title">Quick Settings Color Options</string>
+    <string name="qs_weather_title">Weather options</string>
+    <string name="qs_colors_title">Quick settings display options</string>
+    <string name="qs_color_options">Quick settings color options</string>
     <string name="qs_colors_summary">Change background, icon and text colors for the tiles</string>
     <string name="qs_transparent_shade_title">Shade alpha</string>
     <string name="qs_transparent_shade_summary">Ability to apply color alpha value and make notification shade transparent</string>
     <string name="qs_color_switch_title">Custom color switch</string>
     <string name="notification_drawer_clear_all_icon_color_title">Clear all icon</string>
+    <string name="header_colors_title">Expanded header colors</string>
 
     <!-- QuickSettings brightness slider -->
     <string name="qs_brightness_slider_title">Brightness slider</string>
