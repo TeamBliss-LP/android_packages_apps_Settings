@@ -775,7 +775,6 @@
     <string name="notification_force_expand_summary">Force expanded notifications on all apps that support it</string>
 
     <!-- QS Custom Colors -->
-    <string name="qs_weather_title">Weather options</string>
     <string name="qs_colors_title">Quick settings display options</string>
     <string name="qs_color_options">Quick settings color options</string>
     <string name="qs_colors_summary">Change background, icon and text colors for the tiles</string>

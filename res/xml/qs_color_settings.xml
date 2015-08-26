@@ -28,9 +28,6 @@
             android:defaultValue="false"/>
     </PreferenceCategory>
 
-    <PreferenceCategory
-        android:title="@string/qs_weather_title" >
-
     <SwitchPreference
 	    android:key="expanded_header_show_weather"
 	    android:title="@string/expanded_header_show_weather_title"
@@ -42,7 +39,6 @@
 	    android:title="@string/expanded_header_show_weather_location_title"
 	    android:summary="@string/expanded_header_show_weather_location_summary"
 	    android:defaultValue="true" />
-    </PreferenceCategory>
 
     <PreferenceCategory
         android:key="qs_cat_colors"
