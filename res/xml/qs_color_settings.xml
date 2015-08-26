@@ -46,7 +46,7 @@
 
     <PreferenceCategory
         android:key="qs_cat_colors"
-        android:title="@string/qs_colors_options">
+        android:title="@string/qs_color_options">
 
         <SwitchPreference
             android:key="qs_color_switch"
