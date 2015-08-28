@@ -68,4 +68,9 @@
         android:title="@string/identicons_title"
         android:fragment="com.android.settings.bliss.identicons.IdenticonsSettings" />
 
+    <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
+        android:key="toast_icon"
+        android:title="@string/toast_icon_title"
+        android:defaultValue="true" />
+
 </PreferenceScreen>

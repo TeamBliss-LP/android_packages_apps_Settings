@@ -420,6 +420,9 @@
     <string name="toast_SlideLeftRight_animation">Slide left to right</string>
     <string name="toast_SlideRightLeft_animation">Slide right to left</string>
 
+    <!-- Toast Icons -->
+    <string name="toast_icon_title">Toast icon</string>
+
     <!-- Animation Controls -->
     <string name="title_animation_controls">System animations</string>
     <string name="activity_open_title">Activity open animation</string>
