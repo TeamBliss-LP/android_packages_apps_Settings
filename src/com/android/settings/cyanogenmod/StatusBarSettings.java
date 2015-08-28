@@ -22,6 +22,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.os.UserHandle;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceScreen;
@@ -54,11 +55,13 @@ public class StatusBarSettings extends SettingsPreferenceFragment
     private static final String TAG = "StatusBar";
 
     private static final String KEY_BLISS_LOGO_COLOR = "status_bar_bliss_logo_color";
+    private static final String KEY_BLISS_LOGO_STYLE = "status_bar_bliss_logo_style";
     private static final String KEY_STATUS_BAR_GREETING = "status_bar_greeting";
     private static final String KEY_STATUS_BAR_GREETING_TIMEOUT = "status_bar_greeting_timeout";
     private static final String KEY_CARRIERLABEL_PREFERENCE = "carrier_options";
 
     private ColorPickerPreference mBlissLogoColor;
+    private ListPreference mBlissLogoStyle;
     private SwitchPreference mStatusBarGreeting;
     private SeekBarPreferenceCham mStatusBarGreetingTimeout;
 
@@ -81,6 +84,14 @@ public class StatusBarSettings extends SettingsPreferenceFragment
         String hexColor = String.format("#%08x", (0xffffffff & intColor));
         mBlissLogoColor.setSummary(hexColor);
         mBlissLogoColor.setNewPreviewColor(intColor);
+
+        mBlissLogoStyle = (ListPreference) findPreference(KEY_BLISS_LOGO_STYLE);
+        int blissLogoStyle = Settings.System.getIntForUser(getContentResolver(),
+                Settings.System.STATUS_BAR_BLISS_LOGO_STYLE, 0,
+                UserHandle.USER_CURRENT);
+        mBlissLogoStyle.setValue(String.valueOf(blissLogoStyle));
+        mBlissLogoStyle.setSummary(mBlissLogoStyle.getEntry());
+        mBlissLogoStyle.setOnPreferenceChangeListener(this);
 
         // Greeting
         mStatusBarGreeting =
@@ -124,6 +135,15 @@ public class StatusBarSettings extends SettingsPreferenceFragment
             Settings.System.putInt(resolver,
                 Settings.System.STATUS_BAR_BLISS_LOGO_COLOR,
                 intHex);
+            return true;
+        } else if (preference == mBlissLogoStyle) {
+            int blissLogoStyle = Integer.valueOf((String) newValue);
+            int index = mBlissLogoStyle.findIndexOfValue((String) newValue);
+            Settings.System.putIntForUser(
+                    getContentResolver(), Settings.System.STATUS_BAR_BLISS_LOGO_STYLE, blissLogoStyle,
+                    UserHandle.USER_CURRENT);
+            mBlissLogoStyle.setSummary(
+                    mBlissLogoStyle.getEntries()[index]);
             return true;
         } else if (preference == mStatusBarGreetingTimeout) {
             int timeout = (Integer) newValue;
