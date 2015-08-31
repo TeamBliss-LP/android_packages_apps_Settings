@@ -847,9 +847,9 @@
     <string name="lockscreen_enable_power_menu_title">Show power menu on secure lock screen</string>
     <string name="lockscreen_enable_power_menu_summary">This option will only disable the power menu on secure lock screens</string>
 
-    <!-- Long press on lock screen lock icon to sleep -->
-    <string name="longpress_lock_icon_to_sleep_title">Long press lock icon to sleep</string>
-    <string name="longpress_lock_icon_to_sleep_summary">This option will not work if both smart lock and accessibility touch exploration are enabled</string>
+    <!-- Long press on lock screen lock icon to launch torch -->
+    <string name="longpress_lock_icon_torch_title">Long press lock icon to launch torch</string>
+    <string name="longpress_lock_icon_torch_summary">This option will not work if both smart lock and accessibility touch exploration are enabled</string>
 
     <!-- Visualizer Category for Lock Screen -->
     <string name="visualizer_category">Lock Screen Visualizer</string>
