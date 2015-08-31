@@ -50,6 +50,7 @@
     <string name="icons_title">Icons</string>
     <string name="text_title">Text</string>
     <string name="background_title">Background</string>
+    <string name="hidden_title">Hidden</string>
     <string name="icon_title">Icon</string>
     <string name="reset_message">Reset all entries to default?</string>
     <string name="reset_option_message">Reset values to\nAndroid or Bliss default?</string>
@@ -63,6 +64,10 @@
     <string name="reset_default_message">Reset default?</string>
     <string name="additional_options_title">Additional options</string>
     <string name="positive_done">Done</string>
+    <string name="customize_title">Customize</string>
+    <string name="ripple_title">Ripple effect</string>
+    <string name="colorize_ripple_title">Colorize ripple effect</string>
+    <string name="colorize_ripple_dialog_title">Choose how to colorize the ripple effect</string>
 
     <!-- Changelog -->
     <string name="changelog_bliss_title">Changelog</string>
@@ -1003,7 +1008,7 @@
     <!-- UI debug setting: show cpu usage summary [CHAR LIMIT=50] -->
     <string name="show_cpu_info_summary">Screen overlay showing current CPU info</string>
 
-    <!-- QuickSettings: Quick Pulldown -->
+    <!-- QuickSettings: -->
     <string name="qs_title">Quick settings</string>
     <string name="title_quick_pulldown">Quick pulldown</string>
     <string name="summary_quick_pulldown">%1$s edge of the status bar pulls down Quick Settings</string>
@@ -1012,6 +1017,12 @@
     <string name="quick_pulldown_right">Right</string>
     <string name="block_on_secure_keyguard_title">Disable QS on lock screen</string>
     <string name="block_on_secure_keyguard_summary">Disable quick settings on secure lock screen</string>
+    <string name="qs_type_title">Type</string>
+    <string name="qs_type_dlg_title">Choose the quick settings type</string>
+    <string name="qs_type_panel">Panel</string>
+    <string name="qs_type_bar">Bar</string>
+    <string name="qs_panel_tiles_summary">Arrange the tiles, and choose the tiles to display on the panel</string>
+    <string name="qs_bar_buttons_summary">Arrange the buttons, and choose the buttons to display on the bar</string>
 
     <!-- MediaScanner behavior on boot -->
     <string name="options_settings_title">Options</string>

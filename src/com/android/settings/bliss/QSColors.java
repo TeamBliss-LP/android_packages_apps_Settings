@@ -49,6 +49,7 @@ public class QSColors extends SettingsPreferenceFragment implements
     private static final String PREF_TEXT_COLOR = "expanded_header_text_color";
     private static final String PREF_ICON_COLOR = "expanded_header_icon_color";
     private static final String PREF_CLEAR_ALL_ICON_COLOR = "notification_drawer_clear_all_icon_color";
+    private static final String PREF_QS_RIPPLE_COLOR = "qs_ripple_color";
 
     private static final int DEFAULT_BACKGROUND_COLOR = 0xff263238;
     private static final int WHITE = 0xffffffff;
@@ -70,6 +71,7 @@ public class QSColors extends SettingsPreferenceFragment implements
     private ColorPickerPreference mTextColor;
     private ColorPickerPreference mIconColor;
     private ColorPickerPreference mClearAllIconColor;
+    private ColorPickerPreference mQSRippleColor;
 
     private ContentResolver mResolver;
 
@@ -186,6 +188,16 @@ public class QSColors extends SettingsPreferenceFragment implements
         mClearAllIconColor.setDefaultColors(WHITE, BLISS_BLUE);
         mClearAllIconColor.setOnPreferenceChangeListener(this);
 
+        mQSRippleColor =
+                (ColorPickerPreference) findPreference(PREF_QS_RIPPLE_COLOR);
+        intColor = Settings.System.getInt(mResolver,
+                Settings.System.QS_RIPPLE_COLOR, WHITE); 
+        mQSRippleColor.setNewPreviewColor(intColor);
+        hexColor = String.format("#%08x", (0xffffffff & intColor));
+        mQSRippleColor.setSummary(hexColor);
+        mQSRippleColor.setDefaultColors(WHITE, BLISS_BLUE);
+        mQSRippleColor.setOnPreferenceChangeListener(this);
+
         setHasOptionsMenu(true);
     }
 
@@ -291,6 +303,14 @@ public class QSColors extends SettingsPreferenceFragment implements
                 Settings.System.NOTIFICATION_DRAWER_CLEAR_ALL_ICON_COLOR, intHex);
             preference.setSummary(hex);
             return true;
+        } else if (preference == mQSRippleColor) {
+            hex = ColorPickerPreference.convertToARGB(
+                Integer.valueOf(String.valueOf(newValue)));
+            intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(mResolver,
+               Settings.System.QS_RIPPLE_COLOR, intHex);
+            preference.setSummary(hex);
+            return true;
         }
         return false;
     }
@@ -352,6 +372,9 @@ public class QSColors extends SettingsPreferenceFragment implements
                             Settings.System.putInt(getOwner().mResolver,
                                     Settings.System.NOTIFICATION_DRAWER_CLEAR_ALL_ICON_COLOR,
                                     WHITE);
+                            Settings.System.putInt(getOwner().mResolver,
+                                    Settings.System.QS_RIPPLE_COLOR,
+                                    WHITE);
                             getOwner().refreshSettings();
                         }
                     })
@@ -384,6 +407,9 @@ public class QSColors extends SettingsPreferenceFragment implements
                                     DEFAULT_COLOR);
                             Settings.System.putInt(getOwner().mResolver,
                                     Settings.System.NOTIFICATION_DRAWER_CLEAR_ALL_ICON_COLOR,
+                                    WHITE);
+                            Settings.System.putInt(getOwner().mResolver,
+                                    Settings.System.QS_RIPPLE_COLOR,
                                     WHITE);
                             getOwner().refreshSettings();
                         }

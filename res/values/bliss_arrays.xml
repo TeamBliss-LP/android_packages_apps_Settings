@@ -1454,6 +1454,46 @@
         <item>5</item>
     </string-array>
 
+    <string-array name="qs_type_entries">
+        <item>@string/qs_type_panel</item>
+        <item>@string/qs_type_bar</item>
+        <item>@string/hidden_title</item>
+    </string-array>
+
+    <string-array name="qs_type_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <string-array name="qs_bar_button_entries">
+        <item>@string/qs_tile_airplane_mode</item>
+        <item>@string/qs_tile_bluetooth</item>
+        <item>@string/qs_tile_display_inversion</item>
+        <item>@string/qs_tile_display_rotation</item>
+        <item>@string/qs_tile_flashlight</item>
+        <item>@string/qs_tile_hotspot</item>
+        <item>@string/qs_tile_location</item>
+        <item>@string/qs_tile_lte</item>
+        <item>@string/qs_tile_mobile_data</item>
+        <item>@string/qs_tile_nfc</item>
+        <item>@string/qs_tile_wifi</item>
+    </string-array>
+
+    <string-array name="qs_bar_button_values" translatable="false">
+        <item>airplane</item>
+        <item>bt</item>
+        <item>inversion</item>
+        <item>rotation</item>
+        <item>flashlight</item>
+       <item>hotspot</item>
+        <item>location</item>
+        <item>lte</item>
+        <item>data</item>
+        <item>nfc</item>
+        <item>wifi</item>
+    </string-array>
+
     <!-- Status bar logo position-->
     <string-array name="status_bar_logo_position_entries" translatable="false">
         <item>@string/status_bar_logo_position_left</item>

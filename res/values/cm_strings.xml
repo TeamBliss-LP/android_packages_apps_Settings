@@ -1021,6 +1021,7 @@
     <string name="qs_tile_bluetooth">Bluetooth</string>
     <string name="qs_tile_display_inversion">Color inversion</string>
     <string name="qs_tile_cellular_data">Data connection</string>
+    <string name="qs_tile_mobile_data">Mobile data</string>
     <string name="qs_tile_airplane_mode">Airplane mode</string>
     <string name="qs_tile_display_rotation">Rotation</string>
     <string name="qs_tile_flashlight">Flashlight</string>

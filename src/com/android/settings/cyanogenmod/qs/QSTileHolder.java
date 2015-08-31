@@ -19,6 +19,7 @@ import android.content.Context;
 
 import android.text.TextUtils;
 
+import com.android.internal.util.bliss.DeviceUtils;
 import com.android.internal.util.cm.QSConstants;
 import com.android.internal.util.cm.QSUtils;
 import com.android.settings.R;
@@ -56,7 +57,7 @@ public class QSTileHolder {
         // or it supports Dual Sim Dual Active.
         // TODO: Should be spawning off a tile per sim
         if (TextUtils.equals(QSConstants.TILE_LTE, tileType)
-                && (!QSUtils.deviceSupportsLte(context)
+                && (!DeviceUtils.deviceSupportsLte(context)
                 || QSUtils.deviceSupportsDdsSupported(context))) {
             return null;
         }

@@ -44,6 +44,7 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.util.cm.PowerMenuConstants;
 import com.android.settings.bliss.NumberPickerPreference;
 import com.android.internal.util.cm.QSUtils;
+import com.android.internal.util.bliss.DeviceUtils;
 
 import static com.android.internal.util.cm.PowerMenuConstants.*;
 
@@ -162,7 +163,7 @@ public class PowerMenuActions extends SettingsPreferenceFragment
         }
 
         if (mTorchPref != null) {
-            if (!QSUtils.deviceSupportsFlashLight(getActivity())) {
+            if (!DeviceUtils.deviceSupportsFlashLight(getActivity())) {
                 getPreferenceScreen().removePreference(findPreference(GLOBAL_ACTION_KEY_TORCH));
             } else {
                 mTorchPref.setChecked(settingsArrayContains(GLOBAL_ACTION_KEY_TORCH));

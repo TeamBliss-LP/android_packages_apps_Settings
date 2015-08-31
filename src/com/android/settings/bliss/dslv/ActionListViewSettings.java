@@ -34,10 +34,12 @@ import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.VectorDrawable;
+import android.graphics.PorterDuff.Mode;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -62,8 +64,10 @@ import com.android.internal.util.bliss.ActionConfig;
 import com.android.internal.util.bliss.ActionConstants;
 import com.android.internal.util.bliss.ActionHelper;
 import com.android.internal.util.bliss.ImageHelper;
-import com.android.internal.util.bliss.DeviceUtils;
-import com.android.internal.util.bliss.DeviceUtils.FilteredDeviceFeaturesArray;
+import com.android.internal.util.bliss.ActionUtils;
+import com.android.internal.util.bliss.ActionUtils.FilteredDeviceFeaturesArray;
+import com.android.internal.util.bliss.QSBarHelper;
+import com.android.internal.util.bliss.QSColorHelper;
 
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.R;
@@ -212,7 +216,7 @@ public class ActionListViewSettings extends ListFragment implements
         mDisableMessage = (TextView) view.findViewById(R.id.disable_message);
 
         FilteredDeviceFeaturesArray finalActionDialogArray = new FilteredDeviceFeaturesArray();
-        finalActionDialogArray = DeviceUtils.filterUnsupportedDeviceFeatures(mActivity,
+        finalActionDialogArray = ActionUtils.filterUnsupportedDeviceFeatures(mActivity,
             res.getStringArray(res.getIdentifier(
                     mActionValuesKey, "array", "com.android.settings")),
             res.getStringArray(res.getIdentifier(
@@ -223,7 +227,7 @@ public class ActionListViewSettings extends ListFragment implements
         mPicker = new ShortcutPickerHelper(mActivity, this);
 
         File folder = new File(Environment.getExternalStorageDirectory() + File.separator +
-                ".slim" + File.separator + "icons");
+                ".bliss" + File.separator + "icons");
 
         folder.mkdirs();
 
@@ -374,7 +378,7 @@ public class ActionListViewSettings extends ListFragment implements
             // Icon is present, save it for future use and add the file path to the action.
             if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
                 File folder = new File(Environment.getExternalStorageDirectory() + File.separator +
-                        ".slim" + File.separator + "icons");
+                        ".bliss" + File.separator + "icons");
                 folder.mkdirs();
                 String fileName = folder.toString()
                         + File.separator + "shortcut_" + System.currentTimeMillis() + ".png";
@@ -418,7 +422,7 @@ public class ActionListViewSettings extends ListFragment implements
                 }
                 if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
                     File folder = new File(Environment.getExternalStorageDirectory() +
-                            File.separator + ".slim" + File.separator + "icons");
+                            File.separator + ".bliss" + File.separator + "icons");
                     folder.mkdirs();
                     File image = new File(folder.toString() + File.separator
                             + "shortcut_" + System.currentTimeMillis() + ".png");
@@ -632,6 +636,7 @@ public class ActionListViewSettings extends ListFragment implements
     }
 
     private class ViewHolder {
+        public TextView clickActionDescriptionView;
         public TextView longpressActionDescriptionView;
         public ImageView iconView;
     }
@@ -649,9 +654,13 @@ public class ActionListViewSettings extends ListFragment implements
             if (v != convertView && v != null) {
                 ViewHolder holder = new ViewHolder();
 
+                TextView clickActionDescription =
+                    (TextView) v.findViewById(R.id.click_action_description);
                 TextView longpressActionDecription =
                     (TextView) v.findViewById(R.id.longpress_action_description);
                 ImageView icon = (ImageView) v.findViewById(R.id.icon);
+
+                holder.clickActionDescriptionView = clickActionDescription;
 
                 if (mDisableLongpress) {
                     longpressActionDecription.setVisibility(View.GONE);
@@ -699,6 +708,15 @@ public class ActionListViewSettings extends ListFragment implements
                     d = ImageHelper.getColoredDrawable(d, getResources()
                             .getColor(R.color.dslv_icon_dark));
                 }
+            } else if (mActionMode == QUICK_SETTINGS_BAR) {
+                d = ImageHelper.resize(
+                        mActivity, QSBarHelper.getQSBarIconImage(mActivity,
+                        getItem(position).getClickAction()), 32);
+                final int iconColor = QSColorHelper.getIconColor(mActivity);
+                holder.iconView.setImageBitmap(ImageHelper.drawableToBitmap(d));
+                holder.iconView.setColorFilter(iconColor, Mode.MULTIPLY);
+            } else {
+                holder.iconView.setImageDrawable(d);
             }
             holder.iconView.setImageBitmap(ImageHelper.drawableToBitmap(d));
 

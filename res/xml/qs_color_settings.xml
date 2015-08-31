@@ -74,6 +74,12 @@
             android:defaultValue="0xffffffff"
             android:dependency="qs_color_switch" />
 
+         <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="qs_ripple_color"
+            android:title="@string/ripple_title"
+            android:defaultValue="0xffffffff"
+            android:dependency="qs_color_switch" />
+
         <net.margaritov.preference.colorpicker.ColorPickerPreference
            android:key="notification_drawer_clear_all_icon_color"
            android:title="@string/notification_drawer_clear_all_icon_color_title"
