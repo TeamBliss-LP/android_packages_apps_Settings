@@ -683,24 +683,18 @@ public class ActionListViewSettings extends ListFragment implements
 
             Drawable d = null;
             String iconUri = getItem(position).getIcon();
+            holder.iconView.setColorFilter(null);
             if (iconUri == null) {
                 iconUri = ActionConstants.ICON_EMPTY;
             }
-            if (mActionMode == POWER_MENU_SHORTCUT) {
-                /* Disabled for now till slims power menu is back!!!!!!!!!!!!!!
-                d = ImageHelper.resize(
-                        mActivity, PolicyHelper.getPowerMenuIconImage(mActivity,
-                        getItem(position).getClickAction(),
-                        iconUri, false), 48);
-                */
-            } else {
+            if (mActionMode == NAV_BAR) {
                 ActionHelper.useSystemUI = true;
-                d = ImageHelper.resize(mActivity, ActionHelper.getActionIconImage(
-                        mActivity, getItem(position).getClickAction(),
+                d = ImageHelper.resize(
+                        mActivity, ActionHelper.getActionIconImage(mActivity,
+                        getItem(position).getClickAction(),
                         iconUri), 48);
                 ActionHelper.useSystemUI = false;
-            }
-
+                }
             if (d != null) {
                 if ((iconUri.equals(ActionConstants.ICON_EMPTY) &&
                         getItem(position).getClickAction().startsWith("**")) ||
@@ -708,17 +702,75 @@ public class ActionListViewSettings extends ListFragment implements
                     d = ImageHelper.getColoredDrawable(d, getResources()
                             .getColor(R.color.dslv_icon_dark));
                 }
+            holder.iconView.setImageBitmap(ImageHelper.drawableToBitmap(d));
+            } else if (mActionMode == PIE) {
+                ActionHelper.useSystemUI = true;
+                d = ImageHelper.resize(
+                        mActivity, ActionHelper.getActionIconImage(mActivity,
+                        getItem(position).getClickAction(),
+                        iconUri), 48);
+                ActionHelper.useSystemUI = false;
+                }
+            if (d != null) {
+                if ((iconUri.equals(ActionConstants.ICON_EMPTY) &&
+                        getItem(position).getClickAction().startsWith("**")) ||
+                    iconUri.startsWith(ActionConstants.SYSTEM_ICON_IDENTIFIER)) {
+                    d = ImageHelper.getColoredDrawable(d, getResources()
+                            .getColor(R.color.dslv_icon_dark));
+                }
+            holder.iconView.setImageBitmap(ImageHelper.drawableToBitmap(d));
+            } else if (mActionMode == PIE_SECOND) {
+                ActionHelper.useSystemUI = true;
+                d = ImageHelper.resize(
+                        mActivity, ActionHelper.getActionIconImage(mActivity,
+                        getItem(position).getClickAction(),
+                        iconUri), 48);
+                ActionHelper.useSystemUI = false;
+                }
+            if (d != null) {
+                if ((iconUri.equals(ActionConstants.ICON_EMPTY) &&
+                        getItem(position).getClickAction().startsWith("**")) ||
+                    iconUri.startsWith(ActionConstants.SYSTEM_ICON_IDENTIFIER)) {
+                    d = ImageHelper.getColoredDrawable(d, getResources()
+                            .getColor(R.color.dslv_icon_dark));
+                }
+            holder.iconView.setImageBitmap(ImageHelper.drawableToBitmap(d));
+            } else if (mActionMode == LOCKSCREEN_SHORTCUT) {
+                d = ImageHelper.resize(
+                        mActivity, ActionHelper.getActionIconImage(mActivity,
+                        getItem(position).getClickAction(), iconUri), 36);
+                    holder.iconView.setImageBitmap(ImageHelper.drawableToBitmap(d));
+            } else if (mActionMode == QUICKTILE) {
+                ActionHelper.useSystemUI = true;
+                d = ImageHelper.resize(
+                        mActivity, ActionHelper.getActionIconImage(mActivity,
+                        getItem(position).getClickAction(),
+                        iconUri), 48);
+                ActionHelper.useSystemUI = false;
+                }
+            if (d != null) {
+                if ((iconUri.equals(ActionConstants.ICON_EMPTY) &&
+                        getItem(position).getClickAction().startsWith("**")) ||
+                    iconUri.startsWith(ActionConstants.SYSTEM_ICON_IDENTIFIER)) {
+                    d = ImageHelper.getColoredDrawable(d, getResources()
+                            .getColor(R.color.dslv_icon_dark));
+                }
+            holder.iconView.setImageBitmap(ImageHelper.drawableToBitmap(d));
+            } else if (mActionMode == RECENT_APP_SIDEBAR) {
+                d = ImageHelper.resize(
+                        mActivity, ActionHelper.getActionIconImage(mActivity,
+                        getItem(position).getClickAction(), iconUri), 36);
+                    holder.iconView.setImageBitmap(ImageHelper.drawableToBitmap(d));
             } else if (mActionMode == QUICK_SETTINGS_BAR) {
                 d = ImageHelper.resize(
                         mActivity, QSBarHelper.getQSBarIconImage(mActivity,
-                        getItem(position).getClickAction()), 32);
+                        getItem(position).getClickAction()), 24);
                 final int iconColor = QSColorHelper.getIconColor(mActivity);
                 holder.iconView.setImageBitmap(ImageHelper.drawableToBitmap(d));
                 holder.iconView.setColorFilter(iconColor, Mode.MULTIPLY);
             } else {
                 holder.iconView.setImageDrawable(d);
             }
-            holder.iconView.setImageBitmap(ImageHelper.drawableToBitmap(d));
 
             if (!mDisableIconPicker && holder.iconView.getDrawable() != null) {
                 holder.iconView.setOnClickListener(new OnClickListener() {
