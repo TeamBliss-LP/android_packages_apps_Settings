@@ -27,7 +27,7 @@
 	<color name="lock_pattern_view_regular_color">#ff777777</color>
 	<color name="audio_ringer_disabled_tint">#4a777777</color>
 	<color name="dslv_icon_dark">#ffffffff</color>
-	<color name="dslv_float_cackground_color">#ff555555</color>
+	<color name="dslv_float_background_color">#ff555555</color>
 	<color name="wifi_divider">#ffffffff</color>
 	<color name="material_empty_color_light">#b3ffffff</color>
     <color name="actionbar_icon_color">#ffffffff</color>

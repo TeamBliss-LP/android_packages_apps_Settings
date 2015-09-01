@@ -265,6 +265,20 @@
     <string name="shortcuts_icon_picker_whatsapp">Whatsapp</string>
     <string name="shortcuts_icon_picker_youtube">Youtube</string>
 
+    <string name="shortcut_picker_choose_longpress_action">Choose longpress action:</string>
+    <string name="shortcut_picker_choose_new_action">Choose new action:</string>
+    <string name="shortcut_picker_reassign_action">Reassign action:</string>
+    <string name="shortcut_picker_choose_action">Choose action:</string>
+    <string name="shortcut_picker_applications_title">Applications</string>
+    <string name="shortcut_picker_activities_title">Activities</string>
+    <string name="shortcut_picker_select_app_title">Select application:</string>
+    <string name="shortcut_picker_select_activity_title">Select activity:</string>
+    <string name="shortcut_picker_choose_icon_type_title">Choose icon type:</string>
+    <string name="shortcut_picker_icon_type_default_title">Default</string>
+    <string name="shortcut_picker_icon_type_system_title">System icons</string>
+    <string name="shortcut_picker_select_system_icon_title">Select system icon:</string>
+    <string name="shortcut_picker_icon_type_custom_title">Gallery</string>
+
     <!-- Navigation bar -->
     <string name="nav_bar_title">Navigation bar</string>
     <string name="navbar_enable_bar_title">Navigation bar buttons</string>

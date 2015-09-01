@@ -102,11 +102,13 @@ public class ActionListViewSettings extends ListFragment implements
     private static final int RECENT_APP_SIDEBAR    = 9;
 
     private static final int DEFAULT_MAX_ACTION_NUMBER = 5;
+    private static final int DEFAULT_NUMBER_OF_ACTIONS = 3;
 
     public static final int REQUEST_PICK_CUSTOM_ICON = 1000;
 
     private int mActionMode;
     private int mMaxAllowedActions;
+    private int mDefaultNumberOfActions;
     private boolean mUseAppPickerOnly;
     private boolean mUseFullAppsOnly;
     private boolean mDisableLongpress;
@@ -123,6 +125,7 @@ public class ActionListViewSettings extends ListFragment implements
     private boolean mAdditionalFragmentAttached;
     private String mAdditionalFragment;
     private View mDivider;
+    private View mFab;
 
     private int mPendingIndex = -1;
     private boolean mPendingLongpress;
@@ -196,6 +199,7 @@ public class ActionListViewSettings extends ListFragment implements
 
         mActionMode = getArguments().getInt("actionMode", NAV_BAR);
         mMaxAllowedActions = getArguments().getInt("maxAllowedActions", DEFAULT_MAX_ACTION_NUMBER);
+        mDefaultNumberOfActions = getArguments().getInt("defaultNumberOfActions", DEFAULT_NUMBER_OF_ACTIONS);
         mAdditionalFragment = getArguments().getString("fragment", null);
         mActionValuesKey = getArguments().getString("actionValues", "shortcut_action_values");
         mActionEntriesKey = getArguments().getString("actionEntries", "shortcut_action_entries");
@@ -249,7 +253,7 @@ public class ActionListViewSettings extends ListFragment implements
                         mPendingIndex = arg2;
                         mPendingLongpress = false;
                         mPendingNewAction = false;
-                        mPicker.pickShortcut(getId());
+                        mPicker.pickShortcut(getId(), false, false, true);
                     }
                 }
             }
@@ -292,6 +296,31 @@ public class ActionListViewSettings extends ListFragment implements
 
         mDivider = (View) view.findViewById(R.id.divider);
         loadAdditionalFragment();
+
+        mFab = view.findViewById(R.id.floating_action_button);
+        mFab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mUseFullAppsOnly) {
+                    if (mPicker != null) {
+                        mPendingIndex = 0;
+                        mPendingLongpress = false;
+                        mPendingNewAction = true;
+                        mPicker.pickShortcut(getId(), true);
+                    }
+                } else if (!mUseAppPickerOnly) {
+                    showDialogInner(DLG_SHOW_ACTION_DIALOG, 0, false, true);
+                } else {
+                    if (mPicker != null) {
+                        mPendingIndex = 0;
+                        mPendingLongpress = false;
+                        mPendingNewAction = true;
+                        mPicker.pickShortcut(getId(), false, true, false);
+                    }
+                }
+            }
+        });
+        updateFabVisibility(mActionConfigs.size());
 
         // get shared preference
         SharedPreferences preferences =
@@ -484,31 +513,6 @@ public class ActionListViewSettings extends ListFragment implements
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case MENU_ADD:
-                if (mActionConfigs != null && mActionConfigs.size() == mMaxAllowedActions) {
-                    Toast.makeText(mActivity,
-                            getResources().getString(R.string.shortcut_action_max),
-                            Toast.LENGTH_LONG).show();
-                    break;
-                }
-                if (mUseFullAppsOnly) {
-                    if (mPicker != null) {
-                        mPendingIndex = 0;
-                        mPendingLongpress = false;
-                        mPendingNewAction = true;
-                        mPicker.pickShortcut(getId(), true);
-                    }
-                } else if (!mUseAppPickerOnly) {
-                    showDialogInner(DLG_SHOW_ACTION_DIALOG, 0, false, true);
-                } else {
-                    if (mPicker != null) {
-                        mPendingIndex = 0;
-                        mPendingLongpress = false;
-                        mPendingNewAction = true;
-                        mPicker.pickShortcut(getId());
-                    }
-                }
-                break;
             case MENU_RESET:
                     showDialogInner(DLG_RESET_TO_DEFAULT, 0, false, true);
                 break;
@@ -525,10 +529,6 @@ public class ActionListViewSettings extends ListFragment implements
                 .setShowAsAction(MenuItem.SHOW_AS_ACTION_NEVER);
         menu.add(0, MENU_RESET, 0, R.string.shortcut_action_reset)
                 .setShowAsAction(MenuItem.SHOW_AS_ACTION_NEVER);
-        menu.add(0, MENU_ADD, 0, R.string.shortcut_action_add)
-                .setIcon(R.drawable.ic_menu_add_white)
-                .setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
-
     }
 
     private void addNewAction(String action, String description) {
@@ -584,12 +584,15 @@ public class ActionListViewSettings extends ListFragment implements
         switch (mActionMode) {
             case QUICKTILE:
                 ActionHelper.setQuickTileConfig(mActivity, actionConfigs, reset);
+                updateFabVisibility(reset ? mDefaultNumberOfActions : actionConfigs.size());
                 break;
             case LOCKSCREEN_SHORTCUT:
                 ActionHelper.setLockscreenShortcutConfig(mActivity, actionConfigs, reset);
+                updateFabVisibility(reset ? mDefaultNumberOfActions : actionConfigs.size());
                 break;
             case NAV_BAR:
                 ActionHelper.setNavBarConfig(mActivity, actionConfigs, reset);
+                updateFabVisibility(reset ? mDefaultNumberOfActions : actionConfigs.size());
                 break;
 /* Disabled for now till all features are back. Enable it step per step!!!!!!
             case NAV_RING:
@@ -597,9 +600,11 @@ public class ActionListViewSettings extends ListFragment implements
                 break;*/
             case PIE:
                 ActionHelper.setPieConfig(mActivity, actionConfigs, reset);
+                updateFabVisibility(reset ? mDefaultNumberOfActions : actionConfigs.size());
                 break;
             case PIE_SECOND:
                 ActionHelper.setPieSecondLayerConfig(mActivity, actionConfigs, reset);
+                updateFabVisibility(reset ? mDefaultNumberOfActions : actionConfigs.size());
                 break;
 /*            case POWER_MENU_SHORTCUT:
                 PolicyHelper.setPowerMenuConfig(mActivity, actionConfigs, reset);
@@ -609,10 +614,20 @@ public class ActionListViewSettings extends ListFragment implements
                 break;*/
             case QUICK_SETTINGS_BAR:
                 QSBarHelper.setQSBarConfig(mActivity, actionConfigs, reset);
+                updateFabVisibility(reset ? mDefaultNumberOfActions : actionConfigs.size());
                 break;
             case RECENT_APP_SIDEBAR:
                 ActionHelper.setRecentAppSidebarConfig(mActivity, actionConfigs, reset);
+                updateFabVisibility(reset ? mDefaultNumberOfActions : actionConfigs.size());
                 break;
+        }
+    }
+
+    private void updateFabVisibility(int numberOfActions) {
+        if (numberOfActions == mMaxAllowedActions) {
+            mFab.setVisibility(View.GONE);
+        } else {
+            mFab.setVisibility(View.VISIBLE);
         }
     }
 
@@ -972,6 +987,10 @@ public class ActionListViewSettings extends ListFragment implements
         }
 
         public class IconAdapter extends BaseAdapter {
+
+            ActionListViewSettings getOwner() {
+                return (ActionListViewSettings) getTargetFragment();
+            }
 
             TypedArray icons;
             String[] labels;
