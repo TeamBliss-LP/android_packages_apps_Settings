@@ -797,7 +797,7 @@
         <!--<item>@string/shortcut_action_navbar</item>-->
         <!--<item>@string/shortcut_action_notifications</item>-->
         <item>@string/shortcut_action_ime</item>
-        <!--<item>@string/shortcut_action_power_menu</item>-->
+        <item>@string/shortcut_action_power_menu</item>
         <!--<item>@string/shortcut_action_qs</item>-->
         <item>@string/shortcut_action_restartui</item>
         <item>@string/shortcut_action_recent</item>
@@ -816,7 +816,7 @@
         <!--<item>**nav_bar**</item>-->
         <!--<item>**notifications**</item>-->
         <item>**ime**</item>
-        <!--<item>**power_menu**</item>-->
+        <item>**power_menu**</item>
         <!--<item>**quicksettings**</item>-->
         <item>**restartui**</item>
         <item>**recents**</item>
