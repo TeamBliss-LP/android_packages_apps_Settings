@@ -57,6 +57,9 @@ public class LockScreenSettings extends SettingsPreferenceFragment
 
     private static final String TAG = "LockScreenSettings";
     private static final String KEY_SHOW_VISUALIZER = "lockscreen_visualizer";
+    private static final String GENERAL_CATEGORY = "general_category";
+    private static final String SHORTCUTS_CATEGORY = "shortcuts_category";
+    private static final String CUSTOMIZE_CATEGORY = "customize_category";
 
     private static final String VISUALIZER_CATEGORY = "visualizer";
 
@@ -81,6 +84,15 @@ public class LockScreenSettings extends SettingsPreferenceFragment
         mLockScreen = (PreferenceScreen) findPreference("lock_screen");
         PreferenceCategory visualizerCategory = (PreferenceCategory)
                 getPreferenceScreen().findPreference(VISUALIZER_CATEGORY);
+
+        PreferenceCategory generalCategory = (PreferenceCategory)
+                getPreferenceScreen().findPreference(GENERAL_CATEGORY);
+
+        PreferenceCategory shortcutsCategory = (PreferenceCategory)
+                getPreferenceScreen().findPreference(SHORTCUTS_CATEGORY);
+
+        PreferenceCategory customizeCategory = (PreferenceCategory)
+                getPreferenceScreen().findPreference(CUSTOMIZE_CATEGORY);
 
         // remove lockscreen visualizer option on low end gfx devices
         if (!ActivityManager.isHighEndGfx() && visualizerCategory != null) {
