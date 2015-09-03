@@ -47,6 +47,8 @@ import com.android.settings.Utils;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 
+import com.android.internal.util.bliss.DeviceUtils;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -65,8 +67,11 @@ public class LockScreenSettings extends SettingsPreferenceFragment
 
     private static final String CARRIERLABEL_ON_LOCKSCREEN="lock_screen_hide_carrier";
 
+    private static final String KEY_LONG_PRESS_LOCK_ICON_TORCH = "long_press_lock_icon_torch";
+
     private PreferenceScreen mLockScreen;
     private SwitchPreference mCarrierLabelOnLockScreen;
+    private SwitchPreference mLongClickTorch;
 
     private Context mContext;
 
@@ -100,6 +105,15 @@ public class LockScreenSettings extends SettingsPreferenceFragment
                     visualizerCategory.findPreference(KEY_SHOW_VISUALIZER);
             if (displayVisualizer != null) {
                 visualizerCategory.removePreference(displayVisualizer);
+            }
+        }
+
+        // Remove Long Press Lock Icon for Torch option for non-flash devices
+        if(!DeviceUtils.deviceSupportsFlashLight(getActivity()) && generalCategory != null) {
+            mLongClickTorch = (SwitchPreference) generalCategory
+                    .findPreference(KEY_LONG_PRESS_LOCK_ICON_TORCH);
+            if (mLongClickTorch != null) {
+                generalCategory.removePreference(mLongClickTorch);
             }
         }
 
