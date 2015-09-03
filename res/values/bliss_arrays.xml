@@ -700,6 +700,7 @@
     <!-- Clock font style -->
     <string-array name="clock_font_style_entries">
         <item>@string/clock_font_bold</item>
+        <item>@string/clock_font_bold_italic</item>
         <item>@string/clock_font_condensed</item>
         <item>@string/clock_font_light</item>
         <item>@string/clock_font_light_italic</item>
@@ -712,6 +713,7 @@
         <item>2</item>
         <item>3</item>
         <item>4</item>
+        <item>5</item>
     </string-array>
 
     <!-- Smart pulldown -->
@@ -795,7 +797,7 @@
         <!--<item>@string/shortcut_action_navbar</item>-->
         <!--<item>@string/shortcut_action_notifications</item>-->
         <item>@string/shortcut_action_ime</item>
-        <!--<item>@string/shortcut_action_power_menu</item>-->
+        <item>@string/shortcut_action_power_menu</item>
         <!--<item>@string/shortcut_action_qs</item>-->
         <item>@string/shortcut_action_restartui</item>
         <item>@string/shortcut_action_recent</item>
@@ -814,7 +816,7 @@
         <!--<item>**nav_bar**</item>-->
         <!--<item>**notifications**</item>-->
         <item>**ime**</item>
-        <!--<item>**power_menu**</item>-->
+        <item>**power_menu**</item>
         <!--<item>**quicksettings**</item>-->
         <item>**restartui**</item>
         <item>**recents**</item>
@@ -1507,8 +1509,9 @@
 
     <!-- Statusbar weather font style -->
     <string-array name="status_bar_weather_font_style_entries">
-        <item>@string/status_bar_weather_font_bold</item>
         <item>@string/status_bar_weather_font_normal</item>
+        <item>@string/status_bar_weather_font_bold</item>
+        <item>@string/status_bar_weather_font_bold_italic</item>
         <item>@string/status_bar_weather_font_condensed</item>
         <item>@string/status_bar_weather_font_light</item>
         <item>@string/status_bar_weather_font_light_italic</item>
@@ -1520,6 +1523,7 @@
         <item>2</item>
         <item>3</item>
         <item>4</item>
+        <item>5</item>
     </string-array>
 
 </resources>
