@@ -859,6 +859,7 @@
     <string name="weather_number_of_notifications_six_title">6</string>
 
     <!-- Lockscreen Shortcuts -->
+    <string name="shortcuts_title">Shortcuts</string>
     <string name="lockscreen_shortcuts_title">Middle shortcuts</string>
     <string name="lockscreen_shortcuts_summary">View or change custom middle lock screen shortcuts</string>
     <string name="lockscreen_shorcuts_longpress_title">Shortcuts longpress</string>
