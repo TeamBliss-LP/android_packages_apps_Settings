@@ -73,8 +73,8 @@ public class SeekBarPreference extends Preference implements OnSeekBarChangeList
         mMinValue = attrs.getAttributeIntValue(SETTINGS, "min", 0);
         mDefaultValue = attrs.getAttributeIntValue(SETTINGS, "defaultVal", -1);       
         mUnitsLeft = getAttributeStringValue(attrs, SETTINGS, "unitsLeft", "");
-        mUnitsRight = getAttributeStringValue(attrs, SETTINGS, "unitsRight", units);
         String units = getAttributeStringValue(attrs, SETTINGS, "units", "");
+        mUnitsRight = getAttributeStringValue(attrs, SETTINGS, "unitsRight", units);
         
         try {
             String newInterval = attrs.getAttributeValue(SETTINGS, "interval");
