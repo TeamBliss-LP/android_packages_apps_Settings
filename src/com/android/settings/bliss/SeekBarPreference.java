@@ -42,6 +42,7 @@ public class SeekBarPreference extends Preference implements OnSeekBarChangeList
     private int mMaxValue      = 100;
     private int mMinValue      = 0;
     private int mInterval      = 1;
+    private int mDefaultValue  = -1;
     private int mCurrentValue;
     private String mUnitsLeft  = "";
     private String mUnitsRight = "";
@@ -70,10 +71,10 @@ public class SeekBarPreference extends Preference implements OnSeekBarChangeList
     private void setValuesFromXml(AttributeSet attrs) {
         mMaxValue = attrs.getAttributeIntValue(ANDROIDNS, "max", 100);
         mMinValue = attrs.getAttributeIntValue(SETTINGS, "min", 0);
-        
+        mDefaultValue = attrs.getAttributeIntValue(SETTINGS, "defaultVal", -1);       
         mUnitsLeft = getAttributeStringValue(attrs, SETTINGS, "unitsLeft", "");
-        String units = getAttributeStringValue(attrs, SETTINGS, "units", "");
         mUnitsRight = getAttributeStringValue(attrs, SETTINGS, "unitsRight", units);
+        String units = getAttributeStringValue(attrs, SETTINGS, "units", "");
         
         try {
             String newInterval = attrs.getAttributeValue(SETTINGS, "interval");
@@ -199,7 +200,10 @@ public class SeekBarPreference extends Preference implements OnSeekBarChangeList
 
         // change accepted, store it
         mCurrentValue = newValue;
-        mStatusText.setText(String.valueOf(newValue));
+        if (mCurrentValue == mDefaultValue && mDefaultValue != -1)
+            mStatusText.setText(R.string.default_string);
+        else
+            mStatusText.setText(String.valueOf(newValue));
         persistInt(newValue);
 
     }
