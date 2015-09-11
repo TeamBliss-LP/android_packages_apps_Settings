@@ -44,6 +44,12 @@
     <string name="default_string">Default</string>
     <string name="more_string">More</string>
     <string name="color_title">Color</string>
+    <string name="clock_color_title">Clock olor</string>
+    <string name="date_color_title">Date color</string>
+    <string name="alarm_color_title">Alarm color</string>
+    <string name="ampm_color_title">AmPm color</string>
+    <string name="weather1_color_title">Weather line 1 color</string>
+    <string name="weather2_color_title">Weather line 2 color</string>
     <string name="colors_title">Colors</string>
     <string name="cat_colors_title">Customize notification colors</string>
     <string name="category_colors_title">Customize colors</string>

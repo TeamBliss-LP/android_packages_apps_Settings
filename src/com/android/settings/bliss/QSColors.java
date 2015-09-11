@@ -46,7 +46,12 @@ public class QSColors extends SettingsPreferenceFragment implements
     private static final String PREF_SHOW_WEATHER = "expanded_header_show_weather";
     private static final String PREF_SHOW_LOCATION = "expanded_header_show_weather_location";
     private static final String PREF_BG_COLOR = "expanded_header_background_color";
-    private static final String PREF_TEXT_COLOR = "expanded_header_text_color";
+    private static final String PREF_CLOCK_COLOR = "expanded_header_clock_color";
+    private static final String PREF_DATE_COLOR = "expanded_header_date_color";
+    private static final String PREF_ALARM_COLOR = "expanded_header_alarm_color";
+    private static final String PREF_AMPM_COLOR = "expanded_header_ampm_color";
+    private static final String PREF_WEATHER1_COLOR = "expanded_header_weather1_color";
+    private static final String PREF_WEATHER2_COLOR = "expanded_header_weather2_color";
     private static final String PREF_ICON_COLOR = "expanded_header_icon_color";
     private static final String PREF_CLEAR_ALL_ICON_COLOR = "notification_drawer_clear_all_icon_color";
     private static final String PREF_QS_RIPPLE_COLOR = "qs_ripple_color";
@@ -68,7 +73,12 @@ public class QSColors extends SettingsPreferenceFragment implements
     private SwitchPreference mShowWeather;
     private SwitchPreference mShowLocation;
     private ColorPickerPreference mBackgroundColor;
-    private ColorPickerPreference mTextColor;
+    private ColorPickerPreference mClockColor;
+    private ColorPickerPreference mAmPmColor;
+    private ColorPickerPreference mDateColor;
+    private ColorPickerPreference mAlarmColor;
+    private ColorPickerPreference mWeather1Color;
+    private ColorPickerPreference mWeather2Color;
     private ColorPickerPreference mIconColor;
     private ColorPickerPreference mClearAllIconColor;
     private ColorPickerPreference mQSRippleColor;
@@ -144,8 +154,29 @@ public class QSColors extends SettingsPreferenceFragment implements
             mShowLocation.setChecked(Settings.System.getInt(mResolver,
                     Settings.System.STATUS_BAR_EXPANDED_HEADER_SHOW_WEATHER_LOCATION, 1) == 1);
             mShowLocation.setOnPreferenceChangeListener(this);
+
+            mWeather1Color = (ColorPickerPreference) findPreference(PREF_WEATHER1_COLOR);
+            intColor = Settings.System.getInt(mResolver,
+                    Settings.System.STATUS_BAR_EXPANDED_HEADER_WEATHER1_COLOR,
+                    DEFAULT_COLOR);
+            mWeather1Color.setNewPreviewColor(intColor);
+            hexColor = String.format("#%08x", (0xffffffff & intColor));
+            mWeather1Color.setSummary(hexColor);
+            mWeather1Color.setOnPreferenceChangeListener(this);
+
+            mWeather2Color = (ColorPickerPreference) findPreference(PREF_WEATHER2_COLOR);
+            intColor = Settings.System.getInt(mResolver,
+                    Settings.System.STATUS_BAR_EXPANDED_HEADER_WEATHER2_COLOR,
+                    DEFAULT_COLOR);
+            mWeather2Color.setNewPreviewColor(intColor);
+            hexColor = String.format("#%08x", (0xffffffff & intColor));
+            mWeather2Color.setSummary(hexColor);
+            mWeather2Color.setOnPreferenceChangeListener(this);
+
         } else {
             removePreference(PREF_SHOW_LOCATION);
+            removePreference(PREF_WEATHER1_COLOR);
+            removePreference(PREF_WEATHER2_COLOR);
         }
 
         mBackgroundColor =
@@ -160,14 +191,41 @@ public class QSColors extends SettingsPreferenceFragment implements
         mBackgroundColor.setOnPreferenceChangeListener(this);
 		mBackgroundColor.setAlphaSliderEnabled(true);
 
-        mTextColor = (ColorPickerPreference) findPreference(PREF_TEXT_COLOR);
+        mClockColor = (ColorPickerPreference) findPreference(PREF_CLOCK_COLOR);
         intColor = Settings.System.getInt(mResolver,
-                Settings.System.STATUS_BAR_EXPANDED_HEADER_TEXT_COLOR,
+                Settings.System.STATUS_BAR_EXPANDED_HEADER_CLOCK_COLOR,
                 DEFAULT_COLOR);
-        mTextColor.setNewPreviewColor(intColor);
+        mClockColor.setNewPreviewColor(intColor);
         hexColor = String.format("#%08x", (0xffffffff & intColor));
-        mTextColor.setSummary(hexColor);
-        mTextColor.setOnPreferenceChangeListener(this);
+        mClockColor.setSummary(hexColor);
+        mClockColor.setOnPreferenceChangeListener(this);
+
+        mDateColor = (ColorPickerPreference) findPreference(PREF_DATE_COLOR);
+        intColor = Settings.System.getInt(mResolver,
+                Settings.System.STATUS_BAR_EXPANDED_HEADER_DATE_COLOR,
+                DEFAULT_COLOR);
+        mDateColor.setNewPreviewColor(intColor);
+        hexColor = String.format("#%08x", (0xffffffff & intColor));
+        mDateColor.setSummary(hexColor);
+        mDateColor.setOnPreferenceChangeListener(this);
+
+        mAlarmColor = (ColorPickerPreference) findPreference(PREF_ALARM_COLOR);
+        intColor = Settings.System.getInt(mResolver,
+                Settings.System.STATUS_BAR_EXPANDED_HEADER_ALARM_COLOR,
+                DEFAULT_COLOR);
+        mAlarmColor.setNewPreviewColor(intColor);
+        hexColor = String.format("#%08x", (0xffffffff & intColor));
+        mAlarmColor.setSummary(hexColor);
+        mAlarmColor.setOnPreferenceChangeListener(this);
+
+        mAmPmColor = (ColorPickerPreference) findPreference(PREF_AMPM_COLOR);
+        intColor = Settings.System.getInt(mResolver,
+                Settings.System.STATUS_BAR_EXPANDED_HEADER_AMPM_COLOR,
+                DEFAULT_COLOR);
+        mAmPmColor.setNewPreviewColor(intColor);
+        hexColor = String.format("#%08x", (0xffffffff & intColor));
+        mAmPmColor.setSummary(hexColor);
+        mAmPmColor.setOnPreferenceChangeListener(this);
 
         mIconColor = (ColorPickerPreference) findPreference(PREF_ICON_COLOR);
         intColor = Settings.System.getInt(mResolver,
@@ -279,12 +337,52 @@ public class QSColors extends SettingsPreferenceFragment implements
                 Settings.System.STATUS_BAR_EXPANDED_HEADER_BG_COLOR, intHex);
             preference.setSummary(hex);
             return true;
-        } else if (preference == mTextColor) {
+        } else if (preference == mClockColor) {
             hex = ColorPickerPreference.convertToARGB(
                 Integer.valueOf(String.valueOf(newValue)));
             intHex = ColorPickerPreference.convertToColorInt(hex);
             Settings.System.putInt(mResolver,
-                Settings.System.STATUS_BAR_EXPANDED_HEADER_TEXT_COLOR, intHex);
+                Settings.System.STATUS_BAR_EXPANDED_HEADER_CLOCK_COLOR, intHex);
+            preference.setSummary(hex);
+            return true;
+        } else if (preference == mDateColor) {
+            hex = ColorPickerPreference.convertToARGB(
+                Integer.valueOf(String.valueOf(newValue)));
+            intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(mResolver,
+                Settings.System.STATUS_BAR_EXPANDED_HEADER_DATE_COLOR, intHex);
+            preference.setSummary(hex);
+            return true;
+        } else if (preference == mAlarmColor) {
+            hex = ColorPickerPreference.convertToARGB(
+                Integer.valueOf(String.valueOf(newValue)));
+            intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(mResolver,
+                Settings.System.STATUS_BAR_EXPANDED_HEADER_ALARM_COLOR, intHex);
+            preference.setSummary(hex);
+            return true;
+        } else if (preference == mAmPmColor) {
+            hex = ColorPickerPreference.convertToARGB(
+                Integer.valueOf(String.valueOf(newValue)));
+            intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(mResolver,
+                Settings.System.STATUS_BAR_EXPANDED_HEADER_AMPM_COLOR, intHex);
+            preference.setSummary(hex);
+            return true;
+        } else if (preference == mWeather1Color) {
+            hex = ColorPickerPreference.convertToARGB(
+                Integer.valueOf(String.valueOf(newValue)));
+            intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(mResolver,
+                Settings.System.STATUS_BAR_EXPANDED_HEADER_WEATHER1_COLOR, intHex);
+            preference.setSummary(hex);
+            return true;
+        } else if (preference == mWeather2Color) {
+            hex = ColorPickerPreference.convertToARGB(
+                Integer.valueOf(String.valueOf(newValue)));
+            intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(mResolver,
+                Settings.System.STATUS_BAR_EXPANDED_HEADER_WEATHER2_COLOR, intHex);
             preference.setSummary(hex);
             return true;
         } else if (preference == mIconColor) {
@@ -364,7 +462,22 @@ public class QSColors extends SettingsPreferenceFragment implements
                                     Settings.System.STATUS_BAR_EXPANDED_HEADER_BG_COLOR,
                                     DEFAULT_BG_COLOR);
                             Settings.System.putInt(getOwner().mResolver,
-                                    Settings.System.STATUS_BAR_EXPANDED_HEADER_TEXT_COLOR,
+                                    Settings.System.STATUS_BAR_EXPANDED_HEADER_CLOCK_COLOR,
+                                    DEFAULT_COLOR);
+                            Settings.System.putInt(getOwner().mResolver,
+                                    Settings.System.STATUS_BAR_EXPANDED_HEADER_DATE_COLOR,
+                                    DEFAULT_COLOR);
+                            Settings.System.putInt(getOwner().mResolver,
+                                    Settings.System.STATUS_BAR_EXPANDED_HEADER_ALARM_COLOR,
+                                    DEFAULT_COLOR);
+                            Settings.System.putInt(getOwner().mResolver,
+                                    Settings.System.STATUS_BAR_EXPANDED_HEADER_AMPM_COLOR,
+                                    DEFAULT_COLOR);
+                            Settings.System.putInt(getOwner().mResolver,
+                                    Settings.System.STATUS_BAR_EXPANDED_HEADER_WEATHER1_COLOR,
+                                    DEFAULT_COLOR);
+                            Settings.System.putInt(getOwner().mResolver,
+                                    Settings.System.STATUS_BAR_EXPANDED_HEADER_WEATHER2_COLOR,
                                     DEFAULT_COLOR);
                             Settings.System.putInt(getOwner().mResolver,
                                     Settings.System.STATUS_BAR_EXPANDED_HEADER_ICON_COLOR,
@@ -400,7 +513,22 @@ public class QSColors extends SettingsPreferenceFragment implements
                                     Settings.System.STATUS_BAR_EXPANDED_HEADER_BG_COLOR,
                                     0xff000000);
                             Settings.System.putInt(getOwner().mResolver,
-                                    Settings.System.STATUS_BAR_EXPANDED_HEADER_TEXT_COLOR,
+                                    Settings.System.STATUS_BAR_EXPANDED_HEADER_CLOCK_COLOR,
+                                    DEFAULT_COLOR);
+                            Settings.System.putInt(getOwner().mResolver,
+                                    Settings.System.STATUS_BAR_EXPANDED_HEADER_DATE_COLOR,
+                                    DEFAULT_COLOR);
+                            Settings.System.putInt(getOwner().mResolver,
+                                    Settings.System.STATUS_BAR_EXPANDED_HEADER_ALARM_COLOR,
+                                    DEFAULT_COLOR);
+                            Settings.System.putInt(getOwner().mResolver,
+                                    Settings.System.STATUS_BAR_EXPANDED_HEADER_AMPM_COLOR,
+                                    DEFAULT_COLOR);
+                            Settings.System.putInt(getOwner().mResolver,
+                                    Settings.System.STATUS_BAR_EXPANDED_HEADER_WEATHER1_COLOR,
+                                    DEFAULT_COLOR);
+                            Settings.System.putInt(getOwner().mResolver,
+                                    Settings.System.STATUS_BAR_EXPANDED_HEADER_WEATHER2_COLOR,
                                     DEFAULT_COLOR);
                             Settings.System.putInt(getOwner().mResolver,
                                     Settings.System.STATUS_BAR_EXPANDED_HEADER_ICON_COLOR,
