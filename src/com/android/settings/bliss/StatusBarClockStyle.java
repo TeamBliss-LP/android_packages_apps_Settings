@@ -70,6 +70,7 @@ public class StatusBarClockStyle extends SettingsPreferenceFragment
     private static final String PREF_CLOCK_DATE_DISPLAY = "clock_date_display";
     private static final String PREF_CLOCK_DATE_STYLE = "clock_date_style";
     private static final String PREF_CLOCK_DATE_FORMAT = "clock_date_format";
+    private static final String PREF_CLOCK_DATE_POSITION = "clock_date_position";
     private static final String STATUS_BAR_CLOCK = "status_bar_show_clock";
     private static final String CLOCK_USE_SECOND = "clock_use_second";
 
@@ -89,6 +90,7 @@ public class StatusBarClockStyle extends SettingsPreferenceFragment
     private ListPreference mClockDateDisplay;
     private ListPreference mClockDateStyle;
     private ListPreference mClockDateFormat;
+    private ListPreference mClockDatePosition;
     private SwitchPreference mStatusBarClock;
     private SwitchPreference mClockUseSecond;
 
@@ -174,6 +176,13 @@ public class StatusBarClockStyle extends SettingsPreferenceFragment
         mClockDateStyle.setValue(Integer.toString(Settings.System.getInt(resolver,
                 Settings.System.STATUSBAR_CLOCK_DATE_STYLE, 0)));
         mClockDateStyle.setSummary(mClockDateStyle.getEntry());
+
+        mClockDatePosition = (ListPreference) findPreference(PREF_CLOCK_DATE_POSITION);
+        mClockDatePosition.setOnPreferenceChangeListener(this);
+        mClockDatePosition.setValue(Integer.toString(Settings.System.getInt(getActivity()
+                .getContentResolver(), Settings.System.STATUSBAR_CLOCK_DATE_POSITION,
+                0)));
+        mClockDatePosition.setSummary(mClockDatePosition.getEntry());
 
         mClockUseSecond = (SwitchPreference) prefSet.findPreference(CLOCK_USE_SECOND);
         mClockUseSecond.setChecked((Settings.System.getInt(
@@ -267,6 +276,14 @@ public class StatusBarClockStyle extends SettingsPreferenceFragment
             Settings.System.putInt(resolver,
                     Settings.System.STATUSBAR_CLOCK_DATE_STYLE, val);
             mClockDateStyle.setSummary(mClockDateStyle.getEntries()[index]);
+            parseClockDateFormats();
+            return true;
+        } else if (preference == mClockDatePosition) {
+            int val = Integer.parseInt((String) newValue);
+            int index = mClockDatePosition.findIndexOfValue((String) newValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.STATUSBAR_CLOCK_DATE_POSITION, val);
+            mClockDatePosition.setSummary(mClockDatePosition.getEntries()[index]);
             parseClockDateFormats();
             return true;
         } else if (preference == mStatusBarClock) {
