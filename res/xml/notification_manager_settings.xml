@@ -16,6 +16,12 @@
 -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <!-- Zen Mode -->
+    <PreferenceScreen
+            android:key="zen_mode"
+            android:title="@string/zen_mode_settings_title"
+            android:fragment="com.android.settings.notification.ZenModeSettings" />
+
     <!-- When device is locked -->
     <com.android.settings.notification.DropDownPreference
             android:key="lock_screen_notifications"
