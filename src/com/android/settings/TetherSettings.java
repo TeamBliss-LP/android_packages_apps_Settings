@@ -136,6 +136,7 @@ public class TetherSettings extends SettingsPreferenceFragment
         Preference wifiApSettings = findPreference(WIFI_AP_SSID_AND_SECURITY);
         mUsbTether = (SwitchPreference) findPreference(USB_TETHER_SETTINGS);
         mBluetoothTether = (SwitchPreference) findPreference(ENABLE_BLUETOOTH_TETHERING);
+        mUsbNetList = (ListPreference) findPreference(USB_TETHER_NETWORK);
 
         final Activity activity = getActivity();
         BluetoothAdapter adapter = BluetoothAdapter.getDefaultAdapter();
