@@ -44,7 +44,14 @@ public class NotificationDrawerSettings extends SettingsPreferenceFragment imple
     private static final String PREF_SMART_PULLDOWN = "smart_pulldown";
     private static final String STATUS_BAR_POWER_MENU = "status_bar_power_menu";
     private static final String PREF_ENABLE_TASK_MANAGER = "enable_task_manager";
+    private static final String PREF_NUM_OF_COLUMNS = "sysui_qs_num_columns";
     private static final String PREF_QS_TYPE = "qs_type";
+    private static final String PREF_QS_SHOW_BRIGHTNESS_SLIDER =
+            "qs_show_brightness_slider";
+
+    private static final int QS_TYPE_PANEL  = 0;
+    private static final int QS_TYPE_BAR    = 1;
+    private static final int QS_TYPE_HIDEEN = 2;
 
     private ListPreference mQuickPulldown;
     private ListPreference mSmartPulldown;
@@ -54,28 +61,64 @@ public class NotificationDrawerSettings extends SettingsPreferenceFragment imple
     private ListPreference mStatusBarPowerMenu;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.notification_drawer_settings);
-
+    public void onCreate(Bundle icicle) {
+        super.onCreate(icicle);
+        refreshSettings();
     }
 
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-
+    public void refreshSettings() {
         PreferenceScreen prefSet = getPreferenceScreen();
+        if (prefSet != null) {
+            prefSet.removeAll();
+        }
+        addPreferencesFromResource(R.xml.notification_drawer_settings);
         ContentResolver resolver = getActivity().getContentResolver();
-        mQuickPulldown = (ListPreference) prefSet.findPreference(QUICK_PULLDOWN);
-        mSmartPulldown = (ListPreference) findPreference(PREF_SMART_PULLDOWN);
+
+        final int qsType = Settings.System.getInt(resolver,
+               Settings.System.QS_TYPE, QS_TYPE_PANEL);
 
         mQSType = (ListPreference) findPreference(PREF_QS_TYPE);
-        int type = Settings.System.getInt(resolver,
-               Settings.System.QS_TYPE, 0);
-        mQSType.setValue(String.valueOf(type));
+        mQSType.setValue(String.valueOf(qsType));
         mQSType.setSummary(mQSType.getEntry());
         mQSType.setOnPreferenceChangeListener(this);
 
+        if (qsType == QS_TYPE_PANEL) {
+        mNumColumns = (ListPreference) findPreference(PREF_NUM_OF_COLUMNS);
+        int numColumns = Settings.Secure.getIntForUser(getContentResolver(),
+                Settings.Secure.QS_NUM_TILE_COLUMNS, getDefaultNumColums(),
+                UserHandle.USER_CURRENT);
+        mNumColumns.setValue(String.valueOf(numColumns));
+        updateNumColumnsSummary(numColumns);
+        mNumColumns.setOnPreferenceChangeListener(this);
+        DraggableGridView.setColumnCount(numColumns);
+
+        // Task manager
+        mEnableTaskManager = (SwitchPreference) findPreference(PREF_ENABLE_TASK_MANAGER);
+        mEnableTaskManager.setChecked((Settings.System.getInt(resolver,
+                Settings.System.ENABLE_TASK_MANAGER, 0) == 1));
+        } else {
+            removePreference("sysui_qs_num_columns");
+            removePreference("enable_task_manager");
+        }
+
+        if (qsType == QS_TYPE_BAR || qsType == QS_TYPE_HIDEEN) {
+            removePreference("qs_panel_tiles");
+            removePreference("sysui_qs_num_columns");
+            removePreference("sysui_qs_main_tiles");
+            removePreference("qs_show_brightness_slider");
+            removePreference("slimaction_tile");
+            removePreference("qs_location_advanced");
+            removePreference("qs_wifi_detail");
+            removePreference("qs_tiles_vibrate");
+            removePreference("quick_settings_collapse_panel");
+            removePreference("lockscreen_hide_qs_tiles_with_sensitive_data");
+        }
+
+        if (qsType == QS_TYPE_PANEL || qsType == QS_TYPE_HIDEEN) {
+            removePreference("qs_bar_buttons");
+        }
+
+        mQuickPulldown = (ListPreference) findPreference(QUICK_PULLDOWN);
         mQuickPulldown.setOnPreferenceChangeListener(this);
         int quickPulldownValue = Settings.System.getIntForUser(resolver,
                 Settings.System.QS_QUICK_PULLDOWN, 0, UserHandle.USER_CURRENT);
@@ -83,6 +126,7 @@ public class NotificationDrawerSettings extends SettingsPreferenceFragment imple
         updatePulldownSummary(quickPulldownValue);
 
         // Smart Pulldown
+        mSmartPulldown = (ListPreference) findPreference(PREF_SMART_PULLDOWN);
         mSmartPulldown.setOnPreferenceChangeListener(this);
         int smartPulldown = Settings.System.getInt(resolver,
                 Settings.System.QS_SMART_PULLDOWN, 0);
@@ -97,32 +141,21 @@ public class NotificationDrawerSettings extends SettingsPreferenceFragment imple
         mStatusBarPowerMenu.setValue(String.valueOf(statusBarPowerMenu));
         mStatusBarPowerMenu.setSummary(mStatusBarPowerMenu.getEntry());
 
-        // Task manager
-        mEnableTaskManager = (SwitchPreference) prefSet.findPreference(PREF_ENABLE_TASK_MANAGER);
-        mEnableTaskManager.setChecked((Settings.System.getInt(resolver,
-                Settings.System.ENABLE_TASK_MANAGER, 0) == 1));
-
-        mNumColumns = (ListPreference) findPreference("sysui_qs_num_columns");
-        int numColumns = Settings.Secure.getIntForUser(getContentResolver(),
-                Settings.Secure.QS_NUM_TILE_COLUMNS, getDefaultNumColums(),
-                UserHandle.USER_CURRENT);
-        mNumColumns.setValue(String.valueOf(numColumns));
-        updateNumColumnsSummary(numColumns);
-        mNumColumns.setOnPreferenceChangeListener(this);
-        DraggableGridView.setColumnCount(numColumns);
-
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getContentResolver();
         int intValue;
+        boolean value;
+
         if (preference == mQSType) {
             intValue = Integer.valueOf((String) newValue);
             int index = mQSType.findIndexOfValue((String) newValue);
             Settings.System.putInt(resolver,
                 Settings.System.QS_TYPE, intValue);
             preference.setSummary(mQSType.getEntries()[index]);
+            refreshSettings();
             return true;
         } else if (preference == mQuickPulldown) {
             int quickPulldownValue = Integer.valueOf((String) newValue);
