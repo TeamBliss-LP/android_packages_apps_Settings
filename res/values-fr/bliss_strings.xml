@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2014 The LiquidSmooth Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+     
+          http://www.apache.org/licenses/LICENSE-2.0
+          
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Bliss settings screens -->
+    <string name="header_category_bliss">Options Bliss</string>
+    <string name="header_category_personalization">Personnalisation</string>
+    <string name="interface_settings_title">Interface Bliss</string>
+    
+    <!-- Bliss Extra Info -->
+    <string name="lsextrainfo">Informations supplémentaire</string>
+    <string name="lsextrainfo_summary">Afficher des informations supplémentaire sur le CPU, l\'affichage, ...</string>
+
+    <!-- Share BlissPop -->
+    <string name="share_bliss_title">Partager BlissPop</string>
+    <string name="share_bliss_summary">Faites connaître BlissPop</string>
+    <string name="share_message">Découvrez ce qu'est #BlissPop et tout ce qui est en rapport@ http://www.blissroms.com</string>
+    <string name="share_chooser_title">Partager BlissPop</string>
+    
+    <!-- General strings -->
+    <string name="ok">OK</string>
+    <string name="reset">Réinitialiser</string>
+    <string name="add">Ajouter</string>
+    <string name="help">Aide</string>
+    <string name="reset_android">Android</string>
+    <string name="dialog_restart">Redémarrer</string>
+    <string name="dialog_cancel">Effacer</string>
+    <string name="reset_bliss">Bliss</string>
+    <string name="attention">Attention</string>
+    <string name="enabled">Activer</string>
+    <string name="default_string">Par défaut</string>
+    <string name="more_string">Plus</string>
+    <string name="color_title">Couleur</string>
+    <string name="colors_title">Couleurs</string>
+    <string name="cat_colors_title">Personnaliser les couleurs des notifications</string>
+    <string name="category_colors_title">Personnaliser les couleurs</string>
+    <string name="icons_title">Icônes</string>
+    <string name="text_title">Texte</string>
+    <string name="background_title">Arrière-plan</string>
+    <string name="icon_title">Icône</string>
+    <string name="reset_message">Réinitialiser toutes les entrées par défaut?</string>
+    <string name="reset_option_message">Rétablissement des valeurs d\'\nAndroid ou de Bliss par défaut?</string>
+    <string name="category_general_title">Options générales</string>
+    <string name="dlg_reset_values_message">>Rétablissement des valeurs d\'\nAndroid ou de Bliss par défaut??</string>
+    <string name="dlg_reset_notification_colors_message">Rétablissement des valeurs d\'\néclaircissement ou d\'assombrissement?</string>
+    <string name="dlg_reset_android">Android</string>
+    <string name="dlg_reset_bliss">Bliss</string>
+    <string name="dlg_reset_dark">Sombre</string>
+    <string name="dlg_reset_light">Clair</string>
+    <string name="reset_default_message">Rétablissement par défaut?</string>
+    <string name="additional_options_title">Options additionnels</string>
+    <string name="positive_done">Fait</string>
+    
+    <!-- Changelog -->
+    <string name="changelog_bliss_title">Changelog</string>
+    <string name="changelog_bliss_error">Impossible de charger le changelog</string>
+
+    
