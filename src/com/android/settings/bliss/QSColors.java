@@ -149,13 +149,15 @@ public class QSColors extends SettingsPreferenceFragment implements
         mShowWeather.setChecked(showWeather);
         mShowWeather.setOnPreferenceChangeListener(this);
 
+        mWeather1Color = (ColorPickerPreference) findPreference(PREF_WEATHER1_COLOR);
+            mWeather2Color = (ColorPickerPreference) findPreference(PREF_WEATHER2_COLOR);
+
         if (showWeather) {
             mShowLocation = (SwitchPreference) findPreference(PREF_SHOW_LOCATION);
             mShowLocation.setChecked(Settings.System.getInt(mResolver,
                     Settings.System.STATUS_BAR_EXPANDED_HEADER_SHOW_WEATHER_LOCATION, 1) == 1);
             mShowLocation.setOnPreferenceChangeListener(this);
 
-            mWeather1Color = (ColorPickerPreference) findPreference(PREF_WEATHER1_COLOR);
             intColor = Settings.System.getInt(mResolver,
                     Settings.System.STATUS_BAR_EXPANDED_HEADER_WEATHER1_COLOR,
                     DEFAULT_COLOR);
@@ -164,7 +166,6 @@ public class QSColors extends SettingsPreferenceFragment implements
             mWeather1Color.setSummary(hexColor);
             mWeather1Color.setOnPreferenceChangeListener(this);
 
-            mWeather2Color = (ColorPickerPreference) findPreference(PREF_WEATHER2_COLOR);
             intColor = Settings.System.getInt(mResolver,
                     Settings.System.STATUS_BAR_EXPANDED_HEADER_WEATHER2_COLOR,
                     DEFAULT_COLOR);
