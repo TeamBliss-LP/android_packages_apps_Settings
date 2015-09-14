@@ -25,5 +25,7 @@
     <color name="dslv_divider">#1fffffff</color>
     <color name="dslv_icon_dark">#80000000</color>
     <color name="dslv_float_background_color">#ff1b1f23</color>
-
+	
+	<!-- DPI Alert Dialog Text Colors -->
+    <color name="dpi_text_color">@android:color/black</color>
 </resources>
