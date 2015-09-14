@@ -40,6 +40,16 @@
 	    android:summary="@string/expanded_header_show_weather_location_summary"
 	    android:defaultValue="true" />
 
+    <net.margaritov.preference.colorpicker.ColorPickerPreference
+        android:key="expanded_header_weather1_color"
+        android:title="@string/weather1_color_title"
+        android:defaultValue="0xffffffff" />
+
+     <net.margaritov.preference.colorpicker.ColorPickerPreference
+        android:key="expanded_header_weather2_color"
+        android:title="@string/weather2_color_title"
+        android:defaultValue="0xffffffff" />
+
     <PreferenceCategory
         android:key="qs_cat_colors"
         android:title="@string/qs_color_options">
@@ -115,17 +125,6 @@
          <net.margaritov.preference.colorpicker.ColorPickerPreference
             android:key="expanded_header_alarm_color"
             android:title="@string/alarm_color_title"
-            android:defaultValue="0xffffffff" />
-
-         <net.margaritov.preference.colorpicker.ColorPickerPreference
-            android:key="expanded_header_weather1_color"
-            android:title="@string/weather1_color_title"
-            android:defaultValue="0xffffffff"
-            android:dependency="expanded_header_show_weather" />
-
-         <net.margaritov.preference.colorpicker.ColorPickerPreference
-            android:key="expanded_header_weather2_color"
-            android:title="@string/weather2_color_title"
             android:defaultValue="0xffffffff" />
 
          <net.margaritov.preference.colorpicker.ColorPickerPreference
