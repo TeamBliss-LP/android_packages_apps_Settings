@@ -1321,6 +1321,10 @@
     <string name="custom_carrier_label_explain">Please enter a new label. Leave blank to revert to stock label.</string>
     <string name="custom_carrier_label_notset">Custom label currently not set</string>
     <string name="status_bar_carrier_color">Carrier label color</string>
+    <string name="show_carrier_disabled">Disabled</string>
+    <string name="show_carrier_keyguard">Lockscreen only</string>
+    <string name="show_carrier_statusbar">Statusbar only</string>
+    <string name="show_carrier_enabled">Lockscreen &amp; statusbar</string>
     <string name="status_bar_carrier_size">Carrier label text size</string>
 
     <!-- Identicons -->
@@ -1654,10 +1658,6 @@
     <string name="legacy_menu_left_long_action_title">Legacy left menu button long-press action</string>
     <string name="legacy_menu_right_action_title">Legacy right menu button action</string>
     <string name="legacy_menu_right_long_action_title">Legacy right menu button long-press action</string>
-
-    <!-- Hide lock screen carrier -->
-    <string name="lock_screen_hide_carrier_title">Hide carrier on lock screen</string>
-    <string name="lock_screen_hide_carrier_summary">SystemUI will be restarted on switch toggle.</string>
 
     <!-- Status bar temperature -->
     <string name="status_bar_temperature_title">Temperature</string>
