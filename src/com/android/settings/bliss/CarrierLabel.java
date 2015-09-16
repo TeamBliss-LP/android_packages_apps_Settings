@@ -63,8 +63,8 @@ public class CarrierLabel extends SettingsPreferenceFragment implements OnPrefer
     private ColorPickerPreference mCarrierColorPicker;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public void onCreate(Bundle icicle) {
+        super.onCreate(icicle);
 
         addPreferencesFromResource(R.xml.bliss_carrierlabel);
 
@@ -74,11 +74,13 @@ public class CarrierLabel extends SettingsPreferenceFragment implements OnPrefer
         String hexColor;
 
         mStatusBarCarrier = (ListPreference) findPreference(STATUS_BAR_CUSTOM_CARRIER);
-        int statusBarCarrier = Settings.System.getInt(getContentResolver(),
-                    Settings.System.STATUS_BAR_CUSTOM_CARRIER, 1);
+        int statusBarCarrier = Settings.System.getIntForUser(resolver,
+                Settings.System.STATUS_BAR_CUSTOM_CARRIER, 0,
+                UserHandle.USER_CURRENT);
         mStatusBarCarrier.setValue(String.valueOf(statusBarCarrier));
         mStatusBarCarrier.setSummary(mStatusBarCarrier.getEntry());
         mStatusBarCarrier.setOnPreferenceChangeListener(this);
+
         mCustomCarrierLabel = (PreferenceScreen) prefSet.findPreference(CUSTOM_CARRIER_LABEL);
 
         mStatusBarCarrierSize = (SeekBarPreference) findPreference(STATUS_BAR_CARRIER_FONT_SIZE);
@@ -96,6 +98,7 @@ public class CarrierLabel extends SettingsPreferenceFragment implements OnPrefer
         mCarrierColorPicker.setNewPreviewColor(intColor);
 
         updateCustomLabelTextSummary();
+        updateCarrierOptions();
 
     }
 
@@ -113,9 +116,19 @@ public class CarrierLabel extends SettingsPreferenceFragment implements OnPrefer
         }
     }
 
+    @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getApplicationContext().getContentResolver();
-        if (preference == mCarrierColorPicker) {
+
+         if (preference == mStatusBarCarrier) {
+            int statusBarCarrier = Integer.valueOf((String) newValue);
+            int index = mStatusBarCarrier.findIndexOfValue((String) newValue);
+            Settings.System.putInt(resolver, 
+                    Settings.System.STATUS_BAR_CUSTOM_CARRIER, statusBarCarrier);
+            mStatusBarCarrier.setSummary(mStatusBarCarrier.getEntries()[index]);
+            updateCarrierOptions();
+            return true;
+        } else if (preference == mCarrierColorPicker) {
             String hex = ColorPickerPreference.convertToARGB(
                     Integer.valueOf(String.valueOf(newValue)));
             preference.setSummary(hex);
@@ -123,24 +136,26 @@ public class CarrierLabel extends SettingsPreferenceFragment implements OnPrefer
             Settings.System.putInt(resolver,
                     Settings.System.STATUS_BAR_CARRIER_COLOR, intHex);
             return true;
-        } else if (preference == mStatusBarCarrier) {
-            int statusBarCarrier = Integer.valueOf((String) newValue);
-            int index = mStatusBarCarrier.findIndexOfValue((String) newValue);
-            Settings.System.putInt(
-                    getContentResolver(), Settings.System.STATUS_BAR_CUSTOM_CARRIER, statusBarCarrier);
-            mStatusBarCarrier.setSummary(mStatusBarCarrier.getEntries()[index]);
          } else if (preference == mStatusBarCarrierSize) {
             int width = ((Integer)newValue).intValue();
-            Settings.System.putInt(getActivity().getContentResolver(),
+            Settings.System.putInt(resolver,
                     Settings.System.STATUS_BAR_CARRIER_FONT_SIZE, width);
             return true;
          }
          return false;
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
+    private void updateCarrierOptions() {
+        if (Settings.System.getInt(getActivity().getContentResolver(),
+            Settings.System.STATUS_BAR_CUSTOM_CARRIER, 0) == 0) {
+            mCustomCarrierLabel.setEnabled(false);
+            mStatusBarCarrierSize.setEnabled(false);
+            mCarrierColorPicker.setEnabled(false);
+        } else {
+            mCustomCarrierLabel.setEnabled(true);
+            mStatusBarCarrierSize.setEnabled(true);
+            mCarrierColorPicker.setEnabled(true);
+        }
     }
 
     @Override
