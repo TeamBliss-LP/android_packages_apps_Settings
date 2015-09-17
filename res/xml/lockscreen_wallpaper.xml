@@ -32,4 +32,18 @@
             android:persistent="false"/>
 
     </PreferenceCategory>
+    
+    <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
+        android:key="lockscreen_see_through"
+        android:title="@string/lockscreen_see_through_title"
+        android:summary="@string/lockscreen_see_through_summary"
+        android:defaultValue="false" />
+
+    <com.android.settings.bliss.SeekBarPreference
+        android:key="lockscreen_blur_radius"
+        android:title="@string/lockscreen_blur_radius"
+        android:max="25"
+        settings:minimum="0"
+        settings:defaultVal="14"
+        settings:interval="1" />
 </PreferenceScreen>
