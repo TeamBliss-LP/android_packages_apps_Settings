@@ -25,6 +25,7 @@ import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.database.ContentObserver;
 import android.graphics.drawable.Drawable;
@@ -41,6 +42,7 @@ import android.os.UserManager;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceGroup;
+import android.preference.PreferenceManager;
 import android.preference.PreferenceScreen;
 import android.preference.SwitchPreference;
 import android.provider.Settings;
@@ -60,8 +62,6 @@ import com.android.settings.Utils;
 
 import java.util.List;
 
-import net.margaritov.preference.colorpicker.ColorPickerPreference;
-
 /**
  * Displays a list of apps and subsystems that consume power, ordered by how much power was
  * consumed since the last time it was unplugged.
@@ -79,10 +79,10 @@ public class PowerUsageSummary extends SettingsPreferenceFragment
 
     private static final String KEY_BATTERY_SAVER = "low_power";
 
+    private static final String KEY_PER_APP_PROFILES = "app_perf_profiles_enabled";
+
     private static final String BATTERY_HISTORY_FILE = "tmp_bat_history.bin";
     private static final String DOCK_BATTERY_HISTORY_FILE = "tmp_dock_bat_history.bin";
-
-    private static final String PREF_COLOR_PICKER = "battery_saver_color";
 
     private static final int MENU_STATS_TYPE = Menu.FIRST;
     private static final int MENU_STATS_REFRESH = Menu.FIRST + 1;
@@ -97,7 +97,6 @@ public class PowerUsageSummary extends SettingsPreferenceFragment
     private String mBatteryLevel;
     private String mBatteryStatus;
     private boolean mBatteryPluggedIn;
-    private ColorPickerPreference mColorPicker;
 
     private int mStatsType = BatteryStats.STATS_SINCE_CHARGED;
 
@@ -111,11 +110,12 @@ public class PowerUsageSummary extends SettingsPreferenceFragment
     private BatteryManager mBatteryManager;
     private PowerManager mPowerManager;
     private ListPreference mPerfProfilePref;
-    private SwitchPreference mBatterySaverPref;
+    private Preference mBatterySaverPref;
     private String[] mPerfProfileEntries;
     private String[] mPerfProfileValues;
     private String mPerfProfileDefaultEntry;
     private PerformanceProfileObserver mPerformanceProfileObserver = null;
+    private SwitchPreference mPerAppProfiles;
 
     private BroadcastReceiver mBatteryInfoReceiver = new BroadcastReceiver() {
 
@@ -166,15 +166,14 @@ public class PowerUsageSummary extends SettingsPreferenceFragment
         mAppListGroup = (PreferenceGroup) findPreference(KEY_APP_LIST);
         setHasOptionsMenu(true);
 
-        mColorPicker = (ColorPickerPreference) findPreference(PREF_COLOR_PICKER);
-        mColorPicker.setOnPreferenceChangeListener(this);
-        initColorPicker();
-
         mPerfProfilePref = (ListPreference) findPreference(KEY_PERF_PROFILE);
-        mBatterySaverPref = (SwitchPreference) findPreference(KEY_BATTERY_SAVER);
+        mBatterySaverPref = (Preference) findPreference(Settings.Global.LOW_POWER_MODE);
+        mPerAppProfiles = (SwitchPreference) findPreference(KEY_PER_APP_PROFILES);
         if (mPerfProfilePref != null && !mPowerManager.hasPowerProfiles()) {
             removePreference(KEY_PERF_PROFILE);
+            removePreference(KEY_PER_APP_PROFILES);
             mPerfProfilePref = null;
+            mPerAppProfiles = null;
         } else if (mPerfProfilePref != null) {
             // Remove the battery saver switch, power profiles have 3 modes
             removePreference(KEY_BATTERY_SAVER);
@@ -273,35 +272,13 @@ public class PowerUsageSummary extends SettingsPreferenceFragment
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
-    private void initColorPicker() {
-        int intColor = Settings.System.getInt(getActivity().getContentResolver(),
-                    Settings.System.BATTERY_SAVER_MODE_COLOR, -2);
-        if (intColor == -2) {
-            intColor = getResources().getColor(
-                    com.android.internal.R.color.battery_saver_mode_color);
-            mColorPicker.setSummary(getResources().getString(R.string.default_string));
-        } else {
-            String hexColor = String.format("#%08x", (0xffffffff & intColor));
-            mColorPicker.setSummary(hexColor);
-        }
-        mColorPicker.setNewPreviewColor(intColor);
-    }
-
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mColorPicker) {
-            String hex = ColorPickerPreference.convertToARGB(Integer.valueOf(String
-                    .valueOf(newValue)));
-            preference.setSummary(hex);
-            int intHex = ColorPickerPreference.convertToColorInt(hex);
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.BATTERY_SAVER_MODE_COLOR, intHex);
-            return true;
-        } else if (newValue != null) {
-               if (preference == mPerfProfilePref) {
-                   mPowerManager.setPowerProfile(String.valueOf(newValue));
-                   updatePerformanceSummary();
-                   return true;
+        if (newValue != null) {
+            if (preference == mPerfProfilePref) {
+                mPowerManager.setPowerProfile(String.valueOf(newValue));
+                updatePerformanceSummary();
+                return true;
             }
         }
         return false;
@@ -419,12 +396,18 @@ public class PowerUsageSummary extends SettingsPreferenceFragment
     }
 
     private void refreshBatterySaverOptions() {
-        if (mBatterySaverPref != null) {
-            mBatterySaverPref.setEnabled(!mBatteryPluggedIn);
-            mBatterySaverPref.setChecked(!mBatteryPluggedIn && mPowerManager.isPowerSaveMode());
+        if (mBatterySaverPref != null && mBatteryPluggedIn) {
             mBatterySaverPref.setSummary(mBatteryPluggedIn
                     ? R.string.battery_saver_summary_unavailable
                     : R.string.battery_saver_summary);
+            mBatterySaverPref.setEnabled(false);
+        } else if (mBatterySaverPref != null && !mBatteryPluggedIn) {
+            boolean batterySaverEnabled = Settings.Global.getInt(
+                getContentResolver(), Settings.Global.LOW_POWER_MODE, 0) != 0;
+            mBatterySaverPref.setSummary(batterySaverEnabled
+                    ? R.string.enabled
+                    : R.string.disabled);
+            mBatterySaverPref.setEnabled(true);
         }
     }
 

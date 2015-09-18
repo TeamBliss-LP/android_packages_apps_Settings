@@ -741,7 +741,9 @@
     <string name="double_tap_sleep_nav_bar_summary">Double tap navigation bar to put the device to sleep</string>
 
     <!-- Battery saver -->
-    <string name="battery_saver_title">Warning color (stock value 0xf4511e)</string>
+    <string name="battery_saver_settings_title">Battery saver settings</string>
+    <string name="battery_saver_title">Warning color</string>
+    <string name="battery_saver_style_reset_message">Reset battery saver warning color?</string>
 
     <!-- Status bar notifications and system icons -->
     <string name="notif_system_icons_colorize_notif_icons_title">Colorize notification icons</string>

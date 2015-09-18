@@ -24,14 +24,16 @@
             android:title="@string/perf_profile_title"
             android:persistent="false" />
 
-    <com.android.settings.cyanogenmod.GlobalSettingSwitchPreference
-            android:key="low_power"
-            android:title="@string/battery_saver"/>
+    <com.android.settings.cyanogenmod.SecureSettingSwitchPreference
+            android:key="app_perf_profiles_enabled"
+            android:title="@string/autoperf_title"
+            android:summary="@string/autoperf_summary"
+            android:defaultValue="true" />
 
-    <net.margaritov.preference.colorpicker.ColorPickerPreference
-            android:key="battery_saver_color"
-            android:title="@string/battery_saver_title"
-            android:defaultValue="0xf4511e" />
+    <Preference
+            android:key="low_power"
+            android:title="@string/battery_saver"
+            android:fragment="com.android.settings.fuelgauge.BatterySaverSettings" />
 
     <PreferenceCategory
             android:title="@string/power_usage_history_title"
