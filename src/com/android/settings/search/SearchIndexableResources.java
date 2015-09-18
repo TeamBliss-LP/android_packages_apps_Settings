@@ -45,7 +45,7 @@ import com.android.settings.bliss.StatusBarClockStyle;
 import com.android.settings.bliss.StatusBarBatteryStatusSettings;
 import com.android.settings.bliss.RecentsSettings;
 import com.android.settings.cyanogenmod.NotificationDrawerSettings;
-import com.android.settings.cyanogenmod.StatusBarSettings;
+import com.android.settings.bliss.StatusBarSettings;
 import com.android.settings.deviceinfo.Memory;
 import com.android.settings.deviceinfo.UsbSettings;
 import com.android.settings.fuelgauge.BatterySaverSettings;
