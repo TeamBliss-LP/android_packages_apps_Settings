@@ -87,7 +87,7 @@
                 android:key="display_low_power"
                 android:title="@string/live_display_low_power_title"
                 android:summary="@string/live_display_low_power_summary"
-                android:defaultValue="true"
+                android:defaultValue="false"
                 settings:advanced="true" />
 
         <!-- Color enhancement -->
