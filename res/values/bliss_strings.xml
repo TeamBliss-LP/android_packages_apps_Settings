@@ -208,6 +208,9 @@
     <string name="shortcut_action_voice_search">Voice search</string>
     <string name="shortcut_action_theme_switch">Theme switcher</string>
     <string name="shortcut_action_smart">Smart pulldown</string>
+    <string name="shortcut_action_recents">Recents</string>
+    <string name="shortcut_action_nav_bar">Navigation bar</string>
+    <string name="shortcut_action_settings_panel">Settings panel</string>
 
     <string name="shortcuts_applications">Applications</string>
     <string name="shortcuts_select_custom_app_title">Select custom application</string>
