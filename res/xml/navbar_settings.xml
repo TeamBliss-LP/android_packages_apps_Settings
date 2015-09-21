@@ -89,22 +89,23 @@
             android:defaultValue="1"
             android:dependency="enable_nav_bar"  />
 
-    <PreferenceCategory
-        android:key="navigation_ring"
-        android:title="@string/navigation_ring_title">       
-			          
-        <com.android.settings.cyanogenmod.SecureSettingSwitchPreference
-            android:key="search_panel_enabled"
-            android:title="@string/navigation_ring_enable_title"
-            android:defaultValue="0" />
-						          
-    <PreferenceScreen
-            android:key="navigation_bar_ring"
-            android:fragment="com.android.settings.cyanogenmod.NavRing"
-            android:title="@string/navigation_ring_title"
-            android:dependency="search_panel_enabled" />
-            
-	</PreferenceCategory>
+         <PreferenceCategory
+                android:key="navring_cat"
+                android:title="@string/navigation_ring_title">
+
+            <com.android.settings.cyanogenmod.SecureSettingSwitchPreference
+                android:key="search_panel_enabled"
+                android:title="@string/navigation_ring_enable_title"
+                android:defaultValue="true" />
+
+            <PreferenceScreen
+                android:key="navigation_bar_ring"
+                android:fragment="com.android.settings.bliss.NavRing"
+                android:summary="@string/navigation_ring_summary"
+                android:title="@string/navigation_ring_customize"
+                android:dependency="search_panel_enabled" />
+
+        </PreferenceCategory>
 
         <PreferenceCategory
                 android:key="dim_nav_buttons_cat"
