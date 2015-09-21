@@ -1755,6 +1755,8 @@
    <string name="contextual_title">Contextual headers</string>
    <string name="status_bar_custom_header_title">Custom header image</string>
    <string name="status_bar_custom_header_summary">Enable notification panel header image</string>
+   <string name="status_bar_custom_header_default_title">Use poly HD images</string>
+   <string name="status_bar_custom_header_default_summary">Enable for poly hd images. Disable for original images.</string>
 
     <!-- Device policy override -->
     <string name="device_policy_override_title">Device policy override</string>

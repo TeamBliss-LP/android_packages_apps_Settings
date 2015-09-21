@@ -55,6 +55,7 @@ public class QSColors extends SettingsPreferenceFragment implements
     private static final String PREF_ICON_COLOR = "expanded_header_icon_color";
     private static final String PREF_CLEAR_ALL_ICON_COLOR = "notification_drawer_clear_all_icon_color";
     private static final String PREF_QS_RIPPLE_COLOR = "qs_ripple_color";
+    private static final String PREF_CUSTOM_HEADER_DEFAULT = "status_bar_custom_header_default";
 
     private static final int DEFAULT_BACKGROUND_COLOR = 0xff263238;
     private static final int WHITE = 0xffffffff;
@@ -82,6 +83,7 @@ public class QSColors extends SettingsPreferenceFragment implements
     private ColorPickerPreference mIconColor;
     private ColorPickerPreference mClearAllIconColor;
     private ColorPickerPreference mQSRippleColor;
+    private SwitchPreference mCustomHeader;
 
     private ContentResolver mResolver;
 
@@ -257,6 +259,12 @@ public class QSColors extends SettingsPreferenceFragment implements
         mQSRippleColor.setDefaultColors(WHITE, BLISS_BLUE);
         mQSRippleColor.setOnPreferenceChangeListener(this);
 
+        // Status bar custom header default
+        mCustomHeader = (SwitchPreference) findPreference(PREF_CUSTOM_HEADER_DEFAULT);
+        mCustomHeader.setChecked((Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.STATUS_BAR_CUSTOM_HEADER_DEFAULT, 0) == 1));
+        mCustomHeader.setOnPreferenceChangeListener(this);
+
         setHasOptionsMenu(true);
     }
 
@@ -308,12 +316,12 @@ public class QSColors extends SettingsPreferenceFragment implements
             return true;
         } else if (preference == mQSShadeTransparency) {
             boolean value = (Boolean) newValue;
-            Settings.System.putInt(getActivity().getContentResolver(),
+            Settings.System.putInt(mResolver,
                     Settings.System.QS_TRANSPARENT_SHADE, value ? 1 : 0);
             return true;
         } else if (preference == mQSSSwitch) {
             boolean value = (Boolean) newValue;
-            Settings.System.putInt(getActivity().getContentResolver(),
+            Settings.System.putInt(mResolver,
                     Settings.System.QS_COLOR_SWITCH, value ? 1 : 0);
             refreshSettings();
             return true;
@@ -329,6 +337,11 @@ public class QSColors extends SettingsPreferenceFragment implements
             Settings.System.putInt(mResolver,
                 Settings.System.STATUS_BAR_EXPANDED_HEADER_SHOW_WEATHER_LOCATION,
                 value ? 1 : 0);
+            return true;
+        } else if (preference == mCustomHeader) {
+           boolean value = (Boolean) newValue;
+           Settings.System.putInt(mResolver,
+                   Settings.System.STATUS_BAR_CUSTOM_HEADER_DEFAULT, value ? 1 : 0);
             return true;
         } else if (preference == mBackgroundColor) {
             hex = ColorPickerPreference.convertToARGB(
