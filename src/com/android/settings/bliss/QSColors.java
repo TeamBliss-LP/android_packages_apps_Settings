@@ -21,6 +21,8 @@ import android.app.DialogFragment;
 import android.content.ContentResolver;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.os.UserHandle;
+import android.preference.ListPreference;
 import android.preference.SwitchPreference;
 import android.preference.Preference;
 import android.preference.PreferenceScreen;
@@ -83,7 +85,7 @@ public class QSColors extends SettingsPreferenceFragment implements
     private ColorPickerPreference mIconColor;
     private ColorPickerPreference mClearAllIconColor;
     private ColorPickerPreference mQSRippleColor;
-    private SwitchPreference mCustomHeader;
+    private ListPreference mCustomHeader;
 
     private ContentResolver mResolver;
 
@@ -259,10 +261,12 @@ public class QSColors extends SettingsPreferenceFragment implements
         mQSRippleColor.setDefaultColors(WHITE, BLISS_BLUE);
         mQSRippleColor.setOnPreferenceChangeListener(this);
 
-        // Status bar custom header default
-        mCustomHeader = (SwitchPreference) findPreference(PREF_CUSTOM_HEADER_DEFAULT);
-        mCustomHeader.setChecked((Settings.System.getInt(getActivity().getContentResolver(),
-                Settings.System.STATUS_BAR_CUSTOM_HEADER_DEFAULT, 0) == 1));
+        mCustomHeader = (ListPreference) findPreference(PREF_CUSTOM_HEADER_DEFAULT);
+        int customHeaderDefault = Settings.System.getIntForUser(mResolver,
+                Settings.System.STATUS_BAR_CUSTOM_HEADER_DEFAULT, 2,
+                UserHandle.USER_CURRENT);
+        mCustomHeader.setValue(String.valueOf(customHeaderDefault));
+        mCustomHeader.setSummary(mCustomHeader.getEntry());
         mCustomHeader.setOnPreferenceChangeListener(this);
 
         setHasOptionsMenu(true);
@@ -339,9 +343,12 @@ public class QSColors extends SettingsPreferenceFragment implements
                 value ? 1 : 0);
             return true;
         } else if (preference == mCustomHeader) {
-           boolean value = (Boolean) newValue;
-           Settings.System.putInt(mResolver,
-                   Settings.System.STATUS_BAR_CUSTOM_HEADER_DEFAULT, value ? 1 : 0);
+            int customHeaderDefault = Integer.valueOf((String) newValue);
+            int index = mCustomHeader.findIndexOfValue((String) newValue);
+            Settings.System.putInt(mResolver, 
+                    Settings.System.STATUS_BAR_CUSTOM_HEADER_DEFAULT, customHeaderDefault);
+            mCustomHeader.setSummary(mCustomHeader.getEntries()[index]);
+            refreshSettings();
             return true;
         } else if (preference == mBackgroundColor) {
             hex = ColorPickerPreference.convertToARGB(
