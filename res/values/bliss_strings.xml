@@ -15,23 +15,6 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-<!-- AOKP custom system animations -->
-    <string name="animation_fade">Fade</string>
-    <string name="animation_slide_right">Slide in right</string>
-    <string name="animation_slide_left">Slide in left</string>
-    <string name="animation_slide_right_no_fade">Slide in right (No fade)</string>
-    <string name="animation_slide_left_no_fade">Slide in left (No fade)</string>
-    <string name="animation_slide_up">Slide in bottom</string>
-    <string name="animation_slide_down">Slide in top</string>
-    <string name="animation_default">Default</string>
-    <string name="animation_translucent">Translucent</string>
-    <string name="animation_grow_shrink">Grow in (Top)</string>
-    <string name="animation_grow_shrink_center">Grow in (Center)</string>
-    <string name="animation_grow_shrink_bottom">Grow in (Bottom)</string>
-    <string name="animation_grow_shrink_left">Grow in (Left)</string>
-    <string name="animation_grow_shrink_right">Grow in (Right)</string>
-	<string name="animation_random">Random</string>
-
     <!-- Bliss settings screens -->
     <string name="header_category_bliss">Bliss options</string>
     <string name="header_category_personalization">Personalization</string>
@@ -175,6 +158,7 @@
     <!-- Slim Shortcuts -->
     <string name="shortcut_action_none">None</string>
     <string name="shortcut_action_app">Custom app</string>
+    <string name="shortcut_action_expanded_desktop">Expanded desktop</string>
     <string name="shortcut_action_home">Home</string>
     <string name="shortcut_action_back">Back</string>
     <string name="shortcut_action_kill">Kill app</string>
@@ -223,6 +207,10 @@
     <string name="shortcut_action_help_delete_last_entry">Removing every %1$s in the list will disable the feature entirely</string>
     <string name="shortcut_action_voice_search">Voice search</string>
     <string name="shortcut_action_theme_switch">Theme switcher</string>
+    <string name="shortcut_action_smart">Smart pulldown</string>
+    <string name="shortcut_action_recents">Recents</string>
+    <string name="shortcut_action_nav_bar">Navigation bar</string>
+    <string name="shortcut_action_settings_panel">Settings panel</string>
 
     <string name="shortcuts_applications">Applications</string>
     <string name="shortcuts_select_custom_app_title">Select custom application</string>
@@ -580,6 +568,23 @@
     <string name="animation_exit_only_title">Enter only animation</string>
     <string name="animation_reverse_exit_title">Reverse exit animation</string>
 
+    <!-- Animation Strings -->
+    <string name="animation_default">Default</string>
+    <string name="animation_fade">Fade</string>
+    <string name="animation_slide_right">Slide in right</string>
+    <string name="animation_slide_left">Slide in left</string>
+    <string name="animation_slide_right_no_fade">Slide in right (No fade)</string>
+    <string name="animation_slide_left_no_fade">Slide in left (No fade)</string>
+    <string name="animation_slide_up">Slide in bottom</string>
+    <string name="animation_slide_down">Slide in top</string>
+    <string name="animation_translucent">Translucent</string>
+    <string name="animation_grow_shrink">Grow in (Top)</string>
+    <string name="animation_grow_shrink_center">Grow in (Center)</string>
+    <string name="animation_grow_shrink_bottom">Grow in (Bottom)</string>
+    <string name="animation_grow_shrink_left">Grow in (Left)</string>
+    <string name="animation_grow_shrink_right">Grow in (Right)</string>
+    <string name="animation_random">Random</string>
+
     <!-- ListView animation -->
     <string name="listview_category">ListView animation</string>
     <string name="listview_animation_title">ListView animation</string>
@@ -703,9 +708,6 @@
 
     <!-- Navigation bar button color -->
     <string name="navbar_button_tint_title">Navigation button tint</string>
-
-    <!-- Navring targets (enable/disable) -->
-    <string name="navigation_ring_enable_title">Enable navigation rings</string>
 
     <!-- Heads Up -->
     <string name="category_heads_up">Heads up</string>
@@ -1668,6 +1670,19 @@
     <string name="navigation_bar_glow_tint_title">Button glow color</string>
     <string name="navigation_bar_warning_no_navigation_present">No other navigation is currently enabled. Turning off the navigation bar can result in an unusable device. Do you want to enable pie controls instead?</string>
 
+    <!-- Navigation Ring Targets -->
+    <string name="navigation_ring_title">Navigation ring targets</string>
+    <string name="navigation_ring_enable_title">Enable navigation rings</string>
+    <string name="navigation_ring_customize">Target actions</string>
+    <string name="navigation_ring_summary">Customize navigation ring target behavior</string>
+    <string name="navigation_ring_message">Tap the edit icon to open the navigation ring for editing.\n\nSelect a target to configure its behavior.\n\nTap the check mark icon to save your changes, or restore to reset the settings to defaults.</string>
+    <string name="navigation_bar_title">Buttons and layout</string>
+    <string name="navigation_bar_help_text">To get started tap the edit icon to unlock the navigation bar for editing.\n\nYou can tap an icon to change its shortcut, or long press an icon to re-arrange the layout.\n\nTap save to commit your changes, or restore to reset the layout to default settings.</string>
+    <string name="navigation_restore_button_text">Restore\ndefaults</string>
+    <string name="navigation_edit_button_text">Edit</string>
+    <string name="navigation_save_button_text">Save</string>
+    <string name="navigation_bar_reset_message">Delete current settings and restore the default layout?</string>
+
     <!-- Custom legacy menu actions -->
     <string name="legacy_menu_settings">Legacy Menu Buttons</string>
     <string name="legacy_menu_settings_summary">Customize legacy menu keys</string>
@@ -1799,5 +1814,10 @@
     <string name="doze_notification_color_invert_title">Color inversion</string>
     <string name="doze_notification_color_invert_summary_off">Ambient display notifications will not be inverted. Use for dark themes.</string>
     <string name="doze_notification_color_invert_summary_on">Ambient display notifications will show as inverted. Use for light/stock theme.</string>
-
+    
+    <!-- Lockscreen see through -->
+    <string name="lockscreen_see_through_title">Lockscreen blur</string>
+    <string name="lockscreen_see_through_summary">Blurs and displays the content behind your lockscreen.</string>
+    <string name="lockscreen_blur_radius">Blur effect intensity</string> 
+    
 </resources>
