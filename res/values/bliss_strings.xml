@@ -568,6 +568,23 @@
     <string name="animation_exit_only_title">Enter only animation</string>
     <string name="animation_reverse_exit_title">Reverse exit animation</string>
 
+    <!-- Animation Strings -->
+    <string name="animation_default">Default</string>
+    <string name="animation_fade">Fade</string>
+    <string name="animation_slide_right">Slide in right</string>
+    <string name="animation_slide_left">Slide in left</string>
+    <string name="animation_slide_right_no_fade">Slide in right (No fade)</string>
+    <string name="animation_slide_left_no_fade">Slide in left (No fade)</string>
+    <string name="animation_slide_up">Slide in bottom</string>
+    <string name="animation_slide_down">Slide in top</string>
+    <string name="animation_translucent">Translucent</string>
+    <string name="animation_grow_shrink">Grow in (Top)</string>
+    <string name="animation_grow_shrink_center">Grow in (Center)</string>
+    <string name="animation_grow_shrink_bottom">Grow in (Bottom)</string>
+    <string name="animation_grow_shrink_left">Grow in (Left)</string>
+    <string name="animation_grow_shrink_right">Grow in (Right)</string>
+    <string name="animation_random">Random</string>
+
     <!-- ListView animation -->
     <string name="listview_category">ListView animation</string>
     <string name="listview_animation_title">ListView animation</string>
@@ -1797,5 +1814,10 @@
     <string name="doze_notification_color_invert_title">Color inversion</string>
     <string name="doze_notification_color_invert_summary_off">Ambient display notifications will not be inverted. Use for dark themes.</string>
     <string name="doze_notification_color_invert_summary_on">Ambient display notifications will show as inverted. Use for light/stock theme.</string>
-
+    
+    <!-- Lockscreen see through -->
+    <string name="lockscreen_see_through_title">Lockscreen blur</string>
+    <string name="lockscreen_see_through_summary">Blurs and displays the content behind your lockscreen.</string>
+    <string name="lockscreen_blur_radius">Blur effect intensity</string> 
+    
 </resources>
