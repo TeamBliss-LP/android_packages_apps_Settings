@@ -76,4 +76,316 @@
     <string name="changelog_bliss_title">Changelog</string>
     <string name="changelog_bliss_error">Impossible de charger le changelog</string>
 
+    <!-- GCC version info -->
+    <string name="sm_android">Gcc android</string>
+    <string name="sm_android_default">Inconnu</string>
+    <string name="sm_kernel">Gcc kernel</string>
+    <string name="sm_kernel_default">Inconnu</string>
+
+    <!-- GCC build flags info -->
+    <string name="sm_flags">Build flags</string>
+    <string name="sm_flags_default">Aucun</string>
+
+    <!-- SuperSU header name - the app hides itself from launcher based on this resource name being present in com.android.settings -->
+    <string name="supersu_title">SuperSU</string>
+
+    <!-- About phone screen, Bliss version -->
+    <string name="bliss_mod_version">Version Bliss</string>
+    <string name="mod_build_version">Build Bliss</string>
+    <string name="mod_version_default">Inconnu</string>
+
+    <!-- Download Center -->
+    <string name="download_category">Télechargement Bliss</string>
+    <string name="download_category_summary">Aider l\'équipe Bliss</string>
+    <string name="rom_category">Télechargement de la ROM</string>
+    <string name="gapps_category">Paquet Gapps</string>
+    <string name="kernels_category">Télechargement du kernel</string>
+    <string name="addons_category">Ajout divers</string>
+    <string name="bliss_official_title">Builds officiel de la BlissPop</string>
+    <string name="bliss_official_summary">Lien des builds officiel de la BlissPop</string>
+    <string name="bliss_nightly_title">Builds nightly de la BlissPop</string>
+    <string name="bliss_nightly_summary">Lien des builds nightly de la BlissPop</string>
+    <string name="banksgapps_title">App Google BaNkS</string>
+    <string name="banksgapps_summary">Paquet des Google Apps recomandé pour la BlissPop</string>
+    <string name="pagapps_title">JAJB Minimal Google apps</string>
+    <string name="pagapps_summary">Alternative Google apps, available for 5.0.x and 5.1 builds</string>
+    <string name="kernels_title">Bliss kernels</string>
+    <string name="kernels_summary">Différents kernels supporté par l\'équipe Bliss</string>
+    <string name="addons_title">Ajout divers</string>
+    <string name="addons_summary">Modes sonores, écrans de démarrage, etc.</string>
+
+    <!-- Support Team Bliss -->
+    <string name="support_category">Support</string>
+    <string name="support_bliss_title">Aider l\'équipe Bliss</string>
+    <string name="support_bliss_summary">Lien pour faire un don PayPal pour l\'équipe Bliss</string>
+
+    <!-- Team Bliss Contests -->
+    <string name="contest_category">Concours actuel</string>
+    <string name="contest_bliss_title">Concours de l\'équipe Bliss</string>
+    <string name="contest_bliss_summary">Liens vers les concours Bliss</string>
+
+    <!--Embedded AudioFX-->
+    <string name="audiofx_settings_title">Egaliseurs</string>
+    <string name="audiofx_summary">Accès AudioFX</string>
+
+    <!--Embedded Viper4Android-->
+    <string name="viper_settings_title">Egaliseurs</string>
+    <string name="viper_summary">Accès Viper4Android</string>
+
+    <!-- Navigation bar -->
+    <string name="navigation_bar_pref_title">Barre de naviguation</string>
+    <string name="navigation_options">Options de naviguation</string>
+
+    <!-- Breathing Notifications -->
+    <string name="breathing_notifications_title">Notifications clignotante</string>
+    <string name="sms_breath">SMS</string>
+    <string name="sms_breath_summary">Faire clignoter la notification de réception de nouveau SMS, dans la barre d\'état</string>
+    <string name="title_missed_call_breath">Appel Manqué</string>
+    <string name="missed_call_breath_summary">Faire clignoter la notification d\'appel manqué, dans la barre d\'état</string>
+    <string name="title_voicemail_breath">Messagerie Vocale</string>
+    <string name="voicemail_breath_summary">Faire clignoter la notification de la messagerie vocale, dans la barre d\'état</string>
+
+<!-- long press back to kill configurable timeout -->
+    <string name="kill_app_longpress_timeout_title">Delais de l\'appui long</string>
+    <string name="timeout_2000">2 secondes (défaut)</string>
+    <string name="timeout_1500">1,5 secondes</string>
+    <string name="timeout_1000">1 seconde</string>
+    <string name="timeout_500">0,5 seconde</string>
+
+    <!-- Slim Shortcuts -->
+    <string name="shortcut_action_none">Aucun</string>
+    <string name="shortcut_action_app">App personnalisé</string>
+    <string name="shortcut_action_home">Menu</string>
+    <string name="shortcut_action_back">Retour</string>
+    <string name="shortcut_action_kill">Tuer une app</string>
+    <string name="shortcut_action_lastapp">Dernière app</string>
+    <string name="shortcut_action_assist">Chercher</string>
+    <string name="shortcut_action_screenrecord">Enregistreur de l\'écran</string>
+    <string name="shortcut_action_screenshot">Screenshot</string>
+    <string name="shortcut_action_torch">Torche</string>
+    <string name="shortcut_action_menu">Menu</string>
+    <string name="shortcut_action_ime">Ouvrir le changeur d\' IME</string>
+    <string name="shortcut_action_power_menu">Menu power</string>
+    <string name="shortcut_action_recent">Recent</string>
+    <string name="shortcut_action_restartui">Redémmarer le SystemUI</string>
+    <string name="shortcut_action_power">Ecrans Off</string>
+    <string name="shortcut_action_search">Chercher dans une app</string>
+    <string name="shortcut_action_ring_vib">Sonneri/vibreur</string>
+    <string name="shortcut_action_ring_silent">Sonnerie/Silence</string>
+    <string name="shortcut_action_ring_vib_silent">Sonnerie/Vibreur/Silence</string>
+    <string name="shortcut_action_camera">Camera</string>
+    <string name="shortcut_action_media_next">Musique-piste suivante</string>
+    <string name="shortcut_action_media_play_pause">Musique - play/pause</string>
+    <string name="shortcut_action_media_previous">Musique - piste précédente</string>
+    <string name="shortcut_action_wake_device">Allumer l\'appareil</string>
+    <string name="shortcut_action_menu_big">Menu gros</string>
+    <string name="shortcut_action_notifications">Notifications</string>
+    <string name="shortcut_action_qs">Panneau des paramètres rapide</string>
+    <string name="shortcut_action_longpress">Appui long:</string>
+    <string name="shortcut_action_select_action_longpress">Choisir une action d\'un appui long:</string>
+    <string name="shortcut_action_select_action">Choisir une action:</string>
+    <string name="shortcut_action_select_action_newaction">Choisir une nouvelle action:</string>
+    <string name="shortcut_action_reset">Réinitialiser</string>
+    <string name="shortcut_action_add">Ajouter</string>
+    <string name="shortcut_action_reset_message">Réinitialiser toutes les entrées par défaut?</string>
+    <string name="shortcut_action_max">Entrées maximale de la taille atteint</string>
+    <string name="shortcut_action_warning">Attention</string>
+    <string name="shortcut_action_warning_message">Il est impossible de supprimer la dernière entrée</string>
+    <string name="shortcut_action_disable_message">Désactiver\nAjouter une entrée pour activer cette fonctionnalité</string>
+    <string name="shortcut_action_required_warning_message">Il est impossible de supprimer les boutons</string>
+    <string name="shortcut_image_not_valid">L\'application choisie n\'a pas une icône valide ou ne supporte pas le rognage d\'image. Utilisez une autre application.</string>
+    <string name="shortcut_duplicate_entry">L\'action choisie ne peut pas être ajouté à deux reprises</string>
+    <string name="shortcut_action_help_shortcut">raccourcis</string>
+    <string name="shortcut_action_help_button">boutons</string>
+    <string name="shortcut_action_help_app">app</string>
+    <string name="shortcut_action_help_icon">, en sélectionnant l\'icône des options de personnalisation apparaîtront</string>
+    <string name="shortcut_action_help_main">To add a %1$s, select the Add icon. Once a %1$s is added, selecting the row will change the target%2$s\n\nTo remove a %1$s, swipe the row horizontally left or right. Re-order a %1$s in the list by vertically dragging the anchor on the left.\n\nTo clear or reset to defaults, select the Reset icon.</string>
+    <string name="shortcut_action_help_delete_last_entry">Retirer tout les %1s dans la liste pour désactiver entièrement la fonction</string>
+    <string name="shortcut_action_voice_search">Recherche vocal</string>
+    <string name="shortcut_action_theme_switch">Changeur de thème</string>
+
+    <string name="shortcuts_applications">Applications</string>
+    <string name="shortcuts_select_custom_app_title">Sélectionner une app personnalisé</string>
+    <string name="shortcuts_icon_picker_type">Selection un type d\' icône:</string>
+    <string name="shortcuts_icon_default">Défaut</string>
+    <string name="shortcuts_icon_presets">Icône systeme</string>
+    <string name="shortcuts_icon_custom">Galerie</string>
+    <string name="shortcuts_icon_picker_choose_icon_title">Choisissez l\'icône</string>
+
+    <string name="shortcuts_icon_picker_alarm">Alarme</string>
+    <string name="shortcuts_icon_picker_andy">Andy</string>
+    <string name="shortcuts_icon_picker_battery">Batterie</string>
+    <string name="shortcuts_icon_picker_browser">Naviguateur </string>
+    <string name="shortcuts_icon_picker_calendar">Calendrier</string>
+    <string name="shortcuts_icon_picker_camera">Camera</string>
+    <string name="shortcuts_icon_picker_chrome">Google Chrome</string>
+    <string name="shortcuts_icon_picker_cloud">Cloud</string>
+    <string name="shortcuts_icon_picker_contact">Contact</string>
+    <string name="shortcuts_icon_picker_directdial">Direct Dial</string>
+    <string name="shortcuts_icon_picker_directmessage">Messagerie direct</string>
+    <string name="shortcuts_icon_picker_drive">Drive</string>
+    <string name="shortcuts_icon_picker_dropbox">Dropbox</string>
+    <string name="shortcuts_icon_picker_email">Email</string>
+    <string name="shortcuts_icon_picker_email2">Email Alternate</string>
+    <string name="shortcuts_icon_picker_evernote">Evernote</string>
+    <string name="shortcuts_icon_picker_facebook">Facebook</string>
+    <string name="shortcuts_icon_picker_favorite">Favori</string>
+    <string name="shortcuts_icon_picker_file_browser">File Browser</string>
+    <string name="shortcuts_icon_picker_file_browser2">File Browser Alternate</string>
+    <string name="shortcuts_icon_picker_fitness">Fitness</string>
+    <string name="shortcuts_icon_picker_gallery">Galerie</string>
+    <string name="shortcuts_icon_picker_gears">Gears</string>
+    <string name="shortcuts_icon_picker_github">Github</string>
+    <string name="shortcuts_icon_picker_google_small">Google</string>
+    <string name="shortcuts_icon_picker_gplus">Google Plus</string>
+    <string name="shortcuts_icon_picker_gtalk">Hangouts</string>
+    <string name="shortcuts_icon_picker_help">Help</string>
+    <string name="shortcuts_icon_picker_joystick">Joystick</string>
+    <string name="shortcuts_icon_picker_key">Keys/Accounts</string>
+    <string name="shortcuts_icon_picker_laptop">Laptop</string>
+    <string name="shortcuts_icon_picker_notes">Notes</string>
+    <string name="shortcuts_icon_picker_office">Office Suite</string>
+    <string name="shortcuts_icon_picker_luggage">Travel</string>
+    <string name="shortcuts_icon_picker_maps">Maps</string>
+    <string name="shortcuts_icon_picker_market">Market</string>
+    <string name="shortcuts_icon_picker_messenger">Messenger</string>
+    <string name="shortcuts_icon_picker_movie">Movies</string>
+    <string name="shortcuts_icon_picker_music">Music</string>
+    <string name="shortcuts_icon_picker_nav">Navigation</string>
+    <string name="shortcuts_icon_picker_phone">Phone</string>
+    <string name="shortcuts_icon_picker_package">Package</string>
+    <string name="shortcuts_icon_picker_paypal">Paypal</string>
+    <string name="shortcuts_icon_picker_pinterest">Pinterest</string>
+    <string name="shortcuts_icon_picker_play">Play</string>
+    <string name="shortcuts_icon_picker_pocket">Pocket</string>
+    <string name="shortcuts_icon_picker_quicksettings">Quick Settings</string>
+    <string name="shortcuts_icon_picker_rss">RSS Feed</string>
+    <string name="shortcuts_icon_picker_sdcard">SDCard</string>
+    <string name="shortcuts_icon_picker_search">Search</string>
+    <string name="shortcuts_icon_picker_sms">Messaging</string>
+    <string name="shortcuts_icon_picker_tapatalk">Tapatalk</string>
+    <string name="shortcuts_icon_picker_tasks">Tasks</string>
+    <string name="shortcuts_icon_picker_terminal">Terminal</string>
+    <string name="shortcuts_icon_picker_transit">Transit</string>
+    <string name="shortcuts_icon_picker_tv">TV</string>
+    <string name="shortcuts_icon_picker_twitter">Twitter</string>
+    <string name="shortcuts_icon_picker_unlock">Unlock</string>
+    <string name="shortcuts_icon_picker_whatsapp">Whatsapp</string>
+    <string name="shortcuts_icon_picker_youtube">Youtube</string>
+    <string name="airplay">Airplay</string>
+    <string name="android">Android</string>
+    <string name="badoo">Badoo</string>
+    <string name="battery">Battery</string>
+    <string name="bluetooth">Bluetooth</string>
+    <string name="bookmarks">Bookmarks</string>
+    <string name="browser">Browser</string>
+    <string name="browser2">Browser2</string>
+    <string name="calculator">Calculator</string>
+    <string name="calendar">Calendar</string>
+    <string name="calls">Calls</string>
+    <string name="camera">Camera</string>
+    <string name="chrome">Chrome</string>
+    <string name="clock">Clock</string>
+    <string name="cnn">Cnn</string>
+    <string name="deezer2">Deezer2</string>
+    <string name="deezer">Deezer</string>
+    <string name="dolphin2">Dolphin</string>
+    <string name="downloads">Télechargement</string>
+    <string name="dropbox">Dropbox</string>
+    <string name="ebay">Ebay</string>
+    <string name="email">Email</string>
+    <string name="evernote">Evernote</string>
+    <string name="explorer">Explorer</string>
+    <string name="falcon">Falcon</string>
+    <string name="fb">Facebook</string>
+    <string name="flipboard">Flipboard</string>
+    <string name="foursquare">Foursquare</string>
+    <string name="firefox">Firefox</string>
+    <string name="googlebuzz">Google Buzz</string>
+    <string name="googledocs">Google Docs</string>
+    <string name="googlewallet">Google Wallet</string>
+    <string name="line">Line</string>
+    <string name="mic">Mic</string>
+    <string name="newyorktimes">Newyork times</string>
+    <string name="rootexplorer">Root explorer</string>
+    <string name="sim">Sim</string>
+    <string name="teamviewer">TeamViewer</string>
+    <string name="totalcommander">Total commander</string>
+    <string name="weather">Weather</string>
+    <string name="golocker">Go locker</string>
+    <string name="googlecurrents">Google Currents</string>
+    <string name="googletalk">Google Talk</string>
+    <string name="gosms">Go sms</string>
+    <string name="meebo">Meebo</string>
+    <string name="maps2">Maps2</string>
+    <string name="memorycleaner">Memory cleaner</string>
+    <string name="navigation">Navigation</string>
+    <string name="pulse">Pulse</string>
+    <string name="shazam">Shazam</string>
+    <string name="swiftkey">Swiftkey</string>
+    <string name="tmobile">Tmobile</string>
+    <string name="trash">Trash</string>
+    <string name="games">Games</string>
+    <string name="gmail">Gmail</string>
+    <string name="docs">Docs</string>
+    <string name="googledrive">Google Drive</string>
+    <string name="googleearth">Google earth</string>
+    <string name="googlehangouts">Google hangouts</string>
+    <string name="googlekeep">Google Keep</string>
+    <string name="googleplay">Google Play</string>
+    <string name="googletranslate">Google Translate</string>
+    <string name="google">Google</string>
+    <string name="googleplus">Google Plus</string>
+    <string name="imdb">imdb</string>
+    <string name="instagram">instagram</string>
+    <string name="lastfm">Lastfm</string>
+    <string name="maps">Maps</string>
+    <string name="messages">Messages</string>
+    <string name="music">Music</string>
+    <string name="mxplayer">Mxplayer</string>
+    <string name="notepad">Direct Message</string>
+    <string name="opera">Opera</string>
+    <string name="paint">Paint</string>
+    <string name="paypal">Paypal</string>
+    <string name="phone">Phone</string>
+    <string name="picasa">Picasa</string>
+    <string name="pictures2">Pictures2</string>
+    <string name="player_pro">Player pro</string>
+    <string name="playstation">PlayStation</string>
+    <string name="reddit">Reddit</string>
+    <string name="settings">Settings</string>
+    <string name="skype">Skype</string>
+    <string name="soundscloud">SoundCloud</string>
+    <string name="spotifiy">Spotify</string>
+    <string name="tapatalk">Tapatalk</string>
+    <string name="tunein">Tunein</string>
+    <string name="twitter">Twitter</string>
+    <string name="viber">Viber</string>
+    <string name="videocamera">Video camera</string>
+    <string name="whatsapp">Whatsapp</string>
+    <string name="wifi">Wifi</string>
+    <string name="xda">Xda</string>
+    <string name="yahoo">Yahoo</string>
+    <string name="youtube">YouTube</string>
+    <string name="zedge">Zedge</string>
+
+    <!-- Navigation bar -->
+    <string name="nav_bar_title">Barre de naviguation</string>
+    <string name="navbar_enable_bar_title">Bouton de la barre de naviguation</string>
+    <string name="navbar_enable_bar_summary">Activer boutons de la barre de navigation à l\'écran</string>
+    <string name="navbar_style_dimen_title">Dimension de la barre de naviguation</string>
+    <string name="navbar_dimensions_reset_message">Réinistaliser les entrées par défaut des dimensions de la barre de naviguation?</string>
+    <string name="navigation_bar_height_title">Taille de la barre de naviguation</string>
+    <string name="navigation_bar_height_summary">Hauteur de la barre de navigation en mode portrait</string>
+    <string name="navigation_bar_width_title">Largeur de la barre de naviguation</string>
+    <string name="navigation_bar_width_summary">Hauteur de la barre de navigation si la barre est de côté</string>
+    <string name="navigation_bar_size_42_dp_default">42 dp (défaut)</string>
+    <string name="navigation_bar_size_36_dp">36 dp</string>
+    <string name="navigation_bar_size_30_dp">30 dp</string>
+    <string name="navigation_bar_size_24_dp">24 dp</string>
+    <string name="navigation_bar_size_48_dp_default">48 dp (défaut)</string>
+    <string name="navigation_bar_size_44_dp">44 dp</string>
+    <string name="navigation_bar_size_40_dp">40 dp</string>
+    <string name="navigation_bar_size_42_dp">42 dp</string>
+    <string name="navigation_bar_size_0_dp">0 dp (off)</string>
 </resources>
