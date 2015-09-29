@@ -116,6 +116,7 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
     private static final String HDCP_CHECKING_PROPERTY = "persist.sys.hdcp_checking";
     private static final String ENABLE_QUICKBOOT= "enable_quickboot";
     private static final String QUICKBOOT_PACKAGE_NAME = "com.qapp.quickboot";
+    private static final String ADAWAY_PACKAGE_NAME = "org.adaway";
     private static final String LOCAL_BACKUP_PASSWORD = "local_backup_password";
     private static final String HARDWARE_UI_PROPERTY = "persist.sys.ui.hw";
     private static final String MSAA_PROPERTY = "debug.egl.force_msaa";
@@ -218,6 +219,7 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
     private Preference mClearAdbKeys;
     private SwitchPreference mEnableTerminal;
     private SwitchPreference mQuickBoot;
+    private Preference mAdaway;
     private Preference mRestartSystemUI;
     private ListPreference mKeepScreenOn;
     private SwitchPreference mBtHciSnoopLog;
@@ -351,6 +353,7 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
             mEnableOemUnlock = null;
         }
         mQuickBoot = findAndInitSwitchPref(ENABLE_QUICKBOOT);
+        mAdaway = (PreferenceScreen) findPreference(ADAWAY_PACKAGE_NAME);
         mAllowMockLocation = findAndInitSwitchPref(ALLOW_MOCK_LOCATION);
         mDebugViewAttributes = findAndInitSwitchPref(DEBUG_VIEW_ATTRIBUTES);
         mPassword = (PreferenceScreen) findPreference(LOCAL_BACKUP_PASSWORD);
@@ -371,6 +374,10 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
 
         if (!Utils.isPackageInstalled(getActivity(), QUICKBOOT_PACKAGE_NAME, false)) {
             removePreference(mQuickBoot);
+        }
+
+        if (!Utils.isPackageInstalled(getActivity(), ADAWAY_PACKAGE_NAME, false)) {
+            removePreference(mAdaway);
         }
 
         mDebugAppPref = findPreference(DEBUG_APP_KEY);

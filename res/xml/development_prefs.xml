@@ -39,6 +39,16 @@
         android:defaultValue="1" />
 
     <PreferenceScreen
+        android:key="adaway"
+        android:title="@string/adaway_settings_title"
+        android:persistent="false" >
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetPackage="org.adaway"
+            android:targetClass="org.adaway.ui.BaseActivity" />
+    </PreferenceScreen>
+
+    <PreferenceScreen
         android:id="@+id/wakelock_blocker"
         android:title="@string/wakelock_blocker"
         android:fragment="com.android.settings.WakeLockBlocker"
