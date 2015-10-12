@@ -19,7 +19,6 @@
   <plurals name="show_dev_countdown_cm">
     <item quantity="one">Сада си <xliff:g id="step_count">%1$d</xliff:g> корак далеко од омогућавања развојних опција.</item>
     <item quantity="few">Сада си <xliff:g id="step_count">%1$d</xliff:g> корака далеко од омогућавања развојних опција.</item>
-    <item quantity="many">Сада си <xliff:g id="step_count">%1$d</xliff:g> корака далеко од омогућавања развојних опција.</item>
     <item quantity="other">Сада си <xliff:g id="step_count">%1$d</xliff:g> корака далеко од омогућавања развојних опција.</item>
   </plurals>
   <string name="show_dev_on_cm">Омогућио си развојна подешавања!</string>
@@ -57,6 +56,9 @@
   <string name="profile_app_group_category_title">Преузимање обавештења</string>
   <string name="profile_app_group_item_instructions">Додај или уклони групу</string>
   <string name="profile_app_group_item_instructions_summary">Додај или уклони апликацију за преузимање обавештења за овај профил</string>
+  <string name="profile_entries_on">Укључено</string>
+  <string name="profile_entries_off">Искључено</string>
+  <string name="profile_entries_no_override">Нема обарања</string>
   <string name="profile_name_title">Име</string>
   <string name="new_profile_name">&lt;нови профил&gt;</string>
   <string name="rename_dialog_title">Преименуј</string>
@@ -86,6 +88,9 @@
   <string name="profile_lockmode_insecure_summary">Не тражи PIN или лозинку</string>
   <string name="profile_lockmode_disabled_summary">Онемогући закључани екран</string>
   <string name="profile_airplanemode_title">Режим рада у авиону</string>
+  <string name="profile_brightness_title">Осветљеност екрана</string>
+  <string name="profile_brightness_override_summary">Постави на %1$d%%</string>
+  <string name="profile_brightness_override_checkbox_label">Премости осветљење</string>
   <string name="toggleWifi">Wi\u2011Fi</string>
   <string name="toggleWifiAp">Преносни Wi\u2011Fi hotspot</string>
   <string name="toggleBluetooth">Bluetooth</string>
@@ -127,6 +132,8 @@
   <string name="volbtn_cursor_control_on_reverse">Дугмићи за јачину звука покрећу курсор десно/лево</string>
   <string name="swap_volume_buttons_title">Преусмеравање</string>
   <string name="swap_volume_buttons_summary">Замени дугмиће за јачину звука када се екран ротира</string>
+  <string name="volume_keys_control_ring_stream_title">Тастери за јачину звука контролишу Јачину звона</string>
+  <string name="volume_keys_control_ring_stream_summary">Ако је укључено дугмад за јачину звука контролишу јачину тона звона. Искључено контролишу јачину медија.</string>
   <string name="power_end_call_title">Заврши позив</string>
   <string name="power_end_call_summary">Притискање дугмета за напајање ће завршити тренутни позив</string>
   <string name="button_wake_title">Пробуди уређај</string>
@@ -161,9 +168,14 @@
   <string name="sunlight_enhancement_summary">Повећај осветљеност екрана и читљивост при јакој сунчевој светлости</string>
   <string name="color_enhancement_title">Унапређење боје</string>
   <string name="color_enhancement_summary">Динамично унапреди боју на екрану</string>
+  <string name="blacklist_title">Листа блокираних саговорника</string>
+  <string name="blacklist_edit_dialog_title">Преуреди блокиране бројеве телефона</string>
   <string name="blacklist_prefs">Подешавања</string>
   <string name="blacklist_button_delete">Избриши</string>
+  <string name="blacklist_empty_text">Немаш никакве бројеве на црној листи. Додај унос додиром на дугме Додај (+).</string>
+  <string name="blacklist_disabled_empty_text">Да спречиш телефонски број да те позове или пошаље поруку омогући листу блокираних саговорника.</string>
   <string name="blacklist_summary_disabled">Онемогућено</string>
+  <string name="blacklist_summary">Нећеш примити позив или поруку са телефонског броја на листи блокираних саговорника</string>
   <string name="blacklist_notify">Прикажи обавештења</string>
   <string name="blacklist_private_numbers_title">Приватни бројеви</string>
   <string name="blacklist_private_numbers_summary_disabled">Немој блокирати позиве из приватних бројева</string>
@@ -178,7 +190,9 @@
   <string name="blacklist_regex_summary">Користи . као џокер и * за понављање. На пример 123 * блокира бројеве који почињу са 123 и .*123.* блокира бројеве које садрже 123</string>
   <string name="blacklist_policy_block_calls">Блокирај долазне позиве</string>
   <string name="blacklist_policy_block_messages">Блокирај одлазне позиве</string>
+  <string name="blacklist_bad_number_add">Не можеш унети неправилан број у листу блокираних саговорника</string>
   <string name="remove_blacklist_number_title">Уклони број</string>
+  <string name="remove_blacklist_entry">Да ли желиш уклонити овај блокирани број телефона?</string>
   <string name="select_contact">Изабери контакт</string>
   <string name="lockpattern_reset_button">Ресетуј шаблон</string>
   <string name="lockpattern_settings_reset_summary">Унеси примарни налог е-поште и повезану лозинку да ресетујеш шаблон закључавања</string>
@@ -217,8 +231,10 @@
   <string name="update_recovery_off_warning">УПОЗОРЕЊЕ: Када је ова опција онемогућена, твој инсталиран опоравак неће бити ажуриран са надоградњом OS-а.\n\nБудуће ОС исправке се можда не могу инсталирати са застарелим или прерађеном верзијом опоравка.\n\nДа ли заиста желите да искључите ову функцију?</string>
   <string name="mod_version">CyanogenMod верзија</string>
   <string name="mod_version_default">Непознато</string>
+  <string name="security_patch">Ниво закрпа сигурности андроида</string>
+  <string name="device_model">Модел уређаја</string>
+  <string name="device_name">Име уређаја</string>
   <string name="build_date">Датум израде</string>
-  <string name="contributor_cloud_title">Сарадници</string>
   <string name="phone_service_state">Глас: <xliff:g id="voice_state">%1$s</xliff:g>, податак: <xliff:g id="data_state">%2$s</xliff:g></string>
   <string name="double_tap_to_wake_title">Дупли-додир за буђење</string>
   <string name="double_tap_to_wake_summary">Двапут додирни екран да укључиш дисплеј</string>
@@ -471,6 +487,7 @@
   <string name="ok">OK</string>
   <string name="profile_menu_delete_title">Избриши</string>
   <string name="profile_action_none">Остави непромењено</string>
+  <string name="profile_action_system">Подразумеване вредности система</string>
   <string name="profile_action_disable">Искључи</string>
   <string name="profile_action_enable">Укључи</string>
   <string name="profile_trigger_a2dp_connect">На A2DP повезивање</string>
@@ -568,6 +585,12 @@
   <string name="sim_pin_disabled">PIN1 онемогућен</string>
   <string name="storage_usb">УСБ диск</string>
   <string name="storage_uicc">UICC складиште</string>
+  <string name="sdcard_eject" product="default">Искључи SD картицу</string>
+  <string name="sdcard_eject_summary" product="default">Искључи SD картицу тако да можеш безбедно да је уклониш</string>
+  <string name="sd_card_format" product="default">Избриши SD картицу</string>
+  <string name="sd_card_format_summary" product="default">Избриши све податке са SD картице, као што су музика и фотографије</string>
+  <string name="sdcard_mount" product="default">Укључи SD картицу</string>
+  <string name="sdcard_insert_summary" product="default">Стави SD картицу да је укључиш</string>
   <string name="usb_eject" product="default">Искључи USB складиште</string>
   <string name="usb_eject_summary" product="default">Искључи USB складиште тако да можеш безбедно да га уклониш</string>
   <string name="usb_format" product="default">Избриши USB складиште</string>
@@ -582,22 +605,36 @@
   <string name="uicc_insert_summary" product="default">Убаци UICC складиште да га укључиш</string>
   <string name="usb_settings_enable_ums_title">Омогући масовно складиште?</string>
   <string name="usb_settings_enable_ums_message">Компоненте система и апликације се поуздавају да је примарно складиште увек у употреби. Ова функција квари ту функционалност. Строго се препоручује да користе MTP уместо ње. Да ли сте сигурни да желите да омогућите масовно складиште?</string>
+  <string name="dlg_confirm_sdcard_unmount_title" product="default">Искључи SD картицу?</string>
   <string name="dlg_confirm_usb_unmount_title" product="default">Искључи USB складиште?</string>
   <string name="dlg_confirm_uicc_unmount_title" product="default">Искључи UICC складиште?</string>
+  <string name="dlg_confirm_sdcard_unmount_text" product="default">Ако искључиш SD картицу, неке апликације које користиш ће се зауставити и можда неће бити доступне све док поново не укључиш SD картицу.</string>
   <string name="dlg_confirm_usb_unmount_text" product="default">Ако искључиш USB складиште, неке апликације које користиш ће се зауставити и можда неће бити доступне све док поново не укључиш USB складиште.</string>
   <string name="dlg_confirm_uicc_unmount_text" product="default">Ако искључиш UICC складиште, неке апликације које користиш ће се зауставити и можда неће бити доступне све док поново не укључиш UICC складиште.</string>
+  <string name="dlg_error_sdcard_unmount_text" product="default">Не може да се искључи SD картица. Покушај поново касније.</string>
   <string name="dlg_error_usb_unmount_text" product="default">Не може да се искључи USB складиште. Покушај поново касније.</string>
   <string name="dlg_error_uicc_unmount_text" product="default">Не може да се искључи UICC складиште. Покушај поново касније.</string>
+  <string name="sdcard_unmount_inform_text" product="default">SD картица ће бити искључена.</string>
   <string name="usb_unmount_inform_text" product="default">USB складиште ће бити искључено.</string>
   <string name="uicc_unmount_inform_text" product="default">UICC складиште ће бити искључено.</string>
+  <string name="sdcard_media_format_desc" product="default">Избриши SD картицу? Изгубићеш <b>све</b> податке на картици!</string>
   <string name="usb_media_format_desc" product="default">Обриши USB складиште? изгубићеш <b>све</b> податке у складишту!</string>
   <string name="uicc_media_format_desc" product="default">Обриши UICC складиште? изгубићеш <b>све</b> податке у складишту!</string>
+  <string name="sdcard_media_format_button_text" product="default">Избриши SD картицу</string>
   <string name="usb_media_format_button_text" product="default">Избриши USB складиште</string>
   <string name="uicc_media_format_button_text" product="default">Обриши UICC складиште</string>
+  <string name="sdcard_media_format_final_desc" product="default">Избриши SD картицу, брисањем свих фајлова ускладиштених тамо? Не можеш преокренути ову акцију!</string>
   <string name="usb_media_format_final_desc" product="default">Избриши USB складиште, брисањем свих фајлова ускладиштених тамо? Не можеш преокренути ову акцију!</string>
   <string name="uicc_media_format_final_desc" product="default">Избриши UICC складиште, брисањем свих фајлова ускладиштених тамо? Не можеш преокренути ову акцију!</string>
+  <string name="sdcard_media_format_gesture_explanation" product="default">Потребно је да нацрташ шаблон за откључавање да би потврдио да желиш да избришеш SD картицу.</string>
   <string name="usb_media_format_gesture_explanation" product="default">Потребно је да нацрташ шаблон за откључавање да би потврдио да желиш да избришеш USB складиште.</string>
   <string name="uicc_media_format_gesture_explanation" product="default">Потребно је да нацрташ шаблон за откључавање да би потврдио да желиш да избришеш UICC складиште.</string>
+  <string name="internal_sd_format">Избриши унутрашње складиште медија</string>
+  <string name="internal_sd_format_summary">Брише све податке на унутрашњем складишту, као што су музика и фотографије</string>
+  <string name="master_clear_desc_erase_internal_storage">\n\nДа очистиш музику, фотографије и друге корисникове податке <b>унутрашње складиште медија</b> мора бити обрисано.</string>
+  <string name="erase_internal_storage">Избриши унутрашње складиште медија</string>
+  <string name="erase_internal_storage_description">Обриши све податке на унутрашњем складишту медија, као што је музика или фотографије</string>
+  <string name="storage_rescan_media">Поново скенирај медије за запремину складишта</string>
   <string name="location_category_enhanced_location">Побољшана локација (IZat)</string>
   <string name="app_ops_settings_summary">Види или промени дозволе апликације</string>
   <string name="enable_adb_summary_charging">Уређај је у режиму напајања, USB отклањање грешака је онемогућено</string>
@@ -701,6 +738,7 @@
   <string name="qs_tile_heads_up">Искачуће поруке</string>
   <string name="qs_tile_ambient_display">Амбијент приказ</string>
   <string name="qs_tile_sync">Синхрон</string>
+  <string name="qs_tile_battery_saver">Уштеда батерије</string>
   <string name="qs_dynamic_tile_next_alarm">Следећи аларм</string>
   <string name="qs_dynamic_tile_ime_selector">IME бирач</string>
   <string name="qs_dynamic_tile_su">Root приступ</string>
@@ -709,6 +747,7 @@
   <string name="qs_main_tiles_summary_off">Три плочице у сваком реду</string>
   <string name="qs_advanced_location_title">Напредна подешавања локације</string>
   <string name="qs_advanced_location_summary">Омогући напредне поставке локације у брзом подешавању</string>
+  <string name="sim_no_number_set">Нема додељеног броја</string>
   <string name="gesture_settings_title">Гестови</string>
   <string name="themes_settings_title">Теме</string>
   <string name="wifi_mode">Режим</string>
@@ -743,6 +782,11 @@
   <string name="whisperpush_summary">Управљање безбедним SMS подешавањима</string>
   <string name="navigation_ring_title">Циљеви навигационог круга</string>
   <string name="navigation_ring_message">Додирни уређивање иконе да отвориш навигациони круг за уређивање.\n\nИзабери циљ да конфигуришеш понашање.\n\nДодирни \'\u2713\' икону да сачуваш промене или \'Врати подразумевано\' да ресетујеш подешавања на подразумевано.</string>
+  <string name="lcd_density">LCD густина</string>
+  <string name="dialog_title_lcd_density">LCD густина</string>
+  <string name="lcd_density_value_format">%d DPI</string>
+  <string name="lcd_density_default_value_format">%d DPI (подразумевано)</string>
+  <string name="restarting_ui">Рестартовање UI\u2026</string>
   <string name="stylus_icon_enabled_title">Прикажи икону када користим оловку</string>
   <string name="stylus_icon_enabled_summary">Прикажи икону курсора када лебдим или цртам помоћу оловке</string>
   <string name="gestures_settings_title">Гестови оловке</string>
@@ -783,6 +827,9 @@
   <string name="sim_ringtone_title">SIM %d мелодија</string>
   <string name="interruptions_ignore_while_media_title">Онемогући утишавање аудиа</string>
   <string name="interruptions_ignore_while_media_summary">Немој утишати јачину репродукције медија када обавештење пристигне</string>
+  <string name="none_is_silent_title">Никад утишавати аларме</string>
+  <string name="none_is_silent_summary">Нечујни режим увек остави аларме</string>
+  <string name="allow_lights_title">Дозволи светла обавештења</string>
   <string name="live_display_summary">Оптимизуј екран у складу са дневним и просторним приликама да побољшаш читљивост и умањиш замарање очију</string>
   <string name="live_display_mode">Режим екрана</string>
   <string name="live_display_color_temperature_title">Температура боје</string>
@@ -876,13 +923,13 @@
   <string name="fingerprint_dialog_title_max_fingers_reached">Достигнут максимални број отисака</string>
   <string name="fingerprint_dialog_msg_max_fingers_reached">Могуће је уписати само <xliff:g id="finger" example="5 fingerprints">%d</xliff:g> отисака. Обриши постојеће отиске прста.</string>
   <string name="fingerprint_title_manage_fingerprints">Управљај отисцима прстију <xliff:g id="finger">%d</xliff:g>/<xliff:g id="max">%d</xliff:g></string>
-  <string name="manage_fingerprints_description">Отисци прстију вам дозвољавају брзо откључавање телефона, потврду куповине и сликање.</string>
+  <string name="manage_fingerprints_description">Отисци прста омогућавају брзо откључавање телефона и сликање.</string>
   <string name="fingerprint_enrollment_introduction_title">Пронађи свој сензор</string>
   <string name="fingerprint_enrollment_introduction_instructions">Сензор отиска прста се налази напред или позади твог телефона.</string>
   <string name="fingerprint_enrollment_scan_title">Држи 3 секунде</string>
   <string name="fingerprint_enrollment_scan_instructions">Постави кажипрст на сензор отиска прста да почнеш подешавање. Подигни прст кад осетиш вибрацију.</string>
   <string name="fingerprint_enrollment_error_title_wrong_sensor">Покушај поново</string>
-  <string name="fingerprint_enrollment_error_message">постави прст стабилно на сензор отиска прста да омогућиш тачан скен. Буди сигуран да користиш исти прст. Подигни прст кад осетиш вибрацију.</string>
+  <string name="fingerprint_enrollment_error_message">Постави прст на сензор отиска прста да омогућиш тачан скен. Такође буди сигуран да користиш исти прст као и раније. Подигни прст кад осетиш вибрацију.</string>
   <string name="fingerprint_enrollment_scan_instructions">Постави кажипрст на сензор отиска прста да почнеш подешавање. Подигни прст кад осетиш вибрацију.</string>
   <string name="fingerprint_enrollment_break_title">Настави са тренутним стиском</string>
   <string name="fingerprint_enrollment_break_instructions">Настави да ухвати ивице твог отиска. Подигни прст кад осетиш вибрацију.</string>
@@ -909,6 +956,7 @@
   <string name="fingerprint_enrollment_error_title_3">Хмм, нешто је кренуло наопако</string>
   <string name="fingerprint_enrollment_error_title_4">Ух, покушај поново</string>
   <string name="fingerprint_enrollment_error_title_5">Упс, дошло је до грешке</string>
+  <string name="lockscreen_settings_and_fingerprint">Закључавање екрана &amp; отисак прста</string>
   <string name="menu_stats_reset">Поништавање статистике</string>
   <string name="reset_stats_msg">Статистика историје батерије ће бити ресетована</string>
   <string name="dock_battery_not_present">Усидрена батерија није присутна</string>

@@ -21,8 +21,8 @@
     <item quantity="other"><xliff:g id="seconds">%d</xliff:g> segundo</item>
   </plurals>
   <plurals name="app_ops_count">
-    <item quantity="one">Behin</item>
-    <item quantity="other">%d aldiz</item>
+    <item quantity="one">behin</item>
+    <item quantity="other">%d alditan</item>
   </plurals>
   <plurals name="qs_tiles_summary">
     <item quantity="one">Lauza bat konfiguratu da</item>

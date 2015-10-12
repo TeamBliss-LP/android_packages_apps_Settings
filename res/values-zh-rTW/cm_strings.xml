@@ -229,7 +229,6 @@
   <string name="device_model">裝置型號</string>
   <string name="device_name">裝置名稱</string>
   <string name="build_date">版本日期</string>
-  <string name="contributor_cloud_title">貢獻者</string>
   <string name="phone_service_state">語音：<xliff:g id="voice_state">%1$s</xliff:g>，資料：<xliff:g id="data_state">%2$s</xliff:g></string>
   <string name="double_tap_to_wake_title">輕按兩下即可喚醒</string>
   <string name="double_tap_to_wake_summary">輕點螢幕兩次來喚醒手機</string>
@@ -631,17 +630,6 @@
   <string name="app_ops_settings_summary">檢視或變更應用程式權限</string>
   <string name="enable_adb_summary_charging">裝置處於充電模式， USB 偵錯已停用</string>
   <string name="enable_quickboot_title">啟用 QuickBoot 模式</string>
-  <string name="enable_quickboot_summary">使裝置進入快速開機模式而不是正常關機</string>
-  <string name="data_usage_tab_slot">SIM 卡 <xliff:g id="sub">%d</xliff:g></string>
-  <string name="sim_enabler_title">SIM 卡狀態</string>
-  <string name="sim_enabler_summary">SIM 卡為 <xliff:g id="status" example="enabled">%1$s</xliff:g></string>
-  <string name="sim_enabled">已啟用</string>
-  <string name="sim_disabled">已停用</string>
-  <string name="sim_missing">遺失或毀損</string>
-  <string name="menu_hidden_apps_delete">重設</string>
-  <string name="menu_hidden_apps_reset_lock">重設圖形鎖</string>
-  <string name="protected_apps">受保護的應用程式</string>
-  <string name="saving_protected_components">儲存組件狀態\u2026</string>
   <string name="enable_quickboot_summary">使裝置進入快速開機模式而不是正常關機</string>
   <string name="data_usage_tab_slot">SIM 卡 <xliff:g id="sub">%d</xliff:g></string>
   <string name="sim_enabler_title">SIM 卡狀態</string>

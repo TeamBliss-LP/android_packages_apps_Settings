@@ -87,6 +87,9 @@
   <string name="profile_lockmode_insecure_summary">Älä pyydä PIN-koodia tai salasanaa</string>
   <string name="profile_lockmode_disabled_summary">Poista lukitusnäyttö käytöstä</string>
   <string name="profile_airplanemode_title">Lentokonetila</string>
+  <string name="profile_brightness_title">Näytön kirkkaus</string>
+  <string name="profile_brightness_override_summary">Aseta arvoksi %1$d%%</string>
+  <string name="profile_brightness_override_checkbox_label">Ohita kirkkaus</string>
   <string name="toggleWifi">Wi\u2011Fi</string>
   <string name="toggleWifiAp">Kannettava Wi\u2011Fi\u2011hotspot</string>
   <string name="toggleBluetooth">Bluetooth</string>
@@ -227,10 +230,10 @@
   <string name="update_recovery_off_warning">VAROITUS: Kun toiminto on poistettu käytöstä, asennettua Recovery-tilaa ei päivitetä järjestelmäpäivtysten kanssa.\n\nTulevat järjestelmäpäivitykset eivät välttämättä asennu vanhentuneissa tai mukautetuissa Recovery-tiloissa.\n\nHaluatko varmasti poistaa tämän toiminnon käytöstä?</string>
   <string name="mod_version">CyanogenMod-versio</string>
   <string name="mod_version_default">Tuntematon</string>
+  <string name="security_patch">Android suojauskorjauksen taso</string>
   <string name="device_model">Laitteen malli</string>
   <string name="device_name">Laitteen nimi</string>
   <string name="build_date">Luontipäivä</string>
-  <string name="contributor_cloud_title">Kehittäjät ja avustajat</string>
   <string name="phone_service_state">Puhelut: <xliff:g id="voice_state">%1$s</xliff:g>, data: <xliff:g id="data_state">%2$s</xliff:g></string>
   <string name="double_tap_to_wake_title">Herätys kaksoisnapautuksella</string>
   <string name="double_tap_to_wake_summary">Herätä laitteen näyttö kaksoisnapautuksella</string>
@@ -341,6 +344,9 @@
   <string name="notification_light_default_value">Oletus</string>
   <string name="notification_light_missed_call_title">Vastaamaton puhelu</string>
   <string name="notification_light_voicemail_title">Vastaaja</string>
+  <string name="notification_light_screen_on">Valot näytön ollessa päällä</string>
+  <string name="notification_light_use_multiple_leds">Useampi LED</string>
+  <string name="keywords_lights_brightness_level">dim leds brightness kirkkaus led himmentää himmennys</string>
   <string name="notification_ringtone_title_cm">Ilmoitusääni</string>
   <string name="headset_connect_player_title">Käynnistä musiikkisovellus</string>
   <string name="headset_connect_player_summary">Käynnistä musiikkisovellus kytkettäessä kuulokkeet</string>
@@ -481,6 +487,7 @@
   <string name="ok">OK</string>
   <string name="profile_menu_delete_title">Poista</string>
   <string name="profile_action_none">Ei muutoksia</string>
+  <string name="profile_action_system">Järjestelmän oletus</string>
   <string name="profile_action_disable">Kytke pois</string>
   <string name="profile_action_enable">Kytke päälle</string>
   <string name="profile_trigger_a2dp_connect">Muodostaessa A2DP-yhteys</string>
@@ -622,6 +629,11 @@
   <string name="sdcard_media_format_gesture_explanation" product="default">Sinun tulee piirtää lukituskuviosi vahvistaaksesi että haluat tyhjentää SD-kortin.</string>
   <string name="usb_media_format_gesture_explanation" product="default">Sinun tulee piirtää lukituskuviosi vahvistaaksesi että haluat tyhjentää USB-muistin.</string>
   <string name="uicc_media_format_gesture_explanation" product="default">Sinun tulee piirtää lukituskuviosi vahvistaaksesi, että haluat tyhjentää UICC-muistin.</string>
+  <string name="internal_sd_format">Tyhjennä sisäinen tallennustila</string>
+  <string name="internal_sd_format_summary">Poistaa kaikki tiedot sisäisestä tallennustilasta, kuten musiikit ja kuvat</string>
+  <string name="master_clear_desc_erase_internal_storage">\n\nPoistaaksesi musiikit, kuvat, ja muut käyttäjätiedot, <b>sisäinen tallennustila</b> pitää tyhjentää.</string>
+  <string name="erase_internal_storage">Tyhjennä sisäinen tallennustila</string>
+  <string name="erase_internal_storage_description">Tyhjennä kaikki tiedot sisäisestä tallennustilasta, kuten musiikit ja kuvat</string>
   <string name="storage_rescan_media">Skannaa tallennustilan media uudelleen</string>
   <string name="location_category_enhanced_location">Paranneltu paikantaminen (IZat)</string>
   <string name="app_ops_settings_summary">Tarkastele tai muuta sovellusten käyttöoikeuksia</string>
@@ -697,6 +709,7 @@
   <string name="status_bar_show_weather_summary">Näytä sää pika-asetuspaneelin yläpuolella</string>
   <string name="qs_category_title">Pika-asetuspaneeli</string>
   <string name="qs_brightness_slider_title">Näytä kirkkauden liukusäädin</string>
+  <string name="qs_hide_tiles_with_sensitive_data">Piilota arkaluontoiset tiilet kun lukittuna</string>
   <string name="qs_order_title">Valitse ja uudelleenjärjestä tiilet</string>
   <string name="add_qs">Lisää uusi tiili</string>
   <string name="qs_action_delete">Poista</string>
@@ -719,11 +732,13 @@
   <string name="qs_tile_compass">Kompassi</string>
   <string name="qs_tile_lockscreen">Lukitusnäyttö</string>
   <string name="qs_tile_lte">LTE</string>
+  <string name="qs_tile_volume_panel">Äänenvoimakkuuspaneeli</string>
   <string name="qs_tile_screen_timeout">Näytön aikakatkaisu</string>
   <string name="qs_tile_usb_tether">USB-jakaminen</string>
   <string name="qs_tile_heads_up">Heads up</string>
   <string name="qs_tile_ambient_display">Ambient-näyttö</string>
   <string name="qs_tile_sync">Synkronointi</string>
+  <string name="qs_tile_battery_saver">Virransäästö</string>
   <string name="qs_dynamic_tile_next_alarm">Seuraava hälytys</string>
   <string name="qs_dynamic_tile_ime_selector">Syöttötavan valitsin</string>
   <string name="qs_dynamic_tile_su">Root-oikeudet</string>
@@ -756,6 +771,7 @@
   <string name="expanded_desktop_style">Laajennetun työpöydän tyyli</string>
   <string name="expanded_desktop_style_description">Valitse laajennetun työpöydän oletustyyli</string>
   <string name="expanded_desktop_title">Laajennetun työpöydän asetukset</string>
+  <string name="title_general">Yleiset</string>
   <string name="lockscreen_targets_message">Lukitusnäytön pikakuvakkeet</string>
   <string name="lockscreen_default_target">Oletus</string>
   <string name="lockscreen_none_target">Ei mitään</string>
@@ -827,6 +843,17 @@
   <string name="live_display_low_power_summary">Säädä näyttö alhaisimpaan virrankäyttötilaan ilman heikentymistä</string>
   <string name="live_display_enhance_color_title">Korosta värejä</string>
   <string name="live_display_enhance_color_summary">Paranna värisävyjä ihonväreissä, maisemakuvissa ja muissa kuvissa</string>
+  <string name="live_display_color_profile_title">Väriprofiili</string>
+  <string name="live_display_color_profile_standard_title">Standardi</string>
+  <string name="live_display_color_profile_standard_summary">Tarkat värit ja kirkkaat valkoiset</string>
+  <string name="live_display_color_profile_natural_title">Luonnollinen</string>
+  <string name="live_display_color_profile_natural_summary">Realistiset värit ja ihonvärit</string>
+  <string name="live_display_color_profile_dynamic_title">Dynaaminen</string>
+  <string name="live_display_color_profile_dynamic_summary">Parannellut värit ja kirkkaat valkoiset</string>
+  <string name="live_display_color_profile_cinema_title">Elokuva</string>
+  <string name="live_display_color_profile_cinema_summary">Täydellinen värintoisto medialle</string>
+  <string name="live_display_color_profile_astronomy_title">Astronomia</string>
+  <string name="live_display_color_profile_astronomy_summary">Syvät punaiset värit hämärällä käytettäessä</string>
   <string name="battery_saver_threshold">Virransäästön kynnys</string>
   <string name="battery_saver_summary">Vähennä suorituskykyä ja rajoita taustatiedonsiirtoa</string>
   <string name="battery_saver_summary_unavailable">Ei käytössä latauksen aikana</string>
@@ -896,7 +923,7 @@
   <string name="fingerprint_dialog_title_max_fingers_reached">Sormenjälkien enimmäismäärä saavutettu</string>
   <string name="fingerprint_dialog_msg_max_fingers_reached">Voit rekisteröidä vain <xliff:g id="finger" example="5 fingerprints">%d</xliff:g> sormenjälkeä. Poista joku nykyisistä sormenjäljistä.</string>
   <string name="fingerprint_title_manage_fingerprints">Hallitse sormenjälkiä <xliff:g id="finger">%d</xliff:g>/<xliff:g id="max">%d</xliff:g></string>
-  <string name="manage_fingerprints_description">Sormenjäljet sallii sinun avata puhelimesi nopeasti, vahvistaa ostoja tai ottaa kuvia.</string>
+  <string name="manage_fingerprints_description">Sormenjäljillä voit avata puhelimesi nopeasti ja ottaa kuvia.</string>
   <string name="fingerprint_enrollment_introduction_title">Etsi tunnistin</string>
   <string name="fingerprint_enrollment_introduction_instructions">Sormenjälkitunnistin sijaitsee puhelimesi etu- tai takapuolella.</string>
   <string name="fingerprint_enrollment_scan_title">Pidä sormea 3 sekuntia tunnistimessa</string>
@@ -929,6 +956,7 @@
   <string name="fingerprint_enrollment_error_title_3">Hmm, jotain meni pieleen</string>
   <string name="fingerprint_enrollment_error_title_4">Huh, yritä uudelleen</string>
   <string name="fingerprint_enrollment_error_title_5">Hups, tapahtui virhe</string>
+  <string name="lockscreen_settings_and_fingerprint">Lukitusnäyttö &amp; sormenjälki</string>
   <string name="menu_stats_reset">Nollaa tilastot</string>
   <string name="reset_stats_msg">Akun historiatilastot nollataan</string>
   <string name="dock_battery_not_present">Telakan akku puuttuu</string>
@@ -936,4 +964,25 @@
   <string name="battery_info_status_charging_dock_usb">Ladataan telakan USB:n kautta</string>
   <string name="setup_lock_pattern_size_title">Kuvion monimutkaisuus</string>
   <string name="setup_lock_pattern_size_details">Kuinka montaa solmua haluat käyttää kuviossasi? Mitä enemmän solmuja, sitä monimutkaisempi kuvio voi olla.</string>
+  <string name="lto_download_data_wifi_only">GPS-avusteinen tiedon lataus</string>
+  <string name="lto_download_data_wifi_only_on">Kaikissa verkoissa</string>
+  <string name="lto_download_data_wifi_only_off">Vain Wi\u2011Fi\u2011verkoissa</string>
+  <string name="keep_screen_on_never">Ei koskaan</string>
+  <string name="keep_screen_on_debugging">Kun USB-virheenkorjaus on käytösä</string>
+  <string name="keep_screen_on_charging">Ladattaessa</string>
+  <string name="contributors_cloud_fragment_title">Kehittäjät</string>
+  <string name="contributors_cloud_loading_message">Ladataan kehittäjädataa\u2026</string>
+  <string name="contributors_cloud_failed_message">Kehittäjien tietoja ei voitu ladata</string>
+  <string name="contributor_info_menu">Kehittäjän tiedot</string>
+  <string name="contributor_info_msg">
+        <![CDATA[<b>Nimi:</b> <xliff:g id="name">%1$s</xliff:g><br/><br/>
+                 <b>Nimimerkki:</b> <xliff:g id="nick">%2$s</xliff:g><br/><br/>
+                 <b>Muutokset:</b> <xliff:g id="commits">%3$s</xliff:g><br/><br/>
+                 <b>Sijoitus:</b> <xliff:g id="rank">%4$s</xliff:g>]]></string>
+  <string name="contributions_info_menu">Kehittäjien tiedot</string>
+  <string name="contributions_info_msg">
+        <![CDATA[<b>Kehittäjiä yhteensä:</b> <xliff:g id="total_contributors">%1$s</xliff:g><br/><br/>
+                 <b>Muutoksia yhteensä:</b> <xliff:g id="total_commits">%2$s</xliff:g><br/><br/>
+                 <b>Päivitetty:</b> <xliff:g id="date">%3$s</xliff:g>]]></string>
+  <string name="quick_settings_reset_message">Nollaa pika-asetustiilet?</string>
 </resources>

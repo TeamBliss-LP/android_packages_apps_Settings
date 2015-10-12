@@ -88,6 +88,9 @@
   <string name="profile_lockmode_insecure_summary">Neptat se na PIN nebo heslo</string>
   <string name="profile_lockmode_disabled_summary">Zakázat zámek obrazovky</string>
   <string name="profile_airplanemode_title">Režim V letadle</string>
+  <string name="profile_brightness_title">Jas obrazovky</string>
+  <string name="profile_brightness_override_summary">Nastavit na %1$d%%</string>
+  <string name="profile_brightness_override_checkbox_label">Přepsat hodnotu jasu</string>
   <string name="toggleWifi">Wi\u2011Fi</string>
   <string name="toggleWifiAp">Přenosný Wi\u2011Fi hotspot</string>
   <string name="toggleBluetooth">Bluetooth</string>
@@ -228,10 +231,10 @@
   <string name="update_recovery_off_warning">VAROVÁNÍ: Pokud je tato funkce vypnutá, vaše nainstalované recovery nebude aktualizováno s aktualizacemi systému.\n\nBudoucí aktualizace systému se se starou verzí recovery nemusí správně nainstalovat.\n\nOpravdu chcete tuto funkci vypnout?</string>
   <string name="mod_version">CyanogenMod verze</string>
   <string name="mod_version_default">Neznámá</string>
+  <string name="security_patch">Verze zabezpečení systému Android</string>
   <string name="device_model">Model</string>
   <string name="device_name">Název zařízení</string>
   <string name="build_date">Datum sestavení</string>
-  <string name="contributor_cloud_title">Přispěvatelé</string>
   <string name="phone_service_state">Hlas: <xliff:g id="voice_state">%1$s</xliff:g>, data: <xliff:g id="data_state">%2$s</xliff:g></string>
   <string name="double_tap_to_wake_title">Probuzení dvojím dotykem</string>
   <string name="double_tap_to_wake_summary">Dvojitým poklepáním zapnout obrazovku</string>
@@ -342,11 +345,13 @@
   <string name="notification_light_default_value">Výchozí</string>
   <string name="notification_light_missed_call_title">Zmeškané hovory</string>
   <string name="notification_light_voicemail_title">Hlasová schránka</string>
+  <string name="notification_light_screen_on">Upozornění LED při zapnuté obrazovce</string>
+  <string name="keywords_lights_brightness_level">ztlumit jas LED diod</string>
   <string name="notification_ringtone_title_cm">Zvuk upozornění</string>
   <string name="headset_connect_player_title">Spustit aplikaci pro přehrávání hudby</string>
   <string name="headset_connect_player_summary">Pokud jsou připojena sluchátka, spustit výchozí aplikaci pro přehrávání hudby</string>
-  <string name="ime_switcher_notify">Výběr ikony</string>
-  <string name="ime_switcher_notify_summary">Zobrazit vstupní metodu výběrové ikony</string>
+  <string name="ime_switcher_notify">Ikona pro volbu</string>
+  <string name="ime_switcher_notify_summary">Zobrazit ikonu volby vstupní metody</string>
   <string name="app_notification_show_on_keyguard_title">Zobrazit na zamykací obrazovce</string>
   <string name="app_notification_show_on_keyguard_summary">Zobrazit upozornění z aplikace na zamykací obrazovce</string>
   <string name="app_notification_no_ongoing_on_keyguard_title">Zakázat trvalé upozornění na zamykací obrazovce</string>
@@ -624,6 +629,11 @@
   <string name="sdcard_media_format_gesture_explanation" product="default">Pro potvrzení vymazání SD karty je potřeba gesto pro odemčení.</string>
   <string name="usb_media_format_gesture_explanation" product="default">Pro potvrzení vymazání USB úložiště je potřeba gesto pro odemčení.</string>
   <string name="uicc_media_format_gesture_explanation" product="default">Pro potvrzení vymazání UICC úložiště je potřeba gesto pro odemčení.</string>
+  <string name="internal_sd_format">Vymazat interní úložiště zařízení</string>
+  <string name="internal_sd_format_summary">Vymaže všechna data v interním úložišti, jako například hudbu a fotografie</string>
+  <string name="master_clear_desc_erase_internal_storage">\n\nPro odstranění hudby, obrázků a dalších uživatelských dat je potřeba vymazat <b>interní úložiště</b>.</string>
+  <string name="erase_internal_storage">Vymazat interní úložiště zařízení</string>
+  <string name="erase_internal_storage_description">Vymaže všechna data v interním úložišti, jako například hudbu a fotografie</string>
   <string name="storage_rescan_media">Prohledat úložiště pro média</string>
   <string name="location_category_enhanced_location">Rozšířené umístění (IZat)</string>
   <string name="app_ops_settings_summary">Zobrazit nebo změnit oprávnění pro aplikace</string>
@@ -699,6 +709,7 @@
   <string name="status_bar_show_weather_summary">Zobrazit počasí nad panelem rychlého nastavení</string>
   <string name="qs_category_title">Panel rychlého nastavení</string>
   <string name="qs_brightness_slider_title">Zobrazit posuvník jasu</string>
+  <string name="qs_hide_tiles_with_sensitive_data">Skrýt dlaždice s citlivými informace při uzamčení</string>
   <string name="qs_order_title">Vybrat a upravit dlaždice</string>
   <string name="add_qs">Přidat novou dlaždici</string>
   <string name="qs_action_delete">Odstranit</string>
@@ -721,10 +732,13 @@
   <string name="qs_tile_compass">Kompas</string>
   <string name="qs_tile_lockscreen">Zámek obrazovky</string>
   <string name="qs_tile_lte">LTE</string>
+  <string name="qs_tile_volume_panel">Panel hlasitosti</string>
   <string name="qs_tile_screen_timeout">Zhasínání obrazovky</string>
   <string name="qs_tile_usb_tether">USB tethering</string>
+  <string name="qs_tile_heads_up">Plovoucí upozornění</string>
   <string name="qs_tile_ambient_display">Ambientní zobrazení</string>
   <string name="qs_tile_sync">Synchronizace</string>
+  <string name="qs_tile_battery_saver">Spořič baterie</string>
   <string name="qs_dynamic_tile_next_alarm">Další budík</string>
   <string name="qs_dynamic_tile_ime_selector">Výběr IME</string>
   <string name="qs_dynamic_tile_su">Root přístup</string>
@@ -829,6 +843,17 @@
   <string name="live_display_low_power_summary">Upravit zobrazení pro nejnižší spotřebu energie bez zhoršení čitelnosti</string>
   <string name="live_display_enhance_color_title">Vylepšit barvy</string>
   <string name="live_display_enhance_color_summary">Zlepšit živost barev pleťových odstínů, scenérie a dalších obrázků</string>
+  <string name="live_display_color_profile_title">Barevný profil</string>
+  <string name="live_display_color_profile_standard_title">Standardní</string>
+  <string name="live_display_color_profile_standard_summary">Přesné barvy a jasná bílá</string>
+  <string name="live_display_color_profile_natural_title">Přirozený</string>
+  <string name="live_display_color_profile_natural_summary">Reálné barvy a tělové tóny</string>
+  <string name="live_display_color_profile_dynamic_title">Dynamický</string>
+  <string name="live_display_color_profile_dynamic_summary">Vylepšené barvy a jasná bílá</string>
+  <string name="live_display_color_profile_cinema_title">Kino</string>
+  <string name="live_display_color_profile_cinema_summary">Dokonalá barevná reprodukce pro média</string>
+  <string name="live_display_color_profile_astronomy_title">Astronomie</string>
+  <string name="live_display_color_profile_astronomy_summary">Hluboká červená pro zachování vidění v noci</string>
   <string name="battery_saver_threshold">Práh spořiče baterie</string>
   <string name="battery_saver_summary">Snižuje výkon a omezuje data na pozadí</string>
   <string name="battery_saver_summary_unavailable">Není dostupné při nabíjení</string>
@@ -845,6 +870,7 @@
   <string name="preview_version_title">Verze</string>
   <string name="preview_country_title">Země</string>
   <string name="preview_carrier_title">Operátor</string>
+  <string name="heads_up_notifications">Plovoucí upozornění</string>
   <string name="summary_heads_up_enabled">Vyskakovací upozornění je povoleno</string>
   <string name="summary_heads_up_disabled">Vyskakovací upozornění je zakázáno</string>
   <string name="master_clear_desc_cm" product="tablet">Tímto budou z tabletu smazána všechny data z <b>interního úložiště</b> včetně:\n\n<li>Účtů</li>\n<li>Systémové i uživatelské data aplikací a nastavení</li>\n<li>Stáhnuté aplikace</li></string>
@@ -897,7 +923,7 @@
   <string name="fingerprint_dialog_title_max_fingers_reached">Maximální počet otisků prstu dosažen</string>
   <string name="fingerprint_dialog_msg_max_fingers_reached">Lze zapsat pouze <xliff:g id="finger" example="5 fingerprints">%d</xliff:g> otiskůs. Smažte existující otisk prstů.</string>
   <string name="fingerprint_title_manage_fingerprints">Správa otisků prstů <xliff:g id="finger">%d</xliff:g>/<xliff:g id="max">%d</xliff:g></string>
-  <string name="manage_fingerprints_description">Otisky prstů umožní rychlé odemčení telefonu, potvrdit platbu nebo pořídit fotku.</string>
+  <string name="manage_fingerprints_description">Otisky prstů umožňují rychlé odemknutí telefonu nebo pořízení fotografií.</string>
   <string name="fingerprint_enrollment_introduction_title">Umístění snímače</string>
   <string name="fingerprint_enrollment_introduction_instructions">Snímač bývá umístěn na přední nebo zadní straně telefonu.</string>
   <string name="fingerprint_enrollment_scan_title">Podržte na 3 sekundy</string>
@@ -938,4 +964,23 @@
   <string name="battery_info_status_charging_dock_usb">Nabíjení pomocí USB doku</string>
   <string name="setup_lock_pattern_size_title">Složitost vzoru</string>
   <string name="setup_lock_pattern_size_details">Kolik uzlů na vzoru chcete používat? Čím více uzlů, tím složitější může být vzor.</string>
+  <string name="lto_download_data_wifi_only">Stáhnutí dat asistovaných GSP</string>
+  <string name="lto_download_data_wifi_only_on">Pomocí jakýchkoliv sítí</string>
+  <string name="lto_download_data_wifi_only_off">Pouze pomocí Wi\u2011Fi sítí</string>
+  <string name="keep_screen_on_never">Nikdy</string>
+  <string name="keep_screen_on_debugging">Při ladění USB</string>
+  <string name="keep_screen_on_charging">Při nabíjení</string>
+  <string name="contributors_cloud_fragment_title">Přispěvatelé</string>
+  <string name="contributors_cloud_loading_message">Načítání přispěvatelů\u2026</string>
+  <string name="contributors_cloud_failed_message">Nelze načíst data přispěvatelů</string>
+  <string name="contributor_info_menu">Informace přispěvatele</string>
+  <string name="contributor_info_msg"><![CDATA[<b>Jméno:</b> <xliff:g id="name">%1$s</xliff:g><br/><br/>
+<b>Nick:</b> <xliff:g id="nick">%2$s</xliff:g><br/><br/>
+<b>Příspěvků:</b> <xliff:g id="commits">%3$s</xliff:g><br/><br/>
+<b>Pořadí:</b> <xliff:g id="rank">%4$s</xliff:g>]]></string>
+  <string name="contributions_info_menu">Informace o přispěvatelích</string>
+  <string name="contributions_info_msg"><![CDATA[<b>Celkem přispěvatelů:</b> <xliff:g id="total_contributors">%1$s</xliff:g><br/><br/>
+<b>Celkem příspěvků:</b> <xliff:g id="total_commits">%2$s</xliff:g><br/><br/>
+<b>Poslední aktualizace:</b> <xliff:g id="date">%3$s</xliff:g>]]></string>
+  <string name="quick_settings_reset_message">Obnovit dlaždice rychlého nastavení?</string>
 </resources>

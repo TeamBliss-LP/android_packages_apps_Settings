@@ -87,6 +87,9 @@
   <string name="profile_lockmode_insecure_summary">Niet vragen om pincode of wachtwoord</string>
   <string name="profile_lockmode_disabled_summary">Schermvergrendeling uitschakelen</string>
   <string name="profile_airplanemode_title">Vliegmodus</string>
+  <string name="profile_brightness_title">Schermhelderheid</string>
+  <string name="profile_brightness_override_summary">Ingesteld op %1$d%%</string>
+  <string name="profile_brightness_override_checkbox_label">Helderheid aanpassen</string>
   <string name="toggleWifi">Wifi</string>
   <string name="toggleWifiAp">Draagbare wifi-hotspot</string>
   <string name="toggleBluetooth">Bluetooth</string>
@@ -116,6 +119,7 @@
   <string name="hardware_keys_action_launch_camera">Camera openen</string>
   <string name="hardware_keys_action_sleep">Scherm uitschakelen</string>
   <string name="hardware_keys_action_last_app">Vorige app</string>
+  <string name="camera_sleep_on_release_title">Scherm kort aan</string>
   <string name="camera_sleep_on_release_summary">Scherm aan tijdens half indrukken knop</string>
   <string name="camera_launch_title">Camera openen</string>
   <string name="camera_launch_summary">Lang indrukken en loslaten om camera te openen</string>
@@ -127,6 +131,8 @@
   <string name="volbtn_cursor_control_on_reverse">Volume omhoog/omlaag beweegt cursor naar rechts/links</string>
   <string name="swap_volume_buttons_title">Oriëntatie</string>
   <string name="swap_volume_buttons_summary">Volumeknoppen omdraaien indien het scherm gedraaid is</string>
+  <string name="volume_keys_control_ring_stream_title">Volumeknoppen passen beltoonvolume aan</string>
+  <string name="volume_keys_control_ring_stream_summary">Indien ingeschakeld, passen de volumeknoppen het beltoonvolume aan. Indien uitgeschakeld passen de volumeknoppen het mediavolume aan.</string>
   <string name="power_end_call_title">Gesprek beëindigen</string>
   <string name="power_end_call_summary">Huidige gesprek beëindigen door op de aan/uit-knop te drukken</string>
   <string name="button_wake_title">Apparaat ontwaken</string>
@@ -227,7 +233,6 @@
   <string name="device_model">Model</string>
   <string name="device_name">Apparaatnaam</string>
   <string name="build_date">Build-datum</string>
-  <string name="contributor_cloud_title">Bijdragers</string>
   <string name="phone_service_state">Spraak: <xliff:g id="voice_state">%1$s</xliff:g>, gegevens: <xliff:g id="data_state">%2$s</xliff:g></string>
   <string name="double_tap_to_wake_title">Dubbeltikken om te ontwaken</string>
   <string name="double_tap_to_wake_summary">Dubbeltikken op het scherm om te ontwaken</string>
@@ -244,6 +249,7 @@
   <string name="privacy_guard_reset_text">Machtigingen opnieuw instellen?</string>
   <string name="privacy_guard_help_text">Op dit scherm kunt u kiezen voor welke apps Privacybescherming ingeschakeld moet zijn door op ze te tikken. Geselecteerde apps zullen geen toegang hebben tot persoonsgegevens zoals contacten, berichten of gespreksstatistieken. Door een app lang aan te raken opent het info-scherm voor die app.\n\nIngebouwde apps worden standaard niet getoond, maar kunnen getoond worden door de desbetreffende optie in het menu te selecteren.</string>
   <string name="privacy_guard_manager_show_system_apps">Ingebouwde apps tonen</string>
+  <string name="app_ops_btn_text">Wijzigen</string>
   <string name="increasing_ring_volume_option_title">In volume toenemende beltoon</string>
   <string name="increasing_ring_min_volume_title">Startvolume</string>
   <string name="increasing_ring_ramp_up_time_title">Ophoogtijd</string>
@@ -252,7 +258,7 @@
   <string name="enable_adb_cm">Android-foutopsporing</string>
   <string name="enable_adb_summary_cm">Android Debug Bridge (adb)-interface inschakelen</string>
   <string name="adb_over_network">ADB over netwerk</string>
-  <string name="adb_over_network_summary">TCP/IP-foutopsporing inschakelen over netwerkinterfaces (wifi, USB-netwerken). Wordt hersteld bij opstarten</string>
+  <string name="adb_over_network_summary">TCP/IP-foutopsporing inschakelen over netwerkinterfaces (wifi, USB-netwerken). Wordt gereset bij opstarten</string>
   <string name="adb_over_network_warning">Let op: als ADB over netwerk is ingeschakeld, kan op uw apparaat worden ingebroken via alle aangesloten netwerken!\n\nGebruik deze functie alleen indien u verbonden bent met vertrouwde netwerken.\n\nWeet u zeker dat u deze functie wilt inschakelen?</string>
   <string name="adb_notify">Melding foutopsporing</string>
   <string name="adb_notify_summary">Melden wanneer USB- of netwerkfoutopsporing is ingeschakeld</string>
@@ -336,6 +342,8 @@
   <string name="notification_light_default_value">Standaard</string>
   <string name="notification_light_missed_call_title">Gemiste oproep</string>
   <string name="notification_light_voicemail_title">Voicemail</string>
+  <string name="notification_light_screen_on">Verlichting met scherm aan</string>
+  <string name="keywords_lights_brightness_level">dimmen led LED helderheid</string>
   <string name="notification_ringtone_title_cm">Meldingstoon</string>
   <string name="headset_connect_player_title">Muziek-app openen</string>
   <string name="headset_connect_player_summary">Standaardmuziek-app openen bij aansluiten headset</string>
@@ -476,6 +484,7 @@
   <string name="ok">OK</string>
   <string name="profile_menu_delete_title">Verwijderen</string>
   <string name="profile_action_none">Niet wijzigen</string>
+  <string name="profile_action_system">Systeemstandaard</string>
   <string name="profile_action_disable">Uitschakelen</string>
   <string name="profile_action_enable">Inschakelen</string>
   <string name="profile_trigger_a2dp_connect">Bij A2DP-verbinding</string>
@@ -617,6 +626,11 @@
   <string name="sdcard_media_format_gesture_explanation" product="default">U moet het ontgrendelingspatroon tekenen om te bevestigen dat u de SD-kaart wilt wissen.</string>
   <string name="usb_media_format_gesture_explanation" product="default">U moet het ontgrendelingspatroon tekenen om te bevestigen dat u de USB-opslag wilt wissen.</string>
   <string name="uicc_media_format_gesture_explanation" product="default">U moet het ontgrendelingspatroon tekenen om te bevestigen dat u de UICC-opslag wilt wissen.</string>
+  <string name="internal_sd_format">Interne mediaopslag wissen</string>
+  <string name="internal_sd_format_summary">Alle gegevens op interne mediaopslag wissen, zoals muziek en foto\'s</string>
+  <string name="master_clear_desc_erase_internal_storage">\n\nOm muziek, foto\'s en andere gebruikersgegevens te verwijderen, moet de <b>interne mediaopslag</b> worden gewist.</string>
+  <string name="erase_internal_storage">Interne mediaopslag wissen</string>
+  <string name="erase_internal_storage_description">Alle gegevens op interne mediaopslag wissen, zoals muziek en foto\'s</string>
   <string name="storage_rescan_media">Mediabestanden op het opslagvolume opnieuw scannen</string>
   <string name="location_category_enhanced_location">Verbeterde locatie (IZat)</string>
   <string name="app_ops_settings_summary">App-machtigingen bekijken of wijzigen</string>
@@ -661,6 +675,7 @@
   <string name="select_custom_app_title">Aangepaste app kiezen</string>
   <string name="select_custom_activity_title">Aangepaste activiteit kiezen</string>
   <string name="autoperf_title">Profielen per app</string>
+  <string name="autoperf_summary">Automatisch een bijpassende accumodus kiezen voor verschillende apps</string>
   <string name="perf_profile_title">Accumodus</string>
   <string name="pref_force_highend_gfx_title">Hoge kwaliteit graphics forceren</string>
   <string name="pref_force_highend_gfx_summary">Visuele effecten van hoge kwaliteit, zoals transparente status- en navigatiebalk, inschakelen (herstart vereist)</string>
@@ -688,6 +703,7 @@
   <string name="status_bar_show_weather_summary">Het weer weergeven boven het Snelle instellingenpaneel</string>
   <string name="qs_category_title">Snelle instellingenpaneel</string>
   <string name="qs_brightness_slider_title">Schuifregelaar helderheid</string>
+  <string name="qs_hide_tiles_with_sensitive_data">Gevoelige tegels verbergen indien vergrendeld</string>
   <string name="qs_order_title">Tegels selecteren en indelen</string>
   <string name="add_qs">Nieuwe tegel</string>
   <string name="qs_action_delete">Verwijderen</string>
@@ -710,6 +726,7 @@
   <string name="qs_tile_compass">Kompas</string>
   <string name="qs_tile_lockscreen">Schermvergrendeling</string>
   <string name="qs_tile_lte">LTE</string>
+  <string name="qs_tile_volume_panel">Volumepaneel</string>
   <string name="qs_tile_screen_timeout">Schermtime-out</string>
   <string name="qs_tile_usb_tether">USB-tethering</string>
   <string name="qs_tile_heads_up">Heads-up</string>
@@ -723,6 +740,7 @@
   <string name="qs_main_tiles_summary_off">Drie tegels op elke rij</string>
   <string name="qs_advanced_location_title">Geavanceerde locatie-instellingen</string>
   <string name="qs_advanced_location_summary">Geavanceerde instellingen voor locatie in Snelle instellingen</string>
+  <string name="sim_no_number_set">Geen nummer toegewezen</string>
   <string name="gesture_settings_title">Gebaren</string>
   <string name="themes_settings_title">Thema\'s</string>
   <string name="wifi_mode">Modus</string>
@@ -746,6 +764,7 @@
   <string name="expanded_desktop_style">Stijl uitgebreid bureaublad</string>
   <string name="expanded_desktop_style_description">Selecteer een standaardstijl voor het uitgebreid bureaublad</string>
   <string name="expanded_desktop_title">Instellingen uitgebreid bureaublad</string>
+  <string name="title_general">Algemeen</string>
   <string name="lockscreen_targets_message">Snelkoppelingen vergrendelingsscherm</string>
   <string name="lockscreen_default_target">Standaard</string>
   <string name="lockscreen_none_target">Geen</string>
@@ -756,6 +775,11 @@
   <string name="whisperpush_summary">Instellingen beveiligde sms-berichten</string>
   <string name="navigation_ring_title">Snelkoppelingposities</string>
   <string name="navigation_ring_message">Tik op het bewerkingspictogram om de navigatiering te openen en te bewerken.\n\nSelecteer een snelkoppeling om in te stellen.\n\nTik op het \'\u2713\'-pictogram om uw wijzigingen op te slaan of \'Herstel standaard\' om de standaardinstellingen te herstellen.</string>
+  <string name="lcd_density">LCD-dichtheid</string>
+  <string name="dialog_title_lcd_density">LCD-dichtheid</string>
+  <string name="lcd_density_value_format">%d DPI</string>
+  <string name="lcd_density_default_value_format">%d DPI (standaard)</string>
+  <string name="restarting_ui">Gebruikersomgeving herstarten\u2026</string>
   <string name="stylus_icon_enabled_title">Pictogram bij stylusgebruik</string>
   <string name="stylus_icon_enabled_summary">Cursor tonen als een stylus wordt gebruikt</string>
   <string name="gestures_settings_title">Stylusgebaren</string>
@@ -796,6 +820,9 @@
   <string name="sim_ringtone_title">Beltoon voor SIM %d</string>
   <string name="interruptions_ignore_while_media_title">Stabiel mediavolume</string>
   <string name="interruptions_ignore_while_media_summary">Mediavolume niet verminderen bij meldingen</string>
+  <string name="none_is_silent_title">Nooit alarmen dempen</string>
+  <string name="none_is_silent_summary">Altijd alarmen laten horen in Stille modus</string>
+  <string name="allow_lights_title">Meldingsled toestaan</string>
   <string name="live_display_summary">Uw scherm optimaliseren aan de hand van tijdstip op de dag en lichtomstandigheden om de leesbaarheid te verbeteren en oogvermoeidheid te verminderen</string>
   <string name="live_display_mode">Weergavemodus</string>
   <string name="live_display_color_temperature_title">Kleurtemperatuur</string>
@@ -809,6 +836,17 @@
   <string name="live_display_low_power_summary">Scherm aanpassen voor laagst mogelijke energieverbruik zonder kwaliteitsverlies</string>
   <string name="live_display_enhance_color_title">Kleuren verbeteren</string>
   <string name="live_display_enhance_color_summary">Kleurlevendigheid verbeteren van huidtinten, landschappen en andere afbeeldingen</string>
+  <string name="live_display_color_profile_title">Kleurprofiel</string>
+  <string name="live_display_color_profile_standard_title">Standaard</string>
+  <string name="live_display_color_profile_standard_summary">Nauwkeurige kleuren en heldere witwaarden</string>
+  <string name="live_display_color_profile_natural_title">Natuurlijk</string>
+  <string name="live_display_color_profile_natural_summary">Realistische kleuren en huidtinten</string>
+  <string name="live_display_color_profile_dynamic_title">Dynamisch</string>
+  <string name="live_display_color_profile_dynamic_summary">Verbeterde kleuren en heldere witwaarden</string>
+  <string name="live_display_color_profile_cinema_title">Bioscoop</string>
+  <string name="live_display_color_profile_cinema_summary">Perfecte kleurweergave voor media</string>
+  <string name="live_display_color_profile_astronomy_title">Astronomie</string>
+  <string name="live_display_color_profile_astronomy_summary">Diepe rode kleuren voor nachtweergave</string>
   <string name="battery_saver_threshold">Drempelwaarde energiebesparing</string>
   <string name="battery_saver_summary">Prestaties verminderen en achtergrondgegevens beperken</string>
   <string name="battery_saver_summary_unavailable">Niet beschikbaar bij opladen</string>
@@ -866,6 +904,7 @@
   <string name="wifi_countrycode_entries_sg">Israël, Singapore</string>
   <string name="wifi_countrycode_entries_br">Brazilië</string>
   <string name="wifi_countrycode_entries_in">India</string>
+  <string name="unlock_set_unlock_launch_picker_title_with_fingerprint">Vergrendelscherm &amp; vingerafdruk</string>
   <string name="unlock_set_unlock_mode_fingerprint">Vingerafdruk</string>
   <string name="unlock_set_unlock_fingerprint_title">Vingerafdruk</string>
   <string name="fingerprint_item_add_new_fingerprint">Nieuwe vingerafdruk toevoegen</string>
@@ -877,25 +916,66 @@
   <string name="fingerprint_dialog_title_max_fingers_reached">Maximaal aantal vingerafdrukken bereikt</string>
   <string name="fingerprint_dialog_msg_max_fingers_reached">U kunt <xliff:g id="finger" example="5 fingerprints">%d </xliff:g> vingerafdrukken toevoegen. Verwijder een bestaande vingerafdruk.</string>
   <string name="fingerprint_title_manage_fingerprints">Vingerafdrukken beheren <xliff:g id="finger">%d</xliff:g>/<xliff:g id="max">%d</xliff:g></string>
+  <string name="manage_fingerprints_description">Met vingerafdrukken kunt u uw apparaat snel ontgrendelen en foto\'s nemen.</string>
   <string name="fingerprint_enrollment_introduction_title">Uw sensor opzoeken</string>
+  <string name="fingerprint_enrollment_introduction_instructions">De vingerafdruksensor bevindt zich op de voor- of achterkant van uw apparaat.</string>
+  <string name="fingerprint_enrollment_scan_title">Drie seconden stil houden</string>
+  <string name="fingerprint_enrollment_scan_instructions">Plaats uw wijsvinger op de vingerafdruksensor om te beginnen. Verwijder uw vinger wanneer u een trilling voelt.</string>
   <string name="fingerprint_enrollment_error_title_wrong_sensor">Probeer het opnieuw</string>
+  <string name="fingerprint_enrollment_error_message">Plaats uw vinger op de vingerafdruksensor voor een nauwkeurige scan. Gebruik dezelfde vinger als eerder. Verwijder uw vinger wanneer u een trilling voelt.</string>
+  <string name="fingerprint_enrollment_scan_instructions">Plaats uw wijsvinger op de vingerafdruksensor om te beginnen. Verwijder uw vinger wanneer u een trilling voelt.</string>
+  <string name="fingerprint_enrollment_break_title">Doorgaan met huidige positionering</string>
+  <string name="fingerprint_enrollment_break_instructions">Ga zo door om de randen van uw afdruk vast te leggen. Verwijder uw vinger wanneer u een trilling voelt.</string>
   <string name="fingerprint_enrollment_finished_title">Vingerafdruk toegevoegd</string>
   <string name="fingerprint_enrollment_finished_message">Uw vingerafdruk kan nu gebruikt worden om uw scherm te ontgrendelen of selfies te nemen met uw camera.</string>
   <string name="fingerprint_enrollment_found_it_label">Gevonden</string>
+  <string name="fingerprint_enrollment_add_another_label">Nog een toevoegen</string>
   <string name="fingerprint_enrollment_done_label">Gereed</string>
   <string name="fingerprint_dialog_title_wrong_sensor">Dat is niet uw sensor</string>
+  <string name="fingerprint_dialog_msg_wrong_sensor">Gebruik de vingerafdruksensor aan de voor- of achterkant van uw apparaat</string>
   <string name="fingerprint_dialog_title_failed_enrollment">Kan vingerafdruk niet lezen</string>
   <string name="fingerprint_dialog_msg_failed_enrollment">Probeer een andere vinger. Deze vingerafdruk kan niet worden gelezen.</string>
   <string name="fingerprint_enrollment_restart_label">Opnieuw</string>
+  <string name="fingerprint_successful_scan_title_first">Perfect! Nog een keer</string>
+  <string name="fingerprint_successful_scan_final">Nog een keer a.u.b.</string>
+  <string name="fingerprint_successful_scan_title_1">Gaat goed! Ga door</string>
   <string name="fingerprint_successful_scan_title_2">Prachtig! En nog een keer</string>
+  <string name="fingerprint_successful_scan_title_3">Goed gedaan! Ga zo door</string>
   <string name="fingerprint_successful_scan_title_4">Nog maar een paar keer</string>
+  <string name="fingerprint_successful_scan_title_5">U doet het geweldig! En nogmaals</string>
+  <string name="fingerprint_successful_scan_title_6">Bijna klaar</string>
   <string name="fingerprint_enrollment_error_title_1">Probeer het nog een keer</string>
   <string name="fingerprint_enrollment_error_title_2">Probeer het nogmaals</string>
   <string name="fingerprint_enrollment_error_title_3">Er is iets fouts gegaan</string>
   <string name="fingerprint_enrollment_error_title_4">Probeer het opnieuw</string>
   <string name="fingerprint_enrollment_error_title_5">Er is een fout opgetreden</string>
+  <string name="lockscreen_settings_and_fingerprint">Vergrendelscherm &amp; vingerafdruk</string>
+  <string name="menu_stats_reset">Statistieken opnieuw instellen</string>
   <string name="reset_stats_msg">Statistieken over accugeschiedenis worden opnieuw ingesteld</string>
   <string name="dock_battery_not_present">Dock-accu niet aanwezig</string>
+  <string name="battery_info_status_charging_dock_ac">Opladen via dock (AC)</string>
+  <string name="battery_info_status_charging_dock_usb">Opladen via dock (USB)</string>
   <string name="setup_lock_pattern_size_title">Complexiteit patroon</string>
   <string name="setup_lock_pattern_size_details">Hoe groot moet het raster zijn waarop u uw patroon tekent? Hoe meer punten, hoe complexer uw patroon kan worden.</string>
+  <string name="lto_download_data_wifi_only">GPS-ondersteunende gegevens downloaden</string>
+  <string name="lto_download_data_wifi_only_on">Via alle netwerken</string>
+  <string name="lto_download_data_wifi_only_off">Alleen via wifi-netwerken</string>
+  <string name="keep_screen_on_never">Nooit</string>
+  <string name="keep_screen_on_debugging">Tijdens USB-foutopsporingmodus</string>
+  <string name="keep_screen_on_charging">Tijdens het opladen</string>
+  <string name="contributors_cloud_fragment_title">Bijdragers</string>
+  <string name="contributors_cloud_loading_message">Informatie over bijdragers laden\u2026</string>
+  <string name="contributors_cloud_failed_message">Kan informatie over bijdragers niet laden</string>
+  <string name="contributor_info_menu">Informatie over bijdragers</string>
+  <string name="contributor_info_msg">
+        <![CDATA[<b>Naam:</b> <xliff:g id="name">%1$s</xliff:g><br/><br/>
+                 <b>Alias:</b> <xliff:g id="nick">%2$s</xliff:g><br/><br/>
+                 <b>Commits:</b> <xliff:g id="commits">%3$s</xliff:g><br/><br/>
+                 <b>Positie:</b> <xliff:g id="rank">%4$s</xliff:g>]]></string>
+  <string name="contributions_info_menu">Informatie over bijdragers</string>
+  <string name="contributions_info_msg">
+        <![CDATA[<b>Aantal bijdragers:</b> <xliff:g id="total_contributors">%1$s</xliff:g><br/><br/>
+                 <b>Aantal commits:</b> <xliff:g id="total_commits">%2$s</xliff:g><br/><br/>
+                 <b>Laatste update:</b> <xliff:g id="date">%3$s</xliff:g>]]></string>
+  <string name="quick_settings_reset_message">Tegels snelle instellingen opnieuw instellen?</string>
 </resources>

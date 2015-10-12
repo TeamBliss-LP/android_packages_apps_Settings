@@ -83,6 +83,7 @@
   <string name="profile_choose_app">ऐप चुनें</string>
   <string name="profile_system_settings_title">सिस्टम सेटिंग</string>
   <string name="profile_lockmode_title">स्क्रीन को लॉक करें मोड</string>
+  <string name="profile_lockmode_policy_disabled_summary">इस प्रोफ़ाइल विकल्प को एक डिवाइस प्रशासक नीति के तहत अक्षम किया गया है</string>
   <string name="profile_lockmode_insecure_summary">पिन या पासवर्ड नहीं माँगें</string>
   <string name="profile_lockmode_disabled_summary">स्क्रीन को लॉक करें को अक्षम करें</string>
   <string name="profile_airplanemode_title">विमान मोड</string>
@@ -104,6 +105,7 @@
   <string name="hardware_keys_menu_key_title">मेनू बटन</string>
   <string name="hardware_keys_assist_key_title">खोज बटन</string>
   <string name="hardware_keys_appswitch_key_title">हाल के बटन</string>
+  <string name="hardware_keys_camera_key_title">कैमरा बटन</string>
   <string name="hardware_keys_volume_keys_title">वोल्यूम बटन</string>
   <string name="hardware_keys_short_press_title">लघु प्रेस कार्य</string>
   <string name="hardware_keys_long_press_title">दीर्घ प्रेस कार्य</string>
@@ -117,6 +119,10 @@
   <string name="hardware_keys_action_launch_camera">कैमरा शुरू करें</string>
   <string name="hardware_keys_action_sleep">स्क्रीन को बंद करें</string>
   <string name="hardware_keys_action_last_app">अंतिम ऐप</string>
+  <string name="camera_sleep_on_release_title">स्क्रीन झाँक</string>
+  <string name="camera_sleep_on_release_summary">आधा दबाव स्क्रीन को केवल तब तक चालू रखेगा जब तक बटन को दबाए रखा जाता है</string>
+  <string name="camera_launch_title">कैमरे को शुरू करें</string>
+  <string name="camera_launch_summary">देर तक दाबकर छोड़ने से कैमरा शुरा हो जाएगा</string>
   <string name="volbtn_music_controls_title">प्लेबैक नियंत्रण</string>
   <string name="volbtn_music_controls_summary">जब स्क्रीन बंद हो, वोल्यूम कुंजियों को दीर्घ प्रेस करने से संगीत ट्रैकों को खोजा जाएगा</string>
   <string name="volbtn_cursor_control_title">कुंजीपटल कर्सर नियंत्रण</string>
@@ -125,6 +131,8 @@
   <string name="volbtn_cursor_control_on_reverse">वोल्यूम ऊपर/नीचे कर्सर को दाएँ/बाएँ ले जाएगा</string>
   <string name="swap_volume_buttons_title">रीओरिएंट करें</string>
   <string name="swap_volume_buttons_summary">जब स्क्रीन को घुमाया जाता है, वोल्यूम बटनों को स्वैप करें</string>
+  <string name="volume_keys_control_ring_stream_title">वॉल्यूम कुंजिायँ रिंगटोन के वॉल्यूम को नयंत्रित करती हैं</string>
+  <string name="volume_keys_control_ring_stream_summary">चालू रहने पर, वॉल्यूम कुंजियाँ रिंगटोन के वॉल्यूम को नियंत्रित करती हैं। बंद रहने पर वॉल्यूम कुंजियाँ माध्यम के वॉल्यूम को नियंत्रित करती हैं।</string>
   <string name="power_end_call_title">कॉल खत्म करें</string>
   <string name="power_end_call_summary">पावर बटन को दबाने पर वर्तमान कॉल समाप्त कर दिया जाएगा</string>
   <string name="button_wake_title">उपकरण को जगाएँ</string>
@@ -159,9 +167,14 @@
   <string name="sunlight_enhancement_summary">तीव्र धूप में डिस्प्ले की चमक और पठनीयता को बढ़ाएँ</string>
   <string name="color_enhancement_title">रंग संवर्धन</string>
   <string name="color_enhancement_summary">गतिशील रीति से डिस्प्ले के रंग को संवर्धित करें</string>
+  <string name="blacklist_title">अवरुद्ध किए गए कॉलरों की सूची</string>
+  <string name="blacklist_edit_dialog_title">अवरुद्ध किए गए फ़ोन नंबर को संपादित करें</string>
   <string name="blacklist_prefs">सेटिंग</string>
   <string name="blacklist_button_delete">हटाएँ</string>
+  <string name="blacklist_empty_text">आपने किसी भी नंबर को अवरुद्ध नहीं किया है। जोड़ें (+) बटन को छूकर एक प्रविष्टि जोड़ें।</string>
+  <string name="blacklist_disabled_empty_text">फ़ोन नंबरों को आपको कॉल करने या संदेश भेजने से रोकने के लिए अवरुद्ध किए गए कॉलरों की सूची को सक्षम करें।</string>
   <string name="blacklist_summary_disabled">अक्षम</string>
+  <string name="blacklist_summary">आपको अवरुद्ध किए गए कॉलरों की सूची में मौजूद फ़ोन नंबरों से कॉल और संदेश नहीं आया करेंगे।</string>
   <string name="blacklist_notify">अधिसूचना दिखाएँ</string>
   <string name="blacklist_private_numbers_title">निजी नंबर</string>
   <string name="blacklist_private_numbers_summary_disabled">निजी नंबरों से आने वाले कॉलों को अवरुद्ध नहीं करें</string>
@@ -176,7 +189,9 @@
   <string name="blacklist_regex_summary">. को वाइल्डकार्ड के रूप में और * को दुहराने के लिए उपयोग करें। उदाह.,  123.* 123 से शुरू होने वाले नंबरों को अवरुद्ध करेगा और .*123.* उन नंबरों को अवरुद्ध करेगा जिनमें 123 आता है</string>
   <string name="blacklist_policy_block_calls">आवक कॉलों को अवरुद्ध करें</string>
   <string name="blacklist_policy_block_messages">आवक संदेशों को अवरुद्ध करें</string>
+  <string name="blacklist_bad_number_add">अमान्य फ़ोन नंबर को अवरुद्ध किए गए कॉलरों की सूची में जोड़ नहीं सके</string>
   <string name="remove_blacklist_number_title">नंबर निकालें</string>
+  <string name="remove_blacklist_entry">क्या आप इस अवरुद्ध किए गए फ़ोन नंबर को हटाना चाहते हैं?</string>
   <string name="select_contact">संपर्क चुनें</string>
   <string name="lockpattern_reset_button">पैटर्न रीसेट करें</string>
   <string name="lockpattern_settings_reset_summary">पैटर्न लॉक को रीसेट करने के लिए मुख्य ईमेल पता और उससे संबंधित पासवर्ड दर्ज करें</string>
@@ -200,6 +215,9 @@
   <string name="display_rotation_270_title">270 डिग्री</string>
   <string name="app_security_title">ऐप सुरक्षा</string>
   <string name="sms_security_check_limit_title">एसएमएस संदेश सीमा</string>
+  <string name="sms_security_check_limit_summary">ऐप बिना पुष्टीकरण की आवश्यकता पड़े 1 मिनट में %d संदेश भेज सकते हैं</string>
+  <string name="sms_security_check_limit_summary_none">बिना पुष्टि के ऐपों को कोई भी संदेश नहीं भेजने दिया जाता है</string>
+  <string name="sms_security_check_limit_none">कुछ नहीं</string>
   <string name="spam_added_title">%1$s जोड़े गए</string>
   <string name="spam_last_blocked_title">%1$s को अंतिम बार अवरुद्ध किया गया</string>
   <string name="block_notifications_title">अधिसूचनाओं को फ़िल्टर करें</string>
@@ -212,8 +230,9 @@
   <string name="update_recovery_off_warning">चेतावनी: यदि इस सुविधा को अक्षम किया जाए, तो आपकी स्थापित रिकवरी को प्रचालन तंत्र के अद्यतनों के साथ अद्यतित नहीं किया जाएगा।\n\nप्रचालन तंत्र के भावी अद्यतन पुरानी पड़ चुकी या मनपसंद रिकवरी संस्करणों के रहते स्थापित नहीं होंगे।\n\nक्या आप सचमुच इस सुविधा को अक्षम करना चाहते हैं?</string>
   <string name="mod_version">सियानोजेनमोड संस्करण</string>
   <string name="mod_version_default">अज्ञात</string>
+  <string name="device_model">डिवाइस मॉडेल</string>
+  <string name="device_name">डिवाइस का नाम</string>
   <string name="build_date">बिल्ड तिथि</string>
-  <string name="contributor_cloud_title">योगदानकर्ता</string>
   <string name="phone_service_state">आवाज़: <xliff:g id="voice_state">%1$s</xliff:g>, डेटा: <xliff:g id="data_state">%2$s</xliff:g></string>
   <string name="double_tap_to_wake_title">जगाने के लिए दो बार टैप करें</string>
   <string name="double_tap_to_wake_summary">डिस्प्ले को चालू करने के लिए स्क्रीन पर दो बार टैप करें</string>
@@ -230,6 +249,7 @@
   <string name="privacy_guard_reset_text">अनुमतियों को रीसेट करें?</string>
   <string name="privacy_guard_help_text">इस स्क्रीन में आप ऐपों को टैप करके चुन सकते हैं कि किन ऐपों में गोपनीयता कवच सक्रिय होना चाहिए। चयनित ऐप आपकी निजी डेटा तक नहीं पहुँच सकेंगे, जैसे आपके संपर्क, संदेश या कॉल लॉग। किसी ऐप की प्रविष्टि को दीर्घ प्रेस करने से उस ऐप का विवरण स्क्रीन खुलेगा।\n\nडिफ़ॉल्ट रूप से अंतःस्थापित ऐपों को नहीं दिखाया जाता है, पर उचित मेनू विकल्प चुनकर उन्हें प्रत्यक्ष कर सकते हैं।</string>
   <string name="privacy_guard_manager_show_system_apps">अंतःस्थापित ऐपों को दिखाएँ</string>
+  <string name="app_ops_btn_text">बदलें</string>
   <string name="increasing_ring_volume_option_title">बढ़ता हुआ रिंगटोन वोल्यूम</string>
   <string name="increasing_ring_min_volume_title">वोल्यूम को शुरू करें</string>
   <string name="increasing_ring_ramp_up_time_title">समय को बढ़ाएँ</string>
@@ -634,6 +654,7 @@
   <string name="usb_charging_summary">कंप्यूटर के साथ सभी डेटा अंतरणों को अक्षम कर देता है और उपकरण को यूएसबी पोर्ट पर चार्ज करता है</string>
   <string name="usb_sdcard_title">विशाल भंडालरण (यएमएस)</string>
   <string name="usb_sdcard_summary">एडी कार्ड को फ्लैश उपकरण के रूप में माउंट करके आपको कंप्यूटर और एसडी कार्ड के बीच फ़ाइलों को अंतरित करने देता है</string>
+  <string name="usb_not_connected">यूएसबी अब डिसकनेक्ट हो गया है</string>
   <string name="external_storage_turn_on">बाहरी भंडारण को चालू कर दिया गया है</string>
   <string name="external_storage_turn_off">बाहरी भंडारण को बंद कर दिया गया है</string>
   <string name="stats_collection_title">आँकड़ा संग्रहण</string>
@@ -652,6 +673,7 @@
   <string name="select_custom_app_title">मनपसंद ऐप चुनें</string>
   <string name="select_custom_activity_title">मनपसंद गतिविधि चुनें</string>
   <string name="autoperf_title">प्रति-ऐप प्रोफ़ाइलों को सक्षम करें</string>
+  <string name="autoperf_summary">विभिन्न ऐपों के लिए स्वतः ही उचित बैटरी मोड चुनें</string>
   <string name="perf_profile_title">बैटरी मोड</string>
   <string name="pref_force_highend_gfx_title">उच्च स्तर के ग्राफ़ित को ज़बर्दस्ती सक्षम करें</string>
   <string name="pref_force_highend_gfx_summary">पारदर्शिता स्थिति/नेविगेशन पट्टी जैसे उच्च स्तरीय दृश्य प्रभावों को ज़बर्दस्ती सक्षम करता है (रीबूट आवश्यक है)</string>
@@ -703,11 +725,18 @@
   <string name="qs_tile_lte">एलटीई</string>
   <string name="qs_tile_screen_timeout">स्क्रीन समय समाप्त</string>
   <string name="qs_tile_usb_tether">यूएसबी टेदरिंग</string>
+  <string name="qs_tile_heads_up">हेड्स अप</string>
+  <string name="qs_tile_ambient_display">परिवेशी प्रदर्शन</string>
+  <string name="qs_tile_sync">संकालन</string>
+  <string name="qs_dynamic_tile_next_alarm">अलगा अलार्म</string>
+  <string name="qs_dynamic_tile_ime_selector">आईएमई चयनक</string>
+  <string name="qs_dynamic_tile_su">मूल पहुँच</string>
   <string name="qs_main_tiles_title">पहली पंक्ति को बड़ा करें</string>
   <string name="qs_main_tiles_summary_on">पहली पंक्ति में दो मुख्य टाइलें</string>
   <string name="qs_main_tiles_summary_off">हर पंक्ति में तीन-ती टाइलें</string>
   <string name="qs_advanced_location_title">उन्नत स्थान सेटिंग</string>
   <string name="qs_advanced_location_summary">तेज़ सेटिंग में स्थान के लिए उन्नत सेटिंग को सक्षम करें</string>
+  <string name="sim_no_number_set">कोई भी नंबर निर्दिष्ट नहीं किया गया है</string>
   <string name="gesture_settings_title">गेश्चर</string>
   <string name="themes_settings_title">थीम</string>
   <string name="wifi_mode">मोड</string>
@@ -716,6 +745,7 @@
   <string name="wifi_ibss_freq_title">चैनेल / आवृत्ति</string>
   <string name="wifi_channel">चैनल</string>
   <string name="wifi_mhz">MHz</string>
+  <string name="wifi_auto_config_priorities">स्वचालित प्राथमिकता</string>
   <string name="maximum_head_level">शीर्ष: %1$s W/kg</string>
   <string name="maximum_body_level">धड़: %1$s W/kg</string>
   <string name="ic_code_model">मॉडेल: %1$s</string>
@@ -741,6 +771,11 @@
   <string name="whisperpush_summary">सुरक्षित एसएमएस सेटिंग को प्रबंधित करें</string>
   <string name="navigation_ring_title">नेविगेशन छल्ला लक्ष्य</string>
   <string name="navigation_ring_message">संपादन के लिए नेविगेशन छल्ले को खोलने के लिए संपादन आइकन को टैप करें।\n\nकिसी लक्ष्य के व्यवहार को कॉन्फ़िगर करने के लिए उसे चुनें।\n\nअपने परिवर्तनों को सहेजने के लिए \'\u2713\' आइकन को टैप करें, या सेटिंग को डिफ़ॉल्ट पर रीसेट करने के लिए \'डिफ़ॉल्ट बहाल करें\' को टैप करें।</string>
+  <string name="lcd_density">एलसीडी घनत्व</string>
+  <string name="dialog_title_lcd_density">एलसीडी घनत्व</string>
+  <string name="lcd_density_value_format">%d डीपीआई</string>
+  <string name="lcd_density_default_value_format">%d डीपीआई (डिफ़ॉल्ट)</string>
+  <string name="restarting_ui">यूआई को फिर से शुरू कर रहे हैं\u2026</string>
   <string name="stylus_icon_enabled_title">लेखनी का उपयोग करते समय आइकन दिखाएँ</string>
   <string name="stylus_icon_enabled_summary">लेखनी से मँडराते या चित्र बनाते समय पोइंटर आइकन दिखाएँ</string>
   <string name="gestures_settings_title">लेखनी गेश्चर</string>
@@ -772,6 +807,7 @@
   <string name="category_interface">इंटरफ़ेस</string>
   <string name="category_calibration">अंशांकन</string>
   <string name="display_and_lights">डिस्प्ले और रोशनियाँ</string>
+  <string name="notification_manager">अधिसूचनाएँ</string>
   <string name="lockscreen_settings">लॉक स्क्रीन</string>
   <string name="category_lights">रोशनियाँ</string>
   <string name="power_usage_history_title">बैटरी उपयोग</string>
@@ -780,6 +816,9 @@
   <string name="sim_ringtone_title">सिम %d रिंगटोन</string>
   <string name="interruptions_ignore_while_media_title">ऑडियो डकिंग को रोकें</string>
   <string name="interruptions_ignore_while_media_summary">जब कोई अधिसूचना आए, तो माध्यम प्लेबैक वोल्यूम को कम नहीं करें</string>
+  <string name="none_is_silent_title">अलार्मों को कभी भी मूक नहीं करें</string>
+  <string name="none_is_silent_summary">खामोश मोड हमेशा अलार्मों को बजाता है</string>
+  <string name="allow_lights_title">अधिसूचना रोशनी को अनुमति दें</string>
   <string name="live_display_summary">दिन के समय और परिवेशी स्थितियों के अनुसार स्क्रीन को इष्टतमीकृत करें ताकि पठनीयता बढ़ें और आँखों पर कम दबाव पड़े</string>
   <string name="live_display_mode">डिस्प्ले मोड</string>
   <string name="live_display_color_temperature_title">रंग तापमान</string>

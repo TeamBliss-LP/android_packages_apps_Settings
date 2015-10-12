@@ -40,9 +40,11 @@
   <string name="profile_empty_list_profiles_off">Aktivieren Sie die Profilfunktion, um Systemprofile konfigurieren und nutzen zu können.</string>
   <string name="profile_trigger_configure">Auslöser konfigurieren</string>
   <string name="profile_write_nfc_tag">NFC-Tag beschreiben</string>
+  <string name="profile_write_touch_tag">Zum Beschreiben NFC-Tag berühren</string>
   <string name="profile_write_success">Tag wurde erfolgreich beschrieben</string>
   <string name="profile_write_failed">Beschreiben des Tags fehlgeschlagen!</string>
   <string name="profile_selected">Profil %1$s aktiviert</string>
+  <string name="profile_nfc_text">Durch das Schreiben eines Profils auf einen NFC-Tag aktiviert eine Berührung des Tags das entsprechende Profil. Eine weitere Berührung aktiviert das vorherige Profil.</string>
   <string name="profile_unknown_nfc_tag">Unbekanntes Profil</string>
   <string name="profile_add_nfc_text">Der NFC-Tag verweist auf ein unbekanntes Profil. Das Verknüpfen des NFC-Tags mit einem existierenden Profil ermöglicht es, das entsprechende Profil in Zukunft durch eine Berührung zu aktivieren.</string>
   <string name="profile_select">Profil auswählen</string>
@@ -85,6 +87,9 @@
   <string name="profile_lockmode_insecure_summary">Nicht nach PIN oder Passwort fragen</string>
   <string name="profile_lockmode_disabled_summary">Bildschirmsperre deaktivieren</string>
   <string name="profile_airplanemode_title">Flugmodus</string>
+  <string name="profile_brightness_title">Bildschirmhelligkeit</string>
+  <string name="profile_brightness_override_summary">Auf %1$d%% festlegen</string>
+  <string name="profile_brightness_override_checkbox_label">Helligkeit überschreiben</string>
   <string name="toggleWifi">WLAN</string>
   <string name="toggleWifiAp">WLAN-Hotspot</string>
   <string name="toggleBluetooth">Bluetooth</string>
@@ -100,6 +105,7 @@
   <string name="hardware_keys_menu_key_title">Menü-Taste</string>
   <string name="hardware_keys_assist_key_title">Suche-Taste</string>
   <string name="hardware_keys_appswitch_key_title">Anwendungs-Umschalttaste</string>
+  <string name="hardware_keys_camera_key_title">Kamera-Taste</string>
   <string name="hardware_keys_volume_keys_title">Lautstärketasten</string>
   <string name="hardware_keys_short_press_title">Kurzes Drücken</string>
   <string name="hardware_keys_long_press_title">Langes Drücken</string>
@@ -113,6 +119,8 @@
   <string name="hardware_keys_action_launch_camera">Kamera öffnen</string>
   <string name="hardware_keys_action_sleep">Bildschirm ausschalten</string>
   <string name="hardware_keys_action_last_app">Vorherige App</string>
+  <string name="camera_sleep_on_release_title">Kurzer Blick</string>
+  <string name="camera_sleep_on_release_summary">Der Bildschirm wird aktiviert, solange die Kamera-Taste halb durchgedrückt gehalten wird</string>
   <string name="camera_launch_title">Kamera starten</string>
   <string name="camera_launch_summary">Langes Drücken und Loslassen startet die Kamera</string>
   <string name="volbtn_music_controls_title">Musiksteuerung</string>
@@ -143,10 +151,7 @@
   <string name="backlight_summary_enabled">Aktiviert</string>
   <string name="power_menu_title">Ein-/Aus-Taste</string>
   <string name="power_menu_reboot_title">Neustart-Menü</string>
-  <string name="power_menu_power_title">Ausschalten</string>
   <string name="power_menu_screenshot_title">Bildschirmfoto</string>
-  <string name="powermenu_screenshot_delay_title">Bildschirmfoto Verzögerung setzen</string>
-  <string name="power_menu_screenrecord_title">Bildschirmaufzeichnung</string>
   <string name="power_menu_profiles_title">Profilwechsel</string>
   <string name="power_menu_airplane_title">Flugmodus</string>
   <string name="power_menu_users_title">Benutzer wechseln</string>
@@ -162,12 +167,12 @@
   <string name="sunlight_enhancement_summary">Ablesbarkeit des Displays bei hellem Sonnenlicht verbessern</string>
   <string name="color_enhancement_title">Farbverbesserung</string>
   <string name="color_enhancement_summary">Farbdarstellung des Displays dynamisch verbessern</string>
-  <string name="blacklist_title">Gesperrte Anruferliste</string>
+  <string name="blacklist_title">Anrufer-Sperrliste</string>
   <string name="blacklist_edit_dialog_title">Gesperrte Telefonnummer bearbeiten</string>
   <string name="blacklist_prefs">Einstellungen</string>
   <string name="blacklist_button_delete">Löschen</string>
   <string name="blacklist_empty_text">Es sind noch keine Einträge in der Sperrliste enthalten. Sie können Einträge hinzufügen, indem Sie das \"+\"-Symbol berühren.</string>
-  <string name="blacklist_disabled_empty_text">Um Anrufe und Nachrichten von bestimmten Nummern zu verhindern, Gesperrte Anruferliste aktivieren.</string>
+  <string name="blacklist_disabled_empty_text">Um Anrufe und Nachrichten von bestimmten Nummern zu verhindern, aktivieren Sie die Anrufer-Sperrliste.</string>
   <string name="blacklist_summary_disabled">Deaktiviert</string>
   <string name="blacklist_summary">Sie werden keine Anrufe oder Nachrichten von Nummern aus der Sperrliste empfangen</string>
   <string name="blacklist_notify">Benachrichtigung anzeigen</string>
@@ -225,10 +230,10 @@
   <string name="update_recovery_off_warning">ACHTUNG: Wenn diese Funktion deaktiviert ist, wird das installierte Recovery-System nicht gemeinsam mit dem Betriebssystems aktualisiert.\n\nZukünftige OS-Updates können möglicherweise nicht mit veralteten oder benutzerdefinierten Recovery-Versionen installieren werden.\n\nMöchten sie diese Funktion wirklich deaktivieren?</string>
   <string name="mod_version">CyanogenMod-Version</string>
   <string name="mod_version_default">Unbekannt</string>
+  <string name="security_patch">Android-Sicherheitspatch-Ebene</string>
   <string name="device_model">Gerätemodell</string>
   <string name="device_name">Gerätename</string>
   <string name="build_date">Build-Datum</string>
-  <string name="contributor_cloud_title">Mitwirkende</string>
   <string name="phone_service_state">Anrufe: <xliff:g id="voice_state">%1$s</xliff:g>, Daten: <xliff:g id="data_state">%2$s</xliff:g></string>
   <string name="double_tap_to_wake_title">Aufwecken durch doppeltes Tippen</string>
   <string name="double_tap_to_wake_summary">Doppelt auf den Bildschirm tippen, um das Display anzuschalten</string>
@@ -274,8 +279,8 @@
   <string name="navigation_bar_left_title">Linkshänder-Modus</string>
   <string name="navigation_bar_left_summary">Navigationsleiste im Querformat auf der linken Seite anzeigen</string>
   <string name="navigation_bar_title">Schaltflächen</string>
-  <string name="navigation_bar_help_text">Um anzufangen, tippen Sie auf das \"Bearbeiten\"-Symbol, um die Navigationsleiste zu entsperren.\n\nSie können ein Symbol antippen, um die Verknüpfung zu ändern oder lange auf ein Symbol drücken, um das Layout zu verändern.\n\nTippen Sie auf Sichern, um Ihre Änderungen zu speichern oder Wiederherstellen, um das Layout auf die Standardeinstellungen zurückzusetzen.</string>
-  <string name="navigation_restore_button_text">Standardeinstellungen\nwiederherstellen</string>
+  <string name="navigation_bar_help_text">Um anzufangen, tippen Sie auf das \"Bearbeiten\"-Symbol, um die Navigationsleiste zu entsperren.\n\nSie können ein Symbol antippen, um die Verknüpfung zu ändern oder lange auf ein Symbol drücken, um das Layout zu verändern.\n\nTippen Sie auf \"Speichern\", um Ihre Änderungen zu sichern oder auf \"Wiederherstellen\", um das Layout auf die Standardeinstellungen zurückzusetzen.</string>
+  <string name="navigation_restore_button_text">Wiederherstellen</string>
   <string name="navigation_edit_button_text">Bearbeiten</string>
   <string name="navigation_save_button_text">Speichern</string>
   <string name="navigation_bar_reset_message">Alle Einstellungen löschen und das Standardlayout wiederherstellen?</string>
@@ -339,6 +344,8 @@
   <string name="notification_light_default_value">Standard</string>
   <string name="notification_light_missed_call_title">Verpasster Anruf</string>
   <string name="notification_light_voicemail_title">Sprachnachricht</string>
+  <string name="notification_light_screen_on">Bei aktivem Display</string>
+  <string name="keywords_lights_brightness_level">LED-Helligkeit reduzieren</string>
   <string name="notification_ringtone_title_cm">Benachrichtigungston</string>
   <string name="headset_connect_player_title">Musik-App starten</string>
   <string name="headset_connect_player_summary">Beim Verbinden eines Kopfhörers die Standard-Musik-App starten</string>
@@ -621,6 +628,11 @@
   <string name="sdcard_media_format_gesture_explanation" product="default">Sie müssen Ihr Entsperrmuster zeichnen, um das Löschen Ihrer SD-Karte zu bestätigen.</string>
   <string name="usb_media_format_gesture_explanation" product="default">Zeichnen Sie ihr Entsperrmuster um den USB- Speicher zu löschen.</string>
   <string name="uicc_media_format_gesture_explanation" product="default">Zeichnen Sie Ihr Entsperrmuster, um den UICC-Speicher zu löschen.</string>
+  <string name="internal_sd_format">Internes Speichermedium löschen</string>
+  <string name="internal_sd_format_summary">Löscht alle Daten wie z.B. Musik und Fotos auf dem internen Speichermedium</string>
+  <string name="master_clear_desc_erase_internal_storage">\n\nUm Musik, Bilder und andere Nutzerdaten zu löschen, muss das <b>interne Speichermedium</b> gelöscht werden.</string>
+  <string name="erase_internal_storage">Internes Speichermedium löschen</string>
+  <string name="erase_internal_storage_description">Löscht alle Daten wie z.B. Musik und Fotos auf dem internen Speichermedium</string>
   <string name="storage_rescan_media">Speichermedium nach Mediendateien durchsuchen</string>
   <string name="location_category_enhanced_location">Verbesserte Standortdienste (IZat)</string>
   <string name="app_ops_settings_summary">App-Berechtigungen anzeigen oder ändern</string>
@@ -665,6 +677,7 @@
   <string name="select_custom_app_title">Anwendung wählen</string>
   <string name="select_custom_activity_title">Aktivität wählen</string>
   <string name="autoperf_title">App-Profile aktivieren</string>
+  <string name="autoperf_summary">Wählt für manche Apps automatisch einen passenden Akkumodus aus</string>
   <string name="perf_profile_title">Akkumodus</string>
   <string name="pref_force_highend_gfx_title">Verbesserte Grafikeffekte</string>
   <string name="pref_force_highend_gfx_summary">Verbesserte Transparenz- und Animationseffekte wie z.B. Status- und Navigationsleistentransparenz verwenden (Neustart erforderlich)</string>
@@ -674,11 +687,14 @@
   <string name="settings_cmlicense_activity_title">Rechtliche Hinweise zu CyanogenMod</string>
   <string name="lockpattern_settings_enable_error_path_title">Fehler anzeigen</string>
   <string name="lockpattern_settings_enable_dots_title">Punkte anzeigen</string>
+  <string name="lock_directly_show_password">Passwort-Abfrage direkt anzeigen</string>
+  <string name="lock_directly_show_pattern">Muster-Abfrage direkt anzeigen</string>
+  <string name="lock_directly_show_pin">PIN-Abfrage direkt anzeigen</string>
   <string name="unlock_quick_unlock_control_title">Schnelles Entsperren</string>
   <string name="unlock_quick_unlock_control_summary">Entsperren durch korrekte PIN- oder Passworteingabe</string>
   <string name="unlock_scramble_pin_layout_title">Zufällige Anordnung</string>
   <string name="unlock_scramble_pin_layout_summary">Bei jedem Entsperrversuch die Ziffernanordnung zufällig neu wählen</string>
-  <string name="link_volume_option_title">Gleich für Klingeln &amp; Benachrichtigungen</string>
+  <string name="link_volume_option_title">Gleiche Lautstärke für Klingelton &amp; Benachrichtigungen</string>
   <string name="notification_volume_option_title">Benachrichtigungslautstärke</string>
   <string name="notification_drawer_title">Benachrichtigungsanzeige</string>
   <string name="quick_pulldown_title">Schnelles Öffnen</string>
@@ -692,6 +708,7 @@
   <string name="status_bar_show_weather_summary">Wetter oberhalb der Schnelleinstellungen anzeigen</string>
   <string name="qs_category_title">Schnelleinstellungen</string>
   <string name="qs_brightness_slider_title">Helligkeitsregler anzeigen</string>
+  <string name="qs_hide_tiles_with_sensitive_data">Sensible Kacheln bei gesperrtem Bildschirm verstecken</string>
   <string name="qs_order_title">Kacheln auswählen und anordnen</string>
   <string name="add_qs">Neue Kachel hinzufügen</string>
   <string name="qs_action_delete">Löschen</string>
@@ -720,6 +737,7 @@
   <string name="qs_tile_heads_up">Pop-up-Benachrichtigungen</string>
   <string name="qs_tile_ambient_display">Inaktivitätsdisplay</string>
   <string name="qs_tile_sync">Sync</string>
+  <string name="qs_tile_battery_saver">Akku-Sparmodus</string>
   <string name="qs_dynamic_tile_next_alarm">Nächster Alarm</string>
   <string name="qs_dynamic_tile_ime_selector">Eingabemethode</string>
   <string name="qs_dynamic_tile_su">Root-Zugriff</string>
@@ -728,6 +746,7 @@
   <string name="qs_main_tiles_summary_off">Drei Kacheln pro Zeile</string>
   <string name="qs_advanced_location_title">Erweiterte Standorteinstellungen</string>
   <string name="qs_advanced_location_summary">Erweiterte Standort-Einstellungen in den Schnelleinstellungen aktivieren</string>
+  <string name="sim_no_number_set">Keine Nummer zugewiesen</string>
   <string name="gesture_settings_title">Gesten</string>
   <string name="themes_settings_title">Designs</string>
   <string name="wifi_mode">Modus</string>
@@ -751,16 +770,19 @@
   <string name="expanded_desktop_style">Stil des erw. Desktop</string>
   <string name="expanded_desktop_style_description">Wählen Sie einen Standard-Stil für den erw. Desktop</string>
   <string name="expanded_desktop_title">Einstellungen erweiterter Desktop</string>
+  <string name="title_general">Allgemein</string>
   <string name="lockscreen_targets_message">Sperrbildschirm-Verknüpfungen</string>
   <string name="lockscreen_default_target">Standard</string>
   <string name="lockscreen_none_target">Keine</string>
-  <string name="lockscreen_message">Das linke oder rechte Symbol berühren, um eine Sperrbilschirm-Verknüpfung zuzuweisen.</string>
+  <string name="lockscreen_message">Das linke oder rechte Symbol berühren, um eine Sperrbildschirm-Verknüpfung zuzuweisen.</string>
   <string name="lockscreen_choose_action_title">Aktion auswählen</string>
   <string name="lockscreen_visualizer_title">Musikvisualisierung anzeigen</string>
   <string name="whisperpush_title">WhisperPush</string>
   <string name="whisperpush_summary">Einstellungen für sichere SMS</string>
   <string name="navigation_ring_title">Navigationsring-Verknüpfungen</string>
   <string name="navigation_ring_message">Tippen Sie auf das Bearbeitungssymbol, um den Navigationsring zu ändern.\n\nWählen Sie ein Ziel, um sein Verhalten zu konfigurieren.\n\nTippen Sie auf das \"\u2713\" Symbol um die Änderungen zu speichern, oder \"Standardeinstellungen wiederherstellen\", um die Einstellungen auf die Standardwerte zurückzusetzen.</string>
+  <string name="lcd_density">Pixeldichte</string>
+  <string name="dialog_title_lcd_density">Pixeldichte</string>
   <string name="lcd_density_value_format">%d DPI</string>
   <string name="lcd_density_default_value_format">%d DPI (Standard)</string>
   <string name="restarting_ui">Benutzeroberfläche wird neu gestartet\u2026</string>
@@ -797,16 +819,16 @@
   <string name="display_and_lights">Display &amp; LED</string>
   <string name="notification_manager">Benachrichtigungen</string>
   <string name="lockscreen_settings">Bildschirmsperre</string>
-  <string name="cm_lockscreen_shortcuts_title">Ziele in unteren Ecken</string>
-  <string name="cm_lockscreen_shortcuts_summary">Ansehen oder ändern der Anwendungsziele in den unteren Ecken des Sperrbilschirms</string>
-  <string name="cm_lockscreen_targets_message">Lockscreen shortcuts</string>
   <string name="category_lights">LED</string>
   <string name="power_usage_history_title">Akkuverbrauch</string>
   <string name="recents_show_searchbar">Suchleiste im Anwendungsverlauf</string>
   <string name="keywords_recents_show_searchbar">Anwendungsverlauf aktivieren deaktivieren anzeigen Suchleiste Suche ausblenden</string>
-  <string name="sim_ringtone_title">SIM %d Klingelton</string>
+  <string name="sim_ringtone_title">SIM %d-Klingelton</string>
   <string name="interruptions_ignore_while_media_title">Hervorheben verhindern</string>
   <string name="interruptions_ignore_while_media_summary">Medienlautstärke beim Eintreffen einer Benachrichtigung nicht reduzieren</string>
+  <string name="none_is_silent_title">Alarme nie stumm schalten</string>
+  <string name="none_is_silent_summary">Im Lautlosmodus ertönen Alarme</string>
+  <string name="allow_lights_title">Benachrichtigungslicht erlauben</string>
   <string name="live_display_summary">Optimiert Ihren Bildschirm basierend auf der Tageszeit und den Umgebungsbedingungen, um die Lesbarkeit zu verbessern und die Ermüdung der Augen zu mildern</string>
   <string name="live_display_mode">Bildschirmmodus</string>
   <string name="live_display_color_temperature_title">Farbtemperatur</string>
@@ -834,9 +856,6 @@
   <string name="battery_saver_threshold">Schwellwert für Energiesparmodus</string>
   <string name="battery_saver_summary">Leistung und Hintergrunddaten verringern</string>
   <string name="battery_saver_summary_unavailable">Während des Ladevorgangs nicht verfügbar</string>
-  <string name="none_is_silent_title">Alarm niemals stumm</string>
-  <string name="none_is_silent_summary">Bei Ruhemodus erklingen Alarme immer</string>
-  <string name="allow_lights_title">Erlaube Benachrichtigungslicht</string>
   <string name="anonymous_statistics_title">CyanogenMod-Statistiken</string>
   <string name="anonymous_statistics_summary">Helfen Sie CyanogenMod zu verbessern, indem Sie dem Sammeln anonymer Gerätestatistiken zustimmen</string>
   <string name="anonymous_statistics_warning_title">Über</string>
@@ -853,10 +872,12 @@
   <string name="heads_up_notifications">Pop-up-Benachrichtigungen</string>
   <string name="summary_heads_up_enabled">Pop-up-Benachrichtigungen sind aktiviert</string>
   <string name="summary_heads_up_disabled">Pop-up-Benachrichtigungen sind deaktiviert</string>
+  <string name="master_clear_desc_cm" product="tablet">Dies löscht alle Daten aus dem <b>Internen Speicher</b> Ihres Tablets, einschließlich:\n\n<li>Ihrer Konten auf dem Gerät</li>\n<li>System- und App-Daten und Einstellungen</li>\n<li>Heruntergeladener Apps</li></string>
+  <string name="master_clear_desc_cm" product="default">Dies löscht alle Daten aus dem <b>Internen Speicher</b> Ihres Telefons, einschließlich:\n\n<li>Ihrer Konten auf dem Gerät</li>\n<li>System- und App-Daten und Einstellungen</li>\n<li>Heruntergeladener Apps</li></string>
   <string name="lock_to_cyanogen_title">Geräteschutz</string>
   <string name="lock_to_cyanogen_summary">Erfordert Ihr Cyanogen OS-Passwort, auch nach einem Rücksetzen auf Werkseinstellungen</string>
   <string name="lock_to_cyanogen_create_account_msg">Das Passwort Ihres Cyanogen OS-Kontos wird genutzt, um Ihr Gerät auch beim Rücksetzen auf Werkseinstellungen zu schützen. Dazu müssen Sie ein Cyanogen OS-Konto anlegen.</string>
-  <string name="lock_to_cyanogen_disable_msg">Deaktivieren dieser Funktion erlaubt es nicht autorisierten Benutzern Ihr Telefon auf Werkseinstellungen zurückzusetzen, wenn es gestohlen wird. Ihre persönlichen Daten können nicht sicher sein. Wollen Sie diese Funktion deaktivieren?</string>
+  <string name="lock_to_cyanogen_disable_msg">Deaktivieren dieser Funktion erlaubt es nicht autorisierten Benutzern, Ihr Telefon auf Werkseinstellungen zurückzusetzen, wenn es gestohlen wird. Ihre persönlichen Daten können nicht sicher sein. Wollen Sie diese Funktion deaktivieren?</string>
   <string name="lock_to_cyanogen_master_clear_warning">Geräteschutz ist aktiviert. Bitte deaktivieren, um mit dem Zurücksetzen Ihres Gerätes fortzufahren.</string>
   <string name="bluetooth_pan_profile_summary_use_for_error">Verbindungsfehler – Ist Bluetooth-Tethering auf diesem Gerät aktiviert?</string>
   <string name="sim_card_status_title">SIM %d-Status</string>
@@ -889,6 +910,7 @@
   <string name="wifi_countrycode_entries_sg">Israel, Singapur</string>
   <string name="wifi_countrycode_entries_br">Brasilien</string>
   <string name="wifi_countrycode_entries_in">Indien</string>
+  <string name="unlock_set_unlock_launch_picker_title_with_fingerprint">Bildschirm entsperren &amp; Fingerabdruck</string>
   <string name="unlock_set_unlock_mode_fingerprint">Fingerabdruck</string>
   <string name="unlock_set_unlock_fingerprint_title">Fingerabdruck</string>
   <string name="fingerprint_item_add_new_fingerprint">Neuen Fingerabdruck hinzufügen</string>
@@ -900,17 +922,18 @@
   <string name="fingerprint_dialog_title_max_fingers_reached">Max. Fingerabdrücke erreicht</string>
   <string name="fingerprint_dialog_msg_max_fingers_reached">Sie können nur <xliff:g id="finger" example="5 fingerprints">%d</xliff:g> Fingerabdrücke registrieren. Löschen Sie einen vorhandenen Fingerabdruck.</string>
   <string name="fingerprint_title_manage_fingerprints">Verwalten der Fingerabdrücke <xliff:g id="finger">%d</xliff:g>/<xliff:g id="max">%d</xliff:g></string>
-  <string name="manage_fingerprints_description">Mit Fingerabdrücken können Sie Ihr Telefon schnell entsperren, Einkäufe bestätigen und Fotos aufnehmen.</string>
+  <string name="manage_fingerprints_description">Mit Fingerabdrücken können Sie Ihr Telefon schnell entsperren oder Fotos aufnehmen.</string>
   <string name="fingerprint_enrollment_introduction_title">Finden Sie Ihren Sensor</string>
   <string name="fingerprint_enrollment_introduction_instructions">Der Fingerabdruck-Sensor befindet sich an der Vorder- oder Rückseite Ihres Telefons.</string>
   <string name="fingerprint_enrollment_scan_title">Drei Sekunden halten</string>
   <string name="fingerprint_enrollment_scan_instructions">Legen Sie Ihren Zeigefinger auf den Fingerabdruck-Sensor, um die Einrichtung zu starten. Heben Sie Ihren Finger, sobald Sie eine Vibration spüren.</string>
   <string name="fingerprint_enrollment_error_title_wrong_sensor">Bitte versuchen Sie es erneut</string>
-  <string name="fingerprint_enrollment_error_message">Legen Sie Ihren Finger fest auf den Fingerabdruck-Sensor, um einen genauen Scan sicherzustellen. Stellen Sie auch sicher, dass Sie den gleichen Finger wie zuvor benutzen. Heben Sie Ihren Finger, sobald Sie eine Vibration spüren.</string>
+  <string name="fingerprint_enrollment_error_message">Legen Sie Ihren Finger auf den Fingerabdruck-Sensor, um einen genauen Scan sicherzustellen. Stellen Sie auch sicher, dass Sie den gleichen Finger wie zuvor benutzen. Heben Sie Ihren Finger, sobald Sie eine Vibration spüren.</string>
   <string name="fingerprint_enrollment_scan_instructions">Legen Sie Ihren Zeigefinger auf den Fingerabdruck-Sensor, um die Einrichtung zu starten. Heben Sie Ihren Finger, sobald Sie eine Vibration spüren.</string>
+  <string name="fingerprint_enrollment_break_title">Mit dem aktuellen Abdruck fortfahren</string>
   <string name="fingerprint_enrollment_break_instructions">Machen Sie mit der Erfassung der Ränder Ihres Abdrucks weiter. Heben Sie Ihren Finger, sobald Sie eine Vibration spüren.</string>
   <string name="fingerprint_enrollment_finished_title">Fingerabdruck hinzugefügt!</string>
-  <string name="fingerprint_enrollment_finished_message">Ihr Fingerabdruck kann jetzt zum Entsperren des Bildschirms oder zum Aufnehmen von Selfies mit Ihrer Kamera verwendet werden.</string>
+  <string name="fingerprint_enrollment_finished_message">Ihr Fingerabdruck kann jetzt zum Entsperren des Bildschirms oder zum Aufnehmen von Selbstporträts mit Ihrer Kamera verwendet werden.</string>
   <string name="fingerprint_enrollment_found_it_label">Gefunden</string>
   <string name="fingerprint_enrollment_add_another_label">Weiteren hinzufügen</string>
   <string name="fingerprint_enrollment_done_label">Fertig</string>
@@ -938,6 +961,7 @@
   <string name="dock_battery_not_present">Dock-Akku nicht vorhanden</string>
   <string name="battery_info_status_charging_dock_ac">Laden über Ladedock</string>
   <string name="battery_info_status_charging_dock_usb">Laden über USB-Dock</string>
+  <string name="setup_lock_pattern_size_title">Muster-Komplexität</string>
   <string name="setup_lock_pattern_size_details">Wie viele Knotenpunkte möchten Sie in Ihrem Muster verwenden? Je mehr Knoten, desto komplexer kann das Muster sein.</string>
   <string name="lto_download_data_wifi_only">Herunterladen von A-GPS-Daten</string>
   <string name="lto_download_data_wifi_only_on">Über alle Netzwerke</string>

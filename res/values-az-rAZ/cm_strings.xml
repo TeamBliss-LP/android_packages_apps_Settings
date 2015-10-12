@@ -114,6 +114,8 @@
   <string name="hardware_keys_action_last_app">Son tətbiqetmə</string>
   <string name="camera_launch_title">Kameranı başlat</string>
   <string name="volbtn_cursor_control_off">Ləğv edildi</string>
+  <string name="volume_keys_control_ring_stream_title">Səs düymələri zəng səsi səviyyəsini idarə edər</string>
+  <string name="volume_keys_control_ring_stream_summary">Əgər açıqdırsa, səs düymələri zəng səsini tənzimləyər. Əgər bağlıdırsa, səs düymələri media səsini tənzimləyər.</string>
   <string name="power_end_call_title">Zəngi bitir</string>
   <string name="power_end_call_summary">Güc düyməsinə basmaq mövcud zəngi bitirəcək</string>
   <string name="button_wake_title">Cihazı oyandır</string>
@@ -211,7 +213,6 @@
   <string name="device_model">Cihaz modeli</string>
   <string name="device_name">Cihaz adı</string>
   <string name="build_date">Quruluş tarixi</string>
-  <string name="contributor_cloud_title">Töhfə verənlər</string>
   <string name="phone_service_state">Səs: <xliff:g id="voice_state">%1$s</xliff:g>, verilənlər: <xliff:g id="data_state">%2$s</xliff:g></string>
   <string name="double_tap_to_wake_title">Oyanmaq üçün iki dəfə toxun</string>
   <string name="double_tap_to_wake_summary">Ekranı açmaq üçün ekrana iki dəfə toxunun</string>
@@ -290,7 +291,7 @@
   <string name="notification_light_default_value">İlkin</string>
   <string name="notification_light_missed_call_title">Cavabsız zəng</string>
   <string name="notification_light_voicemail_title">Səsli poçt</string>
-  <string name="notification_ringtone_title_cm">Bildiriş tonu</string>
+  <string name="notification_ringtone_title_cm">Bildiriş səsi</string>
   <string name="headset_connect_player_title">Musiqi tətbiqini başlat</string>
   <string name="headset_connect_player_summary">Qulaqcıq taxılanda musiqi tətbiqetməsini başladar</string>
   <string name="ime_switcher_notify">Seçici nişanı</string>
@@ -389,6 +390,8 @@
   <string name="profile_tabs_wifi">Wi\u2011Fi</string>
   <string name="profile_tabs_bluetooth">Bluetooth</string>
   <string name="profile_tabs_nfc">NFC</string>
+  <string name="choose_ringtone">Zəng səsi seçin</string>
+  <string name="soundtone_title">Bildiriş səsi</string>
   <string name="gamma_tuning_brightness">Parlaqlıq</string>
   <string name="gamma_tuning_saturation">Doydurma</string>
   <string name="screencolor">Ekran rəngi</string>
@@ -408,13 +411,30 @@
   <string name="screen_color_setting_vivid">Canlı</string>
   <string name="screen_color_setting_custom">Xüsusi</string>
   <string name="settings_reset_button">Sıfırla</string>
+  <string name="bluetooth_profile_dun">Zənglə Bağlanma Şəbəkə Müraciəti</string>
   <string name="bluetooth_profile_sap">SIM Müraciəti</string>
   <string name="bluetooth_dun_profile_summary_connected">DUN serverinə bağlandı</string>
   <string name="bluetooth_pbap_profile_summary_connected">Pbap serverinə bağlandı</string>
   <string name="bluetooth_sap_profile_summary_connected">SIM Müraciəti serverinə bağlandı</string>
+  <string name="bluetooth_dun_profile_summary_use_for">Zənglə Bağlanma Şəbəkə Müraciəti üçün istifadə et</string>
   <string name="bluetooth_pbap_profile_summary_use_for">Şəxs paylaşmaq üçün istifadə et</string>
   <string name="bluetooth_sap_profile_summary_use_for">SIM Müraciəti üçün istifadə et</string>
   <string name="bluetooth_accept_all_files">Bütün fayl növlərini qəbul et</string>
+  <string name="sim_lock_settings_cm">SIM/RUIM kart kilidi tənzimləmələri</string>
+  <string name="sim_lock_settings_category_cm">SIM/RUIM kart kilidi tənzimlə</string>
+  <string name="sim_lock_settings_title_cm">SIM/RUIM kart kilidi</string>
+  <string name="sim_pin_disable_failed">PIN ləğv edilə bilmədi.</string>
+  <string name="sim_pin_enable_failed">PIN fəallaşdırıla bilmədi.</string>
+  <string name="sim_pin_change_failed_enable_sim_lock">SIM/RUIM PIN\'ini dəyişdirmək üçün, əvvəlcə SIM/RUIM kilidini fəallaşdırın.</string>
+  <string name="sd_card_format_summary" product="default">SD kartda olan musiqi və foto kimi bütün verilənləri silər</string>
+  <string name="usb_format_summary" product="default">USB yaddaşdakı musiqi və foto kimi bütün verilənləri silər</string>
+  <string name="uicc_format_summary" product="default">USB yaddaşdakı musiqi və foto kimi bütün verilənləri silər</string>
+  <string name="internal_sd_format_summary">Daxili media yaddaşındakı musiqi və foto kimi bütün verilənləri silər</string>
+  <string name="erase_internal_storage_description">Daxili media yaddaşındakı musiqi və foto kimi bütün verilənləri silər</string>
+  <string name="power_notifications_ringtone_title">Bildiriş səsi</string>
+  <string name="power_notifications_ringtone_silent">Səssiz</string>
+  <string name="link_volume_option_title">Zəng səsi ilə bildiriş səsini bağla</string>
+  <string name="qs_tile_cellular_data">Verilənlər bağlantısı</string>
   <string name="qs_tile_adb_over_network">Şəbəkə üzərindən ADB</string>
   <string name="qs_tile_profiles">Sistem profilləri</string>
   <string name="qs_tile_nfc">NFC</string>
@@ -447,10 +467,14 @@
   <string name="notification_manager">Bildirişlər</string>
   <string name="lockscreen_settings">Kilit ekranı</string>
   <string name="category_lights">İşıqlar</string>
+  <string name="sim_ringtone_title">SIM %d zəng səsi</string>
   <string name="live_display_day">Gündüz</string>
   <string name="live_display_night">Gecə</string>
   <string name="summary_heads_up_enabled">Açılan bildirişlər fəallaşdırıldı</string>
   <string name="summary_heads_up_disabled">Açılan bildirişlər ləğv edildi</string>
+  <string name="factory_reset_erase_stored_content_summary">Cihazdakı musiqi, foto, video və digər istifadəçi verilənlərini sil</string>
+  <string name="factory_reset_erase_stored_content_summary_forced">Cihazdakı musiqi, foto, video və digər istifadəçi verilənlərini sil. \n\n<b>Məzmun cihaz şifrələndiyinə görə qaytarıla bilməyəcək.</b></string>
+  <string name="factory_reset_erase_sd_card_summary">Musiqi və fotolar daxil olmaqla SD kartdakı bütün verilənləri sil</string>
   <string name="wifi_countrycode_entries_us">Birləşmiş Ştatlar</string>
   <string name="wifi_countrycode_entries_ca">Kanada, Tayvan</string>
   <string name="wifi_countrycode_entries_de">Almaniya</string>
@@ -463,4 +487,5 @@
   <string name="wifi_countrycode_entries_sg">İsrail, Sinqapur</string>
   <string name="wifi_countrycode_entries_br">Braziliya</string>
   <string name="wifi_countrycode_entries_in">Hindistan</string>
+  <string name="manage_fingerprints_description">Barmaq izləri cihaz kilidinizi tez açıb fotoşəkil çəkməyinizə icazə verər.</string>
 </resources>

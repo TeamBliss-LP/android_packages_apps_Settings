@@ -87,6 +87,9 @@
   <string name="profile_lockmode_insecure_summary">No preguntis el PIN o la contrasenya</string>
   <string name="profile_lockmode_disabled_summary">Deshabilita la pantalla de bloqueig</string>
   <string name="profile_airplanemode_title">Mode avió</string>
+  <string name="profile_brightness_title">Brillantor de la pantalla</string>
+  <string name="profile_brightness_override_summary">Estableix a %1$d%%</string>
+  <string name="profile_brightness_override_checkbox_label">Anul·la la brillantor</string>
   <string name="toggleWifi">Wi\u2011Fi</string>
   <string name="toggleWifiAp">Punt d\'accés Wi\u2011Fi portàtil</string>
   <string name="toggleBluetooth">Bluetooth</string>
@@ -227,10 +230,10 @@
   <string name="update_recovery_off_warning">ADVERTÈNCIA: Quan aquesta característica està inhabilitada, el teu sistema de recuperació instal·lat no s\'actualitzarà amb les millores del SO.\n\nFutures actualitzacions del SO podrien no instal·lar-se amb sistemes de recuperació obsolets o personalitzats.\n\nRealment vols deshabilitar aquesta característica?</string>
   <string name="mod_version">CyanogenMod versió</string>
   <string name="mod_version_default">Desconegut</string>
+  <string name="security_patch">Nivell de correcció de seguretat d\'Android</string>
   <string name="device_model">Model del dispositiu</string>
   <string name="device_name">Nom del dispositiu</string>
   <string name="build_date">Data d\'elaboració</string>
-  <string name="contributor_cloud_title">Contribuïdors</string>
   <string name="phone_service_state">Veu: <xliff:g id="voice_state">%1$s</xliff:g>, dades: <xliff:g id="data_state">%2$s</xliff:g></string>
   <string name="double_tap_to_wake_title">Pica doblement per encendre</string>
   <string name="double_tap_to_wake_summary">Pica dues vegades a la pantalla per encendre la pantalla</string>
@@ -341,6 +344,8 @@
   <string name="notification_light_default_value">Predeterminat</string>
   <string name="notification_light_missed_call_title">Trucada perduda</string>
   <string name="notification_light_voicemail_title">Contestador</string>
+  <string name="notification_light_screen_on">Llums amb la pantalla encesa</string>
+  <string name="keywords_lights_brightness_level">atenua la brillantor dels leds</string>
   <string name="notification_ringtone_title_cm">To de les notificacions</string>
   <string name="headset_connect_player_title">Crida l\'aplicació de música</string>
   <string name="headset_connect_player_summary">Crida l\'aplicació de música predeterminada quan es connecten els auriculars</string>
@@ -481,6 +486,7 @@
   <string name="ok">D\'acord</string>
   <string name="profile_menu_delete_title">Esborra</string>
   <string name="profile_action_none">Deixa sense canvis</string>
+  <string name="profile_action_system">Per defecte del sistema</string>
   <string name="profile_action_disable">Apagar</string>
   <string name="profile_action_enable">Encén</string>
   <string name="profile_trigger_a2dp_connect">En connectar l\'A2DP</string>
@@ -622,6 +628,11 @@
   <string name="sdcard_media_format_gesture_explanation" product="default">Has de dibuixar el patró de desbloqueig per confirmar que vols esborrar la targeta SD.</string>
   <string name="usb_media_format_gesture_explanation" product="default">Has de dibuixar el patró de desbloqueig per confirmar que voleu esborrar tot l\'emmagatzematge USB.</string>
   <string name="uicc_media_format_gesture_explanation" product="default">Has de dibuixar el patró de desbloqueig per confirmar que vols esborrar tot l\'emmagatzematge UICC.</string>
+  <string name="internal_sd_format">Esborra el mitjà d\'emmagatzematge intern</string>
+  <string name="internal_sd_format_summary">Esborra totes les dades del mitjà d\'emmagatzematge intern, com ara la música i les fotos</string>
+  <string name="master_clear_desc_erase_internal_storage">\n\nPer netejar de música, d\'imatges i altres dades d\'usuari, el <b>mitjà d\'emmagatzematge intern</b> ha de ser esborrat.</string>
+  <string name="erase_internal_storage">Esborra el mitjà d\'emmagatzematge intern</string>
+  <string name="erase_internal_storage_description">Esborra totes les dades del mitjà d\'emmagatzematge intern, com ara la música o les fotos</string>
   <string name="storage_rescan_media">Cerca una altra vegada dispositius d\'emmagatzematge</string>
   <string name="location_category_enhanced_location">Ubicació millorada (IZat)</string>
   <string name="app_ops_settings_summary">Mostra o canvia els permisos de les aplicacions</string>
@@ -650,10 +661,6 @@
   <string name="usb_not_connected">L\'USB ara està desconnectat</string>
   <string name="external_storage_turn_on">S\'ha activat l\'emmagatzematge extern</string>
   <string name="external_storage_turn_off">S\'ha apagat l\'emmagatzematge extern</string>
-  <string name="menu_hidden_apps_delete">Reinicia</string>
-  <string name="menu_hidden_apps_reset_lock">Reinicia el patró de bloqueig</string>
-  <string name="protected_apps">Aplicacions protegides</string>
-  <string name="saving_protected_components">Desant l\'estat del component\u2026</string>
   <string name="stats_collection_title">Recollida d\'estadístiques</string>
   <string name="stats_collection_summary">Quan està activat, permet la recollida de mètriques</string>
   <string name="power_notifications_category_title">Sons de càrrega</string>
@@ -701,6 +708,7 @@
   <string name="status_bar_show_weather_summary">Mostra el temps per sobre el panell d\'ajustos ràpids</string>
   <string name="qs_category_title">Panell d\'ajustos ràpids</string>
   <string name="qs_brightness_slider_title">Mostra el deslliçador de brillantor</string>
+  <string name="qs_hide_tiles_with_sensitive_data">Amaga les cel·les privades quan estigui bloquejat</string>
   <string name="qs_order_title">Selecciona i ordena cel·les</string>
   <string name="add_qs">Afegeix una nova cel·la</string>
   <string name="qs_action_delete">Esborra</string>
@@ -723,11 +731,13 @@
   <string name="qs_tile_compass">Brúixola</string>
   <string name="qs_tile_lockscreen">Pantalla de bloqueig</string>
   <string name="qs_tile_lte">LTE</string>
+  <string name="qs_tile_volume_panel">Panell de volum</string>
   <string name="qs_tile_screen_timeout">Temps d\'espera de la pantalla</string>
   <string name="qs_tile_usb_tether">Ancoratge USB</string>
   <string name="qs_tile_heads_up">Notificacions emergents</string>
   <string name="qs_tile_ambient_display">Pantalla ambient</string>
   <string name="qs_tile_sync">Sinc</string>
+  <string name="qs_tile_battery_saver">Estalvi de bateria</string>
   <string name="qs_dynamic_tile_next_alarm">Propera alarma</string>
   <string name="qs_dynamic_tile_ime_selector">Selector de l\'IME</string>
   <string name="qs_dynamic_tile_su">Accés Superusuari</string>
@@ -760,6 +770,7 @@
   <string name="expanded_desktop_style">Estil d\'escriptori extès</string>
   <string name="expanded_desktop_style_description">Escull un estil d\'escriptori extès per defecte</string>
   <string name="expanded_desktop_title">Opcions d\'escriptori extès</string>
+  <string name="title_general">General</string>
   <string name="lockscreen_targets_message">Dreceres de la pantalla de bloqueig</string>
   <string name="lockscreen_default_target">Predeterminat</string>
   <string name="lockscreen_none_target">Cap</string>
@@ -815,6 +826,7 @@
   <string name="sim_ringtone_title">To de trucada de la SIM %d</string>
   <string name="interruptions_ignore_while_media_title">Evita la baixada del so</string>
   <string name="interruptions_ignore_while_media_summary">No redueixis el volum de reproducció multimèdia quan arribi una notificació</string>
+  <string name="none_is_silent_title">Mai silenciïs les alarmes</string>
   <string name="none_is_silent_summary">En el mode Silenci les alarmes sempre sonen</string>
   <string name="allow_lights_title">Permet les llums de notificació</string>
   <string name="live_display_summary">Optimitza la teva pantalla basant-se en l\'hora del dia i les condicions ambientals per millorar la llegibilitat i reduir la fatiga ocular</string>
@@ -830,6 +842,17 @@
   <string name="live_display_low_power_summary">Ajusta la pantalla per un consum d\'energia més baix però sense degradació</string>
   <string name="live_display_enhance_color_title">Millora els colors</string>
   <string name="live_display_enhance_color_summary">Millora la vividesa del color dels tons de la pell, paisatges i altres imatges</string>
+  <string name="live_display_color_profile_title">Perfil de color</string>
+  <string name="live_display_color_profile_standard_title">Estàndard</string>
+  <string name="live_display_color_profile_standard_summary">Colors precisos i blancs brillants</string>
+  <string name="live_display_color_profile_natural_title">Natural</string>
+  <string name="live_display_color_profile_natural_summary">Colors realistes i tons de la pell</string>
+  <string name="live_display_color_profile_dynamic_title">Dinàmic</string>
+  <string name="live_display_color_profile_dynamic_summary">Colors realçats i blancs brillants</string>
+  <string name="live_display_color_profile_cinema_title">Cinema</string>
+  <string name="live_display_color_profile_cinema_summary">Reproducció del color perfecte per a multimèdia</string>
+  <string name="live_display_color_profile_astronomy_title">Astronomia</string>
+  <string name="live_display_color_profile_astronomy_summary">Vermells profunds per preservar la visió nocturna</string>
   <string name="battery_saver_threshold">Llindar d\'estalvi de bateria</string>
   <string name="battery_saver_summary">Redueix el rendiment i limita les dades en segon pla</string>
   <string name="battery_saver_summary_unavailable">No disponible durant la càrrega</string>
@@ -899,13 +922,13 @@
   <string name="fingerprint_dialog_title_max_fingers_reached">S\'ha assolit el màxim d\'empremtes digitals</string>
   <string name="fingerprint_dialog_msg_max_fingers_reached">Només pots enregistrar <xliff:g id="finger" example="5 fingerprints">%d</xliff:g> empremtes digitals. Esborra una empremta digital existent.</string>
   <string name="fingerprint_title_manage_fingerprints">Gestiona les empremtes digitals <xliff:g id="finger">%d</xliff:g>/<xliff:g id="max">%d</xliff:g></string>
-  <string name="manage_fingerprints_description">Les empremtes digitals et permeten desbloquejar ràpidament el telèfon, confirmar compres i fer fotos.</string>
+  <string name="manage_fingerprints_description">Les empremtes digitals et permetran desbloquejar el telèfon ràpidament i fer fotos.</string>
   <string name="fingerprint_enrollment_introduction_title">Troba el teu sensor</string>
   <string name="fingerprint_enrollment_introduction_instructions">El sensor d\'empremtes digitals està situat a la part davantera o posterior del teu telèfon.</string>
   <string name="fingerprint_enrollment_scan_title">Aguanta durant 3 segons</string>
   <string name="fingerprint_enrollment_scan_instructions">Situa el dit índex al sensor d\'empremtes digitals per començar la configuració. Aixeca el teu dit quan sentis una vibració.</string>
   <string name="fingerprint_enrollment_error_title_wrong_sensor">Si us plau intenta-ho un altre cop</string>
-  <string name="fingerprint_enrollment_error_message">Situa el teu dit fermament sobre el sensor d\'empremtes digitals per assegurar una lectura precisa. També assegura\'t que estàs utilitzant el mateix dit que abans. Aixeca el teu dit quan sentis una vibració.</string>
+  <string name="fingerprint_enrollment_error_message">Situa el teu dit sobre el sensor d\'empremtes digitals per assegurar una lectura precisa. També assegura\'t que estàs utilitzant el mateix dit que abans. Aixeca el teu dit quan sentis una vibració.</string>
   <string name="fingerprint_enrollment_scan_instructions">Situa el dit índex al sensor d\'empremtes digitals per començar la configuració. Aixeca el teu dit quan sentis una vibració.</string>
   <string name="fingerprint_enrollment_break_title">Continua amb la lectura actual</string>
   <string name="fingerprint_enrollment_break_instructions">Continua per capturar les vores de la teva empremta. Aixeca el teu dit quan sentis una vibració.</string>
@@ -932,6 +955,7 @@
   <string name="fingerprint_enrollment_error_title_3">Hmm, alguna cosa ha sortit malament</string>
   <string name="fingerprint_enrollment_error_title_4">Uh oh, intenta-ho un altre cop</string>
   <string name="fingerprint_enrollment_error_title_5">Whoops, hi ha hagut un error</string>
+  <string name="lockscreen_settings_and_fingerprint">Pantalla de bloqueig &amp; empremtes digitals</string>
   <string name="menu_stats_reset">Reinicia estadístiques</string>
   <string name="reset_stats_msg">L\'historial d\'estadístiques de la bateria serà reiniciat</string>
   <string name="dock_battery_not_present">Bateria no trobada a l\'acoblament</string>
@@ -939,4 +963,25 @@
   <string name="battery_info_status_charging_dock_usb">S\'està carregant sobre l\'acoblament USB</string>
   <string name="setup_lock_pattern_size_title">Complexitat del patró</string>
   <string name="setup_lock_pattern_size_details">Quants nodes vols utilitzar en el teu patró? Com més nodes, més complex pot ser el patró.</string>
+  <string name="lto_download_data_wifi_only">Descàrrega de dades assistides de GPS</string>
+  <string name="lto_download_data_wifi_only_on">Sobre qualsevol xarxa</string>
+  <string name="lto_download_data_wifi_only_off">Només sobre xarxes Wi\u2011Fi</string>
+  <string name="keep_screen_on_never">Mai</string>
+  <string name="keep_screen_on_debugging">Durant la depuració USB</string>
+  <string name="keep_screen_on_charging">Mentre es carrega</string>
+  <string name="contributors_cloud_fragment_title">Contribuïdors</string>
+  <string name="contributors_cloud_loading_message">S\'estan carregant les dades dels contribuïdors\u2026</string>
+  <string name="contributors_cloud_failed_message">No s\'han pogut carregar les dades dels contribuïdors</string>
+  <string name="contributor_info_menu">Informació del contribuïdor</string>
+  <string name="contributor_info_msg">
+        <![CDATA[<b>Nom:</b> <xliff:g id="name">%1$s</xliff:g><br/><br/>
+                 <b>Sobrenom:</b> <xliff:g id="nick">%2$s</xliff:g><br/><br/>
+                 <b>Publicacions:</b> <xliff:g id="commits">%3$s</xliff:g><br/><br/>
+                 <b>Rang:</b> <xliff:g id="rank">%4$s</xliff:g>]]></string>
+  <string name="contributions_info_menu">Informació de les contribucions</string>
+  <string name="contributions_info_msg">
+        <![CDATA[<b>Total de contribuïdors:</b> <xliff:g id="total_contributors">%1$s</xliff:g><br/><br/>
+                 <b>Total de publicacions:</b> <xliff:g id="total_commits">%2$s</xliff:g><br/><br/>
+                 <b>Darrera actualització:</b> <xliff:g id="date">%3$s</xliff:g>]]></string>
+  <string name="quick_settings_reset_message">Vols restaurar les cel·les d\'ajustaments ràpids?</string>
 </resources>

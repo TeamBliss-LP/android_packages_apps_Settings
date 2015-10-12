@@ -88,6 +88,9 @@
   <string name="profile_lockmode_insecure_summary">Не запрашивать PIN-код или пароль</string>
   <string name="profile_lockmode_disabled_summary">Отключить экран блокировки</string>
   <string name="profile_airplanemode_title">Режим полета</string>
+  <string name="profile_brightness_title">Яркость экрана</string>
+  <string name="profile_brightness_override_summary">Установить на уровень %1$d%%</string>
+  <string name="profile_brightness_override_checkbox_label">Изменять яркость</string>
   <string name="toggleWifi">Wi-Fi</string>
   <string name="toggleWifiAp">Точка доступа Wi-Fi</string>
   <string name="toggleBluetooth">Bluetooth</string>
@@ -228,10 +231,10 @@
   <string name="update_recovery_off_warning">Когда эта функция отключена, прошивка режима восстановления всегда будет оставаться неизменной.\n\nНекоторые обновления ОС могут не устанавливаться при использовании устаревших или пользовательских версий раздела Recovery.\n\nОтключить использование этой функции?</string>
   <string name="mod_version">Версия CyanogenMod</string>
   <string name="mod_version_default">Неизвестно</string>
+  <string name="security_patch">Обновление системы безопасности</string>
   <string name="device_model">Модель устройства</string>
   <string name="device_name">Имя устройства</string>
   <string name="build_date">Дата сборки</string>
-  <string name="contributor_cloud_title">Имена разработчиков</string>
   <string name="phone_service_state">Голосовая связь: <xliff:g id="voice_state">%1$s</xliff:g>\nПередача данных: <xliff:g id="data_state">%2$s</xliff:g></string>
   <string name="double_tap_to_wake_title">Включение при двойном нажатии</string>
   <string name="double_tap_to_wake_summary">Дважды коснитесь экрана, чтобы вывести устройство из спящего режима</string>
@@ -342,6 +345,8 @@
   <string name="notification_light_default_value">По умолчанию</string>
   <string name="notification_light_missed_call_title">Пропущенный вызов</string>
   <string name="notification_light_voicemail_title">Голосовая почта</string>
+  <string name="notification_light_screen_on">Использ. индикатор при вкл. экране</string>
+  <string name="keywords_lights_brightness_level">светодиоды яркость приглушить уменьшить</string>
   <string name="notification_ringtone_title_cm">Звук уведомления</string>
   <string name="headset_connect_player_title">Автозапуск плеера</string>
   <string name="headset_connect_player_summary">Запускать плеер при подключении наушников</string>
@@ -482,6 +487,7 @@
   <string name="ok">OK</string>
   <string name="profile_menu_delete_title">Удалить</string>
   <string name="profile_action_none">Оставить без изменения</string>
+  <string name="profile_action_system">По умолчанию (системн.)</string>
   <string name="profile_action_disable">Отключить</string>
   <string name="profile_action_enable">Включить</string>
   <string name="profile_trigger_a2dp_connect">При подключении A2DP</string>
@@ -623,6 +629,11 @@
   <string name="sdcard_media_format_gesture_explanation" product="default">Чтобы подтвердить очистку SD-карты, начертите графический ключ.</string>
   <string name="usb_media_format_gesture_explanation" product="default">Чтобы подтвердить очистку USB-накопителя, начертите графический ключ.</string>
   <string name="uicc_media_format_gesture_explanation" product="default">Чтобы подтвердить очистку накопителя UICC, начертите графический ключ.</string>
+  <string name="internal_sd_format">Очистить внутреннюю память</string>
+  <string name="internal_sd_format_summary">Удаление из внутренней памяти всех данных, включая музыку и фотографии</string>
+  <string name="master_clear_desc_erase_internal_storage">\n\nДля удаления музыки, фотографий и других пользовательских данных необходимо <b>очистить внутреннюю память</b>.</string>
+  <string name="erase_internal_storage">Очистить внутреннюю память</string>
+  <string name="erase_internal_storage_description">Удаление из внутренней памяти всех данных, включая музыку и фотографии</string>
   <string name="storage_rescan_media">Пересканировать память</string>
   <string name="location_category_enhanced_location">Улучшенное местоположение (IZat)</string>
   <string name="app_ops_settings_summary">Просмотр или изменение разрешений для приложений</string>
@@ -667,6 +678,7 @@
   <string name="select_custom_app_title">Выбор приложения</string>
   <string name="select_custom_activity_title">Выбор действия</string>
   <string name="autoperf_title">Профили приложений</string>
+  <string name="autoperf_summary">Автоматически выбирать соответствующий режим батареи для приложений</string>
   <string name="perf_profile_title">Энергопотребление</string>
   <string name="pref_force_highend_gfx_title">Высококачественная графика</string>
   <string name="pref_force_highend_gfx_summary">Использовать эффекты, отключенные для устройств с низкой производительностью, например, прозрачность строки состояния и панели навигации (требуется перезагрузка)</string>
@@ -697,6 +709,7 @@
   <string name="status_bar_show_weather_summary">Показывать погоду над панелью быстрых настроек</string>
   <string name="qs_category_title">Панель быстрых настроек</string>
   <string name="qs_brightness_slider_title">Показывать регулятор яркости</string>
+  <string name="qs_hide_tiles_with_sensitive_data">Скрывать плитки для обеспеч. конфиденциальности при блокировке</string>
   <string name="qs_order_title">Выбрать и упорядочить плитки</string>
   <string name="add_qs">Добавление плитки</string>
   <string name="qs_action_delete">Удалить</string>
@@ -719,11 +732,13 @@
   <string name="qs_tile_compass">Компас</string>
   <string name="qs_tile_lockscreen">Экран блокировки</string>
   <string name="qs_tile_lte">LTE</string>
+  <string name="qs_tile_volume_panel">Панель громкости</string>
   <string name="qs_tile_screen_timeout">Спящий режим</string>
   <string name="qs_tile_usb_tether">USB-модем</string>
   <string name="qs_tile_heads_up">Всплывающие уведомления</string>
   <string name="qs_tile_ambient_display">Индикация событий</string>
   <string name="qs_tile_sync">Синхронизация</string>
+  <string name="qs_tile_battery_saver">Режим энергосбережения</string>
   <string name="qs_dynamic_tile_next_alarm">Следующий будильник</string>
   <string name="qs_dynamic_tile_ime_selector">Выбор метода ввода</string>
   <string name="qs_dynamic_tile_su">Суперпользователь</string>
@@ -756,6 +771,7 @@
   <string name="expanded_desktop_style">Режим расширенного экрана</string>
   <string name="expanded_desktop_style_description">Выбрать режим расширенного экрана по умолчанию</string>
   <string name="expanded_desktop_title">Настройки расширенного экрана</string>
+  <string name="title_general">Общие настройки</string>
   <string name="lockscreen_targets_message">Ярлыки экрана блокировки</string>
   <string name="lockscreen_default_target">По умолчанию</string>
   <string name="lockscreen_none_target">Нет</string>
@@ -801,7 +817,7 @@
   <string name="category_sounds">Звуки</string>
   <string name="category_interface">Интерфейс</string>
   <string name="category_calibration">Калибровка</string>
-  <string name="display_and_lights">Экран и индикация</string>
+  <string name="display_and_lights">Дисплей</string>
   <string name="notification_manager">Уведомления</string>
   <string name="lockscreen_settings">Экран блокировки</string>
   <string name="category_lights">Индикация</string>
@@ -827,6 +843,17 @@
   <string name="live_display_low_power_summary">Подстраивать экран для низкого энергопотребления без ухудшения качества</string>
   <string name="live_display_enhance_color_title">Улучшение цветопередачи</string>
   <string name="live_display_enhance_color_summary">Улучшить сочность оттенков кожи, пейзажей и других изображений</string>
+  <string name="live_display_color_profile_title">Цветовой профиль</string>
+  <string name="live_display_color_profile_standard_title">Стандартный</string>
+  <string name="live_display_color_profile_standard_summary">Точная цветопередача и яркие белые тона</string>
+  <string name="live_display_color_profile_natural_title">Естественный</string>
+  <string name="live_display_color_profile_natural_summary">Натуральные цвета и оттенки кожи</string>
+  <string name="live_display_color_profile_dynamic_title">Динамический</string>
+  <string name="live_display_color_profile_dynamic_summary">Повышенная контрастность и яркость изображения</string>
+  <string name="live_display_color_profile_cinema_title">Кино</string>
+  <string name="live_display_color_profile_cinema_summary">Идеальная цветопередача для просмотра фильмов</string>
+  <string name="live_display_color_profile_astronomy_title">Астрономия</string>
+  <string name="live_display_color_profile_astronomy_summary">Глубокий красный для сохранения видимости ночью</string>
   <string name="battery_saver_threshold">Автом. энергосбережение</string>
   <string name="battery_saver_summary">Снизить производительность и ограничить фоновую передачу данных</string>
   <string name="battery_saver_summary_unavailable">Недоступно во время зарядки</string>
@@ -846,6 +873,8 @@
   <string name="heads_up_notifications">Всплывающие уведомления</string>
   <string name="summary_heads_up_enabled">Включены</string>
   <string name="summary_heads_up_disabled">Выключены</string>
+  <string name="master_clear_desc_cm" product="tablet">Данное действие удалит все данные из <b>внутренней памяти</b> вашего планшета, включая: \n\n <li>аккаунты</li>\n<li>настройки системы и приложений</li> \n <li>все загруженные приложения</li></string>
+  <string name="master_clear_desc_cm" product="default">Данное действие удалит все данные из <b>внутренней памяти</b> вашего телефона, включая: \n\n <li>аккаунты</li>\n<li>настройки системы и приложений</li> \n <li>все загруженные приложения</li></string>
   <string name="lock_to_cyanogen_title">Защита устройства</string>
   <string name="lock_to_cyanogen_summary">Требовать пароль аккаунта ОС Cyanogen даже после удаления всех данных</string>
   <string name="lock_to_cyanogen_create_account_msg">Устройство использует пароль аккаунта ОС Cyanogen для защиты устройства от сброса настроек. Потребуется создать новый аккаунт ОС Cyanogen.</string>
@@ -887,10 +916,73 @@
   <string name="unlock_set_unlock_fingerprint_title">Отпечаток пальца</string>
   <string name="fingerprint_item_add_new_fingerprint">Добавить отпечаток пальца</string>
   <string name="fingerprint_manage_fingerprints">Управление отпечатками</string>
+  <string name="fingerprint_manage_fingerprints_summary">Добавление или удаление зарегистрированных отпечатков</string>
   <string name="unlock_backup_fingerprint_info_summary">Каким методом следует разблокировать устройство при невозможности использовать отпечаток?</string>
   <string name="fingerprint_dialog_title_rename">Переименовать отпечаток</string>
   <string name="fingerprint_dialog_name_label">Название отпечатка</string>
   <string name="fingerprint_dialog_title_max_fingers_reached">Добавлено максимальное количество отпечатков</string>
   <string name="fingerprint_dialog_msg_max_fingers_reached">Можно зарегистрировать только <xliff:g id="finger" example="5 fingerprints">%d</xliff:g> отпечатков пальцев. Удалите какой-нибудь из добавленных.</string>
+  <string name="fingerprint_title_manage_fingerprints">Зарегистрировано отпечатков <xliff:g id="finger">%d</xliff:g>/<xliff:g id="max">%d</xliff:g></string>
+  <string name="manage_fingerprints_description">Отпечатки пальцев позволяют быстро разблокировать телефон и делать фотоснимки.</string>
+  <string name="fingerprint_enrollment_introduction_title">Определите месторасположение сканера отпечатков</string>
+  <string name="fingerprint_enrollment_introduction_instructions">Сканер отпечатков располагается на передней или задней панели вашего телефона.</string>
+  <string name="fingerprint_enrollment_scan_title">Удерживайте в течение 3 секунд</string>
+  <string name="fingerprint_enrollment_scan_instructions">Приложите указательный палец к сканеру для начала настройки. Уберите палец после вибросигнала.</string>
+  <string name="fingerprint_enrollment_error_title_wrong_sensor">Повторите попытку</string>
+  <string name="fingerprint_enrollment_error_message">Плотно приложите палец к сканеру, чтобы обеспечить правильное считывание. Убедитесь также, что прикладываете тот же самый палец. Уберите палец после вибросигнала.</string>
+  <string name="fingerprint_enrollment_scan_instructions">Приложите указательный палец к сканеру для начала настройки. Уберите палец после вибросигнала.</string>
+  <string name="fingerprint_enrollment_break_title">Продолжайте с тем же усилием нажатия</string>
+  <string name="fingerprint_enrollment_break_instructions">Продолжайте для сканирования краёв отпечатка. Уберите палец после вибросигнала.</string>
+  <string name="fingerprint_enrollment_finished_title">Отпечаток добавлен!</string>
+  <string name="fingerprint_enrollment_finished_message">Теперь при помощи отпечатка пальца вы можете разблокировать экран или снимать себя на камеру.</string>
+  <string name="fingerprint_enrollment_found_it_label">Сканер найден</string>
+  <string name="fingerprint_enrollment_add_another_label">Добавить ещё</string>
   <string name="fingerprint_enrollment_done_label">Готово</string>
+  <string name="fingerprint_dialog_title_wrong_sensor">Ошибочка! Это не сканер</string>
+  <string name="fingerprint_dialog_msg_wrong_sensor">Используйте сканер отпечатков на передней или задней панели вашего телефона</string>
+  <string name="fingerprint_dialog_title_failed_enrollment">Не удалось считать отпечаток</string>
+  <string name="fingerprint_dialog_msg_failed_enrollment">Попробуйте другой палец. Данный отпечаток не удалось отсканировать.</string>
+  <string name="fingerprint_enrollment_restart_label">Повторить заново</string>
+  <string name="fingerprint_successful_scan_title_first">Отлично! Теперь повторим</string>
+  <string name="fingerprint_successful_scan_final">Ещё раз, пожалуйста</string>
+  <string name="fingerprint_successful_scan_title_1">Получилось! Продолжайте</string>
+  <string name="fingerprint_successful_scan_title_2">Великолепно! И ещё раз</string>
+  <string name="fingerprint_successful_scan_title_3">Отлично! Так держать</string>
+  <string name="fingerprint_successful_scan_title_4">Осталось совсем немного</string>
+  <string name="fingerprint_successful_scan_title_5">Хорошо получается! И ещё разок</string>
+  <string name="fingerprint_successful_scan_title_6">Ещё чуть-чуть</string>
+  <string name="fingerprint_enrollment_error_title_1">Ой! Попробуйте ещё раз</string>
+  <string name="fingerprint_enrollment_error_title_2">Жаль, попытка не удалась</string>
+  <string name="fingerprint_enrollment_error_title_3">Хмм, что-то пошло не так</string>
+  <string name="fingerprint_enrollment_error_title_4">О нет, попробуйте ещё раз</string>
+  <string name="fingerprint_enrollment_error_title_5">Ой-ой-ой! Произошла ошибка</string>
+  <string name="lockscreen_settings_and_fingerprint">Блокировка экрана и отпечатки пальцев</string>
+  <string name="menu_stats_reset">Сброс статистики</string>
+  <string name="reset_stats_msg">История использования батареи будет удалена</string>
+  <string name="dock_battery_not_present">Батарея док-станции отсутствует</string>
+  <string name="battery_info_status_charging_dock_ac">Зарядка от адаптера док-станции</string>
+  <string name="battery_info_status_charging_dock_usb">Зарядка через USB док-станции</string>
+  <string name="setup_lock_pattern_size_title">Сложность узора</string>
+  <string name="setup_lock_pattern_size_details">Сколько узлов будет использовано для вашей схемы? Чем больше узлов, тем сложнее может быть узор графического ключа.</string>
+  <string name="lto_download_data_wifi_only">Вспомогательные данные GPS</string>
+  <string name="lto_download_data_wifi_only_on">Скачивать через любые сети</string>
+  <string name="lto_download_data_wifi_only_off">Скачивать только через Wi-Fi</string>
+  <string name="keep_screen_on_never">Никогда</string>
+  <string name="keep_screen_on_debugging">При включённой отладке</string>
+  <string name="keep_screen_on_charging">При зарядке</string>
+  <string name="contributors_cloud_fragment_title">Имена разработчиков</string>
+  <string name="contributors_cloud_loading_message">Загрузка данных\u2026</string>
+  <string name="contributors_cloud_failed_message">Не удалось загрузить сведения об участниках проекта</string>
+  <string name="contributor_info_menu">Сведения об участнике</string>
+  <string name="contributor_info_msg">
+        <![CDATA[<b>Имя:</b> <xliff:g id="name">%1$s</xliff:g><br/><br/>
+                 <b>Псевдоним:</b> <xliff:g id="nick">%2$s</xliff:g><br/><br/>
+                 <b>Коммитов:</b> <xliff:g id="commits">%3$s</xliff:g><br/><br/>
+                 <b>Рейтинг:</b> <xliff:g id="rank">%4$s</xliff:g>]]></string>
+  <string name="contributions_info_menu">Общая статистика</string>
+  <string name="contributions_info_msg">
+        <![CDATA[<b>Всего участников проекта:</b> <xliff:g id="total_contributors">%1$s</xliff:g><br/><br/>
+                 <b>Всего коммитов:</b> <xliff:g id="total_commits">%2$s</xliff:g><br/><br/>
+                 <b>Последнее обновление:</b> <xliff:g id="date">%3$s</xliff:g>]]></string>
+  <string name="quick_settings_reset_message">Сбросить настройки плиток?</string>
 </resources>

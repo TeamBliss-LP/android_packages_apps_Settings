@@ -70,9 +70,9 @@
   <string name="profile_networkmode_4g">LTE</string>
   <string name="profile_networkmode_2g3g">2G/3G</string>
   <string name="profile_networkmode_2g3g4g">2G/3G/LTE</string>
-  <string name="profile_volumeoverrides_title">Ses düzeyi zorlamaları</string>
-  <string name="volume_override_summary">%1$s/%2$s ayarla</string>
-  <string name="profile_volume_override_checkbox_label">Üstüne yazma sesi</string>
+  <string name="profile_volumeoverrides_title">Ses düzeyi değişimleri</string>
+  <string name="volume_override_summary">%1$s/%2$s</string>
+  <string name="profile_volume_override_checkbox_label">Ses düzeyini değiştir</string>
   <string name="profile_profiles_manage">Profiller</string>
   <string name="profile_profile_manage">Profili yönet</string>
   <string name="profile_settings">Profil ayarları</string>
@@ -87,13 +87,16 @@
   <string name="profile_lockmode_insecure_summary">PIN veya şifre sorma</string>
   <string name="profile_lockmode_disabled_summary">Kilit ekranını devre dışı bırak</string>
   <string name="profile_airplanemode_title">Uçak modu</string>
+  <string name="profile_brightness_title">Ekran parlaklığı</string>
+  <string name="profile_brightness_override_summary">%1$d%% ayarlandı</string>
+  <string name="profile_brightness_override_checkbox_label">Parlaklığı geçersiz kıl</string>
   <string name="toggleWifi">Wi\u2011Fi</string>
   <string name="toggleWifiAp">Taşınabilir Wi\u2011Fi bağlantı noktası</string>
   <string name="toggleBluetooth">Bluetooth</string>
   <string name="toggleGPS">GPS</string>
   <string name="toggleData">Veri bağlantısı</string>
   <string name="toggleSync">Otomatik veri eşitleme</string>
-  <string name="toggle2g3g4g">Tercih edilen şebeke tipi</string>
+  <string name="toggle2g3g4g">Tercih edilen şebeke türü</string>
   <string name="toggleNfc">NFC</string>
   <string name="button_pref_title">Tuşlar</string>
   <string name="hardware_keys_power_key_title">Güç tuşu</string>
@@ -128,7 +131,9 @@
   <string name="volbtn_cursor_control_on_reverse">Ses yukarı/aşağı imleci sağ/sola kaydırır</string>
   <string name="swap_volume_buttons_title">Yeniden ata</string>
   <string name="swap_volume_buttons_summary">Ekran döndürüldüğünde ses tuşlarını yer değiştir</string>
-  <string name="power_end_call_title">Çağrıyı Sonlandır</string>
+  <string name="volume_keys_control_ring_stream_title">Ses tuşları zil sesi düzeyini kontrol eder</string>
+  <string name="volume_keys_control_ring_stream_summary">Eğer açıksa, ses tuşları zil sesini ayarlar. Eğer kapalıysa, ses tuşları medya sesini ayarlar.</string>
+  <string name="power_end_call_title">Çağrıyı sonlandır</string>
   <string name="power_end_call_summary">Güç tuşuna basmak mevcut çağrıyı sonlandıracak</string>
   <string name="button_wake_title">Cihazı uyandır</string>
   <string name="button_wake_summary">Oynatma kontrolünü değiştir</string>
@@ -215,7 +220,7 @@
   <string name="sms_security_check_limit_none">Yok</string>
   <string name="spam_added_title">%1$s eklendi</string>
   <string name="spam_last_blocked_title">En son %1$s engellendi</string>
-  <string name="block_notifications_title">Filtre bildirimleri</string>
+  <string name="block_notifications_title">Bildirimleri filtrele</string>
   <string name="block_notifications_summary">Yoksayılan bildirimleri ve filtreleri yönet</string>
   <string name="no_filters_title">Hiçbir filtre ayarlanmadı</string>
   <string name="cmupdate_settings_title">CyanogenMod güncellemeleri</string>
@@ -225,10 +230,10 @@
   <string name="update_recovery_off_warning">UYARI: Bu özellik devre dışı bırakıldığında, yüklü kurtarma modunuz İS güncellemeleri ile güncellenmeyecektir.\n\nGelecek İS güncellemeleri eskimiş ya da özel kurtarma sürümleri ile yüklenemeyebilir.\n\nBu özelliği gerçekten devre dışı bırakmak istiyor musunuz?</string>
   <string name="mod_version">CyanogenMod sürümü</string>
   <string name="mod_version_default">Bilinmeyen</string>
+  <string name="security_patch">Android güvenlik yaması seviyesi</string>
   <string name="device_model">Cihaz modeli</string>
   <string name="device_name">Cihaz ismi</string>
   <string name="build_date">İnşa tarihi</string>
-  <string name="contributor_cloud_title">Katkıda bulunanlar</string>
   <string name="phone_service_state">Ses: <xliff:g id="voice_state">%1$s</xliff:g>, veri: <xliff:g id="data_state">%2$s</xliff:g></string>
   <string name="double_tap_to_wake_title">Uyanmak için çift dokun</string>
   <string name="double_tap_to_wake_summary">Ekranı açmak için ekrana iki defa dokunun</string>
@@ -245,6 +250,8 @@
   <string name="privacy_guard_reset_text">İzinleri sıfırla?</string>
   <string name="privacy_guard_help_text">Bu ekranda Gizlilik Korumasının hangi uygulamalarda aktif olacağını basitçe dokunarak seçebilirsiniz. Seçili uygulamalar kişiler, mesajlar veya arama kaydı gibi kişisel bilgilerinize ulaşamayacaklar. Ögelere uzun dokunarak o uygulamalar için uygulama detayları penceresini açabilirsiniz.\n\nÖnyüklü uygulamalar varsayılan olarak gösterilmez ancak ilgili menü seçeneğiyle görüntülenebilirler.</string>
   <string name="privacy_guard_manager_show_system_apps">Dahili uygulamaları göster</string>
+  <string name="privacy_guard_notification_title">Bildirim göster</string>
+  <string name="app_ops_btn_text">Değiştir</string>
   <string name="increasing_ring_volume_option_title">Artan zil sesi</string>
   <string name="increasing_ring_min_volume_title">Başlangıç sesi</string>
   <string name="increasing_ring_ramp_up_time_title">Yükselme zamanı</string>
@@ -337,7 +344,9 @@
   <string name="notification_light_default_value">Varsayılan</string>
   <string name="notification_light_missed_call_title">Cevapsız arama</string>
   <string name="notification_light_voicemail_title">Sesli mesaj</string>
-  <string name="notification_ringtone_title_cm">Bildirim tonu</string>
+  <string name="notification_light_screen_on">Ekran açıkken ışıklar</string>
+  <string name="keywords_lights_brightness_level">Sönük LED Parlaklığı</string>
+  <string name="notification_ringtone_title_cm">Bildirim sesi</string>
   <string name="headset_connect_player_title">Müzik uygulamasını başlat</string>
   <string name="headset_connect_player_summary">Kulaklık bağlandığında müzik uygulamasını başlatır</string>
   <string name="ime_switcher_notify">Seçici simgesi</string>
@@ -472,11 +481,12 @@
   <string name="app_ops_categories_bootup">Açılış</string>
   <string name="app_ops_categories_su">Root erişimi</string>
   <string name="app_ops_permissions_allowed">İzin verildi</string>
-  <string name="app_ops_permissions_ignored">Görmezden geldi</string>
+  <string name="app_ops_permissions_ignored">Görmezden gelindi</string>
   <string name="app_ops_permissions_always_ask">Her zaman sor</string>
   <string name="ok">Tamam</string>
   <string name="profile_menu_delete_title">Sil</string>
-  <string name="profile_action_none">Değişmeden bırak</string>
+  <string name="profile_action_none">Değiştirme</string>
+  <string name="profile_action_system">Sistem varsayılanı</string>
   <string name="profile_action_disable">Kapat</string>
   <string name="profile_action_enable">Aç</string>
   <string name="profile_trigger_a2dp_connect">A2DP bağlantısında</string>
@@ -502,9 +512,9 @@
   <string name="ringer_mode">Zil sesi modu</string>
   <string name="lights_mode">Işık modu</string>
   <string name="vibrate_mode">Titreşim modu</string>
-  <string name="choose_soundtone">Bildirim tonunu seçin</string>
+  <string name="choose_soundtone">Bildirim sesini seçin</string>
   <string name="choose_ringtone">Zil sesini seçin</string>
-  <string name="soundtone_title">Bildirim tonu</string>
+  <string name="soundtone_title">Bildirim sesi</string>
   <string name="no_bluetooth_triggers">Eşleştirilmiş bluetooth aygıtı yok.\nTetikleyicileri yapılandırmadan önce Bluetooth cihazı ile eşleştirmek için dokunun.</string>
   <string name="no_wifi_triggers">Hiç  Wi\u2011Fi erişim noktası yapılandırılmadı.\nTetikleyicileri yapılandırmadan önce  Wi\u2011Fi ağına bağlanmak için dokunun.</string>
   <string name="no_triggers_configured">Hiç tetikleyici ayarlanmadı. Eklemek için dokunun.</string>
@@ -618,6 +628,11 @@
   <string name="sdcard_media_format_gesture_explanation" product="default">SD kart birimini silmek istediğinizi onaylamak için kilit açma şeklini çizmeniz gerekir.</string>
   <string name="usb_media_format_gesture_explanation" product="default">USB bellek birimini silmek istediğinizi onaylamak için kilit açma desenini çizmeniz gerekir.</string>
   <string name="uicc_media_format_gesture_explanation" product="default">UICC bellek birimini silmek istediğinizi onaylamak için kilit açma desenini çizmeniz gerekir.</string>
+  <string name="internal_sd_format">Dahili ortam belleğini sil</string>
+  <string name="internal_sd_format_summary">Dahili ortam belleğindeki müzik ve fotoğraf gibi tüm verileri siler</string>
+  <string name="master_clear_desc_erase_internal_storage">\n\nMüzik, resim ve diğer kullanıcı verilerini temizlemek için <b>dahili ortam belleği</b> silinmeli.</string>
+  <string name="erase_internal_storage">Dahili ortam belleğini sil</string>
+  <string name="erase_internal_storage_description">Dahili ortam belleğindeki müzik ve fotoğraf gibi tüm verileri sil</string>
   <string name="storage_rescan_media">Depolama biriminde ortam ögelerini yeniden ara</string>
   <string name="location_category_enhanced_location">Gelişmiş konum (IZat)</string>
   <string name="app_ops_settings_summary">Uyg. izinlerini görüntüle ya da değiştir</string>
@@ -651,7 +666,7 @@
   <string name="power_notifications_category_title">Güç sesleri</string>
   <string name="power_notifications_enable_title">Etkinleştir</string>
   <string name="power_notifications_enable_summary">Bir güç kaynağına bağlanırken ya da bağlantısını keserken bir ses çal</string>
-  <string name="power_notifications_vibrate_title">Titreş</string>
+  <string name="power_notifications_vibrate_title">Titre</string>
   <string name="power_notifications_ringtone_title">Bildirim sesi</string>
   <string name="power_notifications_ringtone_silent">Sessiz</string>
   <string name="voice_wakeup_settings_title">Sesle uyanma</string>
@@ -672,11 +687,14 @@
   <string name="settings_cmlicense_activity_title">CyanogenMod Yasal</string>
   <string name="lockpattern_settings_enable_error_path_title">Desen hatasını göster</string>
   <string name="lockpattern_settings_enable_dots_title">Desen noktalarını göster</string>
+  <string name="lock_directly_show_password">Şifre girişini doğrudan göster</string>
+  <string name="lock_directly_show_pattern">Doğrudan desen görünümünü göster</string>
+  <string name="lock_directly_show_pin">Doğrudan PIN girişini göster</string>
   <string name="unlock_quick_unlock_control_title">Hızlı kilit aç</string>
   <string name="unlock_quick_unlock_control_summary">Doğru PIN/şifre girildiğinde otomatik olarak kilidi aç</string>
   <string name="unlock_scramble_pin_layout_title">Düzeni karıştır</string>
   <string name="unlock_scramble_pin_layout_summary">Cihaz kilidini açarken PIN düzenini karıştırır</string>
-  <string name="link_volume_option_title">Zil sesi &amp; bildirim sesi düzeyini bağla</string>
+  <string name="link_volume_option_title">Zil sesi ile Bildirim sesi düzeyini bağla</string>
   <string name="notification_volume_option_title">Bildirim sesi</string>
   <string name="notification_drawer_title">Bildirim çekmecesi</string>
   <string name="quick_pulldown_title">Hızlı aşağı çekme</string>
@@ -690,6 +708,7 @@
   <string name="status_bar_show_weather_summary">Hava durumunu hızlı ayarlar panelinin üstünde göster</string>
   <string name="qs_category_title">Hızlı Ayarlar paneli</string>
   <string name="qs_brightness_slider_title">Parlaklık kaydırıcısını göster</string>
+  <string name="qs_hide_tiles_with_sensitive_data">Kilitlendiğinde hassas kareleri gizle</string>
   <string name="qs_order_title">Kareleri seçin ve sıralayın</string>
   <string name="add_qs">Yeni kare ekle</string>
   <string name="qs_action_delete">Sil</string>
@@ -712,11 +731,13 @@
   <string name="qs_tile_compass">Pusula</string>
   <string name="qs_tile_lockscreen">Kilit ekranı</string>
   <string name="qs_tile_lte">LTE</string>
+  <string name="qs_tile_volume_panel">Ses paneli</string>
   <string name="qs_tile_screen_timeout">Ekran zaman aşımı</string>
   <string name="qs_tile_usb_tether">USB İnternet Paylaşımı</string>
   <string name="qs_tile_heads_up">Bildirim Pencereleri</string>
   <string name="qs_tile_ambient_display">Bildirim ekranı</string>
   <string name="qs_tile_sync">Eşitleme</string>
+  <string name="qs_tile_battery_saver">Pil tasarrufu</string>
   <string name="qs_dynamic_tile_next_alarm">Sonraki alarm</string>
   <string name="qs_dynamic_tile_ime_selector">IME seçici</string>
   <string name="qs_dynamic_tile_su">Root erişimi</string>
@@ -749,6 +770,7 @@
   <string name="expanded_desktop_style">Genişletilmiş masaüstü stili</string>
   <string name="expanded_desktop_style_description">Varsayılan genişletilmiş masaüstü stilini seçin</string>
   <string name="expanded_desktop_title">Genişletilmiş masaüstü seçeneklerini</string>
+  <string name="title_general">Genel</string>
   <string name="lockscreen_targets_message">Kilit ekranı kısayolları</string>
   <string name="lockscreen_default_target">Varsayılan</string>
   <string name="lockscreen_none_target">Yok</string>
@@ -756,9 +778,14 @@
   <string name="lockscreen_choose_action_title">İşlev seçin</string>
   <string name="lockscreen_visualizer_title">Müzik görselleştiriciyi görüntüle</string>
   <string name="whisperpush_title">WhisperPush</string>
-  <string name="whisperpush_summary">Güvenli SMS ayarlarını yönet</string>
+  <string name="whisperpush_summary">Şifreli SMS ayarlarını yönet</string>
   <string name="navigation_ring_title">Dolaşım halkası uygulamaları</string>
   <string name="navigation_ring_message">Dolaşım halkasını düzenlemek için düzenleme simgesine dokunun.\n\nKısayol için bir uygulama seçin.\n\nDeğişikliklerinizi kaydetmek için \'\u2713\' simgesine dokunun ya da ayarları sıfırlamak için \'Varsayılanları geri yükle\'ye dokunun.</string>
+  <string name="lcd_density">LCD yoğunluğu</string>
+  <string name="dialog_title_lcd_density">LCD yoğunluğu</string>
+  <string name="lcd_density_value_format">%d DPI</string>
+  <string name="lcd_density_default_value_format">%d DPI (varsayılan)</string>
+  <string name="restarting_ui">Arayüz yeniden başlatılıyor\u2026</string>
   <string name="stylus_icon_enabled_title">Kalem kullanırken simge göster</string>
   <string name="stylus_icon_enabled_summary">Çizerken ya da üzerinde dururken işaretçi simgesi göster</string>
   <string name="gestures_settings_title">Kalem hareketleri</string>
@@ -794,11 +821,14 @@
   <string name="lockscreen_settings">Kilit ekranı</string>
   <string name="category_lights">Işıklar</string>
   <string name="power_usage_history_title">Pil kullanımı</string>
-  <string name="recents_show_searchbar">Son uygulamalar menüsünde arama çubuğu göster</string>
+  <string name="recents_show_searchbar">Son uyg. menüsünde arama çubuğu göster</string>
   <string name="keywords_recents_show_searchbar">arama etkin devre dışı arama çubuğu göster gizle son uygulamalar</string>
   <string name="sim_ringtone_title">SIM %d zil sesi</string>
   <string name="interruptions_ignore_while_media_title">Ses yankılanmasını önle</string>
   <string name="interruptions_ignore_while_media_summary">Bir bildirim geldiğinde medya oynatma ses seviyesini azaltma</string>
+  <string name="none_is_silent_title">Asla alarm sesini kapatma</string>
+  <string name="none_is_silent_summary">Sessiz modda alarmlar her zaman çalar</string>
+  <string name="allow_lights_title">Bildirim ışıklarına izin ver</string>
   <string name="live_display_summary">Okunabilirliği artırmak ve göz yorgunluğu azaltmak için gün ve ortam koşulları zamanına bağlı olarak ekranı iyileştirir</string>
   <string name="live_display_mode">Görüntü modu</string>
   <string name="live_display_color_temperature_title">Renk sıcaklığı</string>
@@ -812,6 +842,17 @@
   <string name="live_display_low_power_summary">Ekranı bozulma olmadan en düşük güç tüketimi için ayarlar</string>
   <string name="live_display_enhance_color_title">Renkleri geliştir</string>
   <string name="live_display_enhance_color_summary">Ten tonları, sahne ve diğer görüntülerin renk titreşimini geliştirir</string>
+  <string name="live_display_color_profile_title">Renk profili</string>
+  <string name="live_display_color_profile_standard_title">Standart</string>
+  <string name="live_display_color_profile_standard_summary">Doğru renkler ve parlak beyazlar</string>
+  <string name="live_display_color_profile_natural_title">Doğal</string>
+  <string name="live_display_color_profile_natural_summary">Gerçekçi renkler ve taze tonlar</string>
+  <string name="live_display_color_profile_dynamic_title">Dinamik</string>
+  <string name="live_display_color_profile_dynamic_summary">Gelişmiş renkler ve parlak beyazlar</string>
+  <string name="live_display_color_profile_cinema_title">Sinema</string>
+  <string name="live_display_color_profile_cinema_summary">Multimedya için mükemmel renk sunumu</string>
+  <string name="live_display_color_profile_astronomy_title">Astronomi</string>
+  <string name="live_display_color_profile_astronomy_summary">Gece görüşünü korumak için yoğun kırmızı</string>
   <string name="battery_saver_threshold">Pil tasarruf eşiği</string>
   <string name="battery_saver_summary">Performansı düşürür ve arka plan verilerini sınırlar</string>
   <string name="battery_saver_summary_unavailable">Şarj sırasında kullanılabilir değil</string>
@@ -881,7 +922,7 @@
   <string name="fingerprint_dialog_title_max_fingers_reached">Parmak izi sınırına ulaşıldı</string>
   <string name="fingerprint_dialog_msg_max_fingers_reached">Sadece <xliff:g id="finger" example="5 fingerprints">%d</xliff:g> tane parmak izi kaydedebilirsiniz. Eskilerden birini silin.</string>
   <string name="fingerprint_title_manage_fingerprints">Parmak izlerini yönet <xliff:g id="finger">%d</xliff:g>/<xliff:g id="max">%d</xliff:g></string>
-  <string name="manage_fingerprints_description">Parmak izleri hızlıca telefon kilidinizi açmaya, alışverişleri onaylamaya ve fotoğraf çekmeye izin verir.</string>
+  <string name="manage_fingerprints_description">Parmak izleri telefon kilidinizi hızlıca açıp fotoğraf çekmenizi sağlar.</string>
   <string name="fingerprint_enrollment_introduction_title">Sensörünüzü bulun</string>
   <string name="fingerprint_enrollment_introduction_instructions">Parmak izi sensörü Telefonunuzun önünde ya da arkasında yer alır.</string>
   <string name="fingerprint_enrollment_scan_title">3 saniye tutun</string>
@@ -914,6 +955,7 @@
   <string name="fingerprint_enrollment_error_title_3">Bir şeyler ters gidiyor</string>
   <string name="fingerprint_enrollment_error_title_4">Bir daha deneyin</string>
   <string name="fingerprint_enrollment_error_title_5">Offf, hata oluştu</string>
+  <string name="lockscreen_settings_and_fingerprint">Kilit ekranı &amp; parmak izi</string>
   <string name="menu_stats_reset">İstatistikleri sıfırla</string>
   <string name="reset_stats_msg">Pil kullanım istatistikleri sıfırlanacak</string>
   <string name="dock_battery_not_present">Ünite pili mevcut değil</string>
@@ -921,4 +963,25 @@
   <string name="battery_info_status_charging_dock_usb">Ünite USB\'si ile şarj oluyor</string>
   <string name="setup_lock_pattern_size_title">Desen zorluğu</string>
   <string name="setup_lock_pattern_size_details">Deseninizde kaç nokta kullanmak istersiniz? Ne kadar çok nokta kullanırsanız deseniniz o kadar zor olur.</string>
+  <string name="lto_download_data_wifi_only">GPS destekli veri indirimi</string>
+  <string name="lto_download_data_wifi_only_on">Herhangi bir ağ üzerinden</string>
+  <string name="lto_download_data_wifi_only_off">Sadece Wi\u2011Fi ağları üzerinden</string>
+  <string name="keep_screen_on_never">Asla</string>
+  <string name="keep_screen_on_debugging">USB hata ayıklama sırasında</string>
+  <string name="keep_screen_on_charging">Şarj olurken</string>
+  <string name="contributors_cloud_fragment_title">Katkıda bulunanlar</string>
+  <string name="contributors_cloud_loading_message">Katkıda bulunanlar verisi yükleniyor\u2026</string>
+  <string name="contributors_cloud_failed_message">Katkıda bulunanlar verisi yüklenemedi</string>
+  <string name="contributor_info_menu">Katkıda bulunan bilgisi</string>
+  <string name="contributor_info_msg">
+        <![CDATA[<b>İsim:</b> <xliff:g id="name">%1$s</xliff:g><br/><br/>
+                 <b>Takma Ad:</b> <xliff:g id="nick">%2$s</xliff:g><br/><br/>
+                 <b>Girdiler:</b> <xliff:g id="commits">%3$s</xliff:g><br/><br/>
+                 <b>Derece:</b> <xliff:g id="rank">%4$s</xliff:g>]]></string>
+  <string name="contributions_info_menu">Katkılar hakkında bilgi</string>
+  <string name="contributions_info_msg">
+        <![CDATA[<b>Tüm katkı sağlayanlar:</b> <xliff:g id="total_contributors">%1$s</xliff:g><br/><br/>
+                 <b>Toplam girdi:</b> <xliff:g id="total_commits">%2$s</xliff:g><br/><br/>
+                 <b>Son güncelleme:</b> <xliff:g id="date">%3$s</xliff:g>]]></string>
+  <string name="quick_settings_reset_message">Hızlı ayar kareleri varsayılana sıfırlansın mı?</string>
 </resources>

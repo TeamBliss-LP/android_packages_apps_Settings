@@ -87,6 +87,9 @@
   <string name="profile_lockmode_insecure_summary">No pedir PIN o contraseña</string>
   <string name="profile_lockmode_disabled_summary">Desactivar el bloqueo de pantalla</string>
   <string name="profile_airplanemode_title">Modo avión</string>
+  <string name="profile_brightness_title">Brillo de pantalla</string>
+  <string name="profile_brightness_override_summary">Establecer a %1$d%%</string>
+  <string name="profile_brightness_override_checkbox_label">Anular brillo</string>
   <string name="toggleWifi">Wi\u2011Fi</string>
   <string name="toggleWifiAp">Punto de acceso Wi\u2011Fi</string>
   <string name="toggleBluetooth">Bluetooth</string>
@@ -128,6 +131,8 @@
   <string name="volbtn_cursor_control_on_reverse">Los botones subir y bajar volumen moverán el cursor a derecha e izquierda respectivamente</string>
   <string name="swap_volume_buttons_title">Reorientar botones</string>
   <string name="swap_volume_buttons_summary">Intercambiar los botones de control de volumen al rotar la pantalla</string>
+  <string name="volume_keys_control_ring_stream_title">Controlar volumen de llamada</string>
+  <string name="volume_keys_control_ring_stream_summary">Si está activado, las teclas de volumen controlan el volumen del tono de llamada. En caso contrario las teclas de volumen controlan el volumen multimedia.</string>
   <string name="power_end_call_title">Finalizar llamada</string>
   <string name="power_end_call_summary">Pulsando el botón de encendido finalizará la llamada en curso</string>
   <string name="button_wake_title">Despertar dispositivo</string>
@@ -223,12 +228,12 @@
   <string name="update_recovery_summary">Actualizar recovery con las actualizaciones del sistema</string>
   <string name="update_recovery_on_warning">AVISO: Con esta característica activada, el recovery instalado será reemplazado por uno incluido en la versión actual del sistema.\n\nEl recovery será actualizado junto con mejoras en el sistema, ayudando a garantizar la compatibilidad con versiones futuras.\n\n¿Quieres activar esta característica?</string>
   <string name="update_recovery_off_warning">ADVERTENCIA: Con esta característica desactivada, el recovery instalado no se actualizará con las actualizaciones del sistema.\n\nVersiones futuras del sistema podrían no instalarse con un recovery no actualizado o no compatible.\n\n¿Deseas realmente desactivar esta característica?</string>
-  <string name="mod_version">Versión CyanogenMod</string>
+  <string name="mod_version">Versión de CyanogenMod</string>
   <string name="mod_version_default">Desconocida</string>
+  <string name="security_patch">Nivel de parche de seguridad de Android</string>
   <string name="device_model">Modelo del dispositivo</string>
   <string name="device_name">Nombre del terminal</string>
   <string name="build_date">Fecha de compilación</string>
-  <string name="contributor_cloud_title">Colaboradores</string>
   <string name="phone_service_state">Voz: <xliff:g id="voice_state">%1$s</xliff:g>, datos: <xliff:g id="data_state">%2$s</xliff:g></string>
   <string name="double_tap_to_wake_title">Doble toque para despertar</string>
   <string name="double_tap_to_wake_summary">Encender la pantalla realizando un doble toque sobre ella</string>
@@ -245,6 +250,8 @@
   <string name="privacy_guard_reset_text">¿Restablecer permisos?</string>
   <string name="privacy_guard_help_text">En esta pantalla puedes elegir las aplicaciones para las que se activará Privacidad simplemente tocando sobre ellas. Las aplicaciones seleccionadas no podrán acceder a tu información personal, como contactos, mensajes o registro de llamadas. Realiza una pulsación prolongada para mostrar la pantalla de detalles de la aplicación.\n\nLas aplicaciones del sistema no se muestran por defecto, pero pueden mostrarse seleccionando la opción de menú correspondiente.</string>
   <string name="privacy_guard_manager_show_system_apps">Aplicaciones del sistema</string>
+  <string name="privacy_guard_notification_title">Mostrar notificación</string>
+  <string name="app_ops_btn_text">Modificar</string>
   <string name="increasing_ring_volume_option_title">Volumen de timbre ascendente</string>
   <string name="increasing_ring_min_volume_title">Volumen inicial</string>
   <string name="increasing_ring_ramp_up_time_title">Tiempo de incremento</string>
@@ -621,6 +628,11 @@
   <string name="sdcard_media_format_gesture_explanation" product="default">Necesitas dibujar el patrón de desbloqueo para confirmar que deseas borrar la tarjeta SD.</string>
   <string name="usb_media_format_gesture_explanation" product="default">Necesitas dibujar el patrón de desbloqueo para confirmar que deseas borrar el almacenamiento USB.</string>
   <string name="uicc_media_format_gesture_explanation" product="default">Necesitas dibujar el patrón de desbloqueo para confirmar que deseas borrar el almacenamiento UICC.</string>
+  <string name="internal_sd_format">Borrar almacenamiento interno</string>
+  <string name="internal_sd_format_summary">Borrar todos los datos del almacenamiento interno, como música y fotos</string>
+  <string name="master_clear_desc_erase_internal_storage">\n\nPara limpiar la música, imágenes y otros datos del usuario, el <b>almacenamiento interno</b> necesita ser borrado.</string>
+  <string name="erase_internal_storage">Borrar almacenamiento interno</string>
+  <string name="erase_internal_storage_description">Borrar todo los datos del almacenamiento interno, como música y fotos</string>
   <string name="storage_rescan_media">Refrescar contenido multimedia</string>
   <string name="location_category_enhanced_location">Ubicación mejorada (IZat)</string>
   <string name="app_ops_settings_summary">Ver o cambiar los permisos de la aplicación</string>
@@ -649,10 +661,6 @@
   <string name="usb_not_connected">El USB está desconectado ahora</string>
   <string name="external_storage_turn_on">El almacenamiento externo ha sido habilitado</string>
   <string name="external_storage_turn_off">El almacenamiento externo ha sido deshabilitado</string>
-  <string name="menu_hidden_apps_delete">Restablecer</string>
-  <string name="menu_hidden_apps_reset_lock">Restablecer patrón de bloqueo</string>
-  <string name="protected_apps">Aplicaciones protegidas</string>
-  <string name="saving_protected_components">Guardar el estado del componente\u2026</string>
   <string name="stats_collection_title">Recogida de estadísticas</string>
   <string name="stats_collection_summary">Obtener información sobre las operaciones realizadas por las aplicaciones</string>
   <string name="power_notifications_category_title">Cargador</string>
@@ -679,6 +687,9 @@
   <string name="settings_cmlicense_activity_title">Licencia de CyanogenMod</string>
   <string name="lockpattern_settings_enable_error_path_title">Mostrar patrón erróneo</string>
   <string name="lockpattern_settings_enable_dots_title">Mostrar puntos de patrón</string>
+  <string name="lock_directly_show_password">Mostrar directamente la contraseña</string>
+  <string name="lock_directly_show_pattern">Mostrar directamente el patrón</string>
+  <string name="lock_directly_show_pin">Mostrar directamente el PIN</string>
   <string name="unlock_quick_unlock_control_title">Desbloqueo rápido</string>
   <string name="unlock_quick_unlock_control_summary">Desbloquear automáticamente cuando se introduce el PIN/clave correcto</string>
   <string name="unlock_scramble_pin_layout_title">Disposición aleatoria</string>
@@ -726,6 +737,7 @@
   <string name="qs_tile_heads_up">Notificaciones emergentes</string>
   <string name="qs_tile_ambient_display">Pantalla ambiente</string>
   <string name="qs_tile_sync">Sincronizar</string>
+  <string name="qs_tile_battery_saver">Modo de ahorro de batería</string>
   <string name="qs_dynamic_tile_next_alarm">Próxima alarma</string>
   <string name="qs_dynamic_tile_ime_selector">Selector IME</string>
   <string name="qs_dynamic_tile_su">Acceso privilegiado</string>
@@ -734,6 +746,7 @@
   <string name="qs_main_tiles_summary_off">Tres controles en cada fila</string>
   <string name="qs_advanced_location_title">Configuración de ubicación avanzada</string>
   <string name="qs_advanced_location_summary">Habilitar la configuración avanzada para ubicación en los ajustes rápidos</string>
+  <string name="sim_no_number_set">No hay ningún número asignado</string>
   <string name="gesture_settings_title">Gestos</string>
   <string name="themes_settings_title">Temas</string>
   <string name="wifi_mode">Modo</string>
@@ -757,6 +770,7 @@
   <string name="expanded_desktop_style">Estilo del escritorio extendido</string>
   <string name="expanded_desktop_style_description">Elije un valor por defecto para el estilo del escritorio extendido</string>
   <string name="expanded_desktop_title">Opciones del escritorio extendido</string>
+  <string name="title_general">General</string>
   <string name="lockscreen_targets_message">Atajos de la pantalla de bloqueo</string>
   <string name="lockscreen_default_target">Por defecto</string>
   <string name="lockscreen_none_target">Ninguno</string>
@@ -766,7 +780,12 @@
   <string name="whisperpush_title">WhisperPush</string>
   <string name="whisperpush_summary">Administrar ajustes para cifrado de SMS</string>
   <string name="navigation_ring_title">Anillo de navegación</string>
-  <string name="navigation_ring_message">Toca el icono editar para abrir el editor del anillo de navegacion.\n\nSelecciona un objetivo para configurar su comportamiento.\n\nToca el icono de \u00AB\u2713\u00BB para guardar los cambios, o \u00ABRestaurar valores predeterminados\u00BB para volver a los ajustes por defecto.</string>
+  <string name="navigation_ring_message">Toca el icono editar para abrir el editor del anillo de navegacion.\n\nSelecciona un objetivo para configurar su comportamiento.\n\nToca el icono \u00AB\u2713\u00BB para guardar los cambios, o \u00ABRestaurar\u00BB para volver a los ajustes por defecto.</string>
+  <string name="lcd_density">Densidad del LCD</string>
+  <string name="dialog_title_lcd_density">Densidad del LCD</string>
+  <string name="lcd_density_value_format">%d DPI</string>
+  <string name="lcd_density_default_value_format">%d DPI (por defecto)</string>
+  <string name="restarting_ui">Reiniciando UI\u2026</string>
   <string name="stylus_icon_enabled_title">Mostrar el icono al usar Stylus</string>
   <string name="stylus_icon_enabled_summary">Mostrar el cursor cuando se arrastra o dibuja con Stylus</string>
   <string name="gestures_settings_title">Gestos de Stylus</string>
@@ -807,6 +826,9 @@
   <string name="sim_ringtone_title">Tono de llamada para SIM %d</string>
   <string name="interruptions_ignore_while_media_title">Prevenir reducción de audio</string>
   <string name="interruptions_ignore_while_media_summary">No reducir el volumen de reproducción cuando llegue una notificación</string>
+  <string name="none_is_silent_title">Nunca silenciar alarmas</string>
+  <string name="none_is_silent_summary">Permitir que las alarmas suenen en el modo silencioso</string>
+  <string name="allow_lights_title">Permitir led de notificaciones</string>
   <string name="live_display_summary">Optimizar la pantalla según la hora del día y las condiciones ambientales para mejorar la legibilidad y reducir la fatiga visual</string>
   <string name="live_display_mode">Modo de visualización</string>
   <string name="live_display_color_temperature_title">Temperatura de color</string>
@@ -888,6 +910,7 @@
   <string name="wifi_countrycode_entries_sg">Israel, Singapur</string>
   <string name="wifi_countrycode_entries_br">Brasil</string>
   <string name="wifi_countrycode_entries_in">India</string>
+  <string name="unlock_set_unlock_launch_picker_title_with_fingerprint">Pantalla de desbloqueo y huella digital</string>
   <string name="unlock_set_unlock_mode_fingerprint">Huella digital</string>
   <string name="unlock_set_unlock_fingerprint_title">Huella digital</string>
   <string name="fingerprint_item_add_new_fingerprint">Añadir nueva huella digital</string>
@@ -899,13 +922,13 @@
   <string name="fingerprint_dialog_title_max_fingers_reached">Máximo de huellas digitales alcanzado</string>
   <string name="fingerprint_dialog_msg_max_fingers_reached">Sólo pueden guardarse <xliff:g id="finger" example="5 fingerprints">%d </xliff:g> huellas digitales. Borra una huella digital existente.</string>
   <string name="fingerprint_title_manage_fingerprints">Gestionando <xliff:g id="finger">%d </xliff:g> / <xliff:g id="max"> %d </xliff:g> huellas digitales</string>
-  <string name="manage_fingerprints_description">Las huellas dactilares le permiten desbloquear rápidamente el teléfono, confirmar compras y sacar fotos.</string>
+  <string name="manage_fingerprints_description">El uso de huellas digitales te permitirá desbloquear tu teléfono y tomar fotos rápidamente.</string>
   <string name="fingerprint_enrollment_introduction_title">Localiza el sensor</string>
   <string name="fingerprint_enrollment_introduction_instructions">El sensor de huella dactilar se encuentra en la parte delantera o trasera del teléfono.</string>
   <string name="fingerprint_enrollment_scan_title">Mantén presionado durante 3 segundos</string>
   <string name="fingerprint_enrollment_scan_instructions">Coloca tu dedo índice en el sensor de huella dactilar para iniciar la configuración. Levanta el dedo cuando sienta una vibración.</string>
   <string name="fingerprint_enrollment_error_title_wrong_sensor">Por favor, inténtelo de nuevo</string>
-  <string name="fingerprint_enrollment_error_message">Coloca tu dedo firmemente en el sensor de huella digital para asegurar una lectura precisa. Asegúrate de estar usando el mismo dedo que antes. Levanta el dedo cuando sienta una vibración.</string>
+  <string name="fingerprint_enrollment_error_message">Coloca tu dedo firmemente en el sensor de huella digital para asegurar una lectura precisa. Asegúrate de estar usando el mismo dedo que antes. Levanta el dedo cuando sientas una vibración.</string>
   <string name="fingerprint_enrollment_scan_instructions">Coloca tu dedo índice en el sensor de huella dactilar para iniciar la configuración. Levanta el dedo cuando sienta una vibración.</string>
   <string name="fingerprint_enrollment_break_title">Continua con la pulsación actual</string>
   <string name="fingerprint_enrollment_break_instructions">Manténte así para capturar los bordes de su huella. Levanta el dedo cuando sienta una vibración.</string>

@@ -156,12 +156,6 @@
   <string name="blacklist_prefs">Settings</string>
   <string name="blacklist_button_delete">Delete</string>
   <string name="blacklist_summary_disabled">Disabled</string>
-  <string name="app_security_title">App security</string>
-  <string name="blacklist_title">Blacklist</string>
-  <string name="blacklist_edit_dialog_title">Edit blacklist entry</string>
-  <string name="blacklist_empty_text">You don\'t have any blacklisted numbers. Add an entry by touching the Add (+) button.</string>
-  <string name="blacklist_disabled_empty_text">To blacklist calls and/or messages from certain numbers, enable the blacklist.</string>
-  <string name="blacklist_summary">Incoming calls and messages from phone numbers in the blacklist will be blocked</string>
   <string name="blacklist_notify">Show notification</string>
   <string name="blacklist_private_numbers_title">Private numbers</string>
   <string name="blacklist_private_numbers_summary_disabled">Don\'t block calls from private numbers</string>
@@ -176,9 +170,7 @@
   <string name="blacklist_regex_summary">Use . as a wildcard and * for repetition. E.g. 123.* blocks numbers starting with 123 and .*123.* blocks numbers containing 123</string>
   <string name="blacklist_policy_block_calls">Block incoming calls</string>
   <string name="blacklist_policy_block_messages">Block incoming messages</string>
-  <string name="blacklist_bad_number_add">Unable to add invalid number to blacklist</string>
   <string name="remove_blacklist_number_title">Remove number</string>
-  <string name="remove_blacklist_entry">Do you want to remove this blacklist entry?</string>
   <string name="select_contact">Select contact</string>
   <string name="lockpattern_reset_button">Reset pattern</string>
   <string name="lockpattern_settings_reset_summary">Enter primary email account and associated password to reset pattern lock</string>
@@ -207,15 +199,20 @@
   <string name="block_notifications_title">Filter notifications</string>
   <string name="block_notifications_summary">Manage ignored notifications and filters</string>
   <string name="no_filters_title">No filters set</string>
+  <string name="cmupdate_settings_title">CyanogenMod updates</string>
+  <string name="update_recovery_title">Update Cyanogen recovery</string>
+  <string name="update_recovery_summary">Update recovery with system updates</string>
+  <string name="update_recovery_on_warning">NOTICE: When this feature is enabled, your installed recovery will be replaced by one included with the current version of the running OS.\n\nYour recovery will be updated along with upgrades to your system, helping to ensure compatibility with future versions.\n\nWould you like to enable this feature?</string>
+  <string name="update_recovery_off_warning">WARNING: When this feature is disabled, your installed recovery will not be updated with OS upgrades.\n\nFuture OS updates may not install with outdated or custom recovery versions.\n\nDo you really want to disable this feature?</string>
+  <string name="mod_version">CyanogenMod version</string>
   <string name="mod_version_default">Unknown</string>
-  <string name="device_model">Model name</string>
   <string name="build_date">Build date</string>
-  <string name="contributor_cloud_title">Contributors</string>
   <string name="phone_service_state">Voice: <xliff:g id="voice_state">%1$s</xliff:g>, data: <xliff:g id="data_state">%2$s</xliff:g></string>
   <string name="double_tap_to_wake_title">Double-tap to wake</string>
   <string name="double_tap_to_wake_summary">Double-tap on the screen to turn on the display</string>
   <string name="proximity_wake_title">Prevent accidental wake-up</string>
   <string name="proximity_wake_summary">Check the proximity sensor prior to waking up screen</string>
+  <string name="privacy_settings_cyanogenmod_title">Privacy</string>
   <string name="privacy_guard_default_title">Enabled by default</string>
   <string name="privacy_guard_default_summary">Enable by default for newly-installed apps</string>
   <string name="privacy_guard_manager_title">Privacy Guard</string>
@@ -611,10 +608,6 @@
   <string name="usb_sdcard_summary">Lets you transfer files between your computer and SD card by mounting it as a flash device</string>
   <string name="external_storage_turn_on">External storage has been turned on</string>
   <string name="external_storage_turn_off">External storage has been turned off</string>
-  <string name="menu_hidden_apps_delete">Reset</string>
-  <string name="menu_hidden_apps_reset_lock">Reset pattern lock</string>
-  <string name="protected_apps">Protected apps</string>
-  <string name="saving_protected_components">Saving component state\u2026</string>
   <string name="stats_collection_title">Stats collection</string>
   <string name="stats_collection_summary">When enabled, allows metrics collection</string>
   <string name="power_notifications_category_title">Charging sounds</string>
@@ -636,6 +629,7 @@
   <string name="pref_force_highend_gfx_summary">Enables high-end visual effects such as transparent status/navigation bar (requires reboot)</string>
   <string name="edge_gesture_service_title">Block gesture touch events</string>
   <string name="edge_gesture_service_summary">Don\'t send touch events for navigation and status bar gestures to apps</string>
+  <string name="cmlicense_title">CyanogenMod legal</string>
   <string name="settings_cmlicense_activity_title">CyanogenMod legal</string>
   <string name="unlock_quick_unlock_control_title">Quick unlock</string>
   <string name="unlock_quick_unlock_control_summary">Unlock automatically when the correct PIN/password is entered</string>

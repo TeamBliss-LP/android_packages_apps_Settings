@@ -86,6 +86,9 @@
   <string name="profile_lockmode_insecure_summary">不请求 PIN 码或密码</string>
   <string name="profile_lockmode_disabled_summary">禁用锁屏</string>
   <string name="profile_airplanemode_title">飞行模式</string>
+  <string name="profile_brightness_title">屏幕亮度</string>
+  <string name="profile_brightness_override_summary">设置到 %1$d%%</string>
+  <string name="profile_brightness_override_checkbox_label">覆盖亮度</string>
   <string name="toggleWifi">Wi\u2011Fi</string>
   <string name="toggleWifiAp">便携式 Wi\u2011Fi 热点</string>
   <string name="toggleBluetooth">蓝牙</string>
@@ -127,6 +130,8 @@
   <string name="volbtn_cursor_control_on_reverse">音量+/-光标右/左移动</string>
   <string name="swap_volume_buttons_title">重新调整</string>
   <string name="swap_volume_buttons_summary">旋转屏幕时交换音量键的布局</string>
+  <string name="volume_keys_control_ring_stream_title">音量键控制铃声音量</string>
+  <string name="volume_keys_control_ring_stream_summary">如果启用，音量键将控制铃声音量。如果禁用，音量键将控制媒体音量。</string>
   <string name="power_end_call_title">结束通话</string>
   <string name="power_end_call_summary">按下电源按钮将结束当前通话</string>
   <string name="button_wake_title">唤醒设备</string>
@@ -224,10 +229,10 @@
   <string name="update_recovery_off_warning">警告：此功能被禁用后，你安装的恢复模式将不会随着系统一起更新。\n\n未来的系统更新可能不支持用过旧的或自制的恢复模式安装。\n\n您确定要禁用此功能？</string>
   <string name="mod_version">CyanogenMod 版本</string>
   <string name="mod_version_default">未知</string>
+  <string name="security_patch">Android 安全补丁程序级别</string>
   <string name="device_model">设备型号</string>
   <string name="device_name">设备名称</string>
   <string name="build_date">编译日期</string>
-  <string name="contributor_cloud_title">贡献者</string>
   <string name="phone_service_state">语音： <xliff:g id="voice_state">%1$s</xliff:g>，数据： <xliff:g id="data_state">%2$s</xliff:g></string>
   <string name="double_tap_to_wake_title">双击唤醒</string>
   <string name="double_tap_to_wake_summary">双击屏幕来开启屏幕显示</string>
@@ -338,6 +343,9 @@
   <string name="notification_light_default_value">默认</string>
   <string name="notification_light_missed_call_title">未接来电</string>
   <string name="notification_light_voicemail_title">语音信箱</string>
+  <string name="notification_light_screen_on">屏幕开启时点亮指示灯</string>
+  <string name="notification_light_use_multiple_leds">多 LED</string>
+  <string name="keywords_lights_brightness_level">降低 LED 亮度</string>
   <string name="notification_ringtone_title_cm">通知铃声</string>
   <string name="headset_connect_player_title">启动音乐播放器</string>
   <string name="headset_connect_player_summary">插入耳机时启动默认音乐播放器</string>
@@ -478,6 +486,7 @@
   <string name="ok">确定</string>
   <string name="profile_menu_delete_title">删除</string>
   <string name="profile_action_none">保持不变</string>
+  <string name="profile_action_system">系统默认</string>
   <string name="profile_action_disable">关闭</string>
   <string name="profile_action_enable">打开</string>
   <string name="profile_trigger_a2dp_connect">A2DP 连接时</string>
@@ -619,6 +628,11 @@
   <string name="sdcard_media_format_gesture_explanation" product="default">您需要绘制解锁图案以确认要擦除 SD 卡。</string>
   <string name="usb_media_format_gesture_explanation" product="default">您需要绘制解锁图案以确认要擦除 USB 存储。</string>
   <string name="uicc_media_format_gesture_explanation" product="default">您需要绘制解锁图案以确认要擦除 USB 存储。</string>
+  <string name="internal_sd_format">擦除内部存媒体存储</string>
+  <string name="internal_sd_format_summary">擦除所有内部媒体存储上的数据，比如音乐和照片</string>
+  <string name="master_clear_desc_erase_internal_storage">\n\n要清除音乐、图片和其他用户数据。<b>内置媒体存储</b>需要被擦除。</string>
+  <string name="erase_internal_storage">擦除内部存媒体存储</string>
+  <string name="erase_internal_storage_description">擦除内置媒体存储的所有数据，例如音乐或照片</string>
   <string name="storage_rescan_media">为存储卷重新扫描媒体</string>
   <string name="location_category_enhanced_location">增强的位置 (IZat)</string>
   <string name="app_ops_settings_summary">查看或更改应用的权限</string>
@@ -694,6 +708,7 @@
   <string name="status_bar_show_weather_summary">在快速设置面板上方显示天气</string>
   <string name="qs_category_title">快速设置面板</string>
   <string name="qs_brightness_slider_title">显示亮度滑块</string>
+  <string name="qs_hide_tiles_with_sensitive_data">锁定时隐藏敏感瓷块</string>
   <string name="qs_order_title">选择和排序瓷块</string>
   <string name="add_qs">添加新瓷块</string>
   <string name="qs_action_delete">删除</string>
@@ -716,11 +731,13 @@
   <string name="qs_tile_compass">指南针</string>
   <string name="qs_tile_lockscreen">锁屏</string>
   <string name="qs_tile_lte">LTE</string>
+  <string name="qs_tile_volume_panel">音量面板</string>
   <string name="qs_tile_screen_timeout">屏幕超时</string>
   <string name="qs_tile_usb_tether">USB 共享网络</string>
   <string name="qs_tile_heads_up">浮动通知</string>
   <string name="qs_tile_ambient_display">环境显示</string>
   <string name="qs_tile_sync">同步</string>
+  <string name="qs_tile_battery_saver">省电模式</string>
   <string name="qs_dynamic_tile_next_alarm">下一个闹铃</string>
   <string name="qs_dynamic_tile_ime_selector">输入法选择器</string>
   <string name="qs_dynamic_tile_su">Root 授权</string>
@@ -753,6 +770,7 @@
   <string name="expanded_desktop_style">扩展桌面样式</string>
   <string name="expanded_desktop_style_description">选择一个默认的扩展桌面样式</string>
   <string name="expanded_desktop_title">扩展桌面选项</string>
+  <string name="title_general">常规</string>
   <string name="lockscreen_targets_message">锁屏快捷方式</string>
   <string name="lockscreen_default_target">默认</string>
   <string name="lockscreen_none_target">无</string>
@@ -767,6 +785,7 @@
   <string name="dialog_title_lcd_density">LCD 密度</string>
   <string name="lcd_density_value_format">%d DPI</string>
   <string name="lcd_density_default_value_format">%d DPI (默认值)</string>
+  <string name="restarting_ui">正在重启界面\u2026</string>
   <string name="stylus_icon_enabled_title">使用触控笔时显示光标</string>
   <string name="stylus_icon_enabled_summary">使用触控笔悬停或书写时显示指示光标</string>
   <string name="gestures_settings_title">触控笔手势</string>
@@ -807,6 +826,9 @@
   <string name="sim_ringtone_title">SIM 卡 %d 铃声</string>
   <string name="interruptions_ignore_while_media_title">阻止音频回避</string>
   <string name="interruptions_ignore_while_media_summary">当通知到达时，不要降低媒体播放音量</string>
+  <string name="none_is_silent_title">永不静音闹钟</string>
+  <string name="none_is_silent_summary">静音模式下闹钟总是响铃</string>
+  <string name="allow_lights_title">允许通知指示灯</string>
   <string name="live_display_summary">基于时间和环境条件来优化您的屏幕以改善可读性和减少眼睛疲劳</string>
   <string name="live_display_mode">显示模式</string>
   <string name="live_display_color_temperature_title">色温</string>
@@ -820,6 +842,17 @@
   <string name="live_display_low_power_summary">在不降低亮度的情况下调整屏幕使耗电最低</string>
   <string name="live_display_enhance_color_title">增强色彩</string>
   <string name="live_display_enhance_color_summary">为肤色、风景和其他图像提高颜色活力</string>
+  <string name="live_display_color_profile_title">颜色配置文件</string>
+  <string name="live_display_color_profile_standard_title">标准</string>
+  <string name="live_display_color_profile_standard_summary">准确的颜色和明亮的白色</string>
+  <string name="live_display_color_profile_natural_title">自然</string>
+  <string name="live_display_color_profile_natural_summary">写实的颜色和肤色</string>
+  <string name="live_display_color_profile_dynamic_title">动态</string>
+  <string name="live_display_color_profile_dynamic_summary">增强的颜色和明亮的白色</string>
+  <string name="live_display_color_profile_cinema_title">影院</string>
+  <string name="live_display_color_profile_cinema_summary">印刷质量的完美颜色</string>
+  <string name="live_display_color_profile_astronomy_title">天文</string>
+  <string name="live_display_color_profile_astronomy_summary">夜视的深红色</string>
   <string name="battery_saver_threshold">节电助手阈值</string>
   <string name="battery_saver_summary">降低性能并限制后台流量</string>
   <string name="battery_saver_summary_unavailable">在充电时不可用</string>
@@ -890,7 +923,7 @@
   <string name="fingerprint_dialog_title_max_fingers_reached">已达到最大指纹数量</string>
   <string name="fingerprint_dialog_msg_max_fingers_reached">您只能登记 <xliff:g id="finger" example="5 fingerprints">%d</xliff:g> 个指纹。删除一个现有指纹。</string>
   <string name="fingerprint_title_manage_fingerprints">管理指纹  <xliff:g id="finger">%d</xliff:g>/<xliff:g id="max">%d</xliff:g></string>
-  <string name="manage_fingerprints_description">指纹将允许您快速解锁您的手机，确认购买和拍摄照片。</string>
+  <string name="manage_fingerprints_description">使用指纹将可以快速解锁您的手机和拍照。</string>
   <string name="fingerprint_enrollment_introduction_title">找到您的传感器</string>
   <string name="fingerprint_enrollment_introduction_instructions">指纹传感器位于您手机的正面或背面。</string>
   <string name="fingerprint_enrollment_scan_title">保持 3 秒</string>
@@ -923,6 +956,7 @@
   <string name="fingerprint_enrollment_error_title_3">嗯，出错了</string>
   <string name="fingerprint_enrollment_error_title_4">啊哦，请再试一次</string>
   <string name="fingerprint_enrollment_error_title_5">糟糕，发生了一个错误</string>
+  <string name="lockscreen_settings_and_fingerprint">锁屏 &amp; 指纹</string>
   <string name="menu_stats_reset">重置统计数据</string>
   <string name="reset_stats_msg">即将重置电池使用数据</string>
   <string name="dock_battery_not_present">基座电池不存在</string>
@@ -930,4 +964,25 @@
   <string name="battery_info_status_charging_dock_usb">正在通过基座 USB 充电</string>
   <string name="setup_lock_pattern_size_title">图案复杂程度</string>
   <string name="setup_lock_pattern_size_details">您希望使用多少个节点的图案？节点越多，图案就可以越复杂。</string>
+  <string name="lto_download_data_wifi_only">辅助 GPS 数据下载</string>
+  <string name="lto_download_data_wifi_only_on">经由任何网络</string>
+  <string name="lto_download_data_wifi_only_off">仅经由 Wi\u2011Fi 网络</string>
+  <string name="keep_screen_on_never">永不</string>
+  <string name="keep_screen_on_debugging">当 USB 调试时</string>
+  <string name="keep_screen_on_charging">当充电时</string>
+  <string name="contributors_cloud_fragment_title">贡献者</string>
+  <string name="contributors_cloud_loading_message">正在载入贡献者数据\u2026</string>
+  <string name="contributors_cloud_failed_message">无法读取贡献者数据</string>
+  <string name="contributor_info_menu">贡献者信息</string>
+  <string name="contributor_info_msg">
+        <![CDATA[<b>姓名：</b> <xliff:g id="name">%1$s</xliff:g><br/><br/>
+                 <b>昵称：</b> <xliff:g id="nick">%2$s</xliff:g><br/><br/>
+                 <b>评论：</b> <xliff:g id="commits">%3$s</xliff:g><br/><br/>
+                 <b>星级</b> <xliff:g id="rank">%4$s</xliff:g>]]></string>
+  <string name="contributions_info_menu">贡献信息</string>
+  <string name="contributions_info_msg">
+        <![CDATA[<b>贡献者总数：</b> <xliff:g id="total_contributors">%1$s</xliff:g><br/><br/>
+                 <b>提交总数：</b> <xliff:g id="total_commits">%2$s</xliff:g><br/><br/>
+                 <b>最后更新：</b> <xliff:g id="date">%3$s</xliff:g>]]></string>
+  <string name="quick_settings_reset_message">重置快速设置瓷块吗？</string>
 </resources>

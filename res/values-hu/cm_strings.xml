@@ -87,6 +87,9 @@
   <string name="profile_lockmode_insecure_summary">Ne kérje a PIN-kódját vagy a jelszavát</string>
   <string name="profile_lockmode_disabled_summary">Képernyőzár letiltása</string>
   <string name="profile_airplanemode_title">Repülőgép üzemmód</string>
+  <string name="profile_brightness_title">Képernyő fényerő</string>
+  <string name="profile_brightness_override_summary">Beállítva a következőre: %1$d%%</string>
+  <string name="profile_brightness_override_checkbox_label">Fényerő felülírása</string>
   <string name="toggleWifi">Wi\u2011Fi</string>
   <string name="toggleWifiAp">Hordozható Wi\u2011Fi hotspot</string>
   <string name="toggleBluetooth">Bluetooth</string>
@@ -102,6 +105,7 @@
   <string name="hardware_keys_menu_key_title">Menü gomb</string>
   <string name="hardware_keys_assist_key_title">Keresés gomb</string>
   <string name="hardware_keys_appswitch_key_title">Előzmények gomb</string>
+  <string name="hardware_keys_camera_key_title">Kamera gomb</string>
   <string name="hardware_keys_volume_keys_title">Hangerő gombok</string>
   <string name="hardware_keys_short_press_title">Rövid érintés eseménye</string>
   <string name="hardware_keys_long_press_title">Hosszan érintés eseménye</string>
@@ -115,6 +119,10 @@
   <string name="hardware_keys_action_launch_camera">Kamera indítása</string>
   <string name="hardware_keys_action_sleep">Képernyő kikapcsolása</string>
   <string name="hardware_keys_action_last_app">Utolsó alkalmazás</string>
+  <string name="camera_sleep_on_release_title">Betekintés</string>
+  <string name="camera_sleep_on_release_summary">A kijelző ébren marad, amíg félig lenyomva tartja a gombot</string>
+  <string name="camera_launch_title">Kamera indítása</string>
+  <string name="camera_launch_summary">Hosszan nyomva és elengedve elindítja a kamerát</string>
   <string name="volbtn_music_controls_title">Zene vezérlése</string>
   <string name="volbtn_music_controls_summary">Kikapcsolt képernyőnél a hangerőgombok nyomva tartásával válthat az éppen lejátszott zeneszámok között</string>
   <string name="volbtn_cursor_control_title">Kurzor mozgatás</string>
@@ -225,7 +233,6 @@
   <string name="device_model">Eszköz modellje</string>
   <string name="device_name">Eszköz neve</string>
   <string name="build_date">Build dátuma</string>
-  <string name="contributor_cloud_title">Közreműködők</string>
   <string name="phone_service_state">Hang: <xliff:g id="voice_state">%1$s</xliff:g>, adat: <xliff:g id="data_state">%2$s</xliff:g></string>
   <string name="double_tap_to_wake_title">Dupla érintésre felébresztés</string>
   <string name="double_tap_to_wake_summary">Érintse meg kétszer a képernyőt a kijelző bekapcsolásához</string>
@@ -475,6 +482,7 @@
   <string name="ok">OK</string>
   <string name="profile_menu_delete_title">Törlés</string>
   <string name="profile_action_none">Változatlanul hagy</string>
+  <string name="profile_action_system">Rendszer alapértelmezett</string>
   <string name="profile_action_disable">Kikapcsolás</string>
   <string name="profile_action_enable">Bekapcsolás</string>
   <string name="profile_trigger_a2dp_connect">A2DP kapcsolat létrehozása</string>
@@ -616,6 +624,11 @@
   <string name="sdcard_media_format_gesture_explanation" product="default">Az SD kártya törlésének megerősítéséhez meg kell adnia a feloldó mintáját.</string>
   <string name="usb_media_format_gesture_explanation" product="default">Az USB tároló törlésének megerősítéséhez meg kell adnia a feloldó mintáját.</string>
   <string name="uicc_media_format_gesture_explanation" product="default">Az UICC tároló törlésének megerősítéséhez meg kell adnia a feloldó mintáját.</string>
+  <string name="internal_sd_format">Belső adattároló törlése</string>
+  <string name="internal_sd_format_summary">Töröl minden adatot a belső tárhelyről, például zenéket és fotókat</string>
+  <string name="master_clear_desc_erase_internal_storage">\n\nZenék, képek és egyéb adat törléséhez válassza a <b>belső tárhely</b> törlését.</string>
+  <string name="erase_internal_storage">Belső adattároló törlése</string>
+  <string name="erase_internal_storage_description">Minden adat, például zenék és fotók törlése a belső tárhelyről</string>
   <string name="storage_rescan_media">Médiakeresés újraindítása az adathordozón</string>
   <string name="location_category_enhanced_location">Megnövelt helymeghatározás (IZat)</string>
   <string name="app_ops_settings_summary">Alkalmazás engedélyek megtekintése vagy megváltoztatása</string>
@@ -819,6 +832,12 @@
   <string name="live_display_low_power_summary">A kijelző beállítása a legkisebb energiafogyasztásra, minőségromlás nélkül</string>
   <string name="live_display_enhance_color_title">Színek élénkítése</string>
   <string name="live_display_enhance_color_summary">Bőr színek, tájképek és egyéb képek színerősségének javítása</string>
+  <string name="live_display_color_profile_title">Színprofil</string>
+  <string name="live_display_color_profile_standard_title">Általános</string>
+  <string name="live_display_color_profile_natural_title">Természetes</string>
+  <string name="live_display_color_profile_dynamic_title">Dinamikus</string>
+  <string name="live_display_color_profile_cinema_title">Mozi</string>
+  <string name="live_display_color_profile_astronomy_title">Csillagászat</string>
   <string name="battery_saver_threshold">Akkumulátor kímélő küszöb</string>
   <string name="battery_saver_summary">Csökkenti a teljesítményt és korlátozza a háttér adatokat</string>
   <string name="battery_saver_summary_unavailable">Töltés közben nem érhető el</string>
@@ -876,13 +895,78 @@
   <string name="wifi_countrycode_entries_sg">Izrael, Szingapúr</string>
   <string name="wifi_countrycode_entries_br">Brazília</string>
   <string name="wifi_countrycode_entries_in">India</string>
+  <string name="unlock_set_unlock_launch_picker_title_with_fingerprint">Képernyő feloldás &amp; ujjlenyomat</string>
   <string name="unlock_set_unlock_mode_fingerprint">Ujjlenyomat</string>
   <string name="unlock_set_unlock_fingerprint_title">Ujjlenyomat</string>
   <string name="fingerprint_item_add_new_fingerprint">Új ujjlenyomat hozzáadása</string>
   <string name="fingerprint_manage_fingerprints">Ujjlenyomatok kezelése</string>
+  <string name="fingerprint_manage_fingerprints_summary">Beolvasott ujjlenyomatok kezelése</string>
   <string name="unlock_backup_fingerprint_info_summary">Ha nem tudja az ujját használni, hogyan szeretné feloldani?</string>
   <string name="fingerprint_dialog_title_rename">Ujjlenyomat szerkesztése</string>
   <string name="fingerprint_dialog_name_label">Ujjlenyomat neve</string>
   <string name="fingerprint_dialog_title_max_fingers_reached">Elérte az ujjlenyomatok maximális számát</string>
   <string name="fingerprint_dialog_msg_max_fingers_reached">Egyszerre csak <xliff:g id="finger" example="5 fingerprints">%d</xliff:g> ujjlenyomatot vehet fel. Töröljön egy meglévő ujjlenyomatot.</string>
+  <string name="fingerprint_title_manage_fingerprints">Ujjlenyomatok kezelése <xliff:g id="finger">%d</xliff:g>/<xliff:g id="max">%d</xliff:g></string>
+  <string name="manage_fingerprints_description">Ujjlenyomatával gyorsan feloldhatja telefonját és készíthet fotókat.</string>
+  <string name="fingerprint_enrollment_introduction_title">Találja meg érzékelőjét</string>
+  <string name="fingerprint_enrollment_introduction_instructions">Az ujjlenyomat-érzékelő a telefon elején vagy hátoldalán található.</string>
+  <string name="fingerprint_enrollment_scan_title">Tartsa 3 másodpercig</string>
+  <string name="fingerprint_enrollment_scan_instructions">Helyezze a mutatóujját az ujjlenyomat-érzékelőre a beállítás megkezdéséhez. Emelje fel az ujját mikor rezgést érez.</string>
+  <string name="fingerprint_enrollment_error_title_wrong_sensor">Kérjük, próbálja újra</string>
+  <string name="fingerprint_enrollment_error_message">Helyezze az ujját az ujjlenyomat-érzékelőre a pontos beolvasáshoz. Ügyeljen rá, hogy ugyanazt az ujját használja mint előtte. Emelje fel az ujját mikor rezgést érez.</string>
+  <string name="fingerprint_enrollment_scan_instructions">Helyezze a mutatóujját az ujjlenyomat-érzékelőre a beállítás megkezdéséhez. Emelje fel az ujját mikor rezgést érez.</string>
+  <string name="fingerprint_enrollment_break_title">Folytassa a jelenlegi lenyomattal</string>
+  <string name="fingerprint_enrollment_break_instructions">Folytassa az ujja széleinek feldolgozásához. Emelje fel az ujját mikor rezgést érez.</string>
+  <string name="fingerprint_enrollment_finished_title">Ujjlenyomat hozzáadva!</string>
+  <string name="fingerprint_enrollment_finished_message">Most már feloldhatja a kijelzőt az ujjlenyomatával vagy szelfiket készíthet a kamerával.</string>
+  <string name="fingerprint_enrollment_found_it_label">Megtaláltam</string>
+  <string name="fingerprint_enrollment_add_another_label">Újabb hozzáadása</string>
+  <string name="fingerprint_enrollment_done_label">Kész</string>
+  <string name="fingerprint_dialog_title_wrong_sensor">Hoppá, ez nem az érzékelő</string>
+  <string name="fingerprint_dialog_msg_wrong_sensor">A telefon elején vagy hátoldalán található ujjlenyomat-érzékelőt használja</string>
+  <string name="fingerprint_dialog_title_failed_enrollment">Ujjlenyomat olvasása sikertelen</string>
+  <string name="fingerprint_dialog_msg_failed_enrollment">Próbáljon másik ujjat használni. Ez az ujjlenyomat nem olvasható.</string>
+  <string name="fingerprint_enrollment_restart_label">Újraindítás</string>
+  <string name="fingerprint_successful_scan_title_first">Tökéletes! Most ismételje meg</string>
+  <string name="fingerprint_successful_scan_final">Még egyszer</string>
+  <string name="fingerprint_successful_scan_title_1">Ez megvan! Folytassa</string>
+  <string name="fingerprint_successful_scan_title_2">Nagyszerű! És újra</string>
+  <string name="fingerprint_successful_scan_title_3">Szép munka! Csak így tovább</string>
+  <string name="fingerprint_successful_scan_title_4">Csak még néhányszor</string>
+  <string name="fingerprint_successful_scan_title_5">Jól csinálja! És ismét</string>
+  <string name="fingerprint_successful_scan_title_6">Majdnem megvagyunk</string>
+  <string name="fingerprint_enrollment_error_title_1">Hoppá. Próbálja újra</string>
+  <string name="fingerprint_enrollment_error_title_2">Sajnálom, nem értem</string>
+  <string name="fingerprint_enrollment_error_title_3">Hmm, valami rosszul sikerült</string>
+  <string name="fingerprint_enrollment_error_title_4">Uh oh, próbálja újra</string>
+  <string name="fingerprint_enrollment_error_title_5">Hoppá, hiba történt</string>
+  <string name="lockscreen_settings_and_fingerprint">Képernyőzár &amp; ujjlenyomat</string>
+  <string name="menu_stats_reset">Statisztika törlése</string>
+  <string name="reset_stats_msg">Akkumulátor használati statisztika törlésre kerül</string>
+  <string name="dock_battery_not_present">Dokkoló akkumulátor hiányzik</string>
+  <string name="battery_info_status_charging_dock_ac">Töltés dokkolón (AC)</string>
+  <string name="battery_info_status_charging_dock_usb">Töltés dokkolón (USB)</string>
+  <string name="setup_lock_pattern_size_title">Minta összetettsége</string>
+  <string name="setup_lock_pattern_size_details">Hány csomópontot szeretne használni a mintához? Minél több a csomópont, annál bonyolultabb lehet a minta.</string>
+  <string name="lto_download_data_wifi_only">GPS támogatási adatok letöltése</string>
+  <string name="lto_download_data_wifi_only_on">Minden hálózaton</string>
+  <string name="lto_download_data_wifi_only_off">Csak Wi\u2011Fi hálózatokon</string>
+  <string name="keep_screen_on_never">Soha</string>
+  <string name="keep_screen_on_debugging">USB hibakeresés közben</string>
+  <string name="keep_screen_on_charging">Töltés közben</string>
+  <string name="contributors_cloud_fragment_title">Közreműködők</string>
+  <string name="contributors_cloud_loading_message">Közreműködői adatok betöltése\u2026</string>
+  <string name="contributors_cloud_failed_message">Közreműködői adatok betöltés sikertelen</string>
+  <string name="contributor_info_menu">Közreműködői információ</string>
+  <string name="contributor_info_msg">
+        <![CDATA[<b>Név:</b> <xliff:g id="name">%1$s</xliff:g><br/><br/>
+                 <b>Becenév:</b> <xliff:g id="nick">%2$s</xliff:g><br/><br/>
+                 <b>Változtatások:</b> <xliff:g id="commits">%3$s</xliff:g><br/><br/>
+                 <b>Helyezés:</b> <xliff:g id="rank">%4$s</xliff:g>]]></string>
+  <string name="contributions_info_menu">Közreműködési információ</string>
+  <string name="contributions_info_msg">
+        <![CDATA[<b>Közreműködő összesen:</b> <xliff:g id="total_contributors">%1$s</xliff:g><br/><br/>
+                 <b>Összes változtatás:</b> <xliff:g id="total_commits">%2$s</xliff:g><br/><br/>
+                 <b>Utolsó frissítés:</b> <xliff:g id="date">%3$s</xliff:g>]]></string>
+  <string name="quick_settings_reset_message">Gyors beállítások csempék visszaállítása?</string>
 </resources>

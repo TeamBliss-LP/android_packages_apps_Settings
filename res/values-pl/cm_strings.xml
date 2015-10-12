@@ -18,7 +18,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <plurals name="show_dev_countdown_cm">
     <item quantity="one">Jesteś teraz <xliff:g id="step_count">%1$d</xliff:g> krok od włączenia opcji programistycznych.</item>
-    <item quantity="few">Jesteś teraz <xliff:g id="step_count">%1$d</xliff:g> kroków od włączenia opcji programistycznych.</item>
+    <item quantity="few">Jesteś teraz <xliff:g id="step_count">%1$d</xliff:g> kroki od włączenia opcji programistycznych.</item>
     <item quantity="other">Jesteś teraz <xliff:g id="step_count">%1$d</xliff:g> kroków od włączenia opcji programistycznych.</item>
   </plurals>
   <string name="show_dev_on_cm">Aktywowałeś opcje programistyczne!</string>
@@ -88,6 +88,9 @@
   <string name="profile_lockmode_insecure_summary">Nie pytaj o PIN lub hasło</string>
   <string name="profile_lockmode_disabled_summary">Wyłącz blokadę ekranu</string>
   <string name="profile_airplanemode_title">Opcje trybu samolotowego</string>
+  <string name="profile_brightness_title">Jasność ekranu</string>
+  <string name="profile_brightness_override_summary">Ustaw na %1$d%%</string>
+  <string name="profile_brightness_override_checkbox_label">Nadpisz jasność</string>
   <string name="toggleWifi">Wi\u2011Fi</string>
   <string name="toggleWifiAp">Przenośny hotspot Wi\u2011Fi</string>
   <string name="toggleBluetooth">Bluetooth</string>
@@ -231,7 +234,6 @@
   <string name="device_model">Model urządzenia</string>
   <string name="device_name">Nazwa urządzenia</string>
   <string name="build_date">Data kompilacji</string>
-  <string name="contributor_cloud_title">Twórcy</string>
   <string name="phone_service_state">Połączenia: <xliff:g id="voice_state">%1$s</xliff:g>, dane: <xliff:g id="data_state">%2$s</xliff:g></string>
   <string name="double_tap_to_wake_title">Wybudzanie podwójnym dotknięciem</string>
   <string name="double_tap_to_wake_summary">Dotknij dwukrotnie ekranu, aby włączyć podświetlenie</string>
@@ -248,6 +250,7 @@
   <string name="privacy_guard_reset_text">Zresetować uprawnienia?</string>
   <string name="privacy_guard_help_text">Na tym ekranie możesz wskazać aplikacje, dla których ochrona prywatności ma być aktywna. Zaznaczone aplikacje nie będą miały dostępu do osobistych danych, takich jak kontakty, wiadomości czy historia połączeń. Dłuższe przytrzymanie palcem na wybranej pozycji otworzy ekran ze szczegółowymi informacjami.\n\nAplikacje wbudowane w system nie są domyślnie wyświetlane. Jeżeli chcesz je zobaczyć lub zawęzić listę do aplikacji uzyskujących dostęp do danych osobistych, wybierz odpowiednią opcję z menu.</string>
   <string name="privacy_guard_manager_show_system_apps">Pokaż aplikacje wbudowane w system</string>
+  <string name="privacy_guard_notification_title">Pokaż powiadomienie</string>
   <string name="app_ops_btn_text">Modyfikuj</string>
   <string name="increasing_ring_volume_option_title">Narastająca głośność dzwonka</string>
   <string name="increasing_ring_min_volume_title">Głośność początkowa</string>
@@ -341,6 +344,7 @@
   <string name="notification_light_default_value">Domyślny</string>
   <string name="notification_light_missed_call_title">Nieodebrane połączenie</string>
   <string name="notification_light_voicemail_title">Poczta głosowa</string>
+  <string name="notification_light_screen_on">Wzbudzenie ekranu</string>
   <string name="keywords_lights_brightness_level">zmniejszenie jasności diody LED</string>
   <string name="notification_ringtone_title_cm">Dźwięk powiadomień</string>
   <string name="headset_connect_player_title">Uruchom aplikację muzyki</string>
@@ -482,6 +486,7 @@
   <string name="ok">OK</string>
   <string name="profile_menu_delete_title">Usuń</string>
   <string name="profile_action_none">Pozostaw bez zmian</string>
+  <string name="profile_action_system">Domyślny systemu</string>
   <string name="profile_action_disable">Wyłącz</string>
   <string name="profile_action_enable">Włącz</string>
   <string name="profile_trigger_a2dp_connect">Połącz A2DP</string>
@@ -579,6 +584,12 @@
   <string name="sim_pin_disabled">Wyłączono PIN1</string>
   <string name="storage_usb">Pamięć USB</string>
   <string name="storage_uicc">Pamięć UICC</string>
+  <string name="sdcard_eject" product="default">Odmontuj kartę SD</string>
+  <string name="sdcard_eject_summary" product="default">Odmontuj kartę SD, aby móc ją bezpiecznie wyciągnąć</string>
+  <string name="sd_card_format" product="default">Wyczyść kartę SD</string>
+  <string name="sd_card_format_summary" product="default">Usuwa wszystkie dane na karcie SD, takie jak muzyka i zdjęcia</string>
+  <string name="sdcard_mount" product="default">Montowanie karty SD</string>
+  <string name="sdcard_insert_summary" product="default">Włóż kartę SD, aby zamontować</string>
   <string name="usb_eject" product="default">Odmontuj pamięć USB</string>
   <string name="usb_eject_summary" product="default">Odmontuj pamięć USB, aby móc ją bezpiecznie usunąć</string>
   <string name="usb_format" product="default">Wyczyść pamięć USB</string>
@@ -593,22 +604,36 @@
   <string name="uicc_insert_summary" product="default">Włóż pamięć UICC, aby zamontować</string>
   <string name="usb_settings_enable_ums_title">Włączyć pamięć masową?</string>
   <string name="usb_settings_enable_ums_message">Składniki systemu i aplikacje polegają na stałym dostępie do głównej pamięci urządzenia. Ta funkcja usuwa tą funkcjonalność. Zdecydowanie zaleca się korzystanie z MTP. Czy na pewno chcesz włączyć pamięć masową?</string>
+  <string name="dlg_confirm_sdcard_unmount_title" product="default">Odmontować kartę SD?</string>
   <string name="dlg_confirm_usb_unmount_title" product="default">Odmontować pamięć USB?</string>
   <string name="dlg_confirm_uicc_unmount_title" product="default">Odmontować pamięć UICC?</string>
+  <string name="dlg_confirm_sdcard_unmount_text" product="default">Jeśli odmontujesz kartę SD, niektóre aplikacje mogą przestać działać lub stać się niedostępne dopóki nie zamontujesz ponownie karty SD.</string>
   <string name="dlg_confirm_usb_unmount_text" product="default">Jeśli odmontujesz pamięć USB, niektóre aplikacje mogą przestać działać lub stać się niedostępne dopóki ponownie nie zamontujesz pamięci USB.</string>
   <string name="dlg_confirm_uicc_unmount_text" product="default">Jeśli odmontujesz pamięć UICC, niektóre aplikacje mogą przestać działać lub stać się niedostępne dopóki ponownie nie zamontujesz pamięci UICC.</string>
+  <string name="dlg_error_sdcard_unmount_text" product="default">Nie udało się odmontować karty SD. Spróbuj ponownie później.</string>
   <string name="dlg_error_usb_unmount_text" product="default">Nie udało się odmontować pamięci USB. Spróbuj ponownie później.</string>
   <string name="dlg_error_uicc_unmount_text" product="default">Nie udało się odmontować pamięci UICC. Spróbuj ponownie później.</string>
+  <string name="sdcard_unmount_inform_text" product="default">Karta SD będzie niezamontowana.</string>
   <string name="usb_unmount_inform_text" product="default">Pamięć USB zostanie odmontowana.</string>
   <string name="uicc_unmount_inform_text" product="default">Pamięć UICC zostanie odmontowana.</string>
+  <string name="sdcard_media_format_desc" product="default">Usunąć wszystkie dane z karty SD? Spowoduje utratę <b>wszystkich</b> danych na karcie!</string>
   <string name="usb_media_format_desc" product="default">Wyczyścić pamięć USB? Stracisz <b>wszystkie</b> dane zapisane w tej pamięci!</string>
   <string name="uicc_media_format_desc" product="default">Wyczyścić pamięć UICC? Stracisz <b>wszystkie</b> dane zapisane w tej pamięci!</string>
+  <string name="sdcard_media_format_button_text" product="default">Wyczyść kartę SD</string>
   <string name="usb_media_format_button_text" product="default">Wyczyść pamięć USB</string>
   <string name="uicc_media_format_button_text" product="default">Wyczyść pamięć UICC</string>
+  <string name="sdcard_media_format_final_desc" product="default">Wyczyścić kartę SD usuwając z niej wszystkie pliki? Nie można odwrócić tej akcji!</string>
   <string name="usb_media_format_final_desc" product="default">Wyczyścić pamięć USB usuwając z niego wszystkie pliki? Nie można odwrócić tej akcji!</string>
   <string name="uicc_media_format_final_desc" product="default">Wyczyścić pamięć UICC usuwając z niej wszystkie pliki? Nie można odwrócić tej akcji!</string>
+  <string name="sdcard_media_format_gesture_explanation" product="default">Musisz narysować swój wzór odblokowania, aby potwierdzić, że chcesz wyczyścić kartę SD.</string>
   <string name="usb_media_format_gesture_explanation" product="default">Musisz narysować swój wzór odblokowania, by potwierdzić, że chcesz wyczyścić pamięć USB.</string>
   <string name="uicc_media_format_gesture_explanation" product="default">Musisz narysować swój wzór odblokowania, by potwierdzić, że chcesz wyczyścić pamięć USB.</string>
+  <string name="internal_sd_format">Wyczyść wewnętrzną pamięć</string>
+  <string name="internal_sd_format_summary">Usuwa wszystkie dane pamięci wewnętrznej, takie jak muzyka i zdjęcia</string>
+  <string name="master_clear_desc_erase_internal_storage">\n\nAby usunąć muzykę, zdjęcia i inne dane użytkownika <b>pamięć wewnętrzna</b> musi zostać wyczyszczona.</string>
+  <string name="erase_internal_storage">Wyczyść pamięć wewnętrzną</string>
+  <string name="erase_internal_storage_description">Usuwa wszystkie dane z pamięci wewnętrznej, takie jak muzyka i zdjęcia</string>
+  <string name="storage_rescan_media">Ponownie skanuj zawartość pamięci</string>
   <string name="location_category_enhanced_location">Poszerzona lokalizacja (IZat)</string>
   <string name="app_ops_settings_summary">Wyświetl lub zmień uprawnienia aplikacji</string>
   <string name="enable_adb_summary_charging">Urządzenie jest w trybie ładowania, debugowanie USB jest wyłączone</string>
@@ -662,6 +687,9 @@
   <string name="settings_cmlicense_activity_title">Informacje prawne CyanogenMod</string>
   <string name="lockpattern_settings_enable_error_path_title">Pokazuj błędny wzór</string>
   <string name="lockpattern_settings_enable_dots_title">Pokazuj punkty wzoru</string>
+  <string name="lock_directly_show_password">Pokazuj bezpośrednio wpisane hasło</string>
+  <string name="lock_directly_show_pattern">Pokazuj bezpośrednio wzór</string>
+  <string name="lock_directly_show_pin">Pokazuj bezpośrednio wpisany PIN</string>
   <string name="unlock_quick_unlock_control_title">Szybkie odblokowywanie</string>
   <string name="unlock_quick_unlock_control_summary">Odblokuj automatycznie, gdy wprowadzony zostanie poprawny PIN/hasło</string>
   <string name="unlock_scramble_pin_layout_title">Pomieszany układ</string>
@@ -680,6 +708,7 @@
   <string name="status_bar_show_weather_summary">Pokaż pogodę nad panelem Szybkich Ustawień</string>
   <string name="qs_category_title">Panel Szybkich Ustawień</string>
   <string name="qs_brightness_slider_title">Pokaż suwak jasności</string>
+  <string name="qs_hide_tiles_with_sensitive_data">Ukryj przełączniki zawierające wrażliwe dane podczas blokady</string>
   <string name="qs_order_title">Wybierz i ustaw kolejność przełączników</string>
   <string name="add_qs">Dodaj nowy przełącznik</string>
   <string name="qs_action_delete">Usuń</string>
@@ -702,11 +731,13 @@
   <string name="qs_tile_compass">Kompas</string>
   <string name="qs_tile_lockscreen">Blokada ekranu</string>
   <string name="qs_tile_lte">LTE</string>
+  <string name="qs_tile_volume_panel">Panel głośności</string>
   <string name="qs_tile_screen_timeout">Wygaszanie ekranu</string>
   <string name="qs_tile_usb_tether">Tethering USB</string>
   <string name="qs_tile_heads_up">Wyskakujące powiadomienia</string>
   <string name="qs_tile_ambient_display">Aktywny wyświetlacz</string>
   <string name="qs_tile_sync">Synchronizacja</string>
+  <string name="qs_tile_battery_saver">Oszczędzanie baterii</string>
   <string name="qs_dynamic_tile_next_alarm">Następny alarm</string>
   <string name="qs_dynamic_tile_ime_selector">Przełącznik klawiatury</string>
   <string name="qs_dynamic_tile_su">Dostęp do roota</string>
@@ -715,6 +746,7 @@
   <string name="qs_main_tiles_summary_off">Trzy przełączniki w każdym rzędzie</string>
   <string name="qs_advanced_location_title">Zaawansowane ustawienia lokalizacji</string>
   <string name="qs_advanced_location_summary">Włącz zaawansowane ustawienia dla lokalizacji w Szybkich Ustawieniach</string>
+  <string name="sim_no_number_set">Brak przypisanego numeru</string>
   <string name="gesture_settings_title">Gesty</string>
   <string name="themes_settings_title">Motywy</string>
   <string name="wifi_mode">Tryb</string>
@@ -738,6 +770,7 @@
   <string name="expanded_desktop_style">Styl rozszerzonego pulpitu</string>
   <string name="expanded_desktop_style_description">Wybierz domyślny styl rozszerzonego pulpitu</string>
   <string name="expanded_desktop_title">Opcje rozszerzonego pulpitu</string>
+  <string name="title_general">Ogólne</string>
   <string name="lockscreen_targets_message">Skróty ekranu blokady</string>
   <string name="lockscreen_default_target">Domyślny</string>
   <string name="lockscreen_none_target">Brak</string>
@@ -752,6 +785,7 @@
   <string name="dialog_title_lcd_density">Gęstość LCD</string>
   <string name="lcd_density_value_format">%d DPI</string>
   <string name="lcd_density_default_value_format">%d DPI (domyślnie)</string>
+  <string name="restarting_ui">Uruchamianie ponownie\u2026</string>
   <string name="stylus_icon_enabled_title">Pokaż ikonę podczas używania rysika</string>
   <string name="stylus_icon_enabled_summary">Pokaż ikonę wskaźnika podczas wskazywania lub rysowania rysikiem</string>
   <string name="gestures_settings_title">Gesty rysika</string>
@@ -890,14 +924,18 @@
   <string name="fingerprint_dialog_title_max_fingers_reached">Maksymalna ilość odcisków osiągnięta</string>
   <string name="fingerprint_dialog_msg_max_fingers_reached">Możesz zapisać tylko <xliff:g id="finger" example="5 fingerprints">%d</xliff:g> układów linii papilarnych. Usuń istniejący układ linii papilarnych.</string>
   <string name="fingerprint_title_manage_fingerprints">Zarządzaj odciskami palców <xliff:g id="finger">%d</xliff:g>/<xliff:g id="max">%d</xliff:g></string>
-  <string name="manage_fingerprints_description">Odciski palców pozwalają na szybkie odblokowanie telefonu, potwierdzanie zakupów i robienie zdjęć.</string>
+  <string name="manage_fingerprints_description">Odciski palców pozwalają szybko odblokować telefon i robić zdjęcia.</string>
   <string name="fingerprint_enrollment_introduction_title">Znajdź swój czujnik</string>
   <string name="fingerprint_enrollment_introduction_instructions">Czujnik odcisków palców jest umieszczony na przodzie lub tyle twojego telefonu.</string>
   <string name="fingerprint_enrollment_scan_title">Przytrzymaj przez 3 sekundy</string>
   <string name="fingerprint_enrollment_scan_instructions">Umieść palec wskazujący na czujniku linii papilarnych, aby rozpocząć konfigurację. Unieś palec, gdy poczujesz wibrację.</string>
   <string name="fingerprint_enrollment_error_title_wrong_sensor">Spróbuj ponownie</string>
+  <string name="fingerprint_enrollment_error_message">Mocno przyłóż palec do czujnika linii papilarnych, aby zapewnić dokładny skan. Upewnij się również, że używasz tego samego palca co wcześniej. Unieś palec, gdy poczujesz wibrację.</string>
   <string name="fingerprint_enrollment_scan_instructions">Umieść palec wskazujący na czujniku linii papilarnych, aby rozpocząć konfigurację. Unieś palec, gdy poczujesz wibrację.</string>
+  <string name="fingerprint_enrollment_break_title">Kontynuuj z obecnym chwytem</string>
+  <string name="fingerprint_enrollment_break_instructions">Kontynuuj, aby uchwycić krawędzie odcisku. Unieś palec, gdy poczujesz wibrację.</string>
   <string name="fingerprint_enrollment_finished_title">Odcisk palca dodany!</string>
+  <string name="fingerprint_enrollment_finished_message">Teraz twój odcisk palca może służyć do odblokowania ekranu lub robienia selfie korzystając z aparatu.</string>
   <string name="fingerprint_enrollment_found_it_label">Znaleziono</string>
   <string name="fingerprint_enrollment_add_another_label">Dodaj kolejny</string>
   <string name="fingerprint_enrollment_done_label">Zrobione</string>
@@ -917,9 +955,15 @@
   <string name="fingerprint_enrollment_error_title_1">Ups. Spróbuj ponownie</string>
   <string name="fingerprint_enrollment_error_title_2">Przepraszam, nie załapałem</string>
   <string name="fingerprint_enrollment_error_title_3">Hmm, coś poszło nie tak</string>
+  <string name="fingerprint_enrollment_error_title_4">Och ach, spróbuj ponownie</string>
   <string name="fingerprint_enrollment_error_title_5">Ups, tu był błąd</string>
+  <string name="lockscreen_settings_and_fingerprint">Blokada ekranu &amp; odcisk palca</string>
   <string name="menu_stats_reset">Resetuj statystyki</string>
   <string name="reset_stats_msg">Statystyki baterii zostaną zresetowane</string>
+  <string name="dock_battery_not_present">Bateria doku nie jest pokazywana</string>
+  <string name="battery_info_status_charging_dock_ac">Ładowanie dokiem AC</string>
+  <string name="battery_info_status_charging_dock_usb">Ładowanie dokiem USB</string>
+  <string name="setup_lock_pattern_size_title">Złożoność wzoru</string>
   <string name="setup_lock_pattern_size_details">Jak wiele kropek chcesz wykorzystać w swoim wzorze? Im więcej kropek, tym bardziej skomplikowany będzie wzór.</string>
   <string name="lto_download_data_wifi_only">GPS wymaga pobrania danych</string>
   <string name="lto_download_data_wifi_only_on">Poprzez każdą sieć</string>
@@ -931,6 +975,15 @@
   <string name="contributors_cloud_loading_message">Wczytywanie danych o twórcach\u2026</string>
   <string name="contributors_cloud_failed_message">Nie można wczytać danych o twórcach</string>
   <string name="contributor_info_menu">Informacje o twórcy</string>
+  <string name="contributor_info_msg">
+        <![CDATA[<b>Imię:</b> <xliff:g id="name">%1$s</xliff:g><br/><br/>
+                 <b>Nick:</b> <xliff:g id="nick">%2$s</xliff:g><br/><br/>
+                 <b>Poprawki:</b> <xliff:g id="commits">%3$s</xliff:g><br/><br/>
+                 <b>Ranking:</b> <xliff:g id="rank">%4$s</xliff:g>]]></string>
   <string name="contributions_info_menu">Współtwórcy</string>
+  <string name="contributions_info_msg">
+        <![CDATA[<b>Wszyscy współtwórcy:</b> <xliff:g id="total_contributors">%1$s</xliff:g><br/><br/>
+                 <b>Wszystkie poprawki:</b> <xliff:g id="total_commits">%2$s</xliff:g><br/><br/>
+                 <b>Ostatnia aktualizacja:</b> <xliff:g id="date">%3$s</xliff:g>]]></string>
   <string name="quick_settings_reset_message">Zresetować przełączniki ustawień?</string>
 </resources>

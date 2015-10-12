@@ -87,6 +87,9 @@
   <string name="profile_lockmode_insecure_summary">Não pedir PIN ou senha</string>
   <string name="profile_lockmode_disabled_summary">Desabilitar a tela de bloqueio</string>
   <string name="profile_airplanemode_title">Modo avião</string>
+  <string name="profile_brightness_title">Brilho da tela</string>
+  <string name="profile_brightness_override_summary">Definir para %1$d%%</string>
+  <string name="profile_brightness_override_checkbox_label">Substituir o brilho</string>
   <string name="toggleWifi">Wi\u2011Fi</string>
   <string name="toggleWifiAp">Ponto de acesso Wi\u2011Fi</string>
   <string name="toggleBluetooth">Bluetooth</string>
@@ -227,10 +230,10 @@
   <string name="update_recovery_off_warning">AVISO: Quando este recurso estiver desativado, seu recovery instalado não será atualizado junto com o sistema.\n\nVersões mais atuais do sistema operacional podem não instalar com um recovery antigo ou customizado.\n\nVocê realmente quer desativar este recurso?</string>
   <string name="mod_version">Versão CyanogenMod</string>
   <string name="mod_version_default">Desconhecida</string>
+  <string name="security_patch">Nível do patch de segurança do Android</string>
   <string name="device_model">Modelo do dispositivo</string>
   <string name="device_name">Nome do dispositivo</string>
   <string name="build_date">Data de compilação</string>
-  <string name="contributor_cloud_title">Colaboradores</string>
   <string name="phone_service_state">Voz: <xliff:g id="voice_state">%1$s</xliff:g>, dados: <xliff:g id="data_state">%2$s</xliff:g></string>
   <string name="double_tap_to_wake_title">Toque duplo para acordar</string>
   <string name="double_tap_to_wake_summary">Dê um duplo toque na tela para ligar a tela</string>
@@ -341,6 +344,9 @@
   <string name="notification_light_default_value">Padrão</string>
   <string name="notification_light_missed_call_title">Chamada perdida</string>
   <string name="notification_light_voicemail_title">Correio de Voz</string>
+  <string name="notification_light_screen_on">Luzes com a tela ligada</string>
+  <string name="notification_light_use_multiple_leds">LEDs múltiplos</string>
+  <string name="keywords_lights_brightness_level">escurecer o brilho do led</string>
   <string name="notification_ringtone_title_cm">Toque de notificação</string>
   <string name="headset_connect_player_title">Abrir app de música</string>
   <string name="headset_connect_player_summary">Iniciar o app de música padrão quando os fones de ouvido forem conectados</string>
@@ -481,6 +487,7 @@
   <string name="ok">OK</string>
   <string name="profile_menu_delete_title">Apagar</string>
   <string name="profile_action_none">Deixar inalterado</string>
+  <string name="profile_action_system">Padrão do sistema</string>
   <string name="profile_action_disable">Desativar</string>
   <string name="profile_action_enable">Ativar</string>
   <string name="profile_trigger_a2dp_connect">Ao ligar A2DP</string>
@@ -622,6 +629,11 @@
   <string name="sdcard_media_format_gesture_explanation" product="default">Você precisa inserir seu padrão de desbloqueio para confirmar que você deseja apagar o cartão SD.</string>
   <string name="usb_media_format_gesture_explanation" product="default">Você precisa inserir seu padrão de desbloqueio para confirmar que você deseja apagar o armazenamento USB.</string>
   <string name="uicc_media_format_gesture_explanation" product="default">Você precisa inserir seu padrão de desbloqueio para confirmar que você deseja apagar o armazenamento UICC.</string>
+  <string name="internal_sd_format">Apagar o armazenamento interno</string>
+  <string name="internal_sd_format_summary">Apaga todos os dados do armazenamento interno, tais como músicas, vídeos, fotos e dados dos aplicativos</string>
+  <string name="master_clear_desc_erase_internal_storage">\n\nPara limpar as músicas, fotos e outros dados, o <b>armazenamento interno</b> tem que ser apagado.</string>
+  <string name="erase_internal_storage">Apagar o armazenamento interno</string>
+  <string name="erase_internal_storage_description">Apaga todos os dados do armazenamento interno, tais como músicas, vídeos, fotos e dados dos aplicativos</string>
   <string name="storage_rescan_media">Verificar por mídia novamente no volume de armazenamento</string>
   <string name="location_category_enhanced_location">Localização aprimorada (IZat)</string>
   <string name="app_ops_settings_summary">Visualizar ou alterar permissões dos aplicativos</string>
@@ -676,6 +688,9 @@
   <string name="settings_cmlicense_activity_title">Licença CyanogenMod</string>
   <string name="lockpattern_settings_enable_error_path_title">Exibir erro no padrão</string>
   <string name="lockpattern_settings_enable_dots_title">Exibir pontos no padrão</string>
+  <string name="lock_directly_show_password">Exibir diretamente a entrada de senha</string>
+  <string name="lock_directly_show_pattern">Exibir diretamente o padrão</string>
+  <string name="lock_directly_show_pin">Exibir diretamente a entrada PIN</string>
   <string name="unlock_quick_unlock_control_title">Desbloqueio rápido</string>
   <string name="unlock_quick_unlock_control_summary">Não é necessário pressionar OK ao digitar PIN ou senha. Apagar conta como erro.</string>
   <string name="unlock_scramble_pin_layout_title">Embaralhar layout</string>
@@ -694,6 +709,7 @@
   <string name="status_bar_show_weather_summary">Mostrar o tempo acima do painel de Configurações Rápidas</string>
   <string name="qs_category_title">Painel de Configurações Rápidas</string>
   <string name="qs_brightness_slider_title">Mostrar o controle deslizante de brilho</string>
+  <string name="qs_hide_tiles_with_sensitive_data">Esconder os botões sensíveis quando bloqueado</string>
   <string name="qs_order_title">Selecionar e ordenar os botões</string>
   <string name="add_qs">Adicionar novo botão</string>
   <string name="qs_action_delete">Remover</string>
@@ -716,11 +732,13 @@
   <string name="qs_tile_compass">Bússola</string>
   <string name="qs_tile_lockscreen">Tela de bloqueio</string>
   <string name="qs_tile_lte">LTE</string>
+  <string name="qs_tile_volume_panel">Painel de volume</string>
   <string name="qs_tile_screen_timeout">Tempo limite de tela</string>
   <string name="qs_tile_usb_tether">Tethering USB</string>
   <string name="qs_tile_heads_up">Heads up</string>
   <string name="qs_tile_ambient_display">Tela ambiente</string>
   <string name="qs_tile_sync">Sincronização</string>
+  <string name="qs_tile_battery_saver">Economizador de bateria</string>
   <string name="qs_dynamic_tile_next_alarm">Próximo alarme</string>
   <string name="qs_dynamic_tile_ime_selector">Seletor de IME</string>
   <string name="qs_dynamic_tile_su">Acesso super usuário</string>
@@ -753,6 +771,7 @@
   <string name="expanded_desktop_style">Estilo da área de trabalho expandida</string>
   <string name="expanded_desktop_style_description">Escolha o estilo padrão da área de trabalho expandida</string>
   <string name="expanded_desktop_title">Opções da área de trabalho expandida</string>
+  <string name="title_general">Geral</string>
   <string name="lockscreen_targets_message">Atalhos da tela de bloqueio</string>
   <string name="lockscreen_default_target">Padrão</string>
   <string name="lockscreen_none_target">Nenhum</string>
@@ -824,6 +843,17 @@
   <string name="live_display_low_power_summary">Ajustar exibição para menor consumo de energia, sem degradação</string>
   <string name="live_display_enhance_color_title">Realçar cores</string>
   <string name="live_display_enhance_color_summary">Melhorar a vivacidade da cor de tons de pele, cenário, e outras imagens</string>
+  <string name="live_display_color_profile_title">Perfil de cor</string>
+  <string name="live_display_color_profile_standard_title">Padrão</string>
+  <string name="live_display_color_profile_standard_summary">Cores precisas e brancos brilhantes</string>
+  <string name="live_display_color_profile_natural_title">Natural</string>
+  <string name="live_display_color_profile_natural_summary">Cores e tons de pele realistas</string>
+  <string name="live_display_color_profile_dynamic_title">Dinâmico</string>
+  <string name="live_display_color_profile_dynamic_summary">Cores melhoradas e brancos brilhantes</string>
+  <string name="live_display_color_profile_cinema_title">Cinema</string>
+  <string name="live_display_color_profile_cinema_summary">Reprodução de cor perfeita para a mídia</string>
+  <string name="live_display_color_profile_astronomy_title">Astronomia</string>
+  <string name="live_display_color_profile_astronomy_summary">Vermelho profundo para preservar a visão noturna</string>
   <string name="battery_saver_threshold">Iniciar economia de bateria</string>
   <string name="battery_saver_summary">Reduzir o desempenho e desativar os dados em segundo plano</string>
   <string name="battery_saver_summary_unavailable">Indisponível enquanto estiver carregando</string>
@@ -893,7 +923,7 @@
   <string name="fingerprint_dialog_title_max_fingers_reached">Número máximo de impressões digitais atingido</string>
   <string name="fingerprint_dialog_msg_max_fingers_reached">Você só pode registrar <xliff:g id="finger" example="5 fingerprints">%d</xliff:g> impressões digitais. Exclua uma impressão digital existente.</string>
   <string name="fingerprint_title_manage_fingerprints">Gerenciar impressões digitais</string>
-  <string name="manage_fingerprints_description">Impressões digitais permitem que você desbloqueie rapidamente seu telefone, confirme compras e tire fotos.</string>
+  <string name="manage_fingerprints_description">Impressões digitais permitem que você desbloqueie rapidamente o seu telefone e tire fotos.</string>
   <string name="fingerprint_enrollment_introduction_title">Encontrar seu sensor</string>
   <string name="fingerprint_enrollment_introduction_instructions">O sensor de impressão digital está localizado na parte da frente ou para trás de seu telefone.</string>
   <string name="fingerprint_enrollment_scan_title">Segure  por 3 segundos</string>
@@ -926,6 +956,7 @@
   <string name="fingerprint_enrollment_error_title_3">Hmm, algo deu errado</string>
   <string name="fingerprint_enrollment_error_title_4">Eita, tente novamente</string>
   <string name="fingerprint_enrollment_error_title_5">Ops, ocorreu um erro</string>
+  <string name="lockscreen_settings_and_fingerprint">Tela de bloqueio e impressão digital</string>
   <string name="menu_stats_reset">Redefinir estatísticas</string>
   <string name="reset_stats_msg">Estatísticas do histórico da bateria será redefinida</string>
   <string name="dock_battery_not_present">Bateria do dock não está disponível</string>
@@ -933,4 +964,25 @@
   <string name="battery_info_status_charging_dock_usb">Carregamento via dock USB</string>
   <string name="setup_lock_pattern_size_title">Complexidade do padrão</string>
   <string name="setup_lock_pattern_size_details">Quantos nós você gostaria de usar com o seu padrão? Mais nós, mais complexo o padrão pode ser.</string>
+  <string name="lto_download_data_wifi_only">Transferência de dados assistidos de GPS</string>
+  <string name="lto_download_data_wifi_only_on">Qualquer rede</string>
+  <string name="lto_download_data_wifi_only_off">Somente através de redes Wi\u2011Fi</string>
+  <string name="keep_screen_on_never">Nunca</string>
+  <string name="keep_screen_on_debugging">Durante a depuração USB</string>
+  <string name="keep_screen_on_charging">Enquanto estiver carregando</string>
+  <string name="contributors_cloud_fragment_title">Colaboradores</string>
+  <string name="contributors_cloud_loading_message">Lendo os dados dos contribuintes\u2026</string>
+  <string name="contributors_cloud_failed_message">Não é possível carregar dados dos contribuintes</string>
+  <string name="contributor_info_menu">Informação do colaborador</string>
+  <string name="contributor_info_msg">
+        <![CDATA[<b>Nome:</b> <xliff:g id="name">%1$s</xliff:g><br/><br/>
+                 <b>Usuário:</b> <xliff:g id="nick">%2$s</xliff:g><br/><br/>
+                 <b>Contribuições:</b> <xliff:g id="commits">%3$s</xliff:g><br/><br/>
+                 <b>Ranking:</b> <xliff:g id="rank">%4$s</xliff:g>]]></string>
+  <string name="contributions_info_menu">Informação de contribuições</string>
+  <string name="contributions_info_msg">
+        <![CDATA[<b>Total de Colaboradores:</b> <xliff:g id="total_contributors">%1$s</xliff:g><br/><br/>
+                 <b>Total de contribuições:</b> <xliff:g id="total_commits">%2$s</xliff:g><br/><br/>
+                 <b>Última Atualização:</b> <xliff:g id="date">%3$s</xliff:g>]]></string>
+  <string name="quick_settings_reset_message">Redefinir atalhos da configuração rápida?</string>
 </resources>

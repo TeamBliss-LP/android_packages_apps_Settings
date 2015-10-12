@@ -233,7 +233,6 @@
   <string name="device_model">Seadme mudel</string>
   <string name="device_name">Seadme nimi</string>
   <string name="build_date">Kooste kuupäev</string>
-  <string name="contributor_cloud_title">Toetajad</string>
   <string name="phone_service_state">Hääl: <xliff:g id="voice_state">%1$s</xliff:g>, andmed: <xliff:g id="data_state">%2$s</xliff:g></string>
   <string name="double_tap_to_wake_title">Topeltkoputa ärkamiseks</string>
   <string name="double_tap_to_wake_summary">Topeltkoputa ekraanil selle sisselülitamiseks</string>
@@ -343,8 +342,10 @@
   <string name="notification_light_default_value">Vaikimisi</string>
   <string name="notification_light_missed_call_title">vastamata kõne</string>
   <string name="notification_light_voicemail_title">Kõnepost</string>
+  <string name="notification_light_screen_on">Tuled koos ekraaniga</string>
+  <string name="keywords_lights_brightness_level">hämarda ledide heledust</string>
   <string name="notification_ringtone_title_cm">Teavituse toon</string>
-  <string name="headset_connect_player_title">Käivitada muusika rakendus</string>
+  <string name="headset_connect_player_title">Käivita muusika rakendus</string>
   <string name="headset_connect_player_summary">Käivita vaikimisi muusika rakendus peakomplekti ühendamisel</string>
   <string name="ime_switcher_notify">Valiku ikoon</string>
   <string name="ime_switcher_notify_summary">Kuva sisestamismeetodi valiku ikoon</string>
@@ -483,6 +484,7 @@
   <string name="ok">OK</string>
   <string name="profile_menu_delete_title">Kustuta</string>
   <string name="profile_action_none">Jäta muutmata</string>
+  <string name="profile_action_system">Süsteemi vaikesäte</string>
   <string name="profile_action_disable">Lülita välja</string>
   <string name="profile_action_enable">Lülita sisse</string>
   <string name="profile_trigger_a2dp_connect">A2DP ühendusel</string>
@@ -724,6 +726,7 @@
   <string name="qs_tile_compass">Kompass</string>
   <string name="qs_tile_lockscreen">Lukustusekraan</string>
   <string name="qs_tile_lte">LTE</string>
+  <string name="qs_tile_volume_panel">Helipaneel</string>
   <string name="qs_tile_screen_timeout">Ekraani viide</string>
   <string name="qs_tile_usb_tether">USB lõastamine</string>
   <string name="qs_tile_heads_up">Etteteavitus</string>
@@ -833,6 +836,17 @@
   <string name="live_display_low_power_summary">Kohanda ekraani madalaimale energia tarbimisele ilma degradeerumiseta</string>
   <string name="live_display_enhance_color_title">Parenda värve</string>
   <string name="live_display_enhance_color_summary">Paranda värvide erksust keha toonidel, vaadetel ja muudel piltidel</string>
+  <string name="live_display_color_profile_title">Värviprofiil</string>
+  <string name="live_display_color_profile_standard_title">Standard</string>
+  <string name="live_display_color_profile_standard_summary">Täpsed värvid ja eredad valged</string>
+  <string name="live_display_color_profile_natural_title">Looduslik</string>
+  <string name="live_display_color_profile_natural_summary">Realistlikud värvid ja lihakad toonid</string>
+  <string name="live_display_color_profile_dynamic_title">Dünaamiline</string>
+  <string name="live_display_color_profile_dynamic_summary">Tõhustatud värvid ja eredad valged</string>
+  <string name="live_display_color_profile_cinema_title">Kino</string>
+  <string name="live_display_color_profile_cinema_summary">Täiuslik värvide taastamine meedia jaoks</string>
+  <string name="live_display_color_profile_astronomy_title">Astronoomia</string>
+  <string name="live_display_color_profile_astronomy_summary">Sügav punane öise nägemise säilitamiseks</string>
   <string name="battery_saver_threshold">Aku säästmise tase</string>
   <string name="battery_saver_summary">Vähenda jõudlust ja piira andmeside kasutust taustal</string>
   <string name="battery_saver_summary_unavailable">Ei ole kättesaadav laadimise ajal</string>
@@ -904,13 +918,13 @@ mis ei ohusta sinu privaatsust ega isiklikku infot. Teave saadetakse peale igat 
   <string name="fingerprint_dialog_title_max_fingers_reached">Sõrmejälgede maksimumhulk saavutatud</string>
   <string name="fingerprint_dialog_msg_max_fingers_reached">Sul on võimalik lisada kuni <xliff:g id="finger" example="5 fingerprints">%d</xliff:g> sõrmejälge. Kustuta juba olemasolev sõrmejälg.</string>
   <string name="fingerprint_title_manage_fingerprints">Halda sõrmejälgi <xliff:g id="finger">%d</xliff:g><xliff:g id="max">%d</xliff:g></string>
-  <string name="manage_fingerprints_description">Sõrmejäljed lubavad sul kiiresti avada oma telefoni, kinnitada oste ning teha fotosid.</string>
+  <string name="manage_fingerprints_description">Sõrmejälgede kasutamine võimaldab telefoni kiiresti avada ning teha fotosid.</string>
   <string name="fingerprint_enrollment_introduction_title">Leia oma sõrmejälje lugeja</string>
   <string name="fingerprint_enrollment_introduction_instructions">Sõrmejälje lugeja on telefoni esimesel või tagumisel küljel.</string>
   <string name="fingerprint_enrollment_scan_title">Hoidke 3 sekundit</string>
   <string name="fingerprint_enrollment_scan_instructions">Asetage oma nimetissõrm sõrmejälje lugejale, et alustada seadistamist. Tõsta sõrm, kui tunned vibreerimist.</string>
   <string name="fingerprint_enrollment_error_title_wrong_sensor">Palun proovi uuesti</string>
-  <string name="fingerprint_enrollment_error_message">Asetage oma sõrm kindlalt sõrmejälje lugejale, et tagada täpne skän. Veendu, et ei ole seda sõrme juba kasutanud. Tõsta sõrm, kui tunned vibreerimist.</string>
+  <string name="fingerprint_enrollment_error_message">Asetage oma sõrm sõrmejälje lugejale, et tagada täpne skän. Samuti veendu, et ei ole seda sõrme juba kasutanud. Tõsta sõrm, kui tunned vibreerimist.</string>
   <string name="fingerprint_enrollment_scan_instructions">Asetage oma nimetissõrm sõrmejälje lugejale, et alustada seadistamist. Tõsta sõrm, kui tunned vibreerimist.</string>
   <string name="fingerprint_enrollment_break_title">Jätka praeguse haardega</string>
   <string name="fingerprint_enrollment_break_instructions">Jätka kuni jälje servade kätte saamiseni. Tõsta sõrm, kui tunned vibreerimist.</string>
@@ -937,6 +951,7 @@ mis ei ohusta sinu privaatsust ega isiklikku infot. Teave saadetakse peale igat 
   <string name="fingerprint_enrollment_error_title_3">Hmm, midagi läks valesti</string>
   <string name="fingerprint_enrollment_error_title_4">Uh oh, proovi uuesti</string>
   <string name="fingerprint_enrollment_error_title_5">Ups, ilmnes tõrge</string>
+  <string name="lockscreen_settings_and_fingerprint">Lukustusekraan &amp; sõrmejälg</string>
   <string name="menu_stats_reset">Nulli statistika</string>
   <string name="reset_stats_msg">Aku statistika ajalugu nullitakse</string>
   <string name="dock_battery_not_present">Doki aku puudub</string>
@@ -944,4 +959,25 @@ mis ei ohusta sinu privaatsust ega isiklikku infot. Teave saadetakse peale igat 
   <string name="battery_info_status_charging_dock_usb">Laen üle doki USB</string>
   <string name="setup_lock_pattern_size_title">Mustri keerukus</string>
   <string name="setup_lock_pattern_size_details">Kui palju sõlmi soovid oma mustris kasutada? Mida rohkem sõlmi, seda keerulisem võib muster olla.</string>
+  <string name="lto_download_data_wifi_only">GPS assisteeritud andmete allalaadimine</string>
+  <string name="lto_download_data_wifi_only_on">Üle kõigi võrkude</string>
+  <string name="lto_download_data_wifi_only_off">Ainult üle Wi\u2011Fi võrkude</string>
+  <string name="keep_screen_on_never">Mitte kunagi</string>
+  <string name="keep_screen_on_debugging">USB silumise ajal</string>
+  <string name="keep_screen_on_charging">Laadimise ajal</string>
+  <string name="contributors_cloud_fragment_title">Toetajad</string>
+  <string name="contributors_cloud_loading_message">Laen toetajate infot\u2026</string>
+  <string name="contributors_cloud_failed_message">Toetajate andmete laadimine ebaõnnestus</string>
+  <string name="contributor_info_menu">Toetajate info</string>
+  <string name="contributor_info_msg">
+        <![CDATA[<b>Nimi:</b> <xliff:g id="name">%1$s</xliff:g><br/><br/>
+                 <b>Hüüdnimi:</b> <xliff:g id="nick">%2$s</xliff:g><br/><br/>
+                 <b>Muudatusi:</b> <xliff:g id="commits">%3$s</xliff:g><br/><br/>
+                 <b>Auaste:</b> <xliff:g id="rank">%4$s</xliff:g>]]></string>
+  <string name="contributions_info_menu">Toetuste info</string>
+  <string name="contributions_info_msg">
+        <![CDATA[<b>Kokku toetajaid:</b> <xliff:g id="total_contributors">%1$s</xliff:g><br/><br/>
+                 <b>Kokku muudatusi:</b> <xliff:g id="total_commits">%2$s</xliff:g><br/><br/>
+                 <b>Viimane uuendus:</b> <xliff:g id="date">%3$s</xliff:g>]]></string>
+  <string name="quick_settings_reset_message">Lähtestan kiirsätete plaadid?</string>
 </resources>

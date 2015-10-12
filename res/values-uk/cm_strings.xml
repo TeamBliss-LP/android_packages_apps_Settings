@@ -132,6 +132,8 @@
   <string name="volbtn_cursor_control_on_reverse">Кнопка + рухає курсор вправо, - вліво</string>
   <string name="swap_volume_buttons_title">Змінити орієнтацію кнопок регулювання гучності</string>
   <string name="swap_volume_buttons_summary">Поміняти кнопки регулювання гучності, коли екран повернений</string>
+  <string name="volume_keys_control_ring_stream_title">Клавіші регулювання гучності змінюють гучність дзвінка</string>
+  <string name="volume_keys_control_ring_stream_summary">Якщо увімкнено, клавіші регулювання гучності змінюють гучність дзвінка. Якщо ні — загальну гучність звуку.</string>
   <string name="power_end_call_title">Завершення виклику</string>
   <string name="power_end_call_summary">Завершувати виклик натисканням кнопки живлення</string>
   <string name="button_wake_title">Розбудити пристрій</string>
@@ -166,9 +168,14 @@
   <string name="sunlight_enhancement_summary">Підвищення яскравості дисплея під час яскравого сонячного світла</string>
   <string name="color_enhancement_title">Покращення кольору</string>
   <string name="color_enhancement_summary">Динамічне покращення кольорів на екрані</string>
+  <string name="blacklist_title">Список заблокованих абонентів</string>
+  <string name="blacklist_edit_dialog_title">Змінити заблокований номер телефону</string>
   <string name="blacklist_prefs">Налаштування</string>
   <string name="blacklist_button_delete">Видалити</string>
+  <string name="blacklist_empty_text">Ви не маєте жодного заблокованого номеру. Додайте, торкнувшись кнопки «Додати» (+).</string>
+  <string name="blacklist_disabled_empty_text">Щоб запобігти надходженню небажаних дзвінків чи повідомлень з телефонних номерів, увімкніть чорний список.</string>
   <string name="blacklist_summary_disabled">Вимкнено</string>
+  <string name="blacklist_summary">Ви не будете отримувати вхідні дзвінки чи повідомлення від абонентів, які знаходяться у списку заблокованих</string>
   <string name="blacklist_notify">Показувати сповіщення</string>
   <string name="blacklist_private_numbers_title">Приватні номери</string>
   <string name="blacklist_private_numbers_summary_disabled">Не блокувати дзвінки від приватних номерів</string>
@@ -183,7 +190,9 @@
   <string name="blacklist_regex_summary">Використовуйте . як маску і * для повторення. Наприклад, вираз 123.* буде блокувати номери, які починаються з 123, а .*123.* — номера, що містять 123 в будь-якій частині</string>
   <string name="blacklist_policy_block_calls">Блокувати вхідні дзвінки</string>
   <string name="blacklist_policy_block_messages">Блокувати вхідні повідомлення</string>
+  <string name="blacklist_bad_number_add">Не вдалося додати неприпустимий номер телефону до списку заблокованих</string>
   <string name="remove_blacklist_number_title">Видалити номер</string>
+  <string name="remove_blacklist_entry">Бажаєте вилучити заблокований телефонний номер?</string>
   <string name="select_contact">Вибрати контакт</string>
   <string name="lockpattern_reset_button">Скинути граф. ключ</string>
   <string name="lockpattern_settings_reset_summary">Уведіть email та пароль основного акаунту аби скинути блокування графічного ключа</string>
@@ -222,8 +231,9 @@
   <string name="update_recovery_off_warning">ПОПЕРЕДЖЕННЯ: Якщо цю функцію вимкнено, режим Recovery залишиться без змін.\n\nІснує можливість некоректної установки майбутніх версій ОС, у випадку використання застарілого чи кастомного Recovery.\n\nВи бажаєте відключити цю функцію?</string>
   <string name="mod_version">Версія CyanogenMod</string>
   <string name="mod_version_default">Невідомо</string>
+  <string name="device_model">Модель пристрою</string>
+  <string name="device_name">Назва пристрою</string>
   <string name="build_date">Дата збірки</string>
-  <string name="contributor_cloud_title">Учасники</string>
   <string name="phone_service_state">Голосовий зв\'язок: <xliff:g id="voice_state">%1$s</xliff:g>\nПередача даних: <xliff:g id="data_state">%2$s</xliff:g></string>
   <string name="double_tap_to_wake_title">Подв. натискання прокидає</string>
   <string name="double_tap_to_wake_summary">Двічі натиснути на екран, щоб увімкнути його</string>
@@ -240,6 +250,7 @@
   <string name="privacy_guard_reset_text">Скинути дозволи?</string>
   <string name="privacy_guard_help_text">У цьому розділі ви можете вибрати програми, які працюватимуть в захищеному режимі, натиснувши на них. Такі програми не будуть мати доступу до персональних даних, таких як контакти, повідомлення або журнал дзвінків. Довге натиснення відкриє докладні відомості про дозволи даної програми.\n\nЗа замовчуванням системні програми приховані. Для їх відображення або для переходу до розширених налаштувань виберіть відповідний пункт у меню.</string>
   <string name="privacy_guard_manager_show_system_apps">Показати системні програми</string>
+  <string name="app_ops_btn_text">Змінити</string>
   <string name="increasing_ring_volume_option_title">Наростаюча гучність дзвінка</string>
   <string name="increasing_ring_min_volume_title">Початкова гучність</string>
   <string name="increasing_ring_ramp_up_time_title">Час збільшення</string>
@@ -332,6 +343,8 @@
   <string name="notification_light_default_value">За замовчуванням</string>
   <string name="notification_light_missed_call_title">Пропущений виклик</string>
   <string name="notification_light_voicemail_title">Голосова пошта</string>
+  <string name="notification_light_screen_on">Індикатор при увімкн. екрані</string>
+  <string name="keywords_lights_brightness_level">Зменшити яскравість світлодіодів</string>
   <string name="notification_ringtone_title_cm">Звук сповіщення</string>
   <string name="headset_connect_player_title">Запуск програвача</string>
   <string name="headset_connect_player_summary">Запускати програвач при під’єднанні навушників</string>
@@ -691,6 +704,7 @@
   <string name="status_bar_show_weather_summary">Показувати погоду вище панелі Швидких Налаштувань</string>
   <string name="qs_category_title">Панель Швидких Налаштувань</string>
   <string name="qs_brightness_slider_title">Показати повзунок яскравості</string>
+  <string name="qs_hide_tiles_with_sensitive_data">Приховати особливі плитки, коли заблоковано екран</string>
   <string name="qs_order_title">Обрати та впорядкувати плитки</string>
   <string name="add_qs">Додати нову плитку</string>
   <string name="qs_action_delete">Видалити</string>
@@ -713,6 +727,7 @@
   <string name="qs_tile_compass">Компас</string>
   <string name="qs_tile_lockscreen">Екран блокування</string>
   <string name="qs_tile_lte">LTE</string>
+  <string name="qs_tile_volume_panel">Панель гучності</string>
   <string name="qs_tile_screen_timeout">Тайм-аут екрана</string>
   <string name="qs_tile_usb_tether">USB-модем</string>
   <string name="qs_tile_heads_up">Спливаючі сповіщення</string>
@@ -726,6 +741,7 @@
   <string name="qs_main_tiles_summary_off">Три плитки на кожному рядку</string>
   <string name="qs_advanced_location_title">Розширені налаштування місцезнаходження</string>
   <string name="qs_advanced_location_summary">Увімкнути додаткові параметри розташування у Швидких Налаштуваннях</string>
+  <string name="sim_no_number_set">Номер не призначено</string>
   <string name="gesture_settings_title">Жести</string>
   <string name="themes_settings_title">Теми</string>
   <string name="wifi_mode">Режим</string>
@@ -760,6 +776,11 @@
   <string name="whisperpush_summary">Налаштування шифрування SMS-повідомлень</string>
   <string name="navigation_ring_title">Ярлики навігаційного кільця</string>
   <string name="navigation_ring_message">Натисніть піктограму редагування щоб редагувати навігаційне кільце.\n\nОберіть ярлик, щоб налаштувати його поведінку.\n\nТоркніться галочки   \'\u2713\', щоб зберегти зміни, або іншої піктограми, щоб повернутись до типових налаштувань.</string>
+  <string name="lcd_density">Роздільна здатність екрана</string>
+  <string name="dialog_title_lcd_density">Роздільна здатність екрана</string>
+  <string name="lcd_density_value_format">%d точок на дюйм</string>
+  <string name="lcd_density_default_value_format">%d точок на дюйм (типово)</string>
+  <string name="restarting_ui">Перезавантаження інтерфейсу\u2026</string>
   <string name="stylus_icon_enabled_title">Відображувати значок під час використання стилусу</string>
   <string name="stylus_icon_enabled_summary">Відображувати значок під час наведення або малювання стилусом</string>
   <string name="gestures_settings_title">Рухи стилуса</string>
@@ -800,6 +821,9 @@
   <string name="sim_ringtone_title">Рінгтон SIM %d</string>
   <string name="interruptions_ignore_while_media_title">Не приглушувати звуки</string>
   <string name="interruptions_ignore_while_media_summary">Не приглушувати відтворення медіа при надходженні сповіщення</string>
+  <string name="none_is_silent_title">Ніколи не вимикати звуки будильника</string>
+  <string name="none_is_silent_summary">Беззвучний режим дозволяє звуки будильника</string>
+  <string name="allow_lights_title">Дозволити спалах при сповіщенні</string>
   <string name="live_display_summary">Налаштовувати екран залежно від часу доби і умов освітлення для підвищення зручності читання і зменшення втоми очей</string>
   <string name="live_display_mode">Режим екрану</string>
   <string name="live_display_color_temperature_title">Температура кольорів</string>
@@ -813,6 +837,17 @@
   <string name="live_display_low_power_summary">Налаштування екрану для найнижчого енергоспоживання без псування зображення</string>
   <string name="live_display_enhance_color_title">Покращити кольори</string>
   <string name="live_display_enhance_color_summary">Поліпшити кольорову насиченість зображень</string>
+  <string name="live_display_color_profile_title">Профіль кольорів</string>
+  <string name="live_display_color_profile_standard_title">Стандартний</string>
+  <string name="live_display_color_profile_standard_summary">Точна передача кольору та яскравий білий</string>
+  <string name="live_display_color_profile_natural_title">Природний</string>
+  <string name="live_display_color_profile_natural_summary">Природні кольори та відтінки шкіри</string>
+  <string name="live_display_color_profile_dynamic_title">Динамічний</string>
+  <string name="live_display_color_profile_dynamic_summary">Підвищена контрастність та яскравість зображення</string>
+  <string name="live_display_color_profile_cinema_title">Кіно</string>
+  <string name="live_display_color_profile_cinema_summary">Ідеальна передача кольору для перегляду фільмів</string>
+  <string name="live_display_color_profile_astronomy_title">Астрономія</string>
+  <string name="live_display_color_profile_astronomy_summary">Глибокий червоний для збереження видимості вночі</string>
   <string name="battery_saver_threshold">Поріг збереження енергії</string>
   <string name="battery_saver_summary">Зниження продуктивності і обмеження передачі даних</string>
   <string name="battery_saver_summary_unavailable">Недоступно під час зарядки</string>
@@ -854,7 +889,7 @@
   <string name="factory_reset_erase_sd_card">Форматування картки SD</string>
   <string name="factory_reset_erase_sd_card_summary">Видалити всі дані на SD-карті, у тому числі музику і фотографії</string>
   <string name="factory_reset_warning_text_reset_now">СКИНУТИ ЗАРАЗ</string>
-  <string name="factory_reset_warning_text_message">Всі ваші облікові записи, програми та їх дані, налаштування системи буде видалено з пристрою. Це не може бути скасовано.</string>
+  <string name="factory_reset_warning_text_message">Всі ваші облікові записи, додатки, дані програми і налаштування системи будуть видалені з цього пристрою. Це не можливо буде скасувати.</string>
   <string name="wifi_setting_countrycode_title">Код регіону Wi-Fi</string>
   <string name="wifi_setting_countrycode_summary">Вкажіть код регіону для Wi-Fi</string>
   <string name="wifi_setting_countrycode_error">Під час налаштування коду регіону Wi-Fi виникла помилка.</string>
@@ -870,6 +905,7 @@
   <string name="wifi_countrycode_entries_sg">Ізраїль, Сінгапур</string>
   <string name="wifi_countrycode_entries_br">Бразилія</string>
   <string name="wifi_countrycode_entries_in">Індія</string>
+  <string name="unlock_set_unlock_launch_picker_title_with_fingerprint">Розблокування екрана і відбитки пальців</string>
   <string name="unlock_set_unlock_mode_fingerprint">Відбиток пальця</string>
   <string name="unlock_set_unlock_fingerprint_title">Відбиток пальця</string>
   <string name="fingerprint_item_add_new_fingerprint">Додати новий відбиток пальця</string>
@@ -881,7 +917,7 @@
   <string name="fingerprint_dialog_title_max_fingers_reached">Досягнуто максимум можливих відбитків пальців</string>
   <string name="fingerprint_dialog_msg_max_fingers_reached">Можна зберегти лише <xliff:g id="finger" example="5 fingerprints">%d</xliff:g> відбитків пальців. Видаліть частину відбитків.</string>
   <string name="fingerprint_title_manage_fingerprints">Керувати відбитками пальців <xliff:g id="finger">%d</xliff:g>/<xliff:g id="max">%d</xliff:g></string>
-  <string name="manage_fingerprints_description">Відбитки пальців дають змогу швидко розблокувати свій телефон, підтвердити покупки чи зробити фото.</string>
+  <string name="manage_fingerprints_description">Відбитки пальців дають змогу швидко розблокувати свій телефон і сфотографуватися.</string>
   <string name="fingerprint_enrollment_introduction_title">Знайдіть ваш датчик</string>
   <string name="fingerprint_enrollment_introduction_instructions">Сенсор відбитків пальців знаходиться на передній або задній панелі телефона.</string>
   <string name="fingerprint_enrollment_scan_title">Потримайте палець протягом 3 секунд</string>
@@ -922,4 +958,25 @@
   <string name="battery_info_status_charging_dock_usb">Заряджаємось від док-станції по USB</string>
   <string name="setup_lock_pattern_size_title">Складність візерунка</string>
   <string name="setup_lock_pattern_size_details">Скільки точок ви б хотіли використовувати для для шаблона? Що їх більше, то складнішим може бути візерунок.</string>
+  <string name="lto_download_data_wifi_only">Завантажувати допоміжні дані GPS</string>
+  <string name="lto_download_data_wifi_only_on">Через будь-яку мережу</string>
+  <string name="lto_download_data_wifi_only_off">Тільки через Wi\u2011Fi</string>
+  <string name="keep_screen_on_never">Ніколи</string>
+  <string name="keep_screen_on_debugging">Під час налагодження USB</string>
+  <string name="keep_screen_on_charging">Під час зарядки</string>
+  <string name="contributors_cloud_fragment_title">Розробники</string>
+  <string name="contributors_cloud_loading_message">Завантаження даних\u2026</string>
+  <string name="contributors_cloud_failed_message">Не вдалося завантажити дані розробників</string>
+  <string name="contributor_info_menu">Інформація про розробників</string>
+  <string name="contributor_info_msg">
+        <![CDATA[<b>Ім\'я:</b> <xliff:g id="name">%1$s</xliff:g><br/><br/>
+                 <b>Псевдонім:</b> <xliff:g id="nick">%2$s</xliff:g><br/><br/>
+                 <b>Коммітів:</b> <xliff:g id="commits">%3$s</xliff:g><br/><br/>
+                 <b>Рейтинг:</b> <xliff:g id="rank">%4$s</xliff:g>]]></string>
+  <string name="contributions_info_menu">Загальна статистика</string>
+  <string name="contributions_info_msg">
+        <![CDATA[<b>Всього учасників проекту:</b> <xliff:g id="total_contributors">%1$s</xliff:g><br/><br/>
+                 <b>Всього коммітів:</b> <xliff:g id="total_commits">%2$s</xliff:g><br/><br/>
+                 <b>Останнє оновлення:</b> <xliff:g id="date">%3$s</xliff:g>]]></string>
+  <string name="quick_settings_reset_message">Скинути налаштування плиток?</string>
 </resources>
