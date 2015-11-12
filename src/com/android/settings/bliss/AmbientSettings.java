@@ -84,9 +84,6 @@ public class AmbientSettings extends SettingsPreferenceFragment implements
     private AlertDialog mDialog;
     private Button mShakeFoundButton;
 
-    private float mBrightnessScale;
-    private float mDefaultBrightnessScale;
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -119,17 +116,6 @@ public class AmbientSettings extends SettingsPreferenceFragment implements
             removePreference(KEY_DOZE_SHAKE_CATEGORY);
         }
 
-        // Doze brightness
-        mDefaultBrightnessScale =
-                (float) res.getInteger(
-                com.android.internal.R.integer.config_screenBrightnessDoze) / res.getInteger(
-                com.android.internal.R.integer.config_screenBrightnessSettingMaximum);
-        float defaultBrightness = (mDefaultBrightnessScale * 100);
-        mDozeBrightness = (SeekBarPreference) findPreference(KEY_DOZE_BRIGHTNESS);
-        mDozeBrightness.setDefault((int) defaultBrightness);
-        mDozeBrightness.setInterval(1);
-        mDozeBrightness.setOnPreferenceChangeListener(this);
-
         // Doze schedule
         mDozeSchedule = (SwitchPreference) findPreference(KEY_DOZE_SCHEDULE);
         mDozeSchedule.setOnPreferenceChangeListener(this);
@@ -137,6 +123,17 @@ public class AmbientSettings extends SettingsPreferenceFragment implements
         updateDozeListMode();
         updateDozeOptions();
         mShakeSensorManager = new ShakeSensorManager(activity, this);
+
+        mDozeBrightness = (SeekBarPreference) findPreference(KEY_DOZE_BRIGHTNESS);
+        int dozeBrightness = Settings.System.getInt(resolver,
+                    Settings.System.DOZE_BRIGHTNESS, clampAbsoluteBrightness(resources.getInteger(
+                com.android.internal.R.integer.config_screenBrightnessSettingMinimum)));
+        mDozeBrightness.setValue(dozeBrightness);
+        mDozeBrightness.setOnPreferenceChangeListener(this);
+    }
+
+    private static int clampAbsoluteBrightness(int value) {
+        return MathUtils.constrain(value, PowerManager.BRIGHTNESS_OFF, PowerManager.BRIGHTNESS_ON);
     }
 
     private static boolean isAccelerometerAvailable(Context context) {
@@ -342,8 +339,6 @@ public class AmbientSettings extends SettingsPreferenceFragment implements
     }
 
     private void updateDozeOptions() {
-        final Activity activity = getActivity();
-
         if (mDozePulseVisible != null) {
             final int statusDozePulseVisible = Settings.System.getInt(getContentResolver(),
                     Settings.System.DOZE_PULSE_DURATION_VISIBLE, dozePulseVisibleDefault(activity));
@@ -361,11 +356,6 @@ public class AmbientSettings extends SettingsPreferenceFragment implements
             if (index != -1) {
                 mDozeShakeThreshold.setSummary(mDozeShakeThreshold.getEntries()[index]);
             }
-        }
-        if (mDozeBrightness != null) {
-            mBrightnessScale = Settings.System.getFloat(getContentResolver(),
-                    Settings.System.DOZE_BRIGHTNESS, mDefaultBrightnessScale);
-            mDozeBrightness.setInitValue((int) (mBrightnessScale * 100));
         }
     }
 
@@ -433,9 +423,9 @@ public class AmbientSettings extends SettingsPreferenceFragment implements
             mDozeListMode.setSummary(mDozeListMode.getEntries()[index]);
         }
         if (preference == mDozeBrightness) {
-            float valNav = Float.parseFloat((String) objValue);
-            Settings.System.putFloat(getContentResolver(),
-                    Settings.System.DOZE_BRIGHTNESS, valNav / 100);
+            int dozeBrightness = (Integer) objValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.DOZE_BRIGHTNESS, dozeBrightness);
         }
         if (preference == mDozeSchedule) {
             boolean value = (Boolean) objValue;
