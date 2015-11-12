@@ -25,6 +25,7 @@ import android.app.AlertDialog;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.database.ContentObserver;
 import android.os.Build;
@@ -58,7 +59,6 @@ public class AmbientSettings extends SettingsPreferenceFragment implements
     private static final String TAG = "AmbientSettings";
 
     private static final String KEY_DOZE = "doze";
-    private static final String KEY_DOZE_OVERWRITE_VALUE = "doze_overwrite_value";
     private static final String KEY_DOZE_PULSE_VISIBLE = "doze_pulse_visible";
     private static final String KEY_DOZE_LIST_MODE = "doze_list_mode";
     private static final String KEY_DOZE_PULSE_MODE = "doze_pulse_on_notifications";
@@ -67,6 +67,8 @@ public class AmbientSettings extends SettingsPreferenceFragment implements
     private static final String KEY_DOZE_TIME_MODE = "doze_time_mode";
     private static final String KEY_DOZE_BRIGHTNESS = "doze_brightness";
     private static final String KEY_DOZE_SCHEDULE = "doze_schedule";
+
+    private static final String SYSTEMUI_METADATA_NAME = "com.android.systemui";
 
     private int mAccValue;
     private int mOldAccValue;
@@ -339,7 +341,7 @@ public class AmbientSettings extends SettingsPreferenceFragment implements
     private void updateDozeOptions() {
         if (mDozePulseVisible != null) {
             final int statusDozePulseVisible = Settings.System.getInt(getContentResolver(),
-                    Settings.System.DOZE_PULSE_DURATION_VISIBLE, 3000);
+                    Settings.System.DOZE_PULSE_DURATION_VISIBLE, dozePulseVisibleDefault(activity));
             mDozePulseVisible.setValue(String.valueOf(statusDozePulseVisible));
             int index = mDozePulseVisible.findIndexOfValue(String.valueOf(statusDozePulseVisible));
             if (index != -1) {
@@ -438,6 +440,35 @@ public class AmbientSettings extends SettingsPreferenceFragment implements
         return false;
     }
 
+    // Get de default config form SyatemUi
+    private static int dozePulseVisibleDefault(Context context) {
+        return getConfigInteger(context, "doze_pulse_duration_visible");
+    }
+
+    private static Integer getConfigInteger(Context context, String configIntegerName) {
+        int resId = -1;
+        Integer i = 1;
+        PackageManager pm = context.getPackageManager();
+        if (pm == null) {
+            return null;
+        }
+
+        Resources systemUiResources;
+        try {
+            systemUiResources = pm.getResourcesForApplication(SYSTEMUI_METADATA_NAME);
+        } catch (Exception e) {
+            Log.e("DozeSettings:", "can't access systemui resources",e);
+            return null;
+        }
+
+        resId = systemUiResources.getIdentifier(
+            SYSTEMUI_METADATA_NAME + ":integer/" + configIntegerName, null, null);
+        if (resId > 0) {
+            i = systemUiResources.getInteger(resId);
+        }
+        return i;
+    }
+
     public static final Indexable.SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
             new BaseSearchIndexProvider() {
                 @Override
@@ -456,12 +487,22 @@ public class AmbientSettings extends SettingsPreferenceFragment implements
                 @Override
                 public List<String> getNonIndexableKeys(Context context) {
                     ArrayList<String> result = new ArrayList<String>();
-                    if (!isAccelerometerAvailable(context)) {
+                    if (!isDozeAvailable(context)) {
+                        result.add(KEY_DOZE);
                         result.add(KEY_DOZE_LIST_MODE);
-                        result.add(KEY_DOZE_SHAKE_THRESHOLD);
-                    }
-                    if (isAccelerometerAvailable(context)) {
+                        result.add(KEY_DOZE_TIME_MODE);
                         result.add(KEY_DOZE_PULSE_MODE);
+                        result.add(KEY_DOZE_PULSE_VISIBLE);
+                        result.add(KEY_DOZE_SHAKE_THRESHOLD);
+                        result.add(KEY_DOZE_SCHEDULE);
+                    } else {
+                       if (!isAccelerometerAvailable(context)) {
+                           result.add(KEY_DOZE_LIST_MODE);
+                           result.add(KEY_DOZE_SHAKE_THRESHOLD);
+                       }
+                       if (isAccelerometerAvailable(context)) {
+                           result.add(KEY_DOZE_PULSE_MODE);
+                       }
                     }
                     return result;
                 }
