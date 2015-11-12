@@ -41,6 +41,7 @@ import android.preference.SwitchPreference;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 import android.text.TextUtils;
+import android.util.Log;
 import android.widget.Button;
 import android.util.MathUtils;
 
@@ -339,6 +340,8 @@ public class AmbientSettings extends SettingsPreferenceFragment implements
     }
 
     private void updateDozeOptions() {
+        final Activity activity = getActivity();
+
         if (mDozePulseVisible != null) {
             final int statusDozePulseVisible = Settings.System.getInt(getContentResolver(),
                     Settings.System.DOZE_PULSE_DURATION_VISIBLE, dozePulseVisibleDefault(activity));
