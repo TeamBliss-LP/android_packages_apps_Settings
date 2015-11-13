@@ -72,7 +72,7 @@
                     android:title="@string/doze_pulse_on_notifications_title"
                     android:summary="@string/doze_pulse_on_notifications_summary"
                     android:defaultValue="true"
-                    android:dependency="doze_overwrite_value" />
+                    android:dependency="doze" />
 
             <com.android.settings.bliss.SeekBarPreference
                     android:key="doze_brightness"
@@ -82,7 +82,7 @@
                     settings:unitsLeft=""
                     settings:unitsRight=""
                     android:persistent="false"
-                    android:dependency="doze_auto_brightness" />
+                    android:dependency="doze" />
 
             <PreferenceCategory
                     android:key="doze_shake_category"
