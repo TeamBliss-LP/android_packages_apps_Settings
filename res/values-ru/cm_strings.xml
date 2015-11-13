@@ -740,7 +740,6 @@
   <string name="qs_tile_compass">Компас</string>
   <string name="qs_tile_lockscreen">Экран блокировки</string>
   <string name="qs_tile_lte">LTE</string>
-  <string name="qs_tile_visualizer" translatable="false">Эквалайзер</string>
   <string name="qs_tile_volume_panel">Панель громкости</string>
   <string name="qs_tile_screen_timeout">Спящий режим</string>
   <string name="qs_tile_trds">Тёмное оформление</string>
